@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+/* ====== 微信公众号排版 CSS ====== */
+
+body {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #3e3e3e;
+    background: #fff;
+}
+
+/* 正文段落 */
+p {
+    font-size: 15px !important;
+    line-height: 2 !important;
+    margin: 0 !important;
+    padding-top: 0.5em !important;
+    padding-bottom: 0.5em !important;
+    padding-right: 1.2em !important;
+    padding-left: 1.2em !important;
+    text-align: justify !important;
+}
+p + p {
+    margin-top: 0 !important;
+}
+
+/* 标题 */
+h1 {
+    font-size: 20px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 16px 0 !important;
+    padding: 0 !important;
+}
+h2 {
+    font-size: 18px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 24px 0 !important;
+    padding: 0 !important;
+}
+h3 {
+    font-size: 15px !important;
+    font-weight: bold !important;
+    color: #3e3e3e !important;
+    text-align: left !important;
+    margin: 16px 0 16px 0 !important;
+    padding: 0 0 0 1.2em !important;
+}
+h4 {
+    font-size: 15px !important;
+    color: rgb(0, 122, 170) !important;
+    margin: 12px 0 8px 0 !important;
+    padding: 0 !important;
+}
+
+/* 列表 */
+ul,
+ol {
+    padding-left: 2em !important;
+    margin: 1em 0 !important;
+    font-size: 15px !important;
+}
+li {
+    margin: 0.5em 0 !important;
+    line-height: 1.8em !important;
+    font-size: 15px !important;
+    color: #3e3e3e !important;
+}
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+    margin: 0 !important;
+    padding-left: 1.2em !important;
+}
+
+/* 引用 */
+blockquote {
+    border-left: 4px solid #888 !important;
+    padding: 8px 16px !important;
+    margin: 1em 0 !important;
+    color: #666 !important;
+    background: #f9f9f9 !important;
+}
+blockquote > p {
+    margin: 0.5em 0 !important;
+    padding: 0 !important;
+}
+blockquote::before,
+blockquote::after {
+    content: none !important;
+}
+
+/* 代码块 */
+pre {
+    font-size: 14px !important;
+    line-height: 1.4em !important;
+    color: #3e3e3e !important;
+    background: #f8f8f8 !important;
+    padding: 12px 16px !important;
+    border-radius: 4px !important;
+    overflow: auto !important;
+    margin: 1em 0 !important;
+}
+
+/* 脚注 */
+.footnotes {
+    font-size: 11px !important;
+    color: #666 !important;
+    line-height: 1.2 !important;
+    margin: 8px 0 0 0 !important;
+    padding: 4px 0 0 0 !important;
+    border-top: 1px solid #eee !important;
+}
+.footnotes p {
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #666 !important;
+}
+
+/* 上标 */
+sup {
+    font-size: 0.75em !important;
+    vertical-align: super !important;
+    color: #e51f42 !important;
+    margin: 0 2px !important;
+}
+
+table { width: 100% !important; border-collapse: collapse !important; margin: 1em 0 !important; font-size: 14px !important; }
+th, td { border: 1px solid #ddd !important; padding: 8px 12px !important; text-align: left !important; line-height: 1.6 !important; }
+th { background: #f5f5f5 !important; font-weight: bold !important; color: #3e3e3e !important; }
+td { color: #3e3e3e !important; }
+a { color: rgb(0, 122, 170) !important; text-decoration: none !important; }
+
+</style>
+</head>
+<body>
+
+<blockquote><p>GitHub: <a href="https://github.com/asgeirtj/system_prompts_leaks">https://github.com/asgeirtj/system_prompts_leaks</a></p></blockquote>
+<h2>项目类型</h2>
+<p>纯文档收集仓库，非代码项目。不适用 repo-miner 深度分析。</p>
+<h2>基本信息</h2>
+<table>
+<thead><tr><th>指标</th><th>内容</th></tr></thead>
+<tbody>
+<tr><td>Star</td><td>34,785</td></tr>
+<tr><td>Fork</td><td>5,594</td></tr>
+<tr><td>创建时间</td><td>2025-05-03</td></tr>
+<tr><td>作者</td><td>Asgeir Thor Johnson（冰岛）</td></tr>
+<tr><td>内容摘要</td><td>主流 AI 聊天机器人（ChatGPT、Claude、Gemini、Grok 等）系统提示词泄露合集，128 个 Markdown 文件，约 14.5 万行</td></tr>
+</tbody></table>
+<h2>简要评价</h2>
+<p>该仓库是目前 GitHub 上最全面的 AI 系统提示词收集项目，覆盖 Anthropic、OpenAI、Google、xAI 等主要厂商的最新及历史版本，对 AI 安全研究和 Prompt Engineering 有较高参考价值。仓库创建仅 10 个月即获近 3.5 万 Star，增长极快，但高度依赖单一维护者（>92% 提交），且未声明任何开源许可证，内容使用存在法律灰色地带。Issue #1 「Source?」 的 12 条讨论也反映了社区对内容来源合法性的持续关注。</p>
+</body>
+</html>

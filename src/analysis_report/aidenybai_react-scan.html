@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+/* ====== 微信公众号排版 CSS ====== */
+
+body {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #3e3e3e;
+    background: #fff;
+}
+
+/* 正文段落 */
+p {
+    font-size: 15px !important;
+    line-height: 2 !important;
+    margin: 0 !important;
+    padding-top: 0.5em !important;
+    padding-bottom: 0.5em !important;
+    padding-right: 1.2em !important;
+    padding-left: 1.2em !important;
+    text-align: justify !important;
+}
+p + p {
+    margin-top: 0 !important;
+}
+
+/* 标题 */
+h1 {
+    font-size: 20px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 16px 0 !important;
+    padding: 0 !important;
+}
+h2 {
+    font-size: 18px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 24px 0 !important;
+    padding: 0 !important;
+}
+h3 {
+    font-size: 15px !important;
+    font-weight: bold !important;
+    color: #3e3e3e !important;
+    text-align: left !important;
+    margin: 16px 0 16px 0 !important;
+    padding: 0 0 0 1.2em !important;
+}
+h4 {
+    font-size: 15px !important;
+    color: rgb(0, 122, 170) !important;
+    margin: 12px 0 8px 0 !important;
+    padding: 0 !important;
+}
+
+/* 列表 */
+ul,
+ol {
+    padding-left: 2em !important;
+    margin: 1em 0 !important;
+    font-size: 15px !important;
+}
+li {
+    margin: 0.5em 0 !important;
+    line-height: 1.8em !important;
+    font-size: 15px !important;
+    color: #3e3e3e !important;
+}
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+    margin: 0 !important;
+    padding-left: 1.2em !important;
+}
+
+/* 引用 */
+blockquote {
+    border-left: 4px solid #888 !important;
+    padding: 8px 16px !important;
+    margin: 1em 0 !important;
+    color: #666 !important;
+    background: #f9f9f9 !important;
+}
+blockquote > p {
+    margin: 0.5em 0 !important;
+    padding: 0 !important;
+}
+blockquote::before,
+blockquote::after {
+    content: none !important;
+}
+
+/* 代码块 */
+pre {
+    font-size: 14px !important;
+    line-height: 1.4em !important;
+    color: #3e3e3e !important;
+    background: #f8f8f8 !important;
+    padding: 12px 16px !important;
+    border-radius: 4px !important;
+    overflow: auto !important;
+    margin: 1em 0 !important;
+}
+
+/* 脚注 */
+.footnotes {
+    font-size: 11px !important;
+    color: #666 !important;
+    line-height: 1.2 !important;
+    margin: 8px 0 0 0 !important;
+    padding: 4px 0 0 0 !important;
+    border-top: 1px solid #eee !important;
+}
+.footnotes p {
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #666 !important;
+}
+
+/* 上标 */
+sup {
+    font-size: 0.75em !important;
+    vertical-align: super !important;
+    color: #e51f42 !important;
+    margin: 0 2px !important;
+}
+
+table { width: 100% !important; border-collapse: collapse !important; margin: 1em 0 !important; font-size: 14px !important; }
+th, td { border: 1px solid #ddd !important; padding: 8px 12px !important; text-align: left !important; line-height: 1.6 !important; }
+th { background: #f5f5f5 !important; font-weight: bold !important; color: #3e3e3e !important; }
+td { color: #3e3e3e !important; }
+img { max-width: 100% !important; display: block !important; margin: 1em auto !important; }
+a { color: rgb(0, 122, 170) !important; text-decoration: none !important; }
+
+</style>
+</head>
+<body>
+
+<blockquote><p>GitHub: <a href="https://github.com/aidenybai/react-scan">https://github.com/aidenybai/react-scan</a></p></blockquote>
+<h2>一句话总结</h2>
+<p>零代码侵入的 React 渲染性能扫描工具——通过劫持 React DevTools 全局钩子遍历 Fiber tree，在页面上实时高亮重渲染组件并定位性能瓶颈，npm 月下载 200 万次，Perplexity/Shopify/Faire 在用。</p>
+<h2>值得关注的理由</h2>
+<ol>
+<li><strong>零侵入 + 实时高亮的独创组合</strong>：无需修改任何应用代码，一行 script 标签即可在页面上圈出需要优化的组件，赛道内无完全替代品</li>
+<li><strong>顶级作者背景</strong>：Aiden Bai（Million.js 作者，YC W24）+ Rob Pruzan（前 Vercel Next.js 团队），对 React 渲染机制有全球最深入的理解</li>
+<li><strong>不稳定引用检测创新</strong>：自动识别「值相同但引用不同」的 prop/state——直接定位 React 最常见的性能反模式</li>
+</ol>
+<h2>项目画像</h2>
+<table>
+<thead><tr><th>维度</th><th>数据</th></tr></thead>
+<tbody>
+<tr><td>GitHub</td><td><a href="https://github.com/aidenybai/react-scan">https://github.com/aidenybai/react-scan</a></td></tr>
+<tr><td>Star / Fork</td><td>20,833 / 351</td></tr>
+<tr><td>代码行数</td><td>46,799 (TypeScript 27%, TSX 24%, JavaScript 33%)</td></tr>
+<tr><td>项目年龄</td><td>18 个月</td></tr>
+<tr><td>开发阶段</td><td>快速成长期→维护期过渡（v0.5.x，未达 1.0）</td></tr>
+<tr><td>贡献模式</td><td>双核心驱动（aidenybai 37% + RobPruzan 35%）</td></tr>
+<tr><td>热度定位</td><td>大众热门（20K Stars，npm 月下载 200 万）</td></tr>
+<tr><td>质量评级</td><td>代码[良好] 文档[良好] 测试[基本]</td></tr>
+</tbody></table>
+<h2>作者视角：为什么存在这个项目</h2>
+<h3>创始人/作者背景</h3>
+<p>Aiden Bai（@aidenybai），16 岁开始创建 Million.js（虚拟 DOM 优化框架，「让 React 快 70%」），华盛顿大学 CS+HCI，Million Software 获 YC W24 投资。技术演进线清晰：Million.js（编译时优化）→ bippy（React Fiber internals hack 库）→ react-scan（运行时性能诊断）。联合作者 Rob Pruzan 来自 Vercel Next.js 团队，两人贡献度几乎持平（254 vs 241 commits）。</p>
+<h3>问题判断</h3>
+<p>React 应用的性能问题在大规模项目中极为普遍——即使是 GitHub.com、Twitter、Instagram 这样百人工程团队维护的产品也存在大量不必要的重渲染。现有工具要么需要手动录制（React DevTools Profiler），要么需要侵入代码（Why Did You Render），要么只做编译时分析（Million Lint）。缺乏一个「打开就能看到问题在哪」的零门槛工具。</p>
+<h3>解法哲学</h3>
+<ul>
+<li><strong>零侵入优先</strong>：不修改应用代码、不需要特殊构建配置，CDN script 标签即可使用</li>
+<li><strong>视觉反馈优先</strong>：在页面上直接高亮问题组件，比 console 日志更直观</li>
+<li><strong>运行时诊断而非编译时</strong>：在真实运行环境中检测问题，而非静态分析</li>
+<li><strong>观察者不干扰被观察者</strong>：工具 UI 用 Preact 实现（避免产生 React Fiber 的观察者效应），Canvas 挂载在 Shadow DOM 下</li>
+</ul>
+<h3>战略意图</h3>
+<p>react-scan 是 Million Software 产品矩阵的核心入口。通过免费开源工具获取开发者用户，建立「React 性能优化」的品牌认知。当前同时在构建 Ami（AI 编码智能体）和 React Grab（UI 开发工具），形成「诊断→修复→生成」的完整工具链。</p>
+<h2>核心价值提炼</h2>
+<h3>创新之处</h3>
+<ol>
+<li><strong>Fiber 拦截 + 实时视觉高亮</strong> — 新颖度 5/5 | 实用性 5/5 | 可迁移性 3/5<br/>通过 bippy 库劫持 __REACT_DEVTOOLS_GLOBAL_HOOK__，在每次 React commit 后遍历 Fiber tree 收集渲染信息（时间、变化原因、组件名），然后通过 Canvas 实时高亮重渲染组件。多实例架构支持 devtools UI 和 monitoring 共存。</li>
+</ol>
+<ol>
+<li><strong>不稳定引用检测（isValueUnstable）</strong> — 新颖度 5/5 | 实用性 5/5 | 可迁移性 4/5<br/>序列化值相同但引用不同的 prop/state 被标记为 unstable。这是 React 最常见的性能反模式（每次渲染创建新对象/数组导致子组件无效重渲染），react-scan 自动检测并高亮这类问题。</li>
+</ol>
+<ol>
+<li><strong>OffscreenCanvas Worker 渲染</strong> — 新颖度 4/5 | 实用性 4/5 | 可迁移性 5/5<br/>高亮渲染使用 OffscreenCanvas + SharedArrayBuffer 在 Worker 线程中批量处理，零主线程阻塞。确保诊断工具本身不影响被诊断应用的性能。</li>
+</ol>
+<ol>
+<li><strong>交互性能追踪（INP 归因）</strong> — 新颖度 4/5 | 实用性 5/5 | 可迁移性 4/5<br/>performance.ts（1075 行）使用 PerformanceObserver + 四阶段计时管道（microtask → RAF → setTimeout）实现 INP 级别的渲染归因，精确定位是哪个组件导致了交互延迟。</li>
+</ol>
+<ol>
+<li><strong>组件名推断（react-component-name）</strong> — 新颖度 3/5 | 实用性 5/5 | 可迁移性 5/5<br/>Babel 插件注入 displayName，通过 unplugin 适配 Vite/Webpack/Rollup/esbuild 全构建工具生态。解决了生产构建中组件名被压缩后无法识别的问题。</li>
+</ol>
+<h3>可复用的模式与技巧</h3>
+<ol>
+<li><strong>React DevTools Hook 劫持模式</strong>：通过 __REACT_DEVTOOLS_GLOBAL_HOOK__ 在不修改 React 源码的情况下监听所有组件渲染——适用于任何需要 React 运行时监控的工具</li>
+<li><strong>Shadow DOM 隔离工具 UI</strong>：工具面板和 Canvas 挂载在 Shadow DOM 下，与宿主应用样式完全隔离——适用于任何需要注入 UI 的开发工具</li>
+<li><strong>OffscreenCanvas + Worker 批量渲染</strong>：将视觉反馈的计算推到 Worker 线程——适用于任何需要高频 UI overlay 的场景</li>
+<li><strong>unplugin 全平台适配</strong>：一个 Babel 插件通过 unplugin 同时支持所有构建工具——适用于需要跨构建工具分发的开发者工具</li>
+</ol>
+<h3>关键设计决策</h3>
+<ol>
+<li><strong>Preact 实现工具 UI 而非 React</strong>：避免工具自身产生 React Fiber 干扰监测结果（观察者效应）。trade-off：维护两套组件体系的成本</li>
+<li><strong>Canvas 高亮而非 DOM overlay</strong>：Canvas 渲染性能远优于创建大量 DOM 元素，但失去了 CSS 选择器和 DOM 交互能力</li>
+<li><strong>依赖 React 内部 API（Fiber）</strong>：获得了最精细的渲染信息，但与 React 内部实现强耦合，每次 React 大版本更新可能需要适配</li>
+<li><strong>Monorepo 4 包拆分</strong>：scan（核心）+ extension（Chrome 扩展）+ vite-plugin + website，职责清晰但 scan 包过大（110 文件）</li>
+</ol>
+<h2>竞品格局与定位</h2>
+<h3>竞品对比矩阵</h3>
+<table>
+<thead><tr><th>维度</th><th>react-scan</th><th>React DevTools</th><th>Why Did You Render</th><th>Million Lint</th><th>Datadog RUM</th></tr></thead>
+<tbody>
+<tr><td>零侵入</td><td>完全零侵入</td><td>需安装扩展</td><td>需包裹组件</td><td>需构建配置</td><td>需 SDK 集成</td></tr>
+<tr><td>实时高亮</td><td>Canvas 高亮</td><td>无</td><td>无</td><td>编辑器内</td><td>无</td></tr>
+<tr><td>渲染原因</td><td>自动检测</td><td>手动录制</td><td>自动但需配置</td><td>编译时分析</td><td>N/A</td></tr>
+<tr><td>不稳定引用检测</td><td>自动</td><td>无</td><td>部分</td><td>无</td><td>无</td></tr>
+<tr><td>INP 归因</td><td>有</td><td>无</td><td>无</td><td>无</td><td>有</td></tr>
+<tr><td>适用阶段</td><td>开发调试</td><td>开发调试</td><td>开发调试</td><td>开发+CI</td><td>生产监控</td></tr>
+<tr><td>价格</td><td>免费</td><td>免费</td><td>免费</td><td>免费</td><td>付费</td></tr>
+</tbody></table>
+<h3>差异化护城河</h3>
+<ol>
+<li><strong>React Fiber 深度理解</strong>：通过 bippy 库对 React 内部机制的理解是最大技术壁垒，竞品难以快速复制</li>
+<li><strong>零侵入 + 实时高亮的组合</strong>：赛道内唯一实现此组合的工具</li>
+<li><strong>作者品牌</strong>：Aiden Bai 在 React 性能优化领域的个人品牌效应</li>
+<li><strong>npm 200 万月下载的网络效应</strong>：已成为 React 性能调试的事实标准工具</li>
+</ol>
+<h3>竞争风险</h3>
+<ol>
+<li><strong>React 官方可能内置</strong>：如果 React DevTools 原生支持实时高亮和不稳定引用检测，react-scan 的核心价值将被替代</li>
+<li><strong>Fiber API 兼容性风险</strong>：React 19+ 的内部 API 变更可能导致 react-scan 需要大幅适配</li>
+<li><strong>核心团队仅 2 人</strong>：Bus Factor = 2，如果核心开发者精力转移项目可能停滞</li>
+</ol>
+<h3>生态定位</h3>
+<p>react-scan 在 React 开发工具生态中占据「运行时性能诊断」这个精确生态位。在 React DevTools（通用调试）和 Datadog RUM（生产监控）之间，react-scan 专注于「开发阶段的渲染性能可视化」，是最短路径的性能问题发现工具。</p>
+<h2>套利机会分析</h2>
+<ul>
+<li><strong>信息差</strong>: 低——20K Stars + npm 200 万月下载已是知名项目。但不稳定引用检测（isValueUnstable）的技术细节和 OffscreenCanvas Worker 渲染模式的可迁移性尚未被充分讨论</li>
+<li><strong>技术借鉴</strong>: React DevTools Hook 劫持、Shadow DOM 工具隔离、OffscreenCanvas Worker 批量渲染、unplugin 全平台适配——都是开发工具领域的高价值模式</li>
+<li><strong>生态位</strong>: 填补了「零侵入 React 性能可视化」的空白，已成为事实标准</li>
+<li><strong>趋势判断</strong>: React 性能工具需求持续增长，但近期开发节奏放缓（间歇式提交）。关注 React Native 支持（Issue #23, 63 评论）和 MCP Server 集成（Issue #271）的进展</li>
+</ul>
+<h2>风险与不足</h2>
+<ol>
+<li><strong>React 内部 API 依赖</strong>：核心依赖 Fiber tree 遍历，React 大版本更新可能导致兼容性问题</li>
+<li><strong>核心团队仅 2 人</strong>：Bus Factor = 2，近期提交节奏明显放缓（间歇式开发）</li>
+<li><strong>scan 包过大</strong>：110 个文件，Inspector utils.ts 达 1,956 行，需要拆分</li>
+<li><strong>未达 v1.0</strong>：v0.5.x 表明 API 仍在演化，生产环境稳定性需评估</li>
+<li><strong>Chrome 扩展稳定性</strong>：Issue #336 报告 runtime error，与 React DevTools 冲突（Issue #404）</li>
+<li><strong>CDN 性能影响</strong>：Issue #424 报告 CDN 引入可能导致应用卡顿</li>
+</ol>
+<h2>行动建议</h2>
+<ul>
+<li><strong>如果你要用它</strong>: 开发调试首选——npx react-scan@latest init 一键集成。推荐 Vite 项目用 vite-plugin-react-scan。避免在生产环境使用（性能开销+安全风险）。如果遇到与 React DevTools 冲突，禁用其中一个</li>
+<li><strong>如果你要学它</strong>: 重点关注 packages/scan/src/core/instrumentation.ts（Fiber 拦截核心机制）、packages/scan/src/core/notifications/performance.ts（INP 归因实现，1075 行）、packages/scan/src/new-outlines/（OffscreenCanvas Worker 渲染）、packages/scan/src/react-component-name/（组件名推断 Babel 插件）</li>
+<li><strong>如果你要 fork 它</strong>: 可改进方向——(1) 拆分 Inspector utils.ts 巨型文件；(2) 添加 React Native 支持（最热门需求）；(3) 实现 MCP Server 供 AI 工具消费性能数据；(4) 降低 CDN 模式的性能开销</li>
+</ul>
+<h3>知识入口</h3>
+<table>
+<thead><tr><th>资源</th><th>链接</th></tr></thead>
+<tbody>
+<tr><td>DeepWiki</td><td><a href="https://deepwiki.com/aidenybai/react-scan">已收录</a></td></tr>
+<tr><td>Zread.ai</td><td><a href="https://zread.ai/aidenybai/react-scan">已收录</a></td></tr>
+<tr><td>关联论文</td><td>无</td></tr>
+<tr><td>在线 Demo</td><td><a href="https://react-scan.million.dev">react-scan.million.dev</a></td></tr>
+<tr><td>官网</td><td><a href="https://react-scan.com">react-scan.com</a></td></tr>
+<tr><td>Discord</td><td><a href="https://discord.gg/X9yFbcV2rF">社区</a></td></tr>
+<tr><td>SE Daily 播客</td><td><a href="https://softwareengineeringdaily.com/2023/09/05/making-react-70-faster/">Making React 70% faster</a></td></tr>
+</tbody></table>
+</body>
+</html>

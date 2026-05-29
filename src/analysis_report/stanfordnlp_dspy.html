@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+/* ====== 微信公众号排版 CSS ====== */
+
+body {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #3e3e3e;
+    background: #fff;
+}
+
+/* 正文段落 */
+p {
+    font-size: 15px !important;
+    line-height: 2 !important;
+    margin: 0 !important;
+    padding-top: 0.5em !important;
+    padding-bottom: 0.5em !important;
+    padding-right: 1.2em !important;
+    padding-left: 1.2em !important;
+    text-align: justify !important;
+}
+p + p {
+    margin-top: 0 !important;
+}
+
+/* 标题 */
+h1 {
+    font-size: 20px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 16px 0 !important;
+    padding: 0 !important;
+}
+h2 {
+    font-size: 18px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 24px 0 !important;
+    padding: 0 !important;
+}
+h3 {
+    font-size: 15px !important;
+    font-weight: bold !important;
+    color: #3e3e3e !important;
+    text-align: left !important;
+    margin: 16px 0 16px 0 !important;
+    padding: 0 0 0 1.2em !important;
+}
+h4 {
+    font-size: 15px !important;
+    color: rgb(0, 122, 170) !important;
+    margin: 12px 0 8px 0 !important;
+    padding: 0 !important;
+}
+
+/* 列表 */
+ul,
+ol {
+    padding-left: 2em !important;
+    margin: 1em 0 !important;
+    font-size: 15px !important;
+}
+li {
+    margin: 0.5em 0 !important;
+    line-height: 1.8em !important;
+    font-size: 15px !important;
+    color: #3e3e3e !important;
+}
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+    margin: 0 !important;
+    padding-left: 1.2em !important;
+}
+
+/* 引用 */
+blockquote {
+    border-left: 4px solid #888 !important;
+    padding: 8px 16px !important;
+    margin: 1em 0 !important;
+    color: #666 !important;
+    background: #f9f9f9 !important;
+}
+blockquote > p {
+    margin: 0.5em 0 !important;
+    padding: 0 !important;
+}
+blockquote::before,
+blockquote::after {
+    content: none !important;
+}
+
+/* 代码块 */
+pre {
+    font-size: 14px !important;
+    line-height: 1.4em !important;
+    color: #3e3e3e !important;
+    background: #f8f8f8 !important;
+    padding: 12px 16px !important;
+    border-radius: 4px !important;
+    overflow: auto !important;
+    margin: 1em 0 !important;
+}
+
+/* 脚注 */
+.footnotes {
+    font-size: 11px !important;
+    color: #666 !important;
+    line-height: 1.2 !important;
+    margin: 8px 0 0 0 !important;
+    padding: 4px 0 0 0 !important;
+    border-top: 1px solid #eee !important;
+}
+.footnotes p {
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #666 !important;
+}
+
+/* 上标 */
+sup {
+    font-size: 0.75em !important;
+    vertical-align: super !important;
+    color: #e51f42 !important;
+    margin: 0 2px !important;
+}
+
+</style>
+</head>
+<body>
+<blockquote><p>GitHub: <a href="https://github.com/stanfordnlp/dspy">https://github.com/stanfordnlp/dspy</a></p></blockquote>
+<h2>一句话总结</h2>
+<p>Stanford NLP 出品的 LLM 编程框架，核心理念「programming--not prompting」——用声明式 Signature 定义输入输出，用 12+ 种内置优化器自动搜索最佳 prompt + few-shot 示例，独占「LLM 应用优化器」这一生态位。</p>
+<h2>值得关注的理由</h2>
+<ol>
+<li><strong>范式创新——编程而非提示</strong>：将 prompt engineering 从手工技艺提升为可编程、可优化、可组合的工程实践。类 PyTorch 的 API 设计（Module/Predict/Optimizer）使「编译 LLM 程序」成为可能</li>
+<li><strong>独占「优化器框架」生态位</strong>：12+ 种优化器（BootstrapFewShot → MIPROv2 → GEPA → GRPO），从提示优化到模型微调形成完整梯度——LangChain/LlamaIndex 等竞品在此领域完全空白</li>
+<li><strong>最强学术背景</strong>：ICLR 2024 主会论文、7+ 篇相关发表、Omar Khattab（MIT 助理教授）维护，JetBlue/Databricks/Walmart 等企业生产使用——学术严谨性和工业验证力的双重保证</li>
+</ol>
+<h2>项目画像</h2>
+<table style="width:100%;border-collapse:collapse;font-size:14px;margin:1em 0;"><thead><tr><th style="border:1px solid #ddd;padding:8px 12px;background:#f5f5f5;text-align:left;font-weight:bold;">维度</th><th style="border:1px solid #ddd;padding:8px 12px;background:#f5f5f5;text-align:left;font-weight:bold;">数据</th></tr></thead><tbody><tr><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">GitHub</td><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;"><a href="https://github.com/stanfordnlp/dspy">https://github.com/stanfordnlp/dspy</a></td></tr><tr><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">Star / Fork</td><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">32,992 / 2,720</td></tr><tr><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">代码行数</td><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">38,357 行 Python（测试 22,809 行，测试/源码比 0.87:1）</td></tr><tr><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">项目年龄</td><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">38 个月（2023-01-09 创建）</td></tr><tr><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">开发阶段</td><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">成熟维护期（v3.1.3，fix 占 39.5%，发布含 beta 流程）</td></tr><tr><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">贡献模式</td><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">学术核心 + 社区协作（okhat 24.6%，407 位贡献者）</td></tr><tr><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">热度定位</td><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">大众热门（33K stars，稳步增长）</td></tr><tr><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">质量评级</td><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">代码[优秀] 文档[优秀] 测试[良好]</td></tr></tbody></table>
+<h2>作者视角：为什么存在这个项目</h2>
+<h3>创始人/作者背景</h3>
+<p>Omar Khattab，MIT EECS & CSAIL 助理教授，ColBERT 和 DSPy 的作者。斯坦福读博期间创建了 DSPy 的前身 DSP（Demonstrate-Search-Predict），研究轨迹清晰：ColBERT(2020, 信息检索) → DSP(2022, 组合式 NLP) → DSPy(2023, 通用编程框架) → GEPA(2025, 进化优化器)。1,128 次提交占 24.6%，但有多位活跃协作者（arnavsinghvi11 402 次, chenmoneygithub 265 次），社区生态健康。</p>
+<h3>问题判断</h3>
+<p>LLM 应用开发中的 prompt 是脆弱的、不可组合的、不可优化的。开发者花费大量时间手工调试 prompt，却无法系统性地改进。Omar 从信息检索领域出发，发现 LLM 应用的本质是「多步骤程序」而非单次 prompt——这让他自然地将编译器/优化器的思想引入 LLM 领域。DSPy 的自杀检测任务实验数据：<strong>10 分钟优化达到的效果，手动 prompt engineering 需要 20 小时，性能还好 40-50%</strong>。</p>
+<h3>解法哲学</h3>
+<ul>
+<li><strong>「编程而非提示」</strong>：用户写 Python 程序（dspy.Module + dspy.Signature），不写 prompt。框架自动将声明式签名转换为最优 prompt</li>
+<li><strong>类 PyTorch 设计</strong>：Module/forward()/compile() 的 API 让深度学习开发者秒懂。「可学习参数」不是权重而是 prompt + few-shot demos</li>
+<li><strong>优化器而非手工调参</strong>：optimizer.compile(student, trainset=...) 一键优化，返回优化后的程序副本</li>
+<li><strong>明确不做</strong>：不做 LangChain 式的通用编排，不做 LlamaIndex 式的数据索引——专注于「让 LM 调用变得可优化」</li>
+</ul>
+<h3>战略意图</h3>
+<p>学术研究驱动的开源框架。核心作者转为 MIT 教职后，<strong>学术+开源双轨可持续</strong>——发论文推动框架理论发展，框架的用户数据反哺研究。无明确商业化路径（MIT 许可），但 Databricks、Walmart 等企业的采用提升了学术影响力。</p>
+<h2>核心价值提炼</h2>
+<h3>创新之处</h3>
+<ol>
+<li><strong>「编译 LLM 程序」的范式</strong>（新颖度 5/5 | 实用性 5/5 | 可迁移性 4/5）<ul><li>将 prompt engineering 转化为可编程、可优化的工程实践。优化器根据训练数据自动搜索最佳 prompt + demos 组合</li></ul></li>
+<li><strong>Signature 声明式类型系统</strong>（新颖度 4/5 | 实用性 5/5 | 可迁移性 4/5）<ul><li>dspy.Signature("question: str, context: list[str] -> answer: str") 用类型声明输入输出语义，框架自动处理格式化/解析/验证。底层用 Pydantic 元类系统实现</li></ul></li>
+<li><strong>12+ 种优化器梯度</strong>（新颖度 5/5 | 实用性 5/5 | 可迁移性 3/5）<ul><li>从简到复杂：LabeledFewShot → BootstrapFewShot → MIPROv2(贝叶斯) → SIMBA(自省) → GEPA(进化) → GRPO(RL 微调) → BetterTogether(联合优化)</li></ul></li>
+<li><strong>Demo 自举（Bootstrap）机制</strong>（新颖度 4/5 | 实用性 5/5 | 可迁移性 5/5）<ul><li>用 teacher 模型运行训练样本，收集成功的完整 trace 作为 few-shot 示例——「用 LLM 教 LLM」的自我改进循环</li></ul></li>
+<li><strong>RLM 递归语言模型</strong>（新颖度 5/5 | 实用性 3/5 | 可迁移性 3/5）<ul><li>LLM 不直接处理长上下文，而是在 Python REPL 中编写代码程序化探索数据，通过 llm_query() 调用子 LLM</li></ul></li>
+<li><strong>GEPA 进化优化器</strong>（新颖度 4/5 | 实用性 4/5 | 可迁移性 3/5）<ul><li>进化算法 + 反思机制 + Pareto 选择优化 prompt，号称超越 RL 方法</li></ul></li>
+</ol>
+<h3>可复用的模式与技巧</h3>
+<table style="width:100%;border-collapse:collapse;font-size:14px;margin:1em 0;"><thead><tr><th style="border:1px solid #ddd;padding:8px 12px;background:#f5f5f5;text-align:left;font-weight:bold;">模式</th><th style="border:1px solid #ddd;padding:8px 12px;background:#f5f5f5;text-align:left;font-weight:bold;">简述</th><th style="border:1px solid #ddd;padding:8px 12px;background:#f5f5f5;text-align:left;font-weight:bold;">适用场景</th></tr></thead><tbody><tr><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">Signature 声明式 I/O</td><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">用 Pydantic 元类实现字符串/类双模式的类型声明</td><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">任何需要声明式 API 的 Python 框架</td></tr><tr><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">Module/Predict 双重角色</td><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">Predict 同时是 Module 和 Parameter，优化器自动发现并修改</td><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">需要「可学习组件」的框架设计</td></tr><tr><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">BootstrapFewShot 自举</td><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">用 teacher trace 作为 student 的 few-shot demos</td><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">LLM 程序的自动改进</td></tr><tr><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">Settings ContextVar 线程安全</td><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">contextvars.ContextVar 实现线程局部配置覆盖</td><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">多线程 Python 应用的配置管理</td></tr><tr><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">Adapter 降级链</td><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">ChatAdapter → JSONAdapter → XMLAdapter 自动降级</td><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">LLM 输出解析的鲁棒性</td></tr><tr><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">compile 返回副本</td><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">优化器返回优化后的 Module 副本，不修改原始程序</td><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">不可变设计模式</td></tr></tbody></table>
+<h3>关键设计决策</h3>
+<ol>
+<li><strong>Signature 基于 Pydantic 元类</strong>：SignatureMeta.__call__ 拦截实例化，创建新<strong>类</strong>而非对象——每个 Signature 是一个类型而非实例。牺牲了直觉性，换来类型系统的完整性</li>
+<li><strong>LiteLLM 统一多模型</strong>：LM 类完全委托给 LiteLLM，天然支持 100+ 模型提供商。牺牲了对底层控制，换来最大化的模型覆盖</li>
+<li><strong>Settings 单例的首次写入者锁定</strong>：只有首次 dspy.configure() 的线程能再次调用它，其他线程必须用 dspy.context()。防止并发配置冲突，但限制了多程序并行</li>
+</ol>
+<h2>竞品格局与定位</h2>
+<h3>竞品对比矩阵</h3>
+<table style="width:100%;border-collapse:collapse;font-size:14px;margin:1em 0;"><thead><tr><th style="border:1px solid #ddd;padding:8px 12px;background:#f5f5f5;text-align:left;font-weight:bold;">维度</th><th style="border:1px solid #ddd;padding:8px 12px;background:#f5f5f5;text-align:left;font-weight:bold;">DSPy</th><th style="border:1px solid #ddd;padding:8px 12px;background:#f5f5f5;text-align:left;font-weight:bold;">LangChain</th><th style="border:1px solid #ddd;padding:8px 12px;background:#f5f5f5;text-align:left;font-weight:bold;">LlamaIndex</th><th style="border:1px solid #ddd;padding:8px 12px;background:#f5f5f5;text-align:left;font-weight:bold;">CrewAI</th></tr></thead><tbody><tr><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">核心理念</td><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">编程 + 自动优化</td><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">编排 + 工具集成</td><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">RAG 管线</td><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">多 Agent 协作</td></tr><tr><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">优化器</td><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">12+ 种（独有）</td><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">无</td><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">无</td><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">无</td></tr><tr><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">模型抽象</td><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">Signature 声明式</td><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">PromptTemplate 模板式</td><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">Query 管道式</td><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">角色定义式</td></tr><tr><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">代码量</td><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">~26K 行（精简）</td><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">~200K+ 行</td><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">~100K+ 行</td><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">~30K 行</td></tr><tr><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">学术根基</td><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">ICLR 2024 论文</td><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">社区驱动</td><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">社区驱动</td><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">社区驱动</td></tr><tr><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">企业采用</td><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">JetBlue/Databricks/Walmart</td><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">广泛</td><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">广泛</td><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">增长中</td></tr></tbody></table>
+<h3>差异化护城河</h3>
+<ol>
+<li><strong>自动优化器是竞品完全没有的能力</strong>——当竞品还在让用户手工调试 prompt 时，DSPy 提供 compile() 一键优化</li>
+<li><strong>学术论文实证支持</strong>：ICLR 2024 主会 + 7 篇后续论文，优化效果有可复现的基准</li>
+<li><strong>类 PyTorch 的 API 设计</strong>在深度学习社区有天然的亲和力</li>
+</ol>
+<h3>竞争风险</h3>
+<ul>
+<li>LangChain 的生态规模远超 DSPy（连接器、工具、社区），如果 LangChain 内置优化器，将直接侵蚀 DSPy 的核心优势</li>
+<li>OpenAI 等模型提供商可能内置提示优化功能，降低框架层优化的价值</li>
+<li>学习曲线较陡（「Signature」/「Teleprompter」等概念对非学术用户不直觉）</li>
+</ul>
+<h3>生态定位</h3>
+<p>LLM 应用框架中的「优化器层」——与 LangChain（编排层）、LlamaIndex（数据层）形成互补而非替代关系。随着 LLM 应用从「demo 阶段」进入「生产优化阶段」，DSPy 的价值将越来越显著。</p>
+<h2>套利机会分析</h2>
+<ul>
+<li><strong>信息差</strong>: 33K stars 已充分曝光，但其优化器体系（从 BootstrapFewShot 到 GEPA 的完整梯度）在中文工程社区的实际应用案例极少——<strong>大多数团队仍在手工调 prompt</strong></li>
+<li><strong>技术借鉴</strong>: (1) Signature 声明式类型系统的 Pydantic 元类设计 (2) BootstrapFewShot 的 teacher-student 自举模式 (3) Adapter 降级链的鲁棒性设计 (4) compile 返回副本的不可变模式</li>
+<li><strong>生态位</strong>: 「LLM 应用的编译器」——独占且无直接竞品</li>
+<li><strong>趋势判断</strong>: <strong>LLM 应用从 demo 进入生产阶段，prompt 优化需求必然增长</strong>。GEPA/GRPO 等最新优化器方向表明项目在学术前沿持续推进</li>
+</ul>
+<h2>风险与不足</h2>
+<ol>
+<li><strong>核心作者依赖</strong>：okhat 贡献 24.6%（但已有多位活跃协作者，风险可控）</li>
+<li><strong>学习曲线较陡</strong>：Signature、Teleprompter、Adapter 等概念对非学术用户不直觉，入门门槛高于 LangChain</li>
+<li><strong>生态集成不如竞品</strong>：Agent 工具集成、数据连接器不如 LangChain/LlamaIndex 丰富</li>
+<li><strong>社区治理不完善</strong>：社区健康评分 62/100，缺 Code of Conduct 和 CONTRIBUTING.md</li>
+<li><strong>部分模块过长</strong>：mipro_optimizer_v2.py(868 行)、rlm.py(690 行) 可进一步拆分</li>
+<li><strong>Settings 全局状态限制</strong>：单例模式限制了同一进程中运行多个独立 DSPy 程序</li>
+<li><strong>GEPA 外部依赖</strong>：核心优化器逻辑在外部包 gepa[dspy]==0.0.27 中，增加依赖链复杂度</li>
+<li><strong>开发节奏收缩</strong>：从 2024 年月均 320 commits 降至 2025 下半年月均 45 commits</li>
+</ol>
+<h2>行动建议</h2>
+<ul>
+<li><strong>如果你要用它</strong>: pip install dspy 即可。适合需要系统化优化 LLM 程序效果的场景——特别是「手动调 prompt 遇到瓶颈」时。先用 BootstrapFewShot 体验自动优化的威力，再根据需要升级到 MIPROv2/GEPA。相比 LangChain，DSPy 更适合对效果有严格要求的项目；如果只需快速原型和工具集成，LangChain 更合适</li>
+<li><strong>如果你要学它</strong>: 重点关注四个文件：(1) dspy/primitives/signature.py — Signature 的 Pydantic 元类设计；(2) dspy/predict/predict.py — Module+Parameter 双重角色的核心实现；(3) dspy/teleprompt/bootstrap.py — BootstrapFewShot 自举优化器；(4) dspy/teleprompt/gepa/gepa.py — 最新的进化优化器。官方文档 dspy.ai 和 ICLR 论文是最权威的学习资源</li>
+<li><strong>如果你要 fork 它</strong>: 改进方向：(1) 添加 CONTRIBUTING.md 和 Code of Conduct 提升社区治理 (2) 拆分巨型优化器文件 (3) 统一错误处理风格（assert vs raise）(4) 将 GEPA 核心逻辑内化（减少外部依赖）</li>
+</ul>
+<h3>知识入口</h3>
+<table style="width:100%;border-collapse:collapse;font-size:14px;margin:1em 0;"><thead><tr><th style="border:1px solid #ddd;padding:8px 12px;background:#f5f5f5;text-align:left;font-weight:bold;">资源</th><th style="border:1px solid #ddd;padding:8px 12px;background:#f5f5f5;text-align:left;font-weight:bold;">链接</th></tr></thead><tbody><tr><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">DeepWiki</td><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;"><a href="https://deepwiki.com/stanfordnlp/dspy">已收录</a></td></tr><tr><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">Zread.ai</td><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">已收录</td></tr><tr><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">官方文档</td><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;"><a href="https://dspy.ai">dspy.ai</a></td></tr><tr><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">核心论文</td><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;"><a href="https://arxiv.org/abs/2310.03714">DSPy: Compiling Declarative Language Model Calls</a>（ICLR 2024）</td></tr><tr><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">GEPA 论文</td><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;"><a href="https://arxiv.org/abs/2507.19457">arXiv:2507.19457</a></td></tr><tr><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">在线 Demo</td><td style="border:1px solid #ddd;padding:8px 12px;text-align:left;">无（pip install 使用）</td></tr></tbody></table>
+</body>
+</html>

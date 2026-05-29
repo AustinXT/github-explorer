@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+/* ====== 微信公众号排版 CSS ====== */
+
+body {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #3e3e3e;
+    background: #fff;
+}
+
+/* 正文段落 */
+p {
+    font-size: 15px !important;
+    line-height: 2 !important;
+    margin: 0 !important;
+    padding-top: 0.5em !important;
+    padding-bottom: 0.5em !important;
+    padding-right: 1.2em !important;
+    padding-left: 1.2em !important;
+    text-align: justify !important;
+}
+p + p {
+    margin-top: 0 !important;
+}
+
+/* 标题 */
+h1 {
+    font-size: 20px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 16px 0 !important;
+    padding: 0 !important;
+}
+h2 {
+    font-size: 18px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 24px 0 !important;
+    padding: 0 !important;
+}
+h3 {
+    font-size: 15px !important;
+    font-weight: bold !important;
+    color: #3e3e3e !important;
+    text-align: left !important;
+    margin: 16px 0 16px 0 !important;
+    padding: 0 0 0 1.2em !important;
+}
+h4 {
+    font-size: 15px !important;
+    color: rgb(0, 122, 170) !important;
+    margin: 12px 0 8px 0 !important;
+    padding: 0 !important;
+}
+
+/* 列表 */
+ul,
+ol {
+    padding-left: 2em !important;
+    margin: 1em 0 !important;
+    font-size: 15px !important;
+}
+li {
+    margin: 0.5em 0 !important;
+    line-height: 1.8em !important;
+    font-size: 15px !important;
+    color: #3e3e3e !important;
+}
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+    margin: 0 !important;
+    padding-left: 1.2em !important;
+}
+
+/* 引用 */
+blockquote {
+    border-left: 4px solid #888 !important;
+    padding: 8px 16px !important;
+    margin: 1em 0 !important;
+    color: #666 !important;
+    background: #f9f9f9 !important;
+}
+blockquote > p {
+    margin: 0.5em 0 !important;
+    padding: 0 !important;
+}
+blockquote::before,
+blockquote::after {
+    content: none !important;
+}
+
+/* 代码块 */
+pre {
+    font-size: 14px !important;
+    line-height: 1.4em !important;
+    color: #3e3e3e !important;
+    background: #f8f8f8 !important;
+    padding: 12px 16px !important;
+    border-radius: 4px !important;
+    overflow: auto !important;
+    margin: 1em 0 !important;
+}
+
+/* 脚注 */
+.footnotes {
+    font-size: 11px !important;
+    color: #666 !important;
+    line-height: 1.2 !important;
+    margin: 8px 0 0 0 !important;
+    padding: 4px 0 0 0 !important;
+    border-top: 1px solid #eee !important;
+}
+.footnotes p {
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #666 !important;
+}
+
+/* 上标 */
+sup {
+    font-size: 0.75em !important;
+    vertical-align: super !important;
+    color: #e51f42 !important;
+    margin: 0 2px !important;
+}
+
+table { width: 100% !important; border-collapse: collapse !important; margin: 1em 0 !important; font-size: 14px !important; }
+th, td { border: 1px solid #ddd !important; padding: 8px 12px !important; text-align: left !important; line-height: 1.6 !important; }
+th { background: #f5f5f5 !important; font-weight: bold !important; color: #3e3e3e !important; }
+td { color: #3e3e3e !important; }
+img { max-width: 100% !important; display: block !important; margin: 1em auto !important; }
+a { color: rgb(0, 122, 170) !important; text-decoration: none !important; }
+
+</style>
+</head>
+<body>
+
+<blockquote><p>GitHub: <a href="https://github.com/anthropics/skills">https://github.com/anthropics/skills</a></p></blockquote>
+<h2>一句话总结</h2>
+<p>Anthropic 官方的 Agent Skills 参考实现和规范仓库——定义了「文件夹即能力」的技能格式标准，通过渐进式上下文加载解决了 AI Agent 的上下文窗口管理难题，已被 Claude Code 和 OpenAI Codex 共同采纳为跨平台标准。</p>
+<h2>值得关注的理由</h2>
+<ol>
+<li><strong>标准制定者地位</strong>：agentskills.io 跨平台标准的参考实现，99.7K Stars 证明了行业认可度，已被 Claude Code 和 Codex 共同采纳</li>
+<li><strong>渐进式加载架构创新</strong>：三级信息架构（元数据→SKILL.md→资源文件）是管理 AI Agent 上下文窗口这一稀缺资源的优雅方案</li>
+<li><strong>skill-creator 自举设计</strong>：「用 Skill 来创建 Skill」的元技能，包含完整的六步工程化流程和工具脚本，是理解 Agent 能力扩展范式的最佳入口</li>
+</ol>
+<h2>项目画像</h2>
+<table>
+<thead><tr><th>维度</th><th>数据</th></tr></thead>
+<tbody>
+<tr><td>GitHub</td><td><a href="https://github.com/anthropics/skills">https://github.com/anthropics/skills</a></td></tr>
+<tr><td>Star / Fork</td><td>99,766 / 10,861</td></tr>
+<tr><td>代码行数</td><td>配置/文档驱动（712 文件，YAML + Markdown + Python 脚本）</td></tr>
+<tr><td>项目年龄</td><td>6 个月（2025-09 创建，2025-10 公开发布）</td></tr>
+<tr><td>开发阶段</td><td>早期快速扩展期（月均新增 ~7 个 Skill）</td></tr>
+<tr><td>贡献模式</td><td>官方主导 + 社区 PR 驱动（511 个 PR）</td></tr>
+<tr><td>热度定位</td><td>超级热门（99.7K Stars，5 个月达成）</td></tr>
+<tr><td>质量评级</td><td>代码[一般] 文档[优秀] 测试[不足]</td></tr>
+</tbody></table>
+<h2>作者视角：为什么存在这个项目</h2>
+<h3>创始人/作者背景</h3>
+<p>Anthropic（38.5K GitHub followers，77 个公开仓库），AI 安全领域的领军公司。skills 仓库核心维护者 Keith Lazuka（@klazuka，13 commits）和 Mahesh Murag 均为 Anthropic 工程师。仓库以 99.7K Stars 成为 Anthropic 星标最高的项目，超过 claude-code（81K）。</p>
+<h3>问题判断</h3>
+<p>AI 编码 Agent（Claude Code、Codex 等）虽然能力强大，但面临两个核心问题：(1) 上下文窗口有限——不可能把所有领域知识塞入 system prompt；(2) 能力扩展缺乏标准——每个平台自己定义插件格式，开发者重复造轮子。Anthropic 看到了定义行业标准的机会窗口。</p>
+<h3>解法哲学</h3>
+<ul>
+<li><strong>「文件夹即能力」（Folder as Skill）</strong>：一个技能 = 一个文件夹（SKILL.md + 可选脚本/资源），零代码基础设施，任何开发者都能创建</li>
+<li><strong>渐进式加载</strong>：元数据层始终在上下文 → 触发后加载 SKILL.md 指令 → 按需加载资源文件，精细管理上下文窗口</li>
+<li><strong>双执行模式</strong>：纯指令模式（告诉 Agent 做什么）+ 脚本模式（Python/Shell 处理确定性操作）</li>
+<li><strong>开放标准</strong>：agentskills.io 标准不绑定 Anthropic 产品，OpenAI Codex 也已采纳</li>
+</ul>
+<h3>战略意图</h3>
+<p>Skills 是 Anthropic 在 AI Agent 生态中的标准卡位之举。通过定义跨平台技能格式：(1) 构建 Claude Code 的可扩展性护城河（96,000+ skills 生态）；(2) 通过标准化获得行业话语权；(3) 培育开发者社区为 Claude 生态贡献能力。</p>
+<h2>核心价值提炼</h2>
+<h3>创新之处</h3>
+<ol>
+<li><strong>渐进式上下文加载（Progressive Disclosure）</strong> — 新颖度 5/5 | 实用性 5/5 | 可迁移性 5/5<br/>三层信息架构：YAML 元数据（触发器/描述，始终在上下文）→ SKILL.md 核心指令（触发后加载）→ scripts/references/assets（按需加载）。这是对 AI Agent 最稀缺资源——上下文窗口——的系统性管理方案。</li>
+</ol>
+<ol>
+<li><strong>skill-creator 自举设计</strong> — 新颖度 5/5 | 实用性 4/5 | 可迁移性 4/5<br/>一个 18.6KB 的「元技能」——用 Skill 来创建 Skill。内含六步工程化流程和三个工具脚本（init、validate、generate_yaml）。这种「自举」设计让 Agent 能力扩展变得自动化。</li>
+</ol>
+<ol>
+<li><strong>YAML 触发器机制</strong> — 新颖度 4/5 | 实用性 5/5 | 可迁移性 5/5<br/>通过 YAML frontmatter 中的 triggers 字段（关键词/正则/上下文条件）决定何时激活技能，实现了「按需加载、精准触发」的能力路由。</li>
+</ol>
+<ol>
+<li><strong>Skills + MCP 互补架构</strong> — 新颖度 4/5 | 实用性 4/5 | 可迁移性 4/5<br/>11 个 Skills 声明了 MCP 依赖（Figma/Linear/Notion 等）。Skills 提供工作流逻辑，MCP 提供数据通道——两者互补而非竞争。</li>
+</ol>
+<h3>可复用的模式与技巧</h3>
+<ol>
+<li><strong>文件夹即能力模式</strong>：SKILL.md + scripts/ + references/ + assets/ 的标准结构——可迁移到任何需要可扩展能力的 Agent 系统</li>
+<li><strong>渐进式加载的三层架构</strong>：元数据层（轻量、始终可用）→ 指令层（触发后加载）→ 资源层（按需加载）——适用于任何上下文受限的 LLM 应用</li>
+<li><strong>纯指令 vs 重资源两种 Skill 策略</strong>：PDF/DOCX 等用纯指令（告诉 Agent 用什么工具），PPTX 等用重资源（携带 helper 库 + 脚本）——根据任务确定性选择策略</li>
+<li><strong>YAML 触发器路由</strong>：声明式的能力匹配和激活机制——可迁移到任何多能力 Agent 系统的路由设计</li>
+</ol>
+<h3>关键设计决策</h3>
+<ol>
+<li><strong>标准化 vs 灵活性</strong>：选择了严格的文件夹结构（SKILL.md 必需），降低了入门门槛但限制了复杂技能的表达力</li>
+<li><strong>指令优先 vs 代码优先</strong>：核心是 Markdown 指令（告诉 Agent 做什么），而非程序化逻辑。trade-off：易创建但难以保证执行一致性</li>
+<li><strong>双许可策略</strong>：document-skills 为 source-available（限制性），example-skills 为 Apache 2.0（开放）——保护核心商业能力同时促进社区贡献</li>
+</ol>
+<h2>竞品格局与定位</h2>
+<h3>竞品对比矩阵</h3>
+<table>
+<thead><tr><th>维度</th><th>anthropics/skills</th><th>obra/superpowers</th><th>Copilot Skills</th><th>Vercel Agent Skills</th><th>MCP Servers</th></tr></thead>
+<tbody>
+<tr><td>Stars</td><td>99.7K</td><td>104K</td><td>N/A</td><td>23.5K</td><td>50K+</td></tr>
+<tr><td>定位</td><td>跨平台标准规范</td><td>方法论+技能库</td><td>VS Code 插件系统</td><td>框架特化</td><td>工具协议</td></tr>
+<tr><td>格式</td><td>文件夹 + SKILL.md</td><td>文件夹 + 方法论</td><td>VS Code Extension</td><td>框架集成</td><td>JSON-RPC 协议</td></tr>
+<tr><td>创建门槛</td><td>低（Markdown）</td><td>低</td><td>中（TypeScript）</td><td>中</td><td>高（需实现服务器）</td></tr>
+<tr><td>跨平台</td><td>是（Claude+Codex）</td><td>是</td><td>否（VS Code only）</td><td>否</td><td>是</td></tr>
+<tr><td>上下文管理</td><td>渐进式加载</td><td>无特殊机制</td><td>IDE 管理</td><td>无</td><td>无</td></tr>
+</tbody></table>
+<h3>差异化护城河</h3>
+<ol>
+<li><strong>标准制定者</strong>：agentskills.io 的定义者和参考实现，Claude Code + Codex 双平台采纳</li>
+<li><strong>渐进式加载</strong>：唯一系统性解决上下文窗口管理的 Skill 方案</li>
+<li><strong>生态规模</strong>：96,000+ skills（SkillsMP 市场），10.8K forks，511 PRs 的社区活力</li>
+<li><strong>Anthropic 品牌</strong>：作为 AI 安全领域领军公司，标准天然获得行业信任</li>
+</ol>
+<h3>竞争风险</h3>
+<ol>
+<li><strong>obra/superpowers 的方法论优势</strong>：104K Stars，不只是技能格式还包含完整的 Agent 开发方法论</li>
+<li><strong>MCP 协议的能力替代</strong>：随着 MCP 服务器生态成熟，部分 Skills 的能力可能被 MCP 工具替代</li>
+<li><strong>平台锁定风险</strong>：虽然标准跨平台，但 document-skills 的 source-available 许可可能限制竞品采用</li>
+</ol>
+<h3>生态定位</h3>
+<p>anthropics/skills 在 AI Agent 生态中扮演「能力标准层」角色。位于 Agent 运行时（Claude Code/Codex）和具体任务之间，定义了 Agent 如何发现、加载和执行扩展能力。类比 npm 之于 Node.js——不是运行时本身，而是能力分发的标准。</p>
+<h2>套利机会分析</h2>
+<ul>
+<li><strong>信息差</strong>: 低——99.7K Stars 已是超级热门。但渐进式加载的架构设计细节和 skill-creator 的自举模式尚未被充分解读</li>
+<li><strong>技术借鉴</strong>: 渐进式三层加载架构可直接迁移到任何 LLM 应用；YAML 触发器路由适用于多能力 Agent 系统；「文件夹即能力」模式是零基础设施的能力扩展范式</li>
+<li><strong>生态位</strong>: 定义了 AI Agent 的能力扩展标准，是理解「Agent 如何获得新能力」这个核心问题的必读仓库</li>
+<li><strong>趋势判断</strong>: Agent Skills 生态正在爆发式增长（96K+ skills），标准化趋势确定。关注 Skills 与 MCP 的融合演进方向（Issue #16）</li>
+</ul>
+<h2>风险与不足</h2>
+<ol>
+<li><strong>测试覆盖极低</strong>：29 个 Python 脚本几乎无单元测试，evaluation 框架触发率 0%（Issue #556）</li>
+<li><strong>Skills 消失 Bug</strong>：Issue #62 报告用户技能丢失，核心稳定性问题</li>
+<li><strong>信任边界问题</strong>：Issue #492 指出社区 skill 借 anthropic/ 命名空间获取不当信任</li>
+<li><strong>指令执行不确定性</strong>：纯指令模式的 Skill 依赖 Agent 正确理解和执行 Markdown 指令，无法保证一致性</li>
+<li><strong>无版本管理</strong>：无 Tag/Release，Skill 格式变更可能 break 现有用户</li>
+<li><strong>双许可混乱</strong>：document-skills（source-available）和 example-skills（Apache 2.0）的混合许可可能造成使用困惑</li>
+</ol>
+<h2>行动建议</h2>
+<ul>
+<li><strong>如果你要用它</strong>: 直接在 Claude Code 中使用 claude plugin install 安装官方 skills。document-skills（PDF/DOCX/XLSX/PPTX）是最实用的生产级技能。创建自定义 skill 使用 skill-creator 元技能</li>
+<li><strong>如果你要学它</strong>: 重点关注 skills/.system/skill-creator/（元技能设计，理解完整的 skill 工程化流程）、skills/.curated/pdf/SKILL.md（纯指令模式的典范）、skills/.curated/slides/（重资源模式，含 76KB JS helper + 5 个 Python 脚本）。阅读 <a href="https://claude.com/blog/equipping-agents-for-the-real-world-with-agent-skills">官方工程博客</a></li>
+<li><strong>如果你要 fork 它</strong>: 可改进方向——(1) 添加统一测试框架验证 skill 输出质量；(2) 实现 skill 版本管理机制；(3) 构建 skill 信任评级系统解决命名空间滥用；(4) 完善 evaluation 框架修复 0% 触发率问题</li>
+</ul>
+<h3>知识入口</h3>
+<table>
+<thead><tr><th>资源</th><th>链接</th></tr></thead>
+<tbody>
+<tr><td>DeepWiki</td><td><a href="https://deepwiki.com/anthropics/skills">已收录</a></td></tr>
+<tr><td>Zread.ai</td><td><a href="https://zread.ai/anthropics/skills">已收录</a></td></tr>
+<tr><td>关联论文</td><td>无</td></tr>
+<tr><td>在线 Demo</td><td>无（CLI 工具集成）</td></tr>
+<tr><td>Agent Skills 标准</td><td><a href="http://agentskills.io">agentskills.io</a></td></tr>
+<tr><td>官方博客</td><td><a href="https://claude.com/blog/skills">Introducing Agent Skills</a></td></tr>
+<tr><td>工程博客</td><td><a href="https://claude.com/blog/equipping-agents-for-the-real-world-with-agent-skills">Equipping agents for the real world</a></td></tr>
+<tr><td>官方文档</td><td><a href="https://code.claude.com/docs/en/skills">Claude Code Skills Docs</a></td></tr>
+</tbody></table>
+</body>
+</html>

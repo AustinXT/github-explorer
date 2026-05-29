@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+/* ====== 微信公众号排版 CSS ====== */
+
+body {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #3e3e3e;
+    background: #fff;
+}
+
+/* 正文段落 */
+p {
+    font-size: 15px !important;
+    line-height: 2 !important;
+    margin: 0 !important;
+    padding-top: 0.5em !important;
+    padding-bottom: 0.5em !important;
+    padding-right: 1.2em !important;
+    padding-left: 1.2em !important;
+    text-align: justify !important;
+}
+p + p {
+    margin-top: 0 !important;
+}
+
+/* 标题 */
+h1 {
+    font-size: 20px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 16px 0 !important;
+    padding: 0 !important;
+}
+h2 {
+    font-size: 18px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 24px 0 !important;
+    padding: 0 !important;
+}
+h3 {
+    font-size: 15px !important;
+    font-weight: bold !important;
+    color: #3e3e3e !important;
+    text-align: left !important;
+    margin: 16px 0 16px 0 !important;
+    padding: 0 0 0 1.2em !important;
+}
+h4 {
+    font-size: 15px !important;
+    color: rgb(0, 122, 170) !important;
+    margin: 12px 0 8px 0 !important;
+    padding: 0 !important;
+}
+
+/* 列表 */
+ul,
+ol {
+    padding-left: 2em !important;
+    margin: 1em 0 !important;
+    font-size: 15px !important;
+}
+li {
+    margin: 0.5em 0 !important;
+    line-height: 1.8em !important;
+    font-size: 15px !important;
+    color: #3e3e3e !important;
+}
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+    margin: 0 !important;
+    padding-left: 1.2em !important;
+}
+
+/* 引用 */
+blockquote {
+    border-left: 4px solid #888 !important;
+    padding: 8px 16px !important;
+    margin: 1em 0 !important;
+    color: #666 !important;
+    background: #f9f9f9 !important;
+}
+blockquote > p {
+    margin: 0.5em 0 !important;
+    padding: 0 !important;
+}
+blockquote::before,
+blockquote::after {
+    content: none !important;
+}
+
+/* 代码块 */
+pre {
+    font-size: 14px !important;
+    line-height: 1.4em !important;
+    color: #3e3e3e !important;
+    background: #f8f8f8 !important;
+    padding: 12px 16px !important;
+    border-radius: 4px !important;
+    overflow: auto !important;
+    margin: 1em 0 !important;
+}
+
+/* 脚注 */
+.footnotes {
+    font-size: 11px !important;
+    color: #666 !important;
+    line-height: 1.2 !important;
+    margin: 8px 0 0 0 !important;
+    padding: 4px 0 0 0 !important;
+    border-top: 1px solid #eee !important;
+}
+.footnotes p {
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #666 !important;
+}
+
+/* 上标 */
+sup {
+    font-size: 0.75em !important;
+    vertical-align: super !important;
+    color: #e51f42 !important;
+    margin: 0 2px !important;
+}
+
+table { width: 100% !important; border-collapse: collapse !important; margin: 1em 0 !important; font-size: 14px !important; }
+th, td { border: 1px solid #ddd !important; padding: 8px 12px !important; text-align: left !important; line-height: 1.6 !important; }
+th { background: #f5f5f5 !important; font-weight: bold !important; color: #3e3e3e !important; }
+td { color: #3e3e3e !important; }
+img { max-width: 100% !important; display: block !important; margin: 1em auto !important; }
+a { color: rgb(0, 122, 170) !important; text-decoration: none !important; }
+
+</style>
+</head>
+<body>
+
+<blockquote><p>GitHub: <a href="https://github.com/anthropics/claude-cookbooks">https://github.com/anthropics/claude-cookbooks</a></p></blockquote>
+<h2>一句话总结</h2>
+<p>Anthropic 官方 Claude API 教程仓库——67 个 Jupyter Notebook 覆盖 12 个分类，通过 registry.yaml 注册制管理 + AI-in-the-Loop CI（Claude 自动审查 PR）实现了教程仓库的工程化管理范式，已升级为 platform.claude.com/cookbook 官方平台级产品，31 个月 35.5K star。</p>
+<h2>值得关注的理由</h2>
+<ol>
+<li><strong>AI-in-the-Loop CI 是最大创新</strong>：9 个 GitHub Actions 中有 3 个使用 anthropics/claude-code-action@v1 让 Claude 自动审查 PR、检查模型版本、验证链接——这是「AI 参与持续集成」的先驱实践，可迁移到任何内容驱动的仓库</li>
+<li><strong>Registry-as-Code 内容治理模式</strong>：registry.yaml 定义每个 cookbook 的元数据（标题、描述、作者、分类），JSON Schema 约束 12 个枚举分类，前端渲染站直接消费——这套「注册制元数据管理」模式是管理大规模教程/文档仓库的参考标准</li>
+<li><strong>Agent SDK 系列是独家核心资产</strong>：claude_agent_sdk/ 5 篇教程包含完整的 MCP 工具服务器实现和 OpenAI Agents SDK 迁移指南，是学习 Claude Agent 开发的唯一官方实战资源</li>
+</ol>
+<h2>项目画像</h2>
+<table>
+<thead><tr><th>维度</th><th>数据</th></tr></thead>
+<tbody>
+<tr><td>GitHub</td><td><a href="https://github.com/anthropics/claude-cookbooks">https://github.com/anthropics/claude-cookbooks</a></td></tr>
+<tr><td>Star / Fork</td><td>35,577 / 3,800</td></tr>
+<tr><td>代码行数</td><td>178,327 (JSON/ipynb 79%, Python 9%, Notebook 5.5%)</td></tr>
+<tr><td>项目年龄</td><td>31 个月（2023-08-15 创建）</td></tr>
+<tr><td>开发阶段</td><td>持续扩展（2025Q3 起进入第二波加速期）</td></tr>
+<tr><td>贡献模式</td><td>Anthropic 内部团队主导（6+ 员工），65 位社区贡献者</td></tr>
+<tr><td>热度定位</td><td>大众热门（AI Cookbook 中排名第二，仅次于 openai-cookbook）</td></tr>
+<tr><td>质量评级</td><td>内容[A] 工程化[A] 测试[B+]</td></tr>
+</tbody></table>
+<h2>作者视角：为什么存在这个项目</h2>
+<h3>创始人/作者背景</h3>
+<p>Anthropic 官方 DevRel 和产品团队维护。核心贡献者包括 Alex Notov (116 commits)、Alex Albert (DevRel+Prompting, 61 commits)、Pedram Navid (当前最活跃维护者, 54 commits)、Sam Flamini (37)、Mahesh Murag (产品团队, 24)。美西海岸企业节奏（86.5% 工作日，72.4% 工作时间提交）。</p>
+<h3>问题判断</h3>
+<p>每个 AI 模型厂商都需要 Cookbook 来降低 API 使用门槛。Anthropic 在 OpenAI 之后 1.5 年推出 Cookbook（2023-08 vs 2022-03），但通过更好的工程化管理（注册制、AI CI、风格指南）实现了更快的增长——35.5K star 已达 openai-cookbook 的 49%。</p>
+<h3>解法哲学</h3>
+<p>「教程即产品」——不只是放代码示例，而是：(1) registry.yaml 注册制确保每个 cookbook 有完整元数据；(2) style_guide 标准化教学方法论；(3) cookbook-audit skill 自动化质量评估（20 分量表）；(4) platform.claude.com/cookbook 官方渲染站让 Notebook 成为可搜索/可过滤的产品体验。</p>
+<h3>战略意图</h3>
+<ul>
+<li><strong>开发者获取漏斗</strong>：Cookbook → API 试用 → 付费使用 Claude</li>
+<li><strong>Agent 生态推广</strong>：claude_agent_sdk/ 系列教程直接推动 Agent SDK 采用</li>
+<li><strong>竞品用户转化</strong>：04_migrating_from_openai_agents_sdk 直接瞄准 OpenAI 用户</li>
+<li><strong>平台整合</strong>：docs.anthropic.com 的 cookbook 页面已重定向到 platform.claude.com</li>
+</ul>
+<h2>核心价值提炼</h2>
+<h3>创新之处</h3>
+<ol>
+<li><strong>AI-in-the-Loop CI</strong>（新颖度 5/5 × 实用性 5/5）<br/>3 个 GitHub Actions 使用 claude-code-action@v1 让 Claude AI 自动审查 PR（检查模型版本、验证链接、代码质量）。这是「AI 参与持续集成」的先驱实践</li>
+</ol>
+<ol>
+<li><strong>Registry-as-Code 内容治理</strong>（新颖度 4/5 × 实用性 5/5）<br/>registry.yaml 定义元数据 + JSON Schema 约束分类 + 前端渲染站消费。教程仓库的「产品化管理」范式</li>
+</ol>
+<ol>
+<li><strong>分层验证金字塔</strong>（新颖度 3/5 × 实用性 5/5）<br/>pre-commit → Ruff lint → pytest → detect-secrets → AI review → full notebook execution。内外贡献者分层治理（内部全套测试，外部仅结构验证）</li>
+</ol>
+<ol>
+<li><strong>教学标准化框架</strong>（新颖度 3/5 × 实用性 4/5）<br/>TLO/ELO 学习目标 + style_guide + cookbook-audit skill + 20 分评分量表，制度化保证教程质量</li>
+</ol>
+<h3>可复用的模式与技巧</h3>
+<ol>
+<li><strong>Registry-as-Code</strong>：YAML 注册文件 + JSON Schema 约束 + 前端消费。适用于任何大规模内容/教程仓库管理</li>
+<li><strong>AI-in-the-Loop CI</strong>：Claude/LLM 自动审查 PR。适用于文档、教程、博客等内容驱动仓库</li>
+<li><strong>分层验证金字塔</strong>：从快速静态检查到慢速全量执行的渐进式验证。适用于 Notebook/教程的 CI</li>
+<li><strong>内外贡献者分层治理</strong>：内部贡献者触发完整测试，外部贡献者仅结构验证。适用于有安全需求的开源项目</li>
+<li><strong>Slash Commands 统一开发/CI</strong>：同一组命令服务于本地开发和 CI，消除环境差异</li>
+</ol>
+<h3>关键设计决策</h3>
+<table>
+<thead><tr><th>决策</th><th>牺牲了什么</th><th>换来了什么</th></tr></thead>
+<tbody>
+<tr><td>registry.yaml 注册制</td><td>每个新 cookbook 需额外注册步骤</td><td>元数据完整性、前端可消费、可搜索过滤</td></tr>
+<tr><td>AI 自动审查 PR</td><td>API 成本、审查延迟</td><td>规模化内容质量把控，减轻人工审查负担</td></tr>
+<tr><td>教学标准化（style guide + audit）</td><td>创作自由度受限</td><td>教程质量一致性、可预期的学习体验</td></tr>
+<tr><td>Jupyter Notebook 为主要载体</td><td>不适合纯代码项目</td><td>代码+文档+输出一体化，可在 platform 直接渲染</td></tr>
+</tbody></table>
+<h2>竞品格局与定位</h2>
+<h3>竞品对比矩阵</h3>
+<table>
+<thead><tr><th>维度</th><th>claude-cookbooks</th><th>openai-cookbook</th><th>llama-cookbook</th><th>mistral-cookbook</th></tr></thead>
+<tbody>
+<tr><td>Star</td><td>35,577</td><td>72,283</td><td>18,262</td><td>2,201</td></tr>
+<tr><td>创建时间</td><td>2023-08</td><td>2022-03</td><td>2024</td><td>2024</td></tr>
+<tr><td>Notebook 数量</td><td>67</td><td>~130</td><td>~50</td><td>~30</td></tr>
+<tr><td>注册制管理</td><td>registry.yaml</td><td>无</td><td>无</td><td>无</td></tr>
+<tr><td>AI CI</td><td>Claude 审查 PR</td><td>无</td><td>无</td><td>无</td></tr>
+<tr><td>教学标准化</td><td>style guide + audit</td><td>部分</td><td>无</td><td>无</td></tr>
+<tr><td>官方渲染站</td><td>platform.claude.com</td><td>无独立站</td><td>无</td><td>无</td></tr>
+<tr><td>Agent 教程深度</td><td>完整 MCP 实现</td><td>基础示例</td><td>无</td><td>无</td></tr>
+</tbody></table>
+<h3>差异化护城河</h3>
+<ol>
+<li><strong>内容治理工程化领先</strong>：注册制 + AI CI + 教学标准化，在所有 AI Cookbook 中独一无二</li>
+<li><strong>平台化整合</strong>：唯一将 Cookbook 升级为官方平台产品（platform.claude.com/cookbook）的厂商</li>
+<li><strong>Agent 教程深度</strong>：claude_agent_sdk/ 系列包含完整项目实现，超越竞品的「API 调用示例」层次</li>
+</ol>
+<h3>竞争风险</h3>
+<ul>
+<li>openai-cookbook 体量仍是 2 倍，品牌认知度更高</li>
+<li>69 个 Open PR 积压暗示合并速度可能跟不上社区贡献热情</li>
+<li>内容维护成本高（API 变更需同步更新所有相关 Notebook）</li>
+</ul>
+<h3>生态定位</h3>
+<p>Anthropic 开发者生态的<strong>核心教育资源</strong>和<strong>开发者获取漏斗入口</strong>。在 AI Cookbook 品类中增速最快，正在从「GitHub 示例集」升级为「官方平台级产品」。</p>
+<h2>套利机会分析</h2>
+<ul>
+<li><strong>信息差</strong>: Registry-as-Code 和 AI-in-the-Loop CI 的管理模式尚未被其他教程仓库采用——将这些模式应用到自己的文档/教程仓库是直接可操作的信息差</li>
+<li><strong>技术借鉴</strong>: (1) claude-code-action@v1 实现 AI PR 审查；(2) registry.yaml + JSON Schema 的内容注册制；(3) 分层验证金字塔；(4) cookbook-audit 自动化评分</li>
+<li><strong>生态位</strong>: 学习 Claude API 的首选实战资源，特别是 Agent SDK 系列</li>
+<li><strong>趋势判断</strong>: 随 Claude 模型和 Agent SDK 的持续发展，Cookbook 内容将持续扩展。Agent 相关教程是最新增长点</li>
+</ul>
+<h2>风险与不足</h2>
+<ol>
+<li><strong>69 个 Open PR 积压</strong>：社区贡献热情高但合并速度不足，可能导致贡献者流失</li>
+<li><strong>社区健康度仅 62%</strong>：缺少 Code of Conduct 和 Issue 模板</li>
+<li><strong>misc/ 目录膨胀</strong>（14 篇）：分类桶溢出的信号，需要细化分类体系</li>
+<li><strong>内容维护成本高</strong>：API 变更时需同步更新所有 Notebook，fix+chore 占 30.8% 的 commits</li>
+<li><strong>Notebook 格式限制</strong>：.ipynb 本质是 JSON，diff 不友好，协作困难</li>
+</ol>
+<h2>行动建议</h2>
+<ul>
+<li><strong>如果你要用它</strong>: 直接访问 <a href="https://platform.claude.com/cookbook/">platform.claude.com/cookbook</a> 浏览和搜索。最有价值的教程：claude_agent_sdk/ 系列（Agent 开发）、tool_use/memory_cookbook（记忆系统）、skills/text_to_sql（Text-to-SQL）</li>
+<li><strong>如果你要学它</strong>: 重点关注管理模式而非内容：</li>
+</ul>
+<p>  - registry.yaml — 注册制内容管理的实现</p>
+<p>  - .github/workflows/ — AI-in-the-Loop CI 的 9 个工作流</p>
+<p>  - style_guide/ — 教学标准化框架</p>
+<p>  - .claude/skills/cookbook-audit/ — 自动化质量评估</p>
+<p>  - claude_agent_sdk/03_The_site_reliability_agent — 最完整的 Agent 教程（含 MCP 实现）</p>
+<ul>
+<li><strong>如果你要 fork 它</strong>: 可改进方向：</li>
+</ul>
+<p>  - 加速 PR 合并（69 个积压）</p>
+<p>  - 细化 misc/ 分类</p>
+<p>  - 添加 Code of Conduct 和 Issue 模板</p>
+<p>  - 考虑 Markdown + 代码块 替代 ipynb 以改善 diff 体验</p>
+<h3>知识入口</h3>
+<table>
+<thead><tr><th>资源</th><th>链接</th></tr></thead>
+<tbody>
+<tr><td>DeepWiki</td><td><a href="https://deepwiki.com/anthropics/claude-cookbooks">deepwiki.com/anthropics/claude-cookbooks</a></td></tr>
+<tr><td>Zread.ai</td><td><a href="https://zread.ai/anthropics/claude-cookbooks">zread.ai/anthropics/claude-cookbooks</a></td></tr>
+<tr><td>官方渲染站</td><td><a href="https://platform.claude.com/cookbook/">platform.claude.com/cookbook</a></td></tr>
+<tr><td>中文翻译</td><td><a href="https://github.com/LeastBit/claude-cookbooks_zh-CN">LeastBit/claude-cookbooks_zh-CN</a></td></tr>
+<tr><td>关联论文</td><td>无</td></tr>
+<tr><td>在线 Demo</td><td>无（Notebook 需本地运行或 Colab）</td></tr>
+</tbody></table>
+</body>
+</html>

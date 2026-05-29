@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body { max-width: 680px; margin: 0 auto; padding: 20px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; color: #3e3e3e; background: #fff; }
+p { font-size: 15px !important; line-height: 2 !important; margin: 0 !important; padding-top: 0.5em !important; padding-bottom: 0.5em !important; padding-right: 1.2em !important; padding-left: 1.2em !important; text-align: justify !important; }
+p + p { margin-top: 0 !important; }
+h2 { font-size: 18px !important; color: #e51f42 !important; text-align: center !important; margin: 24px 0 24px 0 !important; padding: 0 !important; }
+h3 { font-size: 15px !important; font-weight: bold !important; color: #3e3e3e !important; text-align: left !important; margin: 16px 0 16px 0 !important; padding: 0 0 0 1.2em !important; }
+ul, ol { padding-left: 2em !important; margin: 1em 0 !important; font-size: 15px !important; }
+li { margin: 0.5em 0 !important; line-height: 1.8em !important; font-size: 15px !important; color: #3e3e3e !important; }
+ul ul, ul ol, ol ul, ol ol { margin: 0 !important; padding-left: 1.2em !important; }
+blockquote { border-left: 4px solid #888 !important; padding: 8px 16px !important; margin: 1em 0 !important; color: #666 !important; background: #f9f9f9 !important; }
+blockquote > p { margin: 0.5em 0 !important; padding: 0 !important; }
+blockquote::before, blockquote::after { content: none !important; }
+table { width: 100% !important; border-collapse: collapse !important; margin: 1em 0 !important; font-size: 14px !important; }
+th, td { border: 1px solid #ddd !important; padding: 8px 12px !important; text-align: left !important; line-height: 1.6 !important; }
+th { background: #f5f5f5 !important; font-weight: bold !important; }
+</style>
+</head>
+<body>
+
+<blockquote><p>GitHub: <a href="https://github.com/tobi/try">https://github.com/tobi/try</a></p></blockquote>
+
+<h2>一句话总结</h2>
+
+<p>Shopify CEO Tobias Lutke 的周末个人工具——一个零依赖 Ruby CLI，用 2,500 行代码解决「实验项目目录混乱」问题，emit-and-eval 架构精巧地绕过子进程改变父 Shell 状态的经典难题，「Built for developers with ADHD by developers with ADHD」的设计哲学真实而动人。</p>
+
+<h2>值得关注的理由</h2>
+
+<ol>
+<li><strong>emit-and-eval 架构值得深入学习</strong>：Ruby 进程将决策结果编码为 Shell 脚本输出到 STDOUT，由父 Shell eval 执行——这个模式优雅地解决了 CLI 工具的经典难题（子进程无法修改父进程状态），适用于任何需要在父 Shell 中执行操作的工具</li>
+<li><strong>Shopify CEO 仍然写代码的故事性</strong>：身价数十亿的 CEO 在业余时间用最熟悉的 Ruby 写了一个 2,500 行的目录管理脚本，78% 的提交亲自完成，还用 AI Agent 工作流将其移植到 C——这是「CEO 即首席产品官」文化的鲜活注脚</li>
+<li><strong>ADHD 友好设计哲学的范本</strong>：零配置、即时可用、模糊搜索、时间感知排序、「毕业」机制——每个设计决策都服务于「降低启动摩擦」，不要求用户改变行为而是把混乱组织起来</li>
+</ol>
+
+<h2>项目展示</h2>
+
+<img src="https://github.com/tobi/try/raw/main/assets/try-fuzzy-search-demo.gif" alt="try 模糊搜索演示"/>
+
+<p>try 的模糊搜索界面——输入片段即时匹配，最近使用的项目浮到顶部</p>
+
+<h2>项目画像</h2>
+
+<table>
+<tr><th>维度</th><th>数据</th></tr>
+<tr><td>GitHub</td><td><a href="https://github.com/tobi/try">https://github.com/tobi/try</a></td></tr>
+<tr><td>Star / Fork</td><td>3,553 / 137</td></tr>
+<tr><td>代码行数</td><td>2,561 行核心 + 4,900 行测试（Shell 67%, Ruby 33%）</td></tr>
+<tr><td>项目年龄</td><td>7.5 个月（2025-08-19 创建）</td></tr>
+<tr><td>开发阶段</td><td>稳定维护期（v1.9.3，158 commits，脉冲式开发）</td></tr>
+<tr><td>贡献模式</td><td>创始人主导（tobi 78%）+ 25 位社区贡献者</td></tr>
+<tr><td>质量评级</td><td>代码[优秀] 文档[优秀] 测试[充分，测试/代码比 1.9:1]</td></tr>
+</table>
+
+<h2>作者视角：为什么存在这个项目</h2>
+
+<h3>创始人/作者背景</h3>
+
+<p><strong>Tobias Lutke</strong>（@tobi），Shopify 联合创始人兼 CEO。Ruby on Rails 核心团队早期成员，创建了 Liquid 模板引擎（已成行业标准）。GitHub 4,610 followers，86 个公开仓库。2025 年发布内部备忘录要求 Shopify 团队「在申请招聘前必须证明 AI 无法胜任该工作」。</p>
+
+<h3>问题判断</h3>
+
+<p>README 精准描述了痛点：开发者在 /tmp/redis-test、~/Desktop/redis-actually、~/projects/testing-redis-again 之间反复创建散落目录，事后无法找回凌晨 2 点写的精妙代码。「Your brain doesn't work in neat folders. You have ideas, you try things, you context-switch like a caffeinated squirrel.」</p>
+
+<p>这不是在卖软件，而是在表达对「混乱中的创造力」的认同。Tobi 公开谈论过自己的 ADHD，try 是他应对注意力分散的个人工具。</p>
+
+<h3>解法哲学</h3>
+
+<p><strong>「不要求用户改变行为」的 ADHD 友好设计</strong>：</p>
+
+<ul>
+<li><strong>零配置</strong>：不需要 config 文件、不需要环境变量</li>
+<li><strong>即时可用</strong>：try redis 要么跳到已有项目，要么直接创建新的</li>
+<li><strong>时间感知</strong>：不需要记住项目名，最近用过的自动浮顶</li>
+<li><strong>模糊搜索</strong>：rds 就能匹配 redis-server</li>
+<li><strong>「毕业」机制</strong>：Ctrl-G 将实验升级为正式项目，留下符号链接保持可达</li>
+</ul>
+
+<p>你继续像以前一样混乱地创建项目，try 帮你把混乱组织起来。</p>
+
+<h3>战略意图</h3>
+
+<p>纯个人工具，无商业化意图。MIT 许可，三渠道分发（RubyGems/Homebrew/Nix）。用 AI Agent 工作流将其从 Ruby 移植到 C（bouk/try-c）是对 AI 辅助编程的个人实验——AGENTS.md 作为 AI 协作契约展现了对这个方向的深入思考。</p>
+
+<h2>核心价值提炼</h2>
+
+<h3>创新之处</h3>
+
+<ol>
+<li><strong>emit-and-eval Shell 集成架构</strong>（新颖度 4/5 | 实用性 5/5 | 可迁移性 5/5）
+<ul><li>Ruby 进程将决策编码为 Shell 脚本输出到 STDOUT，TUI 渲染到 STDERR，父 Shell 通过 eval 执行。优雅解决子进程修改父进程状态的经典难题，支持 bash/zsh/fish/PowerShell 四种 Shell</li></ul></li>
+<li><strong>Spec-driven 跨语言测试</strong>（新颖度 4/5 | 实用性 4/5 | 可迁移性 4/5）
+<ul><li>Markdown 规格文档 + Shell 测试套件的组合，同一行为规格验证 Ruby 原版和 C 移植版。Shell 测试通过 --and-keys/--and-exit/--and-type 隐藏标志注入键盘事件</li></ul></li>
+<li><strong>「毕业」机制</strong>（新颖度 3/5 | 实用性 5/5 | 可迁移性 3/5）
+<ul><li>Ctrl-G 将实验目录移动到正式项目位置 + 在 tries 目录留下符号链接，感知 Git Worktree（.git 是文件 vs 目录）自动选择 git worktree move 或 mv</li></ul></li>
+<li><strong>时间衰减评分融合模糊匹配</strong>（新颖度 3/5 | 实用性 4/5 | 可迁移性 4/5）
+<ul><li>3.0 / sqrt(hours + 1) 衰减函数——刚访问 3.0 分、1 小时前 2.1 分、一天前 0.6 分——与模糊匹配分数自然叠加</li></ul></li>
+<li><strong>AGENTS.md 作为 AI 协作契约</strong>（新颖度 4/5 | 实用性 3/5 | 可迁移性 5/5）
+<ul><li>不只是 AI 编码指南，而是完整的项目贡献契约（代码风格/测试要求/版本管理/安全注意事项），使 AI Agent 工作流从 Ruby 到 C 的移植成为可能</li></ul></li>
+</ol>
+
+<h3>可复用的模式与技巧</h3>
+
+<table>
+<tr><th>模式</th><th>描述</th><th>适用场景</th></tr>
+<tr><td>emit-and-eval</td><td>STDERR 用 TUI/日志、STDOUT 用 Shell 脚本、exit code 区分 eval/echo</td><td>任何需在父 Shell 执行操作的 CLI</td></tr>
+<tr><td>领域特化模糊匹配</td><td>将领域知识（日期前缀、访问时间）编码为 base_score + 通用匹配分数叠加</td><td>有特定命名惯例的列表搜索</td></tr>
+<tr><td>零依赖 TUI 框架</td><td>Screen/Section/Line 分层 + 单次写入消除闪烁 + alternate screen buffer</td><td>不依赖 curses 的交互式 CLI</td></tr>
+<tr><td>测试钩子注入</td><td>--and-keys 注入键盘序列模拟用户交互</td><td>交互式 TUI 应用的自动化测试</td></tr>
+<tr><td>Spec-Documentation-Test 三角</td><td>Markdown 规格 = 行为契约，Shell 测试 = 跨语言验证器</td><td>支持多语言实现的项目</td></tr>
+</table>
+
+<h3>关键设计决策</h3>
+
+<table>
+<tr><th>决策</th><th>Trade-off</th></tr>
+<tr><td>零依赖（仅标准库）</td><td>安装简单、运行可靠，但 TUI 需从零构建（835 行）</td></tr>
+<tr><td>Shell 脚本输出而非直接执行</td><td>解决子进程改变父进程状态，但需用户正确配置 Shell 包装函数</td></tr>
+<tr><td>单文件 try.rb（1,589 行）</td><td>安装和理解简单，但文件略显臃肿</td></tr>
+<tr><td>日期前缀自动命名</td><td>免去命名纠结 + 自然时间排序，但目录名较长</td></tr>
+<tr><td>Git Worktree 集成</td><td>支持分支隔离实验，但增加了毕业逻辑复杂度</td></tr>
+</table>
+
+<h2>竞品格局与定位</h2>
+
+<h3>竞品对比矩阵</h3>
+
+<table>
+<tr><th>维度</th><th>try</th><th>zoxide</th><th>fzf</th><th>autojump</th><th>tmuxinator</th></tr>
+<tr><td>核心功能</td><td>创建+组织+跳转+毕业</td><td>频率加权跳转</td><td>通用模糊搜索</td><td>学习型跳转</td><td>tmux 会话</td></tr>
+<tr><td>创建能力</td><td>有（日期前缀）</td><td>无</td><td>无</td><td>无</td><td>无</td></tr>
+<tr><td>目录生命周期</td><td>完整（创建→毕业→归档）</td><td>仅跳转</td><td>仅搜索</td><td>仅跳转</td><td>仅会话</td></tr>
+<tr><td>时间感知</td><td>原生（mtime 衰减）</td><td>原生（frecency）</td><td>无</td><td>原生（频率）</td><td>无</td></tr>
+<tr><td>依赖</td><td>零（标准 Ruby）</td><td>Rust 编译</td><td>Go 编译</td><td>Python</td><td>Ruby + tmux</td></tr>
+</table>
+
+<h3>差异化护城河</h3>
+
+<p>在「实验项目目录管理」这个细分场景上没有直接竞品。zoxide 解决「跳转到已有目录」，fzf 解决「在列表中搜索」，但没有工具同时解决「创建+命名+组织+搜索+毕业」这一完整工作流。竞争优势不在单一功能的优越性，而在工作流的完整性。Shopify CEO 的个人品牌也是独特的传播杠杆。</p>
+
+<h3>生态定位</h3>
+
+<p>开发者工具链中一个精准的「微工具」——不追求大而全，只解决一个具体痛点。衍生项目 bouk/try-c（C 移植版）展示了 AI 辅助跨语言移植的可能性。</p>
+
+<h2>套利机会分析</h2>
+
+<ul>
+<li><strong>信息差</strong>：emit-and-eval 架构模式在中文技术社区几乎没有被讨论过——可以写一篇「CLI 工具如何优雅修改父 Shell 状态」的技术解读</li>
+<li><strong>技术借鉴</strong>：零依赖 TUI 框架（835 行 Ruby）可作为学习 ANSI 终端编程的优秀教材；领域特化模糊匹配算法（137 行）展示了如何将业务知识编码到搜索排序中</li>
+<li><strong>生态位</strong>：「Shopify CEO 的个人工具」本身就是一个传播力极强的叙事角度；ADHD 友好设计哲学有独立的方法论价值</li>
+<li><strong>趋势判断</strong>：AI 辅助编程（27% Copilot 参与 + AI Agent 移植到 C）是持续热点，try 作为真实案例有参考价值</li>
+</ul>
+
+<h2>风险与不足</h2>
+
+<ol>
+<li><strong>单人依赖</strong>：78% 提交来自 tobi，如果 CEO 工作繁忙停止维护，社区接管动力不足</li>
+<li><strong>Ruby 依赖门槛</strong>：虽然零外部依赖，但需要安装 Ruby 运行时。C 移植版可能解决此问题但由不同仓库维护</li>
+<li><strong>try.rb 主文件过大</strong>：1,589 行混合了 CLI 入口逻辑和 TrySelector 类，可拆分</li>
+<li><strong>受众天花板</strong>：精准但狭窄的定位——只对频繁创建实验项目的 power user 有价值</li>
+<li><strong>Shell 脚本拼接的安全风险</strong>：虽有 q() 转义保护，但手动拼接 Shell 字符串总是存在边界情况</li>
+</ol>
+
+<h2>行动建议</h2>
+
+<ul>
+<li><strong>如果你要用它</strong>：最适合频繁做小型实验、上下文切换频繁的开发者。gem install try-cli 或 brew tap tobi/try && brew install try。配合 Git Worktree 使用效果最佳——try . 为当前仓库创建隔离的实验分支</li>
+<li><strong>如果你要学它</strong>：重点关注三个核心设计——(1) emit-and-eval 架构（try.rb 的 emit_script 方法 + Shell 包装函数），(2) lib/fuzzy.rb（137 行领域特化模糊匹配，含预计算 sqrt 表和时间衰减），(3) lib/tui.rb（835 行零依赖 TUI 框架，Screen/Section/Line 分层 + 单次写入 + z-index）</li>
+<li><strong>如果你要 fork 它</strong>：最有价值的方向：(1) 将 try.rb 拆分为更清晰的模块结构；(2) 添加项目模板支持（try redis --template=node）；(3) 集成到 IDE（VS Code 扩展）</li>
+</ul>
+
+<h3>知识入口</h3>
+
+<table>
+<tr><th>资源</th><th>链接</th></tr>
+<tr><td>DeepWiki</td><td><a href="https://deepwiki.com/tobi/try">deepwiki.com/tobi/try</a></td></tr>
+<tr><td>官网</td><td><a href="https://pages.tobi.lutke.com/try/">pages.tobi.lutke.com/try</a></td></tr>
+<tr><td>RubyGems</td><td><a href="https://rubygems.org/gems/try-cli">rubygems.org/gems/try-cli</a></td></tr>
+<tr><td>C 移植版</td><td><a href="https://github.com/bouk/try-c">bouk/try-c</a></td></tr>
+<tr><td>Asciinema</td><td><a href="https://asciinema.org/a/ve8AXBaPhkKz40YbqPTlVjqgs">录屏演示</a></td></tr>
+</table>
+
+</body>
+</html>

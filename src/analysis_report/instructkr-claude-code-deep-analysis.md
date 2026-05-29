@@ -1,0 +1,700 @@
+# Claude Code 泄露源码深度分析报告
+
+> GitHub: https://github.com/instructkr/claude-code
+> 分析日期: 2026-03-31
+> 源码镜像: Kuberwastaken/claude-code（完整 TypeScript 源码）
+> 规模: 1,903 文件 / 513,704 行代码（TypeScript 281K + TSX 117K）
+
+## 一句话总结
+
+Anthropic Claude Code CLI 的完整生产级源码，揭示了当前最先进的 AI Agent 工程实践——从 prompt 工程到终端渲染引擎，是一本活的 AI Agent 系统设计教科书。
+
+## 值得关注的理由
+
+1. **唯一的窗口**：这是目前唯一可公开审视的顶级 AI Agent CLI 完整源码，展示了 Anthropic 自己如何使用 Claude API
+2. **工程极致**：启动优化到毫秒级、四层上下文压缩、自研终端渲染引擎、cell-level diff——每个子系统都体现了极致的工程追求
+3. **Prompt Engineering 宝库**：完整的 system prompt 构建逻辑、AI 行为引导技巧、上下文注入策略，是 prompt 工程的标杆实现
+
+## 项目展示
+
+![OmX workflow screenshot](https://raw.githubusercontent.com/instructkr/claude-code/main/assets/omx/omx-readme-review-1.png)
+*oh-my-codex 工作流截图：AI 辅助 README 审查的终端面板*
+
+## 项目画像
+
+| 维度 | 数据 |
+|------|------|
+| GitHub | https://github.com/instructkr/claude-code |
+| Star / Fork | 25,856 / 36,135（事件驱动，非有机增长） |
+| 代码行数 | 513,704（TypeScript 55%, TSX 23%, 注释 16%） |
+| 项目年龄 | 0 个月（2026-03-31 单日爆发） |
+| 开发阶段 | 初始阶段（仅 1 commit，Python 重写骨架） |
+| 贡献模式 | 独立操作（原始泄露 → 单人镜像） |
+| 热度定位 | 事件驱动热点（Claude Code 源码泄露事件） |
+| 质量评级 | 代码[卓越] 文档[优秀] 测试[无] |
+
+> **注意**：Star/Fork 数据反映的是泄露事件的关注度，不代表项目本身的技术贡献。原始 TypeScript 源码（即 Anthropic 的生产代码）质量极高。
+
+---
+
+## 背景：泄露事件始末
+
+2026-03-31，安全研究者 Chaofan Shou 发现 `@anthropic-ai/claude-code` npm 包中包含 source map 文件，指向 R2 存储桶中完整的未混淆 TypeScript 源码（1,900 文件、512,000+ 行代码）。instructkr 是最早的镜像仓库之一，后转型为 Python 重写项目。原始 TS 代码已从该仓库的 git 历史中清除，但其他镜像（如 Kuberwastaken/claude-code）仍保留完整源码。
+
+---
+
+## 第一部分：核心架构
+
+### 1.1 启动流程（Boot Sequence）
+
+Claude Code 的启动是一个精心编排的多阶段流水线：
+
+**Phase 0: 模块加载前的并行 I/O**
+
+```typescript
+// main.tsx:1-20 — 在任何 import 之前
+profileCheckpoint('main_tsx_entry');
+startMdmRawRead();       // 启动 MDM 子进程（plutil/reg query）
+startKeychainPrefetch();  // macOS 钥匙串双读（OAuth + 遗留 API 密钥）
+```
+
+利用模块加载的 ~135ms 窗口并行执行 I/O 密集操作，节省 ~65ms 启动时间。这违反了"无顶层副作用"的原则（需 eslint-disable），但换来了显著的启动优化。
+
+**Phase 1: main() 入口（main.tsx:585-856）**
+
+```plain
+main() → 安全设置（阻止 Windows PATH 劫持）
+       → 警告处理器
+       → 协议处理（cc://, assistant, ssh）
+       → eagerLoadSettings()
+       → run()
+```
+
+**Phase 2: Commander 预动作钩子**
+
+```plain
+preAction → ensureMdmSettingsLoaded() + ensureKeychainPrefetchCompleted()
+         → init()
+            → enableConfigs()
+            → applySafeConfigEnvironmentVariables()  // 信任前只应用"安全"变量
+            → applyExtraCACertsFromConfig()          // TLS 握手前加载 CA 证书
+            → setupGracefulShutdown()
+            → configureGlobalMTLS() + configureGlobalAgents()
+            → preconnectAnthropicApi()               // 预连接重叠 TCP+TLS ~100-200ms
+         → initSinks()
+         → runMigrations()
+         → loadRemoteManagedSettings()
+```
+
+**Phase 3: 主命令处理（main.tsx:1006-3808，4683 行）**
+
+```plain
+action handler → 工具权限初始化
+              → MCP 配置加载
+              → 会话恢复/继续逻辑
+              → 信任对话框（交互式）
+              → startDeferredPrefetches()  // 利用"用户输入"时间预热缓存
+              → launchRepl() 或 runHeadless()
+```
+
+**关键分支：交互式 vs 非交互式**
+
+```typescript
+const isNonInteractive = hasPrintFlag || hasInitOnlyFlag || hasSdkUrl || !process.stdout.isTTY;
+```
+
+非交互式路径跳过信任对话框、省略 Ink UI，直接走 `runHeadless()`。
+
+```plain
+决策: 信任前/后的安全边界
+问题: 信任对话框之前不能执行不可信目录中的代码
+方案: init() 只应用 "safe" 环境变量，完整的 applyConfigEnvironmentVariables 延迟到信任建立后
+      Git 命令（可通过 hooks 执行任意代码）在信任前不执行
+Trade-off: 启动路径更复杂，但防止了供应链攻击
+可迁移性: 任何执行第三方代码的工具都应采用此模式
+```
+
+### 1.2 双层状态架构
+
+**Layer 1: Bootstrap State — 进程级单例**
+
+模块级 `STATE` 对象，~80 个字段，通过 getter/setter 导出。作为 import DAG 的叶节点（仅依赖 `node:crypto` 和 `lodash`），任何模块都可安全导入。
+
+涵盖：成本追踪、会话标识、遥测计数器、模型配置、安全/权限标志、缓存状态。
+
+**Layer 2: AppState Store — UI 级状态**
+
+34 行代码的自定义极简 Store 实现：
+
+```typescript
+export function createStore<T>(initialState: T, onChange?: OnChange<T>): Store<T> {
+  let state = initialState
+  const listeners = new Set<Listener>()
+  return {
+    getState: () => state,
+    setState: (updater) => {
+      const next = updater(state)
+      if (Object.is(next, state)) return  // 引用相等优化
+      state = next
+      onChange?.({ newState: next, oldState: state })
+      for (const listener of listeners) listener()
+    },
+    subscribe: (listener) => { ... },
+  }
+}
+```
+
+AppState 约 450 行类型定义，使用 `DeepImmutable<>` 包装，涵盖：权限、MCP、插件、任务、协作、推测执行、桥接、UI 状态等。
+
+```plain
+决策: 自定义 Store 而非 Zustand/Redux
+问题: 需要极简状态管理，同时支持 React 和 headless 路径
+方案: 34 行 Store<T>，含 Object.is 优化和 onChange 钩子
+Trade-off: 失去 middleware/devtools 生态，获得零依赖和完全控制
+可迁移性: 高 — 任何需要轻量级状态管理的项目都可直接使用
+```
+
+### 1.3 配置层级系统
+
+5 层配置来源，按优先级从低到高：
+
+| 优先级 | 来源 | 路径 |
+|--------|------|------|
+| 1 | policySettings | 企业远程管理设置 |
+| 2 | userSettings | `~/.claude/settings.json` |
+| 3 | projectSettings | `.claude/settings.json` |
+| 4 | localSettings | `.claude/settings.local.json`（不入 git） |
+| 5 | flagSettings | `--settings` CLI 标志 |
+
+CLAUDE.md 加载链：`getUserContext() → getMemoryFiles() → getClaudeMds()`，从当前目录向上遍历到 git 根目录，加上全局和 `--add-dir` 指定的额外目录。
+
+### 1.4 迁移系统
+
+11 个版本化同步迁移 + 异步迁移分离。迁移幂等运行，单一版本号门控。注释 `@[MODEL LAUNCH]` 标记模型发布时需检查的位置。
+
+### 1.5 成本追踪系统
+
+`cost-tracker.ts` 核心函数 `addToTotalSessionCost()` 按模型分别追踪：input_tokens、output_tokens、cache_read、cache_creation、web_search_requests、costUSD。支持 OTel 计数器、会话持久化、`--max-budget-usd` 硬性预算上限。
+
+### 1.6 Task 系统
+
+7 种 Task 类型：`local_bash`、`local_agent`、`remote_agent`、`in_process_teammate`、`local_workflow`、`monitor_mcp`、`dream`。
+
+Task ID 使用 `crypto.randomBytes(8)` + base36 字母表（2.8 万亿组合），足以抵御暴力符号链接攻击。Coordinator 模式（`coordinator/coordinatorMode.ts`，369 行系统提示）实现多代理编排。
+
+### 1.7 投机执行系统
+
+在用户输入时预测性执行，如果预测正确则节省时间。`CompletionBoundary` 记录预测的完成边界（complete/bash/edit/denied_tool）。
+
+---
+
+## 第二部分：查询引擎与 AI 交互层
+
+### 2.1 三层查询架构
+
+```plain
+第一层: QueryEngine（会话管理器）→ submitMessage()
+第二层: query() / queryLoop()（核心 agentic loop，1729 行）→ while(true) 状态机
+第三层: queryModelWithStreaming()（API 通信层）→ anthropic.beta.messages.create()
+```
+
+**核心循环的每次迭代**：
+
+```plain
+→ applyToolResultBudget()    // 工具结果预算管理
+→ snipCompactIfNeeded()      // 历史裁剪
+→ microcompactMessages()     // 微压缩
+→ applyCollapsesIfNeeded()   // 上下文折叠
+→ autoCompactIfNeeded()      // 自动压缩
+→ callModel()                // API 调用（流式）
+→ 流式事件处理              // 收集 assistant messages + tool_use blocks
+→ runTools() / StreamingToolExecutor  // 执行工具
+→ getAttachmentMessages()    // 注入附件/上下文
+→ handleStopHooks()          // 停止钩子
+→ return(终止) 或 continue(下一轮)
+```
+
+### 2.2 System Prompt 构建 — 最核心的部分
+
+System Prompt 分为**静态部分**（可全局缓存）和**动态部分**（会话特定），通过 `SYSTEM_PROMPT_DYNAMIC_BOUNDARY` 标记分离。
+
+#### 完整拼接顺序
+
+**API 调用时最前面注入：**
+- Attribution header（x-anthropic-billing-header）
+- CLI 前缀："You are Claude Code, Anthropic's official CLI for Claude."
+
+**静态段落（`scope: 'global'` 全局缓存，所有用户共享）：**
+
+1. **身份定义** — "You are an interactive agent that helps users with software engineering tasks."
+2. **安全指令** — CYBER_RISK_INSTRUCTION（允许授权安全测试，拒绝恶意操作）
+3. **系统行为规则** — 工具权限模式说明、`<system-reminder>` 标签说明、prompt injection 警告
+4. **任务执行指导** — 软件工程导向、"不做什么"原则（不金箔化、不过度抽象、不预防性错误处理）
+5. **操作安全性** — 可逆性评估、危险操作列表、默认确认后执行
+6. **工具使用指导** — 明确要求用专用工具替代 Bash（Read 代替 cat、Edit 代替 sed 等）
+7. **风格要求** — 不用 emoji、代码引用格式、GitHub issue 格式
+8. **输出效率** — "Go straight to the point"、倒金字塔结构
+
+**动态段落（每次会话重新计算）：**
+
+9. **会话特定指导** — Agent 工具使用、Skill 说明、AskUserQuestion 提示
+10. **CLAUDE.md / Memory 系统** — 通过 `loadMemoryPrompt()` 加载
+11. **环境信息** — 工作目录、平台、Shell、模型名称和 ID
+12. **语言偏好** + **输出样式**
+13. **MCP 服务器指令**（`DANGEROUS_uncached`，每次重算）
+14. **工具结果总结提示** + **缓存微压缩提示**
+
+#### UserContext 作为合成用户消息注入
+
+**这是最巧妙的设计之一**：CLAUDE.md 内容不放在 system prompt 中，而是包裹在 `<system-reminder>` 标签中作为第一条用户消息：
+
+```typescript
+function prependUserContext(messages, context) {
+  return [
+    createUserMessage({
+      content: `<system-reminder>
+As you answer the user's questions, you can use the following context:
+# claudeMd
+${claudeMdContent}
+# currentDate
+Today's date is 2026-03-31.
+      IMPORTANT: this context may or may not be relevant to your tasks.
+</system-reminder>`,
+      isMeta: true,
+    }),
+    ...messages,
+  ]
+}
+```
+
+好处：System prompt 保持稳定有利于 prompt cache，`<system-reminder>` 标签提供足够的上下文信号。
+
+#### Prompt Cache 分层策略
+
+`splitSysPromptPrefix()` 将 system prompt 分为最多 4 个块：
+
+| 块 | 缓存范围 |
+|---|---------|
+| Attribution header | 不缓存 |
+| CLI prefix | null 或 org |
+| 静态内容（boundary 前） | **global**（跨组织共享！） |
+| 动态内容（boundary 后） | 不缓存 |
+
+**所有 Claude Code 用户共享同一个静态 prompt cache**，极大降低首次 token 成本。
+
+### 2.3 四层上下文压缩体系
+
+这是 Claude Code 最精巧的工程之一：
+
+| 层级 | 名称 | 触发时机 | 策略 |
+|------|------|---------|------|
+| 1 | Snip Compact | 每次迭代开始 | 裁剪历史中的旧消息 |
+| 2 | Microcompact | snip 之后 | 压缩/删除旧工具结果 |
+| 3 | Context Collapse | microcompact 之后 | read-time projection（不修改实际消息） |
+| 4 | Auto Compact | 所有压缩失败后 | **独立 AI 调用**生成对话摘要 |
+
+**Compact Prompt 要求摘要包含 9 个部分**：Primary Request、Key Technical Concepts、Files and Code Sections（含完整代码）、Errors、Problem Solving、All User Messages、Pending Tasks、Current Work、Next Step。
+
+**Compact 恢复消息的精妙措辞**：
+```plain
+Continue the conversation from where it left off without asking the user any further questions.
+Resume directly — do not acknowledge the summary, do not recap what was happening,
+do not preface with "I'll continue" or similar. Pick up the last task as if the break never happened.
+```
+
+**Reactive Compact**：API 返回 prompt-too-long（413）时的应急压缩。
+
+### 2.4 流式响应处理
+
+使用 raw stream（避免 `BetaMessageStream` 的 O(n^2) 部分 JSON 解析）。事件类型：`message_start`（记录 TTFB）→ `content_block_start/delta/stop` → `message_delta` → `message_stop`。
+
+**StreamingToolExecutor** — 流式传输过程中立即开始执行工具：
+- 并发安全工具（Read、Grep、Glob）即时并行执行
+- 非并发安全工具（Bash、Edit、Write）等待前序完成
+- `siblingAbortController`：一个 Bash 错误可中止同级工具
+
+### 2.5 错误恢复与重试
+
+`withRetry()` 实现多层重试：
+- 最大 10 次重试
+- 529（过载）：最多 3 次
+- 429（限流）：检查 `retry-after` header
+- 401：刷新 OAuth token 后重试
+- **模型降级**：主模型不可用时切换到 fallbackModel
+- **非流式降级**：streaming 失败时回退到非流式
+
+**Max Output Tokens 恢复**（最多 3 次）：
+```plain
+Output token limit hit. Resume directly — no apology, no recap...
+Pick up mid-thought if that is where the cut happened.
+```
+
+### 2.6 Prompt Engineering 精华
+
+**"不做什么"比"做什么"更有效**：
+```plain
+Don't add features, refactor code, or make "improvements" beyond what was asked.
+Don't add error handling, fallbacks, or validation for scenarios that can't happen.
+Don't create helpers, utilities, or abstractions for one-time operations.
+```
+
+**具体数字锚定行为**：
+```plain
+Three similar lines of code is better than a premature abstraction.
+```
+
+**Analysis Scratchpad 技巧**（compact 时使用）：
+让模型先在 `<analysis>` 标签中组织思路，然后删除该块只保留 `<summary>` — 典型的 "chain-of-thought then strip" 模式。
+
+**`DANGEROUS_uncachedSystemPromptSection` 强制理由记录**：
+```typescript
+DANGEROUS_uncachedSystemPromptSection('mcp_instructions',
+  () => getMcpInstructionsSection(mcpClients),
+  'MCP servers connect/disconnect between turns'  // 强制说明为什么需要破坏缓存
+)
+```
+
+---
+
+## 第三部分：工具系统
+
+### 3.1 Tool 抽象模型
+
+不使用类继承，采用 **TypeScript 结构化类型 + `buildTool()` 工厂函数**：
+
+```typescript
+type Tool<Input, Output, P> = {
+  name: string
+  inputSchema: Input              // Zod schema
+  maxResultSizeChars: number
+  call(): Promise<ToolResult>     // 核心执行
+  prompt(): string                // 面向模型的说明
+  checkPermissions(): Promise<PermissionResult>
+  // ... 30+ 方法和属性
+}
+```
+
+**Fail-closed 默认值**：`isConcurrencySafe` 默认 `false`，`isReadOnly` 默认 `false` — 新工具忘记覆盖时采取最保守策略。
+
+**三层参数验证**：
+1. Zod Schema 验证（结构化）
+2. `validateInput()` 语义验证（如文件是否存在、是否读取过）
+3. `checkPermissions()` 权限验证
+
+### 3.2 43 个内置工具
+
+#### 核心工具深度分析
+
+**BashTool（Shell 命令执行）**
+- 使用 tree-sitter AST 解析命令安全性（`parseForSecurity()`）
+- 复合命令拆分为子命令逐一检查权限
+- `sed -i` 编辑预览：预计算结果 → 展示 diff → 确认后直接写入（消除 sed 不确定性）
+- 自动后台化：>120s 的命令可转为后台任务
+- 沙箱系统：macOS seatbelt / Linux 容器隔离
+
+**FileEditTool — 字符串替换范式**
+- `old_string` → `new_string` 替换（非传统 diff/patch）
+- 乐观并发控制：记录读取时间戳，写入前检查文件修改
+- 引号归一化：处理 curly quotes 与 straight quotes 映射
+- 唯一性检查：`old_string` 必须唯一（除非 `replace_all`）
+- LSP 通知、VSCode diff 视图、文件历史撤销支持
+
+**AgentTool — 最复杂的工具**
+- 同步/异步/远程/Fork/多 Agent 协作 5 种执行模式
+- git worktree 隔离（`isolation: 'worktree'`）
+- 子 Agent 有工具限制（禁用 TaskOutput、ExitPlanMode 等控制类工具）
+
+**ToolSearchTool — 延迟工具加载**
+- `shouldDefer: true` 的工具以摘要发送，模型通过 ToolSearch 按需获取完整 schema
+- 支持 `select:<tool_name>` 精确选择和关键词搜索
+- 大幅减少初始 token 消耗
+
+**完整工具清单**：
+
+| 类别 | 工具 |
+|------|------|
+| 文件操作 | FileReadTool, FileEditTool, FileWriteTool, GlobTool, GrepTool |
+| Shell | BashTool, PowerShellTool |
+| Agent | AgentTool, SendMessageTool, TeamCreate/DeleteTool |
+| Web | WebSearchTool, WebFetchTool, WebBrowserTool |
+| 任务 | TaskCreate/Get/Update/List/Output/StopTool |
+| 交互 | AskUserQuestionTool, EnterPlanModeTool, ExitPlanModeTool |
+| MCP | MCPTool, ListMcpResourcesTool, ReadMcpResourceTool, ToolSearchTool |
+| 特殊 | SkillTool, NotebookEditTool, CronCreate/Delete/ListTool, MonitorTool, RemoteTriggerTool |
+| 其他 | EnterWorktreeTool, ExitWorktreeTool, BriefTool, SnipTool, SleepTool, WorkflowTool |
+
+### 3.3 工具执行管道
+
+```plain
+API 流式解析 → 工具查找 + Zod 解析 → Pre-Hook 执行 → 权限检查
+→ OTel 追踪 + tool.call() → Post-Hook + 结果大小检查 → 持久化/截断 → 返回 API 格式
+```
+
+**并发控制**：`partitionToolCalls()` 将工具调用分为并发安全/不安全批次。并发批次最多 10 路并行。
+
+### 3.4 权限与安全模型
+
+**7 种权限模式**：default、acceptEdits、bypassPermissions、dontAsk、plan、auto、bubble
+
+**7 级优先级的规则来源**：policy > cli > flag > user > local > project > session
+
+**Bash 命令的 9 层安全检查**：
+1. tree-sitter AST 解析
+2. 子命令拆分
+3. 环境变量剥离
+4. 安全包装器剥离（timeout、nice 等）
+5. 重定向检测
+6. sed 验证
+7. 路径验证
+8. 只读验证
+9. 沙箱决策
+
+**Auto Mode 的 ML 分类器**：`classifyBashCommand()` 使用机器学习模型分类命令安全性，投机性预检查在权限弹窗前即开始。
+
+### 3.5 命令系统
+
+**100+ 斜杠命令**，分为三种类型：
+- **PromptCommand**（`type: 'prompt'`）— 生成内容发送给 LLM
+- **LocalCommand**（`type: 'local'`）— 本地执行返回文本
+- **LocalJSXCommand**（`type: 'local-jsx'`）— 本地执行返回 React/Ink JSX
+
+加载顺序（优先级递减）：bundled skills > built-in plugin skills > skill directory commands > workflow commands > plugin commands > built-in commands > dynamic skills
+
+**插件和技能优先于内置命令**，允许用户扩展覆盖默认行为。
+
+### 3.6 Skills 系统
+
+Skills 是 Markdown 文件（`.md`），使用 YAML frontmatter 定义。四种加载来源：Skill 目录（项目/用户/企业级）、Bundled Skills（17 个内置技能）、Plugin Skills、MCP Skills。
+
+**"技能即命令"**：Skills 编译为 `Command (type: 'prompt')`，用户通过 `/skill-name` 调用，模型通过 SkillTool 调用 — 一次定义，双重入口。
+
+---
+
+## 第四部分：终端 UI 架构
+
+### 4.1 自研 Ink 引擎
+
+Claude Code 并非使用标准 `ink` 包，而是内置了深度魔改的 React-to-Terminal 渲染引擎（`ink/` 目录，50+ 文件）。
+
+**渲染管线**：
+
+```plain
+React 组件树
+  ↓ react-reconciler（自定义 host config）
+DOMElement 树（含 yogaNode）
+  ↓ Yoga 布局引擎（纯 TypeScript 移植！）
+布局计算
+  ↓ render-node-to-output
+Screen Buffer（二维 Cell 数组，整数 ID 字符串 intern）
+  ↓ Frame Diff（Cell-level 比较）
+Patch 列表
+  ↓ optimizer + terminal
+ANSI 转义序列 → stdout
+```
+
+**关键创新**：
+- **双缓冲**：`frontFrame` / `backFrame` 交替使用
+- **对象池**：`StylePool`、`CharPool`、`HyperlinkPool` 跨帧共享
+- **CharPool ASCII 快速路径**：对 ASCII 字符（<128）用 `Int32Array` 直接索引代替 `Map.get`
+- **DECSTBM 硬件滚动**：ScrollBox 整体滚动时使用终端硬件滚动指令
+- **BSU/ESU 原子渲染**：所有终端输出包裹在 Batch Synchronized Update 块中
+
+### 4.2 纯 TypeScript 替代原生模块
+
+`native-ts/` 目录包含三个从 Rust/WASM 移植的纯 TS 实现：
+
+| 模块 | 替代 | 用途 |
+|------|------|------|
+| yoga-layout | yoga-layout WASM | Flexbox 布局引擎 |
+| color-diff | syntect (Rust) | 语法高亮 diff |
+| file-index | nucleo (Rust) | 模糊文件搜索 |
+
+**动机**：消除原生依赖，简化构建/分发，支持更多平台。
+
+### 4.3 核心 UI 组件
+
+**消息系统**：分层路由设计，34 个消息子类型组件，从 `Messages.tsx`（容器+虚拟滚动）→ `MessageRow.tsx` → `Message.tsx`（类型路由）→ 具体类型组件。
+
+**OffscreenFreeze + Ratchet 组合模式**：
+- **OffscreenFreeze**：滚出视口时冻结 children 引用，不再触发重渲染
+- **Ratchet**：高度只增不减（"棘轮"），防止内容收缩导致的闪烁
+
+**权限审批 UI**：13 种工具 → 13 个专属权限请求组件（FileEdit、Bash、WebFetch、Skill 等各有专用 UI）。
+
+### 4.4 交互系统
+
+**Vim 模式**：完整的 Vim 子集实现，纯函数式状态机。覆盖所有基础移动、操作符+动作/文本对象组合（18 种）、f/F/t/T 查找、点重复、寄存器、缩进。`MAX_VIM_COUNT = 10000` 防止意外大数。
+
+**快捷键系统**：和弦绑定支持（`ctrl+x ctrl+k`）、平台自适应、用户覆盖（`~/.claude/keybindings.json`）、保留键保护。
+
+**Kill Ring**：完整的 Emacs 风格实现，连续 kill 操作累积到同一条目，Alt+Y 循环浏览。
+
+### 4.5 React Hooks 体系（104 个文件）
+
+核心 hook 分类：
+
+| 类别 | 示例 |
+|------|------|
+| 状态管理 | useSettings, useAppState, useDynamicConfig |
+| AI 交互 | useQueueProcessor, useCancelRequest, useMergedTools |
+| 文件系统 | useDiffData, useDiffInIDE, useFileHistorySnapshotInit |
+| UI 交互 | useTextInput, useTerminalSize, useBlink, useDoublePress |
+| 权限 | useCanUseTool, PermissionContext, useSwarmPermissionPoller |
+| IDE 集成 | useIDEIntegration, useIdeConnectionStatus, useIdeSelection |
+| 通知 | 16 个通知 hook（rate limit、MCP、插件更新等） |
+
+### 4.6 工具函数库（564 个文件）
+
+`utils/` 是最大的目录，扁平结构+子目录。亮点：
+
+- **Git 操作**：LRU 缓存的 git root 查找、直接文件系统读取 Git 状态（避免 spawn git 进程）
+- **Fuzzy File Search**：纯 TS 实现，评分近似 fzf-v2/nucleo，async build 每 4ms yield 一次不阻塞主线程
+- **Markdown Token Cache**：模块级 LRU + hash key + fast-path 纯文本检测，4 层优化
+
+### 4.7 Memdir（持久记忆系统）
+
+四种记忆类型：user（用户画像）、feedback（行为反馈）、project（项目上下文）、reference（外部系统引用）。
+
+**AI 检索**：用 Sonnet side query 从候选记忆中选出最多 5 个相关记忆（精确度远高于关键词搜索）。
+
+**"不该存什么"的反面定义**：明确排除代码模式、Git 历史、调试方案、已有文档、临时任务 — 甚至用户明确要求存也会被拒绝。
+
+### 4.8 REPL.tsx — 5005 行的核心屏幕
+
+整个应用的主屏幕，管理：消息列表、输入框、spinner、权限对话框、搜索、IDE 集成、Swarm 协调、cost 追踪、voice 集成、所有键盘绑定。
+
+```plain
+决策: 单个巨大组件 + 大量 hooks 分拆
+问题: 所有交互逻辑需要协调
+Trade-off: 文件过大不利于导航，但避免了 prop drilling 和状态同步问题
+```
+
+---
+
+## 第五部分：关键设计决策汇总
+
+### 架构级决策
+
+| 决策 | 方案 | Trade-off | 可迁移性 |
+|------|------|-----------|---------|
+| 模块加载前并行 I/O | import 间隙启动子进程 | 违反 ESLint 规则，节省 65ms | 高 |
+| 双层状态架构 | Bootstrap（进程级）+ AppState（UI 级） | 复杂但解耦 | 高 |
+| 自定义 Store | 34 行极简实现 | 失去生态，获得控制 | 高 |
+| 交互/非交互双路径 | 单入口分叉 | 4683 行巨型文件 | 中 |
+| --bare 最小模式 | 单标志跳过所有非必要初始化 | 功能不对称 | 高 |
+| 特性标志编译时消除 | Bun feature() + 条件 require() | 丑陋但产物更小 | 中 |
+
+### Prompt 与 AI 层决策
+
+| 决策 | 方案 | Trade-off | 可迁移性 |
+|------|------|-----------|---------|
+| System Prompt 静态/动态分离 | BOUNDARY 标记 + global 缓存 | 需谨慎管理内容分区 | 高 |
+| UserContext 作为合成消息 | `<system-reminder>` 标签 | 不如 system prompt 权威 | 高 |
+| 四层渐进压缩 | Snip → Micro → Collapse → Auto | 极高复杂度 | 模式可迁移 |
+| Generator-based 状态机 | AsyncGenerator + while(true) | 1729 行单函数 | 极高 |
+| 流式工具执行 | StreamingToolExecutor | race condition 管理复杂 | 高 |
+| DANGEROUS_uncached 强制理由 | _reason 参数 | 微小 API 负担 | 高 |
+
+### 工具系统决策
+
+| 决策 | 方案 | Trade-off | 可迁移性 |
+|------|------|-----------|---------|
+| 结构化类型 + 工厂函数 | buildTool() + Zod | 灵活但缺 OOP 辅助 | 高 |
+| 字符串替换编辑 | old_string → new_string | 需唯一性，减少行号错误 | 高 |
+| 延迟工具加载 | ToolSearch + shouldDefer | 多一轮查找延迟 | 高 |
+| 分层并发控制 | partitionToolCalls() | 保守分区 | 高 |
+| Bash 9 层安全 | tree-sitter AST + ML 分类器 | 复杂但安全 | 中 |
+| 技能即命令 | Skills 编译为 Command | 统一但类型复杂 | 高 |
+
+### UI 层决策
+
+| 决策 | 方案 | Trade-off | 可迁移性 |
+|------|------|-----------|---------|
+| 自研 Ink 引擎 | fork + 深度重写 | 巨大维护负担 | 高（可独立使用） |
+| 纯 TS 替代原生模块 | 手写 Yoga/FileIndex/ColorDiff | 性能略低，零原生依赖 | 极高 |
+| React Compiler + 手动缓存 | _c() + OffscreenFreeze + Ratchet | 可读性降低 | 中 |
+| 记忆 AI 检索 | Sonnet side query | 多一次 API 调用 | 高 |
+
+---
+
+## 第六部分：创新点评级
+
+| 创新点 | 新颖度 | 实用性 | 可迁移性 | 描述 |
+|--------|--------|--------|---------|------|
+| 启动并行 I/O | 4/5 | 5/5 | 5/5 | 利用 import 时间窗口并行启动慢操作 |
+| 全局 Prompt Cache 共享 | 5/5 | 5/5 | 4/5 | 所有用户共享静态 prompt 缓存 |
+| 四层渐进压缩 | 5/5 | 5/5 | 4/5 | Snip→Micro→Collapse→Auto 分级压缩 |
+| `<system-reminder>` 带外通道 | 4/5 | 5/5 | 5/5 | 在任何消息中注入系统提醒 |
+| StreamingToolExecutor | 4/5 | 5/5 | 5/5 | 流式传输中即时执行工具 |
+| 字符串替换编辑范式 | 5/5 | 5/5 | 5/5 | LLM 友好的文件编辑方式 |
+| ToolSearch 延迟加载 | 4/5 | 5/5 | 5/5 | 按需加载工具 schema |
+| Bash tree-sitter 安全 | 4/5 | 5/5 | 3/5 | AST 级命令安全分析 |
+| Cell-level Frame Diff | 4/5 | 4/5 | 4/5 | 整数 ID 比较的 cell 级 diff |
+| OffscreenFreeze+Ratchet | 4/5 | 4/5 | 5/5 | 零成本不可见内容 |
+| Memory AI 检索 | 3/5 | 4/5 | 5/5 | Sonnet 选择相关记忆 |
+| 投机执行系统 | 5/5 | 4/5 | 3/5 | 预测性执行节省时间 |
+| sed 编辑预览 | 3/5 | 4/5 | 4/5 | 预计算→展示 diff→确认→直写 |
+
+---
+
+## 第七部分：竞品格局与定位
+
+### 竞品对比
+
+| 维度 | Claude Code | Cursor | Cline | Aider | OpenCode |
+|------|------------|--------|-------|-------|---------|
+| 形态 | CLI | IDE | IDE 插件 | CLI | CLI |
+| 模型 | Claude only | 多模型 | 多模型 | 多模型 | 多模型 |
+| 开源 | 否（泄露） | 否 | 是 | 是 | 是 |
+| 终端 UI | 自研 Ink | N/A | N/A | 简单 | TUI |
+| Agent 编排 | Coordinator + Swarm | Tab | N/A | N/A | N/A |
+| Prompt Cache | 全局共享 | 未知 | N/A | N/A | N/A |
+| 工具安全 | 9 层 + ML 分类器 | 未知 | 基础 | 基础 | 基础 |
+| 记忆系统 | AI 检索记忆 | N/A | N/A | N/A | N/A |
+| 远程执行 | Bridge/CCR | N/A | N/A | N/A | N/A |
+
+### 差异化护城河
+
+1. **Prompt Engineering 深度**：数千 token 精心打磨的系统提示，四层压缩保证无限对话
+2. **安全模型**：9 层 Bash 安全检查 + ML 分类器 + 信任边界，竞品很难快速复制
+3. **性能优化**：毫秒级启动优化、全局 prompt cache 共享、流式工具执行
+4. **终端 UI 引擎**：自研 React-to-Terminal 管线，达到接近 GPU 渲染的优化水平
+
+### 生态定位
+
+Claude Code 是 **Anthropic 的官方 AI 编程助手**，在 AI Agent CLI 领域占据了"model-native tool"的独特生态位 — 只有模型提供商才能做到如此深度的 prompt cache 优化和模型行为调优。
+
+---
+
+## 套利机会分析
+
+- **信息差**: 泄露源码揭示了大量未公开的工程实践（全局 prompt cache、投机执行、ML 安全分类器），这些知识尚未被广泛传播
+- **技术借鉴**: 可直接复用的模式包括：字符串替换编辑、ToolSearch 延迟加载、四层压缩、`<system-reminder>` 注入、OffscreenFreeze+Ratchet、启动并行 I/O
+- **生态位**: Claude Code 填补了"model-native CLI agent"的空白，但其闭源策略为开源替代品留下了机会
+- **趋势判断**: AI Agent CLI 是增长赛道，Claude Code 的架构模式将成为行业标准
+
+## 风险与不足
+
+1. **法律风险**：基于泄露代码的镜像仓库面临法律不确定性（无 License）
+2. **模型锁定**：Claude Code 深度绑定 Anthropic API，prompt cache 策略依赖服务端支持
+3. **复杂度债务**：4683 行的 main.tsx、5005 行的 REPL.tsx、1729 行的 query.ts — 这些巨型文件是维护风险
+4. **无测试**：泄露源码中不包含测试代码，无法评估测试覆盖率
+
+## 行动建议
+
+- **如果你要学习 AI Agent 工程**：重点关注 `query.ts`（核心 agentic loop）、`constants/prompts.ts`（system prompt 构建）、`Tool.ts`（工具抽象）、`services/compact/`（压缩系统）
+- **如果你要构建 AI Agent**：直接借鉴字符串替换编辑、ToolSearch 延迟加载、四层压缩、`<system-reminder>` 注入模式
+- **如果你要构建终端应用**：研究 `ink/` 目录的自研渲染引擎和 `native-ts/` 的纯 TS 布局引擎
+- **如果你要做安全研究**：分析 Bash 9 层安全模型和信任边界设计
+
+### 知识入口
+
+| 资源 | 链接 |
+|------|------|
+| DeepWiki | [https://deepwiki.com/instructkr/claude-code](https://deepwiki.com/instructkr/claude-code) |
+| Zread.ai | [https://zread.ai/instructkr/claude-code](https://zread.ai/instructkr/claude-code) |
+| 安全分析 | [Penligent: Claude Code Source Map Leak](https://www.penligent.ai/hackinglabs/claude-code-source-map-leak-what-was-exposed-and-what-it-means/) |
+| 伦理讨论 | [Hong Minhee: Is legal the same as legitimate](https://writings.hongminhee.org/2026/03/legal-vs-legitimate/) |
+| HackerNews | [Claude Code's source code has been leaked](https://news.ycombinator.com/item?id=47584540) |
+| 完整镜像 | [Kuberwastaken/claude-code](https://github.com/Kuberwastaken/claude-code) |
+| 在线 Demo | 无 |

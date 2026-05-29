@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+/* ====== 微信公众号排版 CSS ====== */
+
+body {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #3e3e3e;
+    background: #fff;
+}
+
+/* 正文段落 */
+p {
+    font-size: 15px !important;
+    line-height: 2 !important;
+    margin: 0 !important;
+    padding-top: 0.5em !important;
+    padding-bottom: 0.5em !important;
+    padding-right: 1.2em !important;
+    padding-left: 1.2em !important;
+    text-align: justify !important;
+}
+p + p {
+    margin-top: 0 !important;
+}
+
+/* 标题 */
+h1 {
+    font-size: 20px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 16px 0 !important;
+    padding: 0 !important;
+}
+h2 {
+    font-size: 18px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 24px 0 !important;
+    padding: 0 !important;
+}
+h3 {
+    font-size: 15px !important;
+    font-weight: bold !important;
+    color: #3e3e3e !important;
+    text-align: left !important;
+    margin: 16px 0 16px 0 !important;
+    padding: 0 0 0 1.2em !important;
+}
+h4 {
+    font-size: 15px !important;
+    color: rgb(0, 122, 170) !important;
+    margin: 12px 0 8px 0 !important;
+    padding: 0 !important;
+}
+
+/* 列表 */
+ul,
+ol {
+    padding-left: 2em !important;
+    margin: 1em 0 !important;
+    font-size: 15px !important;
+}
+li {
+    margin: 0.5em 0 !important;
+    line-height: 1.8em !important;
+    font-size: 15px !important;
+    color: #3e3e3e !important;
+}
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+    margin: 0 !important;
+    padding-left: 1.2em !important;
+}
+
+/* 引用 */
+blockquote {
+    border-left: 4px solid #888 !important;
+    padding: 8px 16px !important;
+    margin: 1em 0 !important;
+    color: #666 !important;
+    background: #f9f9f9 !important;
+}
+blockquote > p {
+    margin: 0.5em 0 !important;
+    padding: 0 !important;
+}
+blockquote::before,
+blockquote::after {
+    content: none !important;
+}
+
+/* 代码块 */
+pre {
+    font-size: 14px !important;
+    line-height: 1.4em !important;
+    color: #3e3e3e !important;
+    background: #f8f8f8 !important;
+    padding: 12px 16px !important;
+    border-radius: 4px !important;
+    overflow: auto !important;
+    margin: 1em 0 !important;
+}
+
+/* 脚注 */
+.footnotes {
+    font-size: 11px !important;
+    color: #666 !important;
+    line-height: 1.2 !important;
+    margin: 8px 0 0 0 !important;
+    padding: 4px 0 0 0 !important;
+    border-top: 1px solid #eee !important;
+}
+.footnotes p {
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #666 !important;
+}
+
+/* 上标 */
+sup {
+    font-size: 0.75em !important;
+    vertical-align: super !important;
+    color: #e51f42 !important;
+    margin: 0 2px !important;
+}
+
+table { width: 100% !important; border-collapse: collapse !important; margin: 1em 0 !important; font-size: 14px !important; }
+th, td { border: 1px solid #ddd !important; padding: 8px 12px !important; text-align: left !important; line-height: 1.6 !important; }
+th { background: #f5f5f5 !important; font-weight: bold !important; color: #3e3e3e !important; }
+td { color: #3e3e3e !important; }
+img { max-width: 100% !important; display: block !important; margin: 1em auto !important; }
+a { color: rgb(0, 122, 170) !important; text-decoration: none !important; }
+pre { font-size: 14px !important; line-height: 1.4em !important; color: #3e3e3e !important; background: #f8f8f8 !important; padding: 12px 16px !important; border-radius: 4px !important; overflow: auto !important; margin: 1em 0 !important; }
+
+</style>
+</head>
+<body>
+
+<h2>基本信息</h2>
+<table>
+<thead><tr><th>属性</th><th>值</th></tr></thead>
+<tbody>
+<tr><td><strong>仓库</strong></td><td><a href="https://github.com/alibaba/OpenSandbox">alibaba/OpenSandbox</a></td></tr>
+<tr><td><strong>描述</strong></td><td>通用 AI 应用沙箱平台，提供多语言 SDK、统一沙箱 API 和 Docker/Kubernetes 运行时</td></tr>
+<tr><td><strong>主页</strong></td><td><a href="https://open-sandbox.ai">https://open-sandbox.ai</a></td></tr>
+<tr><td><strong>所有者</strong></td><td>Alibaba（阿里巴巴开源）</td></tr>
+<tr><td><strong>Stars</strong></td><td>8,957</td></tr>
+<tr><td><strong>Forks</strong></td><td>676</td></tr>
+<tr><td><strong>License</strong></td><td>Apache 2.0</td></tr>
+<tr><td><strong>主语言</strong></td><td>Python (47.5%) / Go (22.6%)</td></tr>
+<tr><td><strong>创建时间</strong></td><td>2025-12-17</td></tr>
+<tr><td><strong>最后活跃</strong></td><td>2026-03-21</td></tr>
+<tr><td><strong>Topics</strong></td><td>ai, ai-infra, kubernetes, sandbox, ai-agent</td></tr>
+</tbody></table>
+<h2>一句话总结</h2>
+<p>阿里巴巴开源的通用 AI 沙箱平台，为 Coding Agent、GUI Agent、代码执行和 RL 训练等场景提供安全隔离的容器化运行环境，支持多语言 SDK 和 Docker/Kubernetes 双运行时，已入选 CNCF Landscape。</p>
+<h2>1. 项目概述</h2>
+<p>OpenSandbox 是阿里巴巴于 2025 年底开源的<strong>通用沙箱平台</strong>，专为 AI 应用场景设计。它解决的核心问题是：如何让 AI Agent 安全地执行代码、操作文件系统和运行命令，同时提供生产级的隔离、扩展性和可管理性。</p>
+<h3>核心价值主张</h3>
+<ol>
+<li><strong>统一的沙箱协议</strong>：通过 OpenAPI 规范定义沙箱生命周期 API 和执行 API，建立标准化的协议契约</li>
+<li><strong>多语言 SDK 覆盖</strong>：提供 Python、Java/Kotlin、TypeScript、C#/.NET 四套完整 SDK</li>
+<li><strong>双运行时支持</strong>：Docker（开箱即用）和 Kubernetes（BatchSandbox CRD，生产级大规模调度）</li>
+<li><strong>安全隔离</strong>：支持 gVisor、Kata Containers、Firecracker 等安全容器运行时</li>
+<li><strong>无侵入设计</strong>：执行守护进程（execd）运行时动态注入，无需修改用户镜像</li>
+</ol>
+<h2>2. 架构分析</h2>
+<h3>四层架构</h3>
+<section style="background:#272822;color:#f8f8f2;padding:16px;border-radius:4px;overflow-x:auto;font-size:13px;line-height:1.7;margin:1em 0;font-family:Menlo,Monaco,Consolas,'Courier New',monospace;white-space:nowrap;">┌──────────────────────────────────────────────────┐<br/>│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SDK&nbsp;层&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br/>│&nbsp;&nbsp;Python&nbsp;/&nbsp;Java&nbsp;/&nbsp;Kotlin&nbsp;/&nbsp;TypeScript&nbsp;/&nbsp;C#&nbsp;/&nbsp;Go&nbsp;&nbsp;&nbsp;│<br/>├──────────────────────────────────────────────────┤<br/>│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Specs&nbsp;层&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br/>│&nbsp;&nbsp;&nbsp;&nbsp;sandbox-lifecycle.yml&nbsp;&nbsp;|&nbsp;&nbsp;execd-api.yaml&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br/>├──────────────────────────────────────────────────┤<br/>│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Runtime&nbsp;层&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br/>│&nbsp;&nbsp;FastAPI&nbsp;Server&nbsp;→&nbsp;Docker&nbsp;Runtime&nbsp;/&nbsp;K8s&nbsp;Runtime&nbsp;&nbsp;&nbsp;&nbsp;│<br/>├──────────────────────────────────────────────────┤<br/>│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sandbox&nbsp;实例层&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br/>│&nbsp;&nbsp;用户容器&nbsp;+&nbsp;execd&nbsp;守护进程&nbsp;+&nbsp;Jupyter&nbsp;内核&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br/>└──────────────────────────────────────────────────┘</section>
+<h3>核心组件</h3>
+<table>
+<thead><tr><th>组件</th><th>语言</th><th>职责</th></tr></thead>
+<tbody>
+<tr><td><strong>server</strong></td><td>Python (FastAPI)</td><td>沙箱生命周期管理：创建/暂停/恢复/销毁</td></tr>
+<tr><td><strong>execd</strong></td><td>Go (Beego)</td><td>沙箱内执行守护进程：命令执行、文件操作、代码解释</td></tr>
+<tr><td><strong>ingress</strong></td><td>Go</td><td>入口代理：HTTP/HTTPS 路由到沙箱端口</td></tr>
+<tr><td><strong>egress</strong></td><td>Go + nftables</td><td>出口控制：按沙箱的网络出口策略</td></tr>
+<tr><td><strong>kubernetes controller</strong></td><td>Go</td><td>BatchSandbox CRD 控制器，沙箱池化和批量调度</td></tr>
+<tr><td><strong>code-interpreter</strong></td><td>Python + Jupyter</td><td>基于 Jupyter 内核协议的多语言代码执行环境</td></tr>
+</tbody></table>
+<h3>关键设计亮点</h3>
+<ul>
+<li><strong>协议优先（Protocol-First）</strong>：所有交互通过 OpenAPI 规范定义，支持多语言 SDK 自动生成</li>
+<li><strong>execd 注入机制</strong>：在容器创建时通过卷挂载注入执行守护进程二进制文件，对用户代码完全透明</li>
+<li><strong>SSE 流式输出</strong>：命令执行和代码解释结果通过 Server-Sent Events 实时流式返回</li>
+<li><strong>Jupyter 集成</strong>：代码解释器底层使用 Jupyter 内核协议，支持 Python/Java/JavaScript/TypeScript/Go/Bash</li>
+<li><strong>OSEP 提案机制</strong>：类似 PEP/KEP 的正式增强提案流程，目前已有 10 个提案</li>
+</ul>
+<h2>3. 代码规模与质量</h2>
+<h3>代码统计</h3>
+<table>
+<thead><tr><th>指标</th><th>数值</th></tr></thead>
+<tbody>
+<tr><td>总文件数</td><td>1,039</td></tr>
+<tr><td>总行数</td><td>178,101</td></tr>
+<tr><td>代码行</td><td>116,174</td></tr>
+<tr><td>注释行</td><td>35,996</td></tr>
+<tr><td>空白行</td><td>25,931</td></tr>
+<tr><td>注释率</td><td>31.0%</td></tr>
+</tbody></table>
+<h3>语言分布（按代码行）</h3>
+<table>
+<thead><tr><th>语言</th><th>代码行</th><th>文件数</th><th>用途</th></tr></thead>
+<tbody>
+<tr><td>Python</td><td>48,491</td><td>342</td><td>服务器 + SDK + 代码解释器</td></tr>
+<tr><td>Go</td><td>27,292</td><td>246</td><td>execd + ingress + egress + K8s 控制器</td></tr>
+<tr><td>YAML</td><td>8,955</td><td>76</td><td>Kubernetes 配置 + CI/CD</td></tr>
+<tr><td>C#</td><td>6,972</td><td>53</td><td>.NET SDK</td></tr>
+<tr><td>TypeScript</td><td>5,936</td><td>51</td><td>JS/TS SDK</td></tr>
+<tr><td>Kotlin</td><td>5,263</td><td>56</td><td>Java/Kotlin SDK</td></tr>
+<tr><td>Java</td><td>2,432</td><td>4</td><td>Java SDK 核心</td></tr>
+<tr><td>Shell</td><td>2,271</td><td>35</td><td>构建和启动脚本</td></tr>
+</tbody></table>
+<h3>代码质量指标</h3>
+<ul>
+<li><strong>注释率 31%</strong>：注释比例较高，说明代码文档化程度好</li>
+<li><strong>多语言一致性</strong>：四套 SDK 遵循相同的设计模式和 API 接口</li>
+<li><strong>规范化工具链</strong>：Python 使用 ruff + pyright，Go 使用 golangci-lint，Kotlin 使用 ktlint</li>
+<li><strong>测试覆盖目标</strong>：核心包 >80%，API 层 >70%</li>
+<li><strong>Conventional Commits</strong>：提交信息遵循规范化提交格式</li>
+</ul>
+<h2>4. 社区与开发活跃度</h2>
+<h3>开发历史</h3>
+<table>
+<thead><tr><th>指标</th><th>数值</th></tr></thead>
+<tbody>
+<tr><td>总提交数</td><td>794</td></tr>
+<tr><td>首次提交</td><td>2025-11-13</td></tr>
+<tr><td>项目年龄</td><td>~4 个月</td></tr>
+<tr><td>独立贡献者</td><td>53</td></tr>
+<tr><td>月均提交</td><td>~198</td></tr>
+</tbody></table>
+<h3>提交趋势（持续增长）</h3>
+<section style="background:#272822;color:#f8f8f2;padding:16px;border-radius:4px;overflow-x:auto;font-size:13px;line-height:1.7;margin:1em 0;font-family:Menlo,Monaco,Consolas,'Courier New',monospace;white-space:nowrap;">2025-11&nbsp;&nbsp;▏&nbsp;1<br/>2025-12&nbsp;&nbsp;████████████████&nbsp;142<br/>2026-01&nbsp;&nbsp;█████████████████████&nbsp;184<br/>2026-02&nbsp;&nbsp;█████████████████████████&nbsp;214<br/>2026-03&nbsp;&nbsp;█████████████████████████████&nbsp;253&nbsp;(截至3/21)</section>
+<p>项目自 2025 年 12 月正式开源以来，提交频率持续增长，3 月份创下最高纪录，表明开发活跃度在快速上升。</p>
+<h3>核心贡献者</h3>
+<table>
+<thead><tr><th>贡献者</th><th>GitHub</th><th>贡献次数</th><th>角色推测</th></tr></thead>
+<tbody>
+<tr><td>贾岛</td><td>Pangjiping</td><td>293</td><td>项目负责人/核心维护者</td></tr>
+<tr><td>epha</td><td>hittyt</td><td>133</td><td>核心开发者</td></tr>
+<tr><td>ninan-nn</td><td>ninan-nn</td><td>94</td><td>核心开发者</td></tr>
+<tr><td>Spground</td><td>Spground</td><td>61</td><td>活跃贡献者</td></tr>
+<tr><td>JieWu</td><td>jwx0925</td><td>41</td><td>活跃贡献者</td></tr>
+<tr><td>fengcone</td><td>fengcone</td><td>40</td><td>活跃贡献者</td></tr>
+</tbody></table>
+<h3>开发节奏特征</h3>
+<ul>
+<li><strong>工作日驱动</strong>：周一至周五提交占比 92.2%，周末仅 7.8%</li>
+<li><strong>典型中国工作时间</strong>：高峰期集中在 9:00-18:00 (UTC+8)</li>
+<li><strong>企业开发模式</strong>：以阿里巴巴内部团队为主导，辅以外部贡献者</li>
+</ul>
+<h2>5. 功能特性全景</h2>
+<h3>SDK 矩阵</h3>
+<table>
+<thead><tr><th>功能</th><th>Python</th><th>Java/Kotlin</th><th>TypeScript</th><th>C#/.NET</th><th>Go</th></tr></thead>
+<tbody>
+<tr><td>沙箱生命周期</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>路线图</td></tr>
+<tr><td>命令执行</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>路线图</td></tr>
+<tr><td>文件操作</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>路线图</td></tr>
+<tr><td>代码解释器</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>路线图</td></tr>
+<tr><td>MCP 集成</td><td>✅</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+</tbody></table>
+<h3>运行时支持</h3>
+<table>
+<thead><tr><th>运行时</th><th>状态</th><th>特点</th></tr></thead>
+<tbody>
+<tr><td>Docker</td><td>生产就绪</td><td>Host/Bridge 网络模式，本地开发友好</td></tr>
+<tr><td>Kubernetes (BatchSandbox)</td><td>生产就绪</td><td>沙箱池化、批量创建、异构任务编排</td></tr>
+<tr><td>kubernetes-sigs/agent-sandbox</td><td>兼容</td><td>社区标准运行时</td></tr>
+</tbody></table>
+<h3>示例覆盖（20 个）</h3>
+<table>
+<thead><tr><th>类别</th><th>示例</th></tr></thead>
+<tbody>
+<tr><td><strong>基础</strong></td><td>code-interpreter, aio-sandbox, agent-sandbox</td></tr>
+<tr><td><strong>Coding Agent</strong></td><td>claude-code, gemini-cli, codex-cli, kimi-cli, langgraph, google-adk, nullclaw, openclaw</td></tr>
+<tr><td><strong>浏览器/桌面</strong></td><td>chrome, playwright, desktop, vscode</td></tr>
+<tr><td><strong>ML/训练</strong></td><td>rl-training</td></tr>
+<tr><td><strong>存储</strong></td><td>docker-ossfs-volume-mount, docker-pvc-volume-mount, host-volume-mount, kubernetes-pvc-volume-mount</td></tr>
+</tbody></table>
+<h3>安全特性</h3>
+<ul>
+<li>支持 gVisor、Kata Containers、Firecracker 安全容器运行时</li>
+<li>基于 FQDN 的出口网络控制（OSEP-0001）</li>
+<li>API Key 认证（生命周期 API）+ Token 认证（执行 API）</li>
+<li>资源配额强制执行（CPU、内存、GPU）</li>
+<li>网络隔离选项</li>
+</ul>
+<h2>6. 竞品对比</h2>
+<h3>直接竞品</h3>
+<table>
+<thead><tr><th>项目</th><th>Stars</th><th>主要语言</th><th>定位差异</th></tr></thead>
+<tbody>
+<tr><td><strong>e2b-dev/E2B</strong></td><td>11,376</td><td>Python</td><td>SaaS 优先，云端沙箱服务</td></tr>
+<tr><td><strong>alibaba/OpenSandbox</strong></td><td>8,957</td><td>Python/Go</td><td>自托管优先，支持 Docker/K8s 双运行时</td></tr>
+<tr><td><strong>e2b-dev/desktop</strong></td><td>1,306</td><td>Python</td><td>E2B 桌面扩展</td></tr>
+<tr><td><strong>mavdol/capsule</strong></td><td>262</td><td>Rust</td><td>WebAssembly 沙箱，轻量级</td></tr>
+</tbody></table>
+<h3>差异化优势</h3>
+<ol>
+<li><strong>自托管能力</strong>：相比 E2B 的 SaaS 模式，OpenSandbox 支持完全私有化部署</li>
+<li><strong>Kubernetes 原生</strong>：内置 BatchSandbox CRD 控制器，适合大规模生产环境</li>
+<li><strong>SDK 覆盖度</strong>：同时支持 Python/Java/Kotlin/TypeScript/C# 五种语言 SDK</li>
+<li><strong>CNCF 认可</strong>：已入选 CNCF Landscape，具有云原生生态背书</li>
+<li><strong>企业级安全</strong>：支持多种安全容器运行时和细粒度网络策略</li>
+<li><strong>阿里巴巴背书</strong>：大型互联网公司的开源项目，有内部大规模验证</li>
+</ol>
+<h3>相对不足</h3>
+<ol>
+<li><strong>社区生态</strong>：项目较新（仅 4 个月），社区生态尚在建设中</li>
+<li><strong>文档成熟度</strong>：相比 E2B 的完善文档，OpenSandbox 文档仍在快速迭代</li>
+<li><strong>SaaS 服务</strong>：暂无托管服务选项，用户需自行部署运维</li>
+</ol>
+<h2>7. 路线图与趋势</h2>
+<h3>当前路线图（2026.03）</h3>
+<ul>
+<li><strong>SDK</strong>: 客户端沙箱连接池、Go SDK</li>
+<li><strong>沙箱运行时</strong>: 持久化卷、轻量级本地沙箱、安全容器增强</li>
+<li><strong>部署</strong>: Kubernetes 集群自托管部署指南</li>
+</ul>
+<h3>OSEP 增强提案方向</h3>
+<table>
+<thead><tr><th>编号</th><th>方向</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>OSEP-0001</td><td>网络</td><td>基于 FQDN 的出口控制</td></tr>
+<tr><td>OSEP-0002</td><td>标准化</td><td>kubernetes-sigs/agent-sandbox 支持</td></tr>
+<tr><td>OSEP-0003</td><td>存储</td><td>卷和卷绑定支持</td></tr>
+<tr><td>OSEP-0004</td><td>安全</td><td>安全容器运行时</td></tr>
+<tr><td>OSEP-0005</td><td>性能</td><td>客户端沙箱池</td></tr>
+<tr><td>OSEP-0006</td><td>体验</td><td>开发者控制台</td></tr>
+<tr><td>OSEP-0007</td><td>性能</td><td>快速沙箱运行时</td></tr>
+<tr><td>OSEP-0008</td><td>功能</td><td>暂停/恢复/根文件系统快照</td></tr>
+<tr><td>OSEP-0009</td><td>功能</td><td>入口访问时自动续期</td></tr>
+<tr><td>OSEP-0010</td><td>可观测</td><td>OpenTelemetry 集成</td></tr>
+</tbody></table>
+<h3>发展趋势</h3>
+<ol>
+<li><strong>增长迅猛</strong>：4 个月达到近 9,000 Stars，增长速度惊人</li>
+<li><strong>开发加速</strong>：提交频率逐月递增，团队投入持续增加</li>
+<li><strong>生态扩展</strong>：已覆盖 Claude Code、Gemini CLI、Codex CLI 等主流 AI Agent</li>
+<li><strong>标准化参与</strong>：积极参与 kubernetes-sigs/agent-sandbox 社区标准</li>
+<li><strong>CNCF 入选</strong>：获得云原生基金会认可，有望成为 AI 基础设施标准组件</li>
+</ol>
+<h2>8. 总结评价</h2>
+<h3>项目定位</h3>
+<p>OpenSandbox 是当前 AI Agent 沙箱领域中最具野心的开源项目之一。它不仅仅是一个沙箱工具，而是试图构建一个完整的<strong>沙箱平台标准</strong>——通过协议优先的设计理念，定义统一的沙箱生命周期和执行协议，让任何容器镜像都能成为 AI Agent 的安全执行环境。</p>
+<h3>优势</h3>
+<ul>
+<li><strong>架构设计成熟</strong>：四层分离、协议优先的设计体现了丰富的系统设计经验</li>
+<li><strong>工程质量高</strong>：规范化的代码质量工具链、高注释率、OSEP 提案机制</li>
+<li><strong>多语言 SDK</strong>：同时支持五种主流编程语言，覆盖面广</li>
+<li><strong>Kubernetes 深度集成</strong>：BatchSandbox CRD 控制器提供生产级的大规模调度能力</li>
+<li><strong>安全设计完备</strong>：从容器运行时到网络策略的多层次安全保障</li>
+<li><strong>阿里巴巴背书</strong>：有大规模生产环境验证和持续的企业投入</li>
+</ul>
+<h3>风险</h3>
+<ul>
+<li><strong>项目较新</strong>：仅 4 个月历史，API 和功能仍在快速变化</li>
+<li><strong>贡献者集中</strong>：核心贡献者集中在阿里巴巴内部团队，社区多样性有待提升</li>
+<li><strong>运维复杂度</strong>：自托管 Kubernetes 部署的运维门槛较高</li>
+</ul>
+<h3>适用场景</h3>
+<ul>
+<li>需要为 AI Agent 提供安全代码执行环境的企业</li>
+<li>构建 AI 编程助手、代码解释器等产品的团队</li>
+<li>需要大规模沙箱调度的 AI 评测和训练平台</li>
+<li>对数据安全有要求、需要私有化部署的组织</li>
+</ul>
+<h3>评分</h3>
+<table>
+<thead><tr><th>维度</th><th>评分 (1-5)</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>实用性</td><td>⭐⭐⭐⭐⭐</td><td>直击 AI Agent 安全执行的核心痛点</td></tr>
+<tr><td>代码质量</td><td>⭐⭐⭐⭐</td><td>架构清晰、规范齐全、注释充分</td></tr>
+<tr><td>社区活跃度</td><td>⭐⭐⭐⭐</td><td>开发极其活跃，但社区多样性有待提升</td></tr>
+<tr><td>文档完整性</td><td>⭐⭐⭐⭐</td><td>架构文档详尽，用户指南仍在完善</td></tr>
+<tr><td>创新性</td><td>⭐⭐⭐⭐</td><td>协议优先设计 + execd 注入机制具有创新性</td></tr>
+<tr><td>发展潜力</td><td>⭐⭐⭐⭐⭐</td><td>CNCF 入选 + 阿里背书 + 高增长势头</td></tr>
+</tbody></table>
+<p><strong>综合评价</strong>：⭐⭐⭐⭐ (4.3/5) — 一个设计精良、发展迅猛的 AI 沙箱基础设施项目，具有成为行业标准的潜力。</p>
+</body>
+</html>
