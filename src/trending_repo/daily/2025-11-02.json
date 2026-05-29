@@ -1,0 +1,106 @@
+[
+  {
+    "name": "666ghj/BettaFish",
+    "url": "https://github.com/666ghj/BettaFish",
+    "language": "Python",
+    "stars": 3805,
+    "forks": 401,
+    "description": "微舆：人人可用的多Agent舆情分析助手，打破信息茧房，还原舆情原貌，预测未来走向，辅助决策！从0实现，不依赖任何框架。"
+  },
+  {
+    "name": "Wei-Shaw/claude-relay-service",
+    "url": "https://github.com/Wei-Shaw/claude-relay-service",
+    "language": "JavaScript",
+    "stars": 4759,
+    "forks": 788,
+    "description": "CRS-自建Claude Code镜像，一站式开源中转服务，让 Claude、OpenAI、Gemini、Droid 订阅统一接入，支持拼车共享，更高效分摊成本，原生工具无缝使用。"
+  },
+  {
+    "name": "microsoft/agent-lightning",
+    "url": "https://github.com/microsoft/agent-lightning",
+    "language": "Python",
+    "stars": 5831,
+    "forks": 424,
+    "description": "The absolute trainer to light up AI agents."
+  },
+  {
+    "name": "HKUDS/DeepCode",
+    "url": "https://github.com/HKUDS/DeepCode",
+    "language": "Python",
+    "stars": 8227,
+    "forks": 1167,
+    "description": "\"DeepCode: Open Agentic Coding (Paper2Code & Text2Web & Text2Backend)\""
+  },
+  {
+    "name": "GeeeekExplorer/nano-vllm",
+    "url": "https://github.com/GeeeekExplorer/nano-vllm",
+    "language": "Python",
+    "stars": 7405,
+    "forks": 950,
+    "description": "Nano vLLM"
+  },
+  {
+    "name": "sst/opencode",
+    "url": "https://github.com/sst/opencode",
+    "language": "TypeScript",
+    "stars": 30265,
+    "forks": 2329,
+    "description": "The AI coding agent built for the terminal."
+  },
+  {
+    "name": "charmbracelet/glow",
+    "url": "https://github.com/charmbracelet/glow",
+    "language": "Go",
+    "stars": 19874,
+    "forks": 480,
+    "description": "Render markdown on the CLI, with pizzazz! 💅🏻"
+  },
+  {
+    "name": "NARKOZ/hacker-scripts",
+    "url": "https://github.com/NARKOZ/hacker-scripts",
+    "language": "JavaScript",
+    "stars": 48976,
+    "forks": 6674,
+    "description": "Based on a true story"
+  },
+  {
+    "name": "moondevonyt/moon-dev-ai-agents",
+    "url": "https://github.com/moondevonyt/moon-dev-ai-agents",
+    "language": "Python",
+    "stars": 2249,
+    "forks": 1075,
+    "description": "autonomous ai agents for trading in python"
+  },
+  {
+    "name": "suitenumerique/docs",
+    "url": "https://github.com/suitenumerique/docs",
+    "language": "Python",
+    "stars": 14269,
+    "forks": 434,
+    "description": "A collaborative note taking, wiki and documentation platform that scales. Built with Django and React."
+  },
+  {
+    "name": "Fosowl/agenticSeek",
+    "url": "https://github.com/Fosowl/agenticSeek",
+    "language": "Python",
+    "stars": 22400,
+    "forks": 2416,
+    "description": "Fully Local Manus AI. No APIs, No $200 monthly bills. Enjoy an autonomous agent that thinks, browses the web, and code for the sole cost of electricity. 🔔 Official updates only via twitter @Martin993886460 (Beware of fake account)"
+  },
+  {
+    "name": "HandsOnLLM/Hands-On-Large-Language-Models",
+    "url": "https://github.com/HandsOnLLM/Hands-On-Large-Language-Models",
+    "language": "JupyterNotebook",
+    "stars": 17054,
+    "forks": 4024,
+    "description": "Official code repo for the O'Reilly Book - \"Hands-On Large Language Models\""
+  },
+  {
+    "name": "hmjz100/LinkSwift",
+    "url": "https://github.com/hmjz100/LinkSwift",
+    "language": "JavaScript",
+    "stars": 7910,
+    "forks": 371,
+    "description": "一个基于 JavaScript 的网盘文件下载地址获取工具。基于【网盘直链下载助手】修改 ，支持 百度网盘 / 阿里云盘 / 中国移动云盘 / 天翼云盘 / 迅雷云盘 / 夸克网盘 / UC网盘 / 123云盘 八大网盘"
+  }
+]

@@ -1,0 +1,114 @@
+[
+  {
+    "name": "microsoft/VibeVoice",
+    "url": "https://github.com/microsoft/VibeVoice",
+    "language": "Python",
+    "stars": 11302,
+    "forks": 1423,
+    "description": "Open-Source Frontier Voice AI"
+  },
+  {
+    "name": "NVIDIA/cutile-python",
+    "url": "https://github.com/NVIDIA/cutile-python",
+    "language": "Python",
+    "stars": 591,
+    "forks": 24,
+    "description": "cuTile is a programming model for writing parallel kernels for NVIDIA GPUs"
+  },
+  {
+    "name": "patchy631/ai-engineering-hub",
+    "url": "https://github.com/patchy631/ai-engineering-hub",
+    "language": "JupyterNotebook",
+    "stars": 21557,
+    "forks": 3569,
+    "description": "In-depth tutorials on LLMs, RAGs and real-world AI agent applications."
+  },
+  {
+    "name": "TelegramMessenger/Telegram-iOS",
+    "url": "https://github.com/TelegramMessenger/Telegram-iOS",
+    "language": "Swift",
+    "stars": 7586,
+    "forks": 2195,
+    "description": "Telegram-iOS"
+  },
+  {
+    "name": "anthropics/claude-quickstarts",
+    "url": "https://github.com/anthropics/claude-quickstarts",
+    "language": "Python",
+    "stars": 10990,
+    "forks": 1987,
+    "description": "A collection of projects designed to help developers quickly get started with building deployable applications using the Claude API"
+  },
+  {
+    "name": "rustfs/rustfs",
+    "url": "https://github.com/rustfs/rustfs",
+    "language": "Rust",
+    "stars": 15302,
+    "forks": 657,
+    "description": "🚀2.3x faster than MinIO for 4KB object payloads. RustFS is an open-source, S3-compatible high-performance object storage system supporting migration and coexistence with other S3-compatible platforms such as MinIO and Ceph."
+  },
+  {
+    "name": "sst/opencode",
+    "url": "https://github.com/sst/opencode",
+    "language": "TypeScript",
+    "stars": 36333,
+    "forks": 3045,
+    "description": "The open source coding agent."
+  },
+  {
+    "name": "BeehiveInnovations/pal-mcp-server",
+    "url": "https://github.com/BeehiveInnovations/pal-mcp-server",
+    "language": "Python",
+    "stars": 10009,
+    "forks": 850,
+    "description": "The power of Claude Code / GeminiCLI / CodexCLI + [Gemini / OpenAI / OpenRouter / Azure / Grok / Ollama / Custom Model / All Of The Above] working as one."
+  },
+  {
+    "name": "microsoft/Foundry-Local",
+    "url": "https://github.com/microsoft/Foundry-Local",
+    "language": "Svelte",
+    "stars": 1258,
+    "forks": 166,
+    "description": "None"
+  },
+  {
+    "name": "sinelaw/fresh",
+    "url": "https://github.com/sinelaw/fresh",
+    "language": "Rust",
+    "stars": 942,
+    "forks": 29,
+    "description": "Text editor for your terminal: easy, powerful and fast"
+  },
+  {
+    "name": "ashishpatel26/500-AI-Agents-Projects",
+    "url": "https://github.com/ashishpatel26/500-AI-Agents-Projects",
+    "language": "Unknown",
+    "stars": 19024,
+    "forks": 3470,
+    "description": "The 500 AI Agents Projects is a curated collection of AI agent use cases across various industries. It showcases practical applications and provides links to open-source projects for implementation, illustrating how AI agents are transforming sectors such as healthcare, finance, education, retail, and more."
+  },
+  {
+    "name": "blakeblackshear/frigate",
+    "url": "https://github.com/blakeblackshear/frigate",
+    "language": "TypeScript",
+    "stars": 27583,
+    "forks": 2578,
+    "description": "NVR with realtime local object detection for IP cameras"
+  },
+  {
+    "name": "lfnovo/open-notebook",
+    "url": "https://github.com/lfnovo/open-notebook",
+    "language": "TypeScript",
+    "stars": 12386,
+    "forks": 1264,
+    "description": "An Open Source implementation of Notebook LM with more flexibility and features"
+  },
+  {
+    "name": "activepieces/activepieces",
+    "url": "https://github.com/activepieces/activepieces",
+    "language": "TypeScript",
+    "stars": 19394,
+    "forks": 2999,
+    "description": "AI Agents & MCPs & AI Workflow Automation • (~400 MCP servers for AI agents) • AI Automation / AI Agent with MCPs • AI Workflows & AI Agents • MCPs for AI Agents"
+  }
+]

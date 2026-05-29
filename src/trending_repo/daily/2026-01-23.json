@@ -1,0 +1,90 @@
+[
+  {
+    "name": "remotion-dev/remotion",
+    "url": "https://github.com/remotion-dev/remotion",
+    "language": "TypeScript",
+    "stars": 27764,
+    "forks": 1635,
+    "description": "🎥 Make videos programmatically with React"
+  },
+  {
+    "name": "block/goose",
+    "url": "https://github.com/block/goose",
+    "language": "Rust",
+    "stars": 27383,
+    "forks": 2482,
+    "description": "an open source, extensible AI agent that goes beyond code suggestions - install, execute, edit, and test with any LLM"
+  },
+  {
+    "name": "twitter/the-algorithm",
+    "url": "https://github.com/twitter/the-algorithm",
+    "language": "Scala",
+    "stars": 71940,
+    "forks": 13159,
+    "description": "Source code for the X Recommendation Algorithm"
+  },
+  {
+    "name": "xai-org/grok-1",
+    "url": "https://github.com/xai-org/grok-1",
+    "language": "Python",
+    "stars": 51350,
+    "forks": 8471,
+    "description": "Grok open release"
+  },
+  {
+    "name": "deepseek-ai/FlashMLA",
+    "url": "https://github.com/deepseek-ai/FlashMLA",
+    "language": "C++",
+    "stars": 12246,
+    "forks": 956,
+    "description": "FlashMLA: Efficient Multi-head Latent Attention Kernels"
+  },
+  {
+    "name": "microsoft/agent-lightning",
+    "url": "https://github.com/microsoft/agent-lightning",
+    "language": "Python",
+    "stars": 11592,
+    "forks": 935,
+    "description": "The absolute trainer to light up AI agents."
+  },
+  {
+    "name": "iOfficeAI/AionUi",
+    "url": "https://github.com/iOfficeAI/AionUi",
+    "language": "TypeScript",
+    "stars": 9603,
+    "forks": 740,
+    "description": "Free, local, open-source Cowork for Gemini CLI, Claude Code, Codex, Opencode, Qwen Code, Goose Cli, Auggie, and more | 🌟 Star if you like it!"
+  },
+  {
+    "name": "mastra-ai/mastra",
+    "url": "https://github.com/mastra-ai/mastra",
+    "language": "TypeScript",
+    "stars": 20299,
+    "forks": 1458,
+    "description": "From the team behind Gatsby, Mastra is a framework for building AI-powered applications and agents with a modern TypeScript stack."
+  },
+  {
+    "name": "microsoft/Data-Science-For-Beginners",
+    "url": "https://github.com/microsoft/Data-Science-For-Beginners",
+    "language": "JupyterNotebook",
+    "stars": 33126,
+    "forks": 6863,
+    "description": "10 Weeks, 20 Lessons, Data Science for All!"
+  },
+  {
+    "name": "nexmoe/VidBee",
+    "url": "https://github.com/nexmoe/VidBee",
+    "language": "TypeScript",
+    "stars": 5086,
+    "forks": 352,
+    "description": "Download videos from almost any website worldwide"
+  },
+  {
+    "name": "virattt/dexter",
+    "url": "https://github.com/virattt/dexter",
+    "language": "TypeScript",
+    "stars": 8677,
+    "forks": 1063,
+    "description": "An autonomous agent for deep financial research"
+  }
+]

@@ -1,0 +1,90 @@
+[
+  {
+    "name": "C4illin/ConvertX",
+    "url": "https://github.com/C4illin/ConvertX",
+    "language": "TypeScript",
+    "stars": 11677,
+    "forks": 579,
+    "description": "💾 Self-hosted online file converter. Supports 1000+ formats ⚙️"
+  },
+  {
+    "name": "resemble-ai/chatterbox",
+    "url": "https://github.com/resemble-ai/chatterbox",
+    "language": "Python",
+    "stars": 15546,
+    "forks": 2182,
+    "description": "SoTA open-source TTS"
+  },
+  {
+    "name": "virattt/ai-hedge-fund",
+    "url": "https://github.com/virattt/ai-hedge-fund",
+    "language": "Python",
+    "stars": 43253,
+    "forks": 7673,
+    "description": "An AI Hedge Fund Team"
+  },
+  {
+    "name": "simstudioai/sim",
+    "url": "https://github.com/simstudioai/sim",
+    "language": "TypeScript",
+    "stars": 23344,
+    "forks": 2904,
+    "description": "Open-source platform to build and deploy AI agent workflows."
+  },
+  {
+    "name": "Free-TV/IPTV",
+    "url": "https://github.com/Free-TV/IPTV",
+    "language": "Python",
+    "stars": 8394,
+    "forks": 1521,
+    "description": "M3U Playlist for free TV channels"
+  },
+  {
+    "name": "TapXWorld/ChinaTextbook",
+    "url": "https://github.com/TapXWorld/ChinaTextbook",
+    "language": "Roff",
+    "stars": 62782,
+    "forks": 13925,
+    "description": "所有小初高、大学PDF教材。"
+  },
+  {
+    "name": "0xk1h0/ChatGPT_DAN",
+    "url": "https://github.com/0xk1h0/ChatGPT_DAN",
+    "language": "Unknown",
+    "stars": 10299,
+    "forks": 958,
+    "description": "ChatGPT DAN, Jailbreaks prompt"
+  },
+  {
+    "name": "public-apis/public-apis",
+    "url": "https://github.com/public-apis/public-apis",
+    "language": "Python",
+    "stars": 385656,
+    "forks": 41171,
+    "description": "A collective list of free APIs"
+  },
+  {
+    "name": "nicotsx/zerobyte",
+    "url": "https://github.com/nicotsx/zerobyte",
+    "language": "TypeScript",
+    "stars": 2972,
+    "forks": 58,
+    "description": "Backup automation for self-hosters. Built on top of restic"
+  },
+  {
+    "name": "jellyfin/jellyfin-desktop",
+    "url": "https://github.com/jellyfin/jellyfin-desktop",
+    "language": "C++",
+    "stars": 4787,
+    "forks": 443,
+    "description": "Jellyfin Desktop Client"
+  },
+  {
+    "name": "NVIDIA-NeMo/Gym",
+    "url": "https://github.com/NVIDIA-NeMo/Gym",
+    "language": "Python",
+    "stars": 146,
+    "forks": 15,
+    "description": "Build RL environments for LLM training"
+  }
+]

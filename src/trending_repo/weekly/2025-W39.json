@@ -1,0 +1,602 @@
+[
+  {
+    "name": "EbookFoundation/free-programming-books",
+    "url": "https://github.com/EbookFoundation/free-programming-books",
+    "language": "Python",
+    "stars": 370210,
+    "forks": 64293,
+    "description": "📚 Freely available programming books"
+  },
+  {
+    "name": "kamranahmedse/developer-roadmap",
+    "url": "https://github.com/kamranahmedse/developer-roadmap",
+    "language": "TypeScript",
+    "stars": 337940,
+    "forks": 42911,
+    "description": "Interactive roadmaps, guides and other educational content to help developers grow in their careers."
+  },
+  {
+    "name": "donnemartin/system-design-primer",
+    "url": "https://github.com/donnemartin/system-design-primer",
+    "language": "Python",
+    "stars": 320738,
+    "forks": 52395,
+    "description": "Learn how to design large-scale systems. Prep for the system design interview. Includes Anki flashcards."
+  },
+  {
+    "name": "TheAlgorithms/Python",
+    "url": "https://github.com/TheAlgorithms/Python",
+    "language": "Python",
+    "stars": 208879,
+    "forks": 48105,
+    "description": "All Algorithms implemented in Python"
+  },
+  {
+    "name": "torvalds/linux",
+    "url": "https://github.com/torvalds/linux",
+    "language": "C",
+    "stars": 202858,
+    "forks": 57830,
+    "description": "Linux kernel source tree"
+  },
+  {
+    "name": "AUTOMATIC1111/stable-diffusion-webui",
+    "url": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
+    "language": "Python",
+    "stars": 156768,
+    "forks": 29080,
+    "description": "Stable Diffusion web UI"
+  },
+  {
+    "name": "ytdl-org/youtube-dl",
+    "url": "https://github.com/ytdl-org/youtube-dl",
+    "language": "Python",
+    "stars": 137842,
+    "forks": 10489,
+    "description": "Command-line program to download videos from YouTube.com and other video sites"
+  },
+  {
+    "name": "yangshun/tech-interview-handbook",
+    "url": "https://github.com/yangshun/tech-interview-handbook",
+    "language": "TypeScript",
+    "stars": 130204,
+    "forks": 15803,
+    "description": "💯 Curated coding interview preparation materials for busy software engineers"
+  },
+  {
+    "name": "yt-dlp/yt-dlp",
+    "url": "https://github.com/yt-dlp/yt-dlp",
+    "language": "Python",
+    "stars": 128477,
+    "forks": 10294,
+    "description": "A feature-rich command-line audio/video downloader"
+  },
+  {
+    "name": "microsoft/TypeScript",
+    "url": "https://github.com/microsoft/TypeScript",
+    "language": "TypeScript",
+    "stars": 106129,
+    "forks": 13010,
+    "description": "TypeScript is a superset of JavaScript that compiles to clean JavaScript output."
+  },
+  {
+    "name": "mtdvio/every-programmer-should-know",
+    "url": "https://github.com/mtdvio/every-programmer-should-know",
+    "language": "Unknown",
+    "stars": 91173,
+    "forks": 8223,
+    "description": "A collection of (mostly) technical things every software developer should know about"
+  },
+  {
+    "name": "nvm-sh/nvm",
+    "url": "https://github.com/nvm-sh/nvm",
+    "language": "Shell",
+    "stars": 87109,
+    "forks": 9325,
+    "description": "Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions"
+  },
+  {
+    "name": "gin-gonic/gin",
+    "url": "https://github.com/gin-gonic/gin",
+    "language": "Go",
+    "stars": 85921,
+    "forks": 8420,
+    "description": "Gin is a high-performance HTTP web framework written in Go. It provides a Martini-like API but with significantly better performance—up to 40 times faster—thanks to httprouter. Gin is designed for building REST APIs, web applications, and microservices."
+  },
+  {
+    "name": "google-gemini/gemini-cli",
+    "url": "https://github.com/google-gemini/gemini-cli",
+    "language": "TypeScript",
+    "stars": 76728,
+    "forks": 8241,
+    "description": "An open-source AI agent that brings the power of Gemini directly into your terminal."
+  },
+  {
+    "name": "netdata/netdata",
+    "url": "https://github.com/netdata/netdata",
+    "language": "C",
+    "stars": 76041,
+    "forks": 6166,
+    "description": "The fastest path to AI-powered full stack observability, even for lean teams."
+  },
+  {
+    "name": "elastic/elasticsearch",
+    "url": "https://github.com/elastic/elasticsearch",
+    "language": "Java",
+    "stars": 74645,
+    "forks": 25500,
+    "description": "Free and Open Source, Distributed, RESTful Search Engine"
+  },
+  {
+    "name": "rasbt/LLMs-from-scratch",
+    "url": "https://github.com/rasbt/LLMs-from-scratch",
+    "language": "JupyterNotebook",
+    "stars": 73111,
+    "forks": 10632,
+    "description": "Implement a ChatGPT-like LLM in PyTorch from scratch, step by step"
+  },
+  {
+    "name": "Shubhamsaboo/awesome-llm-apps",
+    "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+    "language": "Python",
+    "stars": 70421,
+    "forks": 9007,
+    "description": "Collection of awesome LLM apps with AI Agents and RAG using OpenAI, Anthropic, Gemini and opensource models."
+  },
+  {
+    "name": "commaai/openpilot",
+    "url": "https://github.com/commaai/openpilot",
+    "language": "Python",
+    "stars": 56182,
+    "forks": 10144,
+    "description": "openpilot is an operating system for robotics. Currently, it upgrades the driver assistance system on 300+ supported cars."
+  },
+  {
+    "name": "Asabeneh/30-Days-Of-Python",
+    "url": "https://github.com/Asabeneh/30-Days-Of-Python",
+    "language": "Python",
+    "stars": 49926,
+    "forks": 9545,
+    "description": "30 days of Python programming challenge is a step-by-step guide to learn the Python programming language in 30 days. This challenge may take more than100 days, follow your own pace. These videos may help too: https://www.youtube.com/channel/UC7PNRuno1rzYPb1xLa4yktw"
+  },
+  {
+    "name": "poteto/hiring-without-whiteboards",
+    "url": "https://github.com/poteto/hiring-without-whiteboards",
+    "language": "JavaScript",
+    "stars": 49669,
+    "forks": 3845,
+    "description": "⭐️ Companies that don't have a broken hiring process"
+  },
+  {
+    "name": "LadybirdBrowser/ladybird",
+    "url": "https://github.com/LadybirdBrowser/ladybird",
+    "language": "C++",
+    "stars": 48682,
+    "forks": 2115,
+    "description": "Truly independent web browser"
+  },
+  {
+    "name": "lllyasviel/Fooocus",
+    "url": "https://github.com/lllyasviel/Fooocus",
+    "language": "Python",
+    "stars": 46616,
+    "forks": 7490,
+    "description": "Focus on prompting and generating"
+  },
+  {
+    "name": "ultralytics/ultralytics",
+    "url": "https://github.com/ultralytics/ultralytics",
+    "language": "Python",
+    "stars": 46259,
+    "forks": 8985,
+    "description": "Ultralytics YOLO 🚀"
+  },
+  {
+    "name": "typst/typst",
+    "url": "https://github.com/typst/typst",
+    "language": "Rust",
+    "stars": 46007,
+    "forks": 1231,
+    "description": "A new markup-based typesetting system that is powerful and easy to learn."
+  },
+  {
+    "name": "jellyfin/jellyfin",
+    "url": "https://github.com/jellyfin/jellyfin",
+    "language": "C#",
+    "stars": 43930,
+    "forks": 3946,
+    "description": "The Free Software Media System - Server Backend & API"
+  },
+  {
+    "name": "tldraw/tldraw",
+    "url": "https://github.com/tldraw/tldraw",
+    "language": "TypeScript",
+    "stars": 42795,
+    "forks": 2751,
+    "description": "very good whiteboard SDK / infinite canvas SDK"
+  },
+  {
+    "name": "freqtrade/freqtrade",
+    "url": "https://github.com/freqtrade/freqtrade",
+    "language": "Python",
+    "stars": 42703,
+    "forks": 8677,
+    "description": "Free, open source crypto trading bot"
+  },
+  {
+    "name": "bevyengine/bevy",
+    "url": "https://github.com/bevyengine/bevy",
+    "language": "Rust",
+    "stars": 42209,
+    "forks": 4122,
+    "description": "A refreshingly simple data-driven game engine built in Rust"
+  },
+  {
+    "name": "ziglang/zig",
+    "url": "https://github.com/ziglang/zig",
+    "language": "Zig",
+    "stars": 41229,
+    "forks": 3016,
+    "description": "General-purpose programming language and toolchain for maintaining robust, optimal, and reusable software."
+  },
+  {
+    "name": "harry0703/MoneyPrinterTurbo",
+    "url": "https://github.com/harry0703/MoneyPrinterTurbo",
+    "language": "Python",
+    "stars": 40527,
+    "forks": 5895,
+    "description": "利用AI大模型，一键生成高清短视频 Generate short videos with one click using AI LLM."
+  },
+  {
+    "name": "microsoft/ai-agents-for-beginners",
+    "url": "https://github.com/microsoft/ai-agents-for-beginners",
+    "language": "JupyterNotebook",
+    "stars": 40003,
+    "forks": 13085,
+    "description": "12 Lessons to Get Started Building AI Agents"
+  },
+  {
+    "name": "gofiber/fiber",
+    "url": "https://github.com/gofiber/fiber",
+    "language": "Go",
+    "stars": 37873,
+    "forks": 1871,
+    "description": "⚡️ Express inspired web framework written in Go"
+  },
+  {
+    "name": "dotnet/aspnetcore",
+    "url": "https://github.com/dotnet/aspnetcore",
+    "language": "C#",
+    "stars": 37129,
+    "forks": 10448,
+    "description": "ASP.NET Core is a cross-platform .NET framework for building modern cloud-based web applications on Windows, Mac, or Linux."
+  },
+  {
+    "name": "rapid7/metasploit-framework",
+    "url": "https://github.com/rapid7/metasploit-framework",
+    "language": "Ruby",
+    "stars": 36476,
+    "forks": 14537,
+    "description": "Metasploit Framework"
+  },
+  {
+    "name": "roboflow/supervision",
+    "url": "https://github.com/roboflow/supervision",
+    "language": "Python",
+    "stars": 35224,
+    "forks": 2895,
+    "description": "We write your reusable computer vision tools. 💜"
+  },
+  {
+    "name": "directus/directus",
+    "url": "https://github.com/directus/directus",
+    "language": "TypeScript",
+    "stars": 32438,
+    "forks": 4390,
+    "description": "The flexible backend for all your projects 🐰 Turn your DB into a headless CMS, admin panels, or apps with a custom UI, instant APIs, auth & more."
+  },
+  {
+    "name": "exo-explore/exo",
+    "url": "https://github.com/exo-explore/exo",
+    "language": "Python",
+    "stars": 31404,
+    "forks": 2086,
+    "description": "Run your own AI cluster at home with everyday devices 📱💻 🖥️⌚"
+  },
+  {
+    "name": "microsoft/qlib",
+    "url": "https://github.com/microsoft/qlib",
+    "language": "Python",
+    "stars": 31339,
+    "forks": 4836,
+    "description": "Qlib is an AI-oriented Quant investment platform that aims to use AI tech to empower Quant Research, from exploring ideas to implementing productions. Qlib supports diverse ML modeling paradigms, including supervised learning, market dynamics modeling, and RL, and is now equipped with https://github.com/microsoft/RD-Agent to automate R&D process."
+  },
+  {
+    "name": "ZuodaoTech/everyone-can-use-english",
+    "url": "https://github.com/ZuodaoTech/everyone-can-use-english",
+    "language": "TypeScript",
+    "stars": 30614,
+    "forks": 4362,
+    "description": "人人都能用英语"
+  },
+  {
+    "name": "LizardByte/Sunshine",
+    "url": "https://github.com/LizardByte/Sunshine",
+    "language": "C++",
+    "stars": 29199,
+    "forks": 1378,
+    "description": "Self-hosted game stream host for Moonlight."
+  },
+  {
+    "name": "frappe/erpnext",
+    "url": "https://github.com/frappe/erpnext",
+    "language": "Python",
+    "stars": 28879,
+    "forks": 9420,
+    "description": "Free and Open Source Enterprise Resource Planning (ERP)"
+  },
+  {
+    "name": "helm/helm",
+    "url": "https://github.com/helm/helm",
+    "language": "Go",
+    "stars": 28572,
+    "forks": 7333,
+    "description": "The Kubernetes Package Manager"
+  },
+  {
+    "name": "eslint/eslint",
+    "url": "https://github.com/eslint/eslint",
+    "language": "JavaScript",
+    "stars": 26486,
+    "forks": 4809,
+    "description": "Find and fix problems in your JavaScript code."
+  },
+  {
+    "name": "OpenZeppelin/openzeppelin-contracts",
+    "url": "https://github.com/OpenZeppelin/openzeppelin-contracts",
+    "language": "Solidity",
+    "stars": 26433,
+    "forks": 12199,
+    "description": "OpenZeppelin Contracts is a library for secure smart contract development."
+  },
+  {
+    "name": "sst/opencode",
+    "url": "https://github.com/sst/opencode",
+    "language": "TypeScript",
+    "stars": 25174,
+    "forks": 1819,
+    "description": "AI coding agent, built for the terminal."
+  },
+  {
+    "name": "e2b-dev/awesome-ai-agents",
+    "url": "https://github.com/e2b-dev/awesome-ai-agents",
+    "language": "Unknown",
+    "stars": 22681,
+    "forks": 1884,
+    "description": "A list of AI autonomous agents"
+  },
+  {
+    "name": "fmtlib/fmt",
+    "url": "https://github.com/fmtlib/fmt",
+    "language": "C++",
+    "stars": 22574,
+    "forks": 2723,
+    "description": "A modern formatting library"
+  },
+  {
+    "name": "Gar-b-age/CookLikeHOC",
+    "url": "https://github.com/Gar-b-age/CookLikeHOC",
+    "language": "JavaScript",
+    "stars": 17782,
+    "forks": 1748,
+    "description": "🥢像老乡鸡🐔那样做饭。主要部分于2024年完工，非老乡鸡官方仓库。文字来自《老乡鸡菜品溯源报告》，并做归纳、编辑与整理。CookLikeHOC."
+  },
+  {
+    "name": "winfunc/opcode",
+    "url": "https://github.com/winfunc/opcode",
+    "language": "TypeScript",
+    "stars": 17253,
+    "forks": 1282,
+    "description": "A powerful GUI app and Toolkit for Claude Code - Create custom agents, manage interactive Claude Code sessions, run secure background agents, and more."
+  },
+  {
+    "name": "google-gemini/cookbook",
+    "url": "https://github.com/google-gemini/cookbook",
+    "language": "JupyterNotebook",
+    "stars": 14775,
+    "forks": 2114,
+    "description": "Examples and guides for using the Gemini API"
+  },
+  {
+    "name": "onyx-dot-app/onyx",
+    "url": "https://github.com/onyx-dot-app/onyx",
+    "language": "Python",
+    "stars": 14492,
+    "forks": 1963,
+    "description": "Open Source AI Platform - AI Chat with advanced features that works with every LLM"
+  },
+  {
+    "name": "Alibaba-NLP/DeepResearch",
+    "url": "https://github.com/Alibaba-NLP/DeepResearch",
+    "language": "Python",
+    "stars": 14044,
+    "forks": 1010,
+    "description": "Tongyi Deep Research, the Leading Open-source Deep Research Agent"
+  },
+  {
+    "name": "oauth2-proxy/oauth2-proxy",
+    "url": "https://github.com/oauth2-proxy/oauth2-proxy",
+    "language": "Go",
+    "stars": 12089,
+    "forks": 1814,
+    "description": "A reverse proxy that provides authentication with Google, Azure, OpenID Connect and many more identity providers."
+  },
+  {
+    "name": "basecamp/omarchy",
+    "url": "https://github.com/basecamp/omarchy",
+    "language": "Shell",
+    "stars": 11405,
+    "forks": 1092,
+    "description": "Opinionated Arch/Hyprland Setup"
+  },
+  {
+    "name": "TanStack/router",
+    "url": "https://github.com/TanStack/router",
+    "language": "TypeScript",
+    "stars": 11190,
+    "forks": 1208,
+    "description": "🤖 Fully typesafe Router for React (and friends) w/ built-in caching, 1st class search-param APIs, client-side cache integration and isomorphic rendering."
+  },
+  {
+    "name": "confident-ai/deepeval",
+    "url": "https://github.com/confident-ai/deepeval",
+    "language": "Python",
+    "stars": 11067,
+    "forks": 955,
+    "description": "The LLM Evaluation Framework"
+  },
+  {
+    "name": "wanghongenpin/proxypin",
+    "url": "https://github.com/wanghongenpin/proxypin",
+    "language": "Dart",
+    "stars": 10366,
+    "forks": 897,
+    "description": "Open source free capture HTTP(S) traffic software ProxyPin, supporting full platform systems"
+  },
+  {
+    "name": "modelcontextprotocol/typescript-sdk",
+    "url": "https://github.com/modelcontextprotocol/typescript-sdk",
+    "language": "TypeScript",
+    "stars": 9898,
+    "forks": 1282,
+    "description": "The official TypeScript SDK for Model Context Protocol servers and clients"
+  },
+  {
+    "name": "Kludex/uvicorn",
+    "url": "https://github.com/Kludex/uvicorn",
+    "language": "Python",
+    "stars": 9806,
+    "forks": 852,
+    "description": "An ASGI web server, for Python. 🦄"
+  },
+  {
+    "name": "foundry-rs/foundry",
+    "url": "https://github.com/foundry-rs/foundry",
+    "language": "Rust",
+    "stars": 9548,
+    "forks": 2160,
+    "description": "Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust."
+  },
+  {
+    "name": "Olow304/memvid",
+    "url": "https://github.com/Olow304/memvid",
+    "language": "Python",
+    "stars": 9250,
+    "forks": 768,
+    "description": "Video-based AI memory library. Store millions of text chunks in MP4 files with lightning-fast semantic search. No database needed."
+  },
+  {
+    "name": "smartcontractkit/chainlink",
+    "url": "https://github.com/smartcontractkit/chainlink",
+    "language": "Go",
+    "stars": 7680,
+    "forks": 1852,
+    "description": "node of the decentralized oracle network, bridging on and off-chain computation"
+  },
+  {
+    "name": "is-a-dev/register",
+    "url": "https://github.com/is-a-dev/register",
+    "language": "JavaScript",
+    "stars": 7672,
+    "forks": 14170,
+    "description": "Grab your own sweet-looking '.is-a.dev' subdomain."
+  },
+  {
+    "name": "bytedance/Dolphin",
+    "url": "https://github.com/bytedance/Dolphin",
+    "language": "Python",
+    "stars": 6735,
+    "forks": 542,
+    "description": "The official repo for “Dolphin: Document Image Parsing via Heterogeneous Anchor Prompting”, ACL, 2025."
+  },
+  {
+    "name": "HKUDS/RAG-Anything",
+    "url": "https://github.com/HKUDS/RAG-Anything",
+    "language": "Python",
+    "stars": 6499,
+    "forks": 737,
+    "description": "\"RAG-Anything: All-in-One RAG Framework\""
+  },
+  {
+    "name": "ai-dynamo/dynamo",
+    "url": "https://github.com/ai-dynamo/dynamo",
+    "language": "Rust",
+    "stars": 5079,
+    "forks": 614,
+    "description": "A Datacenter Scale Distributed Inference Serving Framework"
+  },
+  {
+    "name": "humanlayer/humanlayer",
+    "url": "https://github.com/humanlayer/humanlayer",
+    "language": "TypeScript",
+    "stars": 4431,
+    "forks": 346,
+    "description": "The best way to get AI coding agents to solve hard problems in complex codebases."
+  },
+  {
+    "name": "mindcraft-bots/mindcraft",
+    "url": "https://github.com/mindcraft-bots/mindcraft",
+    "language": "JavaScript",
+    "stars": 4096,
+    "forks": 552,
+    "description": "Minecraft AI with LLMs+Mineflayer"
+  },
+  {
+    "name": "ericciarla/trendFinder",
+    "url": "https://github.com/ericciarla/trendFinder",
+    "language": "TypeScript",
+    "stars": 3505,
+    "forks": 393,
+    "description": "Stay on top of trending topics on social media and the web with AI"
+  },
+  {
+    "name": "WECENG/ticket-purchase",
+    "url": "https://github.com/WECENG/ticket-purchase",
+    "language": "Python",
+    "stars": 3333,
+    "forks": 453,
+    "description": "大麦自动抢票，支持人员、城市、日期场次、价格选择"
+  },
+  {
+    "name": "imputnet/helium",
+    "url": "https://github.com/imputnet/helium",
+    "language": "Python",
+    "stars": 3288,
+    "forks": 36,
+    "description": "Private, fast, and honest web browser"
+  },
+  {
+    "name": "HKUDS/AI-Researcher",
+    "url": "https://github.com/HKUDS/AI-Researcher",
+    "language": "Python",
+    "stars": 3028,
+    "forks": 341,
+    "description": "[NeurIPS2025] \"AI-Researcher: Autonomous Scientific Innovation\" -- A production-ready version: https://novix.science/chat"
+  },
+  {
+    "name": "cloudflare/capnweb",
+    "url": "https://github.com/cloudflare/capnweb",
+    "language": "TypeScript",
+    "stars": 2315,
+    "forks": 70,
+    "description": "JavaScript/TypeScript-native, low-boilerplate, object-capability RPC system"
+  },
+  {
+    "name": "coinbase/x402",
+    "url": "https://github.com/coinbase/x402",
+    "language": "TypeScript",
+    "stars": 1465,
+    "forks": 254,
+    "description": "A payments protocol for the internet. Built on HTTP."
+  }
+]

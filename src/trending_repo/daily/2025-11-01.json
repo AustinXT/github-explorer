@@ -1,0 +1,122 @@
+[
+  {
+    "name": "get-convex/chef",
+    "url": "https://github.com/get-convex/chef",
+    "language": "TypeScript",
+    "stars": 2538,
+    "forks": 497,
+    "description": "The only AI app builder that knows backend"
+  },
+  {
+    "name": "suitenumerique/docs",
+    "url": "https://github.com/suitenumerique/docs",
+    "language": "Python",
+    "stars": 14097,
+    "forks": 423,
+    "description": "A collaborative note taking, wiki and documentation platform that scales. Built with Django and React."
+  },
+  {
+    "name": "Tencent/WeKnora",
+    "url": "https://github.com/Tencent/WeKnora",
+    "language": "Go",
+    "stars": 7079,
+    "forks": 806,
+    "description": "LLM-powered framework for deep document understanding, semantic retrieval, and context-aware answers using RAG paradigm."
+  },
+  {
+    "name": "janhq/jan",
+    "url": "https://github.com/janhq/jan",
+    "language": "TypeScript",
+    "stars": 38852,
+    "forks": 2344,
+    "description": "Jan is an open source alternative to ChatGPT that runs 100% offline on your computer."
+  },
+  {
+    "name": "microsoft/Web-Dev-For-Beginners",
+    "url": "https://github.com/microsoft/Web-Dev-For-Beginners",
+    "language": "JavaScript",
+    "stars": 93593,
+    "forks": 14529,
+    "description": "24 Lessons, 12 Weeks, Get Started as a Web Developer"
+  },
+  {
+    "name": "hacksider/Deep-Live-Cam",
+    "url": "https://github.com/hacksider/Deep-Live-Cam",
+    "language": "Python",
+    "stars": 74572,
+    "forks": 10874,
+    "description": "real time face swap and one-click video deepfake with only a single image"
+  },
+  {
+    "name": "juspay/hyperswitch",
+    "url": "https://github.com/juspay/hyperswitch",
+    "language": "Rust",
+    "stars": 38750,
+    "forks": 4507,
+    "description": "An open source payments switch written in Rust to make payments fast, reliable and affordable"
+  },
+  {
+    "name": "nvm-sh/nvm",
+    "url": "https://github.com/nvm-sh/nvm",
+    "language": "Shell",
+    "stars": 88789,
+    "forks": 9509,
+    "description": "Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions"
+  },
+  {
+    "name": "github/copilot-cli",
+    "url": "https://github.com/github/copilot-cli",
+    "language": "Unknown",
+    "stars": 4389,
+    "forks": 283,
+    "description": "GitHub Copilot CLI brings the power of Copilot coding agent directly to your terminal."
+  },
+  {
+    "name": "YunaiV/ruoyi-vue-pro",
+    "url": "https://github.com/YunaiV/ruoyi-vue-pro",
+    "language": "Java",
+    "stars": 33842,
+    "forks": 7310,
+    "description": "🔥 官方推荐 🔥 RuoYi-Vue 全新 Pro 版本，优化重构所有功能。基于 Spring Boot + MyBatis Plus + Vue & Element 实现的后台管理系统 + 微信小程序，支持 RBAC 动态权限、数据权限、SaaS 多租户、Flowable 工作流、三方登录、支付、短信、商城、CRM、ERP、AI 大模型等功能。你的 ⭐️ Star ⭐️，是作者生发的动力！"
+  },
+  {
+    "name": "hanxi/xiaomusic",
+    "url": "https://github.com/hanxi/xiaomusic",
+    "language": "Python",
+    "stars": 6440,
+    "forks": 637,
+    "description": "使用小爱音箱播放音乐，音乐使用 yt-dlp 下载。"
+  },
+  {
+    "name": "666ghj/BettaFish",
+    "url": "https://github.com/666ghj/BettaFish",
+    "language": "Python",
+    "stars": 2578,
+    "forks": 320,
+    "description": "微舆：人人可用的多Agent舆情分析助手，打破信息茧房，还原舆情原貌，预测未来走向，辅助决策！从0实现，不依赖任何框架。"
+  },
+  {
+    "name": "pathwaycom/llm-app",
+    "url": "https://github.com/pathwaycom/llm-app",
+    "language": "JupyterNotebook",
+    "stars": 46236,
+    "forks": 1187,
+    "description": "Ready-to-run cloud templates for RAG, AI pipelines, and enterprise search with live data. 🐳Docker-friendly.⚡Always in sync with Sharepoint, Google Drive, S3, Kafka, PostgreSQL, real-time data APIs, and more."
+  },
+  {
+    "name": "lingodotdev/lingo.dev",
+    "url": "https://github.com/lingodotdev/lingo.dev",
+    "language": "TypeScript",
+    "stars": 3911,
+    "forks": 597,
+    "description": "⚡ Lingo.dev - open-source, AI-powered i18n toolkit for instant localization with LLMs. Bring your own LLM or use Lingo.dev Localization Engine. Join discord:"
+  },
+  {
+    "name": "ossu/computer-science",
+    "url": "https://github.com/ossu/computer-science",
+    "language": "HTML",
+    "stars": 196587,
+    "forks": 24525,
+    "description": "🎓 Path to a free self-taught education in Computer Science!"
+  }
+]

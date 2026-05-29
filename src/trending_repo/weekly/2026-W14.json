@@ -1,0 +1,282 @@
+[
+  {
+    "name": "freeCodeCamp/freeCodeCamp",
+    "url": "https://github.com/freeCodeCamp/freeCodeCamp",
+    "language": "TypeScript",
+    "stars": 441119,
+    "forks": 44071,
+    "description": "freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming, and computer science for free."
+  },
+  {
+    "name": "jwasham/coding-interview-university",
+    "url": "https://github.com/jwasham/coding-interview-university",
+    "language": "Unknown",
+    "stars": 339197,
+    "forks": 81717,
+    "description": "A complete computer science study plan to become a software engineer."
+  },
+  {
+    "name": "f/prompts.chat",
+    "url": "https://github.com/f/prompts.chat",
+    "language": "HTML",
+    "stars": 156863,
+    "forks": 20575,
+    "description": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy."
+  },
+  {
+    "name": "obra/superpowers",
+    "url": "https://github.com/obra/superpowers",
+    "language": "Shell",
+    "stars": 127141,
+    "forks": 10365,
+    "description": "An agentic skills framework & software development methodology that works."
+  },
+  {
+    "name": "axios/axios",
+    "url": "https://github.com/axios/axios",
+    "language": "JavaScript",
+    "stars": 108958,
+    "forks": 11592,
+    "description": "Promise based HTTP client for the browser and node.js"
+  },
+  {
+    "name": "anthropics/claude-code",
+    "url": "https://github.com/anthropics/claude-code",
+    "language": "Shell",
+    "stars": 104884,
+    "forks": 16617,
+    "description": "Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands."
+  },
+  {
+    "name": "neovim/neovim",
+    "url": "https://github.com/neovim/neovim",
+    "language": "VimScript",
+    "stars": 97747,
+    "forks": 6699,
+    "description": "Vim-fork focused on extensibility and usability"
+  },
+  {
+    "name": "hacksider/Deep-Live-Cam",
+    "url": "https://github.com/hacksider/Deep-Live-Cam",
+    "language": "Python",
+    "stars": 85889,
+    "forks": 12498,
+    "description": "real time face swap and one-click video deepfake with only a single image"
+  },
+  {
+    "name": "sherlock-project/sherlock",
+    "url": "https://github.com/sherlock-project/sherlock",
+    "language": "Python",
+    "stars": 78870,
+    "forks": 9212,
+    "description": "Hunt down social media accounts by username across social networks"
+  },
+  {
+    "name": "PaddlePaddle/PaddleOCR",
+    "url": "https://github.com/PaddlePaddle/PaddleOCR",
+    "language": "Python",
+    "stars": 73829,
+    "forks": 10094,
+    "description": "Turn any PDF or image document into structured data for your AI. A powerful, lightweight OCR toolkit that bridges the gap between images/PDFs and LLMs. Supports 100+ languages."
+  },
+  {
+    "name": "openai/codex",
+    "url": "https://github.com/openai/codex",
+    "language": "Rust",
+    "stars": 72364,
+    "forks": 10125,
+    "description": "Lightweight coding agent that runs in your terminal"
+  },
+  {
+    "name": "apache/superset",
+    "url": "https://github.com/apache/superset",
+    "language": "TypeScript",
+    "stars": 71682,
+    "forks": 16921,
+    "description": "Apache Superset is a Data Visualization and Data Exploration Platform"
+  },
+  {
+    "name": "OpenBB-finance/OpenBB",
+    "url": "https://github.com/OpenBB-finance/OpenBB",
+    "language": "Python",
+    "stars": 64273,
+    "forks": 6330,
+    "description": "Financial data platform for analysts, quants and AI agents."
+  },
+  {
+    "name": "block/goose",
+    "url": "https://github.com/block/goose",
+    "language": "Rust",
+    "stars": 36085,
+    "forks": 3404,
+    "description": "an open source, extensible AI agent that goes beyond code suggestions - install, execute, edit, and test with any LLM"
+  },
+  {
+    "name": "microsoft/VibeVoice",
+    "url": "https://github.com/microsoft/VibeVoice",
+    "language": "Python",
+    "stars": 34921,
+    "forks": 3974,
+    "description": "Open-Source Frontier Voice AI"
+  },
+  {
+    "name": "OpenBMB/ChatDev",
+    "url": "https://github.com/OpenBMB/ChatDev",
+    "language": "Python",
+    "stars": 32286,
+    "forks": 3984,
+    "description": "ChatDev 2.0: Dev All through LLM-powered Multi-Agent Collaboration"
+  },
+  {
+    "name": "badlogic/pi-mono",
+    "url": "https://github.com/badlogic/pi-mono",
+    "language": "TypeScript",
+    "stars": 31647,
+    "forks": 3455,
+    "description": "AI agent toolkit: coding agent CLI, unified LLM API, TUI & web UI libraries, Slack bot, vLLM pods"
+  },
+  {
+    "name": "telegramdesktop/tdesktop",
+    "url": "https://github.com/telegramdesktop/tdesktop",
+    "language": "C++",
+    "stars": 30928,
+    "forks": 6527,
+    "description": "Telegram Desktop messaging app"
+  },
+  {
+    "name": "shanraisshan/claude-code-best-practice",
+    "url": "https://github.com/shanraisshan/claude-code-best-practice",
+    "language": "HTML",
+    "stars": 29818,
+    "forks": 2571,
+    "description": "practice made claude perfect"
+  },
+  {
+    "name": "onyx-dot-app/onyx",
+    "url": "https://github.com/onyx-dot-app/onyx",
+    "language": "Python",
+    "stars": 24628,
+    "forks": 3301,
+    "description": "Open Source AI Platform - AI Chat with advanced features that works with every LLM"
+  },
+  {
+    "name": "siddharthvaddem/openscreen",
+    "url": "https://github.com/siddharthvaddem/openscreen",
+    "language": "TypeScript",
+    "stars": 21444,
+    "forks": 1453,
+    "description": "Create stunning demos for free. Open-source, no subscriptions, no watermarks, and free for commercial use. An alternative to Screen Studio."
+  },
+  {
+    "name": "fastfetch-cli/fastfetch",
+    "url": "https://github.com/fastfetch-cli/fastfetch",
+    "language": "C",
+    "stars": 21288,
+    "forks": 720,
+    "description": "A maintained, feature-rich and performance oriented, neofetch like system information tool."
+  },
+  {
+    "name": "NousResearch/hermes-agent",
+    "url": "https://github.com/NousResearch/hermes-agent",
+    "language": "Python",
+    "stars": 19507,
+    "forks": 2365,
+    "description": "The agent that grows with you"
+  },
+  {
+    "name": "Yeachan-Heo/oh-my-claudecode",
+    "url": "https://github.com/Yeachan-Heo/oh-my-claudecode",
+    "language": "TypeScript",
+    "stars": 18062,
+    "forks": 1267,
+    "description": "Teams-first Multi-agent orchestration for Claude Code"
+  },
+  {
+    "name": "luongnv89/claude-howto",
+    "url": "https://github.com/luongnv89/claude-howto",
+    "language": "Python",
+    "stars": 16536,
+    "forks": 1924,
+    "description": "A visual, example-driven guide to Claude Code — from basic concepts to advanced agents, with copy-paste templates that bring immediate value."
+  },
+  {
+    "name": "google-ai-edge/gallery",
+    "url": "https://github.com/google-ai-edge/gallery",
+    "language": "Kotlin",
+    "stars": 16370,
+    "forks": 1488,
+    "description": "A gallery that showcases on-device ML/GenAI use cases and allows people to try and use models locally."
+  },
+  {
+    "name": "microsoft/agent-lightning",
+    "url": "https://github.com/microsoft/agent-lightning",
+    "language": "Python",
+    "stars": 16078,
+    "forks": 1388,
+    "description": "The absolute trainer to light up AI agents."
+  },
+  {
+    "name": "Yeachan-Heo/oh-my-codex",
+    "url": "https://github.com/Yeachan-Heo/oh-my-codex",
+    "language": "TypeScript",
+    "stars": 14814,
+    "forks": 1382,
+    "description": "OmX - Oh My codeX: Your codex is not alone. Add hooks, agent teams, HUDs, and so much more."
+  },
+  {
+    "name": "google-research/timesfm",
+    "url": "https://github.com/google-research/timesfm",
+    "language": "Python",
+    "stars": 13697,
+    "forks": 1169,
+    "description": "TimesFM (Time Series Foundation Model) is a pretrained time-series foundation model developed by Google Research for time-series forecasting."
+  },
+  {
+    "name": "microsoft/agent-framework",
+    "url": "https://github.com/microsoft/agent-framework",
+    "language": "Python",
+    "stars": 8507,
+    "forks": 1419,
+    "description": "A framework for building, orchestrating and deploying AI agents and multi-agent workflows with support for Python and .NET."
+  },
+  {
+    "name": "Blaizzy/mlx-vlm",
+    "url": "https://github.com/Blaizzy/mlx-vlm",
+    "language": "Python",
+    "stars": 3759,
+    "forks": 410,
+    "description": "MLX-VLM is a package for inference and fine-tuning of Vision Language Models (VLMs) on your Mac using MLX."
+  },
+  {
+    "name": "dmtrKovalenko/fff.nvim",
+    "url": "https://github.com/dmtrKovalenko/fff.nvim",
+    "language": "Rust",
+    "stars": 3500,
+    "forks": 147,
+    "description": "The fastest and the most accurate file search toolkit for AI agents, Neovim, Rust, C, and NodeJS"
+  },
+  {
+    "name": "vas3k/TaxHacker",
+    "url": "https://github.com/vas3k/TaxHacker",
+    "language": "TypeScript",
+    "stars": 3468,
+    "forks": 563,
+    "description": "Self-hosted AI accounting app. LLM analyzer for receipts, invoices, transactions with custom prompts and categories"
+  },
+  {
+    "name": "Dimillian/Skills",
+    "url": "https://github.com/Dimillian/Skills",
+    "language": "Shell",
+    "stars": 2658,
+    "forks": 141,
+    "description": "My Codex Skills"
+  },
+  {
+    "name": "google-ai-edge/LiteRT-LM",
+    "url": "https://github.com/google-ai-edge/LiteRT-LM",
+    "language": "C++",
+    "stars": 1302,
+    "forks": 171,
+    "description": "None"
+  }
+]

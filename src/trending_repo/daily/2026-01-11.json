@@ -1,0 +1,106 @@
+[
+  {
+    "name": "anomalyco/opencode",
+    "url": "https://github.com/anomalyco/opencode",
+    "language": "TypeScript",
+    "stars": 60591,
+    "forks": 5195,
+    "description": "The open source coding agent."
+  },
+  {
+    "name": "obra/superpowers",
+    "url": "https://github.com/obra/superpowers",
+    "language": "Shell",
+    "stars": 16466,
+    "forks": 1294,
+    "description": "Claude Code superpowers: core skills library"
+  },
+  {
+    "name": "frankbria/ralph-claude-code",
+    "url": "https://github.com/frankbria/ralph-claude-code",
+    "language": "Shell",
+    "stars": 1256,
+    "forks": 96,
+    "description": "Autonomous AI development loop for Claude Code with intelligent exit detection"
+  },
+  {
+    "name": "davila7/claude-code-templates",
+    "url": "https://github.com/davila7/claude-code-templates",
+    "language": "Python",
+    "stars": 15396,
+    "forks": 1339,
+    "description": "CLI tool for configuring and monitoring Claude Code"
+  },
+  {
+    "name": "makeplane/plane",
+    "url": "https://github.com/makeplane/plane",
+    "language": "TypeScript",
+    "stars": 43294,
+    "forks": 3255,
+    "description": "🔥🔥🔥 Open-source Jira, Linear, Monday, and ClickUp alternative. Plane is a modern project management platform to manage tasks, sprints, docs, and triage."
+  },
+  {
+    "name": "twitter/twemoji",
+    "url": "https://github.com/twitter/twemoji",
+    "language": "HTML",
+    "stars": 17387,
+    "forks": 1904,
+    "description": "Emoji for everyone. https://twemoji.twitter.com/"
+  },
+  {
+    "name": "bytedance/UI-TARS-desktop",
+    "url": "https://github.com/bytedance/UI-TARS-desktop",
+    "language": "TypeScript",
+    "stars": 22549,
+    "forks": 2183,
+    "description": "The Open-Source Multimodal AI Agent Stack: Connecting Cutting-Edge AI Models and Agent Infra"
+  },
+  {
+    "name": "twentyhq/twenty",
+    "url": "https://github.com/twentyhq/twenty",
+    "language": "TypeScript",
+    "stars": 38503,
+    "forks": 4903,
+    "description": "Building a modern alternative to Salesforce, powered by the community."
+  },
+  {
+    "name": "home-assistant/home-assistant.io",
+    "url": "https://github.com/home-assistant/home-assistant.io",
+    "language": "HTML",
+    "stars": 7779,
+    "forks": 8071,
+    "description": "📘 Home Assistant User documentation"
+  },
+  {
+    "name": "anthropics/claude-code",
+    "url": "https://github.com/anthropics/claude-code",
+    "language": "Shell",
+    "stars": 54990,
+    "forks": 3979,
+    "description": "Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands."
+  },
+  {
+    "name": "C4illin/ConvertX",
+    "url": "https://github.com/C4illin/ConvertX",
+    "language": "TypeScript",
+    "stars": 14397,
+    "forks": 766,
+    "description": "💾 Self-hosted online file converter. Supports 1000+ formats ⚙️"
+  },
+  {
+    "name": "simstudioai/sim",
+    "url": "https://github.com/simstudioai/sim",
+    "language": "TypeScript",
+    "stars": 25302,
+    "forks": 3149,
+    "description": "Open-source platform to build and deploy AI agent workflows."
+  },
+  {
+    "name": "gyoridavid/ai_agents_az",
+    "url": "https://github.com/gyoridavid/ai_agents_az",
+    "language": "Python",
+    "stars": 2240,
+    "forks": 610,
+    "description": "None"
+  }
+]

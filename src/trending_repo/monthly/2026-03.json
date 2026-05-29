@@ -1,0 +1,1090 @@
+[
+  {
+    "name": "codecrafters-io/build-your-own-x",
+    "url": "https://github.com/codecrafters-io/build-your-own-x",
+    "language": "Markdown",
+    "stars": 478812,
+    "forks": 45052,
+    "description": "Master programming by recreating your favorite technologies from scratch."
+  },
+  {
+    "name": "freeCodeCamp/freeCodeCamp",
+    "url": "https://github.com/freeCodeCamp/freeCodeCamp",
+    "language": "TypeScript",
+    "stars": 439361,
+    "forks": 43861,
+    "description": "freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming, and computer science for free."
+  },
+  {
+    "name": "public-apis/public-apis",
+    "url": "https://github.com/public-apis/public-apis",
+    "language": "Python",
+    "stars": 408848,
+    "forks": 44152,
+    "description": "A collective list of free APIs"
+  },
+  {
+    "name": "jwasham/coding-interview-university",
+    "url": "https://github.com/jwasham/coding-interview-university",
+    "language": "Unknown",
+    "stars": 339197,
+    "forks": 81717,
+    "description": "A complete computer science study plan to become a software engineer."
+  },
+  {
+    "name": "openclaw/openclaw",
+    "url": "https://github.com/openclaw/openclaw",
+    "language": "TypeScript",
+    "stars": 295920,
+    "forks": 55933,
+    "description": "Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞"
+  },
+  {
+    "name": "obra/superpowers",
+    "url": "https://github.com/obra/superpowers",
+    "language": "Shell",
+    "stars": 127141,
+    "forks": 10365,
+    "description": "An agentic skills framework & software development methodology that works."
+  },
+  {
+    "name": "iptv-org/iptv",
+    "url": "https://github.com/iptv-org/iptv",
+    "language": "TypeScript",
+    "stars": 113355,
+    "forks": 5769,
+    "description": "Collection of publicly available IPTV channels from all over the world"
+  },
+  {
+    "name": "shadcn-ui/ui",
+    "url": "https://github.com/shadcn-ui/ui",
+    "language": "TypeScript",
+    "stars": 108382,
+    "forks": 8056,
+    "description": "A set of beautifully-designed, accessible components and a code distribution platform. Works with your favorite frameworks. Open Source. Open Code."
+  },
+  {
+    "name": "affaan-m/everything-claude-code",
+    "url": "https://github.com/affaan-m/everything-claude-code",
+    "language": "JavaScript",
+    "stars": 100268,
+    "forks": 13046,
+    "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond."
+  },
+  {
+    "name": "Shubhamsaboo/awesome-llm-apps",
+    "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+    "language": "Python",
+    "stars": 98433,
+    "forks": 14330,
+    "description": "Collection of awesome LLM apps with AI Agents and RAG using OpenAI, Anthropic, Gemini and opensource models."
+  },
+  {
+    "name": "neovim/neovim",
+    "url": "https://github.com/neovim/neovim",
+    "language": "VimScript",
+    "stars": 97747,
+    "forks": 6699,
+    "description": "Vim-fork focused on extensibility and usability"
+  },
+  {
+    "name": "microsoft/markitdown",
+    "url": "https://github.com/microsoft/markitdown",
+    "language": "Python",
+    "stars": 89301,
+    "forks": 5237,
+    "description": "Python tool for converting files and office documents to Markdown."
+  },
+  {
+    "name": "hacksider/Deep-Live-Cam",
+    "url": "https://github.com/hacksider/Deep-Live-Cam",
+    "language": "Python",
+    "stars": 85889,
+    "forks": 12498,
+    "description": "real time face swap and one-click video deepfake with only a single image"
+  },
+  {
+    "name": "browser-use/browser-use",
+    "url": "https://github.com/browser-use/browser-use",
+    "language": "Python",
+    "stars": 83182,
+    "forks": 9696,
+    "description": "🌐 Make websites accessible for AI agents. Automate tasks online with ease."
+  },
+  {
+    "name": "sherlock-project/sherlock",
+    "url": "https://github.com/sherlock-project/sherlock",
+    "language": "Python",
+    "stars": 75133,
+    "forks": 8865,
+    "description": "Hunt down social media accounts by username across social networks"
+  },
+  {
+    "name": "PaddlePaddle/PaddleOCR",
+    "url": "https://github.com/PaddlePaddle/PaddleOCR",
+    "language": "Python",
+    "stars": 73829,
+    "forks": 10094,
+    "description": "Turn any PDF or image document into structured data for your AI. A powerful, lightweight OCR toolkit that bridges the gap between images/PDFs and LLMs. Supports 100+ languages."
+  },
+  {
+    "name": "apache/superset",
+    "url": "https://github.com/apache/superset",
+    "language": "TypeScript",
+    "stars": 71682,
+    "forks": 16921,
+    "description": "Apache Superset is a Data Visualization and Data Exploration Platform"
+  },
+  {
+    "name": "protocolbuffers/protobuf",
+    "url": "https://github.com/protocolbuffers/protobuf",
+    "language": "C++",
+    "stars": 70882,
+    "forks": 16078,
+    "description": "Protocol Buffers - Google's data interchange format"
+  },
+  {
+    "name": "toeverything/AFFiNE",
+    "url": "https://github.com/toeverything/AFFiNE",
+    "language": "TypeScript",
+    "stars": 64885,
+    "forks": 4536,
+    "description": "There can be more than Notion and Miro. AFFiNE(pronounced [ə‘fain]) is a next-gen knowledge base that brings planning, sorting and creating all together. Privacy first, open-source, customizable and ready to use."
+  },
+  {
+    "name": "OpenBB-finance/OpenBB",
+    "url": "https://github.com/OpenBB-finance/OpenBB",
+    "language": "Python",
+    "stars": 64273,
+    "forks": 6330,
+    "description": "Financial data platform for analysts, quants and AI agents."
+  },
+  {
+    "name": "unslothai/unsloth",
+    "url": "https://github.com/unslothai/unsloth",
+    "language": "Python",
+    "stars": 56326,
+    "forks": 4724,
+    "description": "Unified web UI for training and running open models like Qwen, DeepSeek, gpt-oss and Gemma locally."
+  },
+  {
+    "name": "harry0703/MoneyPrinterTurbo",
+    "url": "https://github.com/harry0703/MoneyPrinterTurbo",
+    "language": "Python",
+    "stars": 52323,
+    "forks": 7408,
+    "description": "利用AI大模型，一键生成高清短视频 Generate short videos with one click using AI LLM."
+  },
+  {
+    "name": "FlowiseAI/Flowise",
+    "url": "https://github.com/FlowiseAI/Flowise",
+    "language": "TypeScript",
+    "stars": 49774,
+    "forks": 23824,
+    "description": "Build AI Agents, Visually"
+  },
+  {
+    "name": "virattt/ai-hedge-fund",
+    "url": "https://github.com/virattt/ai-hedge-fund",
+    "language": "Python",
+    "stars": 47886,
+    "forks": 8336,
+    "description": "An AI Hedge Fund Team"
+  },
+  {
+    "name": "bytedance/deer-flow",
+    "url": "https://github.com/bytedance/deer-flow",
+    "language": "Python",
+    "stars": 47558,
+    "forks": 5654,
+    "description": "An open-source long-horizon SuperAgent harness that researches, codes, and creates. With the help of sandboxes, memories, tools, skill, subagents and message gateway, it handles different levels of tasks that could take minutes to hours."
+  },
+  {
+    "name": "karpathy/nanochat",
+    "url": "https://github.com/karpathy/nanochat",
+    "language": "Python",
+    "stars": 45898,
+    "forks": 6059,
+    "description": "The best ChatGPT that $100 can buy."
+  },
+  {
+    "name": "ruvnet/RuView",
+    "url": "https://github.com/ruvnet/RuView",
+    "language": "Rust",
+    "stars": 42757,
+    "forks": 5803,
+    "description": "π RuView: WiFi DensePose turns commodity WiFi signals into real-time human pose estimation, vital sign monitoring, and presence detection — all without a single pixel of video."
+  },
+  {
+    "name": "twentyhq/twenty",
+    "url": "https://github.com/twentyhq/twenty",
+    "language": "TypeScript",
+    "stars": 42621,
+    "forks": 5649,
+    "description": "Building a modern alternative to Salesforce, powered by the community."
+  },
+  {
+    "name": "jingyaogong/minimind",
+    "url": "https://github.com/jingyaogong/minimind",
+    "language": "Python",
+    "stars": 42349,
+    "forks": 5101,
+    "description": "🚀🚀 「大模型」2小时完全从0训练26M的小参数GPT！🌏 Train a 26M-parameter GPT from scratch in just 2h!"
+  },
+  {
+    "name": "shareAI-lab/learn-claude-code",
+    "url": "https://github.com/shareAI-lab/learn-claude-code",
+    "language": "TypeScript",
+    "stars": 42238,
+    "forks": 6525,
+    "description": "Bash is all you need - A nano claude code–like 「agent harness」, built from 0 to 1"
+  },
+  {
+    "name": "thedotmack/claude-mem",
+    "url": "https://github.com/thedotmack/claude-mem",
+    "language": "TypeScript",
+    "stars": 42116,
+    "forks": 3142,
+    "description": "A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions."
+  },
+  {
+    "name": "msitarzewski/agency-agents",
+    "url": "https://github.com/msitarzewski/agency-agents",
+    "language": "Shell",
+    "stars": 41902,
+    "forks": 6305,
+    "description": "A complete AI agency at your fingertips - From frontend wizards to Reddit community ninjas, from whimsy injectors to reality checkers. Each agent is a specialized expert with personality, processes, and proven deliverables."
+  },
+  {
+    "name": "Raphire/Win11Debloat",
+    "url": "https://github.com/Raphire/Win11Debloat",
+    "language": "PowerShell",
+    "stars": 40916,
+    "forks": 1592,
+    "description": "A simple, lightweight PowerShell script that allows you to remove pre-installed apps, disable telemetry, as well as perform various other changes to declutter and customize your Windows experience. Win11Debloat works for both Windows 10 and Windows 11."
+  },
+  {
+    "name": "BerriAI/litellm",
+    "url": "https://github.com/BerriAI/litellm",
+    "language": "Python",
+    "stars": 40429,
+    "forks": 6699,
+    "description": "Python SDK, Proxy Server (AI Gateway) to call 100+ LLM APIs in OpenAI (or native) format, with cost tracking, guardrails, loadbalancing and logging. [Bedrock, Azure, OpenAI, VertexAI, Cohere, Anthropic, Sagemaker, HuggingFace, VLLM, NVIDIA NIM]"
+  },
+  {
+    "name": "TauricResearch/TradingAgents",
+    "url": "https://github.com/TauricResearch/TradingAgents",
+    "language": "Python",
+    "stars": 40160,
+    "forks": 7428,
+    "description": "TradingAgents: Multi-Agents LLM Financial Trading Framework"
+  },
+  {
+    "name": "666ghj/BettaFish",
+    "url": "https://github.com/666ghj/BettaFish",
+    "language": "Python",
+    "stars": 37076,
+    "forks": 7008,
+    "description": "微舆：人人可用的多Agent舆情分析助手，打破信息茧房，还原舆情原貌，预测未来走向，辅助决策！从0实现，不依赖任何框架。"
+  },
+  {
+    "name": "moeru-ai/airi",
+    "url": "https://github.com/moeru-ai/airi",
+    "language": "TypeScript",
+    "stars": 36172,
+    "forks": 3598,
+    "description": "💖🧸 Self hosted, you-owned Grok Companion, a container of souls of waifu, cyber livings to bring them into our worlds, wishing to achieve Neuro-sama's altitude. Capable of realtime voice chat, Minecraft, Factorio playing. Web / macOS / Windows supported."
+  },
+  {
+    "name": "servo/servo",
+    "url": "https://github.com/servo/servo",
+    "language": "Rust",
+    "stars": 35651,
+    "forks": 3493,
+    "description": "Servo aims to empower developers with a lightweight, high-performance alternative for embedding web technologies in applications."
+  },
+  {
+    "name": "gsd-build/get-shit-done",
+    "url": "https://github.com/gsd-build/get-shit-done",
+    "language": "JavaScript",
+    "stars": 35341,
+    "forks": 2904,
+    "description": "A light-weight and powerful meta-prompting, context engineering and spec-driven development system for Claude Code by TÂCHES."
+  },
+  {
+    "name": "aquasecurity/trivy",
+    "url": "https://github.com/aquasecurity/trivy",
+    "language": "Go",
+    "stars": 33891,
+    "forks": 182,
+    "description": "Find vulnerabilities, misconfigurations, secrets, SBOM in containers, Kubernetes, code repositories, clouds and more"
+  },
+  {
+    "name": "microsoft/BitNet",
+    "url": "https://github.com/microsoft/BitNet",
+    "language": "Python",
+    "stars": 33222,
+    "forks": 2795,
+    "description": "Official inference framework for 1-bit LLMs"
+  },
+  {
+    "name": "OpenBMB/ChatDev",
+    "url": "https://github.com/OpenBMB/ChatDev",
+    "language": "Python",
+    "stars": 32286,
+    "forks": 3984,
+    "description": "ChatDev 2.0: Dev All through LLM-powered Multi-Agent Collaboration"
+  },
+  {
+    "name": "microsoft/VibeVoice",
+    "url": "https://github.com/microsoft/VibeVoice",
+    "language": "Python",
+    "stars": 32248,
+    "forks": 3572,
+    "description": "Open-Source Frontier Voice AI"
+  },
+  {
+    "name": "tinygrad/tinygrad",
+    "url": "https://github.com/tinygrad/tinygrad",
+    "language": "Python",
+    "stars": 31781,
+    "forks": 3978,
+    "description": "You like pytorch? You like micrograd? You love tinygrad! ❤️"
+  },
+  {
+    "name": "hesreallyhim/awesome-claude-code",
+    "url": "https://github.com/hesreallyhim/awesome-claude-code",
+    "language": "Python",
+    "stars": 31431,
+    "forks": 2186,
+    "description": "A curated list of awesome skills, hooks, slash-commands, agent orchestrators, applications, and plugins for Claude Code by Anthropic"
+  },
+  {
+    "name": "KeygraphHQ/shannon",
+    "url": "https://github.com/KeygraphHQ/shannon",
+    "language": "TypeScript",
+    "stars": 31404,
+    "forks": 3137,
+    "description": "Shannon Lite is a fully autonomous AI pentester for web apps and APIs. 96.15% (100/104 exploits) on a hint-free, source-aware variant of the XBOW benchmark."
+  },
+  {
+    "name": "anthropics/prompt-eng-interactive-tutorial",
+    "url": "https://github.com/anthropics/prompt-eng-interactive-tutorial",
+    "language": "JupyterNotebook",
+    "stars": 31146,
+    "forks": 3167,
+    "description": "Anthropic's Interactive Prompt Engineering Tutorial"
+  },
+  {
+    "name": "ItzCrazyKns/Perplexica",
+    "url": "https://github.com/ItzCrazyKns/Perplexica",
+    "language": "TypeScript",
+    "stars": 30419,
+    "forks": 3221,
+    "description": "Perplexica is an AI-powered answering engine."
+  },
+  {
+    "name": "HKUDS/LightRAG",
+    "url": "https://github.com/HKUDS/LightRAG",
+    "language": "Python",
+    "stars": 29891,
+    "forks": 4294,
+    "description": "[EMNLP2025] \"LightRAG: Simple and Fast Retrieval-Augmented Generation\""
+  },
+  {
+    "name": "shadps4-emu/shadPS4",
+    "url": "https://github.com/shadps4-emu/shadPS4",
+    "language": "C++",
+    "stars": 29539,
+    "forks": 2017,
+    "description": "PlayStation 4 emulator for Windows, Linux and macOS written in C++"
+  },
+  {
+    "name": "FreeCAD/FreeCAD",
+    "url": "https://github.com/FreeCAD/FreeCAD",
+    "language": "C++",
+    "stars": 29408,
+    "forks": 5311,
+    "description": "Official source code of FreeCAD, a free and opensource multiplatform 3D parametric modeler."
+  },
+  {
+    "name": "666ghj/MiroFish",
+    "url": "https://github.com/666ghj/MiroFish",
+    "language": "Python",
+    "stars": 28733,
+    "forks": 3493,
+    "description": "A Simple and Universal Swarm Intelligence Engine, Predicting Anything. 简洁通用的群体智能引擎，预测万物"
+  },
+  {
+    "name": "shanraisshan/claude-code-best-practice",
+    "url": "https://github.com/shanraisshan/claude-code-best-practice",
+    "language": "HTML",
+    "stars": 27383,
+    "forks": 2275,
+    "description": "practice made claude perfect"
+  },
+  {
+    "name": "fishaudio/fish-speech",
+    "url": "https://github.com/fishaudio/fish-speech",
+    "language": "Python",
+    "stars": 27022,
+    "forks": 2259,
+    "description": "SOTA Open Source TTS"
+  },
+  {
+    "name": "ruvnet/ruflo",
+    "url": "https://github.com/ruvnet/ruflo",
+    "language": "TypeScript",
+    "stars": 25585,
+    "forks": 2785,
+    "description": "🌊 The leading agent orchestration platform for Claude. Deploy intelligent multi-agent swarms, coordinate autonomous workflows, and build conversational AI systems. Features enterprise-grade architecture, distributed swarm intelligence, RAG integration, and native Claude Code / Codex Integration"
+  },
+  {
+    "name": "FujiwaraChoki/MoneyPrinterV2",
+    "url": "https://github.com/FujiwaraChoki/MoneyPrinterV2",
+    "language": "Python",
+    "stars": 25257,
+    "forks": 2626,
+    "description": "Automate the process of making money online."
+  },
+  {
+    "name": "datawhalechina/hello-agents",
+    "url": "https://github.com/datawhalechina/hello-agents",
+    "language": "Python",
+    "stars": 23629,
+    "forks": 2672,
+    "description": "📚 《从零开始构建智能体》——从零开始的智能体原理与实践教程"
+  },
+  {
+    "name": "AstrBotDevs/AstrBot",
+    "url": "https://github.com/AstrBotDevs/AstrBot",
+    "language": "Python",
+    "stars": 23434,
+    "forks": 1605,
+    "description": "Agentic IM Chatbot infrastructure that integrates lots of IM platforms, LLMs, plugins and AI feature, and can be your openclaw alternative. ✨"
+  },
+  {
+    "name": "usestrix/strix",
+    "url": "https://github.com/usestrix/strix",
+    "language": "Python",
+    "stars": 21413,
+    "forks": 2283,
+    "description": "Open-source AI hackers to find and fix your app’s vulnerabilities."
+  },
+  {
+    "name": "agentscope-ai/agentscope",
+    "url": "https://github.com/agentscope-ai/agentscope",
+    "language": "Python",
+    "stars": 21339,
+    "forks": 2099,
+    "description": "Build and run agents you can see, understand and trust."
+  },
+  {
+    "name": "fastfetch-cli/fastfetch",
+    "url": "https://github.com/fastfetch-cli/fastfetch",
+    "language": "C",
+    "stars": 21288,
+    "forks": 720,
+    "description": "A maintained, feature-rich and performance oriented, neofetch like system information tool."
+  },
+  {
+    "name": "hsliuping/TradingAgents-CN",
+    "url": "https://github.com/hsliuping/TradingAgents-CN",
+    "language": "Python",
+    "stars": 21143,
+    "forks": 4400,
+    "description": "基于多智能体LLM的中文金融交易框架 - TradingAgents中文增强版"
+  },
+  {
+    "name": "dolthub/dolt",
+    "url": "https://github.com/dolthub/dolt",
+    "language": "Go",
+    "stars": 20843,
+    "forks": 664,
+    "description": "Dolt – Git for Data"
+  },
+  {
+    "name": "basecamp/omarchy",
+    "url": "https://github.com/basecamp/omarchy",
+    "language": "Shell",
+    "stars": 20639,
+    "forks": 2048,
+    "description": "Beautiful, Modern & Opinionated Linux"
+  },
+  {
+    "name": "nautechsystems/nautilus_trader",
+    "url": "https://github.com/nautechsystems/nautilus_trader",
+    "language": "Rust",
+    "stars": 20561,
+    "forks": 2437,
+    "description": "A high-performance algorithmic trading platform and event-driven backtester"
+  },
+  {
+    "name": "virattt/dexter",
+    "url": "https://github.com/virattt/dexter",
+    "language": "TypeScript",
+    "stars": 19905,
+    "forks": 2399,
+    "description": "An autonomous agent for deep financial research"
+  },
+  {
+    "name": "ruvnet/wifi-densepose",
+    "url": "https://github.com/ruvnet/wifi-densepose",
+    "language": "Rust",
+    "stars": 19768,
+    "forks": 2360,
+    "description": "WiFi DensePose turns commodity WiFi signals into real-time human pose estimation, vital sign monitoring, and presence detection — all without a single pixel of video."
+  },
+  {
+    "name": "lightpanda-io/browser",
+    "url": "https://github.com/lightpanda-io/browser",
+    "language": "Zig",
+    "stars": 19689,
+    "forks": 744,
+    "description": "Lightpanda: the headless browser designed for AI and automation"
+  },
+  {
+    "name": "NousResearch/hermes-agent",
+    "url": "https://github.com/NousResearch/hermes-agent",
+    "language": "Python",
+    "stars": 19507,
+    "forks": 2365,
+    "description": "The agent that grows with you"
+  },
+  {
+    "name": "onyx-dot-app/onyx",
+    "url": "https://github.com/onyx-dot-app/onyx",
+    "language": "Python",
+    "stars": 19440,
+    "forks": 2623,
+    "description": "Open Source AI Platform - AI Chat with advanced features that works with every LLM"
+  },
+  {
+    "name": "supermemoryai/supermemory",
+    "url": "https://github.com/supermemoryai/supermemory",
+    "language": "TypeScript",
+    "stars": 18964,
+    "forks": 1798,
+    "description": "Memory engine and app that is extremely fast, scalable. The Memory API for the AI era."
+  },
+  {
+    "name": "Yeachan-Heo/oh-my-claudecode",
+    "url": "https://github.com/Yeachan-Heo/oh-my-claudecode",
+    "language": "TypeScript",
+    "stars": 18062,
+    "forks": 1267,
+    "description": "Teams-first Multi-agent orchestration for Claude Code"
+  },
+  {
+    "name": "abhigyanpatwari/GitNexus",
+    "url": "https://github.com/abhigyanpatwari/GitNexus",
+    "language": "TypeScript",
+    "stars": 16142,
+    "forks": 1841,
+    "description": "GitNexus: The Zero-Server Code Intelligence Engine - GitNexus is a client-side knowledge graph creator that runs entirely in your browser. Drop in a GitHub repo or ZIP file, and get an interactive knowledge graph wit a built in Graph RAG Agent. Perfect for code exploration"
+  },
+  {
+    "name": "microsoft/agent-lightning",
+    "url": "https://github.com/microsoft/agent-lightning",
+    "language": "Python",
+    "stars": 16078,
+    "forks": 1388,
+    "description": "The absolute trainer to light up AI agents."
+  },
+  {
+    "name": "kepano/obsidian-skills",
+    "url": "https://github.com/kepano/obsidian-skills",
+    "language": "Unknown",
+    "stars": 15983,
+    "forks": 925,
+    "description": "Agent skills for Obsidian. Teach your agent to use Markdown, Bases, JSON Canvas, and use the CLI."
+  },
+  {
+    "name": "Crosstalk-Solutions/project-nomad",
+    "url": "https://github.com/Crosstalk-Solutions/project-nomad",
+    "language": "TypeScript",
+    "stars": 15943,
+    "forks": 1523,
+    "description": "Project N.O.M.A.D, is a self-contained, offline survival computer packed with critical tools, knowledge, and AI to keep you informed and empowered—anytime, anywhere."
+  },
+  {
+    "name": "systemd/systemd",
+    "url": "https://github.com/systemd/systemd",
+    "language": "C",
+    "stars": 15854,
+    "forks": 4362,
+    "description": "The systemd System and Service Manager"
+  },
+  {
+    "name": "czlonkowski/n8n-mcp",
+    "url": "https://github.com/czlonkowski/n8n-mcp",
+    "language": "TypeScript",
+    "stars": 15827,
+    "forks": 2748,
+    "description": "A MCP for Claude Desktop / Claude Code / Windsurf / Cursor to build n8n workflows for you"
+  },
+  {
+    "name": "GoogleCloudPlatform/generative-ai",
+    "url": "https://github.com/GoogleCloudPlatform/generative-ai",
+    "language": "JupyterNotebook",
+    "stars": 15528,
+    "forks": 3982,
+    "description": "Sample code and notebooks for Generative AI on Google Cloud, with Gemini on Vertex AI"
+  },
+  {
+    "name": "p-e-w/heretic",
+    "url": "https://github.com/p-e-w/heretic",
+    "language": "Python",
+    "stars": 15013,
+    "forks": 1520,
+    "description": "Fully automatic censorship removal for language models"
+  },
+  {
+    "name": "QwenLM/Qwen-Agent",
+    "url": "https://github.com/QwenLM/Qwen-Agent",
+    "language": "Python",
+    "stars": 14847,
+    "forks": 1414,
+    "description": "Agent framework and applications built upon Qwen>=3.0, featuring Function Calling, MCP, Code Interpreter, RAG, Chrome extension, etc."
+  },
+  {
+    "name": "microsoft/mcp-for-beginners",
+    "url": "https://github.com/microsoft/mcp-for-beginners",
+    "language": "JupyterNotebook",
+    "stars": 14692,
+    "forks": 4833,
+    "description": "This open-source curriculum introduces the fundamentals of Model Context Protocol (MCP) through real-world, cross-language examples in .NET, Java, TypeScript, JavaScript, Rust and Python. Designed for developers, it focuses on practical techniques for building modular, scalable, and secure AI workflows from session setup to service orchestration."
+  },
+  {
+    "name": "mvanhorn/last30days-skill",
+    "url": "https://github.com/mvanhorn/last30days-skill",
+    "language": "Python",
+    "stars": 14651,
+    "forks": 1165,
+    "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary"
+  },
+  {
+    "name": "promptfoo/promptfoo",
+    "url": "https://github.com/promptfoo/promptfoo",
+    "language": "TypeScript",
+    "stars": 14505,
+    "forks": 1316,
+    "description": "Test your prompts, agents, and RAGs. Red teaming/pentesting/vulnerability scanning for AI. Compare performance of GPT, Claude, Gemini, Llama, and more. Simple declarative configs with command line and CI/CD integration."
+  },
+  {
+    "name": "topoteretes/cognee",
+    "url": "https://github.com/topoteretes/cognee",
+    "language": "Python",
+    "stars": 13638,
+    "forks": 1370,
+    "description": "Knowledge Engine for AI Agent Memory in 6 lines of code"
+  },
+  {
+    "name": "langchain-ai/deepagents",
+    "url": "https://github.com/langchain-ai/deepagents",
+    "language": "Python",
+    "stars": 13515,
+    "forks": 2064,
+    "description": "Agent harness built with LangChain and LangGraph. Equipped with a planning tool, a filesystem backend, and the ability to spawn subagents - well-equipped to handle complex agentic tasks."
+  },
+  {
+    "name": "volcengine/OpenViking",
+    "url": "https://github.com/volcengine/OpenViking",
+    "language": "Python",
+    "stars": 13414,
+    "forks": 922,
+    "description": "OpenViking is an open-source context database designed specifically for AI Agents(such as openclaw). OpenViking unifies the management of context (memory, resources, and skills) that Agents need through a file system paradigm, enabling hierarchical context delivery and self-evolving."
+  },
+  {
+    "name": "openai/skills",
+    "url": "https://github.com/openai/skills",
+    "language": "Python",
+    "stars": 12963,
+    "forks": 726,
+    "description": "Skills Catalog for Codex"
+  },
+  {
+    "name": "google/A2UI",
+    "url": "https://github.com/google/A2UI",
+    "language": "TypeScript",
+    "stars": 12894,
+    "forks": 970,
+    "description": "None"
+  },
+  {
+    "name": "vxcontrol/pentagi",
+    "url": "https://github.com/vxcontrol/pentagi",
+    "language": "Go",
+    "stars": 12597,
+    "forks": 1564,
+    "description": "Fully autonomous AI Agents system capable of performing complex penetration testing tasks"
+  },
+  {
+    "name": "louis-e/arnis",
+    "url": "https://github.com/louis-e/arnis",
+    "language": "Rust",
+    "stars": 12443,
+    "forks": 1026,
+    "description": "Generate any location from the real world in Minecraft with a high level of detail."
+  },
+  {
+    "name": "K-Dense-AI/claude-scientific-skills",
+    "url": "https://github.com/K-Dense-AI/claude-scientific-skills",
+    "language": "Python",
+    "stars": 12419,
+    "forks": 1344,
+    "description": "A set of ready to use Agent Skills for research, science, engineering, analysis, finance and writing."
+  },
+  {
+    "name": "mobile-dev-inc/Maestro",
+    "url": "https://github.com/mobile-dev-inc/Maestro",
+    "language": "Kotlin",
+    "stars": 12155,
+    "forks": 696,
+    "description": "Painless E2E Automation for Mobile and Web"
+  },
+  {
+    "name": "NevaMind-AI/memU",
+    "url": "https://github.com/NevaMind-AI/memU",
+    "language": "Python",
+    "stars": 11772,
+    "forks": 867,
+    "description": "Memory for 24/7 proactive agents like openclaw (moltbot, clawdbot)."
+  },
+  {
+    "name": "Vaibhavs10/insanely-fast-whisper",
+    "url": "https://github.com/Vaibhavs10/insanely-fast-whisper",
+    "language": "JupyterNotebook",
+    "stars": 11626,
+    "forks": 837,
+    "description": "None"
+  },
+  {
+    "name": "anthropics/claude-plugins-official",
+    "url": "https://github.com/anthropics/claude-plugins-official",
+    "language": "Python",
+    "stars": 11574,
+    "forks": 1127,
+    "description": "Official, Anthropic-managed directory of high quality Claude Code Plugins."
+  },
+  {
+    "name": "luongnv89/claude-howto",
+    "url": "https://github.com/luongnv89/claude-howto",
+    "language": "Python",
+    "stars": 11390,
+    "forks": 1164,
+    "description": "A visual, example-driven guide to Claude Code — from basic concepts to advanced agents, with copy-paste templates that bring immediate value."
+  },
+  {
+    "name": "jarrodwatts/claude-hud",
+    "url": "https://github.com/jarrodwatts/claude-hud",
+    "language": "JavaScript",
+    "stars": 10828,
+    "forks": 459,
+    "description": "A Claude Code plugin that shows what's happening - context usage, active tools, running agents, and todo progress"
+  },
+  {
+    "name": "is-a-dev/register",
+    "url": "https://github.com/is-a-dev/register",
+    "language": "JavaScript",
+    "stars": 9651,
+    "forks": 18719,
+    "description": "Grab your own sweet-looking '.is-a.dev' subdomain."
+  },
+  {
+    "name": "cloudflare/workerd",
+    "url": "https://github.com/cloudflare/workerd",
+    "language": "C++",
+    "stars": 7646,
+    "forks": 565,
+    "description": "The JavaScript / Wasm runtime that powers Cloudflare Workers"
+  },
+  {
+    "name": "X-PLUG/MobileAgent",
+    "url": "https://github.com/X-PLUG/MobileAgent",
+    "language": "Python",
+    "stars": 7607,
+    "forks": 772,
+    "description": "Mobile-Agent: The Powerful GUI Agent Family"
+  },
+  {
+    "name": "opendataloader-project/opendataloader-pdf",
+    "url": "https://github.com/opendataloader-project/opendataloader-pdf",
+    "language": "Java",
+    "stars": 7465,
+    "forks": 519,
+    "description": "PDF Parser for AI-ready data. Automate PDF accessibility. Open-source."
+  },
+  {
+    "name": "langchain-ai/open-swe",
+    "url": "https://github.com/langchain-ai/open-swe",
+    "language": "Python",
+    "stars": 7368,
+    "forks": 899,
+    "description": "An Open-Source Asynchronous Coding Agent"
+  },
+  {
+    "name": "LMCache/LMCache",
+    "url": "https://github.com/LMCache/LMCache",
+    "language": "Python",
+    "stars": 7280,
+    "forks": 954,
+    "description": "Supercharge Your LLM with the Fastest KV Cache Layer"
+  },
+  {
+    "name": "datalab-to/chandra",
+    "url": "https://github.com/datalab-to/chandra",
+    "language": "Python",
+    "stars": 7267,
+    "forks": 745,
+    "description": "OCR model that handles complex tables, forms, handwriting with full layout."
+  },
+  {
+    "name": "alibaba/page-agent",
+    "url": "https://github.com/alibaba/page-agent",
+    "language": "TypeScript",
+    "stars": 6893,
+    "forks": 534,
+    "description": "JavaScript in-page GUI agent. Control web interfaces with natural language."
+  },
+  {
+    "name": "pascalorg/editor",
+    "url": "https://github.com/pascalorg/editor",
+    "language": "TypeScript",
+    "stars": 6420,
+    "forks": 822,
+    "description": "Create and share 3D architectural projects."
+  },
+  {
+    "name": "aidenybai/react-grab",
+    "url": "https://github.com/aidenybai/react-grab",
+    "language": "TypeScript",
+    "stars": 5742,
+    "forks": 261,
+    "description": "Select context for coding agents directly from your website"
+  },
+  {
+    "name": "alibaba/OpenSandbox",
+    "url": "https://github.com/alibaba/OpenSandbox",
+    "language": "Python",
+    "stars": 5695,
+    "forks": 412,
+    "description": "OpenSandbox is a general-purpose sandbox platform for AI applications, offering multi-language SDKs, unified sandbox APIs, and Docker/Kubernetes runtimes for scenarios like Coding Agents, GUI Agents, Agent Evaluation, AI Code Execution, and RL Training."
+  },
+  {
+    "name": "jamwithai/production-agentic-rag-course",
+    "url": "https://github.com/jamwithai/production-agentic-rag-course",
+    "language": "Python",
+    "stars": 4531,
+    "forks": 1153,
+    "description": "None"
+  },
+  {
+    "name": "InsForge/InsForge",
+    "url": "https://github.com/InsForge/InsForge",
+    "language": "TypeScript",
+    "stars": 4367,
+    "forks": 444,
+    "description": "Give agents everything they need to ship fullstack apps. The backend built for agentic development."
+  },
+  {
+    "name": "inclusionAI/AReaL",
+    "url": "https://github.com/inclusionAI/AReaL",
+    "language": "Python",
+    "stars": 4267,
+    "forks": 348,
+    "description": "Lightning-Fast RL for LLM Reasoning and Agents. Made Simple & Flexible."
+  },
+  {
+    "name": "teng-lin/notebooklm-py",
+    "url": "https://github.com/teng-lin/notebooklm-py",
+    "language": "Python",
+    "stars": 3967,
+    "forks": 498,
+    "description": "Unofficial Python API for Google NotebookLM"
+  },
+  {
+    "name": "YishenTu/claudian",
+    "url": "https://github.com/YishenTu/claudian",
+    "language": "TypeScript",
+    "stars": 3933,
+    "forks": 233,
+    "description": "An Obsidian plugin that embeds Claude Code as an AI collaborator in your vault"
+  },
+  {
+    "name": "superset-sh/superset",
+    "url": "https://github.com/superset-sh/superset",
+    "language": "TypeScript",
+    "stars": 3820,
+    "forks": 257,
+    "description": "IDE for the AI Agents Era - Run an army of Claude Code, Codex, etc. on your machine"
+  },
+  {
+    "name": "CodebuffAI/codebuff",
+    "url": "https://github.com/CodebuffAI/codebuff",
+    "language": "TypeScript",
+    "stars": 3714,
+    "forks": 445,
+    "description": "Generate code from the terminal!"
+  },
+  {
+    "name": "vas3k/TaxHacker",
+    "url": "https://github.com/vas3k/TaxHacker",
+    "language": "TypeScript",
+    "stars": 3468,
+    "forks": 563,
+    "description": "Self-hosted AI accounting app. LLM analyzer for receipts, invoices, transactions with custom prompts and categories"
+  },
+  {
+    "name": "pbakaus/impeccable",
+    "url": "https://github.com/pbakaus/impeccable",
+    "language": "JavaScript",
+    "stars": 3397,
+    "forks": 124,
+    "description": "The design language that makes your AI harness better at design."
+  },
+  {
+    "name": "vllm-project/vllm-omni",
+    "url": "https://github.com/vllm-project/vllm-omni",
+    "language": "Python",
+    "stars": 3375,
+    "forks": 581,
+    "description": "A framework for efficient model inference with omni-modality models"
+  },
+  {
+    "name": "vectorize-io/hindsight",
+    "url": "https://github.com/vectorize-io/hindsight",
+    "language": "Python",
+    "stars": 3357,
+    "forks": 240,
+    "description": "Hindsight: Agent Memory That Learns"
+  },
+  {
+    "name": "newton-physics/newton",
+    "url": "https://github.com/newton-physics/newton",
+    "language": "Python",
+    "stars": 3341,
+    "forks": 348,
+    "description": "An open-source, GPU-accelerated physics simulation engine built upon NVIDIA Warp, specifically targeting roboticists and simulation researchers."
+  },
+  {
+    "name": "SakanaAI/AI-Scientist-v2",
+    "url": "https://github.com/SakanaAI/AI-Scientist-v2",
+    "language": "Python",
+    "stars": 3120,
+    "forks": 495,
+    "description": "The AI Scientist-v2: Workshop-Level Automated Scientific Discovery via Agentic Tree Search"
+  },
+  {
+    "name": "alirezarezvani/claude-skills",
+    "url": "https://github.com/alirezarezvani/claude-skills",
+    "language": "Python",
+    "stars": 2943,
+    "forks": 379,
+    "description": "169 production-ready skills & plugins for Claude Code, OpenAI Codex, and OpenClaw — engineering, marketing, product, compliance, C-level advisory, and more. Install via /plugin marketplace."
+  },
+  {
+    "name": "Dimillian/Skills",
+    "url": "https://github.com/Dimillian/Skills",
+    "language": "Shell",
+    "stars": 2658,
+    "forks": 141,
+    "description": "My Codex Skills"
+  },
+  {
+    "name": "langflow-ai/openrag",
+    "url": "https://github.com/langflow-ai/openrag",
+    "language": "Python",
+    "stars": 2476,
+    "forks": 231,
+    "description": "OpenRAG is a comprehensive, single package Retrieval-Augmented Generation platform built on Langflow, Docling, and Opensearch."
+  },
+  {
+    "name": "openrocket/openrocket",
+    "url": "https://github.com/openrocket/openrocket",
+    "language": "Java",
+    "stars": 2052,
+    "forks": 568,
+    "description": "Model-rocketry aerodynamics and trajectory simulation software"
+  },
+  {
+    "name": "Ed1s0nZ/CyberStrikeAI",
+    "url": "https://github.com/Ed1s0nZ/CyberStrikeAI",
+    "language": "Go",
+    "stars": 2039,
+    "forks": 367,
+    "description": "CyberStrikeAI is an AI-native security testing platform built in Go. It integrates 100+ security tools, an intelligent orchestration engine, role-based testing with predefined security roles, a skills system with specialized testing skills, and comprehensive lifecycle management capabilities."
+  },
+  {
+    "name": "voidzero-dev/vite-plus",
+    "url": "https://github.com/voidzero-dev/vite-plus",
+    "language": "Rust",
+    "stars": 2013,
+    "forks": 69,
+    "description": "Vite+ is the unified toolchain and entry point for web development. It manages your runtime, package manager, and frontend toolchain in one place."
+  },
+  {
+    "name": "sepinf-inc/IPED",
+    "url": "https://github.com/sepinf-inc/IPED",
+    "language": "Java",
+    "stars": 1996,
+    "forks": 379,
+    "description": "IPED Digital Forensic Tool. It is an open source software that can be used to process and analyze digital evidence, often seized at crime scenes by law enforcement or in a corporate investigation by private examiners."
+  },
+  {
+    "name": "TheCraigHewitt/seomachine",
+    "url": "https://github.com/TheCraigHewitt/seomachine",
+    "language": "Python",
+    "stars": 1934,
+    "forks": 341,
+    "description": "A specialized Claude Code workspace for creating long-form, SEO-optimized blog content for any business. This system helps you research, write, analyze, and optimize content that ranks well and serves your target audience."
+  },
+  {
+    "name": "google-ai-edge/LiteRT",
+    "url": "https://github.com/google-ai-edge/LiteRT",
+    "language": "C++",
+    "stars": 1767,
+    "forks": 221,
+    "description": "LiteRT, successor to TensorFlow Lite. is Google's On-device framework for high-performance ML & GenAI deployment on edge platforms, via efficient conversion, runtime, and optimization"
+  },
+  {
+    "name": "agentscope-ai/ReMe",
+    "url": "https://github.com/agentscope-ai/ReMe",
+    "language": "Python",
+    "stars": 1476,
+    "forks": 128,
+    "description": "ReMe: Memory Management Kit for Agents - Remember Me, Refine Me."
+  },
+  {
+    "name": "agentjido/jido",
+    "url": "https://github.com/agentjido/jido",
+    "language": "Elixir",
+    "stars": 1317,
+    "forks": 72,
+    "description": "🤖 Autonomous agent framework for Elixir. Built for distributed, autonomous behavior and dynamic workflows."
+  },
+  {
+    "name": "dimensionalOS/dimos",
+    "url": "https://github.com/dimensionalOS/dimos",
+    "language": "Python",
+    "stars": 703,
+    "forks": 142,
+    "description": "The Dimensional Framework"
+  },
+  {
+    "name": "microsoft/hve-core",
+    "url": "https://github.com/microsoft/hve-core",
+    "language": "PowerShell",
+    "stars": 645,
+    "forks": 92,
+    "description": "A refined collection of Hypervelocity Engineering components (instructions, prompts, agents, and skills) to start your project off right, or upgrade your existing projects to get the most out of all Copilots"
+  },
+  {
+    "name": "lingfengQAQ/webnovel-writer",
+    "url": "https://github.com/lingfengQAQ/webnovel-writer",
+    "language": "Python",
+    "stars": 641,
+    "forks": 176,
+    "description": "基于 Claude Code 的长篇网文辅助创作系统，解决 AI 写作中的「遗忘」和「幻觉」问题，支持 200 万字量级 连载创作。"
+  }
+]

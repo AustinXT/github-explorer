@@ -1,0 +1,330 @@
+[
+  {
+    "name": "public-apis/public-apis",
+    "url": "https://github.com/public-apis/public-apis",
+    "language": "Python",
+    "stars": 385656,
+    "forks": 41171,
+    "description": "A collective list of free APIs"
+  },
+  {
+    "name": "trimstray/the-book-of-secret-knowledge",
+    "url": "https://github.com/trimstray/the-book-of-secret-knowledge",
+    "language": "Unknown",
+    "stars": 198887,
+    "forks": 12118,
+    "description": "A collection of inspiring lists, manuals, cheatsheets, blogs, hacks, one-liners, cli/web tools and more."
+  },
+  {
+    "name": "iptv-org/iptv",
+    "url": "https://github.com/iptv-org/iptv",
+    "language": "TypeScript",
+    "stars": 105684,
+    "forks": 4814,
+    "description": "Collection of publicly available IPTV channels from all over the world"
+  },
+  {
+    "name": "shadcn-ui/ui",
+    "url": "https://github.com/shadcn-ui/ui",
+    "language": "TypeScript",
+    "stars": 102837,
+    "forks": 7470,
+    "description": "A set of beautifully-designed, accessible components and a code distribution platform. Works with your favorite frameworks. Open Source. Open Code."
+  },
+  {
+    "name": "jaywcjlove/awesome-mac",
+    "url": "https://github.com/jaywcjlove/awesome-mac",
+    "language": "JavaScript",
+    "stars": 96142,
+    "forks": 7219,
+    "description": " Now we have become very big, Different from the original idea. Collect premium software in various categories."
+  },
+  {
+    "name": "swisskyrepo/PayloadsAllTheThings",
+    "url": "https://github.com/swisskyrepo/PayloadsAllTheThings",
+    "language": "Python",
+    "stars": 72948,
+    "forks": 16368,
+    "description": "A list of useful payloads and bypass for Web Application Security and Pentest/CTF"
+  },
+  {
+    "name": "obsproject/obs-studio",
+    "url": "https://github.com/obsproject/obs-studio",
+    "language": "C",
+    "stars": 69056,
+    "forks": 8893,
+    "description": "OBS Studio - Free and open source software for live streaming and screen recording"
+  },
+  {
+    "name": "TapXWorld/ChinaTextbook",
+    "url": "https://github.com/TapXWorld/ChinaTextbook",
+    "language": "Roff",
+    "stars": 62782,
+    "forks": 13925,
+    "description": "所有小初高、大学PDF教材。"
+  },
+  {
+    "name": "openai/codex",
+    "url": "https://github.com/openai/codex",
+    "language": "Rust",
+    "stars": 53948,
+    "forks": 6820,
+    "description": "Lightweight coding agent that runs in your terminal"
+  },
+  {
+    "name": "anthropics/claude-code",
+    "url": "https://github.com/anthropics/claude-code",
+    "language": "Shell",
+    "stars": 47569,
+    "forks": 3333,
+    "description": "Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands."
+  },
+  {
+    "name": "cloudcommunity/Free-Certifications",
+    "url": "https://github.com/cloudcommunity/Free-Certifications",
+    "language": "Unknown",
+    "stars": 47338,
+    "forks": 3184,
+    "description": "A curated list of free courses with certifications. Also available at https://free-certifications.com/"
+  },
+  {
+    "name": "metabase/metabase",
+    "url": "https://github.com/metabase/metabase",
+    "language": "Clojure",
+    "stars": 45030,
+    "forks": 6092,
+    "description": "The easy-to-use open source Business Intelligence and Embedded Analytics tool that lets everyone work with data 📊"
+  },
+  {
+    "name": "virattt/ai-hedge-fund",
+    "url": "https://github.com/virattt/ai-hedge-fund",
+    "language": "Python",
+    "stars": 43499,
+    "forks": 7708,
+    "description": "An AI Hedge Fund Team"
+  },
+  {
+    "name": "daytonaio/daytona",
+    "url": "https://github.com/daytonaio/daytona",
+    "language": "TypeScript",
+    "stars": 37621,
+    "forks": 2800,
+    "description": "Daytona is a Secure and Elastic Infrastructure for Running AI-Generated Code"
+  },
+  {
+    "name": "Raphire/Win11Debloat",
+    "url": "https://github.com/Raphire/Win11Debloat",
+    "language": "PowerShell",
+    "stars": 35534,
+    "forks": 1385,
+    "description": "A simple, lightweight PowerShell script to remove pre-installed apps, disable telemetry, as well as perform various other changes to customize, declutter and improve your Windows experience. Win11Debloat works for both Windows 10 and Windows 11."
+  },
+  {
+    "name": "exo-explore/exo",
+    "url": "https://github.com/exo-explore/exo",
+    "language": "Python",
+    "stars": 35015,
+    "forks": 2361,
+    "description": "Run your own AI cluster at home with everyday devices 📱💻 🖥️⌚"
+  },
+  {
+    "name": "schollz/croc",
+    "url": "https://github.com/schollz/croc",
+    "language": "Go",
+    "stars": 32499,
+    "forks": 1287,
+    "description": "Easily and securely send things from one computer to another 🐊 📦"
+  },
+  {
+    "name": "CopilotKit/CopilotKit",
+    "url": "https://github.com/CopilotKit/CopilotKit",
+    "language": "TypeScript",
+    "stars": 26905,
+    "forks": 3491,
+    "description": "React UI + elegant infrastructure for AI Copilots, AI chatbots, and in-app AI agents. The Agentic Frontend 🪁"
+  },
+  {
+    "name": "simstudioai/sim",
+    "url": "https://github.com/simstudioai/sim",
+    "language": "TypeScript",
+    "stars": 23344,
+    "forks": 2904,
+    "description": "Open-source platform to build and deploy AI agent workflows."
+  },
+  {
+    "name": "letta-ai/letta",
+    "url": "https://github.com/letta-ai/letta",
+    "language": "Python",
+    "stars": 19690,
+    "forks": 2074,
+    "description": "Letta is the platform for building stateful agents: open AI with advanced memory that can learn and self-improve over time."
+  },
+  {
+    "name": "afshinea/stanford-cs-229-machine-learning",
+    "url": "https://github.com/afshinea/stanford-cs-229-machine-learning",
+    "language": "Unknown",
+    "stars": 18898,
+    "forks": 4133,
+    "description": "VIP cheatsheets for Stanford's CS 229 Machine Learning"
+  },
+  {
+    "name": "resemble-ai/chatterbox",
+    "url": "https://github.com/resemble-ai/chatterbox",
+    "language": "Python",
+    "stars": 16011,
+    "forks": 2212,
+    "description": "SoTA open-source TTS"
+  },
+  {
+    "name": "astral-sh/ty",
+    "url": "https://github.com/astral-sh/ty",
+    "language": "Python",
+    "stars": 15094,
+    "forks": 159,
+    "description": "An extremely fast Python type checker and language server, written in Rust."
+  },
+  {
+    "name": "github/awesome-copilot",
+    "url": "https://github.com/github/awesome-copilot",
+    "language": "JavaScript",
+    "stars": 14826,
+    "forks": 1754,
+    "description": "Community-contributed instructions, prompts, and configurations to help you make the most of GitHub Copilot."
+  },
+  {
+    "name": "ZJU-LLMs/Foundations-of-LLMs",
+    "url": "https://github.com/ZJU-LLMs/Foundations-of-LLMs",
+    "language": "Unknown",
+    "stars": 14307,
+    "forks": 1315,
+    "description": "A book for Learning the Foundations of LLMs"
+  },
+  {
+    "name": "HKUDS/DeepCode",
+    "url": "https://github.com/HKUDS/DeepCode",
+    "language": "Python",
+    "stars": 12550,
+    "forks": 1669,
+    "description": "\"DeepCode: Open Agentic Coding (Paper2Code & Text2Web & Text2Backend)\""
+  },
+  {
+    "name": "C4illin/ConvertX",
+    "url": "https://github.com/C4illin/ConvertX",
+    "language": "TypeScript",
+    "stars": 11677,
+    "forks": 579,
+    "description": "💾 Self-hosted online file converter. Supports 1000+ formats ⚙️"
+  },
+  {
+    "name": "0xk1h0/ChatGPT_DAN",
+    "url": "https://github.com/0xk1h0/ChatGPT_DAN",
+    "language": "Unknown",
+    "stars": 10299,
+    "forks": 958,
+    "description": "ChatGPT DAN, Jailbreaks prompt"
+  },
+  {
+    "name": "GreyDGL/PentestGPT",
+    "url": "https://github.com/GreyDGL/PentestGPT",
+    "language": "Python",
+    "stars": 9884,
+    "forks": 1443,
+    "description": "A GPT-empowered penetration testing tool"
+  },
+  {
+    "name": "Free-TV/IPTV",
+    "url": "https://github.com/Free-TV/IPTV",
+    "language": "Python",
+    "stars": 8394,
+    "forks": 1521,
+    "description": "M3U Playlist for free TV channels"
+  },
+  {
+    "name": "Morganamilo/paru",
+    "url": "https://github.com/Morganamilo/paru",
+    "language": "Rust",
+    "stars": 7924,
+    "forks": 294,
+    "description": "Feature packed AUR helper"
+  },
+  {
+    "name": "NexaAI/nexa-sdk",
+    "url": "https://github.com/NexaAI/nexa-sdk",
+    "language": "Go",
+    "stars": 6593,
+    "forks": 866,
+    "description": "Run the latest LLMs and VLMs across GPU, NPU, and CPU with PC (Python/C++) & mobile (Android & iOS) support, running quickly with OpenAI gpt-oss, Granite4, Qwen3VL, Gemma 3n and more."
+  },
+  {
+    "name": "jellyfin/jellyfin-desktop",
+    "url": "https://github.com/jellyfin/jellyfin-desktop",
+    "language": "C++",
+    "stars": 4787,
+    "forks": 443,
+    "description": "Jellyfin Desktop Client"
+  },
+  {
+    "name": "cocoindex-io/cocoindex",
+    "url": "https://github.com/cocoindex-io/cocoindex",
+    "language": "Rust",
+    "stars": 4240,
+    "forks": 343,
+    "description": "Data transformation framework for AI. Ultra performant, with incremental processing. 🌟 Star if you like it!"
+  },
+  {
+    "name": "theOehrly/Fast-F1",
+    "url": "https://github.com/theOehrly/Fast-F1",
+    "language": "Python",
+    "stars": 4132,
+    "forks": 380,
+    "description": "FastF1 is a python package for accessing and analyzing Formula 1 results, schedules, timing data and telemetry"
+  },
+  {
+    "name": "nicotsx/zerobyte",
+    "url": "https://github.com/nicotsx/zerobyte",
+    "language": "TypeScript",
+    "stars": 2972,
+    "forks": 58,
+    "description": "Backup automation for self-hosters. Built on top of restic"
+  },
+  {
+    "name": "lintsinghua/DeepAudit",
+    "url": "https://github.com/lintsinghua/DeepAudit",
+    "language": "Python",
+    "stars": 1884,
+    "forks": 209,
+    "description": "DeepAudit：人人拥有的 AI 黑客战队，让漏洞挖掘触手可及。国内首个开源代码漏洞挖掘多智能体系统。小白一键部署运行，自主协作审计 + 自动化沙箱 PoC 验证。支持 Ollama 私有部署 ，一键生成报告。​让安全不再昂贵，让审计不再复杂。"
+  },
+  {
+    "name": "sgl-project/mini-sglang",
+    "url": "https://github.com/sgl-project/mini-sglang",
+    "language": "Python",
+    "stars": 1804,
+    "forks": 143,
+    "description": "None"
+  },
+  {
+    "name": "pollen-robotics/reachy_mini",
+    "url": "https://github.com/pollen-robotics/reachy_mini",
+    "language": "Python",
+    "stars": 431,
+    "forks": 69,
+    "description": "Reachy Mini's SDK"
+  },
+  {
+    "name": "NVIDIA-NeMo/Gym",
+    "url": "https://github.com/NVIDIA-NeMo/Gym",
+    "language": "Python",
+    "stars": 375,
+    "forks": 27,
+    "description": "Build RL environments for LLM training"
+  },
+  {
+    "name": "google/adk-js",
+    "url": "https://github.com/google/adk-js",
+    "language": "TypeScript",
+    "stars": 243,
+    "forks": 26,
+    "description": "An open-source, code-first Typescript toolkit for building, evaluating, and deploying sophisticated AI agents with flexibility and control."
+  }
+]

@@ -1,0 +1,130 @@
+[
+  {
+    "name": "D4Vinci/Scrapling",
+    "url": "https://github.com/D4Vinci/Scrapling",
+    "language": "Python",
+    "stars": 13502,
+    "forks": 907,
+    "description": "🕷️ An adaptive Web Scraping framework that handles everything from a single request to a full-scale crawl!"
+  },
+  {
+    "name": "huggingface/skills",
+    "url": "https://github.com/huggingface/skills",
+    "language": "Python",
+    "stars": 6041,
+    "forks": 364,
+    "description": "None"
+  },
+  {
+    "name": "abhigyanpatwari/GitNexus",
+    "url": "https://github.com/abhigyanpatwari/GitNexus",
+    "language": "TypeScript",
+    "stars": 3195,
+    "forks": 256,
+    "description": "GitNexus: The Zero-Server Code Intelligence Engine - GitNexus is a client-side knowledge graph creator that runs entirely in your browser. Drop in a GitHub repo or ZIP file, and get an interactive knowledge graph wit a built in Graph RAG Agent. Perfect for code exploration"
+  },
+  {
+    "name": "obra/superpowers",
+    "url": "https://github.com/obra/superpowers",
+    "language": "Shell",
+    "stars": 61129,
+    "forks": 4668,
+    "description": "An agentic skills framework & software development methodology that works."
+  },
+  {
+    "name": "muratcankoylan/Agent-Skills-for-Context-Engineering",
+    "url": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering",
+    "language": "Python",
+    "stars": 10374,
+    "forks": 807,
+    "description": "A comprehensive collection of Agent Skills for context engineering, multi-agent architectures, and production agent systems. Use when building, optimizing, or debugging agent systems that require effective context management."
+  },
+  {
+    "name": "datawhalechina/hello-agents",
+    "url": "https://github.com/datawhalechina/hello-agents",
+    "language": "Python",
+    "stars": 21764,
+    "forks": 2510,
+    "description": "📚 《从零开始构建智能体》——从零开始的智能体原理与实践教程"
+  },
+  {
+    "name": "bytedance/deer-flow",
+    "url": "https://github.com/bytedance/deer-flow",
+    "language": "TypeScript",
+    "stars": 20211,
+    "forks": 2544,
+    "description": "An open-source SuperAgent harness that researches, codes, and creates. With the help of sandboxes, memories, tools, skills and subagents, it handles different levels of tasks that could take minutes to hours."
+  },
+  {
+    "name": "VectifyAI/PageIndex",
+    "url": "https://github.com/VectifyAI/PageIndex",
+    "language": "Python",
+    "stars": 17424,
+    "forks": 1242,
+    "description": "📑 PageIndex: Document Index for Vectorless, Reasoning-based RAG"
+  },
+  {
+    "name": "NevaMind-AI/memU",
+    "url": "https://github.com/NevaMind-AI/memU",
+    "language": "Python",
+    "stars": 10573,
+    "forks": 785,
+    "description": "Memory for 24/7 proactive agents like openclaw (moltbot, clawdbot)."
+  },
+  {
+    "name": "ruvnet/ruvector",
+    "url": "https://github.com/ruvnet/ruvector",
+    "language": "Rust",
+    "stars": 948,
+    "forks": 140,
+    "description": "RuVector is a High Performance, Real-Time, Self-Learning, Vector Graph Neural Network, and Database built in Rust."
+  },
+  {
+    "name": "NVIDIA/Megatron-LM",
+    "url": "https://github.com/NVIDIA/Megatron-LM",
+    "language": "Python",
+    "stars": 15278,
+    "forks": 3624,
+    "description": "Ongoing research training transformer models at scale"
+  },
+  {
+    "name": "shareAI-lab/learn-claude-code",
+    "url": "https://github.com/shareAI-lab/learn-claude-code",
+    "language": "TypeScript",
+    "stars": 17786,
+    "forks": 3747,
+    "description": "Bash is all you need - A nano Claude Code–like agent, built from 0 to 1"
+  },
+  {
+    "name": "x1xhlol/system-prompts-and-models-of-ai-tools",
+    "url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
+    "language": "Unknown",
+    "stars": 123587,
+    "forks": 31843,
+    "description": "FULL Augment Code, Claude Code, Cluely, CodeBuddy, Comet, Cursor, Devin AI, Junie, Kiro, Leap.new, Lovable, Manus, NotionAI, Orchids.app, Perplexity, Poke, Qoder, Replit, Same.dev, Trae, Traycer AI, VSCode Agent, Warp.dev, Windsurf, Xcode, Z.ai Code, Dia & v0. (And other Open Sourced) System Prompts, Internal Tools & AI Models"
+  },
+  {
+    "name": "katanemo/plano",
+    "url": "https://github.com/katanemo/plano",
+    "language": "Rust",
+    "stars": 5361,
+    "forks": 318,
+    "description": "Delivery infrastructure for agentic apps - Plano is an AI-native proxy and data plane that offloads plumbing work, so you stay focused on your agent's core logic (via any AI framework)."
+  },
+  {
+    "name": "liyupi/ai-guide",
+    "url": "https://github.com/liyupi/ai-guide",
+    "language": "JavaScript",
+    "stars": 7536,
+    "forks": 819,
+    "description": "程序员鱼皮的 AI 资源大全 + Vibe Coding 零基础教程，分享大模型选择指南（DeepSeek / GPT / Gemini / Claude）、最新 AI 资讯、Prompt 提示词大全、AI 知识百科（RAG / MCP / A2A）、AI 编程教程、AI 工具用法（Cursor / Claude Code / OpenClaw / TRAE / Lovable / Agent Skills）、AI 开发框架教程（Spring AI / LangChain）、AI 产品变现指南，帮你快速掌握 AI 技术，走在时代前沿。本项目为开源文档版本，已升级为鱼皮 AI 导航网站"
+  },
+  {
+    "name": "siteboon/claudecodeui",
+    "url": "https://github.com/siteboon/claudecodeui",
+    "language": "JavaScript",
+    "stars": 6856,
+    "forks": 874,
+    "description": "Use Claude Code, Cursor CLI or Codex on mobile and web with CloudCLI (aka Claude Code UI). CloudCLI is a free open source webui/GUI that helps you manage your Claude Code session and projects remotely"
+  }
+]

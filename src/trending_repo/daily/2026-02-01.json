@@ -1,0 +1,90 @@
+[
+  {
+    "name": "openclaw/openclaw",
+    "url": "https://github.com/openclaw/openclaw",
+    "language": "TypeScript",
+    "stars": 136948,
+    "forks": 20094,
+    "description": "Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞"
+  },
+  {
+    "name": "ThePrimeagen/99",
+    "url": "https://github.com/ThePrimeagen/99",
+    "language": "Lua",
+    "stars": 2588,
+    "forks": 116,
+    "description": "Neovim AI agent done right"
+  },
+  {
+    "name": "pedramamini/Maestro",
+    "url": "https://github.com/pedramamini/Maestro",
+    "language": "TypeScript",
+    "stars": 800,
+    "forks": 108,
+    "description": "Agent Orchestration Command Center"
+  },
+  {
+    "name": "kovidgoyal/calibre",
+    "url": "https://github.com/kovidgoyal/calibre",
+    "language": "Python",
+    "stars": 23544,
+    "forks": 2533,
+    "description": "The official source code repository for the calibre ebook manager"
+  },
+  {
+    "name": "badlogic/pi-mono",
+    "url": "https://github.com/badlogic/pi-mono",
+    "language": "TypeScript",
+    "stars": 4425,
+    "forks": 491,
+    "description": "AI agent toolkit: coding agent CLI, unified LLM API, TUI & web UI libraries, Slack bot, vLLM pods"
+  },
+  {
+    "name": "thedotmack/claude-mem",
+    "url": "https://github.com/thedotmack/claude-mem",
+    "language": "TypeScript",
+    "stars": 15819,
+    "forks": 1111,
+    "description": "A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions."
+  },
+  {
+    "name": "microsoft/agent-lightning",
+    "url": "https://github.com/microsoft/agent-lightning",
+    "language": "Python",
+    "stars": 12775,
+    "forks": 1053,
+    "description": "The absolute trainer to light up AI agents."
+  },
+  {
+    "name": "amantus-ai/vibetunnel",
+    "url": "https://github.com/amantus-ai/vibetunnel",
+    "language": "TypeScript",
+    "stars": 3360,
+    "forks": 223,
+    "description": "Turn any browser into your terminal & command your agents on the go."
+  },
+  {
+    "name": "steipete/CodexBar",
+    "url": "https://github.com/steipete/CodexBar",
+    "language": "Swift",
+    "stars": 3638,
+    "forks": 250,
+    "description": "Show usage stats for OpenAI Codex and Claude Code, without having to login."
+  },
+  {
+    "name": "j178/prek",
+    "url": "https://github.com/j178/prek",
+    "language": "Rust",
+    "stars": 4087,
+    "forks": 126,
+    "description": "⚡ Better `pre-commit`, re-engineered in Rust"
+  },
+  {
+    "name": "vita-epfl/Stable-Video-Infinity",
+    "url": "https://github.com/vita-epfl/Stable-Video-Infinity",
+    "language": "Python",
+    "stars": 1576,
+    "forks": 127,
+    "description": "[ICLR 26] Stable Video Infinity: Infinite-Length Video Generation with Error Recycling"
+  }
+]

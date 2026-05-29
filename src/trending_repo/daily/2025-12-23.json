@@ -1,0 +1,106 @@
+[
+  {
+    "name": "rendercv/rendercv",
+    "url": "https://github.com/rendercv/rendercv",
+    "language": "Python",
+    "stars": 5403,
+    "forks": 438,
+    "description": "Typst-based CV/resume generator for academics and engineers"
+  },
+  {
+    "name": "exo-explore/exo",
+    "url": "https://github.com/exo-explore/exo",
+    "language": "Python",
+    "stars": 37673,
+    "forks": 2518,
+    "description": "Run your own AI cluster at home with everyday devices 📱💻 🖥️⌚"
+  },
+  {
+    "name": "google/langextract",
+    "url": "https://github.com/google/langextract",
+    "language": "Python",
+    "stars": 18404,
+    "forks": 1307,
+    "description": "A Python library for extracting structured information from unstructured text using LLMs with precise source grounding and interactive visualization."
+  },
+  {
+    "name": "yichuan-w/LEANN",
+    "url": "https://github.com/yichuan-w/LEANN",
+    "language": "Python",
+    "stars": 5251,
+    "forks": 535,
+    "description": "RAG on Everything with LEANN. Enjoy 97% storage savings while running a fast, accurate, and 100% private RAG application on your personal device."
+  },
+  {
+    "name": "stan-smith/FossFLOW",
+    "url": "https://github.com/stan-smith/FossFLOW",
+    "language": "TypeScript",
+    "stars": 14246,
+    "forks": 922,
+    "description": "Make beautiful isometric infrastructure diagrams"
+  },
+  {
+    "name": "vendure-ecommerce/vendure",
+    "url": "https://github.com/vendure-ecommerce/vendure",
+    "language": "TypeScript",
+    "stars": 6947,
+    "forks": 1242,
+    "description": "The most customizable commerce platform built with TypeScript, NestJS and GraphQL."
+  },
+  {
+    "name": "cloudcommunity/Free-Certifications",
+    "url": "https://github.com/cloudcommunity/Free-Certifications",
+    "language": "Unknown",
+    "stars": 48254,
+    "forks": 3213,
+    "description": "A curated list of free courses with certifications. Also available at https://free-certifications.com/"
+  },
+  {
+    "name": "open-webui/open-webui",
+    "url": "https://github.com/open-webui/open-webui",
+    "language": "Svelte",
+    "stars": 118510,
+    "forks": 16706,
+    "description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)"
+  },
+  {
+    "name": "davila7/claude-code-templates",
+    "url": "https://github.com/davila7/claude-code-templates",
+    "language": "Python",
+    "stars": 13165,
+    "forks": 1160,
+    "description": "CLI tool for configuring and monitoring Claude Code"
+  },
+  {
+    "name": "makeplane/plane",
+    "url": "https://github.com/makeplane/plane",
+    "language": "TypeScript",
+    "stars": 40835,
+    "forks": 3018,
+    "description": "🔥 🔥 🔥 Open Source JIRA, Linear, Monday, and Asana Alternative. Plane helps you track your issues, epics, and cycles the easiest way on the planet."
+  },
+  {
+    "name": "xerrors/Yuxi-Know",
+    "url": "https://github.com/xerrors/Yuxi-Know",
+    "language": "Python",
+    "stars": 2752,
+    "forks": 357,
+    "description": "结合LightRAG 知识库的知识图谱智能体平台。LangChain v1 + Vue + FastAPI。集成主流大模型、LightRAG、MinerU、PP-Structure、Neo4j 、联网检索、工具调用。"
+  },
+  {
+    "name": "swisskyrepo/PayloadsAllTheThings",
+    "url": "https://github.com/swisskyrepo/PayloadsAllTheThings",
+    "language": "Python",
+    "stars": 73519,
+    "forks": 16405,
+    "description": "A list of useful payloads and bypass for Web Application Security and Pentest/CTF"
+  },
+  {
+    "name": "vllm-project/vllm-omni",
+    "url": "https://github.com/vllm-project/vllm-omni",
+    "language": "Python",
+    "stars": 1326,
+    "forks": 180,
+    "description": "A framework for efficient model inference with omni-modality models"
+  }
+]

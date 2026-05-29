@@ -1,0 +1,317 @@
+# GitHub Trending Repos (trending_days >= 3)
+
+共 313 个仓库（筛选自 766 个）
+
+- [obra/superpowers](https://github.com/obra/superpowers) - ⭐ 127141 | 🔥 39天 | Shell | An agentic skills framework & software development methodology that works.
+- [nvm-sh/nvm](https://github.com/nvm-sh/nvm) - ⭐ 91436 | 🔥 34天 | Shell | Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions
+- [TapXWorld/ChinaTextbook](https://github.com/TapXWorld/ChinaTextbook) - ⭐ 62782 | 🔥 31天 | Roff | 所有小初高、大学PDF教材。
+- [iptv-org/iptv](https://github.com/iptv-org/iptv) - ⭐ 113355 | 🔥 27天 | TypeScript | Collection of publicly available IPTV channels from all over the world
+- [yeongpin/cursor-free-vip](https://github.com/yeongpin/cursor-free-vip) - ⭐ 45054 | 🔥 26天 | Python | [Support 0.49.x]（Reset Cursor AI MachineID & Bypass Higher Token Limit） Cursor Ai ，自动重置机器ID ， 免费升级使用
+- [yangshun/tech-interview-handbook](https://github.com/yangshun/tech-interview-handbook) - ⭐ 135892 | 🔥 25天 | TypeScript | Curated coding interview preparation materials for busy software engineers
+- [google/adk-go](https://github.com/google/adk-go) - ⭐ 6012 | 🔥 25天 | Go | An open-source, code-first Go toolkit for building, evaluating, and deploying sophisticated AI agent
+- [sansan0/TrendRadar](https://github.com/sansan0/TrendRadar) - ⭐ 41686 | 🔥 25天 | Python | 🎯 告别信息过载，AI 助你看懂新闻资讯热点，支持 RSS 订阅，简单的舆情监控分析 - 多平台热点聚合+基于 MCP 的AI分析工具。监控35个平台（抖音、知乎、B站、华尔街见闻、财联社等），智能筛
+- [bobeff/open-source-games](https://github.com/bobeff/open-source-games) - ⭐ 10170 | 🔥 24天 | Unknown | A list of open source games.
+- [anthropics/claude-code](https://github.com/anthropics/claude-code) - ⭐ 104884 | 🔥 23天 | Shell | Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and he
+- [microsoft/call-center-ai](https://github.com/microsoft/call-center-ai) - ⭐ 5876 | 🔥 23天 | Python | Send a phone call from AI agent, in an API call. Or, directly call the bot from the configured phone
+- [Zie619/n8n-workflows](https://github.com/Zie619/n8n-workflows) - ⭐ 46673 | 🔥 23天 | Python | all of the workflows of n8n i could find (also from the site itself)
+- [HKUDS/LightRAG](https://github.com/HKUDS/LightRAG) - ⭐ 29891 | 🔥 23天 | Python | [EMNLP2025] "LightRAG: Simple and Fast Retrieval-Augmented Generation"
+- [traefik/traefik](https://github.com/traefik/traefik) - ⭐ 60151 | 🔥 22天 | Go | The Cloud Native Application Proxy
+- [volcengine/verl](https://github.com/volcengine/verl) - ⭐ 17200 | 🔥 22天 | Python | verl: Volcano Engine Reinforcement Learning for LLMs
+- [MustardChef/WSABuilds](https://github.com/MustardChef/WSABuilds) - ⭐ 14510 | 🔥 22天 | Python | Run Windows Subsystem For Android on your Windows 10 and Windows 11 PC using prebuilt binaries with 
+- [playcanvas/engine](https://github.com/playcanvas/engine) - ⭐ 14051 | 🔥 22天 | JavaScript | Powerful web graphics runtime built on WebGL, WebGPU, WebXR and glTF
+- [milvus-io/milvus](https://github.com/milvus-io/milvus) - ⭐ 41413 | 🔥 22天 | Go | Milvus is a high-performance, cloud-native vector database built for scalable vector ANN search
+- [wolfpld/tracy](https://github.com/wolfpld/tracy) - ⭐ 14671 | 🔥 22天 | C++ | Frame profiler
+- [GibsonAI/Memori](https://github.com/GibsonAI/Memori) - ⭐ 8764 | 🔥 20天 | Python | Open-Source Memory Engine for LLMs, AI Agents & Multi-Agent Systems
+- [Shubhamsaboo/awesome-llm-apps](https://github.com/Shubhamsaboo/awesome-llm-apps) - ⭐ 98433 | 🔥 19天 | Python | Collection of awesome LLM apps with AI Agents and RAG using OpenAI, Anthropic, Gemini and opensource
+- [thedotmack/claude-mem](https://github.com/thedotmack/claude-mem) - ⭐ 42116 | 🔥 17天 | TypeScript | A Claude Code plugin that automatically captures everything Claude does during your coding sessions,
+- [microsoft/VibeVoice](https://github.com/microsoft/VibeVoice) - ⭐ 34921 | 🔥 15天 | Python | Open-Source Frontier Voice AI
+- [666ghj/BettaFish](https://github.com/666ghj/BettaFish) - ⭐ 37076 | 🔥 14天 | Python | 微舆：人人可用的多Agent舆情分析助手，打破信息茧房，还原舆情原貌，预测未来走向，辅助决策！从0实现，不依赖任何框架。
+- [microsoft/agent-lightning](https://github.com/microsoft/agent-lightning) - ⭐ 16078 | 🔥 13天 | Python | The absolute trainer to light up AI agents.
+- [virattt/ai-hedge-fund](https://github.com/virattt/ai-hedge-fund) - ⭐ 47886 | 🔥 13天 | Python | An AI Hedge Fund Team
+- [aquasecurity/trivy](https://github.com/aquasecurity/trivy) - ⭐ 33891 | 🔥 12天 | Go | Find vulnerabilities, misconfigurations, secrets, SBOM in containers, Kubernetes, code repositories,
+- [simstudioai/sim](https://github.com/simstudioai/sim) - ⭐ 26069 | 🔥 11天 | TypeScript | Open-source platform to build and deploy AI agent workflows.
+- [public-apis/public-apis](https://github.com/public-apis/public-apis) - ⭐ 408848 | 🔥 11天 | Python | A collective list of free APIs
+- [patchy631/ai-engineering-hub](https://github.com/patchy631/ai-engineering-hub) - ⭐ 29012 | 🔥 11天 | JupyterNotebook | In-depth tutorials on LLMs, RAGs and real-world AI agent applications.
+- [google/langextract](https://github.com/google/langextract) - ⭐ 30938 | 🔥 11天 | Python | A Python library for extracting structured information from unstructured text using LLMs with precis
+- [iOfficeAI/AionUi](https://github.com/iOfficeAI/AionUi) - ⭐ 15132 | 🔥 11天 | TypeScript | Free, local, open-source 24/7 Cowork and OpenClaw for Gemini CLI, Claude Code, Codex, OpenCode, Qwen
+- [openclaw/openclaw](https://github.com/openclaw/openclaw) - ⭐ 295920 | 🔥 11天 | TypeScript | Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞
+- [openai/skills](https://github.com/openai/skills) - ⭐ 12963 | 🔥 11天 | Python | Skills Catalog for Codex
+- [bytedance/deer-flow](https://github.com/bytedance/deer-flow) - ⭐ 47558 | 🔥 11天 | Python | An open-source long-horizon SuperAgent harness that researches, codes, and creates. With the help of
+- [onyx-dot-app/onyx](https://github.com/onyx-dot-app/onyx) - ⭐ 24628 | 🔥 10天 | Python | Open Source AI Platform - AI Chat with advanced features that works with every LLM
+- [hsliuping/TradingAgents-CN](https://github.com/hsliuping/TradingAgents-CN) - ⭐ 21143 | 🔥 10天 | Python | 基于多智能体LLM的中文金融交易框架 - TradingAgents中文增强版
+- [Stremio/stremio-web](https://github.com/Stremio/stremio-web) - ⭐ 9826 | 🔥 10天 | JavaScript | Stremio - Freedom to Stream
+- [dyad-sh/dyad](https://github.com/dyad-sh/dyad) - ⭐ 18128 | 🔥 10天 | TypeScript | Free, local, open-source AI app builder ✨ v0 / lovable / Bolt alternative 🌟 Star if you like it!
+- [harvard-edge/cs249r_book](https://github.com/harvard-edge/cs249r_book) - ⭐ 19919 | 🔥 10天 | JavaScript | Introduction to Machine Learning Systems
+- [block/goose](https://github.com/block/goose) - ⭐ 36085 | 🔥 10天 | Rust | an open source, extensible AI agent that goes beyond code suggestions - install, execute, edit, and 
+- [ChromeDevTools/chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp) - ⭐ 25222 | 🔥 10天 | TypeScript | Chrome DevTools for coding agents
+- [NevaMind-AI/memU](https://github.com/NevaMind-AI/memU) - ⭐ 11772 | 🔥 10天 | Python | Memory for 24/7 proactive agents like openclaw (moltbot, clawdbot).
+- [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent) - ⭐ 19507 | 🔥 10天 | Python | The agent that grows with you
+- [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents) - ⭐ 41902 | 🔥 10天 | Shell | A complete AI agency at your fingertips - From frontend wizards to Reddit community ninjas, from whi
+- [TheAlgorithms/Python](https://github.com/TheAlgorithms/Python) - ⭐ 216010 | 🔥 9天 | Python | All Algorithms implemented in Python
+- [sst/opencode](https://github.com/sst/opencode) - ⭐ 44044 | 🔥 9天 | TypeScript | The open source coding agent.
+- [lfnovo/open-notebook](https://github.com/lfnovo/open-notebook) - ⭐ 13812 | 🔥 9天 | TypeScript | An Open Source implementation of Notebook LM with more flexibility and features
+- [DrewThomasson/ebook2audiobook](https://github.com/DrewThomasson/ebook2audiobook) - ⭐ 18034 | 🔥 9天 | Python | Generate audiobooks from e-books, voice cloning & 1158+ languages!
+- [VectifyAI/PageIndex](https://github.com/VectifyAI/PageIndex) - ⭐ 17424 | 🔥 9天 | Python | 📑 PageIndex: Document Index for Vectorless, Reasoning-based RAG
+- [OpenBB-finance/OpenBB](https://github.com/OpenBB-finance/OpenBB) - ⭐ 64273 | 🔥 9天 | Python | Financial data platform for analysts, quants and AI agents.
+- [virattt/dexter](https://github.com/virattt/dexter) - ⭐ 19905 | 🔥 9天 | TypeScript | An autonomous agent for deep financial research
+- [moeru-ai/airi](https://github.com/moeru-ai/airi) - ⭐ 36172 | 🔥 9天 | TypeScript | 💖🧸 Self hosted, you-owned Grok Companion, a container of souls of waifu, cyber livings to bring them
+- [harry0703/MoneyPrinterTurbo](https://github.com/harry0703/MoneyPrinterTurbo) - ⭐ 52323 | 🔥 8天 | Python | 利用AI大模型，一键生成高清短视频 Generate short videos with one click using AI LLM.
+- [cjpais/Handy](https://github.com/cjpais/Handy) - ⭐ 11557 | 🔥 8天 | TypeScript | A free, open source, and extensible speech-to-text application that works completely offline.
+- [shadcn-ui/ui](https://github.com/shadcn-ui/ui) - ⭐ 108382 | 🔥 8天 | TypeScript | A set of beautifully-designed, accessible components and a code distribution platform. Works with yo
+- [davila7/claude-code-templates](https://github.com/davila7/claude-code-templates) - ⭐ 20597 | 🔥 8天 | Python | CLI tool for configuring and monitoring Claude Code
+- [Skyvern-AI/skyvern](https://github.com/Skyvern-AI/skyvern) - ⭐ 17110 | 🔥 8天 | Python | Automate browser based workflows with AI
+- [cloudcommunity/Free-Certifications](https://github.com/cloudcommunity/Free-Certifications) - ⭐ 48254 | 🔥 8天 | Unknown | A curated list of free courses with certifications. Also available at https://free-certifications.co
+- [hacksider/Deep-Live-Cam](https://github.com/hacksider/Deep-Live-Cam) - ⭐ 85889 | 🔥 8天 | Python | real time face swap and one-click video deepfake with only a single image
+- [yichuan-w/LEANN](https://github.com/yichuan-w/LEANN) - ⭐ 9155 | 🔥 8天 | Python | RAG on Everything with LEANN. Enjoy 97% storage savings while running a fast, accurate, and 100% pri
+- [protocolbuffers/protobuf](https://github.com/protocolbuffers/protobuf) - ⭐ 70882 | 🔥 8天 | C++ | Protocol Buffers - Google's data interchange format
+- [badlogic/pi-mono](https://github.com/badlogic/pi-mono) - ⭐ 31647 | 🔥 8天 | TypeScript | AI agent toolkit: coding agent CLI, unified LLM API, TUI & web UI libraries, Slack bot, vLLM pods
+- [p-e-w/heretic](https://github.com/p-e-w/heretic) - ⭐ 15013 | 🔥 8天 | Python | Fully automatic censorship removal for language models
+- [abhigyanpatwari/GitNexus](https://github.com/abhigyanpatwari/GitNexus) - ⭐ 16142 | 🔥 8天 | TypeScript | GitNexus: The Zero-Server Code Intelligence Engine - GitNexus is a client-side knowledge graph creat
+- [FujiwaraChoki/MoneyPrinterV2](https://github.com/FujiwaraChoki/MoneyPrinterV2) - ⭐ 25257 | 🔥 8天 | Python | Automate the process of making money online.
+- [666ghj/MiroFish](https://github.com/666ghj/MiroFish) - ⭐ 28733 | 🔥 8天 | Python | A Simple and Universal Swarm Intelligence Engine, Predicting Anything. 简洁通用的群体智能引擎，预测万物
+- [EbookFoundation/free-programming-books](https://github.com/EbookFoundation/free-programming-books) - ⭐ 374110 | 🔥 7天 | Python | 📚 Freely available programming books
+- [LadybirdBrowser/ladybird](https://github.com/LadybirdBrowser/ladybird) - ⭐ 58907 | 🔥 7天 | C++ | Truly independent web browser
+- [basecamp/omarchy](https://github.com/basecamp/omarchy) - ⭐ 20639 | 🔥 7天 | Shell | Beautiful, Modern & Opinionated Linux
+- [pathwaycom/pathway](https://github.com/pathwaycom/pathway) - ⭐ 55769 | 🔥 7天 | Python | Python ETL framework for stream processing, real-time analytics, LLM pipelines, and RAG.
+- [supermemoryai/supermemory](https://github.com/supermemoryai/supermemory) - ⭐ 18964 | 🔥 7天 | TypeScript | Memory engine and app that is extremely fast, scalable. The Memory API for the AI era.
+- [wavetermdev/waveterm](https://github.com/wavetermdev/waveterm) - ⭐ 17203 | 🔥 7天 | Go | An open-source, cross-platform terminal for seamless workflows
+- [HandsOnLLM/Hands-On-Large-Language-Models](https://github.com/HandsOnLLM/Hands-On-Large-Language-Models) - ⭐ 22336 | 🔥 7天 | JupyterNotebook | Official code repo for the O'Reilly Book - "Hands-On Large Language Models"
+- [x1xhlol/system-prompts-and-models-of-ai-tools](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools) - ⭐ 123587 | 🔥 7天 | Unknown | FULL Augment Code, Claude Code, Cluely, CodeBuddy, Comet, Cursor, Devin AI, Junie, Kiro, Leap.new, L
+- [mudler/LocalAI](https://github.com/mudler/LocalAI) - ⭐ 41767 | 🔥 7天 | Go | 🤖 The free, Open Source alternative to OpenAI, Claude and others. Self-hosted and local-first. Drop-
+- [sinelaw/fresh](https://github.com/sinelaw/fresh) - ⭐ 4219 | 🔥 7天 | Rust | Text editor for your terminal: easy, powerful and fast
+- [datawhalechina/hello-agents](https://github.com/datawhalechina/hello-agents) - ⭐ 23629 | 🔥 7天 | Python | 📚 《从零开始构建智能体》——从零开始的智能体原理与实践教程
+- [twitter/the-algorithm](https://github.com/twitter/the-algorithm) - ⭐ 71940 | 🔥 7天 | Scala | Source code for the X Recommendation Algorithm
+- [huggingface/skills](https://github.com/huggingface/skills) - ⭐ 6745 | 🔥 7天 | Python | None
+- [Crosstalk-Solutions/project-nomad](https://github.com/Crosstalk-Solutions/project-nomad) - ⭐ 15943 | 🔥 7天 | TypeScript | Project N.O.M.A.D, is a self-contained, offline survival computer packed with critical tools, knowle
+- [coinbase/x402](https://github.com/coinbase/x402) - ⭐ 3386 | 🔥 6天 | TypeScript | A payments protocol for the internet. Built on HTTP.
+- [exo-explore/exo](https://github.com/exo-explore/exo) - ⭐ 37673 | 🔥 6天 | Python | Run your own AI cluster at home with everyday devices 📱💻 🖥️⌚
+- [kamranahmedse/developer-roadmap](https://github.com/kamranahmedse/developer-roadmap) - ⭐ 341134 | 🔥 6天 | TypeScript | Interactive roadmaps, guides and other educational content to help developers grow in their careers.
+- [juspay/hyperswitch](https://github.com/juspay/hyperswitch) - ⭐ 38750 | 🔥 6天 | Rust | An open source payments switch written in Rust to make payments fast, reliable and affordable
+- [Infisical/infisical](https://github.com/Infisical/infisical) - ⭐ 22163 | 🔥 6天 | TypeScript | Infisical is the open-source platform for secrets management, PKI, and SSH access.
+- [microsoft/BitNet](https://github.com/microsoft/BitNet) - ⭐ 33222 | 🔥 6天 | Python | Official inference framework for 1-bit LLMs
+- [Flowseal/zapret-discord-youtube](https://github.com/Flowseal/zapret-discord-youtube) - ⭐ 21180 | 🔥 6天 | Batchfile | None
+- [anthropics/prompt-eng-interactive-tutorial](https://github.com/anthropics/prompt-eng-interactive-tutorial) - ⭐ 31146 | 🔥 6天 | JupyterNotebook | Anthropic's Interactive Prompt Engineering Tutorial
+- [asgeirtj/system_prompts_leaks](https://github.com/asgeirtj/system_prompts_leaks) - ⭐ 28840 | 🔥 6天 | JavaScript | Collection of extracted System Prompts from popular chatbots like ChatGPT, Claude & Gemini
+- [Raphire/Win11Debloat](https://github.com/Raphire/Win11Debloat) - ⭐ 40916 | 🔥 6天 | PowerShell | A simple, lightweight PowerShell script that allows you to remove pre-installed apps, disable teleme
+- [jingyaogong/minimind](https://github.com/jingyaogong/minimind) - ⭐ 42349 | 🔥 6天 | Python | 🚀🚀 「大模型」2小时完全从0训练26M的小参数GPT！🌏 Train a 26M-parameter GPT from scratch in just 2h!
+- [PaddlePaddle/PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR) - ⭐ 73829 | 🔥 6天 | Python | Turn any PDF or image document into structured data for your AI. A powerful, lightweight OCR toolkit
+- [anthropics/claude-cookbooks](https://github.com/anthropics/claude-cookbooks) - ⭐ 24874 | 🔥 6天 | JupyterNotebook | A collection of notebooks/recipes showcasing some fun and effective ways of using Claude.
+- [mountain-loop/yaak](https://github.com/mountain-loop/yaak) - ⭐ 13448 | 🔥 6天 | TypeScript | The most intuitive desktop API client. Organize and execute REST, GraphQL, WebSockets, Server Sent E
+- [clockworklabs/SpacetimeDB](https://github.com/clockworklabs/SpacetimeDB) - ⭐ 20540 | 🔥 6天 | Rust | Development at the speed of light
+- [fishaudio/fish-speech](https://github.com/fishaudio/fish-speech) - ⭐ 27022 | 🔥 6天 | Python | SOTA Open Source TTS
+- [HKUDS/DeepCode](https://github.com/HKUDS/DeepCode) - ⭐ 12550 | 🔥 6天 | Python | "DeepCode: Open Agentic Coding (Paper2Code & Text2Web & Text2Backend)"
+- [usestrix/strix](https://github.com/usestrix/strix) - ⭐ 21413 | 🔥 6天 | Python | Open-source AI hackers to find and fix your app’s vulnerabilities.
+- [openai/codex](https://github.com/openai/codex) - ⭐ 72364 | 🔥 6天 | Rust | Lightweight coding agent that runs in your terminal
+- [resemble-ai/chatterbox](https://github.com/resemble-ai/chatterbox) - ⭐ 19837 | 🔥 6天 | Python | SoTA open-source TTS
+- [rendercv/rendercv](https://github.com/rendercv/rendercv) - ⭐ 12384 | 🔥 6天 | Python | CV/resume generator for academics and engineers, YAML to PDF
+- [usememos/memos](https://github.com/usememos/memos) - ⭐ 52182 | 🔥 6天 | Go | An open-source, self-hosted note-taking service. Your thoughts, your data, your control — no trackin
+- [twentyhq/twenty](https://github.com/twentyhq/twenty) - ⭐ 42621 | 🔥 6天 | TypeScript | Building a modern alternative to Salesforce, powered by the community.
+- [KeygraphHQ/shannon](https://github.com/KeygraphHQ/shannon) - ⭐ 31404 | 🔥 6天 | TypeScript | Shannon Lite is a fully autonomous AI pentester for web apps and APIs. 96.15% (100/104 exploits) on 
+- [ruvnet/wifi-densepose](https://github.com/ruvnet/wifi-densepose) - ⭐ 19768 | 🔥 6天 | Rust | WiFi DensePose turns commodity WiFi signals into real-time human pose estimation, vital sign monitor
+- [shareAI-lab/learn-claude-code](https://github.com/shareAI-lab/learn-claude-code) - ⭐ 42238 | 🔥 6天 | TypeScript | Bash is all you need - A nano claude code–like 「agent harness」, built from 0 to 1
+- [alibaba/OpenSandbox](https://github.com/alibaba/OpenSandbox) - ⭐ 5695 | 🔥 6天 | Python | OpenSandbox is a general-purpose sandbox platform for AI applications, offering multi-language SDKs,
+- [alibaba/page-agent](https://github.com/alibaba/page-agent) - ⭐ 6893 | 🔥 6天 | TypeScript | JavaScript in-page GUI agent. Control web interfaces with natural language.
+- [jarrodwatts/claude-hud](https://github.com/jarrodwatts/claude-hud) - ⭐ 10828 | 🔥 6天 | JavaScript | A Claude Code plugin that shows what's happening - context usage, active tools, running agents, and 
+- [humanlayer/humanlayer](https://github.com/humanlayer/humanlayer) - ⭐ 4759 | 🔥 5天 | TypeScript | The best way to get AI coding agents to solve hard problems in complex codebases.
+- [yt-dlp/yt-dlp](https://github.com/yt-dlp/yt-dlp) - ⭐ 142238 | 🔥 5天 | Python | A feature-rich command-line audio/video downloader
+- [jellyfin/jellyfin](https://github.com/jellyfin/jellyfin) - ⭐ 47013 | 🔥 5天 | C# | The Free Software Media System - Server Backend & API
+- [microsoft/ai-agents-for-beginners](https://github.com/microsoft/ai-agents-for-beginners) - ⭐ 44750 | 🔥 5天 | JupyterNotebook | 12 Lessons to Get Started Building AI Agents
+- [langgenius/dify](https://github.com/langgenius/dify) - ⭐ 123369 | 🔥 5天 | TypeScript | Production-ready platform for agentic workflow development.
+- [kestra-io/kestra](https://github.com/kestra-io/kestra) - ⭐ 22088 | 🔥 5天 | Java | Orchestrate everything - from scripts to data, infra, AI, and business - as code, with UI and AI Cop
+- [airweave-ai/airweave](https://github.com/airweave-ai/airweave) - ⭐ 5050 | 🔥 5天 | Python | Context retrieval for AI agents across apps and databases
+- [aandrew-me/ytDownloader](https://github.com/aandrew-me/ytDownloader) - ⭐ 5798 | 🔥 5天 | JavaScript | Desktop App for downloading Videos and Audios from hundreds of sites
+- [PixelGuys/Cubyz](https://github.com/PixelGuys/Cubyz) - ⭐ 2229 | 🔥 5天 | Zig | Voxel sandbox game with a large render distance, procedurally generated content and some cool graphi
+- [microsoft/PowerToys](https://github.com/microsoft/PowerToys) - ⭐ 129537 | 🔥 5天 | C# | Microsoft PowerToys is a collection of utilities that supercharge productivity and customization on 
+- [huggingface/chat-ui](https://github.com/huggingface/chat-ui) - ⭐ 10051 | 🔥 5天 | TypeScript | Open source codebase powering the HuggingChat app
+- [toeverything/AFFiNE](https://github.com/toeverything/AFFiNE) - ⭐ 64885 | 🔥 5天 | TypeScript | There can be more than Notion and Miro. AFFiNE(pronounced [ə‘fain]) is a next-gen knowledge base tha
+- [codecrafters-io/build-your-own-x](https://github.com/codecrafters-io/build-your-own-x) - ⭐ 478812 | 🔥 5天 | Markdown | Master programming by recreating your favorite technologies from scratch.
+- [qeeqbox/social-analyzer](https://github.com/qeeqbox/social-analyzer) - ⭐ 16589 | 🔥 5天 | JavaScript | API, CLI, and Web App for analyzing and finding a person's profile in 1000 social media \ websites
+- [Tencent/WeKnora](https://github.com/Tencent/WeKnora) - ⭐ 8644 | 🔥 5天 | Go | LLM-powered framework for deep document understanding, semantic retrieval, and context-aware answers
+- [sst/opentui](https://github.com/sst/opentui) - ⭐ 4717 | 🔥 5天 | TypeScript | OpenTUI is a library for building terminal user interfaces (TUIs)
+- [imthenachoman/How-To-Secure-A-Linux-Server](https://github.com/imthenachoman/How-To-Secure-A-Linux-Server) - ⭐ 22848 | 🔥 5天 | Unknown | An evolving how-to guide for securing a Linux server.
+- [blakeblackshear/frigate](https://github.com/blakeblackshear/frigate) - ⭐ 29225 | 🔥 5天 | TypeScript | NVR with realtime local object detection for IP cameras
+- [agentsmd/agents.md](https://github.com/agentsmd/agents.md) - ⭐ 15200 | 🔥 5天 | TypeScript | AGENTS.md — a simple, open format for guiding coding agents
+- [C4illin/ConvertX](https://github.com/C4illin/ConvertX) - ⭐ 14397 | 🔥 5天 | TypeScript | 💾 Self-hosted online file converter. Supports 1000+ formats ⚙️
+- [swisskyrepo/PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings) - ⭐ 73519 | 🔥 5天 | Python | A list of useful payloads and bypass for Web Application Security and Pentest/CTF
+- [stan-smith/FossFLOW](https://github.com/stan-smith/FossFLOW) - ⭐ 18355 | 🔥 5天 | TypeScript | Make beautiful isometric infrastructure diagrams
+- [BloopAI/vibe-kanban](https://github.com/BloopAI/vibe-kanban) - ⭐ 10375 | 🔥 5天 | Rust | Get 10X more out of Claude Code, Codex or any coding agent
+- [ourongxing/newsnow](https://github.com/ourongxing/newsnow) - ⭐ 16915 | 🔥 5天 | TypeScript | Elegant reading of real-time and hottest news
+- [bytedance/UI-TARS-desktop](https://github.com/bytedance/UI-TARS-desktop) - ⭐ 26963 | 🔥 5天 | TypeScript | The Open-Source Multimodal AI Agent Stack: Connecting Cutting-Edge AI Models and Agent Infra
+- [OpenBMB/ChatDev](https://github.com/OpenBMB/ChatDev) - ⭐ 32286 | 🔥 5天 | Python | ChatDev 2.0: Dev All through LLM-powered Multi-Agent Collaboration
+- [nautechsystems/nautilus_trader](https://github.com/nautechsystems/nautilus_trader) - ⭐ 20561 | 🔥 5天 | Rust | A high-performance algorithmic trading platform and event-driven backtester
+- [remotion-dev/remotion](https://github.com/remotion-dev/remotion) - ⭐ 31391 | 🔥 5天 | TypeScript | 🎥 Make videos programmatically with React
+- [hashicorp/vault](https://github.com/hashicorp/vault) - ⭐ 34880 | 🔥 5天 | Go | A tool for secrets management, encryption as a service, and privileged access management
+- [karpathy/nanochat](https://github.com/karpathy/nanochat) - ⭐ 45898 | 🔥 5天 | Python | The best ChatGPT that $100 can buy.
+- [github/gh-aw](https://github.com/github/gh-aw) - ⭐ 2473 | 🔥 5天 | Go | GitHub Agentic Workflows
+- [SynkraAI/aios-core](https://github.com/SynkraAI/aios-core) - ⭐ 1059 | 🔥 5天 | JavaScript | Synkra AIOS: AI-Orchestrated System for Full Stack Development - Core Framework v4.0
+- [alibaba/zvec](https://github.com/alibaba/zvec) - ⭐ 4692 | 🔥 5天 | C++ | A lightweight, lightning-fast, in-process vector database
+- [vxcontrol/pentagi](https://github.com/vxcontrol/pentagi) - ⭐ 12597 | 🔥 5天 | Go | Fully autonomous AI Agents system capable of performing complex penetration testing tasks
+- [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) - ⭐ 11574 | 🔥 5天 | Python | Official, Anthropic-managed directory of high quality Claude Code Plugins.
+- [muratcankoylan/Agent-Skills-for-Context-Engineering](https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering) - ⭐ 12128 | 🔥 5天 | Python | A comprehensive collection of Agent Skills for context engineering, multi-agent architectures, and p
+- [ruvnet/ruflo](https://github.com/ruvnet/ruflo) - ⭐ 25585 | 🔥 5天 | TypeScript | 🌊 The leading agent orchestration platform for Claude. Deploy intelligent multi-agent swarms, coordi
+- [mvanhorn/last30days-skill](https://github.com/mvanhorn/last30days-skill) - ⭐ 14651 | 🔥 5天 | Python | AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - th
+- [Yeachan-Heo/oh-my-claudecode](https://github.com/Yeachan-Heo/oh-my-claudecode) - ⭐ 18062 | 🔥 5天 | TypeScript | Teams-first Multi-agent orchestration for Claude Code
+- [elastic/elasticsearch](https://github.com/elastic/elasticsearch) - ⭐ 75254 | 🔥 4天 | Java | Free and Open Source, Distributed, RESTful Search Engine
+- [eslint/eslint](https://github.com/eslint/eslint) - ⭐ 27013 | 🔥 4天 | JavaScript | Find and fix problems in your JavaScript code.
+- [gin-gonic/gin](https://github.com/gin-gonic/gin) - ⭐ 85921 | 🔥 4天 | Go | Gin is a high-performance HTTP web framework written in Go. It provides a Martini-like API but with 
+- [ZuodaoTech/everyone-can-use-english](https://github.com/ZuodaoTech/everyone-can-use-english) - ⭐ 30614 | 🔥 4天 | TypeScript | 人人都能用英语
+- [is-a-dev/register](https://github.com/is-a-dev/register) - ⭐ 9651 | 🔥 4天 | JavaScript | Grab your own sweet-looking '.is-a.dev' subdomain.
+- [commaai/openpilot](https://github.com/commaai/openpilot) - ⭐ 57990 | 🔥 4天 | Python | openpilot is an operating system for robotics. Currently, it upgrades the driver assistance system o
+- [rasbt/LLMs-from-scratch](https://github.com/rasbt/LLMs-from-scratch) - ⭐ 76471 | 🔥 4天 | JupyterNotebook | Implement a ChatGPT-like LLM in PyTorch from scratch, step by step
+- [nextcloud/server](https://github.com/nextcloud/server) - ⭐ 32541 | 🔥 4天 | PHP | ☁️ Nextcloud server, a safe home for all your data
+- [SDWebImage/SDWebImage](https://github.com/SDWebImage/SDWebImage) - ⭐ 25721 | 🔥 4天 | Objective-C | Asynchronous image downloader with cache support as a UIImageView category
+- [emcie-co/parlant](https://github.com/emcie-co/parlant) - ⭐ 14707 | 🔥 4天 | Python | LLM agents built for control. Designed for real-world use. Deployed in minutes.
+- [meshery/meshery](https://github.com/meshery/meshery) - ⭐ 8617 | 🔥 4天 | JavaScript | Meshery, the cloud native manager
+- [openemr/openemr](https://github.com/openemr/openemr) - ⭐ 4714 | 🔥 4天 | PHP | The most popular open source electronic health records and medical practice management solution.
+- [Morganamilo/paru](https://github.com/Morganamilo/paru) - ⭐ 7924 | 🔥 4天 | Rust | Feature packed AUR helper
+- [MODSetter/SurfSense](https://github.com/MODSetter/SurfSense) - ⭐ 9216 | 🔥 4天 | Python | Open Source Alternative to NotebookLM / Perplexity, connected to external sources such as Search Eng
+- [TibixDev/winboat](https://github.com/TibixDev/winboat) - ⭐ 10211 | 🔥 4天 | TypeScript | Run Windows apps on 🐧 Linux with ✨ seamless integration
+- [daytonaio/daytona](https://github.com/daytonaio/daytona) - ⭐ 37621 | 🔥 4天 | TypeScript | Daytona is a Secure and Elastic Infrastructure for Running AI-Generated Code
+- [oven-sh/bun](https://github.com/oven-sh/bun) - ⭐ 84253 | 🔥 4天 | Zig | Incredibly fast JavaScript runtime, bundler, test runner, and package manager – all in one
+- [karpathy/nanoGPT](https://github.com/karpathy/nanoGPT) - ⭐ 50938 | 🔥 4天 | Python | The simplest, fastest repository for training/finetuning medium-sized GPTs.
+- [servo/servo](https://github.com/servo/servo) - ⭐ 35651 | 🔥 4天 | Rust | Servo aims to empower developers with a lightweight, high-performance alternative for embedding web 
+- [guofei9987/blind_watermark](https://github.com/guofei9987/blind_watermark) - ⭐ 9963 | 🔥 4天 | Python | Blind&Invisible Watermark ，图片盲水印，提取水印无须原图！
+- [rossant/awesome-math](https://github.com/rossant/awesome-math) - ⭐ 12810 | 🔥 4天 | Python | A curated list of awesome mathematics resources
+- [rustfs/rustfs](https://github.com/rustfs/rustfs) - ⭐ 15302 | 🔥 4天 | Rust | 🚀2.3x faster than MinIO for 4KB object payloads. RustFS is an open-source, S3-compatible high-perfor
+- [Wei-Shaw/claude-relay-service](https://github.com/Wei-Shaw/claude-relay-service) - ⭐ 8637 | 🔥 4天 | JavaScript | CRS-自建Claude Code镜像，一站式开源中转服务，让 Claude、OpenAI、Gemini、Droid 订阅统一接入，支持拼车共享，更高效分摊成本，原生工具无缝使用。
+- [nocobase/nocobase](https://github.com/nocobase/nocobase) - ⭐ 19030 | 🔥 4天 | TypeScript | NocoBase is the most extensible AI-powered no-code/low-code platform for building business applicati
+- [prometheus/alertmanager](https://github.com/prometheus/alertmanager) - ⭐ 8014 | 🔥 4天 | Go | Prometheus Alertmanager
+- [localstack/localstack](https://github.com/localstack/localstack) - ⭐ 62684 | 🔥 4天 | Python | 💻 A fully functional local AWS cloud stack. Develop and test your cloud & Serverless apps offline
+- [ad-on-is/rachoon](https://github.com/ad-on-is/rachoon) - ⭐ 803 | 🔥 4天 | TypeScript | 🦝 Rachoon — A self-hostable way to handle invoices
+- [FFmpeg/asm-lessons](https://github.com/FFmpeg/asm-lessons) - ⭐ 10893 | 🔥 4天 | Unknown | FFmpeg Assembly Language Lessons
+- [thinking-machines-lab/tinker-cookbook](https://github.com/thinking-machines-lab/tinker-cookbook) - ⭐ 2430 | 🔥 4天 | Python | Post-training with Tinker
+- [DayuanJiang/next-ai-draw-io](https://github.com/DayuanJiang/next-ai-draw-io) - ⭐ 15984 | 🔥 4天 | TypeScript | A next.js web application that integrates AI capabilities with draw.io diagrams. This app allows you
+- [anthropics/claude-quickstarts](https://github.com/anthropics/claude-quickstarts) - ⭐ 14270 | 🔥 4天 | Python | A collection of projects designed to help developers quickly get started with building deployable ap
+- [Free-TV/IPTV](https://github.com/Free-TV/IPTV) - ⭐ 12240 | 🔥 4天 | Python | M3U Playlist for free TV channels
+- [GreyDGL/PentestGPT](https://github.com/GreyDGL/PentestGPT) - ⭐ 10203 | 🔥 4天 | Python | A GPT-empowered penetration testing tool
+- [makeplane/plane](https://github.com/makeplane/plane) - ⭐ 43294 | 🔥 4天 | TypeScript | 🔥🔥🔥 Open-source Jira, Linear, Monday, and ClickUp alternative. Plane is a modern project management 
+- [vllm-project/vllm-omni](https://github.com/vllm-project/vllm-omni) - ⭐ 3375 | 🔥 4天 | Python | A framework for efficient model inference with omni-modality models
+- [HQarroum/docker-android](https://github.com/HQarroum/docker-android) - ⭐ 2327 | 🔥 4天 | Shell | 🤖 A minimal and customizable Docker image running the Android emulator as a service.
+- [anomalyco/opencode](https://github.com/anomalyco/opencode) - ⭐ 60591 | 🔥 4天 | TypeScript | The open source coding agent.
+- [google/googletest](https://github.com/google/googletest) - ⭐ 37977 | 🔥 4天 | C++ | GoogleTest - Google Testing and Mocking Framework
+- [MiroMindAI/MiroThinker](https://github.com/MiroMindAI/MiroThinker) - ⭐ 4071 | 🔥 4天 | Python | MiroThinker is an open-source search agent model, built for tool-augmented reasoning and real-world 
+- [apache/superset](https://github.com/apache/superset) - ⭐ 71682 | 🔥 4天 | TypeScript | Apache Superset is a Data Visualization and Data Exploration Platform
+- [home-assistant/home-assistant.io](https://github.com/home-assistant/home-assistant.io) - ⭐ 8419 | 🔥 4天 | HTML | 📘 Home Assistant User documentation
+- [Blaizzy/mlx-audio](https://github.com/Blaizzy/mlx-audio) - ⭐ 5317 | 🔥 4天 | Python | A text-to-speech (TTS), speech-to-text (STT) and speech-to-speech (STS) library built on Apple's MLX
+- [MoonshotAI/kimi-cli](https://github.com/MoonshotAI/kimi-cli) - ⭐ 5428 | 🔥 4天 | Python | Kimi Code CLI is your next CLI agent.
+- [lobehub/lobehub](https://github.com/lobehub/lobehub) - ⭐ 71682 | 🔥 4天 | TypeScript | The ultimate space for work and life — to find, build, and collaborate with agent teammates that gro
+- [pedramamini/Maestro](https://github.com/pedramamini/Maestro) - ⭐ 1583 | 🔥 4天 | TypeScript | Agent Orchestration Command Center
+- [kovidgoyal/calibre](https://github.com/kovidgoyal/calibre) - ⭐ 23973 | 🔥 4天 | Python | The official source code repository for the calibre ebook manager
+- [microsoft/litebox](https://github.com/microsoft/litebox) - ⭐ 1811 | 🔥 4天 | Rust | A security-focused library OS supporting kernel- and user-mode execution
+- [gitbutlerapp/gitbutler](https://github.com/gitbutlerapp/gitbutler) - ⭐ 18772 | 🔥 4天 | Rust | The GitButler version control client, backed by Git, powered by Tauri/Rust/Svelte
+- [rowboatlabs/rowboat](https://github.com/rowboatlabs/rowboat) - ⭐ 7076 | 🔥 4天 | TypeScript | Open-source AI coworker, with memory
+- [moonshine-ai/moonshine](https://github.com/moonshine-ai/moonshine) - ⭐ 6079 | 🔥 4天 | C | Fast and accurate automatic speech recognition (ASR) for edge devices
+- [google-research/timesfm](https://github.com/google-research/timesfm) - ⭐ 13697 | 🔥 4天 | Python | TimesFM (Time Series Foundation Model) is a pretrained time-series foundation model developed by Goo
+- [f/prompts.chat](https://github.com/f/prompts.chat) - ⭐ 156863 | 🔥 4天 | HTML | f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and op
+- [ruvnet/ruvector](https://github.com/ruvnet/ruvector) - ⭐ 1778 | 🔥 4天 | Rust | RuVector is a High Performance, Real-Time, Self-Learning, Vector Graph Neural Network, and Database 
+- [superset-sh/superset](https://github.com/superset-sh/superset) - ⭐ 3820 | 🔥 4天 | TypeScript | IDE for the AI Agents Era - Run an army of Claude Code, Codex, etc. on your machine
+- [K-Dense-AI/claude-scientific-skills](https://github.com/K-Dense-AI/claude-scientific-skills) - ⭐ 12419 | 🔥 4天 | Python | A set of ready to use Agent Skills for research, science, engineering, analysis, finance and writing
+- [ruvnet/RuView](https://github.com/ruvnet/RuView) - ⭐ 42757 | 🔥 4天 | Rust | π RuView: WiFi DensePose turns commodity WiFi signals into real-time human pose estimation, vital si
+- [agentscope-ai/agentscope](https://github.com/agentscope-ai/agentscope) - ⭐ 21339 | 🔥 4天 | Python | Build and run agents you can see, understand and trust.
+- [GoogleCloudPlatform/generative-ai](https://github.com/GoogleCloudPlatform/generative-ai) - ⭐ 15528 | 🔥 4天 | JupyterNotebook | Sample code and notebooks for Generative AI on Google Cloud, with Gemini on Vertex AI
+- [InsForge/InsForge](https://github.com/InsForge/InsForge) - ⭐ 4367 | 🔥 4天 | TypeScript | Give agents everything they need to ship fullstack apps. The backend built for agentic development.
+- [lightpanda-io/browser](https://github.com/lightpanda-io/browser) - ⭐ 19689 | 🔥 4天 | Zig | Lightpanda: the headless browser designed for AI and automation
+- [shanraisshan/claude-code-best-practice](https://github.com/shanraisshan/claude-code-best-practice) - ⭐ 29818 | 🔥 4天 | HTML | practice made claude perfect
+- [louis-e/arnis](https://github.com/louis-e/arnis) - ⭐ 12443 | 🔥 4天 | Rust | Generate any location from the real world in Minecraft with a high level of detail.
+- [TauricResearch/TradingAgents](https://github.com/TauricResearch/TradingAgents) - ⭐ 40160 | 🔥 4天 | Python | TradingAgents: Multi-Agents LLM Financial Trading Framework
+- [luongnv89/claude-howto](https://github.com/luongnv89/claude-howto) - ⭐ 16536 | 🔥 4天 | Python | A visual, example-driven guide to Claude Code — from basic concepts to advanced agents, with copy-pa
+- [sherlock-project/sherlock](https://github.com/sherlock-project/sherlock) - ⭐ 78870 | 🔥 4天 | Python | Hunt down social media accounts by username across social networks
+- [Gar-b-age/CookLikeHOC](https://github.com/Gar-b-age/CookLikeHOC) - ⭐ 17782 | 🔥 3天 | JavaScript | 🥢像老乡鸡🐔那样做饭。主要部分于2024年完工，非老乡鸡官方仓库。文字来自《老乡鸡菜品溯源报告》，并做归纳、编辑与整理。CookLikeHOC.
+- [tldraw/tldraw](https://github.com/tldraw/tldraw) - ⭐ 42795 | 🔥 3天 | TypeScript | very good whiteboard SDK / infinite canvas SDK
+- [LizardByte/Sunshine](https://github.com/LizardByte/Sunshine) - ⭐ 31270 | 🔥 3天 | C++ | Self-hosted game stream host for Moonlight.
+- [AUTOMATIC1111/stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui) - ⭐ 158082 | 🔥 3天 | Python | Stable Diffusion web UI
+- [donnemartin/system-design-primer](https://github.com/donnemartin/system-design-primer) - ⭐ 323968 | 🔥 3天 | Python | Learn how to design large-scale systems. Prep for the system design interview. Includes Anki flashca
+- [ziglang/zig](https://github.com/ziglang/zig) - ⭐ 42202 | 🔥 3天 | Zig | General-purpose programming language and toolchain for maintaining robust, optimal, and reusable sof
+- [WECENG/ticket-purchase](https://github.com/WECENG/ticket-purchase) - ⭐ 4750 | 🔥 3天 | Python | 大麦自动抢票，支持人员、城市、日期场次、价格选择
+- [smartcontractkit/chainlink](https://github.com/smartcontractkit/chainlink) - ⭐ 7966 | 🔥 3天 | Go | node of the decentralized oracle network, bridging on and off-chain computation
+- [ultralytics/ultralytics](https://github.com/ultralytics/ultralytics) - ⭐ 51626 | 🔥 3天 | Python | Ultralytics YOLO 🚀
+- [frappe/erpnext](https://github.com/frappe/erpnext) - ⭐ 29095 | 🔥 3天 | Python | Free and Open Source Enterprise Resource Planning (ERP)
+- [typst/typst](https://github.com/typst/typst) - ⭐ 46432 | 🔥 3天 | Rust | A new markup-based typesetting system that is powerful and easy to learn.
+- [Done-0/fuck-u-code](https://github.com/Done-0/fuck-u-code) - ⭐ 4572 | 🔥 3天 | Go | Legacy-Mess Detector – assess the “legacy-mess level” of your code and output a beautiful report | 屎
+- [DevCaress/guia-entrevistas-de-programacion](https://github.com/DevCaress/guia-entrevistas-de-programacion) - ⭐ 6671 | 🔥 3天 | Unknown | None
+- [anthropics/claude-agent-sdk-python](https://github.com/anthropics/claude-agent-sdk-python) - ⭐ 1899 | 🔥 3天 | Python | None
+- [google/tunix](https://github.com/google/tunix) - ⭐ 1398 | 🔥 3天 | Python | A JAX-native LLM Post-Training Library
+- [microsoft/agent-framework](https://github.com/microsoft/agent-framework) - ⭐ 8507 | 🔥 3天 | Python | A framework for building, orchestrating and deploying AI agents and multi-agent workflows with suppo
+- [audacity/audacity](https://github.com/audacity/audacity) - ⭐ 14986 | 🔥 3天 | C++ | Audio Editor
+- [BeehiveInnovations/zen-mcp-server](https://github.com/BeehiveInnovations/zen-mcp-server) - ⭐ 8168 | 🔥 3天 | Python | The power of Claude Code / GeminiCLI / CodexCLI + [Gemini / OpenAI / OpenRouter / Azure / Grok / Oll
+- [dgtlmoon/changedetection.io](https://github.com/dgtlmoon/changedetection.io) - ⭐ 28698 | 🔥 3天 | Python | Best and simplest tool for website change detection, web page monitoring, and website change alerts.
+- [FlowiseAI/Flowise](https://github.com/FlowiseAI/Flowise) - ⭐ 49774 | 🔥 3天 | TypeScript | Build AI Agents, Visually
+- [browserbase/stagehand](https://github.com/browserbase/stagehand) - ⭐ 17979 | 🔥 3天 | TypeScript | The AI Browser Automation Framework
+- [evershopcommerce/evershop](https://github.com/evershopcommerce/evershop) - ⭐ 6911 | 🔥 3天 | TypeScript | 🛍️ Typescript E-commerce Platform
+- [clash-verge-rev/clash-verge-rev](https://github.com/clash-verge-rev/clash-verge-rev) - ⭐ 98120 | 🔥 3天 | TypeScript | A modern GUI client based on Tauri, designed to run in Windows, macOS and Linux for tailored proxy e
+- [DearVa/Everywhere](https://github.com/DearVa/Everywhere) - ⭐ 2280 | 🔥 3天 | C# | A context-aware AI assistant for your desktop. Ready to respond intelligently, seamlessly integratin
+- [alibaba/spring-ai-alibaba](https://github.com/alibaba/spring-ai-alibaba) - ⭐ 6337 | 🔥 3天 | Java | Agentic AI Framework for Java Developers
+- [Klavis-AI/klavis](https://github.com/Klavis-AI/klavis) - ⭐ 5093 | 🔥 3天 | Python | Klavis AI (YC X25): MCP integration platforms that let AI agents use tools reliably at any scale
+- [dair-ai/Prompt-Engineering-Guide](https://github.com/dair-ai/Prompt-Engineering-Guide) - ⭐ 63819 | 🔥 3天 | MDX | 🐙 Guides, papers, lecture, notebooks and resources for prompt engineering
+- [nitrojs/nitro](https://github.com/nitrojs/nitro) - ⭐ 8637 | 🔥 3天 | TypeScript | Next Generation Server Toolkit. Create web servers with everything you need and deploy them wherever
+- [1Panel-dev/MaxKB](https://github.com/1Panel-dev/MaxKB) - ⭐ 19059 | 🔥 3天 | Python | 🔥 MaxKB is an open-source platform for building enterprise-grade agents. MaxKB 是强大易用的开源企业级智能体平台。
+- [devlikeapro/waha](https://github.com/devlikeapro/waha) - ⭐ 5032 | 🔥 3天 | TypeScript | WAHA - WhatsApp HTTP API (REST API) that you can configure in a click! 3 engines: WEBJS (browser bas
+- [czlonkowski/n8n-mcp](https://github.com/czlonkowski/n8n-mcp) - ⭐ 15827 | 🔥 3天 | TypeScript | A MCP for Claude Desktop / Claude Code / Windsurf / Cursor to build n8n workflows for you
+- [reflex-dev/reflex](https://github.com/reflex-dev/reflex) - ⭐ 26781 | 🔥 3天 | Python | 🕸️ Web apps in pure Python 🐍
+- [louislam/uptime-kuma](https://github.com/louislam/uptime-kuma) - ⭐ 80363 | 🔥 3天 | JavaScript | A fancy self-hosted monitoring tool
+- [jaywcjlove/awesome-mac](https://github.com/jaywcjlove/awesome-mac) - ⭐ 96142 | 🔥 3天 | JavaScript |  Now we have become very big, Different from the original idea. Collect premium software in various
+- [drawdb-io/drawdb](https://github.com/drawdb-io/drawdb) - ⭐ 34261 | 🔥 3天 | JavaScript | Free, simple, and intuitive online database diagram editor and SQL generator.
+- [zyronon/TypeWords](https://github.com/zyronon/TypeWords) - ⭐ 4623 | 🔥 3天 | Vue | 练习英语，一次敲击，一点进步；Practice English, one strike, one step forward
+- [remix-run/react-router](https://github.com/remix-run/react-router) - ⭐ 55896 | 🔥 3天 | TypeScript | Declarative routing for React
+- [minio/minio](https://github.com/minio/minio) - ⭐ 60218 | 🔥 3天 | Go | MinIO is a high-performance, S3 compatible object store, open sourced under GNU AGPLv3 license.
+- [paperless-ngx/paperless-ngx](https://github.com/paperless-ngx/paperless-ngx) - ⭐ 33602 | 🔥 3天 | Python | A community-supported supercharged document management system: scan, index and archive all your docu
+- [hoppscotch/hoppscotch](https://github.com/hoppscotch/hoppscotch) - ⭐ 76021 | 🔥 3天 | TypeScript | Open source API development ecosystem - https://hoppscotch.io (open-source alternative to Postman, I
+- [spipm/Depixelization_poc](https://github.com/spipm/Depixelization_poc) - ⭐ 3523 | 🔥 3天 | Python | Depix is a PoC for a technique to recover plaintext from pixelized screenshots.
+- [iam-veeramalla/aws-devops-zero-to-hero](https://github.com/iam-veeramalla/aws-devops-zero-to-hero) - ⭐ 9276 | 🔥 3天 | Python | AWS zero to hero repo for devops engineers to learn AWS in 30 Days. This repo includes projects, pre
+- [projectdiscovery/nuclei-templates](https://github.com/projectdiscovery/nuclei-templates) - ⭐ 11499 | 🔥 3天 | JavaScript | Community curated list of templates for the nuclei engine to find security vulnerabilities.
+- [microsoft/Web-Dev-For-Beginners](https://github.com/microsoft/Web-Dev-For-Beginners) - ⭐ 93593 | 🔥 3天 | JavaScript | 24 Lessons, 12 Weeks, Get Started as a Web Developer
+- [GeeeekExplorer/nano-vllm](https://github.com/GeeeekExplorer/nano-vllm) - ⭐ 8067 | 🔥 3天 | Python | Nano vLLM
+- [charmbracelet/glow](https://github.com/charmbracelet/glow) - ⭐ 20608 | 🔥 3天 | Go | Render markdown on the CLI, with pizzazz! 💅🏻
+- [Fosowl/agenticSeek](https://github.com/Fosowl/agenticSeek) - ⭐ 23167 | 🔥 3天 | Python | Fully Local Manus AI. No APIs, No $200 monthly bills. Enjoy an autonomous agent that thinks, browses
+- [PKUFlyingPig/cs-self-learning](https://github.com/PKUFlyingPig/cs-self-learning) - ⭐ 69074 | 🔥 3天 | HTML | 计算机自学指南
+- [mindsdb/mindsdb](https://github.com/mindsdb/mindsdb) - ⭐ 37746 | 🔥 3天 | Python | Federated query engine for AI - The only MCP Server you'll ever need
+- [jwasham/coding-interview-university](https://github.com/jwasham/coding-interview-university) - ⭐ 339197 | 🔥 3天 | Unknown | A complete computer science study plan to become a software engineer.
+- [ggml-org/ggml](https://github.com/ggml-org/ggml) - ⭐ 14007 | 🔥 3天 | C++ | Tensor library for machine learning
+- [lima-vm/lima](https://github.com/lima-vm/lima) - ⭐ 18844 | 🔥 3天 | Go | Linux virtual machines, with a focus on running containers
+- [umami-software/umami](https://github.com/umami-software/umami) - ⭐ 33307 | 🔥 3天 | TypeScript | Umami is a modern, privacy-focused analytics platform. A better, open-source alternative to Google A
+- [axios/axios](https://github.com/axios/axios) - ⭐ 108958 | 🔥 3天 | JavaScript | Promise based HTTP client for the browser and node.js
+- [KaijuEngine/kaiju](https://github.com/KaijuEngine/kaiju) - ⭐ 3248 | 🔥 3天 | Go | General purpose 3D and 2D game engine using Go (golang) and Vulkan with built in editor
+- [YimMenu/YimMenuV2](https://github.com/YimMenu/YimMenuV2) - ⭐ 830 | 🔥 3天 | C++ | Experimental menu for GTA 5: Enhanced
+- [tursodatabase/turso](https://github.com/tursodatabase/turso) - ⭐ 15416 | 🔥 3天 | Rust | Turso is an in-process SQL database, compatible with SQLite.
+- [CopilotKit/CopilotKit](https://github.com/CopilotKit/CopilotKit) - ⭐ 26905 | 🔥 3天 | TypeScript | React UI + elegant infrastructure for AI Copilots, AI chatbots, and in-app AI agents. The Agentic Fr
+- [ZJU-LLMs/Foundations-of-LLMs](https://github.com/ZJU-LLMs/Foundations-of-LLMs) - ⭐ 14307 | 🔥 3天 | Unknown | A book for Learning the Foundations of LLMs
+- [jellyfin/jellyfin-desktop](https://github.com/jellyfin/jellyfin-desktop) - ⭐ 4787 | 🔥 3天 | C++ | Jellyfin Desktop Client
+- [sgl-project/mini-sglang](https://github.com/sgl-project/mini-sglang) - ⭐ 1804 | 🔥 3天 | Python | None
+- [vendure-ecommerce/vendure](https://github.com/vendure-ecommerce/vendure) - ⭐ 7474 | 🔥 3天 | TypeScript | The most customizable commerce platform built with TypeScript, NestJS and GraphQL.
+- [xerrors/Yuxi-Know](https://github.com/xerrors/Yuxi-Know) - ⭐ 3395 | 🔥 3天 | Python | 结合LightRAG 知识库的知识图谱智能体平台。 An agent platform that integrates a LightRAG knowledge base and knowledge 
+- [RustPython/RustPython](https://github.com/RustPython/RustPython) - ⭐ 21426 | 🔥 3天 | Rust | A Python Interpreter written in Rust
+- [QuantConnect/Lean](https://github.com/QuantConnect/Lean) - ⭐ 15052 | 🔥 3天 | C# | Lean Algorithmic Trading Engine by QuantConnect (Python, C#)
+- [afkarxyz/SpotiFLAC](https://github.com/afkarxyz/SpotiFLAC) - ⭐ 3320 | 🔥 3天 | TypeScript | Get Spotify tracks in true FLAC from Tidal, Qobuz & Amazon Music — no account required.
+- [openai/openai-cookbook](https://github.com/openai/openai-cookbook) - ⭐ 70517 | 🔥 3天 | JupyterNotebook | Examples and guides for using the OpenAI API
+- [nocodb/nocodb](https://github.com/nocodb/nocodb) - ⭐ 60427 | 🔥 3天 | TypeScript | 🔥 🔥 🔥 Open Source Airtable Alternative
+- [maplibre/maplibre-gl-js](https://github.com/maplibre/maplibre-gl-js) - ⭐ 9509 | 🔥 3天 | TypeScript | MapLibre GL JS - Interactive vector tile maps in the browser
+- [python/cpython](https://github.com/python/cpython) - ⭐ 70948 | 🔥 3天 | Python | The Python programming language
+- [Lissy93/web-check](https://github.com/Lissy93/web-check) - ⭐ 29114 | 🔥 3天 | TypeScript | 🕵️‍♂️ All-in-one OSINT tool for analysing any website
+- [memvid/memvid](https://github.com/memvid/memvid) - ⭐ 11831 | 🔥 3天 | Rust | Memory layer for AI Agents. Replace complex RAG pipelines with a serverless, single-file memory laye
+- [xpipe-io/xpipe](https://github.com/xpipe-io/xpipe) - ⭐ 13109 | 🔥 3天 | Java | Access your entire server infrastructure from your local desktop
+- [ruvnet/claude-flow](https://github.com/ruvnet/claude-flow) - ⭐ 15219 | 🔥 3天 | TypeScript | 🌊 The leading agent orchestration platform for Claude. Deploy intelligent multi-agent swarms, coordi
+- [eigent-ai/eigent](https://github.com/eigent-ai/eigent) - ⭐ 7896 | 🔥 3天 | TypeScript | Eigent: The Open Source Cowork Desktop to Unlock Your Exceptional Productivity.
+- [puckeditor/puck](https://github.com/puckeditor/puck) - ⭐ 11179 | 🔥 3天 | TypeScript | The visual editor for React
+- [tobi/try](https://github.com/tobi/try) - ⭐ 3027 | 🔥 3天 | Shell | fresh directories for every vibe
+- [DavidXanatos/TaskExplorer](https://github.com/DavidXanatos/TaskExplorer) - ⭐ 2921 | 🔥 3天 | C | Power full Task Manager
+- [browser-use/browser-use](https://github.com/browser-use/browser-use) - ⭐ 83182 | 🔥 3天 | Python | 🌐 Make websites accessible for AI agents. Automate tasks online with ease.
+- [modelcontextprotocol/ext-apps](https://github.com/modelcontextprotocol/ext-apps) - ⭐ 1095 | 🔥 3天 | TypeScript | Official repo for spec & SDK of MCP Apps protocol - standard for UIs embedded AI chatbots, served by
+- [j178/prek](https://github.com/j178/prek) - ⭐ 5646 | 🔥 3天 | Rust | ⚡ Better `pre-commit`, re-engineered in Rust
+- [topoteretes/cognee](https://github.com/topoteretes/cognee) - ⭐ 13638 | 🔥 3天 | Python | Knowledge Engine for AI Agent Memory in 6 lines of code
+- [EveryInc/compound-engineering-plugin](https://github.com/EveryInc/compound-engineering-plugin) - ⭐ 8293 | 🔥 3天 | TypeScript | Official Claude Code compound engineering plugin
+- [unslothai/unsloth](https://github.com/unslothai/unsloth) - ⭐ 56326 | 🔥 3天 | Python | Unified web UI for training and running open models like Qwen, DeepSeek, gpt-oss and Gemma locally.
+- [steipete/gogcli](https://github.com/steipete/gogcli) - ⭐ 3691 | 🔥 3天 | Go | Google Suite CLI: Gmail, GCal, GDrive, GContacts.
+- [HailToDodongo/pyrite64](https://github.com/HailToDodongo/pyrite64) - ⭐ 1921 | 🔥 3天 | C++ | N64 Game-Engine and Editor using libdragon & tiny3d
+- [cloudflare/agents](https://github.com/cloudflare/agents) - ⭐ 3871 | 🔥 3天 | TypeScript | Build and deploy AI Agents on Cloudflare
+- [D4Vinci/Scrapling](https://github.com/D4Vinci/Scrapling) - ⭐ 17434 | 🔥 3天 | Python | 🕷️ An adaptive Web Scraping framework that handles everything from a single request to a full-scale 
+- [CodebuffAI/codebuff](https://github.com/CodebuffAI/codebuff) - ⭐ 3714 | 🔥 3天 | TypeScript | Generate code from the terminal!
+- [microsoft/hve-core](https://github.com/microsoft/hve-core) - ⭐ 645 | 🔥 3天 | PowerShell | A refined collection of Hypervelocity Engineering components (instructions, prompts, agents, and ski
+- [pbakaus/impeccable](https://github.com/pbakaus/impeccable) - ⭐ 3397 | 🔥 3天 | JavaScript | The design language that makes your AI harness better at design.
+- [promptfoo/promptfoo](https://github.com/promptfoo/promptfoo) - ⭐ 14505 | 🔥 3天 | TypeScript | Test your prompts, agents, and RAGs. Red teaming/pentesting/vulnerability scanning for AI. Compare p
+- [langflow-ai/openrag](https://github.com/langflow-ai/openrag) - ⭐ 2476 | 🔥 3天 | Python | OpenRAG is a comprehensive, single package Retrieval-Augmented Generation platform built on Langflow
+- [volcengine/OpenViking](https://github.com/volcengine/OpenViking) - ⭐ 13414 | 🔥 3天 | Python | OpenViking is an open-source context database designed specifically for AI Agents(such as openclaw).
+- [newton-physics/newton](https://github.com/newton-physics/newton) - ⭐ 3341 | 🔥 3天 | Python | An open-source, GPU-accelerated physics simulation engine built upon NVIDIA Warp, specifically targe
+- [langchain-ai/open-swe](https://github.com/langchain-ai/open-swe) - ⭐ 7368 | 🔥 3天 | Python | An Open-Source Asynchronous Coding Agent
+- [opendataloader-project/opendataloader-pdf](https://github.com/opendataloader-project/opendataloader-pdf) - ⭐ 7465 | 🔥 3天 | Java | PDF Parser for AI-ready data. Automate PDF accessibility. Open-source.
+- [datalab-to/chandra](https://github.com/datalab-to/chandra) - ⭐ 7267 | 🔥 3天 | Python | OCR model that handles complex tables, forms, handwriting with full layout.
+- [siddharthvaddem/openscreen](https://github.com/siddharthvaddem/openscreen) - ⭐ 21444 | 🔥 3天 | TypeScript | Create stunning demos for free. Open-source, no subscriptions, no watermarks, and free for commercia

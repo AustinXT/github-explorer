@@ -1,0 +1,130 @@
+[
+  {
+    "name": "minio/minio",
+    "url": "https://github.com/minio/minio",
+    "language": "Go",
+    "stars": 57035,
+    "forks": 6342,
+    "description": "MinIO is a high-performance, S3 compatible object store, open sourced under GNU AGPLv3 license."
+  },
+  {
+    "name": "guofei9987/blind_watermark",
+    "url": "https://github.com/guofei9987/blind_watermark",
+    "language": "Python",
+    "stars": 9133,
+    "forks": 958,
+    "description": "Blind&Invisible Watermark ，图片盲水印，提取水印无须原图！"
+  },
+  {
+    "name": "mountain-loop/yaak",
+    "url": "https://github.com/mountain-loop/yaak",
+    "language": "TypeScript",
+    "stars": 13448,
+    "forks": 470,
+    "description": "The most intuitive desktop API client. Organize and execute REST, GraphQL, WebSockets, Server Sent Events, and gRPC 🦬"
+  },
+  {
+    "name": "LadybirdBrowser/ladybird",
+    "url": "https://github.com/LadybirdBrowser/ladybird",
+    "language": "C++",
+    "stars": 50552,
+    "forks": 2215,
+    "description": "Truly independent web browser"
+  },
+  {
+    "name": "paperless-ngx/paperless-ngx",
+    "url": "https://github.com/paperless-ngx/paperless-ngx",
+    "language": "Python",
+    "stars": 33277,
+    "forks": 2077,
+    "description": "A community-supported supercharged document management system: scan, index and archive all your documents"
+  },
+  {
+    "name": "dyad-sh/dyad",
+    "url": "https://github.com/dyad-sh/dyad",
+    "language": "TypeScript",
+    "stars": 17030,
+    "forks": 1834,
+    "description": "Free, local, open-source AI app builder ✨ v0 / lovable / Bolt alternative 🌟 Star if you like it!"
+  },
+  {
+    "name": "k2-fsa/sherpa-onnx",
+    "url": "https://github.com/k2-fsa/sherpa-onnx",
+    "language": "C++",
+    "stars": 8278,
+    "forks": 935,
+    "description": "Speech-to-text, text-to-speech, speaker diarization, speech enhancement, source separation, and VAD using next-gen Kaldi with onnxruntime without Internet connection. Support embedded systems, Android, iOS, HarmonyOS, Raspberry Pi, RISC-V, x86_64 servers, websocket server/client, support 12 programming languages"
+  },
+  {
+    "name": "rossant/awesome-math",
+    "url": "https://github.com/rossant/awesome-math",
+    "language": "Python",
+    "stars": 11348,
+    "forks": 1137,
+    "description": "A curated list of awesome mathematics resources"
+  },
+  {
+    "name": "louislam/uptime-kuma",
+    "url": "https://github.com/louislam/uptime-kuma",
+    "language": "JavaScript",
+    "stars": 77077,
+    "forks": 6810,
+    "description": "A fancy self-hosted monitoring tool"
+  },
+  {
+    "name": "harvard-edge/cs249r_book",
+    "url": "https://github.com/harvard-edge/cs249r_book",
+    "language": "Python",
+    "stars": 4809,
+    "forks": 484,
+    "description": "Introduction to Machine Learning Systems"
+  },
+  {
+    "name": "yt-dlp/yt-dlp",
+    "url": "https://github.com/yt-dlp/yt-dlp",
+    "language": "Python",
+    "stars": 132042,
+    "forks": 10613,
+    "description": "A feature-rich command-line audio/video downloader"
+  },
+  {
+    "name": "meta-pytorch/torchforge",
+    "url": "https://github.com/meta-pytorch/torchforge",
+    "language": "Python",
+    "stars": 337,
+    "forks": 30,
+    "description": "PyTorch-native post-training at scale"
+  },
+  {
+    "name": "lukasmasuch/best-of-ml-python",
+    "url": "https://github.com/lukasmasuch/best-of-ml-python",
+    "language": "Unknown",
+    "stars": 22527,
+    "forks": 3016,
+    "description": "🏆 A ranked list of awesome machine learning Python libraries. Updated weekly."
+  },
+  {
+    "name": "guofei9987/scikit-opt",
+    "url": "https://github.com/guofei9987/scikit-opt",
+    "language": "Python",
+    "stars": 6116,
+    "forks": 1054,
+    "description": "Genetic Algorithm, Particle Swarm Optimization, Simulated Annealing, Ant Colony Optimization Algorithm,Immune Algorithm, Artificial Fish Swarm Algorithm, Differential Evolution and TSP(Traveling salesman)"
+  },
+  {
+    "name": "jaywcjlove/awesome-mac",
+    "url": "https://github.com/jaywcjlove/awesome-mac",
+    "language": "JavaScript",
+    "stars": 91376,
+    "forks": 6920,
+    "description": " Now we have become very big, Different from the original idea. Collect premium software in various categories."
+  },
+  {
+    "name": "hoppscotch/hoppscotch",
+    "url": "https://github.com/hoppscotch/hoppscotch",
+    "language": "TypeScript",
+    "stars": 75513,
+    "forks": 5310,
+    "description": "Open source API development ecosystem - https://hoppscotch.io (open-source alternative to Postman, Insomnia)"
+  }
+]

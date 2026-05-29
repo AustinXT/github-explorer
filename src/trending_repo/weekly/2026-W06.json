@@ -1,0 +1,282 @@
+[
+  {
+    "name": "nvm-sh/nvm",
+    "url": "https://github.com/nvm-sh/nvm",
+    "language": "Shell",
+    "stars": 91436,
+    "forks": 9828,
+    "description": "Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions"
+  },
+  {
+    "name": "termux/termux-app",
+    "url": "https://github.com/termux/termux-app",
+    "language": "Java",
+    "stars": 49645,
+    "forks": 5932,
+    "description": "Termux - a terminal emulator application for Android OS extendible by variety of packages."
+  },
+  {
+    "name": "obra/superpowers",
+    "url": "https://github.com/obra/superpowers",
+    "language": "Shell",
+    "stars": 47333,
+    "forks": 3596,
+    "description": "An agentic skills framework & software development methodology that works."
+  },
+  {
+    "name": "karpathy/nanochat",
+    "url": "https://github.com/karpathy/nanochat",
+    "language": "Python",
+    "stars": 42163,
+    "forks": 5440,
+    "description": "The best ChatGPT that $100 can buy."
+  },
+  {
+    "name": "fish-shell/fish-shell",
+    "url": "https://github.com/fish-shell/fish-shell",
+    "language": "Rust",
+    "stars": 32466,
+    "forks": 2222,
+    "description": "The user-friendly command line shell."
+  },
+  {
+    "name": "ComposioHQ/awesome-claude-skills",
+    "url": "https://github.com/ComposioHQ/awesome-claude-skills",
+    "language": "Python",
+    "stars": 32361,
+    "forks": 3098,
+    "description": "A curated list of awesome Claude Skills, resources, and tools for customizing Claude AI workflows"
+  },
+  {
+    "name": "aquasecurity/trivy",
+    "url": "https://github.com/aquasecurity/trivy",
+    "language": "Go",
+    "stars": 31747,
+    "forks": 2932,
+    "description": "Find vulnerabilities, misconfigurations, secrets, SBOM in containers, Kubernetes, code repositories, clouds and more"
+  },
+  {
+    "name": "OpenBMB/ChatDev",
+    "url": "https://github.com/OpenBMB/ChatDev",
+    "language": "Python",
+    "stars": 29878,
+    "forks": 3695,
+    "description": "ChatDev 2.0: Dev All through LLM-powered Multi-Agent Collaboration"
+  },
+  {
+    "name": "bytedance/UI-TARS-desktop",
+    "url": "https://github.com/bytedance/UI-TARS-desktop",
+    "language": "TypeScript",
+    "stars": 26963,
+    "forks": 2632,
+    "description": "The Open-Source Multimodal AI Agent Stack: Connecting Cutting-Edge AI Models and Agent Infra"
+  },
+  {
+    "name": "thedotmack/claude-mem",
+    "url": "https://github.com/thedotmack/claude-mem",
+    "language": "TypeScript",
+    "stars": 24049,
+    "forks": 1587,
+    "description": "A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions."
+  },
+  {
+    "name": "kovidgoyal/calibre",
+    "url": "https://github.com/kovidgoyal/calibre",
+    "language": "Python",
+    "stars": 23973,
+    "forks": 2550,
+    "description": "The official source code repository for the calibre ebook manager"
+  },
+  {
+    "name": "OpenBMB/MiniCPM-o",
+    "url": "https://github.com/OpenBMB/MiniCPM-o",
+    "language": "Python",
+    "stars": 23272,
+    "forks": 1772,
+    "description": "A Gemini 2.5 Flash Level MLLM for Vision, Speech, and Full-Duplex Multimodal Live Streaming on Your Phone"
+  },
+  {
+    "name": "netbirdio/netbird",
+    "url": "https://github.com/netbirdio/netbird",
+    "language": "Go",
+    "stars": 21807,
+    "forks": 1067,
+    "description": "Connect your devices into a secure WireGuard®-based overlay network with SSO, MFA and granular access controls."
+  },
+  {
+    "name": "linshenkx/prompt-optimizer",
+    "url": "https://github.com/linshenkx/prompt-optimizer",
+    "language": "TypeScript",
+    "stars": 19547,
+    "forks": 2413,
+    "description": "一款提示词优化器，助力于编写高质量的提示词"
+  },
+  {
+    "name": "gitbutlerapp/gitbutler",
+    "url": "https://github.com/gitbutlerapp/gitbutler",
+    "language": "Rust",
+    "stars": 18144,
+    "forks": 782,
+    "description": "The GitButler version control client, backed by Git, powered by Tauri/Rust/Svelte"
+  },
+  {
+    "name": "wavetermdev/waveterm",
+    "url": "https://github.com/wavetermdev/waveterm",
+    "language": "Go",
+    "stars": 17203,
+    "forks": 767,
+    "description": "An open-source, cross-platform terminal for seamless workflows"
+  },
+  {
+    "name": "VectifyAI/PageIndex",
+    "url": "https://github.com/VectifyAI/PageIndex",
+    "language": "Python",
+    "stars": 12221,
+    "forks": 861,
+    "description": "📑 PageIndex: Document Index for Vectorless, Reasoning-based RAG"
+  },
+  {
+    "name": "topoteretes/cognee",
+    "url": "https://github.com/topoteretes/cognee",
+    "language": "Python",
+    "stars": 11955,
+    "forks": 1171,
+    "description": "Memory for AI Agents in 6 lines of code"
+  },
+  {
+    "name": "KeygraphHQ/shannon",
+    "url": "https://github.com/KeygraphHQ/shannon",
+    "language": "TypeScript",
+    "stars": 11240,
+    "forks": 1381,
+    "description": "Fully autonomous AI hacker to find actual exploits in your web apps. Shannon has achieved a 96.15% success rate on the hint-free, source-aware XBOW Benchmark."
+  },
+  {
+    "name": "virattt/dexter",
+    "url": "https://github.com/virattt/dexter",
+    "language": "TypeScript",
+    "stars": 10314,
+    "forks": 1249,
+    "description": "An autonomous agent for deep financial research"
+  },
+  {
+    "name": "viarotel-org/escrcpy",
+    "url": "https://github.com/viarotel-org/escrcpy",
+    "language": "JavaScript",
+    "stars": 7942,
+    "forks": 575,
+    "description": "📱 Display and control your Android device graphically with scrcpy."
+  },
+  {
+    "name": "automazeio/ccpm",
+    "url": "https://github.com/automazeio/ccpm",
+    "language": "Shell",
+    "stars": 6871,
+    "forks": 711,
+    "description": "Project management system for Claude Code using GitHub Issues and Git worktrees for parallel agent execution."
+  },
+  {
+    "name": "langchain-ai/rag-from-scratch",
+    "url": "https://github.com/langchain-ai/rag-from-scratch",
+    "language": "JupyterNotebook",
+    "stars": 6828,
+    "forks": 1771,
+    "description": "None"
+  },
+  {
+    "name": "openai/skills",
+    "url": "https://github.com/openai/skills",
+    "language": "Python",
+    "stars": 6558,
+    "forks": 372,
+    "description": "Skills Catalog for Codex"
+  },
+  {
+    "name": "j178/prek",
+    "url": "https://github.com/j178/prek",
+    "language": "Rust",
+    "stars": 5646,
+    "forks": 149,
+    "description": "⚡ Better `pre-commit`, re-engineered in Rust"
+  },
+  {
+    "name": "badlogic/pi-mono",
+    "url": "https://github.com/badlogic/pi-mono",
+    "language": "TypeScript",
+    "stars": 5328,
+    "forks": 564,
+    "description": "AI agent toolkit: coding agent CLI, unified LLM API, TUI & web UI libraries, Slack bot, vLLM pods"
+  },
+  {
+    "name": "p-e-w/heretic",
+    "url": "https://github.com/p-e-w/heretic",
+    "language": "Python",
+    "stars": 4839,
+    "forks": 463,
+    "description": "Fully automatic censorship removal for language models"
+  },
+  {
+    "name": "ThePrimeagen/99",
+    "url": "https://github.com/ThePrimeagen/99",
+    "language": "Lua",
+    "stars": 2881,
+    "forks": 125,
+    "description": "Neovim AI agent done right"
+  },
+  {
+    "name": "autobrr/qui",
+    "url": "https://github.com/autobrr/qui",
+    "language": "Go",
+    "stars": 2593,
+    "forks": 74,
+    "description": "A fast, single-binary qBittorrent web UI: manage multiple instances, automate torrent workflows, and cross-seed across trackers."
+  },
+  {
+    "name": "likec4/likec4",
+    "url": "https://github.com/likec4/likec4",
+    "language": "TypeScript",
+    "stars": 2201,
+    "forks": 150,
+    "description": "Visualize, collaborate, and evolve the software architecture with always actual and live diagrams from your code"
+  },
+  {
+    "name": "pedramamini/Maestro",
+    "url": "https://github.com/pedramamini/Maestro",
+    "language": "TypeScript",
+    "stars": 1583,
+    "forks": 162,
+    "description": "Agent Orchestration Command Center"
+  },
+  {
+    "name": "microsoft/litebox",
+    "url": "https://github.com/microsoft/litebox",
+    "language": "Rust",
+    "stars": 1253,
+    "forks": 55,
+    "description": "A security-focused library OS supporting kernel- and user-mode execution"
+  },
+  {
+    "name": "vm0-ai/vm0",
+    "url": "https://github.com/vm0-ai/vm0",
+    "language": "TypeScript",
+    "stars": 842,
+    "forks": 32,
+    "description": "the easiest way to run natural language-described workflows automatically"
+  },
+  {
+    "name": "masoncl/review-prompts",
+    "url": "https://github.com/masoncl/review-prompts",
+    "language": "Python",
+    "stars": 489,
+    "forks": 38,
+    "description": "AI review prompts"
+  },
+  {
+    "name": "ZeroTworu/anet",
+    "url": "https://github.com/ZeroTworu/anet",
+    "language": "Rust",
+    "stars": 456,
+    "forks": 43,
+    "description": "Simple Rust VPN Client / Server"
+  }
+]

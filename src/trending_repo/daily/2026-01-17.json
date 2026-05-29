@@ -1,0 +1,50 @@
+[
+  {
+    "name": "eigent-ai/eigent",
+    "url": "https://github.com/eigent-ai/eigent",
+    "language": "TypeScript",
+    "stars": 7896,
+    "forks": 858,
+    "description": "Eigent: The Open Source Cowork Desktop to Unlock Your Exceptional Productivity."
+  },
+  {
+    "name": "obra/superpowers",
+    "url": "https://github.com/obra/superpowers",
+    "language": "Shell",
+    "stars": 26727,
+    "forks": 1986,
+    "description": "An agentic skills framework & software development methodology that works."
+  },
+  {
+    "name": "afkarxyz/SpotiFLAC",
+    "url": "https://github.com/afkarxyz/SpotiFLAC",
+    "language": "TypeScript",
+    "stars": 3320,
+    "forks": 174,
+    "description": "Get Spotify tracks in true FLAC from Tidal, Qobuz & Amazon Music — no account required."
+  },
+  {
+    "name": "puckeditor/puck",
+    "url": "https://github.com/puckeditor/puck",
+    "language": "TypeScript",
+    "stars": 11179,
+    "forks": 775,
+    "description": "The visual editor for React"
+  },
+  {
+    "name": "google/langextract",
+    "url": "https://github.com/google/langextract",
+    "language": "Python",
+    "stars": 21378,
+    "forks": 1486,
+    "description": "A Python library for extracting structured information from unstructured text using LLMs with precise source grounding and interactive visualization."
+  },
+  {
+    "name": "iOfficeAI/AionUi",
+    "url": "https://github.com/iOfficeAI/AionUi",
+    "language": "TypeScript",
+    "stars": 4539,
+    "forks": 367,
+    "description": "Free, local, open-source Cowork for Gemini CLI, Claude Code, Codex, Opencode, Qwen Code, Goose Cli, Auggie, and more | 🌟 Star if you like it!"
+  }
+]

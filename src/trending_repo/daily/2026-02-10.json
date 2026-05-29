@@ -1,0 +1,106 @@
+[
+  {
+    "name": "KeygraphHQ/shannon",
+    "url": "https://github.com/KeygraphHQ/shannon",
+    "language": "TypeScript",
+    "stars": 18965,
+    "forks": 1949,
+    "description": "Fully autonomous AI hacker to find actual exploits in your web apps. Shannon has achieved a 96.15% success rate on the hint-free, source-aware XBOW Benchmark."
+  },
+  {
+    "name": "virattt/dexter",
+    "url": "https://github.com/virattt/dexter",
+    "language": "TypeScript",
+    "stars": 13895,
+    "forks": 1657,
+    "description": "An autonomous agent for deep financial research"
+  },
+  {
+    "name": "pydantic/monty",
+    "url": "https://github.com/pydantic/monty",
+    "language": "Rust",
+    "stars": 4300,
+    "forks": 156,
+    "description": "A minimal, secure Python interpreter written in Rust for use by AI"
+  },
+  {
+    "name": "hsliuping/TradingAgents-CN",
+    "url": "https://github.com/hsliuping/TradingAgents-CN",
+    "language": "Python",
+    "stars": 16559,
+    "forks": 3604,
+    "description": "基于多智能体LLM的中文金融交易框架 - TradingAgents中文增强版"
+  },
+  {
+    "name": "iOfficeAI/AionUi",
+    "url": "https://github.com/iOfficeAI/AionUi",
+    "language": "TypeScript",
+    "stars": 14153,
+    "forks": 1083,
+    "description": "Free, local, open-source 24/7 Cowork and OpenClaw for Gemini CLI, Claude Code, Codex, OpenCode, Qwen Code, Goose CLI, Auggie, and more | 🌟 Star if you like it!"
+  },
+  {
+    "name": "public-apis/public-apis",
+    "url": "https://github.com/public-apis/public-apis",
+    "language": "Python",
+    "stars": 397558,
+    "forks": 42520,
+    "description": "A collective list of free APIs"
+  },
+  {
+    "name": "github/gh-aw",
+    "url": "https://github.com/github/gh-aw",
+    "language": "Go",
+    "stars": 1120,
+    "forks": 94,
+    "description": "GitHub Agentic Workflows"
+  },
+  {
+    "name": "Shubhamsaboo/awesome-llm-apps",
+    "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+    "language": "Python",
+    "stars": 93391,
+    "forks": 13551,
+    "description": "Collection of awesome LLM apps with AI Agents and RAG using OpenAI, Anthropic, Gemini and opensource models."
+  },
+  {
+    "name": "gitbutlerapp/gitbutler",
+    "url": "https://github.com/gitbutlerapp/gitbutler",
+    "language": "Rust",
+    "stars": 18772,
+    "forks": 810,
+    "description": "The GitButler version control client, backed by Git, powered by Tauri/Rust/Svelte"
+  },
+  {
+    "name": "microsoft/litebox",
+    "url": "https://github.com/microsoft/litebox",
+    "language": "Rust",
+    "stars": 1811,
+    "forks": 77,
+    "description": "A security-focused library OS supporting kernel- and user-mode execution"
+  },
+  {
+    "name": "openai/skills",
+    "url": "https://github.com/openai/skills",
+    "language": "Python",
+    "stars": 7746,
+    "forks": 441,
+    "description": "Skills Catalog for Codex"
+  },
+  {
+    "name": "EveryInc/compound-engineering-plugin",
+    "url": "https://github.com/EveryInc/compound-engineering-plugin",
+    "language": "TypeScript",
+    "stars": 8027,
+    "forks": 637,
+    "description": "Official Claude Code compound engineering plugin"
+  },
+  {
+    "name": "DrewThomasson/ebook2audiobook",
+    "url": "https://github.com/DrewThomasson/ebook2audiobook",
+    "language": "Python",
+    "stars": 18034,
+    "forks": 1463,
+    "description": "Generate audiobooks from e-books, voice cloning & 1158+ languages!"
+  }
+]

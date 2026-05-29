@@ -1,0 +1,98 @@
+[
+  {
+    "name": "p-e-w/heretic",
+    "url": "https://github.com/p-e-w/heretic",
+    "language": "Python",
+    "stars": 6674,
+    "forks": 665,
+    "description": "Fully automatic censorship removal for language models"
+  },
+  {
+    "name": "seerr-team/seerr",
+    "url": "https://github.com/seerr-team/seerr",
+    "language": "TypeScript",
+    "stars": 9166,
+    "forks": 607,
+    "description": "Open-source media request and discovery manager for Jellyfin, Plex, and Emby."
+  },
+  {
+    "name": "obra/superpowers",
+    "url": "https://github.com/obra/superpowers",
+    "language": "Shell",
+    "stars": 53120,
+    "forks": 4033,
+    "description": "An agentic skills framework & software development methodology that works."
+  },
+  {
+    "name": "steipete/gogcli",
+    "url": "https://github.com/steipete/gogcli",
+    "language": "Go",
+    "stars": 3691,
+    "forks": 313,
+    "description": "Google Suite CLI: Gmail, GCal, GDrive, GContacts."
+  },
+  {
+    "name": "alibaba/zvec",
+    "url": "https://github.com/alibaba/zvec",
+    "language": "C++",
+    "stars": 4193,
+    "forks": 221,
+    "description": "A lightweight, lightning-fast, in-process vector database"
+  },
+  {
+    "name": "openclaw/openclaw",
+    "url": "https://github.com/openclaw/openclaw",
+    "language": "TypeScript",
+    "stars": 203330,
+    "forks": 36713,
+    "description": "Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞"
+  },
+  {
+    "name": "SynkraAI/aios-core",
+    "url": "https://github.com/SynkraAI/aios-core",
+    "language": "JavaScript",
+    "stars": 1059,
+    "forks": 366,
+    "description": "Synkra AIOS: AI-Orchestrated System for Full Stack Development - Core Framework v4.0"
+  },
+  {
+    "name": "ashishps1/awesome-system-design-resources",
+    "url": "https://github.com/ashishps1/awesome-system-design-resources",
+    "language": "Java",
+    "stars": 32563,
+    "forks": 7279,
+    "description": "Learn System Design concepts and prepare for interviews using free resources."
+  },
+  {
+    "name": "hummingbot/hummingbot",
+    "url": "https://github.com/hummingbot/hummingbot",
+    "language": "Python",
+    "stars": 16771,
+    "forks": 4406,
+    "description": "Open source software that helps you create and deploy high-frequency crypto trading bots"
+  },
+  {
+    "name": "anthropics/claude-quickstarts",
+    "url": "https://github.com/anthropics/claude-quickstarts",
+    "language": "Python",
+    "stars": 14270,
+    "forks": 2422,
+    "description": "A collection of projects designed to help developers quickly get started with building deployable applications using the Claude API"
+  },
+  {
+    "name": "davila7/claude-code-templates",
+    "url": "https://github.com/davila7/claude-code-templates",
+    "language": "Python",
+    "stars": 20597,
+    "forks": 1926,
+    "description": "CLI tool for configuring and monitoring Claude Code"
+  },
+  {
+    "name": "OpenCTI-Platform/opencti",
+    "url": "https://github.com/OpenCTI-Platform/opencti",
+    "language": "TypeScript",
+    "stars": 8247,
+    "forks": 1221,
+    "description": "Open Cyber Threat Intelligence Platform"
+  }
+]

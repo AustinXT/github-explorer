@@ -1,0 +1,74 @@
+[
+  {
+    "name": "exo-explore/exo",
+    "url": "https://github.com/exo-explore/exo",
+    "language": "Python",
+    "stars": 35015,
+    "forks": 2361,
+    "description": "Run your own AI cluster at home with everyday devices 📱💻 🖥️⌚"
+  },
+  {
+    "name": "GreyDGL/PentestGPT",
+    "url": "https://github.com/GreyDGL/PentestGPT",
+    "language": "Python",
+    "stars": 9884,
+    "forks": 1443,
+    "description": "A GPT-empowered penetration testing tool"
+  },
+  {
+    "name": "swisskyrepo/PayloadsAllTheThings",
+    "url": "https://github.com/swisskyrepo/PayloadsAllTheThings",
+    "language": "Python",
+    "stars": 72948,
+    "forks": 16368,
+    "description": "A list of useful payloads and bypass for Web Application Security and Pentest/CTF"
+  },
+  {
+    "name": "sgl-project/mini-sglang",
+    "url": "https://github.com/sgl-project/mini-sglang",
+    "language": "Python",
+    "stars": 1804,
+    "forks": 143,
+    "description": "None"
+  },
+  {
+    "name": "pollen-robotics/reachy_mini",
+    "url": "https://github.com/pollen-robotics/reachy_mini",
+    "language": "Python",
+    "stars": 431,
+    "forks": 69,
+    "description": "Reachy Mini's SDK"
+  },
+  {
+    "name": "cocoindex-io/cocoindex",
+    "url": "https://github.com/cocoindex-io/cocoindex",
+    "language": "Rust",
+    "stars": 4240,
+    "forks": 343,
+    "description": "Data transformation framework for AI. Ultra performant, with incremental processing. 🌟 Star if you like it!"
+  },
+  {
+    "name": "cloudcommunity/Free-Certifications",
+    "url": "https://github.com/cloudcommunity/Free-Certifications",
+    "language": "Unknown",
+    "stars": 47338,
+    "forks": 3184,
+    "description": "A curated list of free courses with certifications. Also available at https://free-certifications.com/"
+  },
+  {
+    "name": "anthropics/claude-code",
+    "url": "https://github.com/anthropics/claude-code",
+    "language": "Shell",
+    "stars": 47569,
+    "forks": 3333,
+    "description": "Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands."
+  },
+  {
+    "name": "trimstray/the-book-of-secret-knowledge",
+    "url": "https://github.com/trimstray/the-book-of-secret-knowledge",
+    "language": "Unknown",
+    "stars": 198887,
+    "forks": 12118,
+    "description": "A collection of inspiring lists, manuals, cheatsheets, blogs, hacks, one-liners, cli/web tools and more."
+  }
+]

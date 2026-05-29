@@ -1,0 +1,122 @@
+[
+  {
+    "name": "666ghj/BettaFish",
+    "url": "https://github.com/666ghj/BettaFish",
+    "language": "Python",
+    "stars": 5474,
+    "forks": 566,
+    "description": "微舆：人人可用的多Agent舆情分析助手，打破信息茧房，还原舆情原貌，预测未来走向，辅助决策！从0实现，不依赖任何框架。"
+  },
+  {
+    "name": "GeeeekExplorer/nano-vllm",
+    "url": "https://github.com/GeeeekExplorer/nano-vllm",
+    "language": "Python",
+    "stars": 7737,
+    "forks": 976,
+    "description": "Nano vLLM"
+  },
+  {
+    "name": "HKUDS/DeepCode",
+    "url": "https://github.com/HKUDS/DeepCode",
+    "language": "Python",
+    "stars": 8651,
+    "forks": 1210,
+    "description": "\"DeepCode: Open Agentic Coding (Paper2Code & Text2Web & Text2Backend)\""
+  },
+  {
+    "name": "charmbracelet/glow",
+    "url": "https://github.com/charmbracelet/glow",
+    "language": "Go",
+    "stars": 20296,
+    "forks": 489,
+    "description": "Render markdown on the CLI, with pizzazz! 💅🏻"
+  },
+  {
+    "name": "sst/opencode",
+    "url": "https://github.com/sst/opencode",
+    "language": "TypeScript",
+    "stars": 30794,
+    "forks": 2370,
+    "description": "The AI coding agent built for the terminal."
+  },
+  {
+    "name": "get-convex/chef",
+    "url": "https://github.com/get-convex/chef",
+    "language": "TypeScript",
+    "stars": 2952,
+    "forks": 557,
+    "description": "The only AI app builder that knows backend"
+  },
+  {
+    "name": "pytorch/pytorch",
+    "url": "https://github.com/pytorch/pytorch",
+    "language": "Python",
+    "stars": 94501,
+    "forks": 25755,
+    "description": "Tensors and Dynamic neural networks in Python with strong GPU acceleration"
+  },
+  {
+    "name": "Fosowl/agenticSeek",
+    "url": "https://github.com/Fosowl/agenticSeek",
+    "language": "Python",
+    "stars": 22855,
+    "forks": 2467,
+    "description": "Fully Local Manus AI. No APIs, No $200 monthly bills. Enjoy an autonomous agent that thinks, browses the web, and code for the sole cost of electricity. 🔔 Official updates only via twitter @Martin993886460 (Beware of fake account)"
+  },
+  {
+    "name": "mudler/LocalAI",
+    "url": "https://github.com/mudler/LocalAI",
+    "language": "Go",
+    "stars": 36429,
+    "forks": 2885,
+    "description": "🤖 The free, Open Source alternative to OpenAI, Claude and others. Self-hosted and local-first. Drop-in replacement for OpenAI, running on consumer-grade hardware. No GPU required. Runs gguf, transformers, diffusers and many more. Features: Generate Text, Audio, Video, Images, Voice Cloning, Distributed, P2P and decentralized inference"
+  },
+  {
+    "name": "1Panel-dev/MaxKB",
+    "url": "https://github.com/1Panel-dev/MaxKB",
+    "language": "Python",
+    "stars": 18917,
+    "forks": 2459,
+    "description": "🔥 MaxKB is an open-source platform for building enterprise-grade agents. MaxKB 是强大易用的开源企业级智能体平台。"
+  },
+  {
+    "name": "fastfire/deepdarkCTI",
+    "url": "https://github.com/fastfire/deepdarkCTI",
+    "language": "Unknown",
+    "stars": 6061,
+    "forks": 1040,
+    "description": "Collection of Cyber Threat Intelligence sources from the deep and dark web"
+  },
+  {
+    "name": "VectifyAI/PageIndex",
+    "url": "https://github.com/VectifyAI/PageIndex",
+    "language": "Python",
+    "stars": 3111,
+    "forks": 244,
+    "description": "📄🧠 PageIndex: Document Index for Reasoning-based RAG"
+  },
+  {
+    "name": "hacksider/Deep-Live-Cam",
+    "url": "https://github.com/hacksider/Deep-Live-Cam",
+    "language": "Python",
+    "stars": 74882,
+    "forks": 10900,
+    "description": "real time face swap and one-click video deepfake with only a single image"
+  },
+  {
+    "name": "sst/opentui",
+    "url": "https://github.com/sst/opentui",
+    "language": "TypeScript",
+    "stars": 3300,
+    "forks": 122,
+    "description": "OpenTUI is a library for building terminal user interfaces (TUIs)"
+  },
+  {
+    "name": "DearVa/Everywhere",
+    "url": "https://github.com/DearVa/Everywhere",
+    "language": "C#",
+    "stars": 1892,
+    "forks": 97,
+    "description": "A context-aware AI assistant for your desktop. Ready to respond intelligently, seamlessly integrating multiple LLMs and MCP tools."
+  }
+]

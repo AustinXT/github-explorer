@@ -1,0 +1,90 @@
+[
+  {
+    "name": "bytedance/UI-TARS-desktop",
+    "url": "https://github.com/bytedance/UI-TARS-desktop",
+    "language": "TypeScript",
+    "stars": 26423,
+    "forks": 2582,
+    "description": "The Open-Source Multimodal AI Agent Stack: Connecting Cutting-Edge AI Models and Agent Infra"
+  },
+  {
+    "name": "openai/skills",
+    "url": "https://github.com/openai/skills",
+    "language": "Python",
+    "stars": 4002,
+    "forks": 233,
+    "description": "Skills Catalog for Codex"
+  },
+  {
+    "name": "thedotmack/claude-mem",
+    "url": "https://github.com/thedotmack/claude-mem",
+    "language": "TypeScript",
+    "stars": 23302,
+    "forks": 1535,
+    "description": "A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions."
+  },
+  {
+    "name": "j178/prek",
+    "url": "https://github.com/j178/prek",
+    "language": "Rust",
+    "stars": 5325,
+    "forks": 141,
+    "description": "⚡ Better `pre-commit`, re-engineered in Rust"
+  },
+  {
+    "name": "topoteretes/cognee",
+    "url": "https://github.com/topoteretes/cognee",
+    "language": "Python",
+    "stars": 11710,
+    "forks": 1149,
+    "description": "Memory for AI Agents in 6 lines of code"
+  },
+  {
+    "name": "obra/superpowers",
+    "url": "https://github.com/obra/superpowers",
+    "language": "Shell",
+    "stars": 44941,
+    "forks": 3407,
+    "description": "An agentic skills framework & software development methodology that works."
+  },
+  {
+    "name": "aquasecurity/trivy",
+    "url": "https://github.com/aquasecurity/trivy",
+    "language": "Go",
+    "stars": 31279,
+    "forks": 2906,
+    "description": "Find vulnerabilities, misconfigurations, secrets, SBOM in containers, Kubernetes, code repositories, clouds and more"
+  },
+  {
+    "name": "fish-shell/fish-shell",
+    "url": "https://github.com/fish-shell/fish-shell",
+    "language": "Rust",
+    "stars": 32276,
+    "forks": 2211,
+    "description": "The user-friendly command line shell."
+  },
+  {
+    "name": "nvm-sh/nvm",
+    "url": "https://github.com/nvm-sh/nvm",
+    "language": "Shell",
+    "stars": 91309,
+    "forks": 9824,
+    "description": "Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions"
+  },
+  {
+    "name": "linshenkx/prompt-optimizer",
+    "url": "https://github.com/linshenkx/prompt-optimizer",
+    "language": "TypeScript",
+    "stars": 19231,
+    "forks": 2389,
+    "description": "一款提示词优化器，助力于编写高质量的提示词"
+  },
+  {
+    "name": "ZeroTworu/anet",
+    "url": "https://github.com/ZeroTworu/anet",
+    "language": "Rust",
+    "stars": 267,
+    "forks": 20,
+    "description": "Simple Rust VPN Client / Server"
+  }
+]

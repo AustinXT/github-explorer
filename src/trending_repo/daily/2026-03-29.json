@@ -1,0 +1,98 @@
+[
+  {
+    "name": "Yeachan-Heo/oh-my-claudecode",
+    "url": "https://github.com/Yeachan-Heo/oh-my-claudecode",
+    "language": "TypeScript",
+    "stars": 15179,
+    "forks": 1019,
+    "description": "Teams-first Multi-agent orchestration for Claude Code"
+  },
+  {
+    "name": "microsoft/VibeVoice",
+    "url": "https://github.com/microsoft/VibeVoice",
+    "language": "Python",
+    "stars": 25950,
+    "forks": 2845,
+    "description": "Open-Source Frontier Voice AI"
+  },
+  {
+    "name": "NousResearch/hermes-agent",
+    "url": "https://github.com/NousResearch/hermes-agent",
+    "language": "Python",
+    "stars": 15780,
+    "forks": 1920,
+    "description": "The agent that grows with you"
+  },
+  {
+    "name": "OpenBB-finance/OpenBB",
+    "url": "https://github.com/OpenBB-finance/OpenBB",
+    "language": "Python",
+    "stars": 63787,
+    "forks": 6287,
+    "description": "Financial data platform for analysts, quants and AI agents."
+  },
+  {
+    "name": "obra/superpowers",
+    "url": "https://github.com/obra/superpowers",
+    "language": "Shell",
+    "stars": 121773,
+    "forks": 9901,
+    "description": "An agentic skills framework & software development methodology that works."
+  },
+  {
+    "name": "thedotmack/claude-mem",
+    "url": "https://github.com/thedotmack/claude-mem",
+    "language": "TypeScript",
+    "stars": 42116,
+    "forks": 3142,
+    "description": "A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions."
+  },
+  {
+    "name": "hacksider/Deep-Live-Cam",
+    "url": "https://github.com/hacksider/Deep-Live-Cam",
+    "language": "Python",
+    "stars": 84771,
+    "forks": 12372,
+    "description": "real time face swap and one-click video deepfake with only a single image"
+  },
+  {
+    "name": "mvanhorn/last30days-skill",
+    "url": "https://github.com/mvanhorn/last30days-skill",
+    "language": "Python",
+    "stars": 14651,
+    "forks": 1165,
+    "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary"
+  },
+  {
+    "name": "shareAI-lab/learn-claude-code",
+    "url": "https://github.com/shareAI-lab/learn-claude-code",
+    "language": "TypeScript",
+    "stars": 42238,
+    "forks": 6525,
+    "description": "Bash is all you need - A nano claude code–like 「agent harness」, built from 0 to 1"
+  },
+  {
+    "name": "fastfetch-cli/fastfetch",
+    "url": "https://github.com/fastfetch-cli/fastfetch",
+    "language": "C",
+    "stars": 21024,
+    "forks": 711,
+    "description": "A maintained, feature-rich and performance oriented, neofetch like system information tool."
+  },
+  {
+    "name": "moeru-ai/airi",
+    "url": "https://github.com/moeru-ai/airi",
+    "language": "TypeScript",
+    "stars": 36172,
+    "forks": 3598,
+    "description": "💖🧸 Self hosted, you-owned Grok Companion, a container of souls of waifu, cyber livings to bring them into our worlds, wishing to achieve Neuro-sama's altitude. Capable of realtime voice chat, Minecraft, Factorio playing. Web / macOS / Windows supported."
+  },
+  {
+    "name": "twentyhq/twenty",
+    "url": "https://github.com/twentyhq/twenty",
+    "language": "TypeScript",
+    "stars": 42621,
+    "forks": 5649,
+    "description": "Building a modern alternative to Salesforce, powered by the community."
+  }
+]

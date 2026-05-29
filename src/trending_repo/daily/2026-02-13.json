@@ -1,0 +1,82 @@
+[
+  {
+    "name": "SynkraAI/aios-core",
+    "url": "https://github.com/SynkraAI/aios-core",
+    "language": "JavaScript",
+    "stars": 289,
+    "forks": 168,
+    "description": "Synkra AIOS: AI-Orchestrated System for Full Stack Development - Core Framework v4.0"
+  },
+  {
+    "name": "ChromeDevTools/chrome-devtools-mcp",
+    "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+    "language": "TypeScript",
+    "stars": 24558,
+    "forks": 1460,
+    "description": "Chrome DevTools for coding agents"
+  },
+  {
+    "name": "danielmiessler/Personal_AI_Infrastructure",
+    "url": "https://github.com/danielmiessler/Personal_AI_Infrastructure",
+    "language": "TypeScript",
+    "stars": 7785,
+    "forks": 1109,
+    "description": "Agentic AI Infrastructure for magnifying HUMAN capabilities."
+  },
+  {
+    "name": "patchy631/ai-engineering-hub",
+    "url": "https://github.com/patchy631/ai-engineering-hub",
+    "language": "JupyterNotebook",
+    "stars": 29012,
+    "forks": 4730,
+    "description": "In-depth tutorials on LLMs, RAGs and real-world AI agent applications."
+  },
+  {
+    "name": "TelegramMessenger/MTProxy",
+    "url": "https://github.com/TelegramMessenger/MTProxy",
+    "language": "C",
+    "stars": 5799,
+    "forks": 994,
+    "description": "None"
+  },
+  {
+    "name": "google-deepmind/superhuman",
+    "url": "https://github.com/google-deepmind/superhuman",
+    "language": "TeX",
+    "stars": 264,
+    "forks": 21,
+    "description": "None"
+  },
+  {
+    "name": "cheahjs/free-llm-api-resources",
+    "url": "https://github.com/cheahjs/free-llm-api-resources",
+    "language": "Python",
+    "stars": 10294,
+    "forks": 997,
+    "description": "A list of free LLM inference resources accessible via API."
+  },
+  {
+    "name": "HandsOnLLM/Hands-On-Large-Language-Models",
+    "url": "https://github.com/HandsOnLLM/Hands-On-Large-Language-Models",
+    "language": "JupyterNotebook",
+    "stars": 21052,
+    "forks": 4984,
+    "description": "Official code repo for the O'Reilly Book - \"Hands-On Large Language Models\""
+  },
+  {
+    "name": "THUDM/slime",
+    "url": "https://github.com/THUDM/slime",
+    "language": "Python",
+    "stars": 3983,
+    "forks": 523,
+    "description": "slime is an LLM post-training framework for RL Scaling."
+  },
+  {
+    "name": "DebugSwift/DebugSwift",
+    "url": "https://github.com/DebugSwift/DebugSwift",
+    "language": "Swift",
+    "stars": 1262,
+    "forks": 117,
+    "description": "A toolkit to make debugging iOS applications easier 🚀"
+  }
+]

@@ -1,0 +1,170 @@
+[
+  {
+    "name": "Infisical/infisical",
+    "url": "https://github.com/Infisical/infisical",
+    "language": "TypeScript",
+    "stars": 20764,
+    "forks": 1410,
+    "description": "Infisical is the open-source platform for secrets management, PKI, and SSH access."
+  },
+  {
+    "name": "meshery/meshery",
+    "url": "https://github.com/meshery/meshery",
+    "language": "JavaScript",
+    "stars": 8617,
+    "forks": 2680,
+    "description": "Meshery, the cloud native manager"
+  },
+  {
+    "name": "BeehiveInnovations/zen-mcp-server",
+    "url": "https://github.com/BeehiveInnovations/zen-mcp-server",
+    "language": "Python",
+    "stars": 7483,
+    "forks": 633,
+    "description": "The power of Claude Code / GeminiCLI / CodexCLI + [Gemini / OpenAI / OpenRouter / Azure / Grok / Ollama / Custom Model / All Of The Above] working as one."
+  },
+  {
+    "name": "Stremio/stremio-web",
+    "url": "https://github.com/Stremio/stremio-web",
+    "language": "JavaScript",
+    "stars": 2276,
+    "forks": 433,
+    "description": "Stremio - Freedom to Stream"
+  },
+  {
+    "name": "microsoft/BitNet",
+    "url": "https://github.com/microsoft/BitNet",
+    "language": "Python",
+    "stars": 23700,
+    "forks": 1829,
+    "description": "Official inference framework for 1-bit LLMs"
+  },
+  {
+    "name": "TapXWorld/ChinaTextbook",
+    "url": "https://github.com/TapXWorld/ChinaTextbook",
+    "language": "Roff",
+    "stars": 50883,
+    "forks": 11474,
+    "description": "所有小初高、大学PDF教材。"
+  },
+  {
+    "name": "audacity/audacity",
+    "url": "https://github.com/audacity/audacity",
+    "language": "C++",
+    "stars": 14799,
+    "forks": 2403,
+    "description": "Audio Editor"
+  },
+  {
+    "name": "juspay/hyperswitch",
+    "url": "https://github.com/juspay/hyperswitch",
+    "language": "Rust",
+    "stars": 36120,
+    "forks": 4354,
+    "description": "An open source payments switch written in Rust to make payments fast, reliable and affordable"
+  },
+  {
+    "name": "openemr/openemr",
+    "url": "https://github.com/openemr/openemr",
+    "language": "PHP",
+    "stars": 3716,
+    "forks": 2518,
+    "description": "The most popular open source electronic health records and medical practice management solution."
+  },
+  {
+    "name": "dgtlmoon/changedetection.io",
+    "url": "https://github.com/dgtlmoon/changedetection.io",
+    "language": "Python",
+    "stars": 26973,
+    "forks": 1509,
+    "description": "Best and simplest tool for website change detection, web page monitoring, and website change alerts. Perfect for tracking content changes, price drops, restock alerts, and website defacement monitoring—all for free or enjoy our SaaS plan!"
+  },
+  {
+    "name": "aandrew-me/ytDownloader",
+    "url": "https://github.com/aandrew-me/ytDownloader",
+    "language": "JavaScript",
+    "stars": 2447,
+    "forks": 205,
+    "description": "Desktop App for downloading Videos and Audios from hundreds of sites"
+  },
+  {
+    "name": "zama-ai/fhevm",
+    "url": "https://github.com/zama-ai/fhevm",
+    "language": "Rust",
+    "stars": 22424,
+    "forks": 1053,
+    "description": "FHEVM, a full-stack framework for integrating Fully Homomorphic Encryption (FHE) with blockchain applications"
+  },
+  {
+    "name": "pathwaycom/pathway",
+    "url": "https://github.com/pathwaycom/pathway",
+    "language": "Python",
+    "stars": 45109,
+    "forks": 1383,
+    "description": "Python ETL framework for stream processing, real-time analytics, LLM pipelines, and RAG."
+  },
+  {
+    "name": "TheAlgorithms/Python",
+    "url": "https://github.com/TheAlgorithms/Python",
+    "language": "Python",
+    "stars": 209983,
+    "forks": 48451,
+    "description": "All Algorithms implemented in Python"
+  },
+  {
+    "name": "kestra-io/kestra",
+    "url": "https://github.com/kestra-io/kestra",
+    "language": "Java",
+    "stars": 22088,
+    "forks": 1993,
+    "description": "Orchestrate everything - from scripts to data, infra, AI, and business - as code, with UI and AI Copilot. Simple. Fast. Scalable."
+  },
+  {
+    "name": "htr-tech/zphisher",
+    "url": "https://github.com/htr-tech/zphisher",
+    "language": "HTML",
+    "stars": 14265,
+    "forks": 5313,
+    "description": "An automated phishing tool with 30+ templates. This Tool is made for educational purpose only ! Author will not be responsible for any misuse of this toolkit !"
+  },
+  {
+    "name": "EbookFoundation/free-programming-books",
+    "url": "https://github.com/EbookFoundation/free-programming-books",
+    "language": "Python",
+    "stars": 371609,
+    "forks": 64604,
+    "description": "📚 Freely available programming books"
+  },
+  {
+    "name": "google/osv.dev",
+    "url": "https://github.com/google/osv.dev",
+    "language": "Python",
+    "stars": 2108,
+    "forks": 232,
+    "description": "Open source vulnerability DB and triage service."
+  },
+  {
+    "name": "firefly-iii/firefly-iii",
+    "url": "https://github.com/firefly-iii/firefly-iii",
+    "language": "PHP",
+    "stars": 20555,
+    "forks": 1881,
+    "description": "Firefly III: a personal finances manager"
+  },
+  {
+    "name": "shadcn-ui/ui",
+    "url": "https://github.com/shadcn-ui/ui",
+    "language": "TypeScript",
+    "stars": 96062,
+    "forks": 6850,
+    "description": "A set of beautifully-designed, accessible components and a code distribution platform. Works with your favorite frameworks. Open Source. Open Code."
+  },
+  {
+    "name": "dyad-sh/dyad",
+    "url": "https://github.com/dyad-sh/dyad",
+    "language": "TypeScript",
+    "stars": 15214,
+    "forks": 1614,
+    "description": "Free, local, open-source AI app builder ✨ v0 / lovable / Bolt alternative 🌟 Star if you like it!"
+  }
+]

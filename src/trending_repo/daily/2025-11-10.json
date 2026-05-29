@@ -1,0 +1,138 @@
+[
+  {
+    "name": "usestrix/strix",
+    "url": "https://github.com/usestrix/strix",
+    "language": "Python",
+    "stars": 8114,
+    "forks": 751,
+    "description": "✨ Open-source AI hackers for your apps 👨🏻‍💻"
+  },
+  {
+    "name": "umami-software/umami",
+    "url": "https://github.com/umami-software/umami",
+    "language": "TypeScript",
+    "stars": 33001,
+    "forks": 5820,
+    "description": "Umami is a modern, privacy-focused alternative to Google Analytics."
+  },
+  {
+    "name": "thinking-machines-lab/tinker-cookbook",
+    "url": "https://github.com/thinking-machines-lab/tinker-cookbook",
+    "language": "Python",
+    "stars": 1701,
+    "forks": 135,
+    "description": "Post-training with Tinker"
+  },
+  {
+    "name": "mui/material-ui",
+    "url": "https://github.com/mui/material-ui",
+    "language": "JavaScript",
+    "stars": 97227,
+    "forks": 32721,
+    "description": "Material UI: Comprehensive React component library that implements Google's Material Design. Free forever."
+  },
+  {
+    "name": "google/adk-go",
+    "url": "https://github.com/google/adk-go",
+    "language": "Go",
+    "stars": 816,
+    "forks": 46,
+    "description": "An open-source, code-first Go toolkit for building, evaluating, and deploying sophisticated AI agents with flexibility and control."
+  },
+  {
+    "name": "axios/axios",
+    "url": "https://github.com/axios/axios",
+    "language": "JavaScript",
+    "stars": 108196,
+    "forks": 11402,
+    "description": "Promise based HTTP client for the browser and node.js"
+  },
+  {
+    "name": "simstudioai/sim",
+    "url": "https://github.com/simstudioai/sim",
+    "language": "TypeScript",
+    "stars": 17890,
+    "forks": 2377,
+    "description": "Open-source platform to build and deploy AI agent workflows."
+  },
+  {
+    "name": "airweave-ai/airweave",
+    "url": "https://github.com/airweave-ai/airweave",
+    "language": "Python",
+    "stars": 5050,
+    "forks": 594,
+    "description": "Context retrieval for AI agents across apps and databases"
+  },
+  {
+    "name": "HyDE-Project/HyDE",
+    "url": "https://github.com/HyDE-Project/HyDE",
+    "language": "Shell",
+    "stars": 7013,
+    "forks": 491,
+    "description": "HyDE, your Development Environment 🖥️💻"
+  },
+  {
+    "name": "AUTOMATIC1111/stable-diffusion-webui",
+    "url": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
+    "language": "Python",
+    "stars": 158082,
+    "forks": 29339,
+    "description": "Stable Diffusion web UI"
+  },
+  {
+    "name": "prometheus/alertmanager",
+    "url": "https://github.com/prometheus/alertmanager",
+    "language": "Go",
+    "stars": 8014,
+    "forks": 2349,
+    "description": "Prometheus Alertmanager"
+  },
+  {
+    "name": "librespot-org/librespot",
+    "url": "https://github.com/librespot-org/librespot",
+    "language": "Rust",
+    "stars": 6003,
+    "forks": 767,
+    "description": "Open Source Spotify client library"
+  },
+  {
+    "name": "MoonshotAI/Kimi-K2",
+    "url": "https://github.com/MoonshotAI/Kimi-K2",
+    "language": "Unknown",
+    "stars": 9071,
+    "forks": 601,
+    "description": "Kimi K2 is the large language model series developed by Moonshot AI team"
+  },
+  {
+    "name": "WerWolv/ImHex",
+    "url": "https://github.com/WerWolv/ImHex",
+    "language": "C++",
+    "stars": 51461,
+    "forks": 2279,
+    "description": "🔍 A Hex Editor for Reverse Engineers, Programmers and people who value their retinas when working at 3 AM."
+  },
+  {
+    "name": "lima-vm/lima",
+    "url": "https://github.com/lima-vm/lima",
+    "language": "Go",
+    "stars": 18844,
+    "forks": 746,
+    "description": "Linux virtual machines, with a focus on running containers"
+  },
+  {
+    "name": "JetBrains/kotlin",
+    "url": "https://github.com/JetBrains/kotlin",
+    "language": "Kotlin",
+    "stars": 51758,
+    "forks": 6101,
+    "description": "The Kotlin Programming Language."
+  },
+  {
+    "name": "ziglang/zig",
+    "url": "https://github.com/ziglang/zig",
+    "language": "Zig",
+    "stars": 42202,
+    "forks": 3102,
+    "description": "General-purpose programming language and toolchain for maintaining robust, optimal, and reusable software."
+  }
+]

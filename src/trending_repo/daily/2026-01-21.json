@@ -1,0 +1,58 @@
+[
+  {
+    "name": "microsoft/agent-lightning",
+    "url": "https://github.com/microsoft/agent-lightning",
+    "language": "Python",
+    "stars": 11042,
+    "forks": 909,
+    "description": "The absolute trainer to light up AI agents."
+  },
+  {
+    "name": "iOfficeAI/AionUi",
+    "url": "https://github.com/iOfficeAI/AionUi",
+    "language": "TypeScript",
+    "stars": 8372,
+    "forks": 641,
+    "description": "Free, local, open-source Cowork for Gemini CLI, Claude Code, Codex, Opencode, Qwen Code, Goose Cli, Auggie, and more | 🌟 Star if you like it!"
+  },
+  {
+    "name": "google/langextract",
+    "url": "https://github.com/google/langextract",
+    "language": "Python",
+    "stars": 23394,
+    "forks": 1605,
+    "description": "A Python library for extracting structured information from unstructured text using LLMs with precise source grounding and interactive visualization."
+  },
+  {
+    "name": "AlexxIT/go2rtc",
+    "url": "https://github.com/AlexxIT/go2rtc",
+    "language": "Go",
+    "stars": 11758,
+    "forks": 891,
+    "description": "Ultimate camera streaming application with support RTSP, RTMP, HTTP-FLV, WebRTC, MSE, HLS, MP4, MJPEG, HomeKit, FFmpeg, etc."
+  },
+  {
+    "name": "lukasz-madon/awesome-remote-job",
+    "url": "https://github.com/lukasz-madon/awesome-remote-job",
+    "language": "Unknown",
+    "stars": 42838,
+    "forks": 4437,
+    "description": "A curated list of awesome remote jobs and resources. Inspired by https://github.com/vinta/awesome-python"
+  },
+  {
+    "name": "tobi/try",
+    "url": "https://github.com/tobi/try",
+    "language": "Shell",
+    "stars": 3027,
+    "forks": 114,
+    "description": "fresh directories for every vibe"
+  },
+  {
+    "name": "DavidXanatos/TaskExplorer",
+    "url": "https://github.com/DavidXanatos/TaskExplorer",
+    "language": "C",
+    "stars": 2921,
+    "forks": 234,
+    "description": "Power full Task Manager"
+  }
+]

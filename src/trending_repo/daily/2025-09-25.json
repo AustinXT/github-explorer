@@ -1,0 +1,130 @@
+[
+  {
+    "name": "gin-gonic/gin",
+    "url": "https://github.com/gin-gonic/gin",
+    "language": "Go",
+    "stars": 85050,
+    "forks": 8380,
+    "description": "Gin is a high-performance HTTP web framework written in Go. It provides a Martini-like API but with significantly better performance—up to 40 times faster—thanks to httprouter. Gin is designed for building REST APIs, web applications, and microservices."
+  },
+  {
+    "name": "humanlayer/humanlayer",
+    "url": "https://github.com/humanlayer/humanlayer",
+    "language": "TypeScript",
+    "stars": 2772,
+    "forks": 250,
+    "description": "The best way to get AI to solve hard problems in complex codebases."
+  },
+  {
+    "name": "yt-dlp/yt-dlp",
+    "url": "https://github.com/yt-dlp/yt-dlp",
+    "language": "Python",
+    "stars": 127646,
+    "forks": 10237,
+    "description": "A feature-rich command-line audio/video downloader"
+  },
+  {
+    "name": "TheAlgorithms/Python",
+    "url": "https://github.com/TheAlgorithms/Python",
+    "language": "Python",
+    "stars": 208879,
+    "forks": 48105,
+    "description": "All Algorithms implemented in Python"
+  },
+  {
+    "name": "ZuodaoTech/everyone-can-use-english",
+    "url": "https://github.com/ZuodaoTech/everyone-can-use-english",
+    "language": "TypeScript",
+    "stars": 29143,
+    "forks": 4222,
+    "description": "人人都能用英语"
+  },
+  {
+    "name": "Olow304/memvid",
+    "url": "https://github.com/Olow304/memvid",
+    "language": "Python",
+    "stars": 8753,
+    "forks": 742,
+    "description": "Video-based AI memory library. Store millions of text chunks in MP4 files with lightning-fast semantic search. No database needed."
+  },
+  {
+    "name": "TanStack/router",
+    "url": "https://github.com/TanStack/router",
+    "language": "TypeScript",
+    "stars": 11190,
+    "forks": 1208,
+    "description": "🤖 Fully typesafe Router for React (and friends) w/ built-in caching, 1st class search-param APIs, client-side cache integration and isomorphic rendering."
+  },
+  {
+    "name": "LadybirdBrowser/ladybird",
+    "url": "https://github.com/LadybirdBrowser/ladybird",
+    "language": "C++",
+    "stars": 48682,
+    "forks": 2115,
+    "description": "Truly independent web browser"
+  },
+  {
+    "name": "coinbase/x402",
+    "url": "https://github.com/coinbase/x402",
+    "language": "TypeScript",
+    "stars": 1218,
+    "forks": 240,
+    "description": "A payments protocol for the internet. Built on HTTP."
+  },
+  {
+    "name": "Asabeneh/30-Days-Of-Python",
+    "url": "https://github.com/Asabeneh/30-Days-Of-Python",
+    "language": "Python",
+    "stars": 49926,
+    "forks": 9545,
+    "description": "30 days of Python programming challenge is a step-by-step guide to learn the Python programming language in 30 days. This challenge may take more than100 days, follow your own pace. These videos may help too: https://www.youtube.com/channel/UC7PNRuno1rzYPb1xLa4yktw"
+  },
+  {
+    "name": "elastic/elasticsearch",
+    "url": "https://github.com/elastic/elasticsearch",
+    "language": "Java",
+    "stars": 74645,
+    "forks": 25500,
+    "description": "Free and Open Source, Distributed, RESTful Search Engine"
+  },
+  {
+    "name": "OpenZeppelin/openzeppelin-contracts",
+    "url": "https://github.com/OpenZeppelin/openzeppelin-contracts",
+    "language": "Solidity",
+    "stars": 26433,
+    "forks": 12199,
+    "description": "OpenZeppelin Contracts is a library for secure smart contract development."
+  },
+  {
+    "name": "confident-ai/deepeval",
+    "url": "https://github.com/confident-ai/deepeval",
+    "language": "Python",
+    "stars": 11067,
+    "forks": 955,
+    "description": "The LLM Evaluation Framework"
+  },
+  {
+    "name": "cloudflare/capnweb",
+    "url": "https://github.com/cloudflare/capnweb",
+    "language": "TypeScript",
+    "stars": 2315,
+    "forks": 70,
+    "description": "JavaScript/TypeScript-native, low-boilerplate, object-capability RPC system"
+  },
+  {
+    "name": "smartcontractkit/chainlink",
+    "url": "https://github.com/smartcontractkit/chainlink",
+    "language": "Go",
+    "stars": 7680,
+    "forks": 1852,
+    "description": "node of the decentralized oracle network, bridging on and off-chain computation"
+  },
+  {
+    "name": "onyx-dot-app/onyx",
+    "url": "https://github.com/onyx-dot-app/onyx",
+    "language": "Python",
+    "stars": 13570,
+    "forks": 1910,
+    "description": "Gen-AI Chat for Teams - Think ChatGPT if it had access to your team's unique knowledge."
+  }
+]

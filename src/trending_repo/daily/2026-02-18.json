@@ -1,0 +1,90 @@
+[
+  {
+    "name": "alibaba/zvec",
+    "url": "https://github.com/alibaba/zvec",
+    "language": "C++",
+    "stars": 4692,
+    "forks": 258,
+    "description": "A lightweight, lightning-fast, in-process vector database"
+  },
+  {
+    "name": "p-e-w/heretic",
+    "url": "https://github.com/p-e-w/heretic",
+    "language": "Python",
+    "stars": 7612,
+    "forks": 777,
+    "description": "Fully automatic censorship removal for language models"
+  },
+  {
+    "name": "OpenCTI-Platform/opencti",
+    "url": "https://github.com/OpenCTI-Platform/opencti",
+    "language": "TypeScript",
+    "stars": 8527,
+    "forks": 1233,
+    "description": "Open Cyber Threat Intelligence Platform"
+  },
+  {
+    "name": "QwenLM/qwen-code",
+    "url": "https://github.com/QwenLM/qwen-code",
+    "language": "TypeScript",
+    "stars": 18619,
+    "forks": 1631,
+    "description": "An open-source AI agent that lives in your terminal."
+  },
+  {
+    "name": "NirDiamant/RAG_Techniques",
+    "url": "https://github.com/NirDiamant/RAG_Techniques",
+    "language": "JupyterNotebook",
+    "stars": 25009,
+    "forks": 2949,
+    "description": "This repository showcases various advanced techniques for Retrieval-Augmented Generation (RAG) systems. RAG systems combine information retrieval with generative models to provide accurate and contextually rich responses."
+  },
+  {
+    "name": "harvard-edge/cs249r_book",
+    "url": "https://github.com/harvard-edge/cs249r_book",
+    "language": "JavaScript",
+    "stars": 19275,
+    "forks": 2268,
+    "description": "Introduction to Machine Learning Systems"
+  },
+  {
+    "name": "obra/superpowers",
+    "url": "https://github.com/obra/superpowers",
+    "language": "Shell",
+    "stars": 53973,
+    "forks": 4093,
+    "description": "An agentic skills framework & software development methodology that works."
+  },
+  {
+    "name": "HailToDodongo/pyrite64",
+    "url": "https://github.com/HailToDodongo/pyrite64",
+    "language": "C++",
+    "stars": 907,
+    "forks": 33,
+    "description": "N64 Game-Engine and Editor using libdragon & tiny3d"
+  },
+  {
+    "name": "ComposioHQ/composio",
+    "url": "https://github.com/ComposioHQ/composio",
+    "language": "TypeScript",
+    "stars": 26619,
+    "forks": 4416,
+    "description": "Composio equips your AI agents & LLMs with 100+ high-quality integrations via function calling"
+  },
+  {
+    "name": "p2r3/convert",
+    "url": "https://github.com/p2r3/convert",
+    "language": "TypeScript",
+    "stars": 1125,
+    "forks": 116,
+    "description": "Truly universal online file converter"
+  },
+  {
+    "name": "openclaw/openclaw",
+    "url": "https://github.com/openclaw/openclaw",
+    "language": "TypeScript",
+    "stars": 207009,
+    "forks": 37912,
+    "description": "Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞"
+  }
+]

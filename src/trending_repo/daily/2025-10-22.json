@@ -1,0 +1,138 @@
+[
+  {
+    "name": "mountain-loop/yaak",
+    "url": "https://github.com/mountain-loop/yaak",
+    "language": "TypeScript",
+    "stars": 11113,
+    "forks": 386,
+    "description": "The most intuitive desktop API client. Organize and execute REST, GraphQL, WebSockets, Server Sent Events, and gRPC 🦬"
+  },
+  {
+    "name": "servo/servo",
+    "url": "https://github.com/servo/servo",
+    "language": "Rust",
+    "stars": 32657,
+    "forks": 3293,
+    "description": "Servo aims to empower developers with a lightweight, high-performance alternative for embedding web technologies in applications."
+  },
+  {
+    "name": "emcie-co/parlant",
+    "url": "https://github.com/emcie-co/parlant",
+    "language": "Python",
+    "stars": 14022,
+    "forks": 1137,
+    "description": "LLM agents built for control. Designed for real-world use. Deployed in minutes."
+  },
+  {
+    "name": "guofei9987/blind_watermark",
+    "url": "https://github.com/guofei9987/blind_watermark",
+    "language": "Python",
+    "stars": 7563,
+    "forks": 859,
+    "description": "Blind&Invisible Watermark ，图片盲水印，提取水印无须原图！"
+  },
+  {
+    "name": "lfnovo/open-notebook",
+    "url": "https://github.com/lfnovo/open-notebook",
+    "language": "TypeScript",
+    "stars": 7021,
+    "forks": 702,
+    "description": "An Open Source implementation of Notebook LM with more flexibility and features"
+  },
+  {
+    "name": "dyad-sh/dyad",
+    "url": "https://github.com/dyad-sh/dyad",
+    "language": "TypeScript",
+    "stars": 16622,
+    "forks": 1804,
+    "description": "Free, local, open-source AI app builder ✨ v0 / lovable / Bolt alternative 🌟 Star if you like it!"
+  },
+  {
+    "name": "fishaudio/fish-speech",
+    "url": "https://github.com/fishaudio/fish-speech",
+    "language": "Python",
+    "stars": 23366,
+    "forks": 1933,
+    "description": "SOTA Open Source TTS"
+  },
+  {
+    "name": "huggingface/chat-ui",
+    "url": "https://github.com/huggingface/chat-ui",
+    "language": "TypeScript",
+    "stars": 9884,
+    "forks": 1486,
+    "description": "Open source codebase powering the HuggingChat app"
+  },
+  {
+    "name": "rossant/awesome-math",
+    "url": "https://github.com/rossant/awesome-math",
+    "language": "Python",
+    "stars": 10238,
+    "forks": 1055,
+    "description": "A curated list of awesome mathematics resources"
+  },
+  {
+    "name": "drawdb-io/drawdb",
+    "url": "https://github.com/drawdb-io/drawdb",
+    "language": "JavaScript",
+    "stars": 33394,
+    "forks": 2528,
+    "description": "Free, simple, and intuitive online database diagram editor and SQL generator."
+  },
+  {
+    "name": "DrewThomasson/ebook2audiobook",
+    "url": "https://github.com/DrewThomasson/ebook2audiobook",
+    "language": "Python",
+    "stars": 13116,
+    "forks": 987,
+    "description": "Generate audiobooks from e-books, voice cloning & 1107+ languages!"
+  },
+  {
+    "name": "clockworklabs/SpacetimeDB",
+    "url": "https://github.com/clockworklabs/SpacetimeDB",
+    "language": "Rust",
+    "stars": 18162,
+    "forks": 632,
+    "description": "Multiplayer at the speed of light"
+  },
+  {
+    "name": "anthropics/claude-cookbooks",
+    "url": "https://github.com/anthropics/claude-cookbooks",
+    "language": "JupyterNotebook",
+    "stars": 24502,
+    "forks": 2469,
+    "description": "A collection of notebooks/recipes showcasing some fun and effective ways of using Claude."
+  },
+  {
+    "name": "zyronon/TypeWords",
+    "url": "https://github.com/zyronon/TypeWords",
+    "language": "Vue",
+    "stars": 4089,
+    "forks": 499,
+    "description": "练习英语，一次敲击，一点进步；Practice English, One Keystroke at a Time."
+  },
+  {
+    "name": "tauri-apps/tauri",
+    "url": "https://github.com/tauri-apps/tauri",
+    "language": "Rust",
+    "stars": 97709,
+    "forks": 3112,
+    "description": "Build smaller, faster, and more secure desktop and mobile applications with a web frontend."
+  },
+  {
+    "name": "remix-run/react-router",
+    "url": "https://github.com/remix-run/react-router",
+    "language": "TypeScript",
+    "stars": 55675,
+    "forks": 10742,
+    "description": "Declarative routing for React"
+  },
+  {
+    "name": "harvard-edge/cs249r_book",
+    "url": "https://github.com/harvard-edge/cs249r_book",
+    "language": "Python",
+    "stars": 4159,
+    "forks": 452,
+    "description": "Introduction to Machine Learning Systems"
+  }
+]

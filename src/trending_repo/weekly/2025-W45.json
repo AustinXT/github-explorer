@@ -1,0 +1,450 @@
+[
+  {
+    "name": "public-apis/public-apis",
+    "url": "https://github.com/public-apis/public-apis",
+    "language": "Python",
+    "stars": 377270,
+    "forks": 39935,
+    "description": "A collective list of free APIs"
+  },
+  {
+    "name": "jwasham/coding-interview-university",
+    "url": "https://github.com/jwasham/coding-interview-university",
+    "language": "Unknown",
+    "stars": 332926,
+    "forks": 81171,
+    "description": "A complete computer science study plan to become a software engineer."
+  },
+  {
+    "name": "TheAlgorithms/Python",
+    "url": "https://github.com/TheAlgorithms/Python",
+    "language": "Python",
+    "stars": 212775,
+    "forks": 49197,
+    "description": "All Algorithms implemented in Python"
+  },
+  {
+    "name": "pytorch/pytorch",
+    "url": "https://github.com/pytorch/pytorch",
+    "language": "Python",
+    "stars": 94501,
+    "forks": 25755,
+    "description": "Tensors and Dynamic neural networks in Python with strong GPU acceleration"
+  },
+  {
+    "name": "Shubhamsaboo/awesome-llm-apps",
+    "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+    "language": "Python",
+    "stars": 75959,
+    "forks": 10004,
+    "description": "Collection of awesome LLM apps with AI Agents and RAG using OpenAI, Anthropic, Gemini and opensource models."
+  },
+  {
+    "name": "hacksider/Deep-Live-Cam",
+    "url": "https://github.com/hacksider/Deep-Live-Cam",
+    "language": "Python",
+    "stars": 74882,
+    "forks": 10900,
+    "description": "real time face swap and one-click video deepfake with only a single image"
+  },
+  {
+    "name": "coder/code-server",
+    "url": "https://github.com/coder/code-server",
+    "language": "TypeScript",
+    "stars": 74739,
+    "forks": 6340,
+    "description": "VS Code in the browser"
+  },
+  {
+    "name": "PKUFlyingPig/cs-self-learning",
+    "url": "https://github.com/PKUFlyingPig/cs-self-learning",
+    "language": "HTML",
+    "stars": 69074,
+    "forks": 7703,
+    "description": "计算机自学指南"
+  },
+  {
+    "name": "localstack/localstack",
+    "url": "https://github.com/localstack/localstack",
+    "language": "Python",
+    "stars": 62684,
+    "forks": 4386,
+    "description": "💻 A fully functional local AWS cloud stack. Develop and test your cloud & Serverless apps offline"
+  },
+  {
+    "name": "remix-run/react-router",
+    "url": "https://github.com/remix-run/react-router",
+    "language": "TypeScript",
+    "stars": 55896,
+    "forks": 10763,
+    "description": "Declarative routing for React"
+  },
+  {
+    "name": "dbeaver/dbeaver",
+    "url": "https://github.com/dbeaver/dbeaver",
+    "language": "Java",
+    "stars": 46567,
+    "forks": 3918,
+    "description": "Free universal database tool and SQL client"
+  },
+  {
+    "name": "cloudcommunity/Free-Certifications",
+    "url": "https://github.com/cloudcommunity/Free-Certifications",
+    "language": "Unknown",
+    "stars": 42828,
+    "forks": 2879,
+    "description": "A curated list of free courses with certifications. Also available at https://free-certifications.com/"
+  },
+  {
+    "name": "penpot/penpot",
+    "url": "https://github.com/penpot/penpot",
+    "language": "Clojure",
+    "stars": 41365,
+    "forks": 2282,
+    "description": "Penpot: The open-source design tool for design and code collaboration"
+  },
+  {
+    "name": "mudler/LocalAI",
+    "url": "https://github.com/mudler/LocalAI",
+    "language": "Go",
+    "stars": 37734,
+    "forks": 2975,
+    "description": "🤖 The free, Open Source alternative to OpenAI, Claude and others. Self-hosted and local-first. Drop-in replacement for OpenAI, running on consumer-grade hardware. No GPU required. Runs gguf, transformers, diffusers and many more. Features: Generate Text, Audio, Video, Images, Voice Cloning, Distributed, P2P and decentralized inference"
+  },
+  {
+    "name": "mindsdb/mindsdb",
+    "url": "https://github.com/mindsdb/mindsdb",
+    "language": "Python",
+    "stars": 36879,
+    "forks": 5942,
+    "description": "Federated query engine for AI - The only MCP Server you'll ever need"
+  },
+  {
+    "name": "umami-software/umami",
+    "url": "https://github.com/umami-software/umami",
+    "language": "TypeScript",
+    "stars": 32600,
+    "forks": 5808,
+    "description": "Umami is a modern, privacy-focused alternative to Google Analytics."
+  },
+  {
+    "name": "Raphire/Win11Debloat",
+    "url": "https://github.com/Raphire/Win11Debloat",
+    "language": "PowerShell",
+    "stars": 31960,
+    "forks": 1252,
+    "description": "A simple, lightweight PowerShell script to remove pre-installed apps, disable telemetry, as well as perform various other changes to customize, declutter and improve your Windows experience. Win11Debloat works for both Windows 10 and Windows 11."
+  },
+  {
+    "name": "sst/opencode",
+    "url": "https://github.com/sst/opencode",
+    "language": "TypeScript",
+    "stars": 31473,
+    "forks": 2439,
+    "description": "The AI coding agent built for the terminal."
+  },
+  {
+    "name": "blakeblackshear/frigate",
+    "url": "https://github.com/blakeblackshear/frigate",
+    "language": "TypeScript",
+    "stars": 26931,
+    "forks": 2489,
+    "description": "NVR with realtime local object detection for IP cameras"
+  },
+  {
+    "name": "666ghj/BettaFish",
+    "url": "https://github.com/666ghj/BettaFish",
+    "language": "Python",
+    "stars": 23537,
+    "forks": 4499,
+    "description": "微舆：人人可用的多Agent舆情分析助手，打破信息茧房，还原舆情原貌，预测未来走向，辅助决策！从0实现，不依赖任何框架。"
+  },
+  {
+    "name": "Fosowl/agenticSeek",
+    "url": "https://github.com/Fosowl/agenticSeek",
+    "language": "Python",
+    "stars": 23167,
+    "forks": 2491,
+    "description": "Fully Local Manus AI. No APIs, No $200 monthly bills. Enjoy an autonomous agent that thinks, browses the web, and code for the sole cost of electricity. 🔔 Official updates only via twitter @Martin993886460 (Beware of fake account)"
+  },
+  {
+    "name": "imthenachoman/How-To-Secure-A-Linux-Server",
+    "url": "https://github.com/imthenachoman/How-To-Secure-A-Linux-Server",
+    "language": "Unknown",
+    "stars": 22848,
+    "forks": 1454,
+    "description": "An evolving how-to guide for securing a Linux server."
+  },
+  {
+    "name": "GopeedLab/gopeed",
+    "url": "https://github.com/GopeedLab/gopeed",
+    "language": "Dart",
+    "stars": 21548,
+    "forks": 1491,
+    "description": "A modern download manager that supports all platforms. Built with Golang and Flutter."
+  },
+  {
+    "name": "charmbracelet/glow",
+    "url": "https://github.com/charmbracelet/glow",
+    "language": "Go",
+    "stars": 20608,
+    "forks": 497,
+    "description": "Render markdown on the CLI, with pizzazz! 💅🏻"
+  },
+  {
+    "name": "1Panel-dev/MaxKB",
+    "url": "https://github.com/1Panel-dev/MaxKB",
+    "language": "Python",
+    "stars": 19059,
+    "forks": 2476,
+    "description": "🔥 MaxKB is an open-source platform for building enterprise-grade agents. MaxKB 是强大易用的开源企业级智能体平台。"
+  },
+  {
+    "name": "nocobase/nocobase",
+    "url": "https://github.com/nocobase/nocobase",
+    "language": "TypeScript",
+    "stars": 19030,
+    "forks": 2125,
+    "description": "NocoBase is the most extensible AI-powered no-code/low-code platform for building business applications and enterprise solutions."
+  },
+  {
+    "name": "lima-vm/lima",
+    "url": "https://github.com/lima-vm/lima",
+    "language": "Go",
+    "stars": 18665,
+    "forks": 745,
+    "description": "Linux virtual machines, with a focus on running containers"
+  },
+  {
+    "name": "simstudioai/sim",
+    "url": "https://github.com/simstudioai/sim",
+    "language": "TypeScript",
+    "stars": 17663,
+    "forks": 2354,
+    "description": "Open-source platform to build and deploy AI agent workflows."
+  },
+  {
+    "name": "HandsOnLLM/Hands-On-Large-Language-Models",
+    "url": "https://github.com/HandsOnLLM/Hands-On-Large-Language-Models",
+    "language": "JupyterNotebook",
+    "stars": 17311,
+    "forks": 4054,
+    "description": "Official code repo for the O'Reilly Book - \"Hands-On Large Language Models\""
+  },
+  {
+    "name": "Skyvern-AI/skyvern",
+    "url": "https://github.com/Skyvern-AI/skyvern",
+    "language": "Python",
+    "stars": 17110,
+    "forks": 1449,
+    "description": "Automate browser based workflows with AI"
+  },
+  {
+    "name": "ggml-org/ggml",
+    "url": "https://github.com/ggml-org/ggml",
+    "language": "C++",
+    "stars": 13503,
+    "forks": 1385,
+    "description": "Tensor library for machine learning"
+  },
+  {
+    "name": "TodePond/GulfOfMexico",
+    "url": "https://github.com/TodePond/GulfOfMexico",
+    "language": "Unknown",
+    "stars": 12997,
+    "forks": 451,
+    "description": "perfect programming language"
+  },
+  {
+    "name": "FFmpeg/asm-lessons",
+    "url": "https://github.com/FFmpeg/asm-lessons",
+    "language": "Unknown",
+    "stars": 10893,
+    "forks": 333,
+    "description": "FFmpeg Assembly Language Lessons"
+  },
+  {
+    "name": "HKUDS/DeepCode",
+    "url": "https://github.com/HKUDS/DeepCode",
+    "language": "Python",
+    "stars": 9278,
+    "forks": 1259,
+    "description": "\"DeepCode: Open Agentic Coding (Paper2Code & Text2Web & Text2Backend)\""
+  },
+  {
+    "name": "hmjz100/LinkSwift",
+    "url": "https://github.com/hmjz100/LinkSwift",
+    "language": "JavaScript",
+    "stars": 8378,
+    "forks": 404,
+    "description": "一个基于 JavaScript 的网盘文件下载地址获取工具。基于【网盘直链下载助手】修改 ，支持 百度网盘 / 阿里云盘 / 中国移动云盘 / 天翼云盘 / 迅雷云盘 / 夸克网盘 / UC网盘 / 123云盘 八大网盘"
+  },
+  {
+    "name": "GeeeekExplorer/nano-vllm",
+    "url": "https://github.com/GeeeekExplorer/nano-vllm",
+    "language": "Python",
+    "stars": 8067,
+    "forks": 996,
+    "description": "Nano vLLM"
+  },
+  {
+    "name": "prometheus/alertmanager",
+    "url": "https://github.com/prometheus/alertmanager",
+    "language": "Go",
+    "stars": 7951,
+    "forks": 2343,
+    "description": "Prometheus Alertmanager"
+  },
+  {
+    "name": "antiwork/gumroad",
+    "url": "https://github.com/antiwork/gumroad",
+    "language": "Ruby",
+    "stars": 7496,
+    "forks": 1410,
+    "description": "Sell stuff and see what sticks"
+  },
+  {
+    "name": "KotatsuApp/Kotatsu",
+    "url": "https://github.com/KotatsuApp/Kotatsu",
+    "language": "Kotlin",
+    "stars": 7331,
+    "forks": 385,
+    "description": "Manga reader for Android"
+  },
+  {
+    "name": "awslabs/mcp",
+    "url": "https://github.com/awslabs/mcp",
+    "language": "Python",
+    "stars": 7318,
+    "forks": 1052,
+    "description": "AWS MCP Servers — helping you get the most out of AWS, wherever you use MCP."
+  },
+  {
+    "name": "fastfire/deepdarkCTI",
+    "url": "https://github.com/fastfire/deepdarkCTI",
+    "language": "Unknown",
+    "stars": 6061,
+    "forks": 1040,
+    "description": "Collection of Cyber Threat Intelligence sources from the deep and dark web"
+  },
+  {
+    "name": "aandrew-me/ytDownloader",
+    "url": "https://github.com/aandrew-me/ytDownloader",
+    "language": "JavaScript",
+    "stars": 5798,
+    "forks": 480,
+    "description": "Desktop App for downloading Videos and Audios from hundreds of sites"
+  },
+  {
+    "name": "usestrix/strix",
+    "url": "https://github.com/usestrix/strix",
+    "language": "Python",
+    "stars": 5585,
+    "forks": 585,
+    "description": "✨ Open-source AI hackers for your apps 👨🏻‍💻"
+  },
+  {
+    "name": "airweave-ai/airweave",
+    "url": "https://github.com/airweave-ai/airweave",
+    "language": "Python",
+    "stars": 4827,
+    "forks": 578,
+    "description": "Context retrieval for AI agents across apps and databases"
+  },
+  {
+    "name": "sst/opentui",
+    "url": "https://github.com/sst/opentui",
+    "language": "TypeScript",
+    "stars": 4717,
+    "forks": 174,
+    "description": "OpenTUI is a library for building terminal user interfaces (TUIs)"
+  },
+  {
+    "name": "coleam00/ottomator-agents",
+    "url": "https://github.com/coleam00/ottomator-agents",
+    "language": "Python",
+    "stars": 4687,
+    "forks": 1675,
+    "description": "All the open source AI Agents hosted on the oTTomator Live Agent Studio platform!"
+  },
+  {
+    "name": "NickvisionApps/Parabolic",
+    "url": "https://github.com/NickvisionApps/Parabolic",
+    "language": "C++",
+    "stars": 4098,
+    "forks": 188,
+    "description": "Download web video and audio"
+  },
+  {
+    "name": "VectifyAI/PageIndex",
+    "url": "https://github.com/VectifyAI/PageIndex",
+    "language": "Python",
+    "stars": 3493,
+    "forks": 262,
+    "description": "📑 PageIndex: Document Index for Reasoning-based RAG"
+  },
+  {
+    "name": "get-convex/chef",
+    "url": "https://github.com/get-convex/chef",
+    "language": "TypeScript",
+    "stars": 2952,
+    "forks": 557,
+    "description": "The only AI app builder that knows backend"
+  },
+  {
+    "name": "modelcontextprotocol/go-sdk",
+    "url": "https://github.com/modelcontextprotocol/go-sdk",
+    "language": "Go",
+    "stars": 2849,
+    "forks": 257,
+    "description": "The official Go SDK for Model Context Protocol servers and clients. Maintained in collaboration with Google."
+  },
+  {
+    "name": "DearVa/Everywhere",
+    "url": "https://github.com/DearVa/Everywhere",
+    "language": "C#",
+    "stars": 2280,
+    "forks": 118,
+    "description": "A context-aware AI assistant for your desktop. Ready to respond intelligently, seamlessly integrating multiple LLMs and MCP tools."
+  },
+  {
+    "name": "thinking-machines-lab/tinker-cookbook",
+    "url": "https://github.com/thinking-machines-lab/tinker-cookbook",
+    "language": "Python",
+    "stars": 1564,
+    "forks": 123,
+    "description": "Post-training with Tinker"
+  },
+  {
+    "name": "jamwithai/arxiv-paper-curator",
+    "url": "https://github.com/jamwithai/arxiv-paper-curator",
+    "language": "Python",
+    "stars": 1422,
+    "forks": 432,
+    "description": "None"
+  },
+  {
+    "name": "mudler/edgevpn",
+    "url": "https://github.com/mudler/edgevpn",
+    "language": "Go",
+    "stars": 1326,
+    "forks": 149,
+    "description": "⛵ The immutable, decentralized, statically built p2p VPN without any central server and automatic discovery! Create decentralized introspectable tunnels over p2p with shared tokens"
+  },
+  {
+    "name": "ad-on-is/rachoon",
+    "url": "https://github.com/ad-on-is/rachoon",
+    "language": "TypeScript",
+    "stars": 803,
+    "forks": 49,
+    "description": "🦝 Rachoon — A self-hostable way to handle invoices"
+  },
+  {
+    "name": "GoogleCloudPlatform/vertex-ai-creative-studio",
+    "url": "https://github.com/GoogleCloudPlatform/vertex-ai-creative-studio",
+    "language": "JupyterNotebook",
+    "stars": 753,
+    "forks": 224,
+    "description": "GenMedia Creative Studio is a Vertex AI generative media user experience highlighting the use of Imagen, Veo, Gemini 🍌, Gemini TTS, Chirp 3, Lyria and other generative media APIs on Google Cloud."
+  }
+]

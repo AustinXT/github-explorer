@@ -1,0 +1,82 @@
+[
+  {
+    "name": "remotion-dev/remotion",
+    "url": "https://github.com/remotion-dev/remotion",
+    "language": "TypeScript",
+    "stars": 28924,
+    "forks": 1718,
+    "description": "🎥 Make videos programmatically with React"
+  },
+  {
+    "name": "VectifyAI/PageIndex",
+    "url": "https://github.com/VectifyAI/PageIndex",
+    "language": "Python",
+    "stars": 7727,
+    "forks": 582,
+    "description": "📑 PageIndex: Document Index for Vectorless, Reasoning-based RAG"
+  },
+  {
+    "name": "OpenBMB/UltraRAG",
+    "url": "https://github.com/OpenBMB/UltraRAG",
+    "language": "Python",
+    "stars": 3243,
+    "forks": 245,
+    "description": "UltraRAG v3: A Low-Code MCP Framework for Building Complex and Innovative RAG Pipelines"
+  },
+  {
+    "name": "browser-use/browser-use",
+    "url": "https://github.com/browser-use/browser-use",
+    "language": "Python",
+    "stars": 76545,
+    "forks": 9113,
+    "description": "🌐 Make websites accessible for AI agents. Automate tasks online with ease."
+  },
+  {
+    "name": "block/goose",
+    "url": "https://github.com/block/goose",
+    "language": "Rust",
+    "stars": 27775,
+    "forks": 2504,
+    "description": "an open source, extensible AI agent that goes beyond code suggestions - install, execute, edit, and test with any LLM"
+  },
+  {
+    "name": "Blaizzy/mlx-audio",
+    "url": "https://github.com/Blaizzy/mlx-audio",
+    "language": "Python",
+    "stars": 3382,
+    "forks": 285,
+    "description": "A text-to-speech (TTS), speech-to-text (STT) and speech-to-speech (STS) library built on Apple's MLX framework, providing efficient speech analysis on Apple Silicon."
+  },
+  {
+    "name": "simstudioai/sim",
+    "url": "https://github.com/simstudioai/sim",
+    "language": "TypeScript",
+    "stars": 26069,
+    "forks": 3258,
+    "description": "Open-source platform to build and deploy AI agent workflows."
+  },
+  {
+    "name": "microsoft/VibeVoice",
+    "url": "https://github.com/microsoft/VibeVoice",
+    "language": "Python",
+    "stars": 21444,
+    "forks": 2352,
+    "description": "Open-Source Frontier Voice AI"
+  },
+  {
+    "name": "putyy/res-downloader",
+    "url": "https://github.com/putyy/res-downloader",
+    "language": "Go",
+    "stars": 14230,
+    "forks": 1777,
+    "description": "视频号、小程序、抖音、快手、小红书、直播流、m3u8、酷狗、QQ音乐等常见网络资源下载!"
+  },
+  {
+    "name": "AI4Finance-Foundation/FinRobot",
+    "url": "https://github.com/AI4Finance-Foundation/FinRobot",
+    "language": "JupyterNotebook",
+    "stars": 5026,
+    "forks": 926,
+    "description": "FinRobot: An Open-Source AI Agent Platform for Financial Analysis using LLMs 🚀 🚀 🚀"
+  }
+]

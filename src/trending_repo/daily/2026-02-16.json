@@ -1,0 +1,90 @@
+[
+  {
+    "name": "alibaba/zvec",
+    "url": "https://github.com/alibaba/zvec",
+    "language": "C++",
+    "stars": 2748,
+    "forks": 138,
+    "description": "A lightweight, lightning-fast, in-process vector database"
+  },
+  {
+    "name": "nautechsystems/nautilus_trader",
+    "url": "https://github.com/nautechsystems/nautilus_trader",
+    "language": "Rust",
+    "stars": 19565,
+    "forks": 2310,
+    "description": "A high-performance algorithmic trading platform and event-driven backtester"
+  },
+  {
+    "name": "rowboatlabs/rowboat",
+    "url": "https://github.com/rowboatlabs/rowboat",
+    "language": "TypeScript",
+    "stars": 7076,
+    "forks": 606,
+    "description": "Open-source AI coworker, with memory"
+  },
+  {
+    "name": "steipete/gogcli",
+    "url": "https://github.com/steipete/gogcli",
+    "language": "Go",
+    "stars": 3231,
+    "forks": 279,
+    "description": "Google Suite CLI: Gmail, GCal, GDrive, GContacts."
+  },
+  {
+    "name": "openclaw/openclaw",
+    "url": "https://github.com/openclaw/openclaw",
+    "language": "TypeScript",
+    "stars": 199309,
+    "forks": 35202,
+    "description": "Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞"
+  },
+  {
+    "name": "SynkraAI/aios-core",
+    "url": "https://github.com/SynkraAI/aios-core",
+    "language": "JavaScript",
+    "stars": 870,
+    "forks": 303,
+    "description": "Synkra AIOS: AI-Orchestrated System for Full Stack Development - Core Framework v4.0"
+  },
+  {
+    "name": "letta-ai/letta-code",
+    "url": "https://github.com/letta-ai/letta-code",
+    "language": "TypeScript",
+    "stars": 1326,
+    "forks": 149,
+    "description": "The memory-first coding agent"
+  },
+  {
+    "name": "ruvnet/wifi-densepose",
+    "url": "https://github.com/ruvnet/wifi-densepose",
+    "language": "Python",
+    "stars": 6639,
+    "forks": 579,
+    "description": "Production-ready implementation of InvisPose - a revolutionary WiFi-based dense human pose estimation system that enables real-time full-body tracking through walls using commodity mesh routers"
+  },
+  {
+    "name": "maxritter/claude-pilot",
+    "url": "https://github.com/maxritter/claude-pilot",
+    "language": "TypeScript",
+    "stars": 1070,
+    "forks": 84,
+    "description": "Claude Code is powerful. Pilot makes it reliable. Start a task, grab a coffee, come back to production-grade code. Tests enforced. Context preserved. Quality automated."
+  },
+  {
+    "name": "seerr-team/seerr",
+    "url": "https://github.com/seerr-team/seerr",
+    "language": "TypeScript",
+    "stars": 8888,
+    "forks": 591,
+    "description": "Open-source media request and discovery manager for Jellyfin, Plex, and Emby."
+  },
+  {
+    "name": "hummingbot/hummingbot",
+    "url": "https://github.com/hummingbot/hummingbot",
+    "language": "Python",
+    "stars": 16215,
+    "forks": 4365,
+    "description": "Open source software that helps you create and deploy high-frequency crypto trading bots"
+  }
+]

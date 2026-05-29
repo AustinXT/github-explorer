@@ -1,0 +1,74 @@
+[
+  {
+    "name": "obra/superpowers",
+    "url": "https://github.com/obra/superpowers",
+    "language": "Shell",
+    "stars": 25333,
+    "forks": 1880,
+    "description": "An agentic skills framework & software development methodology that works."
+  },
+  {
+    "name": "Gentleman-Programming/Gentleman.Dots",
+    "url": "https://github.com/Gentleman-Programming/Gentleman.Dots",
+    "language": "Shell",
+    "stars": 1079,
+    "forks": 178,
+    "description": "My personal configuration for LazyVim !"
+  },
+  {
+    "name": "google/langextract",
+    "url": "https://github.com/google/langextract",
+    "language": "Python",
+    "stars": 20942,
+    "forks": 1462,
+    "description": "A Python library for extracting structured information from unstructured text using LLMs with precise source grounding and interactive visualization."
+  },
+  {
+    "name": "cjpais/Handy",
+    "url": "https://github.com/cjpais/Handy",
+    "language": "TypeScript",
+    "stars": 11557,
+    "forks": 775,
+    "description": "A free, open source, and extensible speech-to-text application that works completely offline."
+  },
+  {
+    "name": "puckeditor/puck",
+    "url": "https://github.com/puckeditor/puck",
+    "language": "TypeScript",
+    "stars": 10850,
+    "forks": 763,
+    "description": "The visual editor for React"
+  },
+  {
+    "name": "ultralytics/ultralytics",
+    "url": "https://github.com/ultralytics/ultralytics",
+    "language": "Python",
+    "stars": 51626,
+    "forks": 9918,
+    "description": "Ultralytics YOLO 🚀"
+  },
+  {
+    "name": "eigent-ai/eigent",
+    "url": "https://github.com/eigent-ai/eigent",
+    "language": "TypeScript",
+    "stars": 7203,
+    "forks": 783,
+    "description": "Eigent: The Open Source Cowork Desktop to Unlock Your Exceptional Productivity."
+  },
+  {
+    "name": "iOfficeAI/AionUi",
+    "url": "https://github.com/iOfficeAI/AionUi",
+    "language": "TypeScript",
+    "stars": 3951,
+    "forks": 330,
+    "description": "Free, local, open-source Cowork for Gemini CLI, Claude Code, Codex, Qwen Code, Goose Cli, Auggie, and more | 🌟 Star if you like it!"
+  },
+  {
+    "name": "agentsmd/agents.md",
+    "url": "https://github.com/agentsmd/agents.md",
+    "language": "TypeScript",
+    "stars": 15200,
+    "forks": 1063,
+    "description": "AGENTS.md — a simple, open format for guiding coding agents"
+  }
+]

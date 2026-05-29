@@ -1,0 +1,122 @@
+[
+  {
+    "name": "ZuodaoTech/everyone-can-use-english",
+    "url": "https://github.com/ZuodaoTech/everyone-can-use-english",
+    "language": "TypeScript",
+    "stars": 29553,
+    "forks": 4265,
+    "description": "人人都能用英语"
+  },
+  {
+    "name": "HKUDS/RAG-Anything",
+    "url": "https://github.com/HKUDS/RAG-Anything",
+    "language": "Python",
+    "stars": 6081,
+    "forks": 697,
+    "description": "\"RAG-Anything: All-in-One RAG Framework\""
+  },
+  {
+    "name": "humanlayer/humanlayer",
+    "url": "https://github.com/humanlayer/humanlayer",
+    "language": "TypeScript",
+    "stars": 3117,
+    "forks": 271,
+    "description": "The best way to get AI to solve hard problems in complex codebases."
+  },
+  {
+    "name": "gin-gonic/gin",
+    "url": "https://github.com/gin-gonic/gin",
+    "language": "Go",
+    "stars": 85808,
+    "forks": 8417,
+    "description": "Gin is a high-performance HTTP web framework written in Go. It provides a Martini-like API but with significantly better performance—up to 40 times faster—thanks to httprouter. Gin is designed for building REST APIs, web applications, and microservices."
+  },
+  {
+    "name": "basecamp/omarchy",
+    "url": "https://github.com/basecamp/omarchy",
+    "language": "Shell",
+    "stars": 10586,
+    "forks": 1050,
+    "description": "Opinionated Arch/Hyprland Setup"
+  },
+  {
+    "name": "onyx-dot-app/onyx",
+    "url": "https://github.com/onyx-dot-app/onyx",
+    "language": "Python",
+    "stars": 13978,
+    "forks": 1933,
+    "description": "Open Source AI Platform - AI Chat with advanced features that works with every LLM"
+  },
+  {
+    "name": "ericciarla/trendFinder",
+    "url": "https://github.com/ericciarla/trendFinder",
+    "language": "TypeScript",
+    "stars": 3505,
+    "forks": 393,
+    "description": "Stay on top of trending topics on social media and the web with AI"
+  },
+  {
+    "name": "netdata/netdata",
+    "url": "https://github.com/netdata/netdata",
+    "language": "C",
+    "stars": 76041,
+    "forks": 6166,
+    "description": "The fastest path to AI-powered full stack observability, even for lean teams."
+  },
+  {
+    "name": "jellyfin/jellyfin",
+    "url": "https://github.com/jellyfin/jellyfin",
+    "language": "C#",
+    "stars": 43665,
+    "forks": 3926,
+    "description": "The Free Software Media System - Server Backend & API"
+  },
+  {
+    "name": "bytedance/Dolphin",
+    "url": "https://github.com/bytedance/Dolphin",
+    "language": "Python",
+    "stars": 6735,
+    "forks": 542,
+    "description": "The official repo for “Dolphin: Document Image Parsing via Heterogeneous Anchor Prompting”, ACL, 2025."
+  },
+  {
+    "name": "google-gemini/gemini-cli",
+    "url": "https://github.com/google-gemini/gemini-cli",
+    "language": "TypeScript",
+    "stars": 76728,
+    "forks": 8241,
+    "description": "An open-source AI agent that brings the power of Gemini directly into your terminal."
+  },
+  {
+    "name": "exo-explore/exo",
+    "url": "https://github.com/exo-explore/exo",
+    "language": "Python",
+    "stars": 31404,
+    "forks": 2086,
+    "description": "Run your own AI cluster at home with everyday devices 📱💻 🖥️⌚"
+  },
+  {
+    "name": "is-a-dev/register",
+    "url": "https://github.com/is-a-dev/register",
+    "language": "JavaScript",
+    "stars": 7672,
+    "forks": 14170,
+    "description": "Grab your own sweet-looking '.is-a.dev' subdomain."
+  },
+  {
+    "name": "google-gemini/cookbook",
+    "url": "https://github.com/google-gemini/cookbook",
+    "language": "JupyterNotebook",
+    "stars": 14775,
+    "forks": 2114,
+    "description": "Examples and guides for using the Gemini API"
+  },
+  {
+    "name": "ultralytics/ultralytics",
+    "url": "https://github.com/ultralytics/ultralytics",
+    "language": "Python",
+    "stars": 46259,
+    "forks": 8985,
+    "description": "Ultralytics YOLO 🚀"
+  }
+]

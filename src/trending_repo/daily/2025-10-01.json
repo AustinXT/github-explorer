@@ -1,0 +1,146 @@
+[
+  {
+    "name": "harry0703/MoneyPrinterTurbo",
+    "url": "https://github.com/harry0703/MoneyPrinterTurbo",
+    "language": "Python",
+    "stars": 44279,
+    "forks": 6243,
+    "description": "利用AI大模型，一键生成高清短视频 Generate short videos with one click using AI LLM."
+  },
+  {
+    "name": "nextcloud/server",
+    "url": "https://github.com/nextcloud/server",
+    "language": "PHP",
+    "stars": 31553,
+    "forks": 4478,
+    "description": "☁️ Nextcloud server, a safe home for all your data"
+  },
+  {
+    "name": "typst/typst",
+    "url": "https://github.com/typst/typst",
+    "language": "Rust",
+    "stars": 46432,
+    "forks": 1253,
+    "description": "A new markup-based typesetting system that is powerful and easy to learn."
+  },
+  {
+    "name": "fastapi/fastapi",
+    "url": "https://github.com/fastapi/fastapi",
+    "language": "Python",
+    "stars": 90271,
+    "forks": 7986,
+    "description": "FastAPI framework, high performance, easy to learn, fast to code, ready for production"
+  },
+  {
+    "name": "commaai/openpilot",
+    "url": "https://github.com/commaai/openpilot",
+    "language": "Python",
+    "stars": 57990,
+    "forks": 10278,
+    "description": "openpilot is an operating system for robotics. Currently, it upgrades the driver assistance system on 300+ supported cars."
+  },
+  {
+    "name": "DevCaress/guia-entrevistas-de-programacion",
+    "url": "https://github.com/DevCaress/guia-entrevistas-de-programacion",
+    "language": "Unknown",
+    "stars": 6075,
+    "forks": 838,
+    "description": "None"
+  },
+  {
+    "name": "anthropics/claude-agent-sdk-python",
+    "url": "https://github.com/anthropics/claude-agent-sdk-python",
+    "language": "Python",
+    "stars": 1631,
+    "forks": 218,
+    "description": "None"
+  },
+  {
+    "name": "juliangarnier/anime",
+    "url": "https://github.com/juliangarnier/anime",
+    "language": "JavaScript",
+    "stars": 64460,
+    "forks": 4312,
+    "description": "JavaScript animation engine"
+  },
+  {
+    "name": "kamranahmedse/developer-roadmap",
+    "url": "https://github.com/kamranahmedse/developer-roadmap",
+    "language": "TypeScript",
+    "stars": 339173,
+    "forks": 43014,
+    "description": "Interactive roadmaps, guides and other educational content to help developers grow in their careers."
+  },
+  {
+    "name": "Done-0/fuck-u-code",
+    "url": "https://github.com/Done-0/fuck-u-code",
+    "language": "Go",
+    "stars": 4572,
+    "forks": 227,
+    "description": "Legacy-Mess Detector – assess the “legacy-mess level” of your code and output a beautiful report | 屎山代码检测器，评估代码的“屎山等级”并输出美观的报告"
+  },
+  {
+    "name": "microsoft/ai-agents-for-beginners",
+    "url": "https://github.com/microsoft/ai-agents-for-beginners",
+    "language": "JupyterNotebook",
+    "stars": 41271,
+    "forks": 13366,
+    "description": "12 Lessons to Get Started Building AI Agents"
+  },
+  {
+    "name": "rasbt/LLMs-from-scratch",
+    "url": "https://github.com/rasbt/LLMs-from-scratch",
+    "language": "JupyterNotebook",
+    "stars": 74063,
+    "forks": 10768,
+    "description": "Implement a ChatGPT-like LLM in PyTorch from scratch, step by step"
+  },
+  {
+    "name": "anthropics/claude-code",
+    "url": "https://github.com/anthropics/claude-code",
+    "language": "TypeScript",
+    "stars": 35063,
+    "forks": 2170,
+    "description": "Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands."
+  },
+  {
+    "name": "bregman-arie/devops-exercises",
+    "url": "https://github.com/bregman-arie/devops-exercises",
+    "language": "Python",
+    "stars": 78912,
+    "forks": 17813,
+    "description": "Linux, Jenkins, AWS, SRE, Prometheus, Docker, Python, Ansible, Git, Kubernetes, Terraform, OpenStack, SQL, NoSQL, Azure, GCP, DNS, Elastic, Network, Virtualization. DevOps Interview Questions"
+  },
+  {
+    "name": "Shubhamsaboo/awesome-llm-apps",
+    "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+    "language": "Python",
+    "stars": 70967,
+    "forks": 9089,
+    "description": "Collection of awesome LLM apps with AI Agents and RAG using OpenAI, Anthropic, Gemini and opensource models."
+  },
+  {
+    "name": "Byaidu/PDFMathTranslate",
+    "url": "https://github.com/Byaidu/PDFMathTranslate",
+    "language": "Python",
+    "stars": 28230,
+    "forks": 2487,
+    "description": "PDF scientific paper translation with preserved formats - 基于 AI 完整保留排版的 PDF 文档全文双语翻译，支持 Google/DeepL/Ollama/OpenAI 等服务，提供 CLI/GUI/MCP/Docker/Zotero"
+  },
+  {
+    "name": "cjpais/Handy",
+    "url": "https://github.com/cjpais/Handy",
+    "language": "TypeScript",
+    "stars": 1254,
+    "forks": 77,
+    "description": "A free, open source, and extensible speech-to-text application that works completely offline."
+  },
+  {
+    "name": "SDWebImage/SDWebImage",
+    "url": "https://github.com/SDWebImage/SDWebImage",
+    "language": "Objective-C",
+    "stars": 25631,
+    "forks": 5994,
+    "description": "Asynchronous image downloader with cache support as a UIImageView category"
+  }
+]

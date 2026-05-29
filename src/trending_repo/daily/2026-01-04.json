@@ -1,0 +1,82 @@
+[
+  {
+    "name": "OpenBB-finance/OpenBB",
+    "url": "https://github.com/OpenBB-finance/OpenBB",
+    "language": "Python",
+    "stars": 56625,
+    "forks": 5506,
+    "description": "Financial data platform for analysts, quants and AI agents."
+  },
+  {
+    "name": "openai/openai-cookbook",
+    "url": "https://github.com/openai/openai-cookbook",
+    "language": "JupyterNotebook",
+    "stars": 70517,
+    "forks": 11835,
+    "description": "Examples and guides for using the OpenAI API"
+  },
+  {
+    "name": "nocodb/nocodb",
+    "url": "https://github.com/nocodb/nocodb",
+    "language": "TypeScript",
+    "stars": 60427,
+    "forks": 4496,
+    "description": "🔥 🔥 🔥 Open Source Airtable Alternative"
+  },
+  {
+    "name": "HQarroum/docker-android",
+    "url": "https://github.com/HQarroum/docker-android",
+    "language": "Shell",
+    "stars": 2327,
+    "forks": 139,
+    "description": "🤖 A minimal and customizable Docker image running the Android emulator as a service."
+  },
+  {
+    "name": "usememos/memos",
+    "url": "https://github.com/usememos/memos",
+    "language": "Go",
+    "stars": 50940,
+    "forks": 3672,
+    "description": "An open-source, self-hosted note-taking service. Your thoughts, your data, your control — no tracking, no ads, no subscription fees."
+  },
+  {
+    "name": "virattt/ai-hedge-fund",
+    "url": "https://github.com/virattt/ai-hedge-fund",
+    "language": "Python",
+    "stars": 44424,
+    "forks": 7843,
+    "description": "An AI Hedge Fund Team"
+  },
+  {
+    "name": "ourongxing/newsnow",
+    "url": "https://github.com/ourongxing/newsnow",
+    "language": "TypeScript",
+    "stars": 16489,
+    "forks": 4794,
+    "description": "Elegant reading of real-time and hottest news"
+  },
+  {
+    "name": "anomalyco/opencode",
+    "url": "https://github.com/anomalyco/opencode",
+    "language": "TypeScript",
+    "stars": 46955,
+    "forks": 4037,
+    "description": "The open source coding agent."
+  },
+  {
+    "name": "5rahim/seanime",
+    "url": "https://github.com/5rahim/seanime",
+    "language": "Go",
+    "stars": 1873,
+    "forks": 131,
+    "description": "Open-source media server with a web interface and desktop app for anime and manga."
+  },
+  {
+    "name": "python/cpython",
+    "url": "https://github.com/python/cpython",
+    "language": "Python",
+    "stars": 70608,
+    "forks": 33813,
+    "description": "The Python programming language"
+  }
+]

@@ -1,0 +1,106 @@
+[
+  {
+    "name": "tambo-ai/tambo",
+    "url": "https://github.com/tambo-ai/tambo",
+    "language": "TypeScript",
+    "stars": 8729,
+    "forks": 420,
+    "description": "Generative UI SDK for React"
+  },
+  {
+    "name": "danielmiessler/Personal_AI_Infrastructure",
+    "url": "https://github.com/danielmiessler/Personal_AI_Infrastructure",
+    "language": "TypeScript",
+    "stars": 7203,
+    "forks": 1064,
+    "description": "Agentic AI Infrastructure for magnifying HUMAN capabilities."
+  },
+  {
+    "name": "google/langextract",
+    "url": "https://github.com/google/langextract",
+    "language": "Python",
+    "stars": 30938,
+    "forks": 2061,
+    "description": "A Python library for extracting structured information from unstructured text using LLMs with precise source grounding and interactive visualization."
+  },
+  {
+    "name": "ChromeDevTools/chrome-devtools-mcp",
+    "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+    "language": "TypeScript",
+    "stars": 24203,
+    "forks": 1433,
+    "description": "Chrome DevTools for coding agents"
+  },
+  {
+    "name": "microsoft/PowerToys",
+    "url": "https://github.com/microsoft/PowerToys",
+    "language": "C#",
+    "stars": 129537,
+    "forks": 7703,
+    "description": "Microsoft PowerToys is a collection of utilities that supercharge productivity and customization on Windows"
+  },
+  {
+    "name": "iOfficeAI/AionUi",
+    "url": "https://github.com/iOfficeAI/AionUi",
+    "language": "TypeScript",
+    "stars": 15132,
+    "forks": 1148,
+    "description": "Free, local, open-source 24/7 Cowork and OpenClaw for Gemini CLI, Claude Code, Codex, OpenCode, Qwen Code, Goose CLI, Auggie, and more | 🌟 Star if you like it!"
+  },
+  {
+    "name": "Shubhamsaboo/awesome-llm-apps",
+    "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+    "language": "Python",
+    "stars": 94133,
+    "forks": 13655,
+    "description": "Collection of awesome LLM apps with AI Agents and RAG using OpenAI, Anthropic, Gemini and opensource models."
+  },
+  {
+    "name": "rowboatlabs/rowboat",
+    "url": "https://github.com/rowboatlabs/rowboat",
+    "language": "TypeScript",
+    "stars": 4914,
+    "forks": 388,
+    "description": "Open-source AI coworker, with memory"
+  },
+  {
+    "name": "github/gh-aw",
+    "url": "https://github.com/github/gh-aw",
+    "language": "Go",
+    "stars": 1916,
+    "forks": 132,
+    "description": "GitHub Agentic Workflows"
+  },
+  {
+    "name": "unslothai/unsloth",
+    "url": "https://github.com/unslothai/unsloth",
+    "language": "Python",
+    "stars": 51934,
+    "forks": 4302,
+    "description": "Fine-tuning & Reinforcement Learning for LLMs. 🦥 Train OpenAI gpt-oss, DeepSeek, Qwen, Llama, Gemma, TTS 2x faster with 70% less VRAM."
+  },
+  {
+    "name": "cinnyapp/cinny",
+    "url": "https://github.com/cinnyapp/cinny",
+    "language": "TypeScript",
+    "stars": 2783,
+    "forks": 385,
+    "description": "Yet another matrix client"
+  },
+  {
+    "name": "Jeffallan/claude-skills",
+    "url": "https://github.com/Jeffallan/claude-skills",
+    "language": "Python",
+    "stars": 1361,
+    "forks": 103,
+    "description": "66 Specialized Skills for Full-Stack Developers. Transform Claude Code into your expert pair programmer."
+  },
+  {
+    "name": "HandsOnLLM/Hands-On-Large-Language-Models",
+    "url": "https://github.com/HandsOnLLM/Hands-On-Large-Language-Models",
+    "language": "JupyterNotebook",
+    "stars": 20729,
+    "forks": 4958,
+    "description": "Official code repo for the O'Reilly Book - \"Hands-On Large Language Models\""
+  }
+]

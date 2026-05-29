@@ -1,0 +1,154 @@
+[
+  {
+    "name": "666ghj/BettaFish",
+    "url": "https://github.com/666ghj/BettaFish",
+    "language": "Python",
+    "stars": 10012,
+    "forks": 1417,
+    "description": "微舆：人人可用的多Agent舆情分析助手，打破信息茧房，还原舆情原貌，预测未来走向，辅助决策！从0实现，不依赖任何框架。"
+  },
+  {
+    "name": "sst/opentui",
+    "url": "https://github.com/sst/opentui",
+    "language": "TypeScript",
+    "stars": 3561,
+    "forks": 133,
+    "description": "OpenTUI is a library for building terminal user interfaces (TUIs)"
+  },
+  {
+    "name": "GeeeekExplorer/nano-vllm",
+    "url": "https://github.com/GeeeekExplorer/nano-vllm",
+    "language": "Python",
+    "stars": 8067,
+    "forks": 996,
+    "description": "Nano vLLM"
+  },
+  {
+    "name": "mudler/LocalAI",
+    "url": "https://github.com/mudler/LocalAI",
+    "language": "Go",
+    "stars": 36754,
+    "forks": 2905,
+    "description": "🤖 The free, Open Source alternative to OpenAI, Claude and others. Self-hosted and local-first. Drop-in replacement for OpenAI, running on consumer-grade hardware. No GPU required. Runs gguf, transformers, diffusers and many more. Features: Generate Text, Audio, Video, Images, Voice Cloning, Distributed, P2P and decentralized inference"
+  },
+  {
+    "name": "1Panel-dev/MaxKB",
+    "url": "https://github.com/1Panel-dev/MaxKB",
+    "language": "Python",
+    "stars": 19059,
+    "forks": 2476,
+    "description": "🔥 MaxKB is an open-source platform for building enterprise-grade agents. MaxKB 是强大易用的开源企业级智能体平台。"
+  },
+  {
+    "name": "imthenachoman/How-To-Secure-A-Linux-Server",
+    "url": "https://github.com/imthenachoman/How-To-Secure-A-Linux-Server",
+    "language": "Unknown",
+    "stars": 20525,
+    "forks": 1299,
+    "description": "An evolving how-to guide for securing a Linux server."
+  },
+  {
+    "name": "Raphire/Win11Debloat",
+    "url": "https://github.com/Raphire/Win11Debloat",
+    "language": "PowerShell",
+    "stars": 31498,
+    "forks": 1240,
+    "description": "A simple, lightweight PowerShell script to remove pre-installed apps, disable telemetry, as well as perform various other changes to customize, declutter and improve your Windows experience. Win11Debloat works for both Windows 10 and Windows 11."
+  },
+  {
+    "name": "DearVa/Everywhere",
+    "url": "https://github.com/DearVa/Everywhere",
+    "language": "C#",
+    "stars": 2280,
+    "forks": 118,
+    "description": "A context-aware AI assistant for your desktop. Ready to respond intelligently, seamlessly integrating multiple LLMs and MCP tools."
+  },
+  {
+    "name": "HKUDS/DeepCode",
+    "url": "https://github.com/HKUDS/DeepCode",
+    "language": "Python",
+    "stars": 9017,
+    "forks": 1238,
+    "description": "\"DeepCode: Open Agentic Coding (Paper2Code & Text2Web & Text2Backend)\""
+  },
+  {
+    "name": "Fosowl/agenticSeek",
+    "url": "https://github.com/Fosowl/agenticSeek",
+    "language": "Python",
+    "stars": 23167,
+    "forks": 2491,
+    "description": "Fully Local Manus AI. No APIs, No $200 monthly bills. Enjoy an autonomous agent that thinks, browses the web, and code for the sole cost of electricity. 🔔 Official updates only via twitter @Martin993886460 (Beware of fake account)"
+  },
+  {
+    "name": "charmbracelet/glow",
+    "url": "https://github.com/charmbracelet/glow",
+    "language": "Go",
+    "stars": 20608,
+    "forks": 497,
+    "description": "Render markdown on the CLI, with pizzazz! 💅🏻"
+  },
+  {
+    "name": "mudler/edgevpn",
+    "url": "https://github.com/mudler/edgevpn",
+    "language": "Go",
+    "stars": 1326,
+    "forks": 149,
+    "description": "⛵ The immutable, decentralized, statically built p2p VPN without any central server and automatic discovery! Create decentralized introspectable tunnels over p2p with shared tokens"
+  },
+  {
+    "name": "hmjz100/LinkSwift",
+    "url": "https://github.com/hmjz100/LinkSwift",
+    "language": "JavaScript",
+    "stars": 8378,
+    "forks": 404,
+    "description": "一个基于 JavaScript 的网盘文件下载地址获取工具。基于【网盘直链下载助手】修改 ，支持 百度网盘 / 阿里云盘 / 中国移动云盘 / 天翼云盘 / 迅雷云盘 / 夸克网盘 / UC网盘 / 123云盘 八大网盘"
+  },
+  {
+    "name": "coleam00/ottomator-agents",
+    "url": "https://github.com/coleam00/ottomator-agents",
+    "language": "Python",
+    "stars": 4629,
+    "forks": 1664,
+    "description": "All the open source AI Agents hosted on the oTTomator Live Agent Studio platform!"
+  },
+  {
+    "name": "PKUFlyingPig/cs-self-learning",
+    "url": "https://github.com/PKUFlyingPig/cs-self-learning",
+    "language": "HTML",
+    "stars": 68545,
+    "forks": 7672,
+    "description": "计算机自学指南"
+  },
+  {
+    "name": "cloudcommunity/Free-Certifications",
+    "url": "https://github.com/cloudcommunity/Free-Certifications",
+    "language": "Unknown",
+    "stars": 42828,
+    "forks": 2879,
+    "description": "A curated list of free courses with certifications. Also available at https://free-certifications.com/"
+  },
+  {
+    "name": "HandsOnLLM/Hands-On-Large-Language-Models",
+    "url": "https://github.com/HandsOnLLM/Hands-On-Large-Language-Models",
+    "language": "JupyterNotebook",
+    "stars": 17311,
+    "forks": 4054,
+    "description": "Official code repo for the O'Reilly Book - \"Hands-On Large Language Models\""
+  },
+  {
+    "name": "mindsdb/mindsdb",
+    "url": "https://github.com/mindsdb/mindsdb",
+    "language": "Python",
+    "stars": 36879,
+    "forks": 5942,
+    "description": "Federated query engine for AI - The only MCP Server you'll ever need"
+  },
+  {
+    "name": "Skyvern-AI/skyvern",
+    "url": "https://github.com/Skyvern-AI/skyvern",
+    "language": "Python",
+    "stars": 15540,
+    "forks": 1325,
+    "description": "Automate browser-based workflows with LLMs and Computer Vision"
+  }
+]

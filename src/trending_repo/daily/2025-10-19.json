@@ -1,0 +1,162 @@
+[
+  {
+    "name": "anthropics/claude-cookbooks",
+    "url": "https://github.com/anthropics/claude-cookbooks",
+    "language": "JupyterNotebook",
+    "stars": 21503,
+    "forks": 2304,
+    "description": "A collection of notebooks/recipes showcasing some fun and effective ways of using Claude."
+  },
+  {
+    "name": "lfnovo/open-notebook",
+    "url": "https://github.com/lfnovo/open-notebook",
+    "language": "TypeScript",
+    "stars": 5435,
+    "forks": 569,
+    "description": "An Open Source implementation of Notebook LM with more flexibility and features"
+  },
+  {
+    "name": "jingyaogong/minimind",
+    "url": "https://github.com/jingyaogong/minimind",
+    "language": "Python",
+    "stars": 30079,
+    "forks": 3479,
+    "description": "🚀🚀 「大模型」2小时完全从0训练26M的小参数GPT！🌏 Train a 26M-parameter GPT from scratch in just 2h!"
+  },
+  {
+    "name": "atuinsh/desktop",
+    "url": "https://github.com/atuinsh/desktop",
+    "language": "TypeScript",
+    "stars": 1605,
+    "forks": 46,
+    "description": "📖 Runbooks that run"
+  },
+  {
+    "name": "EbookFoundation/free-programming-books",
+    "url": "https://github.com/EbookFoundation/free-programming-books",
+    "language": "Python",
+    "stars": 373235,
+    "forks": 64883,
+    "description": "📚 Freely available programming books"
+  },
+  {
+    "name": "mountain-loop/yaak",
+    "url": "https://github.com/mountain-loop/yaak",
+    "language": "TypeScript",
+    "stars": 8231,
+    "forks": 287,
+    "description": "The most intuitive desktop API client. Organize and execute REST, GraphQL, WebSockets, Server Sent Events, and gRPC 🦬"
+  },
+  {
+    "name": "Skyvern-AI/skyvern",
+    "url": "https://github.com/Skyvern-AI/skyvern",
+    "language": "Python",
+    "stars": 14652,
+    "forks": 1253,
+    "description": "Automate browser-based workflows with LLMs and Computer Vision"
+  },
+  {
+    "name": "PaddlePaddle/PaddleOCR",
+    "url": "https://github.com/PaddlePaddle/PaddleOCR",
+    "language": "Python",
+    "stars": 58621,
+    "forks": 8939,
+    "description": "Turn any PDF or image document into structured data for your AI. A powerful, lightweight OCR toolkit that bridges the gap between images/PDFs and LLMs. Supports 100+ languages."
+  },
+  {
+    "name": "TheAlgorithms/Python",
+    "url": "https://github.com/TheAlgorithms/Python",
+    "language": "Python",
+    "stars": 211295,
+    "forks": 48796,
+    "description": "All Algorithms implemented in Python"
+  },
+  {
+    "name": "ThinkInAIXYZ/deepchat",
+    "url": "https://github.com/ThinkInAIXYZ/deepchat",
+    "language": "TypeScript",
+    "stars": 4440,
+    "forks": 538,
+    "description": "🐬DeepChat - A smart assistant that connects powerful AI to your personal world"
+  },
+  {
+    "name": "wavetermdev/waveterm",
+    "url": "https://github.com/wavetermdev/waveterm",
+    "language": "Go",
+    "stars": 11912,
+    "forks": 479,
+    "description": "An open-source, cross-platform terminal for seamless workflows"
+  },
+  {
+    "name": "microsoft/terminal",
+    "url": "https://github.com/microsoft/terminal",
+    "language": "C++",
+    "stars": 100542,
+    "forks": 8857,
+    "description": "The new Windows Terminal and the original Windows console host, all in the same place!"
+  },
+  {
+    "name": "karpathy/micrograd",
+    "url": "https://github.com/karpathy/micrograd",
+    "language": "JupyterNotebook",
+    "stars": 13000,
+    "forks": 1938,
+    "description": "A tiny scalar-valued autograd engine and a neural net library on top of it with PyTorch-like API"
+  },
+  {
+    "name": "DrewThomasson/ebook2audiobook",
+    "url": "https://github.com/DrewThomasson/ebook2audiobook",
+    "language": "Python",
+    "stars": 11947,
+    "forks": 913,
+    "description": "Generate audiobooks from e-books, voice cloning & 1107+ languages!"
+  },
+  {
+    "name": "huggingface/chat-ui",
+    "url": "https://github.com/huggingface/chat-ui",
+    "language": "TypeScript",
+    "stars": 9284,
+    "forks": 1441,
+    "description": "Open source codebase powering the HuggingChat app"
+  },
+  {
+    "name": "clockworklabs/SpacetimeDB",
+    "url": "https://github.com/clockworklabs/SpacetimeDB",
+    "language": "Rust",
+    "stars": 17706,
+    "forks": 618,
+    "description": "Multiplayer at the speed of light"
+  },
+  {
+    "name": "reflex-dev/reflex",
+    "url": "https://github.com/reflex-dev/reflex",
+    "language": "Python",
+    "stars": 26781,
+    "forks": 1588,
+    "description": "🕸️ Web apps in pure Python 🐍"
+  },
+  {
+    "name": "qbittorrent/qBittorrent",
+    "url": "https://github.com/qbittorrent/qBittorrent",
+    "language": "C++",
+    "stars": 33406,
+    "forks": 4421,
+    "description": "qBittorrent BitTorrent client"
+  },
+  {
+    "name": "microsoft/vcpkg",
+    "url": "https://github.com/microsoft/vcpkg",
+    "language": "CMake",
+    "stars": 25845,
+    "forks": 7126,
+    "description": "C++ Library Manager for Windows, Linux, and MacOS"
+  },
+  {
+    "name": "myshell-ai/OpenVoice",
+    "url": "https://github.com/myshell-ai/OpenVoice",
+    "language": "Python",
+    "stars": 34731,
+    "forks": 3835,
+    "description": "Instant voice cloning by MIT and MyShell. Audio foundation model."
+  }
+]

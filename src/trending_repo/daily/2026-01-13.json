@@ -1,0 +1,74 @@
+[
+  {
+    "name": "obra/superpowers",
+    "url": "https://github.com/obra/superpowers",
+    "language": "Shell",
+    "stars": 19548,
+    "forks": 1489,
+    "description": "Claude Code superpowers: core skills library"
+  },
+  {
+    "name": "icloud-photos-downloader/icloud_photos_downloader",
+    "url": "https://github.com/icloud-photos-downloader/icloud_photos_downloader",
+    "language": "Python",
+    "stars": 10813,
+    "forks": 721,
+    "description": "A command-line tool to download photos from iCloud"
+  },
+  {
+    "name": "blakeblackshear/frigate",
+    "url": "https://github.com/blakeblackshear/frigate",
+    "language": "TypeScript",
+    "stars": 28806,
+    "forks": 2700,
+    "description": "NVR with realtime local object detection for IP cameras"
+  },
+  {
+    "name": "twitter/the-algorithm",
+    "url": "https://github.com/twitter/the-algorithm",
+    "language": "Scala",
+    "stars": 69375,
+    "forks": 12838,
+    "description": "Source code for the X Recommendation Algorithm"
+  },
+  {
+    "name": "home-assistant/home-assistant.io",
+    "url": "https://github.com/home-assistant/home-assistant.io",
+    "language": "HTML",
+    "stars": 8219,
+    "forks": 8110,
+    "description": "📘 Home Assistant User documentation"
+  },
+  {
+    "name": "chidiwilliams/buzz",
+    "url": "https://github.com/chidiwilliams/buzz",
+    "language": "Python",
+    "stars": 16494,
+    "forks": 1231,
+    "description": "Buzz transcribes and translates audio offline on your personal computer. Powered by OpenAI's Whisper."
+  },
+  {
+    "name": "adam-maj/tiny-gpu",
+    "url": "https://github.com/adam-maj/tiny-gpu",
+    "language": "SystemVerilog",
+    "stars": 9611,
+    "forks": 765,
+    "description": "A minimal GPU design in Verilog to learn how GPUs work from the ground up"
+  },
+  {
+    "name": "Free-TV/IPTV",
+    "url": "https://github.com/Free-TV/IPTV",
+    "language": "Python",
+    "stars": 10373,
+    "forks": 1719,
+    "description": "M3U Playlist for free TV channels"
+  },
+  {
+    "name": "onlook-dev/onlook",
+    "url": "https://github.com/onlook-dev/onlook",
+    "language": "TypeScript",
+    "stars": 23928,
+    "forks": 1778,
+    "description": "The Cursor for Designers • An Open-Source AI-First Design tool • Visually build, style, and edit your React App with AI"
+  }
+]

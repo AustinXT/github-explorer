@@ -1,0 +1,90 @@
+[
+  {
+    "name": "opendataloader-project/opendataloader-pdf",
+    "url": "https://github.com/opendataloader-project/opendataloader-pdf",
+    "language": "Java",
+    "stars": 4737,
+    "forks": 362,
+    "description": "PDF Parser for AI-ready data. Automate PDF accessibility. Open-source."
+  },
+  {
+    "name": "langchain-ai/open-swe",
+    "url": "https://github.com/langchain-ai/open-swe",
+    "language": "Python",
+    "stars": 6741,
+    "forks": 852,
+    "description": "An Open-Source Asynchronous Coding Agent"
+  },
+  {
+    "name": "obra/superpowers",
+    "url": "https://github.com/obra/superpowers",
+    "language": "Shell",
+    "stars": 97881,
+    "forks": 7784,
+    "description": "An agentic skills framework & software development methodology that works."
+  },
+  {
+    "name": "jarrodwatts/claude-hud",
+    "url": "https://github.com/jarrodwatts/claude-hud",
+    "language": "JavaScript",
+    "stars": 8012,
+    "forks": 333,
+    "description": "A Claude Code plugin that shows what's happening - context usage, active tools, running agents, and todo progress"
+  },
+  {
+    "name": "unslothai/unsloth",
+    "url": "https://github.com/unslothai/unsloth",
+    "language": "Python",
+    "stars": 56326,
+    "forks": 4724,
+    "description": "Unified web UI for training and running open models like Qwen, DeepSeek, gpt-oss and Gemma locally."
+  },
+  {
+    "name": "mobile-dev-inc/Maestro",
+    "url": "https://github.com/mobile-dev-inc/Maestro",
+    "language": "Kotlin",
+    "stars": 12155,
+    "forks": 696,
+    "description": "Painless E2E Automation for Mobile and Web"
+  },
+  {
+    "name": "newton-physics/newton",
+    "url": "https://github.com/newton-physics/newton",
+    "language": "Python",
+    "stars": 3080,
+    "forks": 334,
+    "description": "An open-source, GPU-accelerated physics simulation engine built upon NVIDIA Warp, specifically targeting roboticists and simulation researchers."
+  },
+  {
+    "name": "louis-e/arnis",
+    "url": "https://github.com/louis-e/arnis",
+    "language": "Rust",
+    "stars": 10149,
+    "forks": 932,
+    "description": "Generate any location from the real world in Minecraft with a high level of detail."
+  },
+  {
+    "name": "FujiwaraChoki/MoneyPrinterV2",
+    "url": "https://github.com/FujiwaraChoki/MoneyPrinterV2",
+    "language": "Python",
+    "stars": 15687,
+    "forks": 1639,
+    "description": "Automate the process of making money online."
+  },
+  {
+    "name": "gsd-build/get-shit-done",
+    "url": "https://github.com/gsd-build/get-shit-done",
+    "language": "JavaScript",
+    "stars": 35341,
+    "forks": 2904,
+    "description": "A light-weight and powerful meta-prompting, context engineering and spec-driven development system for Claude Code by TÂCHES."
+  },
+  {
+    "name": "shareAI-lab/learn-claude-code",
+    "url": "https://github.com/shareAI-lab/learn-claude-code",
+    "language": "TypeScript",
+    "stars": 33076,
+    "forks": 5412,
+    "description": "Bash is all you need - A nano claude code–like 「agent harness」, built from 0 to 1"
+  }
+]

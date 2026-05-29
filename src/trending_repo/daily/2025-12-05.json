@@ -1,0 +1,114 @@
+[
+  {
+    "name": "basecamp/fizzy",
+    "url": "https://github.com/basecamp/fizzy",
+    "language": "Ruby",
+    "stars": 3717,
+    "forks": 383,
+    "description": "Kanban as it should be. Not as it has been."
+  },
+  {
+    "name": "rustfs/rustfs",
+    "url": "https://github.com/rustfs/rustfs",
+    "language": "Rust",
+    "stars": 13520,
+    "forks": 609,
+    "description": "🚀2.3x faster than MinIO for 4KB object payloads. RustFS is an open-source, S3-compatible high-performance object storage system supporting migration and coexistence with other S3-compatible platforms such as MinIO and Ceph."
+  },
+  {
+    "name": "trustedsec/social-engineer-toolkit",
+    "url": "https://github.com/trustedsec/social-engineer-toolkit",
+    "language": "Python",
+    "stars": 13146,
+    "forks": 3134,
+    "description": "The Social-Engineer Toolkit (SET) repository from TrustedSec - All new versions of SET will be deployed here."
+  },
+  {
+    "name": "DayuanJiang/next-ai-draw-io",
+    "url": "https://github.com/DayuanJiang/next-ai-draw-io",
+    "language": "TypeScript",
+    "stars": 3682,
+    "forks": 429,
+    "description": "A next.js web application that integrates AI capabilities with draw.io diagrams. This app allows you to create, modify, and enhance diagrams through natural language commands and AI-assisted visualization."
+  },
+  {
+    "name": "facebook/react",
+    "url": "https://github.com/facebook/react",
+    "language": "JavaScript",
+    "stars": 241131,
+    "forks": 50001,
+    "description": "The library for web and native user interfaces."
+  },
+  {
+    "name": "CorentinTh/it-tools",
+    "url": "https://github.com/CorentinTh/it-tools",
+    "language": "Vue",
+    "stars": 34648,
+    "forks": 4308,
+    "description": "Collection of handy online tools for developers, with great UX."
+  },
+  {
+    "name": "vercel/next.js",
+    "url": "https://github.com/vercel/next.js",
+    "language": "JavaScript",
+    "stars": 136107,
+    "forks": 29976,
+    "description": "The React Framework"
+  },
+  {
+    "name": "ashishpatel26/500-AI-Agents-Projects",
+    "url": "https://github.com/ashishpatel26/500-AI-Agents-Projects",
+    "language": "Unknown",
+    "stars": 18227,
+    "forks": 3370,
+    "description": "The 500 AI Agents Projects is a curated collection of AI agent use cases across various industries. It showcases practical applications and provides links to open-source projects for implementation, illustrating how AI agents are transforming sectors such as healthcare, finance, education, retail, and more."
+  },
+  {
+    "name": "sinelaw/fresh",
+    "url": "https://github.com/sinelaw/fresh",
+    "language": "Rust",
+    "stars": 395,
+    "forks": 10,
+    "description": "Text editor for your terminal: easy, powerful and fast"
+  },
+  {
+    "name": "oven-sh/bun",
+    "url": "https://github.com/oven-sh/bun",
+    "language": "Zig",
+    "stars": 83972,
+    "forks": 3701,
+    "description": "Incredibly fast JavaScript runtime, bundler, test runner, and package manager – all in one"
+  },
+  {
+    "name": "mtdvio/every-programmer-should-know",
+    "url": "https://github.com/mtdvio/every-programmer-should-know",
+    "language": "Unknown",
+    "stars": 95692,
+    "forks": 8519,
+    "description": "A collection of (mostly) technical things every software developer should know about"
+  },
+  {
+    "name": "Flowseal/zapret-discord-youtube",
+    "url": "https://github.com/Flowseal/zapret-discord-youtube",
+    "language": "Batchfile",
+    "stars": 18786,
+    "forks": 1453,
+    "description": "None"
+  },
+  {
+    "name": "sst/opencode",
+    "url": "https://github.com/sst/opencode",
+    "language": "TypeScript",
+    "stars": 35729,
+    "forks": 2963,
+    "description": "The AI coding agent built for the terminal."
+  },
+  {
+    "name": "TelegramMessenger/Telegram-iOS",
+    "url": "https://github.com/TelegramMessenger/Telegram-iOS",
+    "language": "Swift",
+    "stars": 7497,
+    "forks": 2179,
+    "description": "Telegram-iOS"
+  }
+]

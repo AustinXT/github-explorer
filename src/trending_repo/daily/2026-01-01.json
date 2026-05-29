@@ -1,0 +1,98 @@
+[
+  {
+    "name": "awslabs/amazon-bedrock-agentcore-samples",
+    "url": "https://github.com/awslabs/amazon-bedrock-agentcore-samples",
+    "language": "JupyterNotebook",
+    "stars": 1890,
+    "forks": 714,
+    "description": "Amazon Bedrock Agentcore accelerates AI agents into production with the scale, reliability, and security, critical to real-world deployment."
+  },
+  {
+    "name": "BloopAI/vibe-kanban",
+    "url": "https://github.com/BloopAI/vibe-kanban",
+    "language": "Rust",
+    "stars": 10375,
+    "forks": 936,
+    "description": "Get 10X more out of Claude Code, Codex or any coding agent"
+  },
+  {
+    "name": "usememos/memos",
+    "url": "https://github.com/usememos/memos",
+    "language": "Go",
+    "stars": 47740,
+    "forks": 3443,
+    "description": "An open-source, self-hosted note-taking service. Your thoughts, your data, your control — no tracking, no ads, no subscription fees."
+  },
+  {
+    "name": "organicmaps/organicmaps",
+    "url": "https://github.com/organicmaps/organicmaps",
+    "language": "C++",
+    "stars": 12661,
+    "forks": 1268,
+    "description": "🍃 Organic Maps is a free Android & iOS offline maps app for travelers, tourists, hikers, and cyclists. It uses crowd-sourced OpenStreetMap data and is developed with love by the community. No ads, no tracking, no data collection, no crapware. Please donate to support the development!"
+  },
+  {
+    "name": "afkarxyz/SpotiFLAC",
+    "url": "https://github.com/afkarxyz/SpotiFLAC",
+    "language": "TypeScript",
+    "stars": 1714,
+    "forks": 96,
+    "description": "Get Spotify tracks in true FLAC from Tidal, Qobuz & Amazon Music — no account required."
+  },
+  {
+    "name": "HQarroum/docker-android",
+    "url": "https://github.com/HQarroum/docker-android",
+    "language": "Shell",
+    "stars": 937,
+    "forks": 65,
+    "description": "🤖 A minimal and customizable Docker image running the Android emulator as a service."
+  },
+  {
+    "name": "harvard-edge/cs249r_book",
+    "url": "https://github.com/harvard-edge/cs249r_book",
+    "language": "JavaScript",
+    "stars": 14166,
+    "forks": 1611,
+    "description": "Introduction to Machine Learning Systems"
+  },
+  {
+    "name": "Polymarket/agents",
+    "url": "https://github.com/Polymarket/agents",
+    "language": "Python",
+    "stars": 1273,
+    "forks": 351,
+    "description": "Trade autonomously on Polymarket using AI Agents"
+  },
+  {
+    "name": "HandsOnLLM/Hands-On-Large-Language-Models",
+    "url": "https://github.com/HandsOnLLM/Hands-On-Large-Language-Models",
+    "language": "JupyterNotebook",
+    "stars": 19261,
+    "forks": 4592,
+    "description": "Official code repo for the O'Reilly Book - \"Hands-On Large Language Models\""
+  },
+  {
+    "name": "yichuan-w/LEANN",
+    "url": "https://github.com/yichuan-w/LEANN",
+    "language": "Python",
+    "stars": 7563,
+    "forks": 696,
+    "description": "RAG on Everything with LEANN. Enjoy 97% storage savings while running a fast, accurate, and 100% private RAG application on your personal device."
+  },
+  {
+    "name": "livekit/agents",
+    "url": "https://github.com/livekit/agents",
+    "language": "Python",
+    "stars": 8655,
+    "forks": 2306,
+    "description": "A powerful framework for building realtime voice AI agents 🤖🎙️📹"
+  },
+  {
+    "name": "DayuanJiang/next-ai-draw-io",
+    "url": "https://github.com/DayuanJiang/next-ai-draw-io",
+    "language": "TypeScript",
+    "stars": 15984,
+    "forks": 1658,
+    "description": "A next.js web application that integrates AI capabilities with draw.io diagrams. This app allows you to create, modify, and enhance diagrams through natural language commands and AI-assisted visualization."
+  }
+]

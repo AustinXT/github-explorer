@@ -1,0 +1,114 @@
+[
+  {
+    "name": "anthropics/prompt-eng-interactive-tutorial",
+    "url": "https://github.com/anthropics/prompt-eng-interactive-tutorial",
+    "language": "JupyterNotebook",
+    "stars": 21943,
+    "forks": 2072,
+    "description": "Anthropic's Interactive Prompt Engineering Tutorial"
+  },
+  {
+    "name": "nvm-sh/nvm",
+    "url": "https://github.com/nvm-sh/nvm",
+    "language": "Shell",
+    "stars": 87421,
+    "forks": 9410,
+    "description": "Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions"
+  },
+  {
+    "name": "GorvGoyl/Clone-Wars",
+    "url": "https://github.com/GorvGoyl/Clone-Wars",
+    "language": "Unknown",
+    "stars": 30013,
+    "forks": 2707,
+    "description": "100+ open-source clones of popular sites like Airbnb, Amazon, Instagram, Netflix, Tiktok, Spotify, Whatsapp, Youtube etc. See source code, demo links, tech stack, github stars."
+  },
+  {
+    "name": "alibaba/spring-ai-alibaba",
+    "url": "https://github.com/alibaba/spring-ai-alibaba",
+    "language": "Java",
+    "stars": 6225,
+    "forks": 1333,
+    "description": "Agentic AI Framework for Java Developers"
+  },
+  {
+    "name": "datawhalechina/happy-llm",
+    "url": "https://github.com/datawhalechina/happy-llm",
+    "language": "JupyterNotebook",
+    "stars": 19330,
+    "forks": 1682,
+    "description": "📚 从零开始的大语言模型原理与实践教程"
+  },
+  {
+    "name": "asgeirtj/system_prompts_leaks",
+    "url": "https://github.com/asgeirtj/system_prompts_leaks",
+    "language": "JavaScript",
+    "stars": 22499,
+    "forks": 3459,
+    "description": "Collection of extracted System Prompts from popular chatbots like ChatGPT, Claude & Gemini"
+  },
+  {
+    "name": "opendatalab/MinerU",
+    "url": "https://github.com/opendatalab/MinerU",
+    "language": "Python",
+    "stars": 46194,
+    "forks": 3832,
+    "description": "Transforms complex documents like PDFs into LLM-ready markdown/JSON for your Agentic workflows."
+  },
+  {
+    "name": "nitrojs/nitro",
+    "url": "https://github.com/nitrojs/nitro",
+    "language": "TypeScript",
+    "stars": 8331,
+    "forks": 680,
+    "description": "Next Generation Server Toolkit. Create web servers with everything you need and deploy them wherever you prefer."
+  },
+  {
+    "name": "Klavis-AI/klavis",
+    "url": "https://github.com/Klavis-AI/klavis",
+    "language": "Python",
+    "stars": 5093,
+    "forks": 468,
+    "description": "Klavis AI (YC X25): MCP integration platforms that let AI agents use tools reliably at any scale"
+  },
+  {
+    "name": "chili-chips-ba/wireguard-fpga",
+    "url": "https://github.com/chili-chips-ba/wireguard-fpga",
+    "language": "Verilog",
+    "stars": 938,
+    "forks": 15,
+    "description": "Full-throttle, wire-speed hardware implementation of Wireguard VPN, using low-cost Artix7 FPGA with opensource toolchain. If you seek security and privacy, nothing is private in our codebase. Our door is wide open for backdoor scrutiny, be it related to RTL, embedded, build, bitstream or any other aspect of design and delivery package. Bujrum!"
+  },
+  {
+    "name": "dair-ai/Prompt-Engineering-Guide",
+    "url": "https://github.com/dair-ai/Prompt-Engineering-Guide",
+    "language": "MDX",
+    "stars": 63482,
+    "forks": 6636,
+    "description": "🐙 Guides, papers, lecture, notebooks and resources for prompt engineering"
+  },
+  {
+    "name": "1Panel-dev/MaxKB",
+    "url": "https://github.com/1Panel-dev/MaxKB",
+    "language": "Python",
+    "stars": 18562,
+    "forks": 2419,
+    "description": "🔥 MaxKB is an open-source platform for building enterprise-grade agents. MaxKB 是强大易用的开源企业级智能体平台。"
+  },
+  {
+    "name": "public-apis/public-apis",
+    "url": "https://github.com/public-apis/public-apis",
+    "language": "Python",
+    "stars": 369351,
+    "forks": 38868,
+    "description": "A collective list of free APIs"
+  },
+  {
+    "name": "KellerJordan/modded-nanogpt",
+    "url": "https://github.com/KellerJordan/modded-nanogpt",
+    "language": "Python",
+    "stars": 3235,
+    "forks": 446,
+    "description": "NanoGPT (124M) in 3 minutes"
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Yeachan-Heo/oh-my-codex",
+    "url": "https://github.com/Yeachan-Heo/oh-my-codex",
+    "language": "TypeScript",
+    "stars": 13070,
+    "forks": 1200,
+    "description": "OmX - Oh My codeX: Your codex is not alone. Add hooks, agent teams, HUDs, and so much more."
+  },
+  {
+    "name": "onyx-dot-app/onyx",
+    "url": "https://github.com/onyx-dot-app/onyx",
+    "language": "Python",
+    "stars": 22526,
+    "forks": 3038,
+    "description": "Open Source AI Platform - AI Chat with advanced features that works with every LLM"
+  },
+  {
+    "name": "google-research/timesfm",
+    "url": "https://github.com/google-research/timesfm",
+    "language": "Python",
+    "stars": 13697,
+    "forks": 1169,
+    "description": "TimesFM (Time Series Foundation Model) is a pretrained time-series foundation model developed by Google Research for time-series forecasting."
+  },
+  {
+    "name": "siddharthvaddem/openscreen",
+    "url": "https://github.com/siddharthvaddem/openscreen",
+    "language": "TypeScript",
+    "stars": 17266,
+    "forks": 1177,
+    "description": "Create stunning demos for free. Open-source, no subscriptions, no watermarks, and free for commercial use. An alternative to Screen Studio."
+  },
+  {
+    "name": "dmtrKovalenko/fff.nvim",
+    "url": "https://github.com/dmtrKovalenko/fff.nvim",
+    "language": "Rust",
+    "stars": 2958,
+    "forks": 117,
+    "description": "The fastest and the most accurate file search toolkit for AI agents, Neovim, Rust, C, and NodeJS"
+  },
+  {
+    "name": "f/prompts.chat",
+    "url": "https://github.com/f/prompts.chat",
+    "language": "HTML",
+    "stars": 156863,
+    "forks": 20575,
+    "description": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy."
+  },
+  {
+    "name": "sherlock-project/sherlock",
+    "url": "https://github.com/sherlock-project/sherlock",
+    "language": "Python",
+    "stars": 77918,
+    "forks": 9111,
+    "description": "Hunt down social media accounts by username across social networks"
+  }
+]

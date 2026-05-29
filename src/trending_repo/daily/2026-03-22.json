@@ -1,0 +1,122 @@
+[
+  {
+    "name": "FujiwaraChoki/MoneyPrinterV2",
+    "url": "https://github.com/FujiwaraChoki/MoneyPrinterV2",
+    "language": "Python",
+    "stars": 18494,
+    "forks": 1961,
+    "description": "Automate the process of making money online."
+  },
+  {
+    "name": "TauricResearch/TradingAgents",
+    "url": "https://github.com/TauricResearch/TradingAgents",
+    "language": "Python",
+    "stars": 35922,
+    "forks": 6847,
+    "description": "TradingAgents: Multi-Agents LLM Financial Trading Framework"
+  },
+  {
+    "name": "vxcontrol/pentagi",
+    "url": "https://github.com/vxcontrol/pentagi",
+    "language": "Go",
+    "stars": 11295,
+    "forks": 1414,
+    "description": "Fully autonomous AI Agents system capable of performing complex penetration testing tasks"
+  },
+  {
+    "name": "jamwithai/production-agentic-rag-course",
+    "url": "https://github.com/jamwithai/production-agentic-rag-course",
+    "language": "Python",
+    "stars": 4531,
+    "forks": 1153,
+    "description": "None"
+  },
+  {
+    "name": "affaan-m/everything-claude-code",
+    "url": "https://github.com/affaan-m/everything-claude-code",
+    "language": "JavaScript",
+    "stars": 95844,
+    "forks": 12526,
+    "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond."
+  },
+  {
+    "name": "jarrodwatts/claude-hud",
+    "url": "https://github.com/jarrodwatts/claude-hud",
+    "language": "JavaScript",
+    "stars": 10828,
+    "forks": 459,
+    "description": "A Claude Code plugin that shows what's happening - context usage, active tools, running agents, and todo progress"
+  },
+  {
+    "name": "Crosstalk-Solutions/project-nomad",
+    "url": "https://github.com/Crosstalk-Solutions/project-nomad",
+    "language": "TypeScript",
+    "stars": 7671,
+    "forks": 733,
+    "description": "Project N.O.M.A.D, is a self-contained, offline survival computer packed with critical tools, knowledge, and AI to keep you informed and empowered—anytime, anywhere."
+  },
+  {
+    "name": "systemd/systemd",
+    "url": "https://github.com/systemd/systemd",
+    "language": "C",
+    "stars": 15854,
+    "forks": 4362,
+    "description": "The systemd System and Service Manager"
+  },
+  {
+    "name": "browser-use/browser-use",
+    "url": "https://github.com/browser-use/browser-use",
+    "language": "Python",
+    "stars": 82043,
+    "forks": 9645,
+    "description": "🌐 Make websites accessible for AI agents. Automate tasks online with ease."
+  },
+  {
+    "name": "HKUDS/LightRAG",
+    "url": "https://github.com/HKUDS/LightRAG",
+    "language": "Python",
+    "stars": 29891,
+    "forks": 4294,
+    "description": "[EMNLP2025] \"LightRAG: Simple and Fast Retrieval-Augmented Generation\""
+  },
+  {
+    "name": "hsliuping/TradingAgents-CN",
+    "url": "https://github.com/hsliuping/TradingAgents-CN",
+    "language": "Python",
+    "stars": 19489,
+    "forks": 4159,
+    "description": "基于多智能体LLM的中文金融交易框架 - TradingAgents中文增强版"
+  },
+  {
+    "name": "louis-e/arnis",
+    "url": "https://github.com/louis-e/arnis",
+    "language": "Rust",
+    "stars": 12443,
+    "forks": 1026,
+    "description": "Generate any location from the real world in Minecraft with a high level of detail."
+  },
+  {
+    "name": "aquasecurity/trivy",
+    "url": "https://github.com/aquasecurity/trivy",
+    "language": "Go",
+    "stars": 33499,
+    "forks": 138,
+    "description": "Find vulnerabilities, misconfigurations, secrets, SBOM in containers, Kubernetes, code repositories, clouds and more"
+  },
+  {
+    "name": "bytedance/deer-flow",
+    "url": "https://github.com/bytedance/deer-flow",
+    "language": "Python",
+    "stars": 33733,
+    "forks": 4097,
+    "description": "An open-source SuperAgent harness that researches, codes, and creates. With the help of sandboxes, memories, tools, skills and subagents, it handles different levels of tasks that could take minutes to hours."
+  },
+  {
+    "name": "harry0703/MoneyPrinterTurbo",
+    "url": "https://github.com/harry0703/MoneyPrinterTurbo",
+    "language": "Python",
+    "stars": 50642,
+    "forks": 7220,
+    "description": "利用AI大模型，一键生成高清短视频 Generate short videos with one click using AI LLM."
+  }
+]

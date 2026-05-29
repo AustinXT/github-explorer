@@ -1,0 +1,66 @@
+[
+  {
+    "name": "Blaizzy/mlx-audio",
+    "url": "https://github.com/Blaizzy/mlx-audio",
+    "language": "Python",
+    "stars": 3642,
+    "forks": 301,
+    "description": "A text-to-speech (TTS), speech-to-text (STT) and speech-to-speech (STS) library built on Apple's MLX framework, providing efficient speech analysis on Apple Silicon."
+  },
+  {
+    "name": "VectifyAI/PageIndex",
+    "url": "https://github.com/VectifyAI/PageIndex",
+    "language": "Python",
+    "stars": 8727,
+    "forks": 645,
+    "description": "📑 PageIndex: Document Index for Vectorless, Reasoning-based RAG"
+  },
+  {
+    "name": "remotion-dev/remotion",
+    "url": "https://github.com/remotion-dev/remotion",
+    "language": "TypeScript",
+    "stars": 30028,
+    "forks": 1810,
+    "description": "🎥 Make videos programmatically with React"
+  },
+  {
+    "name": "qarmin/czkawka",
+    "url": "https://github.com/qarmin/czkawka",
+    "language": "Rust",
+    "stars": 28330,
+    "forks": 925,
+    "description": "Multi functional app to find duplicates, empty folders, similar images etc."
+  },
+  {
+    "name": "OpenBMB/UltraRAG",
+    "url": "https://github.com/OpenBMB/UltraRAG",
+    "language": "Python",
+    "stars": 3674,
+    "forks": 271,
+    "description": "UltraRAG v3: A Low-Code MCP Framework for Building Complex and Innovative RAG Pipelines"
+  },
+  {
+    "name": "microsoft/VibeVoice",
+    "url": "https://github.com/microsoft/VibeVoice",
+    "language": "Python",
+    "stars": 21795,
+    "forks": 2373,
+    "description": "Open-Source Frontier Voice AI"
+  },
+  {
+    "name": "openai/codex",
+    "url": "https://github.com/openai/codex",
+    "language": "Rust",
+    "stars": 57232,
+    "forks": 7423,
+    "description": "Lightweight coding agent that runs in your terminal"
+  },
+  {
+    "name": "supermemoryai/supermemory",
+    "url": "https://github.com/supermemoryai/supermemory",
+    "language": "TypeScript",
+    "stars": 14483,
+    "forks": 1539,
+    "description": "Memory engine and app that is extremely fast, scalable. The Memory API for the AI era."
+  }
+]
