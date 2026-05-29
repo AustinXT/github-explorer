@@ -1,0 +1,40 @@
+# 环境与敏感信息
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+credentials*.json
+secrets/
+
+# 临时文件
+tmp/
+*.tmp
+*.bak
+*.log
+
+# 系统文件
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+.pytest_cache/
+*.egg-info/
+
+# 编辑器
+.vscode/
+.idea/
+*.iml
+
+# Claude Code 本地配置
+.claude/
+
+# Node
+node_modules/
