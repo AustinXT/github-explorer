@@ -77,6 +77,9 @@ jobs:
       # 微信草稿箱
       WECHAT_APPID: ${{ secrets.WECHAT_APPID }}
       WECHAT_APPSECRET: ${{ secrets.WECHAT_APPSECRET }}
+      # 经固定出口 IP 反代访问微信 API（命中公众号 IP 白名单）
+      WECHAT_API_BASE: ${{ vars.WECHAT_API_BASE || 'https://wx.nightvoyager.top' }}
+      WECHAT_PROXY_TOKEN: ${{ secrets.WECHAT_PROXY_TOKEN }}
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Checkout

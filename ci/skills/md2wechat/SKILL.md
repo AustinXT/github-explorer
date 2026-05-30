@@ -146,7 +146,21 @@ lint-md 会自动处理中英文间距、标点规范等。执行后需重新 Re
 ```
 WECHAT_APPID=your_appid
 WECHAT_APPSECRET=your_appsecret
+
+# 可选：经反代访问微信 API（用于固定出口 IP 命中白名单的 CI 场景）
+# WECHAT_API_BASE=https://wx.your-proxy.example.com   # 留空则默认 https://api.weixin.qq.com
+# WECHAT_PROXY_TOKEN=...                              # 反代要求 X-Proxy-Token 头时填
 ```
+
+调用所有微信接口前先准备好两个 helper（详见 `references/wechat-api.md`）：
+
+```bash
+WECHAT_API_BASE="${WECHAT_API_BASE:-https://api.weixin.qq.com}"
+PROXY_HEADER=()
+[[ -n "${WECHAT_PROXY_TOKEN:-}" ]] && PROXY_HEADER=(-H "X-Proxy-Token: ${WECHAT_PROXY_TOKEN}")
+```
+
+然后每个 curl 写成 `curl "${PROXY_HEADER[@]}" "${WECHAT_API_BASE}/cgi-bin/..."`。**禁止直接拼接 `https://api.weixin.qq.com`**。
 
 流程：
 

@@ -7,14 +7,31 @@
 ```
 WECHAT_APPID=your_appid
 WECHAT_APPSECRET=your_appsecret
+
+# 可选：通过反代访问微信 API（用于固定出口 IP 命中白名单的场景）
+# WECHAT_API_BASE=https://wx.your-proxy.example.com    # 留空则用 https://api.weixin.qq.com
+# WECHAT_PROXY_TOKEN=xxxxxxxxxxxxxxxx                  # 反代要求 X-Proxy-Token header 时填
 ```
+
+> **重要**：以下所有示例中的 `https://api.weixin.qq.com` 都应该用环境变量 `WECHAT_API_BASE` 覆盖（如果设置了）；且当 `WECHAT_PROXY_TOKEN` 非空时，每个 curl 都要加 `-H "X-Proxy-Token: ${WECHAT_PROXY_TOKEN}"`。
+
+推荐的 helper（在每次调用前设置）：
+
+```bash
+WECHAT_API_BASE="${WECHAT_API_BASE:-https://api.weixin.qq.com}"
+PROXY_HEADER=()
+[[ -n "${WECHAT_PROXY_TOKEN:-}" ]] && PROXY_HEADER=(-H "X-Proxy-Token: ${WECHAT_PROXY_TOKEN}")
+```
+
+后续所有 curl 都写成 `curl "${PROXY_HEADER[@]}" "${WECHAT_API_BASE}/cgi-bin/..."` 的形式。
 
 ## API 流程
 
 ### 1. 获取 access_token
 
 ```bash
-curl -s "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=${WECHAT_APPID}&secret=${WECHAT_APPSECRET}"
+curl -s "${PROXY_HEADER[@]}" \
+  "${WECHAT_API_BASE}/cgi-bin/token?grant_type=client_credential&appid=${WECHAT_APPID}&secret=${WECHAT_APPSECRET}"
 ```
 
 响应：
@@ -52,8 +69,8 @@ curl -sL "https://source.unsplash.com/featured/900x383/?${THEME}" -o /tmp/wechat
 ### 3. 上传封面图到素材库
 
 ```bash
-curl -s -F "media=@/tmp/wechat_cover.jpg" \
-  "https://api.weixin.qq.com/cgi-bin/material/add_material?access_token=${ACCESS_TOKEN}&type=image"
+curl -s "${PROXY_HEADER[@]}" -F "media=@/tmp/wechat_cover.jpg" \
+  "${WECHAT_API_BASE}/cgi-bin/material/add_material?access_token=${ACCESS_TOKEN}&type=image"
 ```
 
 响应：
@@ -68,7 +85,8 @@ curl -s -F "media=@/tmp/wechat_cover.jpg" \
 ### 4. 发布到草稿箱
 
 ```bash
-curl -s -X POST "https://api.weixin.qq.com/cgi-bin/draft/add?access_token=${ACCESS_TOKEN}" \
+curl -s "${PROXY_HEADER[@]}" -X POST \
+  "${WECHAT_API_BASE}/cgi-bin/draft/add?access_token=${ACCESS_TOKEN}" \
   -H "Content-Type: application/json" \
   -d '{
     "articles": [{
