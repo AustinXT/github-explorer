@@ -1,0 +1,74 @@
+name: Build & Deploy GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "src/analysis_report/**"
+      - "src/trending_repo/**"
+      - "src/starred_repo/**"
+      - "src/publish.md"
+      - "src/data/**"
+      - "site/**"
+      - "scripts/**"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Python deps
+        run: pip install pyyaml
+
+      - name: Refresh metadata (reports.json / tags.yaml / starred.json)
+        run: |
+          python3 scripts/build_reports_index.py
+          python3 scripts/extract_tags.py
+          python3 scripts/parse_starred.py
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: site/package-lock.json
+
+      - name: Install site deps
+        working-directory: site
+        run: npm ci --no-fund --no-audit
+
+      - name: Build site
+        working-directory: site
+        run: npm run build
+
+      - name: Upload pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

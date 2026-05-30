@@ -1,0 +1,43 @@
+name: 提交仓库分析请求
+description: 推荐一个值得深度分析的 GitHub 仓库，触发自动分析流水线
+title: "[Analyze] owner/repo"
+labels: ["analyze-request"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢提交！工作流会自动校验 URL 并调用 `/repo-miner` 技能完成分析。
+        分析失败或重复时，issue 会被自动评论并关闭。
+
+  - type: input
+    id: repo_url
+    attributes:
+      label: GitHub 仓库 URL
+      description: 形如 https://github.com/owner/repo（必须是公开仓库）
+      placeholder: https://github.com/owner/repo
+    validations:
+      required: true
+
+  - type: textarea
+    id: reason
+    attributes:
+      label: 推荐理由（可选）
+      description: 解释一下这个仓库为什么值得深度分析，会作为引用附在报告中
+      placeholder: |
+        示例：
+        - 项目在 X 方向首创了 Y 模式
+        - 与同赛道的 Z 项目对比有独特之处
+        - 团队背景 / 商业模式有研究价值
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirms
+    attributes:
+      label: 提交前确认
+      options:
+        - label: 我确认这是一个**公开**的 GitHub 仓库
+          required: true
+        - label: 我已在网站上检索过，仓库尚未被分析
+          required: false

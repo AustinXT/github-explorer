@@ -1,0 +1,141 @@
+name: Submission-Triggered Analyze (via PR)
+
+# 与 auto-analyze.yml 的关系：
+# - auto-analyze.yml 服务「定时调度 / 维护者 /analyze 评论」，结果直接 push main
+# - 本 workflow 服务「外部用户站点 submit 提交」，结果走 PR 审核后合并
+# 两条流并存，触发条件不重叠
+
+on:
+  issues:
+    types: [opened, labeled]
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: analyze-submission
+  cancel-in-progress: false
+
+jobs:
+  analyze:
+    if: contains(github.event.issue.labels.*.name, 'analyze-request')
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      MINIMAX_API_KEY: ${{ secrets.MINIMAX_API_KEY }}
+      MINIMAX_BASE_URL: ${{ secrets.MINIMAX_BASE_URL }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      ISSUE_NUMBER: ${{ github.event.issue.number }}
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Dump issue body to file
+        env:
+          BODY: ${{ github.event.issue.body }}
+        run: |
+          mkdir -p /tmp/runner
+          printf '%s' "$BODY" > /tmp/runner/issue_body.md
+
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+
+      - name: Install Python deps
+        run: pip install pyyaml
+
+      - name: Validate submission
+        id: validate
+        run: python3 scripts/validate_submission.py /tmp/runner/issue_body.md
+
+      - name: Reject & close on validation failure
+        if: failure() && steps.validate.outcome == 'failure'
+        run: |
+          MSG="${{ steps.validate.outputs.comment || '❌ 校验失败' }}"
+          gh issue comment "$ISSUE_NUMBER" --body "$MSG"
+          gh issue edit "$ISSUE_NUMBER" --add-label "analyze-failed" --remove-label "analyze-request" || true
+          gh issue close "$ISSUE_NUMBER"
+          exit 1
+
+      - name: Comment in-progress
+        run: gh issue comment "$ISSUE_NUMBER" --body "🔧 校验通过，开始分析 \`${{ steps.validate.outputs.repo_url }}\`，约 10-30 分钟。"
+
+      - uses: actions/setup-node@v4
+        with: { node-version: "20" }
+
+      - name: Bootstrap CI env (gh / jq / tokei / claude / vendored skills)
+        run: bash scripts/setup_ci_env.sh
+
+      - name: Run /repo-miner (via run_skill.sh, dual-backend)
+        env:
+          REPO_URL: ${{ steps.validate.outputs.repo_url }}
+          REPORT_PATH: ${{ steps.validate.outputs.report_path }}
+        run: |
+          PROMPT="/repo-miner $REPO_URL ，中间过程文件输出到 notes/ ，最终分析报告输出到 $REPORT_PATH"
+          bash scripts/run_skill.sh "$PROMPT" --timeout 1800 --log "tmp/logs/repo-miner-$ISSUE_NUMBER.log"
+
+      - name: Verify report file
+        id: verify
+        env:
+          REPORT_PATH: ${{ steps.validate.outputs.report_path }}
+        run: |
+          if [ ! -s "$REPORT_PATH" ]; then
+            echo "::error::分析跑完但未产出 $REPORT_PATH"
+            exit 1
+          fi
+          echo "lines=$(wc -l < "$REPORT_PATH")" >> "$GITHUB_OUTPUT"
+
+      - name: Refresh site metadata
+        run: |
+          python3 scripts/build_reports_index.py
+          python3 scripts/extract_tags.py
+          python3 scripts/parse_starred.py
+
+      - name: Open PR
+        if: success()
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: analyze/${{ steps.validate.outputs.slug }}
+          delete-branch: true
+          base: main
+          title: "Add report: ${{ steps.validate.outputs.owner }}/${{ steps.validate.outputs.repo }}"
+          body: |
+            Auto-generated from issue #${{ github.event.issue.number }}.
+
+            - Repo: ${{ steps.validate.outputs.repo_url }}
+            - Report: `${{ steps.validate.outputs.report_path }}`
+            - Lines: ${{ steps.verify.outputs.lines }}
+
+            Closes #${{ github.event.issue.number }}
+          commit-message: "feat(report): ${{ steps.validate.outputs.owner }}/${{ steps.validate.outputs.repo }}"
+          add-paths: |
+            src/analysis_report/
+            src/data/
+            notes/
+
+      - name: Comment success
+        if: success()
+        run: gh issue comment "$ISSUE_NUMBER" --body "✅ 分析完成，PR 已开，合并后 5 分钟内上线站点。"
+
+      - name: Comment failure
+        if: failure() && steps.validate.outcome == 'success'
+        run: |
+          gh issue comment "$ISSUE_NUMBER" --body "❌ 分析失败。日志：${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          gh issue edit "$ISSUE_NUMBER" --add-label "analyze-failed" || true
+
+      - name: Upload logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: submission-logs-${{ github.event.issue.number }}
+          path: |
+            tmp/logs/
+            notes/
+          retention-days: 14
+          if-no-files-found: warn
