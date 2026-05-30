@@ -1,0 +1,244 @@
+name: Auto Analyze & Publish
+
+on:
+  schedule:
+    # 每天 UTC 22:00 = 北京时间 06:00 跑一篇
+    - cron: '0 22 * * *'
+  workflow_dispatch:
+    inputs:
+      repo_url:
+        description: '指定 GitHub URL（留空则自动选高价值候选）'
+        required: false
+        default: ''
+      skip_publish:
+        description: '只分析，不入公众号草稿箱'
+        required: false
+        default: 'false'
+        type: choice
+        options: ['false', 'true']
+      force_backend:
+        description: '推理后端：留空=Minimax，anthropic=应急降级（需先配 ANTHROPIC_API_KEY）'
+        required: false
+        default: ''
+  issue_comment:
+    types: [created]
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: auto-analyze
+  cancel-in-progress: false
+
+jobs:
+  guard:
+    # issue_comment 触发时只放行 OWNER / COLLABORATOR / MEMBER 写的 /analyze
+    runs-on: ubuntu-latest
+    outputs:
+      should_run: ${{ steps.gate.outputs.should_run }}
+      trigger: ${{ steps.gate.outputs.trigger }}
+    steps:
+      - id: gate
+        env:
+          COMMENT_BODY: ${{ github.event.comment.body }}
+          COMMENT_ASSOC: ${{ github.event.comment.author_association }}
+        run: |
+          event="${{ github.event_name }}"
+          echo "trigger=$event" >> "$GITHUB_OUTPUT"
+          case "$event" in
+            schedule|workflow_dispatch)
+              echo "should_run=true" >> "$GITHUB_OUTPUT" ;;
+            issue_comment)
+              if [[ "$COMMENT_ASSOC" != "OWNER" && "$COMMENT_ASSOC" != "COLLABORATOR" && "$COMMENT_ASSOC" != "MEMBER" ]]; then
+                echo "::notice::非授权用户的评论，跳过"
+                echo "should_run=false" >> "$GITHUB_OUTPUT"
+              elif [[ "$COMMENT_BODY" != *"/analyze"* ]]; then
+                echo "::notice::评论里没有 /analyze 指令，跳过"
+                echo "should_run=false" >> "$GITHUB_OUTPUT"
+              else
+                echo "should_run=true" >> "$GITHUB_OUTPUT"
+              fi ;;
+            *)
+              echo "should_run=false" >> "$GITHUB_OUTPUT" ;;
+          esac
+
+  analyze:
+    needs: guard
+    if: needs.guard.outputs.should_run == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      # 推理后端：Minimax 的 Anthropic 兼容端点，BASE_URL 写死在 run_skill.sh 里
+      MINIMAX_API_KEY: ${{ secrets.MINIMAX_API_KEY }}
+      # 应急降级：只有手动 dispatch 时选 force_backend=anthropic 才会用到
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      FORCE_BACKEND: ${{ github.event.inputs.force_backend || '' }}
+      # 微信草稿箱
+      WECHAT_APPID: ${{ secrets.WECHAT_APPID }}
+      WECHAT_APPSECRET: ${{ secrets.WECHAT_APPSECRET }}
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Bootstrap CI environment
+        run: bash scripts/setup_ci_env.sh
+
+      - name: Decide target URL
+        id: pick
+        env:
+          COMMENT_BODY: ${{ github.event.comment.body }}
+        run: |
+          set -euo pipefail
+          case "${{ needs.guard.outputs.trigger }}" in
+            workflow_dispatch)
+              given="${{ github.event.inputs.repo_url }}"
+              if [[ -n "$given" ]]; then
+                echo "repo_url=$given" >> "$GITHUB_OUTPUT"
+                echo "source=manual" >> "$GITHUB_OUTPUT"
+                exit 0
+              fi
+              ;;
+            issue_comment)
+              printf '%s' "$COMMENT_BODY" | python3 scripts/parse_issue_comment.py
+              echo "source=issue" >> "$GITHUB_OUTPUT"
+              exit 0
+              ;;
+          esac
+          # schedule 或 dispatch 未给 URL → 自动选
+          python3 scripts/select_next_repo.py
+          echo "source=auto" >> "$GITHUB_OUTPUT"
+
+      - name: Comment back on the issue (start)
+        if: needs.guard.outputs.trigger == 'issue_comment' && steps.pick.outputs.repo_url != ''
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: `🤖 开始分析 ${{ steps.pick.outputs.repo_url }}\n查看运行: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`
+            });
+
+      - name: Run repo-miner
+        if: steps.pick.outputs.repo_url != ''
+        env:
+          REPO_URL: ${{ steps.pick.outputs.repo_url }}
+        run: |
+          set -euo pipefail
+          prompt="/repo-miner $REPO_URL，中间产物输出到 notes/ ，最终分析报告输出到 src/analysis_report/{owner}_{name}.md"
+          bash scripts/run_skill.sh "$prompt" --timeout 1800 --log "tmp/logs/repo-miner.log"
+
+      - name: Locate produced report
+        id: report
+        if: steps.pick.outputs.repo_url != ''
+        run: |
+          set -euo pipefail
+          # repo-miner 完成后 src/analysis_report/ 应该多了一个 owner_name.md
+          # 用 git status 拿最新的 .md
+          new_md=$(git status --porcelain src/analysis_report/ \
+            | awk '/^\?\?|^.M/ {print $2}' \
+            | grep '\.md$' \
+            | head -1 || true)
+          if [[ -z "$new_md" ]]; then
+            echo "::error::没找到新生成的分析报告"
+            ls -la src/analysis_report/ | tail -20
+            exit 1
+          fi
+          echo "path=$new_md" >> "$GITHUB_OUTPUT"
+          echo "::notice::生成报告: $new_md"
+
+      - name: Run md2wechat → 草稿箱
+        id: publish
+        if: |
+          steps.report.outputs.path != '' &&
+          (github.event.inputs.skip_publish != 'true')
+        env:
+          REPORT_PATH: ${{ steps.report.outputs.path }}
+        run: |
+          set -euo pipefail
+          prompt="/md2wechat $REPORT_PATH 。要求：使用环境变量 WECHAT_APPID 和 WECHAT_APPSECRET 调用微信草稿箱 API（draft/add）。完成后请把草稿的 media_id 输出到 tmp/last_publish.json 文件中，格式 {\"media_id\":\"...\",\"report\":\"$REPORT_PATH\",\"timestamp\":\"...\"}。不要触发群发接口。"
+          bash scripts/run_skill.sh "$prompt" --timeout 900 --log "tmp/logs/md2wechat.log"
+          if [[ -f tmp/last_publish.json ]]; then
+            cat tmp/last_publish.json
+          fi
+
+      - name: Update publish.md
+        if: steps.report.outputs.path != ''
+        run: |
+          set -euo pipefail
+          ts="$(date -u +%Y-%m-%d)"
+          status="已入草稿"
+          [[ "${{ github.event.inputs.skip_publish }}" == "true" ]] && status="仅分析"
+          line="| $(basename ${{ steps.report.outputs.path }}) | 自动生成 | $ts ($status) |"
+          if [[ -f src/publish.md ]]; then
+            echo "$line" >> src/publish.md
+          else
+            printf '# 发布记录\n\n| 文件 | 标题 | 状态 |\n|---|---|---|\n%s\n' "$line" > src/publish.md
+          fi
+
+      - name: Commit & Push
+        if: steps.report.outputs.path != ''
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add notes/ src/analysis_report/ src/publish.md
+          if git diff --cached --quiet; then
+            echo "::notice::无变更可提交"
+          else
+            msg=$(cat <<MSG
+          feat(auto): 分析 ${{ steps.pick.outputs.repo_url }}
+
+          Triggered-By ${{ needs.guard.outputs.trigger }}
+          Run-URL ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          MSG
+          )
+            git commit -m "$msg"
+            git push
+          fi
+
+      - name: Upload logs (always)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: run-logs-${{ github.run_id }}
+          path: |
+            tmp/logs/
+            notes/*.md
+          retention-days: 14
+          if-no-files-found: ignore
+
+      - name: Comment back on the issue (done)
+        if: |
+          always() && needs.guard.outputs.trigger == 'issue_comment'
+          && steps.pick.outputs.repo_url != ''
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const ok = '${{ job.status }}' === 'success';
+            const report = '${{ steps.report.outputs.path }}';
+            const emoji = ok ? '✅' : '❌';
+            const body = ok
+              ? `${emoji} 分析完成: \`${report}\`\n已 commit 回主分支，公众号草稿箱请去后台查看。`
+              : `${emoji} 分析失败，请看运行日志: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body
+            });
