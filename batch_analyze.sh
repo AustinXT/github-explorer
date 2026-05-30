@@ -16,12 +16,12 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-REPOS_FILE="${1:-$SCRIPT_DIR/docs/analysis_report/repos.md}"
+REPOS_FILE="${1:-$SCRIPT_DIR/src/analysis_report/repos.md}"
 START_LINE="${2:-1}"
 END_LINE="${3:-0}"        # 0 表示不限制
 MAX_JOBS="${4:-5}"
 
-OUTPUT_DIR="$SCRIPT_DIR/docs/analysis_report"
+OUTPUT_DIR="$SCRIPT_DIR/src/analysis_report"
 TMP_DIR="$SCRIPT_DIR/tmp"
 LOG_DIR="$TMP_DIR/logs"
 STAT_DIR="$TMP_DIR/.stats_$$"
