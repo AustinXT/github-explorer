@@ -33,6 +33,11 @@ if ! command -v claude >/dev/null 2>&1; then
 fi
 claude --version
 
+log "2b/5 安装 Python 依赖（wechat_publish.py 需要 premailer 做 CSS inlining）"
+python3 -m pip install --quiet --upgrade pip
+python3 -m pip install --quiet premailer
+python3 -c "import premailer; print('  premailer', premailer.__version__)"
+
 log "3/5 注入 vendored skills 到 ~/.claude/skills/"
 mkdir -p ~/.claude/skills
 for skill in repo-miner md2wechat; do

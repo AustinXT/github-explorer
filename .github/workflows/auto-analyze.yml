@@ -165,7 +165,25 @@ jobs:
           echo "path=$new_md" >> "$GITHUB_OUTPUT"
           echo "::notice::生成报告: $new_md"
 
-      - name: Run md2wechat → 草稿箱
+      - name: Run md2wechat (转 HTML + 元数据 JSON，不发布)
+        if: |
+          steps.report.outputs.path != '' &&
+          (github.event.inputs.skip_publish != 'true')
+        env:
+          REPORT_PATH: ${{ steps.report.outputs.path }}
+        run: |
+          set -euo pipefail
+          prompt="/md2wechat $REPORT_PATH 走方式三 CI 模式。只产出两个文件到 src/analysis_report/：(1) 同名 .html（微信兼容排版）；(2) 同名 .meta.json，结构 {\"title\":\"...\",\"digest\":\"...(<=120 字)\",\"author\":\"\",\"theme\":\"stars,universe,dark\"}。严禁 curl 任何 *.weixin.qq.com 或 wx.nightvoyager.top，发布动作由后续 Python 脚本完成。"
+          bash scripts/run_skill.sh "$prompt" --timeout 900 --log "tmp/logs/md2wechat.log"
+          # 校验产物
+          html_path="${REPORT_PATH%.md}.html"
+          meta_path="${REPORT_PATH%.md}.meta.json"
+          [[ -f "$html_path" ]] || { echo "::error::md2wechat 没产出 $html_path"; exit 1; }
+          [[ -f "$meta_path" ]] || { echo "::error::md2wechat 没产出 $meta_path"; exit 1; }
+          echo "::notice::产出 $html_path 和 $meta_path"
+          python3 -m json.tool < "$meta_path" > /dev/null || { echo "::error::$meta_path 不是合法 JSON"; exit 1; }
+
+      - name: 发布到草稿箱（Python 走反代）
         id: publish
         if: |
           steps.report.outputs.path != '' &&
@@ -174,8 +192,7 @@ jobs:
           REPORT_PATH: ${{ steps.report.outputs.path }}
         run: |
           set -euo pipefail
-          prompt="/md2wechat $REPORT_PATH 。要求：使用环境变量 WECHAT_APPID 和 WECHAT_APPSECRET 调用微信草稿箱 API（draft/add）。完成后请把草稿的 media_id 输出到 tmp/last_publish.json 文件中，格式 {\"media_id\":\"...\",\"report\":\"$REPORT_PATH\",\"timestamp\":\"...\"}。不要触发群发接口。"
-          bash scripts/run_skill.sh "$prompt" --timeout 900 --log "tmp/logs/md2wechat.log"
+          python3 scripts/wechat_publish.py "$REPORT_PATH" 2>&1 | tee tmp/logs/wechat-publish.log
           if [[ -f tmp/last_publish.json ]]; then
             cat tmp/last_publish.json
           fi

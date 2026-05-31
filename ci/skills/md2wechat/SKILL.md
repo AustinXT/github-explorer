@@ -130,7 +130,7 @@ lint-md 会自动处理中英文间距、标点规范等。执行后需重新 Re
 
 ## Step 3: 发布
 
-提供两种发布方式，询问用户选择。
+提供三种发布方式，询问用户选择。**CI / 无人值守场景必须用方式三。**
 
 ### 方式一：复制粘贴（默认）
 
@@ -139,7 +139,37 @@ lint-md 会自动处理中英文间距、标点规范等。执行后需重新 Re
 3. 全选页面内容（Cmd+A），复制（Cmd+C）
 4. 粘贴到微信公众号后台编辑器
 
-### 方式二：API 发布到草稿箱
+### 方式三：CI 模式（推荐用于自动化）
+
+**只输出文件，不调用任何微信 API**。后续由独立的 `scripts/wechat_publish.py` 读这些文件、走反代发布。
+
+输出两个产物到 `src/analysis_report/`：
+
+1. **`{slug}.html`** — 已经转换好的微信兼容 HTML（同方式一）
+2. **`{slug}.meta.json`** — 发布元数据，结构如下：
+
+   ```json
+   {
+     "title": "Gin 深度分析报告",
+     "digest": "Gin 是 Go 生态最流行的 HTTP 框架… (≤120 字)",
+     "author": "AustinXT",
+     "theme": "stars,universe,dark"
+   }
+   ```
+
+   字段含义：
+   - `title`：文章标题，≤ 64 字符（微信限制）
+   - `digest`：摘要，**≤ 120 字符**，从正文提炼 1-2 句核心观点
+   - `author`：作者名（可空）
+   - `theme`：封面图主题词，逗号分隔，从 `stars / universe / ocean / desert / forest / green-trees / dark` 等任挑组合
+
+**不要做的事**：
+- 不要 curl 任何 `*.weixin.qq.com` 接口
+- 不要 curl `wx.nightvoyager.top`
+- 不要尝试用 helper 函数发请求
+- 一切发布动作都由后续的 Python 脚本完成
+
+### 方式二：API 发布到草稿箱（仅交互式手动场景）
 
 需要环境变量（从项目根目录 `.env` 文件或系统环境变量读取）：
 
