@@ -156,10 +156,18 @@ def parse_publish_md(text: str) -> tuple[list[PublishRow], list[str]]:
 H1_RE = re.compile(r"^#\s+(.+?)\s*$", re.MULTILINE)
 
 
-def load_analysis_h1s() -> dict[str, str]:
-    """slug → H1 标题（去掉 '# '）。slug 即 basename 去 .md。"""
+def load_analysis_h1s(h1_json: Path | None = None, analysis_dir: Path | None = None) -> dict[str, str]:
+    """slug → H1 标题（去掉 '# '）。slug 即 basename 去 .md。
+
+    优先从 --h1-json（预生成 JSON）加载，避免远端跑时还要带整个 analysis_report 目录；
+    否则 glob analysis_dir/*.md 实时扫描。
+    """
+    import json as _json
+    if h1_json and h1_json.is_file():
+        return _json.loads(h1_json.read_text(encoding="utf-8"))
     out: dict[str, str] = {}
-    for md in ANALYSIS_DIR.glob("*.md"):
+    target = analysis_dir or ANALYSIS_DIR
+    for md in target.glob("*.md"):
         try:
             head = md.read_text(encoding="utf-8", errors="ignore").splitlines()[:5]
         except OSError:
@@ -191,8 +199,15 @@ def build_match_dict(rows: list[PublishRow], h1s: dict[str, str]) -> dict[str, s
 
 # ─── 微信 API：拉文章列表 ──────────────────────────────────────────────────
 
+class WechatApiError(RuntimeError):
+    def __init__(self, errcode: int, errmsg: str):
+        super().__init__(f"errcode={errcode} errmsg={errmsg}")
+        self.errcode = errcode
+        self.errmsg = errmsg
+
+
 def fetch_all(env_dict, access_token, path: str, body_extra: dict | None = None) -> list[dict]:
-    """通用分页拉取，返回 item 列表。"""
+    """通用分页拉取，返回 item 列表。errcode != 0 时 raise WechatApiError（不退出）。"""
     items: list[dict] = []
     offset = 0
     page = 20
@@ -201,7 +216,8 @@ def fetch_all(env_dict, access_token, path: str, body_extra: dict | None = None)
         if body_extra:
             body.update(body_extra)
         resp = wechat_post(env_dict, path, body, access_token, timeout=30)
-        check_wechat_ok(resp, f"batchget {path}")
+        if resp.get("errcode"):
+            raise WechatApiError(resp["errcode"], resp.get("errmsg", ""))
         page_items = resp.get("item") or []
         items.extend(page_items)
         total = resp.get("total_count")
@@ -432,7 +448,14 @@ def main() -> int:
                    help="同时拉草稿箱 material/batchget_material（草稿无 url）")
     p.add_argument("--min-confidence", choices=["high", "medium", "low"], default="medium",
                    help="apply 的最低置信度。--min-confidence low 仅 dry-run 时允许")
+    p.add_argument("--publish-md", type=Path, default=None,
+                   help="publish.md 路径，默认 <repo>/src/publish.md")
+    p.add_argument("--h1-json", type=Path, default=None,
+                   help="预生成的 slug→H1 字典 JSON；不给则 glob analysis_report/*.md")
+    p.add_argument("--analysis-dir", type=Path, default=None,
+                   help="analysis_report 目录路径，默认 <repo>/src/analysis_report")
     args = p.parse_args()
+    publish_md = args.publish_md or PUBLISH_MD
 
     if args.apply and args.min_confidence == "low":
         sys.exit("ERR: --min-confidence low 不能配 --apply（低置信度需人工 review）")
@@ -442,24 +465,37 @@ def main() -> int:
     access_token = get_access_token(wx_env)
     print("  ✓ token 就绪")
 
+    articles: list[WechatArticle] = []
     print("[2/4] 拉公众号已群发图文（freepublish/batchget）")
-    raw_items = fetch_all(wx_env, access_token, "/cgi-bin/freepublish/batchget", {"no_content": 1})
-    articles = parse_freepublish(raw_items)
-    print(f"  ✓ 已群发 {len(raw_items)} 个素材，包含 {len(articles)} 篇文章")
+    fallback_to_drafts = args.include_drafts
+    try:
+        raw_items = fetch_all(wx_env, access_token, "/cgi-bin/freepublish/batchget", {"no_content": 1})
+    except WechatApiError as e:
+        if e.errcode == 48001:
+            print(f"  ⚠ {e}  ← 订阅号无 freepublish 权限，自动降级到草稿箱")
+            fallback_to_drafts = True
+            raw_items = []
+        else:
+            sys.exit(f"ERR: {e}")
+    articles.extend(parse_freepublish(raw_items))
+    print(f"  ✓ freepublish 素材 {len(raw_items)} 个 → {len(articles)} 篇文章")
 
-    if args.include_drafts:
+    if fallback_to_drafts:
         print("[2b] 拉草稿箱（material/batchget_material type=news）")
-        raw_drafts = fetch_all(
-            wx_env, access_token, "/cgi-bin/material/batchget_material", {"type": "news"},
-        )
+        try:
+            raw_drafts = fetch_all(
+                wx_env, access_token, "/cgi-bin/material/batchget_material", {"type": "news"},
+            )
+        except WechatApiError as e:
+            sys.exit(f"ERR: {e}")
         drafts = parse_drafts(raw_drafts)
         articles.extend(drafts)
-        print(f"  ✓ 草稿 {len(raw_drafts)} 个素材，包含 {len(drafts)} 篇文章")
+        print(f"  ✓ 草稿 {len(raw_drafts)} 个素材，新增 {len(drafts)} 篇文章")
 
     print("[3/4] 加载项目侧标题字典")
-    text = PUBLISH_MD.read_text(encoding="utf-8")
+    text = publish_md.read_text(encoding="utf-8")
     rows, lines = parse_publish_md(text)
-    h1s = load_analysis_h1s()
+    h1s = load_analysis_h1s(h1_json=args.h1_json, analysis_dir=args.analysis_dir)
     match_dict = build_match_dict(rows, h1s)
     print(f"  ✓ publish.md 行 {len(rows)} 条 + analysis_report H1 {len(h1s)} 篇 = 字典 {len(match_dict)} 项")
 
@@ -484,8 +520,8 @@ def main() -> int:
         print("\n没有需要写入的变更。")
         return 0
 
-    atomic_write(PUBLISH_MD, new_lines)
-    print(f"\n✅ 已写入 {PUBLISH_MD.relative_to(REPO_ROOT)}（{len(will_change)} 条变更）")
+    atomic_write(publish_md, new_lines)
+    print(f"\n✅ 已写入 {publish_md}（{len(will_change)} 条变更）")
     print("后续：python3 scripts/build_reports_index.py  # 同步进 reports.json")
     return 0
 
