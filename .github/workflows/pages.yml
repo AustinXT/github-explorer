@@ -60,8 +60,8 @@ jobs:
       - name: Build site
         working-directory: site
         env:
-          SITE_URL: ${{ vars.SITE_URL }}
-          PUBLIC_BASE_PATH: ${{ vars.PUBLIC_BASE_PATH }}
+          SITE_URL: ${{ vars.SITE_URL || 'https://austinxt.github.io' }}
+          PUBLIC_BASE_PATH: ${{ vars.PUBLIC_BASE_PATH || '/github-explorer' }}
         run: npm run build
 
       - name: Upload pages artifact
