@@ -73,8 +73,11 @@ def http(
         if raise_on_error:
             raise HttpError(msg) from e
         sys.exit(f"ERR: {msg}")
-    except urllib.error.URLError as e:
-        msg = f"网络错误 调用 {url[:80]}…\n  {e.reason}"
+    except (urllib.error.URLError, TimeoutError) as e:
+        # urllib 在不同失败阶段抛不同类型：connect 失败走 URLError，
+        # 已建立连接后 read 超时直接抛 TimeoutError（不被 URLError 包装）
+        reason = getattr(e, "reason", e)
+        msg = f"网络错误 调用 {url[:80]}…\n  {reason}"
         if raise_on_error:
             raise HttpError(msg) from e
         sys.exit(f"ERR: {msg}")
