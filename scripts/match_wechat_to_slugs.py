@@ -2,7 +2,7 @@
 """把公众号已发文章按 GitHub URL 反查本地 slug，产出 mapping JSON。
 
 输入：
-  tmp/wechat_published.json   # 来自 tmp/fetch_wechat_published.js 在 mp 后台抓的
+  tmp/wechat_published.json   # 来自 scripts/fetch_wechat_published.js 在 mp 后台抓的
   tmp/local_gh_index.json     # 本地 {owner/repo (lowercase) → slug} 字典
                               # 如果不存在，会现场扫 src/analysis_report/*.md 重建
 输出：
@@ -160,7 +160,7 @@ def main() -> int:
     args = p.parse_args()
 
     if not args.input.is_file():
-        sys.exit(f"ERR: 找不到 {args.input}，请先在 mp 后台跑 tmp/fetch_wechat_published.js")
+        sys.exit(f"ERR: 找不到 {args.input}，请先在 mp 后台跑 scripts/fetch_wechat_published.js")
 
     if LOCAL_INDEX.is_file():
         local_idx: dict[str, str] = json.loads(LOCAL_INDEX.read_text(encoding="utf-8"))
