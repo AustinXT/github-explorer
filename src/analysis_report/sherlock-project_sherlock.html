@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+/* ====== 微信公众号排版 CSS ====== */
+
+body {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #3e3e3e;
+    background: #fff;
+}
+
+/* 正文段落 */
+p {
+    font-size: 15px !important;
+    line-height: 2 !important;
+    margin: 0 !important;
+    padding-top: 0.5em !important;
+    padding-bottom: 0.5em !important;
+    padding-right: 1.2em !important;
+    padding-left: 1.2em !important;
+    text-align: justify !important;
+}
+p + p {
+    margin-top: 0 !important;
+}
+
+/* 标题 */
+h1 {
+    font-size: 20px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 16px 0 !important;
+    padding: 0 !important;
+}
+h2 {
+    font-size: 18px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 24px 0 !important;
+    padding: 0 !important;
+}
+h3 {
+    font-size: 15px !important;
+    font-weight: bold !important;
+    color: #3e3e3e !important;
+    text-align: left !important;
+    margin: 16px 0 16px 0 !important;
+    padding: 0 0 0 1.2em !important;
+}
+h4 {
+    font-size: 15px !important;
+    color: rgb(0, 122, 170) !important;
+    margin: 12px 0 8px 0 !important;
+    padding: 0 !important;
+}
+
+/* 列表 */
+ul,
+ol {
+    padding-left: 2em !important;
+    margin: 1em 0 !important;
+    font-size: 15px !important;
+}
+li {
+    margin: 0.5em 0 !important;
+    line-height: 1.8em !important;
+    font-size: 15px !important;
+    color: #3e3e3e !important;
+}
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+    margin: 0 !important;
+    padding-left: 1.2em !important;
+}
+
+/* 引用 */
+blockquote {
+    border-left: 4px solid #888 !important;
+    padding: 8px 16px !important;
+    margin: 1em 0 !important;
+    color: #666 !important;
+    background: #f9f9f9 !important;
+}
+blockquote > p {
+    margin: 0.5em 0 !important;
+    padding: 0 !important;
+}
+blockquote::before,
+blockquote::after {
+    content: none !important;
+}
+
+/* 代码块 */
+pre {
+    font-size: 14px !important;
+    line-height: 1.4em !important;
+    color: #3e3e3e !important;
+    background: #f8f8f8 !important;
+    padding: 12px 16px !important;
+    border-radius: 4px !important;
+    overflow: auto !important;
+    margin: 1em 0 !important;
+}
+
+/* 脚注 */
+.footnotes {
+    font-size: 11px !important;
+    color: #666 !important;
+    line-height: 1.2 !important;
+    margin: 8px 0 0 0 !important;
+    padding: 4px 0 0 0 !important;
+    border-top: 1px solid #eee !important;
+}
+.footnotes p {
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #666 !important;
+}
+
+/* 上标 */
+sup {
+    font-size: 0.75em !important;
+    vertical-align: super !important;
+    color: #e51f42 !important;
+    margin: 0 2px !important;
+}
+</style>
+</head>
+<body>
+
+<h2>一句话总结</h2>
+<p>通过声明式 JSON Manifest + 异步并发检测，解决跨平台用户名 OSINT 的信息收集难题，84K stars 验证了其作为网络安全标配工具的成熟度。</p>
+
+<h2>值得关注的理由</h2>
+<ul>
+<li><strong>OSINT 基础设施价值</strong>：400+ 站点的声明式管理，成为事实标准的信息收集框架</li>
+<li><strong>False Positive 处理范式</strong>：从被动过滤到主动排除的演进值得学习</li>
+<li><strong>社区驱动站点维护</strong>：通过 CI 验证 PR 贡献的质量，保证数据新鲜度</li>
+</ul>
+
+<h2>项目展示</h2>
+<p><img src="https://raw.githubusercontent.com/sherlock-project/sherlock/master/images/sherlock-logo.png" alt="Sherlock Logo" /></p>
+<p>项目 Logo，GitHub 页面品牌标识</p>
+<p><img src="https://raw.githubusercontent.com/sherlock-project/sherlock/master/images/demo.png" alt="命令行运行截图" /></p>
+<p>命令行运行截图，展示多平台搜索结果</p>
+
+<h2>项目画像</h2>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>数据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GitHub</td>
+<td><a href="https://github.com/sherlock-project/sherlock">https://github.com/sherlock-project/sherlock</a></td>
+</tr>
+<tr>
+<td>Star / Fork</td>
+<td>84,286 / 9,832</td>
+</tr>
+<tr>
+<td>代码行数</td>
+<td>6,371（Python 1,723 + JSON 3,456）</td>
+</tr>
+<tr>
+<td>项目年龄</td>
+<td>89 个月（2018-12-24 至今）</td>
+</tr>
+<tr>
+<td>开发阶段</td>
+<td>稳定维护（2026 年 5 月仍有活跃 commit）</td>
+</tr>
+<tr>
+<td>贡献模式</td>
+<td>社区驱动（Top3 贡献者占 54%，330 人参与）</td>
+</tr>
+<tr>
+<td>热度定位</td>
+<td>大众热门（OSINT 领域 top1）</td>
+</tr>
+<tr>
+<td>质量评级</td>
+<td>代码[优秀] 文档[良好] 测试[充分]</td>
+</tr>
+</tbody>
+</table>
+
+<h2>作者视角：为什么存在这个项目</h2>
+
+<h3>创始人/作者背景</h3>
+<ul>
+<li><strong>起源</strong>：独立开发者 Siddharth Dushantha（冰岛）2018 年创建，经 Hacktoberfest 扩张后形成多元社区</li>
+<li><strong>演进</strong>：2020 年后由 ppfeister 主导发布，2023 年转为 sherlock-project 开源组织</li>
+<li><strong>背景</strong>：网络安全/OSINT 爱好者社区，非商业公司，主要维护者位于欧洲</li>
+<li><strong>投入权重</strong>：4 个仓库中仅 sherlock 是主项目，此 repo 在组织中权重极高</li>
+</ul>
+
+<h3>问题判断</h3>
+<ul>
+<li><strong>时机</strong>：2018 年社交媒体爆发期，没有统一的 username OSINT 工具</li>
+<li><strong>痛点</strong>：渗透测试/安全研究中需要快速确认目标在各平台的存在性</li>
+<li><strong>现有方案不足</strong>：手动逐站搜索效率低下；依赖 API 的方案需要注册和维护 key，且受速率限制</li>
+</ul>
+
+<h3>解法哲学</h3>
+<ul>
+<li><strong>声明式 > 命令式</strong>：站点定义全部在 JSON Manifest 中，核心代码只负责「检测逻辑」</li>
+<li><strong>社区驱动数据</strong>：400+ 站点不靠团队维护，靠贡献者 PR 更新，代码和数据分离</li>
+<li><strong>简单 CLI 优先</strong>：不追求 GUI 复杂功能，单一工具做精做透</li>
+<li><strong>明确不做</strong>：不依赖 API key，不做需要注册的服务</li>
+</ul>
+
+<h3>战略意图</h3>
+<ul>
+<li><strong>非商业化</strong>：纯开源 MIT，无 SaaS 化意图</li>
+<li><strong>生态定位</strong>：成为 OSINT 工具链中的「信息收集」环节，不是终点</li>
+<li><strong>社区健康</strong>：通过 CI 自动化降低贡献门槛，保证数据质量</li>
+</ul>
+
+<h2>核心价值提炼</h2>
+
+<h3>创新之处</h3>
+<ol>
+<li><strong>WAF 指纹检测</strong>
+<ul>
+<li>内置 WAF（Cloudflare/PerimeterX/AWS）特征识别，检测被拦截的请求</li>
+<li>新颖度 3/5 | 实用性 4/5 | 可迁移性 4/5</li>
+<li>适用场景：反爬虫/安全检测工具的规避识别</li>
+</ul>
+</li>
+<li><strong>远程 Manifest + Exclusion 机制</strong>
+<ul>
+<li>数据与代码分离，支持热更新站点列表而不发版</li>
+<li>新颖度 3/5 | 实用性 5/5 | 可迁移性 5/5</li>
+<li>适用场景：需要持续更新数据源的工具（威胁情报/OSINT）</li>
+</ul>
+</li>
+<li><strong>CI 驱动的站点贡献质量保证</strong>
+<ul>
+<li>PR 修改 data.json 时自动运行验证测试，评论结果到 Issue</li>
+<li>新颖度 3/5 | 实用性 5/5 | 可迁移性 4/5</li>
+<li>适用场景：数据密集型开源项目的贡献质量管理</li>
+</ul>
+</li>
+<li><strong>多模式错误检测</strong>
+<ul>
+<li>三种检测模式：status_code（状态码）/ message（错误文本）/ response_url（重定向 URL）</li>
+<li>新颖度 2/5 | 实用性 4/5 | 可迁移性 3/5</li>
+<li>适用场景：跨平台数据验证工具</li>
+</ul>
+</li>
+</ol>
+
+<h3>可复用的模式与技巧</h3>
+<ol>
+<li><strong>并发 HTTP 客户端封装</strong>：`SherlockFuturesSession` 扩展模式 — 适用场景: 批量 API 调用、爬虫、性能敏感的 HTTP 客户端</li>
+<li><strong>声明式配置驱动</strong>：JSON Schema + 动态加载 — 适用场景: 插件系统、规则引擎、配置即代码</li>
+<li><strong>三阶段通知系统</strong>：start/update/finish 抽象 — 适用场景: 长时间运行任务的进度展示</li>
+<li><strong>False Positive 排除链</strong>：远程规则 + 本地覆盖 + WAF 指纹 — 适用场景: 数据质量要求高的检测工具</li>
+<li><strong>PR 自动化测试</strong>：变更检测 + 针对性测试 + 结果汇总 — 适用场景: 大型配置文件的协同维护</li>
+</ol>
+
+<h3>关键设计决策</h3>
+<p><strong>决策 1: JSON Manifest 站点定义系统</strong></p>
+<ul>
+<li>将站点配置抽离为 data.json，包含 url/errorType/errorMsg 等字段</li>
+<li>Trade-off：牺牲了复杂检测逻辑的灵活性，换取了极低的贡献门槛</li>
+<li>可迁移性：高（任何需要「配置驱动行为」的工具都适用）</li>
+</ul>
+<p><strong>决策 2: 异步并发检测引擎</strong></p>
+<ul>
+<li>SherlockFuturesSession 扩展 requests-futures，20 个 worker 并发</li>
+<li>Trade-off：引入 HTTP 错误处理复杂性，换取了 10-20x 性能提升</li>
+<li>可迁移性：高（批量 API 调用场景均可复用）</li>
+</ul>
+<p><strong>决策 3: False Positive 排除系统</strong></p>
+<ul>
+<li>远程 exclusions 文件 + CI 自动化验证 + WAF 指纹黑名单</li>
+<li>Trade-off：维护成本增加，换取结果可信度</li>
+<li>可迁移性：高（任何依赖外部数据的工具都适用）</li>
+</ul>
+
+<h2>竞品格局与定位</h2>
+
+<h3>竞品对比矩阵</h3>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>Sherlock</th>
+<th>soxoj/maigret</th>
+<th>mxrch/GHunt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>站点覆盖</td>
+<td>400+</td>
+<td>3000+</td>
+<td>专注 Google 生态</td>
+</tr>
+<tr>
+<td>检测方式</td>
+<td>HTTP 响应分析</td>
+<td>HTTP + 深度分析</td>
+<td>Google 特定 API</td>
+</tr>
+<tr>
+<td>False Positive</td>
+<td>主动排除机制</td>
+<td>较少处理</td>
+<td>依赖 Google 准确性</td>
+</tr>
+<tr>
+<td>活跃度</td>
+<td>稳定维护（2026）</td>
+<td>活跃</td>
+<td>较低</td>
+</tr>
+<tr>
+<td>社区规模</td>
+<td>84K stars</td>
+<td>31K stars</td>
+<td>19K stars</td>
+</tr>
+<tr>
+<td>CLI 复杂度</td>
+<td>简单专注</td>
+<td>复杂多选项</td>
+<td>简单</td>
+</tr>
+</tbody>
+</table>
+
+<h3>差异化护城河</h3>
+<ul>
+<li><strong>站点定义系统的易用性</strong>：data.json 结构简洁，非开发者也能贡献</li>
+<li><strong>False Positive 处理成熟度</strong>：远程 exclusions + WAF 指纹，领先竞品</li>
+</ul>
+
+<h3>竞争风险</h3>
+<ul>
+<li>maigret 的覆盖度优势可能在深度 OSINT 场景中替代 Sherlock</li>
+<li>部分平台（如 LinkedIn）已加强反爬，无 API 方案局限性显现</li>
+</ul>
+
+<h3>生态定位</h3>
+<p>OSINT 工具链的「快速扫描」环节，与 maigret（深度覆盖）和 GHunt（Google 生态）形成互补而非直接竞争。</p>
+<blockquote><p>Sherlock 在 username OSINT 领域处于主导地位，竞品均为细分方向补充。</p></blockquote>
+
+<h2>套利机会分析</h2>
+<ul>
+<li><strong>信息差</strong>：低——84K stars 已被广泛认知</li>
+<li><strong>技术借鉴</strong>：高——WAF 检测、并发引擎、CI 驱动数据验证模式可直接迁移</li>
+<li><strong>生态位</strong>：OSINT 基础设施，与 maigret 形成互补而非直接竞争</li>
+<li><strong>趋势判断</strong>：OSINT 工具需求增长，但 AI 辅助侦查可能改变需求形态</li>
+</ul>
+
+<h2>风险与不足</h2>
+<ol>
+<li><strong>检测依赖 HTTP 响应，容易被绕过</strong>：WAF 进化可能导致漏检</li>
+<li><strong>站点数据维护成本</strong>：400+ 站点需要持续更新，反馈周期长</li>
+<li><strong>无 API 方案局限性</strong>：部分平台（如 LinkedIn）已加强反爬</li>
+<li><strong>False Positive 问题仍未根治</strong>：Issue 中仍有大量误报反馈</li>
+<li><strong>版本发布稀疏</strong>：89 个月仅 3 个正式 Release，更多依赖 commit 推进</li>
+</ol>
+
+<h2>行动建议</h2>
+<ul>
+<li><strong>如果你要用它</strong>：首选 CLI，用于快速扫描已知平台；配合 <code>--proxy</code> 使用 SOCKS 代理增加隐蔽性；定期 <code>--local</code> 使用本地 data.json 避免网络问题</li>
+<li><strong>如果你要学它</strong>：重点研读 <code>sites.py</code>（站点加载机制）和 <code>sherlock.py</code>（并发引擎）；关注 <code>.github/workflows/validate_modified_targets.yml</code>（CI 验证 PR 的逻辑）；学习 <code>result.py</code> 的状态机设计（QueryStatus 枚举）</li>
+<li><strong>如果你要 fork 它</strong>：改进方向 1：接入 AI 模型辅助判断（降低 False Positive）；改进方向 2：添加 GraphQL/API 方式检测（应对 REST 限制的平台）；改进方向 3：Web 界面封装（降低非技术用户门槛）</li>
+</ul>
+
+<h2>知识入口</h2>
+<table>
+<thead>
+<tr>
+<th>资源</th>
+<th>链接</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DeepWiki</td>
+<td>未收录</td>
+</tr>
+<tr>
+<td>Zread.ai</td>
+<td>已收录</td>
+</tr>
+<tr>
+<td>关联论文</td>
+<td>无</td>
+</tr>
+<tr>
+<td>在线 Demo</td>
+<td><a href="https://sherlockproject.xyz/">https://sherlockproject.xyz/</a></td>
+</tr>
+</tbody>
+</table>
+
+</body>
+</html>
