@@ -28,13 +28,21 @@ from __future__ import annotations
 
 import json
 import mimetypes
-import os
 import sys
 import time
-import urllib.error
 import urllib.parse
-import urllib.request
 from pathlib import Path
+
+from _wechat_api import (
+    HttpError,
+    check_wechat_ok,
+    env,
+    get_access_token,
+    http,
+    http_json,
+    load_wechat_env,
+    proxy_headers,
+)
 
 try:
     import markdown
@@ -85,62 +93,6 @@ th, td { border: 1px solid #ddd !important; padding: 6px 10px !important; text-a
 th { background: #f4f4f4 !important; font-weight: bold !important; }
 hr { border: none !important; border-top: 1px solid #ddd !important; margin: 1.5em 0 !important; }
 """.strip()
-
-
-def env(name: str, *, required: bool = True, default: str = "") -> str:
-    v = os.environ.get(name, "") or default
-    if required and not v:
-        sys.exit(f"ERR: 缺少环境变量 {name}")
-    return v
-
-
-class HttpError(RuntimeError):
-    """非 fatal 的 HTTP 错误，可被调用方 catch（如单张图片失败时继续）"""
-
-
-def http(
-    url: str,
-    *,
-    headers: dict | None = None,
-    data: bytes | None = None,
-    method: str | None = None,
-    timeout: int = 30,
-    raise_on_error: bool = False,
-) -> bytes:
-    req = urllib.request.Request(url, data=data, method=method)
-    for k, v in (headers or {}).items():
-        req.add_header(k, v)
-    try:
-        with urllib.request.urlopen(req, timeout=timeout) as r:
-            return r.read()
-    except urllib.error.HTTPError as e:
-        body = e.read().decode("utf-8", errors="replace")
-        msg = f"HTTP {e.code} 调用 {url[:80]}…\n  body: {body[:500]}"
-        if raise_on_error:
-            raise HttpError(msg) from e
-        sys.exit(f"ERR: {msg}")
-    except urllib.error.URLError as e:
-        msg = f"网络错误 调用 {url[:80]}…\n  {e.reason}"
-        if raise_on_error:
-            raise HttpError(msg) from e
-        sys.exit(f"ERR: {msg}")
-
-
-def http_json(url: str, **kw) -> dict:
-    raw = http(url, **kw)
-    try:
-        return json.loads(raw)
-    except json.JSONDecodeError:
-        sys.exit(f"ERR: 非 JSON 响应 from {url[:80]}…\n  {raw[:300]!r}")
-
-
-def check_wechat_ok(resp: dict, context: str) -> None:
-    """微信 API 错时返回 {errcode, errmsg}；正常时无 errcode 或 errcode=0"""
-    if resp.get("errcode"):
-        sys.exit(
-            f"ERR: 微信 API 错误 [{context}] "
-            f"errcode={resp['errcode']} errmsg={resp.get('errmsg', '')}"
-        )
 
 
 def build_multipart(filename: str, data: bytes, field: str = "media") -> tuple[str, bytes]:
@@ -297,10 +249,8 @@ def main() -> int:
     author = meta.get("author") or ""
     theme = meta.get("theme") or "stars,universe,dark"
 
-    appid = env("WECHAT_APPID")
-    secret = env("WECHAT_APPSECRET")
-    api_base = env("WECHAT_API_BASE").rstrip("/")
-    proxy_token = env("WECHAT_PROXY_TOKEN")
+    wx_env = load_wechat_env()
+    api_base = wx_env["api_base"]
     fallback_cover = env(
         "DEFAULT_COVER_URL", required=False,
         default="https://picsum.photos/900/383",
@@ -313,20 +263,12 @@ def main() -> int:
     slug = md_path.stem.lower()
     content_source_url = f"{blog_base}/{slug}/"
 
-    proxy_headers = {"X-Proxy-Token": proxy_token}
+    proxy_h = proxy_headers(wx_env)
 
     # ─── Step 1: access_token ─────────────────────────────────
     print(f"[1/4] 获取 access_token（{api_base}）")
-    token_url = (
-        f"{api_base}/cgi-bin/token?grant_type=client_credential"
-        f"&appid={urllib.parse.quote(appid)}&secret={urllib.parse.quote(secret)}"
-    )
-    r = http_json(token_url, headers=proxy_headers)
-    check_wechat_ok(r, "get token")
-    if "access_token" not in r:
-        sys.exit(f"ERR: 响应里没 access_token: {r}")
-    access_token = r["access_token"]
-    print(f"  ✓ expires_in={r.get('expires_in')}s")
+    access_token = get_access_token(wx_env)
+    print(f"  ✓ token 就绪（含 tmp/wechat_token.json 缓存）")
 
     # ─── Step 1b: HTML 预处理 ─────────────────────────────────
     print("[1b] HTML 预处理：合并相邻 ul + 外链图片转 mmbiz")
@@ -337,7 +279,7 @@ def main() -> int:
         soup,
         access_token=access_token,
         api_base=api_base,
-        proxy_headers=proxy_headers,
+        proxy_headers=proxy_h,
     )
     print(f"  ✓ 图片 {img_ok} 成功 / {img_fail} 失败")
 
@@ -372,7 +314,7 @@ def main() -> int:
     r = http_json(
         upload_url,
         headers={
-            **proxy_headers,
+            **proxy_h,
             "Content-Type": f"multipart/form-data; boundary={boundary}",
         },
         data=body,
@@ -405,7 +347,7 @@ def main() -> int:
     }, ensure_ascii=False).encode("utf-8")
     r = http_json(
         draft_url,
-        headers={**proxy_headers, "Content-Type": "application/json"},
+        headers={**proxy_h, "Content-Type": "application/json"},
         data=draft_body,
         method="POST",
         timeout=60,

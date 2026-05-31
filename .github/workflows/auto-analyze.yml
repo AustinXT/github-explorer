@@ -184,19 +184,45 @@ jobs:
           echo "::notice::产出 $html_path 和 $meta_path"
           python3 -m json.tool < "$meta_path" > /dev/null || { echo "::error::$meta_path 不是合法 JSON"; exit 1; }
 
-      - name: 发布到草稿箱（Python 走反代）
+      - name: 发布到草稿箱（SSH 跳板到 ali-demo）
         id: publish
         if: |
           steps.report.outputs.path != '' &&
           (github.event.inputs.skip_publish != 'true')
         env:
           REPORT_PATH: ${{ steps.report.outputs.path }}
+          SSH_KEY: ${{ secrets.ALI_DEMO_SSH_KEY }}
+          KNOWN_HOSTS: ${{ secrets.ALI_DEMO_KNOWN_HOSTS }}
         run: |
           set -euo pipefail
-          python3 scripts/wechat_publish.py "$REPORT_PATH" 2>&1 | tee tmp/logs/wechat-publish.log
-          if [[ -f tmp/last_publish.json ]]; then
-            cat tmp/last_publish.json
-          fi
+          mkdir -p ~/.ssh tmp/logs
+          printf '%s\n' "$SSH_KEY" > ~/.ssh/ali_demo
+          chmod 600 ~/.ssh/ali_demo
+          printf '%s\n' "$KNOWN_HOSTS" > ~/.ssh/known_hosts
+          chmod 644 ~/.ssh/known_hosts
+
+          # 打包 md + meta.json
+          md_dir=$(dirname "$REPORT_PATH")
+          md_name=$(basename "$REPORT_PATH")
+          meta_name="${md_name%.md}.meta.json"
+          tar czf /tmp/payload.tgz -C "$md_dir" "$md_name" "$meta_name"
+
+          # SSH 走 forced-command 自动跑 publish-from-runner.sh
+          # stdin: tar.gz，stdout: last_publish.json，stderr: 日志（落 wechat-publish.log）
+          ssh -i ~/.ssh/ali_demo \
+              -o UserKnownHostsFile=~/.ssh/known_hosts \
+              -o StrictHostKeyChecking=yes \
+              -o ConnectTimeout=15 \
+              root@47.113.202.7 \
+              < /tmp/payload.tgz \
+              > tmp/last_publish.json \
+              2> tmp/logs/wechat-publish.log
+
+          echo "=== 远端日志 ==="
+          cat tmp/logs/wechat-publish.log
+          echo ""
+          echo "=== last_publish.json ==="
+          cat tmp/last_publish.json
 
       - name: Update publish.md
         if: steps.report.outputs.path != ''
