@@ -2,8 +2,9 @@ name: Auto Analyze & Publish
 
 on:
   schedule:
-    # 每天 UTC 22:00 = 北京时间 06:00 跑一篇
-    - cron: '0 22 * * *'
+    # 每 2 小时跑一篇，覆盖北京时间 08/10/12/14/16/18 = UTC 00/02/04/06/08/10
+    # = 每天 6 篇；月计 ~1800 GitHub Actions 分钟（卡 90% 免费额度）
+    - cron: '0 0,2,4,6,8,10 * * *'
   workflow_dispatch:
     inputs:
       repo_url:

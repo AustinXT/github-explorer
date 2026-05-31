@@ -17,6 +17,8 @@
   必需：WECHAT_API_BASE      反代 base url，如 https://wx.nightvoyager.top
   必需：WECHAT_PROXY_TOKEN   反代鉴权 header
   可选：DEFAULT_COVER_URL    封面拉取失败时用这个兜底，默认 picsum
+  可选：BLOG_BASE_URL        阅读原文指向的博客 base，
+                             默认 https://blog.nightvoyager.top/github-explorer/reports
 
 产出：
   tmp/last_publish.json  {media_id, thumb_media_id, title, ...}
@@ -303,6 +305,13 @@ def main() -> int:
         "DEFAULT_COVER_URL", required=False,
         default="https://picsum.photos/900/383",
     )
+    blog_base = env(
+        "BLOG_BASE_URL", required=False,
+        default="https://blog.nightvoyager.top/github-explorer/reports",
+    ).rstrip("/")
+    # 博客 slug = 文件名 stem 小写（与 build_reports_index.py 的 normalization 对齐）
+    slug = md_path.stem.lower()
+    content_source_url = f"{blog_base}/{slug}/"
 
     proxy_headers = {"X-Proxy-Token": proxy_token}
 
@@ -388,6 +397,7 @@ def main() -> int:
             "author": author,
             "digest": digest,
             "content": html,
+            "content_source_url": content_source_url,  # 「阅读原文」按钮指向博客
             "thumb_media_id": thumb_media_id,
             "need_open_comment": 0,
             "only_fans_can_comment": 0,
@@ -411,6 +421,7 @@ def main() -> int:
         "media_id": draft_media_id,
         "thumb_media_id": thumb_media_id,
         "title": title,
+        "content_source_url": content_source_url,
         "report": str(md_path),
         "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
     }
