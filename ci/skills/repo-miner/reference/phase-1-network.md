@@ -258,6 +258,32 @@ head -500 $LOCAL_PATH/README.md 2>/dev/null || head -500 $LOCAL_PATH/readme.md 2
 将 README 媒体（最多 3 个）和官网媒体（最多 2 个）合并，总计不超过 **5 个**。
 为每个素材标注类型：`hero` / `demo` / `architecture` / `screenshot` / `video`。
 
+**步骤四：URL 存在性验证（必做，零容忍）**
+
+每个收录到清单的 `raw.githubusercontent.com/{OWNER}/{REPO}/{BRANCH}/{path}`
+图片 URL，**必须**先验证 `path` 真实存在再加入。验证命令：
+
+```bash
+gh api "/repos/{OWNER}/{REPO}/contents/{path}" --jq '.size' 2>/dev/null
+```
+
+- 返回数字 = 存在 ✓，收录
+- 返回空 / 报错 = 不存在 ✗，**必须丢弃**，绝不允许收录"猜的"路径
+
+**常见踩坑**：图片实际在 `docs/images/` 但 LLM 误以为在根 `images/`；
+或图实际在 `assets/` / `site/static/` / `.github/`。如果 README 写的
+路径转换后验证失败，**枚举一下仓库里可能位置**重新构造 URL 再验证：
+
+```bash
+# 用文件名搜全库
+gh api "/repos/{OWNER}/{REPO}/git/trees/{DEFAULT_BRANCH}?recursive=1" \
+  --jq '.tree[] | select(.path | endswith("{filename}")) | .path'
+```
+
+如果 1.9 节扫到的所有图片 URL 都验证失败 → **整个「项目展示素材」节
+返回空清单**，让最终报告省略「项目展示」整节。不允许编造 URL 蒙混过关。
+被 publish 流水线发现 404 是更糟的失败——读者看到的是空白图。
+
 ## 返回格式
 
 严格按以下结构输出（使用 markdown 标题），不要输出分析过程中的原始命令输出：
