@@ -189,7 +189,7 @@ export const SITE = {
   description:
     "375+ 篇 GitHub 仓库深度分析报告，覆盖 AI Agent、LLM、DevTools 等热门赛道；含每日 Trending 榜与大牛 Star 订阅。",
   repoUrl: "https://github.com/AustinXT/github-explorer",
-  ownerHandle: "AustinXT",
+  ownerHandle: "NVoyager",
   // SEO / 社交分享
   siteUrl: SITE_URL,
   basePath: BASE_PATH,

@@ -174,7 +174,7 @@ jobs:
           REPORT_PATH: ${{ steps.report.outputs.path }}
         run: |
           set -euo pipefail
-          prompt="/md2wechat $REPORT_PATH 走方式三 CI 模式。只产出两个文件到 src/analysis_report/：(1) 同名 .html（微信兼容排版）；(2) 同名 .meta.json，结构 {\"title\":\"...\",\"digest\":\"...(<=120 字)\",\"author\":\"\",\"theme\":\"stars,universe,dark\"}。严禁 curl 任何 *.weixin.qq.com 或 wx.nightvoyager.top，发布动作由后续 Python 脚本完成。"
+          prompt="/md2wechat $REPORT_PATH 走方式三 CI 模式。只产出两个文件到 src/analysis_report/：(1) 同名 .html（微信兼容排版）；(2) 同名 .meta.json，结构 {\"title\":\"...\",\"digest\":\"...(<=120 字)\",\"author\":\"NVoyager\",\"theme\":\"stars,universe,dark\"}。严禁 curl 任何 *.weixin.qq.com 或 wx.nightvoyager.top，发布动作由后续 Python 脚本完成。"
           bash scripts/run_skill.sh "$prompt" --timeout 900 --log "tmp/logs/md2wechat.log"
           # 校验产物
           html_path="${REPORT_PATH%.md}.html"
