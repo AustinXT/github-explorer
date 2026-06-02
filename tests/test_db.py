@@ -248,6 +248,86 @@ class TestStarredJsonRoundtrip(TempDBTest):
         self.assertEqual(data["users"][0]["tags"], ["b-tag", "a-tag"])
 
 
+class TestTrending(TempDBTest):
+    def _insert_snapshot(self, c, period_type, period_key, url, stars=100, forks=10, rank=None):
+        c.execute(
+            "INSERT OR IGNORE INTO trending_repos (url, name) VALUES (?, ?)",
+            (url, url.replace("https://github.com/", "")),
+        )
+        c.execute(
+            "INSERT INTO trending_snapshots (period_type, period_key, url, stars, forks, rank) "
+            "VALUES (?, ?, ?, ?, ?, ?)",
+            (period_type, period_key, url, stars, forks, rank),
+        )
+
+    def test_invalid_period_type(self):
+        """period_type 非枚举值应 fail。"""
+        c = self.conn()
+        c.execute("INSERT INTO trending_repos (url, name) VALUES ('https://github.com/a/b', 'a/b')")
+        with self.assertRaises(sqlite3.IntegrityError):
+            c.execute(
+                "INSERT INTO trending_snapshots (period_type, period_key, url, stars) "
+                "VALUES ('hourly', '2026-01-01-00', 'https://github.com/a/b', 1)"
+            )
+        c.close()
+
+    def test_snapshot_pk_idempotent(self):
+        """同一 (period_type, period_key, url) 多次 seed 不重复（INSERT OR REPLACE）。"""
+        c = self.conn()
+        self._insert_snapshot(c, "daily", "2026-01-01", "https://github.com/a/b", stars=100)
+        # INSERT OR REPLACE 模拟 seed_trending 行为
+        c.execute(
+            "INSERT OR REPLACE INTO trending_snapshots (period_type, period_key, url, stars, forks) "
+            "VALUES ('daily', '2026-01-01', 'https://github.com/a/b', 200, 0)"
+        )
+        c.commit()
+        rows = c.execute("SELECT stars FROM trending_snapshots WHERE url='https://github.com/a/b'").fetchall()
+        self.assertEqual(len(rows), 1, "PK 唯一约束应保证只有一行")
+        self.assertEqual(rows[0][0], 200, "REPLACE 应使用新 stars 值")
+        c.close()
+
+    def test_v_trending_days(self):
+        c = self.conn()
+        url = "https://github.com/a/b"
+        self._insert_snapshot(c, "daily", "2026-01-01", url)
+        self._insert_snapshot(c, "daily", "2026-01-02", url)
+        self._insert_snapshot(c, "daily", "2026-01-03", url)
+        self._insert_snapshot(c, "weekly", "2026-W01", url)
+        self._insert_snapshot(c, "monthly", "2026-01", url)
+        c.commit()
+        row = c.execute("SELECT daily_count, weekly_count, monthly_count FROM v_trending_days WHERE url=?", (url,)).fetchone()
+        self.assertEqual(row, (3, 1, 1))
+        c.close()
+
+    def test_v_trending_window(self):
+        """v_trending_repo_window.last_daily 应只取 daily 时段的最大值。"""
+        c = self.conn()
+        url = "https://github.com/a/b"
+        self._insert_snapshot(c, "daily", "2026-01-01", url)
+        self._insert_snapshot(c, "daily", "2026-01-15", url)
+        self._insert_snapshot(c, "weekly", "2026-W10", url)
+        c.commit()
+        row = c.execute("SELECT last_daily FROM v_trending_repo_window WHERE url=?", (url,)).fetchone()
+        self.assertEqual(row[0], "2026-01-15")
+        c.close()
+
+    def test_dump_trending_deduped(self):
+        """dump_trending_deduped 用 daily_count 作 trending_days，last_daily 作 last_seen。"""
+        c = self.conn()
+        url = "https://github.com/a/b"
+        self._insert_snapshot(c, "daily", "2026-01-01", url, stars=50, forks=5)
+        self._insert_snapshot(c, "daily", "2026-01-02", url, stars=100, forks=10)
+        c.commit()
+        c.close()
+        rows = init_db.dump_trending_deduped()
+        self.assertEqual(len(rows), 1)
+        r = rows[0]
+        self.assertEqual(r["trending_days"], 2)
+        self.assertEqual(r["last_seen"], "2026-01-02")
+        self.assertEqual(r["stars"], 100, "stars 应取最高的那次快照")
+        self.assertEqual(r["forks"], 10)
+
+
 class TestPublishMdParsing(unittest.TestCase):
     """测试三种行格式都被正确解析（修复历史隐 bug）。"""
 

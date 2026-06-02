@@ -27,6 +27,7 @@ DB_PATH = DATA_DIR / "db.sqlite"
 REPORTS_JSON = DATA_DIR / "reports.json"
 TAGS_YAML = DATA_DIR / "tags.yaml"
 STARRED_JSON = DATA_DIR / "starred.json"
+TRENDING_DEDUP_JSON = ROOT / "src" / "trending_repo" / "all_repos_deduped.json"
 
 
 # ---------------------------------------------------------------- schema migrations
@@ -144,6 +145,47 @@ MIGRATIONS: dict[int, str] = {
         SELECT us.*, r.slug AS report_slug
         FROM user_starred us
         LEFT JOIN reports r ON r.original_url = us.url;
+    """,
+    3: """
+        -- 阶段 3：Trending 时间序列
+        CREATE TABLE trending_repos (
+          url         TEXT    PRIMARY KEY,  -- 入库前 rstrip('/').lower() 规范化
+          name        TEXT    NOT NULL,     -- 'owner/repo' 原始大小写
+          language    TEXT,
+          description TEXT    NOT NULL DEFAULT ''
+        );
+
+        CREATE TABLE trending_snapshots (
+          period_type  TEXT    NOT NULL CHECK (period_type IN ('daily','weekly','monthly')),
+          period_key   TEXT    NOT NULL,    -- daily=YYYY-MM-DD / weekly=YYYY-Www / monthly=YYYY-MM
+          url          TEXT    NOT NULL,
+          stars        INTEGER NOT NULL CHECK (stars >= 0),
+          forks        INTEGER NOT NULL DEFAULT 0 CHECK (forks >= 0),
+          rank         INTEGER,             -- 当时榜单位置（原 JSON 无此字段，预留）
+          PRIMARY KEY (period_type, period_key, url),
+          FOREIGN KEY (url) REFERENCES trending_repos(url) ON DELETE CASCADE
+        );
+        CREATE INDEX idx_trending_snap_url ON trending_snapshots(url, period_type, period_key);
+        CREATE INDEX idx_trending_snap_pk  ON trending_snapshots(period_type, period_key);
+
+        -- 上榜窗口（首次/最后出现日期）
+        CREATE VIEW v_trending_repo_window AS
+        SELECT
+          url,
+          MIN(period_key) FILTER (WHERE period_type='daily')  AS first_daily,
+          MAX(period_key) FILTER (WHERE period_type='daily')  AS last_daily,
+          MIN(period_key) AS first_seen,
+          MAX(period_key) AS last_seen
+        FROM trending_snapshots GROUP BY url;
+
+        -- 上榜次数轨迹（按 period_type 分桶）
+        CREATE VIEW v_trending_days AS
+        SELECT
+          url,
+          SUM(CASE WHEN period_type='daily'   THEN 1 ELSE 0 END) AS daily_count,
+          SUM(CASE WHEN period_type='weekly'  THEN 1 ELSE 0 END) AS weekly_count,
+          SUM(CASE WHEN period_type='monthly' THEN 1 ELSE 0 END) AS monthly_count
+        FROM trending_snapshots GROUP BY url;
     """,
 }
 
@@ -330,6 +372,52 @@ def write_starred_json(path: Path = STARRED_JSON) -> int:
     return sum(len(u["items"]) for u in data["users"])
 
 
+def dump_trending_deduped() -> list[dict[str, Any]]:
+    """从 DB 派生 all_repos_deduped.json：
+        - trending_days = daily 上榜天数（与 parse_trending.py 原语义一致）
+        - last_seen = 最后一次在 daily 出现的日期
+        - stars/forks = 历次快照中最高 stars 那次的值（与 parse_trending.py 原语义一致）
+        - 排序：trending_days DESC（与现状一致）
+    """
+    conn = get_connection()
+    rows = conn.execute(
+        """
+        SELECT
+          tr.url, tr.name, tr.language, tr.description,
+          td.daily_count AS trending_days,
+          w.last_daily AS last_seen,
+          (SELECT stars FROM trending_snapshots ts
+             WHERE ts.url = tr.url ORDER BY ts.stars DESC LIMIT 1) AS stars,
+          (SELECT forks FROM trending_snapshots ts
+             WHERE ts.url = tr.url ORDER BY ts.stars DESC LIMIT 1) AS forks
+        FROM trending_repos tr
+        JOIN v_trending_days td        USING(url)
+        JOIN v_trending_repo_window w  USING(url)
+        ORDER BY trending_days DESC, tr.url
+        """
+    ).fetchall()
+    conn.close()
+    out: list[dict[str, Any]] = []
+    for url, name, language, desc, td, last_seen, stars, forks in rows:
+        out.append({
+            "name": name,
+            "url": url,
+            "language": language,
+            "stars": stars,
+            "forks": forks,
+            "description": desc,
+            "last_seen": last_seen,
+            "trending_days": td,
+        })
+    return out
+
+
+def write_trending_deduped(path: Path = TRENDING_DEDUP_JSON) -> int:
+    data = dump_trending_deduped()
+    path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    return len(data)
+
+
 def write_tags_yaml(path: Path = TAGS_YAML) -> int:
     import yaml
     entries = dump_tags_entries()
@@ -348,6 +436,13 @@ def cmd_export_json(args: argparse.Namespace) -> int:
     print(f"✅ 导出 reports.json  ({n_reports} 篇)")
     print(f"✅ 导出 tags.yaml     ({n_tags} 篇)")
     print(f"✅ 导出 starred.json  ({n_starred} 条 starred items)")
+    # trending dedup 只在 trending_repos 有数据时 dump（避免阶段 3 未应用时清空文件）
+    conn = get_connection()
+    has_trending = conn.execute("SELECT COUNT(*) FROM trending_repos").fetchone()[0]
+    conn.close()
+    if has_trending:
+        n_trending = write_trending_deduped()
+        print(f"✅ 导出 all_repos_deduped.json ({n_trending} 个仓库)")
     return 0
 
 
@@ -482,11 +577,44 @@ def verify_starred(*, allow_url_case_diff: bool = True) -> list[str]:
     return diffs
 
 
+def verify_trending(*, allow_url_case_diff: bool = True) -> list[str]:
+    if not TRENDING_DEDUP_JSON.exists():
+        return []  # 文件不存在表示阶段 3 未跑过，不阻塞
+    existing = json.loads(TRENDING_DEDUP_JSON.read_text(encoding="utf-8"))
+    actual = dump_trending_deduped()
+    if not actual:
+        return []  # DB 内无数据，跳过
+    diffs: list[str] = []
+    # 用 normalized url 作为索引（原 JSON 可能有大小写）
+    def _norm(u: str | None) -> str | None:
+        if u is None:
+            return None
+        return u.rstrip("/").lower() if allow_url_case_diff else u
+    exp = {_norm(r.get("url")): r for r in existing if r.get("url")}
+    act = {r["url"]: r for r in actual}
+    only_e = set(exp) - set(act)
+    only_a = set(act) - set(exp)
+    for u in sorted(only_e):
+        diffs.append(f"trending.url={u}: 仅 expected 存在")
+    for u in sorted(only_a):
+        diffs.append(f"trending.url={u}: 仅 actual 存在")
+    for url in sorted(set(exp) & set(act)):
+        e = exp[url]
+        a = act[url]
+        for k in ("trending_days", "stars", "forks", "language", "last_seen", "name"):
+            ev = _normalize_for_compare(e.get(k))
+            av = _normalize_for_compare(a.get(k))
+            if ev != av:
+                diffs.append(f"trending[{url}].{k}: expected={ev!r} actual={av!r}")
+    return diffs
+
+
 def cmd_verify(args: argparse.Namespace) -> int:
     all_diffs: list[str] = []
     all_diffs += verify_reports()
     all_diffs += verify_tags()
     all_diffs += verify_starred()
+    all_diffs += verify_trending()
     if not all_diffs:
         print("✅ verify 通过：DB dump 与现有文件字典级一致")
         return 0
