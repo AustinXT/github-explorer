@@ -860,6 +860,33 @@
     "publishedTitle": null
   },
   {
+    "slug": "apache_superset",
+    "title": "73K stars 反超 Airflow：Apache Superset 凭 50+ 数据库适配稳坐 ASF 数据栈门面",
+    "originalUrl": null,
+    "summary": "Apache Superset 是一套\"对数据库友好的开源数据可视化与探索平台\"——同时具备无代码图表构建器、SQL IDE、轻量语义层和嵌入式 Dashboard，并以 50+ 种数据库方言适配作为十年来最深的护城河，是 ASF（Apache 软件基金会）数据栈对外的第一门面。",
+    "highlights": [
+      "ASF 数据栈门面担当：73,108 stars 超越同属 Apache 的 ECharts（66.4k）、Airflow（45.6k）、Spark（43.3k），是 Apache 数据生态最显眼的招牌项目",
+      "「一人双 TLP」的稀缺起源：创始人 Maxime Beauchemin 同时是 Apache Airflow 和 Apache Superset 的缔造者",
+      "AI 时代的早期卡位：2025 年末推出开源 BI 领域首个完整 MCP Service（Model Context Protocol，模型上下文协议），把 dashboard/chart/dataset 暴露给 LLM Agent 消费，是所有 OSS BI 工具里最前卫的 AI-native 尝试"
+    ],
+    "stars": 73108,
+    "forks": 17439,
+    "language": null,
+    "locRaw": null,
+    "ageMonths": 131.0,
+    "ageRaw": "131 个月（2015-07-21 首次 commit）",
+    "stage": "繁荣期（2026-05 月均 474 commit，当前第 4 个增长高峰）",
+    "contribution": "社区驱动 + 商业化公司主导维护（Preset 7 名核心 + dependabot 2,054 次 commit）",
+    "heat": "大众热门",
+    "heatRaw": "大众热门（ASF 全项目 Star 第一）",
+    "quality": "代码 良好 / 文档 优秀 / 测试 基本（0.79 测试/源码比）",
+    "license": null,
+    "cover": "https://github.com/user-attachments/assets/b37388f7-a971-409c-96a7-90c4e31322e6",
+    "mtime": "2026-06-02",
+    "published": "pending",
+    "publishedTitle": null
+  },
+  {
     "slug": "apple_container",
     "title": "Apple Container",
     "originalUrl": "https://github.com/apple/container",
@@ -1971,6 +1998,33 @@
     "cover": "https://github.com/user-attachments/assets/7ccaf2c1-9b72-41ae-9a89-5688c94b7abe",
     "mtime": "2026-05-11",
     "published": null,
+    "publishedTitle": null
+  },
+  {
+    "slug": "commaai_openpilot",
+    "title": "9 年 61K stars：从越狱黑客到机器人 OS，comma.ai 用 openpilot 重新定义「车主能跑开源 L2」",
+    "originalUrl": "https://github.com/commaai/openpilot",
+    "summary": "openpilot 是 17,000+ commits、300+ 车型适配、用户规模 10 万级的开源 L2 ADAS 平台，把「车机 ROM + 端到端驾驶模型 + 安全硬件 + 数据飞轮」打包成一套真正可用的端到端方案；它用 0.11.0 实现的「完全在 learned simulator 训练 driving model」，第一次让 MIT 协议的量产级 ADAS 在技术叙事上追平了 Tesla FSD。",
+    "highlights": [
+      "唯一开源、唯一大规模、可被个人装车的 L2 平台：Autoware/Apollo 走 L4 Robotaxi 路线且依赖激光雷达，Tesla FSD 闭源，openpilot 是「C 端车主的开源 ADAS」这一赛道的孤品",
+      "软硬件自闭环的商业模式样本：comma four 硬件 + openpilot 软件 + comma prime 订阅 + 数据回传飞轮，是开源 L2 项目里少见的完整商业模式",
+      "把机器人 OS 装进 9 万行 Python 的工程哲学：Python 84.7% / C++ 9% 的语言分布对想研究「AI 项目如何在 Python 性能边界上做分层」的人是天然范本"
+    ],
+    "stars": 61238,
+    "forks": 10948,
+    "language": null,
+    "locRaw": "298,584 行（不含空行/注释），923 源文件 + 大量 vendored 子模块",
+    "ageMonths": 114.0,
+    "ageRaw": "114 个月（9.5 年，2016-11-29 首次提交 → 2026-06-02 仍在持续集成）",
+    "stage": "稳定维护 + 持续密集迭代（v0.11.0 周期，月均 130-300 commits）",
+    "contribution": "小核心团队（Top 4 占 61%）+ 创始人 George Hotz 仍亲自 commit（263 次）+ 大社区",
+    "heat": "大众热门",
+    "heatRaw": "大众热门（开源 ADAS 赛道断层第一）",
+    "quality": "代码 8/10、文档 9/10、测试 7/10（车载 L2 顶级）",
+    "license": null,
+    "cover": "https://github.com/commaai/openpilot/assets/8762862/2f7112ae-f748-4f39-b617-fabd689c3772",
+    "mtime": "2026-06-02",
+    "published": "pending",
     "publishedTitle": null
   },
   {
@@ -5314,6 +5368,33 @@
     "publishedTitle": null
   },
   {
+    "slug": "lobehub_lobehub",
+    "title": "78K Star 的「Chief Agent Operator」：lobehub 如何把 ChatGPT 客户端重做成 AI 员工团队",
+    "originalUrl": "https://github.com/lobehub/lobehub",
+    "summary": "LobeHub 把 LLM 会话从「人在前、模型在后」重做成「7×24 后台运行的 AI 员工团队」——通过 60+ 内置 tools、332K SKILLs marketplace、7 个 IM 适配器、**五层用户记忆**与 Agent Signal 因果链，构建一个**个人 AI 操作系统的发行版**。",
+    "highlights": [
+      "叙事切换的窗口期价值：从 LobeChat 升级到 LobeHub 后，正在从「ChatGPT 替代品」（红海，open-webui/NextChat 抢完）切换到「CAO / Agent Operator」新定位（蓝海，错位 Claude/OpenAI 的「超级 App」路径），是公众号文章的稀缺信息差",
+      "设计工程师基因的 C 端产品力：核心 maintainer arvinxx 同时是 lobe-ui / lobe-icons / lobe-editor / lobe-charts 等十几个组件库的主导者，生态护城河难以被纯后端团队快速复制",
+      "工程化深度可借鉴：80+ packages 拆分的 pnpm monorepo、Instruction 化 Agent 循环、Phase-driven State Machine、AgentSignal 因果链、DEFAULT_SECURITY_BLACKLIST 不可绕过安全模型"
+    ],
+    "stars": 78071,
+    "forks": 15358,
+    "language": "TypeScript",
+    "locRaw": "2,262,113 行（非空非注释，TypeScript/TSX 49.3% + JSON 49.9% i18n）",
+    "ageMonths": 36.0,
+    "ageRaw": "约 36 个月（2023-05-21 至今）",
+    "stage": "**密集开发期**（近 30 天 592 commits，日均 ≈ 20，5 月单月 577 创新高）",
+    "contribution": "小团队核心 + 社区协作（Top 3 人类贡献者 ≈ 1,071 commits，48 名可见贡献者，30+ 外部贡献者）",
+    "heat": "大众热门",
+    "heatRaw": "大众热门（ChatGPT UI 类 Top 3）+ 叙事切换中",
+    "quality": "代码[优秀] 文档[优秀] 测试[不足]（Vitest + Cucumber e2e，单测占比 0.6%）",
+    "license": null,
+    "cover": "https://github.com/user-attachments/assets/0a33365f-b786-48b5-9ed6-f8af7927bccb",
+    "mtime": "2026-06-02",
+    "published": "pending",
+    "publishedTitle": null
+  },
+  {
     "slug": "localsend_localsend",
     "title": "LocalSend",
     "originalUrl": "https://github.com/localsend/localsend",
@@ -5338,6 +5419,33 @@
     "cover": null,
     "mtime": "2026-05-11",
     "published": null,
+    "publishedTitle": null
+  },
+  {
+    "slug": "localstack_localstack",
+    "title": "65K stars 的 LocalStack：把 AWS 100+ 服务搬进 Docker 跑通端到端，它做对了什么又被谁「抄家」？",
+    "originalUrl": "https://github.com/localstack/localstack",
+    "summary": "LocalStack 通过自研的 **AWS Server Framework (ASF)** 直接消费 AWS 官方的 Smithy 协议规范，让 boto3 **不改一行代码** 就能在本地端到端跑通 100+ 个 AWS 服务、跨服务事件流和真实网络边界——它是 AWS 集成测试领域的事实标准，也是 moto 的「工业级上位替代」。",
+    "highlights": [
+      "协议驱动 + 零手写路由的范式：ASF 把 AWS 的 6 套 RPC 协议（query / json / rest-json / rest-xml / ec2 / smithy-rpc-v2-cbor）做成类继承 parser，靠 `@handler(operation=「X」)` 装饰器绑定实现",
+      "商业化路径罕见的清晰案例：仓库 2026-03 主动 archived，从「开源贡献者培养皿」转向「商业云服务平台」",
+      "真实网络边界的工程兑现：单一边缘端口 4566 + 5 路信号嗅探（Auth Credential / X-Amz-Target / Host / Path / Smithy-Protocol）+ 内置 DNS server，让 SDK 完全无感知地把 `*.amazonaws.com` 劫持到本地"
+    ],
+    "stars": 65005,
+    "forks": 4725,
+    "language": "Python",
+    "locRaw": "1,732,619 行（Python 435,681 = 25.15%, JSON 409,900 = 23.66%, YAML 16,633）",
+    "ageMonths": 118.0,
+    "ageRaw": "118 个月（2016-08-16 首次提交）",
+    "stage": "成熟维护期（v4.x 持续 3+ 年，月均 ~95 commit，2026-03 仓库 archived）",
+    "contribution": "商业团队主导（Top 1 `whummer` 1582 次，Top 3 占 50%+，500+ 贡献者，localstack-bot 463 次自动化）",
+    "heat": "大众热门",
+    "heatRaw": "大众热门（AWS 开发工具类目标杆）",
+    "quality": "代码[A] 文档[A] 测试[A] CI/CD[A] 错误处理[A]",
+    "license": null,
+    "cover": "https://raw.githubusercontent.com/localstack/localstack/main/docs/localstack-concepts/gateway-overview.png",
+    "mtime": "2026-06-02",
+    "published": "pending",
     "publishedTitle": null
   },
   {

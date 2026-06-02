@@ -117,6 +117,13 @@ entries:
   anthropics_skills:
   - ai-agent
   - ai-coding
+  apache_superset:
+  - ai-agent
+  - workflow-automation
+  - database
+  - iot-hardware
+  - data-pipeline
+  - protocol-spec
   apple_container:
   - education
   - iot-hardware
@@ -259,6 +266,10 @@ entries:
   - devtools
   - video-audio
   - media-generation
+  commaai_openpilot:
+  - iot-hardware
+  - protocol-spec
+  - security
   commandcodeai_baseai:
   - ai-agent
   continuedev_continue:
@@ -683,8 +694,15 @@ entries:
   lightpanda-io_browser:
   - ai-agent
   - protocol-spec
+  lobehub_lobehub:
+  - ai-agent
+  - editor-kms
+  - design-ui
+  - security
   localsend_localsend:
   - security
+  localstack_localstack:
+  - protocol-spec
   longbridge_gpui-component:
   - design-ui
   - trading-finance
