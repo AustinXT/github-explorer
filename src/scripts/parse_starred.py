@@ -1,20 +1,23 @@
 #!/usr/bin/env python3
-"""解析 src/starred_repo/{login}.md 数据快照，配合 src/data/users.yaml 写入 db.sqlite。
+"""从 src/data/starred_seed.json 读取大牛 Star 快照，配合 src/data/users.yaml 写入 db.sqlite。
 
 数据流：
-    src/data/users.yaml          ──┐
-    src/starred_repo/{login}.md  ──┤  parse → users / user_tags / user_starred / user_starred_snapshot
-                                    └─ reportSlug 派生由 v_user_starred 视图完成（URL 已规范化，无需 join 时 lower）
+    src/data/users.yaml        ──┐  (用户清单 + name/bio/tags/排序，权威源)
+    src/data/starred_seed.json ──┤  parse → users / user_tags / user_starred / user_starred_snapshot
+                                  └─ reportSlug 派生由 v_user_starred 视图完成（URL 已规范化）
 
-starred.json 不再由本脚本写出，统一由 `scripts/init_db.py export-json` 从 DB dump。
-site/ 仍读 JSON 不变。
+注意 SoR 与导出的分离（同 publish_history.jsonl ≠ reports.json）：
+    - starred_seed.json 是 SoR（手工/外部 Starlight2 抓取维护），本脚本只读它、不回写。
+    - starred.json 仍由 `scripts/init_db.py export-json` 从 DB dump（含派生 reportSlug），供 site/ 读取。
 
-输入行格式：
-    - [owner/repo](url) ⭐stars — description [YYYY-MM-DD]
+starred_seed.json 结构：
+    {"users": [{"login", "fetchedAt", "rangeStart", "items": [
+        {"name", "url", "stars", "description", "starredAt"}, ...]}, ...]}
+（用户级 name/bio/tags/排序以 users.yaml 为准，seed 内同名字段忽略。）
 """
 from __future__ import annotations
 
-import re
+import json
 import sqlite3
 import sys
 from pathlib import Path
@@ -23,44 +26,26 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[2]
 USERS_FILE = ROOT / "src" / "data" / "users.yaml"
-STARRED_DIR = ROOT / "src" / "starred_repo"
+SEED_FILE = ROOT / "src" / "data" / "starred_seed.json"
 
 sys.path.insert(0, str(ROOT / "src" / "scripts"))
 from init_db import get_connection, ensure_schema, normalize_url  # noqa: E402
 
 
-LINE_RE = re.compile(
-    r"^\s*[-*]\s+\[([^\]]+)\]\(([^)]+)\)\s*⭐\s*(\d+)\s*(?:—|--|-)\s*(.*?)\s*\[(\d{4}-\d{2}-\d{2})\]\s*$"
-)
-HEADER_RE = re.compile(
-    r"^数据获取日期:\s*(\d{4}-\d{2}-\d{2})\s*\|\s*筛选范围:\s*(\d{4}-\d{2}-\d{2})\s*至今"
-)
-
-
-def parse_starred_file(path: Path) -> dict:
-    text = path.read_text(encoding="utf-8")
-    fetched_at = None
-    range_start = None
-    items: list[dict] = []
-
-    for line in text.splitlines():
-        if fetched_at is None:
-            m = HEADER_RE.match(line.strip())
-            if m:
-                fetched_at, range_start = m.group(1), m.group(2)
-                continue
-        m = LINE_RE.match(line)
-        if m:
-            name, url, stars, desc, star_date = m.groups()
-            items.append({
-                "name": name.strip(),
-                "url": url.strip(),
-                "stars": int(stars),
-                "description": desc.strip(),
-                "starredAt": star_date,
-            })
-
-    return {"fetchedAt": fetched_at, "rangeStart": range_start, "items": items}
+def load_seed() -> dict[str, dict]:
+    """读 starred_seed.json，返回 {login: {fetchedAt, rangeStart, items}}。"""
+    doc = json.loads(SEED_FILE.read_text(encoding="utf-8"))
+    seed: dict[str, dict] = {}
+    for u in doc.get("users") or []:
+        login = u.get("login")
+        if not login:
+            continue
+        seed[login] = {
+            "fetchedAt": u.get("fetchedAt"),
+            "rangeStart": u.get("rangeStart"),
+            "items": u.get("items") or [],
+        }
+    return seed
 
 
 def seed_users(conn: sqlite3.Connection, users: list[dict]) -> None:
@@ -113,8 +98,12 @@ def main() -> int:
     if not USERS_FILE.exists():
         print(f"❌ 缺少 {USERS_FILE}", file=sys.stderr)
         return 1
+    if not SEED_FILE.exists():
+        print(f"❌ 缺少 {SEED_FILE}", file=sys.stderr)
+        return 1
     users_doc = yaml.safe_load(USERS_FILE.read_text(encoding="utf-8")) or {}
     users = users_doc.get("users") or []
+    seed = load_seed()
 
     conn = get_connection()
     ensure_schema(conn)
@@ -130,12 +119,11 @@ def main() -> int:
         login = u.get("login")
         if not login:
             continue
-        path = STARRED_DIR / f"{login}.md"
-        if not path.exists():
-            print(f"⚠️  {login}: 缺少 starred 快照 {path.relative_to(ROOT)}")
+        parsed = seed.get(login)
+        if parsed is None:
+            print(f"⚠️  {login}: starred_seed.json 中缺少该用户的快照")
             per_user.append((login, None, 0))
             continue
-        parsed = parse_starred_file(path)
         try:
             n = write_starred(conn, login, parsed)
         except sqlite3.IntegrityError as e:

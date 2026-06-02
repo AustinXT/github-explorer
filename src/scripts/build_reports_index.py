@@ -24,7 +24,6 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 REPORTS_DIR = ROOT / "src" / "analysis_report"
-PUBLISH_FILE = ROOT / "src" / "publish.md"
 
 # init_db.py 与本文件同目录，import 直读
 sys.path.insert(0, str(ROOT / "src" / "scripts"))
@@ -35,82 +34,8 @@ def read_text(p: Path) -> str:
     return p.read_text(encoding="utf-8", errors="replace")
 
 
-# ---------- publish.md 解析（三种行格式全覆盖） ----------
-
-# 1) 4 列链接行（已发布）：| [name.md](path) | 标题 | YYYY-MM-DD |
-LINK_4COL_RE = re.compile(
-    r"^\|\s*\[([^\]]+)\]\(([^)]+)\)\s*\|\s*([^|]+?)\s*\|\s*([^|]+?)\s*\|\s*$"
-)
-# 2) 2 列链接行（不发布列表的原因行）：| [name.md](path) | 原因 |
-LINK_2COL_RE = re.compile(
-    r"^\|\s*\[([^\]]+)\]\(([^)]+)\)\s*\|\s*([^|]+?)\s*\|\s*$"
-)
-# 3) 3 列裸文件名行（auto-analyze 追加到不发布列表）：| name.md | 自动生成 | YYYY-MM-DD (已入草稿) |
-BARE_3COL_RE = re.compile(
-    r"^\|\s*([\w\-_.]+\.md)\s*\|\s*([^|]+?)\s*\|\s*([^|]+?)\s*\|\s*$"
-)
-DATE_TAG_RE = re.compile(r"^(\d{4}-\d{2}-\d{2})(?:\s*\(([^)]+)\))?\s*$")
-
-
-def _slug_from_link(link_text: str, link_path: str) -> str:
-    """从 [link_text](link_path) 提取 slug（小写，与 Astro entry.id 一致）"""
-    slug = Path(link_path).stem if "/" in link_path else link_text.replace(".md", "")
-    return slug.strip().lower()
-
-
-def parse_publish_index() -> dict[str, dict]:
-    """返回 {slug: {state, at, title, reason}}。
-
-    state ∈ {pending, excluded, published, None}；published 时 at = YYYY-MM-DD。
-
-    历史 bug 修复（详见 .claude/plans/splendid-swinging-meteor.md）：
-    - 旧版正则要求 4 列管道，导致不发布列表的 2 列行 与 auto-analyze 追加的 3 列裸文件名行均被丢弃。
-    - 修复后这些 slug 的 published 字段从 null 变为有值；site/ 消费者只判断 null vs 非 null，无破坏。
-    """
-    if not PUBLISH_FILE.exists():
-        return {}
-    out: dict[str, dict] = {}
-    in_excluded = False
-    for raw in read_text(PUBLISH_FILE).splitlines():
-        line = raw.strip()
-        if line.startswith("## 不发布"):
-            in_excluded = True
-            continue
-
-        # 优先：4 列链接行
-        m = LINK_4COL_RE.match(line)
-        if m:
-            link_text, link_path, title, status = m.groups()
-            slug = _slug_from_link(link_text, link_path)
-            if in_excluded:
-                # 不发布列表里的 4 列行（罕见但允许）
-                out[slug] = {"state": "excluded", "at": None, "title": title.strip(), "reason": status.strip()}
-            elif re.match(r"\d{4}-\d{2}-\d{2}", status):
-                out[slug] = {"state": "published", "at": status.strip()[:10], "title": title.strip(), "reason": None}
-            else:
-                out[slug] = {"state": "pending", "at": None, "title": title.strip(), "reason": None}
-            continue
-
-        # 其次：2 列链接行（只在不发布段语义为 excluded）
-        m = LINK_2COL_RE.match(line)
-        if m:
-            link_text, link_path, second = m.groups()
-            slug = _slug_from_link(link_text, link_path)
-            if in_excluded:
-                out[slug] = {"state": "excluded", "at": None, "title": None, "reason": second.strip()}
-            # 已发布段的 2 列链接不应出现（表头/分隔行不会被匹配），忽略
-            continue
-
-        # 最后：3 列裸文件名行（auto-analyze 追加，语义为 pending 待发布）
-        m = BARE_3COL_RE.match(line)
-        if m:
-            filename, source, date_status = m.groups()
-            slug = filename.replace(".md", "").strip().lower()
-            dm = DATE_TAG_RE.match(date_status.strip())
-            at = dm.group(1) if dm else None
-            out[slug] = {"state": "pending", "at": at, "title": None, "reason": source.strip()}
-            continue
-    return out
+# 注：阶段 4 起 publish 字段不再从 publish.md 解析（该文件已删除），
+# 而由 init_db.py 从 src/data/publish_history.jsonl → v_publish_latest 反查回填。
 
 
 # ---------- 单篇报告解析（纯函数，无 I/O） ----------

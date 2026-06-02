@@ -6,8 +6,6 @@ on:
     paths:
       - "src/analysis_report/**"
       - "src/trending_repo/**"
-      - "src/starred_repo/**"
-      - "src/publish.md"
       - "src/data/**"
       - "site/**"
       - "scripts/**"

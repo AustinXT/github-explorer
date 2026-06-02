@@ -1,5 +1,13 @@
 #!/usr/bin/env python3
-"""解析 github-trending-archive 数据，输出每日/每周/每月/去重后的 trending repos。"""
+"""解析 github-trending-archive 数据，输出 trending 快照 SoR：src/data/trending_snapshots.jsonl。
+
+每行一个快照，自带完整字段，供 seed_trending.py 灌库、site/ 直接读取：
+    {"period_type","period_key","url","name","language","description","stars","forks","rank"}
+
+去重汇总 all_repos_deduped.json 与人类可读榜单不再由本脚本产出：
+前者改由 `init_db.py export-json` 从 DB 派生（按 url 去重，权威）；
+选题用站点 /trending 与 select_next_repo.py。
+"""
 
 import json
 import re
@@ -9,10 +17,33 @@ from pathlib import Path
 
 ARCHIVE_DIR = Path("/tmp/github-trending-archive/data")
 OUTPUT_DIR = Path(__file__).parent
+# SoR 落到 src/data/（与 publish_history.jsonl 同处）
+SNAPSHOTS_FILE = OUTPUT_DIR.parent / "data" / "trending_snapshots.jsonl"
 
 # 半年范围：2025-09-22 到 2026-04-06
 START_DATE = datetime(2025, 9, 22)
 END_DATE = datetime(2026, 4, 6)
+
+
+def _snapshot_rows(period_type: str, period_key: str, repos: list[dict]) -> list[dict]:
+    """把一期 repo 列表转为 jsonl 行（rank = 列表序，1-based）。仅保留有 url 的条目。"""
+    rows = []
+    for rank, r in enumerate(repos, start=1):
+        url = r.get("url")
+        if not url:
+            continue
+        rows.append({
+            "period_type": period_type,
+            "period_key": period_key,
+            "url": url,
+            "name": r.get("name", ""),
+            "language": r.get("language"),
+            "description": r.get("description") or "",
+            "stars": int(r.get("stars") or 0),
+            "forks": int(r.get("forks") or 0),
+            "rank": rank,
+        })
+    return rows
 
 
 def parse_md_file(filepath: Path) -> list[dict]:
@@ -68,20 +99,11 @@ def get_month(date: datetime) -> str:
 
 
 def main():
-    daily_dir = OUTPUT_DIR / "daily"
-    weekly_dir = OUTPUT_DIR / "weekly"
-    monthly_dir = OUTPUT_DIR / "monthly"
-    daily_dir.mkdir(exist_ok=True)
-    weekly_dir.mkdir(exist_ok=True)
-    monthly_dir.mkdir(exist_ok=True)
-
-    all_repos = {}  # name -> best record (highest stars)
-    weekly_data = defaultdict(dict)   # week -> {name: repo}
-    monthly_data = defaultdict(dict)  # month -> {name: repo}
+    daily_data: dict[str, list[dict]] = {}   # date_str -> repos（原始序）
+    weekly_data = defaultdict(dict)           # week -> {name: repo}（保留星标最高）
+    monthly_data = defaultdict(dict)          # month -> {name: repo}
 
     current = START_DATE
-    daily_count = 0
-
     while current <= END_DATE:
         date_str = current.strftime("%Y-%m-%d")
         month_str = current.strftime("%Y-%m")
@@ -89,109 +111,38 @@ def main():
 
         if filepath.exists():
             repos = parse_md_file(filepath)
+            daily_data[date_str] = repos
 
-            # 每日输出
-            daily_file = daily_dir / f"{date_str}.json"
-            daily_file.write_text(
-                json.dumps(repos, ensure_ascii=False, indent=2),
-                encoding="utf-8",
-            )
-            daily_count += 1
-
-            # 聚合到周和月
             week_key = get_iso_week(current)
             month_key = get_month(current)
             for r in repos:
                 name = r["name"]
-
-                # 周聚合：保留星标最高的记录
                 if name not in weekly_data[week_key] or r.get("stars", 0) > weekly_data[week_key][name].get("stars", 0):
                     weekly_data[week_key][name] = r
-
-                # 月聚合
                 if name not in monthly_data[month_key] or r.get("stars", 0) > monthly_data[month_key][name].get("stars", 0):
                     monthly_data[month_key][name] = r
 
-                # 全局去重：保留星标最高的记录
-                if name not in all_repos or r.get("stars", 0) > all_repos[name].get("stars", 0):
-                    all_repos[name] = {**r, "last_seen": date_str}
-                else:
-                    all_repos[name].setdefault("first_seen", date_str)
-
         current += timedelta(days=1)
 
-    # 输出每周数据
-    for week_key, repos_dict in sorted(weekly_data.items()):
-        repos_list = sorted(repos_dict.values(), key=lambda x: x.get("stars", 0), reverse=True)
-        (weekly_dir / f"{week_key}.json").write_text(
-            json.dumps(repos_list, ensure_ascii=False, indent=2),
-            encoding="utf-8",
-        )
+    # 汇总快照行：daily（按日期）→ weekly（按周）→ monthly（按月）
+    rows: list[dict] = []
+    for date_str in sorted(daily_data):
+        rows += _snapshot_rows("daily", date_str, daily_data[date_str])
+    for week_key in sorted(weekly_data):
+        repos_list = sorted(weekly_data[week_key].values(), key=lambda x: x.get("stars", 0), reverse=True)
+        rows += _snapshot_rows("weekly", week_key, repos_list)
+    for month_key in sorted(monthly_data):
+        repos_list = sorted(monthly_data[month_key].values(), key=lambda x: x.get("stars", 0), reverse=True)
+        rows += _snapshot_rows("monthly", month_key, repos_list)
 
-    # 输出每月数据
-    for month_key, repos_dict in sorted(monthly_data.items()):
-        repos_list = sorted(repos_dict.values(), key=lambda x: x.get("stars", 0), reverse=True)
-        (monthly_dir / f"{month_key}.json").write_text(
-            json.dumps(repos_list, ensure_ascii=False, indent=2),
-            encoding="utf-8",
-        )
+    SNAPSHOTS_FILE.parent.mkdir(parents=True, exist_ok=True)
+    with SNAPSHOTS_FILE.open("w", encoding="utf-8") as fh:
+        for r in rows:
+            fh.write(json.dumps(r, ensure_ascii=False) + "\n")
 
-    # 计算每个 repo 的上榜天数
-    # 重新扫描统计
-    trending_days = defaultdict(int)
-    current = START_DATE
-    while current <= END_DATE:
-        date_str = current.strftime("%Y-%m-%d")
-        month_str = current.strftime("%Y-%m")
-        filepath = ARCHIVE_DIR / month_str / f"{date_str}.md"
-        if filepath.exists():
-            repos = parse_md_file(filepath)
-            for r in repos:
-                trending_days[r["name"]] += 1
-        current += timedelta(days=1)
-
-    # 输出去重后的全量 repo
-    deduped = []
-    for name, r in all_repos.items():
-        r["trending_days"] = trending_days.get(name, 0)
-        deduped.append(r)
-
-    deduped.sort(key=lambda x: x.get("trending_days", 0), reverse=True)
-
-    (OUTPUT_DIR / "all_repos_deduped.json").write_text(
-        json.dumps(deduped, ensure_ascii=False, indent=2),
-        encoding="utf-8",
-    )
-
-    # 输出 trending_repos_top.md（上榜 >= 3 天的仓库）
-    min_days = 3
-    top_repos = [r for r in deduped if r.get("trending_days", 0) >= min_days]
-    lines = [f"# GitHub Trending Repos (trending_days >= {min_days})"]
-    lines.append(f"\n共 {len(top_repos)} 个仓库（筛选自 {len(deduped)} 个）\n")
-    for r in top_repos:
-        name = r.get("name", "")
-        url = r.get("url", f"https://github.com/{name}")
-        stars = r.get("stars", 0)
-        days = r.get("trending_days", 0)
-        lang = r.get("language", "Unknown")
-        desc = r.get("description", "")
-        # 截断过长描述
-        if len(desc) > 100:
-            desc = desc[:100]
-        lines.append(f"- [{name}]({url}) - ⭐ {stars} | 🔥 {days}天 | {lang} | {desc}")
-    lines.append("")
-    (OUTPUT_DIR / "trending_repos_top.md").write_text(
-        "\n".join(lines),
-        encoding="utf-8",
-    )
-
-    # 打印统计
     print(f"时间范围: {START_DATE.date()} ~ {END_DATE.date()}")
-    print(f"每日文件: {daily_count} 个 → daily/")
-    print(f"每周文件: {len(weekly_data)} 个 → weekly/")
-    print(f"每月文件: {len(monthly_data)} 个 → monthly/")
-    print(f"去重 repo: {len(deduped)} 个 → all_repos_deduped.json")
-    print(f"上榜最多: {deduped[0]['name']} ({deduped[0]['trending_days']} 天)")
+    print(f"每日 {len(daily_data)} 期 / 每周 {len(weekly_data)} 期 / 每月 {len(monthly_data)} 期")
+    print(f"✅ 写入 {len(rows)} 条快照 → {SNAPSHOTS_FILE.relative_to(OUTPUT_DIR.parent.parent)}")
 
 
 if __name__ == "__main__":

@@ -215,6 +215,18 @@ MIGRATIONS: dict[int, str] = {
         )
         WHERE rn = 1;
     """,
+    5: """
+        -- 阶段 5：跨用户 Star 频次（替代 starred_repo/repo-frequency.md 的"多人 Star"选题信号）
+        -- 按 user_count DESC 查询即为原 repo-frequency.md 的"被多人 Star 的仓库"表
+        CREATE VIEW v_starred_frequency AS
+        SELECT
+          us.url,
+          COUNT(DISTINCT us.login) AS user_count,
+          MAX(us.name)             AS name,
+          (SELECT r.slug FROM reports r WHERE r.original_url = us.url LIMIT 1) AS report_slug
+        FROM user_starred us
+        GROUP BY us.url;
+    """,
 }
 
 

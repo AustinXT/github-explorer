@@ -276,7 +276,7 @@ jobs:
 
       - name: Record publish history (jsonl)
         # 阶段 4：发布记录 SoR 从 publish.md 表格切换到 publish_history.jsonl
-        # publish.md 保留为只读历史归档，不再被本步骤追加
+        # （publish.md 已删除，历史已导入 publish_history.jsonl）
         if: steps.report.outputs.path != ''
         env:
           PUBLISH_STATUS: ${{ steps.publish.outputs.publish_status }}

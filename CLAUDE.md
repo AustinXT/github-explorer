@@ -28,13 +28,19 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ./batch_analyze.sh [repos_file] [start_line] [end_line] [concurrency]
 # 默认：./batch_analyze.sh src/analysis_report/repos.md 1 0 5
 
-# 解析 GitHub Trending 归档数据（需先克隆 github-trending-archive 到 /tmp）
+# 解析 GitHub Trending 归档数据 → src/data/trending_snapshots.jsonl（需先克隆 github-trending-archive 到 /tmp）
 python3 src/trending_repo/parse_trending.py
 
-# 刷新站点元数据（reports.json / tags.yaml / starred.json）
+# 刷新站点元数据（建库 → 灌各 SoR → 导出 JSON/YAML，顺序同 CI）
+python3 src/scripts/init_db.py init && python3 src/scripts/init_db.py seed-publish
 python3 src/scripts/build_reports_index.py
-python3 src/scripts/extract_tags.py
-python3 src/scripts/parse_starred.py
+python3 src/scripts/extract_tags.py          # 必须在 export-json 前，否则 tags.yaml 会被清空
+python3 src/scripts/parse_starred.py         # 读 src/data/starred_seed.json
+python3 src/scripts/seed_trending.py         # 读 src/data/trending_snapshots.jsonl
+python3 src/scripts/init_db.py export-json   # → reports.json / tags.yaml / starred.json / all_repos_deduped.json
+
+# 查"被多人 Star"选题信号（替代旧 repo-frequency.md）
+sqlite3 src/data/db.sqlite "SELECT user_count, name FROM v_starred_frequency WHERE user_count>=2 ORDER BY user_count DESC;"
 
 # 本地预览站点
 cd site && npm install && npm run dev   # http://localhost:4321
@@ -49,10 +55,11 @@ cd site && npm run build                # 输出 site/dist + pagefind 索引
 ## 项目结构
 
 - **src/analysis_report/** — 最终分析报告（375+ 篇），命名 `{username}_{repo_name}.md`，部分有 `.html` 发布版
-- **src/publish.md** — 公众号发布记录与待发布队列
-- **src/starred_repo/** — GitHub 用户 Star 仓库分析快照
-- **src/trending_repo/** — GitHub Trending 数据（daily/weekly/monthly JSON + 去重汇总）
-- **src/data/** — 站点元数据与配置：`reports.json` / `tags.yaml` / `tag-rules.yaml` / `users.yaml` / `trending-config.yaml` / `starred.json`
+- **src/trending_repo/** — `parse_trending.py`（从 archive 生成 SoR）+ `all_repos_deduped.json`（DB 导出的去重汇总，供站点/选题读取）
+- **src/data/** — 站点元数据 + 各数据源 SoR：
+  - 配置/导出：`reports.json` / `tags.yaml` / `tag-rules.yaml` / `users.yaml` / `trending-config.yaml` / `starred.json`
+  - SoR（git 跟踪、脚本据此灌库）：`publish_history.jsonl`（发布历史）/ `starred_seed.json`（大牛 Star 快照）/ `trending_snapshots.jsonl`（Trending 时间序列）
+  - 说明：`db.sqlite` 不入 Git，每次 CI 由上述 SoR 重建；站点读 JSON/YAML 导出。原 `src/starred_repo/*.md`、`src/trending_repo/{daily,weekly,monthly}/*.json`、`src/publish.md` 已迁入对应 SoR 并删除
 - **src/scripts/** — 项目核心脚本（被 CI workflow 调用）：建库 `init_db.py`、索引 `build_reports_index.py`、标签 `extract_tags.py`、Star 解析 `parse_starred.py`、Trending 入库 `seed_trending.py`、选题 `select_next_repo.py`、repo-miner 确定性采集 `collect_repo_facts.py`（准备阶段跑一次，Phase 1 网络数据 + Phase 2 代码/提交指标 → 单份 JSON，两个并行 Agent 共用）、提交校验 `validate_submission.py`、发布记录 `record_publish.py`、索引推送 `ping_search_engines.py`、CI 环境 `setup_ci_env.sh` / 技能调用 `run_skill.sh` / 评论解析 `parse_issue_comment.py`
 - **scripts/** — 一次性 / 辅助脚本（不入 CI）：公众号相关 `wechat_publish.py` / `_wechat_api.py` / `sync_wechat_status.py` / `apply_wechat_mapping.py` / `match_wechat_to_slugs.py` / `fetch_wechat_published.js`、DB 查询 `query_db.py`、历史迁移 `migrate_publish_md.py`
 - **site/** — Astro 静态站点（GitHub Pages 部署源）

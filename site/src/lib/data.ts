@@ -148,23 +148,60 @@ export function getTrendingAggregate(): TrendingItem[] {
   return JSON.parse(fs.readFileSync(file, "utf-8")) as TrendingItem[];
 }
 
-export function getTrendingByPeriod(period: "daily" | "weekly" | "monthly"): TrendingItem[] {
-  const dir = path.join(TRENDING_DIR, period);
-  if (!fs.existsSync(dir)) return [];
-  const files = fs.readdirSync(dir).filter((f) => f.endsWith(".json")).sort().reverse();
-  const seen = new Set<string>();
-  const out: TrendingItem[] = [];
-  for (const f of files) {
-    const items = JSON.parse(fs.readFileSync(path.join(dir, f), "utf-8")) as TrendingItem[];
-    for (const item of items) {
-      if (!seen.has(item.url)) {
-        seen.add(item.url);
-        out.push(item);
-      }
+// 从 src/data/trending_snapshots.jsonl 派生各周期榜单（每行自带完整字段）。
+// 语义复刻原"逐期 JSON 倒序 + 按 url 去重 + 每 tab ≤200"。
+let _trendingByPeriod: Record<string, TrendingItem[]> | null = null;
+function loadTrendingByPeriod(): Record<string, TrendingItem[]> {
+  if (_trendingByPeriod) return _trendingByPeriod;
+  const file = path.join(DATA_DIR, "trending_snapshots.jsonl");
+  const grouped: Record<string, Array<{ key: string; rank: number; item: TrendingItem }>> = {
+    daily: [],
+    weekly: [],
+    monthly: [],
+  };
+  if (fs.existsSync(file)) {
+    for (const line of fs.readFileSync(file, "utf-8").split("\n")) {
+      const s = line.trim();
+      if (!s) continue;
+      const r = JSON.parse(s) as {
+        period_type: string;
+        period_key: string;
+        rank: number;
+        name: string;
+        url: string;
+        language: string;
+        stars: number;
+        forks: number;
+        description: string;
+      };
+      const bucket = grouped[r.period_type];
+      if (!bucket) continue;
+      bucket.push({
+        key: r.period_key,
+        rank: r.rank,
+        item: { name: r.name, url: r.url, language: r.language, stars: r.stars, forks: r.forks, description: r.description },
+      });
     }
-    if (out.length >= 200) break; // 每个 tab 最多 200，避免过大
   }
+  const out: Record<string, TrendingItem[]> = {};
+  for (const [period, rows] of Object.entries(grouped)) {
+    rows.sort((a, b) => (a.key < b.key ? 1 : a.key > b.key ? -1 : a.rank - b.rank));
+    const seen = new Set<string>();
+    const items: TrendingItem[] = [];
+    for (const r of rows) {
+      if (seen.has(r.item.url)) continue;
+      seen.add(r.item.url);
+      items.push(r.item);
+      if (items.length >= 200) break;
+    }
+    out[period] = items;
+  }
+  _trendingByPeriod = out;
   return out;
+}
+
+export function getTrendingByPeriod(period: "daily" | "weekly" | "monthly"): TrendingItem[] {
+  return loadTrendingByPeriod()[period] ?? [];
 }
 
 // 报告 URL → slug 反查（用于 trending/starred 高亮已分析）

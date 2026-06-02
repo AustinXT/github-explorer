@@ -17,7 +17,7 @@ import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(ROOT / "scripts"))
+sys.path.insert(0, str(ROOT / "src" / "scripts"))
 
 import init_db  # noqa: E402
 
@@ -423,61 +423,9 @@ class TestTrending(TempDBTest):
         self.assertEqual(r["forks"], 10)
 
 
-class TestPublishMdParsing(unittest.TestCase):
-    """测试三种行格式都被正确解析（修复历史隐 bug）。"""
-
-    def _parse(self, content: str) -> dict:
-        import tempfile
-        from pathlib import Path
-        import build_reports_index as br
-        old_file = br.PUBLISH_FILE
-        with tempfile.NamedTemporaryFile("w", suffix=".md", delete=False, encoding="utf-8") as f:
-            f.write(content)
-            br.PUBLISH_FILE = Path(f.name)
-        try:
-            return br.parse_publish_index()
-        finally:
-            br.PUBLISH_FILE = old_file
-            os.unlink(f.name)
-
-    def test_published_4col(self):
-        idx = self._parse(
-            "# 公众号发布记录\n\n"
-            "| 文件 | 标题 | 发布日期 |\n"
-            "|------|------|----------|\n"
-            "| [a.md](analysis_report/a.md) | A 标题 | 2026-04-01 |\n"
-        )
-        self.assertIn("a", idx)
-        self.assertEqual(idx["a"]["state"], "published")
-        self.assertEqual(idx["a"]["at"], "2026-04-01")
-        self.assertEqual(idx["a"]["title"], "A 标题")
-
-    def test_excluded_2col(self):
-        idx = self._parse(
-            "## 不发布列表\n\n"
-            "| 文件 | 原因 |\n|------|------|\n"
-            "| [b.md](analysis_report/b.md) | 选题重复 |\n"
-        )
-        self.assertIn("b", idx)
-        self.assertEqual(idx["b"]["state"], "excluded")
-        self.assertEqual(idx["b"]["reason"], "选题重复")
-
-    def test_draft_3col_bare(self):
-        idx = self._parse(
-            "## 不发布列表\n\n"
-            "| c.md | 自动生成 | 2026-05-30 (已入草稿) |\n"
-        )
-        self.assertIn("c", idx)
-        self.assertEqual(idx["c"]["state"], "pending")
-        self.assertEqual(idx["c"]["at"], "2026-05-30")
-        self.assertEqual(idx["c"]["reason"], "自动生成")
-
-    def test_slug_lowercased(self):
-        """Slug 必须 lowercase 与 Astro entry.id 对齐。"""
-        idx = self._parse(
-            "| [Aider-AI_Aider.md](analysis_report/Aider-AI_Aider.md) | T | 2026-04-01 |\n"
-        )
-        self.assertIn("aider-ai_aider", idx)
+# 注：原 TestPublishMdParsing（测 build_reports_index.parse_publish_index 对 publish.md
+# 的三种行格式解析）已随 publish.md 删除而移除——发布历史 SoR 自阶段 4 起为
+# src/data/publish_history.jsonl，相关往返见 TestPublishHistory。
 
 
 if __name__ == "__main__":
