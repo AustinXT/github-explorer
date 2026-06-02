@@ -3,7 +3,7 @@
 # batch_analyze.sh - 批量并发调用 claude 分析 GitHub 仓库
 #
 # 用法: ./batch_analyze.sh [repos_file] [start_line] [end_line] [concurrency]
-#   repos_file   - 仓库列表文件，默认 docs/analysis_report/repos.md
+#   repos_file   - 仓库列表文件，默认 src/analysis_report/repos.md
 #   start_line   - 起始行号（含），默认 1
 #   end_line     - 结束行号（含），默认处理到文件末尾（0=不限）
 #   concurrency  - 并发数，默认 5
