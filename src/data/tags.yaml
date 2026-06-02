@@ -214,8 +214,6 @@ entries:
   - iot-hardware
   - web-framework
   - security
-  calcom_cal.com.phase1:
-  - uncategorized
   chenglou_pretext:
   - ai-coding
   - workflow-automation
@@ -368,6 +366,10 @@ entries:
   - ai-agent
   ejoffe_spr:
   - devtools
+  elastic_elasticsearch:
+  - ai-agent
+  - llm-framework
+  - rag-search
   eleutherai_lm-evaluation-harness:
   - uncategorized
   emcie-co_parlant:
@@ -454,6 +456,8 @@ entries:
   gibsonai_memori:
   - ai-agent
   - database
+  gin-gonic_gin:
+  - web-framework
   git-bug_git-bug:
   - devtools
   gitbutlerapp_gitbutler:
@@ -903,6 +907,8 @@ entries:
   - security
   ourongxing_newsnow:
   - uncategorized
+  oven-sh_bun:
+  - uncategorized
   p-e-w_heretic:
   - llm-training
   - workflow-automation
@@ -1044,6 +1050,8 @@ entries:
   shareai-lab_learn-claude-code:
   - ai-agent
   - ai-coding
+  sherlock-project_sherlock:
+  - security
   shubhamsaboo_awesome-llm-apps:
   - ai-agent
   - llm-framework
