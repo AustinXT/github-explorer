@@ -48,13 +48,14 @@ class TempDBTest(unittest.TestCase):
 
 class TestInitDB(TempDBTest):
     def test_idempotent(self):
-        """ensure_schema 两次不重复递增 version。"""
+        """ensure_schema 两次不重复应用同一 migration。"""
         c = self.conn()
         v1 = init_db.ensure_schema(c)
         v2 = init_db.ensure_schema(c)
         self.assertEqual(v1, v2)
         n = c.execute("SELECT COUNT(*) FROM schema_version").fetchone()[0]
-        self.assertEqual(n, 1, "schema_version 应只插入 1 行")
+        self.assertEqual(n, len(init_db.MIGRATIONS),
+                         "schema_version 应只有 len(MIGRATIONS) 行，每次 migration 仅插入一次")
         c.close()
 
 
@@ -178,6 +179,73 @@ class TestExportJsonRoundtrip(TempDBTest):
         self.assertEqual(by_slug["a"]["published"], "published:2026-04-01")
         self.assertEqual(by_slug["b"]["published"], "pending")
         self.assertEqual(by_slug["c"]["published"], "excluded")
+
+
+class TestUserStarredView(TempDBTest):
+    def test_join_to_reports(self):
+        """v_user_starred 应能将 user_starred.url 与 reports.original_url 关联出 report_slug。"""
+        c = self.conn()
+        c.execute("INSERT INTO users (login, name) VALUES ('alice', 'Alice')")
+        c.execute(
+            "INSERT INTO reports (slug, title, mtime, original_url) VALUES (?, ?, ?, ?)",
+            ("foo_bar", "Foo Bar", "2026-01-01", "https://github.com/foo/bar"),
+        )
+        c.execute(
+            "INSERT INTO user_starred (login, url, name, stars, starred_at) "
+            "VALUES (?, ?, ?, ?, ?)",
+            ("alice", "https://github.com/foo/bar", "foo/bar", 100, "2026-01-02"),
+        )
+        c.execute(
+            "INSERT INTO user_starred (login, url, name, stars, starred_at) "
+            "VALUES (?, ?, ?, ?, ?)",
+            ("alice", "https://github.com/x/y", "x/y", 50, "2026-01-03"),
+        )
+        c.commit()
+
+        rows = dict(c.execute(
+            "SELECT url, report_slug FROM v_user_starred WHERE login='alice'"
+        ).fetchall())
+        self.assertEqual(rows["https://github.com/foo/bar"], "foo_bar")
+        self.assertIsNone(rows["https://github.com/x/y"])
+        c.close()
+
+    def test_user_starred_cascade_delete(self):
+        """删除 users 行应级联清理 user_starred / user_tags / snapshot。"""
+        c = self.conn()
+        c.execute("INSERT INTO users (login, name) VALUES ('bob', 'Bob')")
+        c.execute("INSERT INTO user_tags (login, tag) VALUES ('bob', 'devtools')")
+        c.execute(
+            "INSERT INTO user_starred_snapshot (login, fetched_at) VALUES ('bob', '2026-01-01')"
+        )
+        c.execute(
+            "INSERT INTO user_starred (login, url, name, stars, starred_at) "
+            "VALUES (?, ?, ?, ?, ?)",
+            ("bob", "https://github.com/a/b", "a/b", 1, "2026-01-01"),
+        )
+        c.commit()
+        c.execute("DELETE FROM users WHERE login='bob'")
+        c.commit()
+
+        self.assertEqual(c.execute("SELECT COUNT(*) FROM user_tags").fetchone()[0], 0)
+        self.assertEqual(c.execute("SELECT COUNT(*) FROM user_starred").fetchone()[0], 0)
+        self.assertEqual(c.execute("SELECT COUNT(*) FROM user_starred_snapshot").fetchone()[0], 0)
+        c.close()
+
+
+class TestStarredJsonRoundtrip(TempDBTest):
+    def test_dump_preserves_user_order_and_tags(self):
+        """dump_starred 应按 users.sort_order 输出 users；tags 按 position 输出（与 yaml 顺序一致）。"""
+        c = self.conn()
+        c.execute("INSERT INTO users (login, name, sort_order) VALUES ('u2', 'U2', 1)")
+        c.execute("INSERT INTO users (login, name, sort_order) VALUES ('u1', 'U1', 0)")
+        c.execute("INSERT INTO user_tags (login, tag, position) VALUES ('u1', 'b-tag', 0)")
+        c.execute("INSERT INTO user_tags (login, tag, position) VALUES ('u1', 'a-tag', 1)")
+        c.commit()
+        c.close()
+
+        data = init_db.dump_starred()
+        self.assertEqual([u["login"] for u in data["users"]], ["u1", "u2"])
+        self.assertEqual(data["users"][0]["tags"], ["b-tag", "a-tag"])
 
 
 class TestPublishMdParsing(unittest.TestCase):

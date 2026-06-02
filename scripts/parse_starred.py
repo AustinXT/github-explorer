@@ -1,15 +1,21 @@
 #!/usr/bin/env python3
-"""
-解析 src/starred_repo/{login}.md 数据快照，结合 src/data/users.yaml 配置，
-输出 src/data/starred.json 供站点使用。
+"""解析 src/starred_repo/{login}.md 数据快照，配合 src/data/users.yaml 写入 db.sqlite。
 
-输入格式（每行）：
+数据流：
+    src/data/users.yaml          ──┐
+    src/starred_repo/{login}.md  ──┤  parse → users / user_tags / user_starred / user_starred_snapshot
+                                    └─ reportSlug 派生由 v_user_starred 视图完成（URL 已规范化，无需 join 时 lower）
+
+starred.json 不再由本脚本写出，统一由 `scripts/init_db.py export-json` 从 DB dump。
+site/ 仍读 JSON 不变。
+
+输入行格式：
     - [owner/repo](url) ⭐stars — description [YYYY-MM-DD]
 """
 from __future__ import annotations
 
-import json
 import re
+import sqlite3
 import sys
 from pathlib import Path
 
@@ -18,13 +24,17 @@ import yaml
 ROOT = Path(__file__).resolve().parent.parent
 USERS_FILE = ROOT / "src" / "data" / "users.yaml"
 STARRED_DIR = ROOT / "src" / "starred_repo"
-REPORTS_FILE = ROOT / "src" / "data" / "reports.json"
-OUTPUT_FILE = ROOT / "src" / "data" / "starred.json"
+
+sys.path.insert(0, str(ROOT / "scripts"))
+from init_db import get_connection, ensure_schema, normalize_url  # noqa: E402
+
 
 LINE_RE = re.compile(
     r"^\s*[-*]\s+\[([^\]]+)\]\(([^)]+)\)\s*⭐\s*(\d+)\s*(?:—|--|-)\s*(.*?)\s*\[(\d{4}-\d{2}-\d{2})\]\s*$"
 )
-HEADER_RE = re.compile(r"^数据获取日期:\s*(\d{4}-\d{2}-\d{2})\s*\|\s*筛选范围:\s*(\d{4}-\d{2}-\d{2})\s*至今")
+HEADER_RE = re.compile(
+    r"^数据获取日期:\s*(\d{4}-\d{2}-\d{2})\s*\|\s*筛选范围:\s*(\d{4}-\d{2}-\d{2})\s*至今"
+)
 
 
 def parse_starred_file(path: Path) -> dict:
@@ -50,11 +60,53 @@ def parse_starred_file(path: Path) -> dict:
                 "starredAt": star_date,
             })
 
-    return {
-        "fetchedAt": fetched_at,
-        "rangeStart": range_start,
-        "items": items,
-    }
+    return {"fetchedAt": fetched_at, "rangeStart": range_start, "items": items}
+
+
+def seed_users(conn: sqlite3.Connection, users: list[dict]) -> None:
+    """全量重建 users + user_tags（保持与 users.yaml 同步）。
+
+    user_starred 通过 ON DELETE CASCADE 也会被一并清理，下一步 seed_starred 重新写入。"""
+    with conn:
+        # 先 DELETE users —— FK CASCADE 会清掉 user_tags / user_starred / user_starred_snapshot
+        conn.execute("DELETE FROM users")
+        for i, u in enumerate(users):
+            login = u.get("login")
+            if not login:
+                continue
+            conn.execute(
+                "INSERT INTO users (login, name, bio, sort_order) VALUES (?, ?, ?, ?)",
+                (login, u.get("name") or login, u.get("bio"), i),
+            )
+            for j, tag in enumerate(u.get("tags") or []):
+                conn.execute(
+                    "INSERT OR IGNORE INTO user_tags (login, tag, position) VALUES (?, ?, ?)",
+                    (login, tag, j),
+                )
+
+
+def write_starred(conn: sqlite3.Connection, login: str, parsed: dict) -> int:
+    """写一位大牛的 starred 快照。返回写入的 item 数。"""
+    with conn:
+        # snapshot 头信息
+        conn.execute(
+            "INSERT OR REPLACE INTO user_starred_snapshot (login, fetched_at, range_start) "
+            "VALUES (?, ?, ?)",
+            (login, parsed["fetchedAt"], parsed["rangeStart"]),
+        )
+        # items 全量重写（同一 login 下）
+        conn.execute("DELETE FROM user_starred WHERE login=?", (login,))
+        n = 0
+        for pos, item in enumerate(parsed["items"]):
+            url = normalize_url(item["url"])
+            conn.execute(
+                "INSERT OR IGNORE INTO user_starred "
+                "(login, url, name, stars, description, starred_at, position) "
+                "VALUES (?, ?, ?, ?, ?, ?, ?)",
+                (login, url, item["name"], item["stars"], item["description"], item["starredAt"], pos),
+            )
+            n += 1
+        return n
 
 
 def main() -> int:
@@ -62,19 +114,18 @@ def main() -> int:
         print(f"❌ 缺少 {USERS_FILE}", file=sys.stderr)
         return 1
     users_doc = yaml.safe_load(USERS_FILE.read_text(encoding="utf-8")) or {}
-    users = users_doc.get("users", []) or []
+    users = users_doc.get("users") or []
 
-    # 反查表：URL → 报告 slug（reports.json 已是 lowercase slug）
-    analyzed: dict[str, str] = {}
-    if REPORTS_FILE.exists():
-        for r in json.loads(REPORTS_FILE.read_text(encoding="utf-8")):
-            if r.get("originalUrl"):
-                analyzed[r["originalUrl"].rstrip("/").lower()] = r["slug"]
+    conn = get_connection()
+    ensure_schema(conn)
+    try:
+        seed_users(conn, users)
+    except sqlite3.IntegrityError as e:
+        print(f"❌ seed users 失败: {e}", file=sys.stderr)
+        return 2
 
-    output: dict = {"users": []}
     total_items = 0
-    total_analyzed = 0
-
+    per_user: list[tuple[str, str | None, int]] = []
     for u in users:
         login = u.get("login")
         if not login:
@@ -82,34 +133,28 @@ def main() -> int:
         path = STARRED_DIR / f"{login}.md"
         if not path.exists():
             print(f"⚠️  {login}: 缺少 starred 快照 {path.relative_to(ROOT)}")
-            output["users"].append({**u, "fetchedAt": None, "rangeStart": None, "items": []})
+            per_user.append((login, None, 0))
             continue
-
         parsed = parse_starred_file(path)
-        for item in parsed["items"]:
-            key = item["url"].rstrip("/").lower()
-            if key in analyzed:
-                item["reportSlug"] = analyzed[key]
-                total_analyzed += 1
+        try:
+            n = write_starred(conn, login, parsed)
+        except sqlite3.IntegrityError as e:
+            print(f"❌ {login}: 写入 user_starred 失败: {e}", file=sys.stderr)
+            return 3
+        total_items += n
+        per_user.append((login, parsed["fetchedAt"], n))
 
-        total_items += len(parsed["items"])
-        output["users"].append({
-            **u,
-            "fetchedAt": parsed["fetchedAt"],
-            "rangeStart": parsed["rangeStart"],
-            "items": parsed["items"],
-        })
+    # 统计已分析（reportSlug 不为 NULL）的命中数 —— 通过视图查
+    total_analyzed = conn.execute(
+        "SELECT COUNT(*) FROM v_user_starred WHERE report_slug IS NOT NULL"
+    ).fetchone()[0]
+    conn.close()
 
-    OUTPUT_FILE.write_text(
-        json.dumps(output, ensure_ascii=False, indent=2) + "\n",
-        encoding="utf-8",
-    )
-
-    print(f"✅ 解析 {len(output['users'])} 位大牛 → {OUTPUT_FILE.relative_to(ROOT)}")
+    print(f"✅ 写入 {len(users)} 位大牛 → db.sqlite (users + user_starred*)")
     print(f"   总 starred 条目: {total_items}")
-    print(f"   其中已分析（命中报告）: {total_analyzed}")
-    for u in output["users"]:
-        print(f"     {u['login']:<14} fetched={u['fetchedAt']}  items={len(u['items'])}")
+    print(f"   其中已分析（视图 v_user_starred 命中）: {total_analyzed}")
+    for login, fetched, n in per_user:
+        print(f"     {login:<14} fetched={fetched}  items={n}")
     return 0
 
 

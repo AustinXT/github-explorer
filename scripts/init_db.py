@@ -99,6 +99,52 @@ MIGRATIONS: dict[int, str] = {
           FOREIGN KEY (slug) REFERENCES reports(slug) ON DELETE CASCADE
         );
     """,
+    2: """
+        -- 阶段 2：大牛 + Star
+        CREATE TABLE users (
+          login       TEXT    PRIMARY KEY,
+          name        TEXT    NOT NULL,
+          bio         TEXT,
+          sort_order  INTEGER NOT NULL DEFAULT 1000
+        );
+
+        -- user_tags.tag 是弱引用（users.yaml 里写的 tag 不一定在 tag-rules.yaml），
+        -- 因此不加外键约束到 tags 表。position 维持 YAML 字面顺序便于 dump 时还原。
+        CREATE TABLE user_tags (
+          login    TEXT NOT NULL,
+          tag      TEXT NOT NULL,
+          position INTEGER NOT NULL DEFAULT 0,
+          PRIMARY KEY (login, tag),
+          FOREIGN KEY (login) REFERENCES users(login) ON DELETE CASCADE
+        );
+
+        CREATE TABLE user_starred_snapshot (
+          login        TEXT    PRIMARY KEY,
+          fetched_at   TEXT,
+          range_start  TEXT,
+          FOREIGN KEY (login) REFERENCES users(login) ON DELETE CASCADE
+        );
+
+        CREATE TABLE user_starred (
+          login        TEXT    NOT NULL,
+          url          TEXT    NOT NULL,  -- 入库前 rstrip('/').lower() 规范化
+          name         TEXT    NOT NULL,
+          stars        INTEGER NOT NULL CHECK (stars >= 0),
+          description  TEXT    NOT NULL DEFAULT '',
+          starred_at   TEXT    NOT NULL,
+          position     INTEGER NOT NULL DEFAULT 0,  -- .md 中原始顺序，dump 时维持文件顺序减少 diff
+          PRIMARY KEY (login, url),
+          FOREIGN KEY (login) REFERENCES users(login) ON DELETE CASCADE
+        );
+        CREATE INDEX idx_user_starred_url ON user_starred(url);
+        CREATE INDEX idx_user_starred_pos ON user_starred(login, position);
+
+        -- reportSlug 派生视图：URL 已规范化，直接 = 即可
+        CREATE VIEW v_user_starred AS
+        SELECT us.*, r.slug AS report_slug
+        FROM user_starred us
+        LEFT JOIN reports r ON r.original_url = us.url;
+    """,
 }
 
 
@@ -226,6 +272,64 @@ def write_reports_json(path: Path = REPORTS_JSON) -> int:
     return len(data)
 
 
+def dump_starred() -> dict[str, Any]:
+    """从 DB dump 成 starred.json 结构（users[].items[]，含 v_user_starred 派生的 reportSlug）。
+
+    users 按 sort_order 排；items 按 starred_at DESC（与原 .md 列表顺序对齐）。"""
+    conn = get_connection()
+    user_rows = conn.execute(
+        "SELECT login, name, bio FROM users ORDER BY sort_order"
+    ).fetchall()
+    out_users: list[dict[str, Any]] = []
+    for login, name, bio in user_rows:
+        tags = [r[0] for r in conn.execute(
+            "SELECT tag FROM user_tags WHERE login=? ORDER BY position", (login,)
+        ).fetchall()]
+        snap = conn.execute(
+            "SELECT fetched_at, range_start FROM user_starred_snapshot WHERE login=?",
+            (login,),
+        ).fetchone()
+        fetched_at = snap[0] if snap else None
+        range_start = snap[1] if snap else None
+        items_rows = conn.execute(
+            "SELECT url, name, stars, description, starred_at, report_slug "
+            "FROM v_user_starred WHERE login=? ORDER BY position",
+            (login,),
+        ).fetchall()
+        items: list[dict[str, Any]] = []
+        for url, iname, stars, desc, starred_at, report_slug in items_rows:
+            it: dict[str, Any] = {
+                "name": iname,
+                "url": url,
+                "stars": stars,
+                "description": desc,
+                "starredAt": starred_at,
+            }
+            if report_slug is not None:
+                it["reportSlug"] = report_slug
+            items.append(it)
+        user_entry: dict[str, Any] = {
+            "login": login,
+            "name": name,
+        }
+        if bio is not None:
+            user_entry["bio"] = bio
+        if tags:
+            user_entry["tags"] = tags
+        user_entry["fetchedAt"] = fetched_at
+        user_entry["rangeStart"] = range_start
+        user_entry["items"] = items
+        out_users.append(user_entry)
+    conn.close()
+    return {"users": out_users}
+
+
+def write_starred_json(path: Path = STARRED_JSON) -> int:
+    data = dump_starred()
+    path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    return sum(len(u["items"]) for u in data["users"])
+
+
 def write_tags_yaml(path: Path = TAGS_YAML) -> int:
     import yaml
     entries = dump_tags_entries()
@@ -240,9 +344,10 @@ def write_tags_yaml(path: Path = TAGS_YAML) -> int:
 def cmd_export_json(args: argparse.Namespace) -> int:
     n_reports = write_reports_json()
     n_tags = write_tags_yaml()
+    n_starred = write_starred_json()
     print(f"✅ 导出 reports.json  ({n_reports} 篇)")
     print(f"✅ 导出 tags.yaml     ({n_tags} 篇)")
-    # 阶段 2 后追加 starred.json
+    print(f"✅ 导出 starred.json  ({n_starred} 条 starred items)")
     return 0
 
 
@@ -330,10 +435,58 @@ def verify_tags() -> list[str]:
     return diffs
 
 
+def verify_starred(*, allow_url_case_diff: bool = True) -> list[str]:
+    if not STARRED_JSON.exists():
+        return [f"现有 {STARRED_JSON.name} 不存在，无法 verify"]
+    existing = json.loads(STARRED_JSON.read_text(encoding="utf-8"))
+    actual = dump_starred()
+    diffs: list[str] = []
+    exp_users = {u["login"]: u for u in existing.get("users", [])}
+    act_users = {u["login"]: u for u in actual["users"]}
+    only_exp = set(exp_users) - set(act_users)
+    only_act = set(act_users) - set(exp_users)
+    for s in sorted(only_exp):
+        diffs.append(f"starred.users.{s}: 仅 expected 存在")
+    for s in sorted(only_act):
+        diffs.append(f"starred.users.{s}: 仅 actual 存在")
+    for login in sorted(set(exp_users) & set(act_users)):
+        eu = exp_users[login]
+        au = act_users[login]
+        # user 级字段
+        for k in ("name", "bio", "tags", "fetchedAt", "rangeStart"):
+            ev = _normalize_for_compare(eu.get(k))
+            av = _normalize_for_compare(au.get(k))
+            if ev != av:
+                diffs.append(f"starred.users.{login}.{k}: expected={ev!r} actual={av!r}")
+        # items 级：按 url 索引
+        e_items = {i["url"].rstrip("/").lower() if allow_url_case_diff else i["url"]: i
+                   for i in eu.get("items", [])}
+        a_items = {i["url"]: i for i in au.get("items", [])}
+        only_e = set(e_items) - set(a_items)
+        only_a = set(a_items) - set(e_items)
+        for u in sorted(only_e):
+            diffs.append(f"starred.users.{login}.items[url={u}]: 仅 expected 存在")
+        for u in sorted(only_a):
+            diffs.append(f"starred.users.{login}.items[url={u}]: 仅 actual 存在")
+        for url in sorted(set(e_items) & set(a_items)):
+            ei = e_items[url]
+            ai = a_items[url]
+            for k in ("name", "stars", "description", "starredAt", "reportSlug"):
+                ev = _normalize_for_compare(ei.get(k))
+                av = _normalize_for_compare(ai.get(k))
+                if k == "reportSlug" and ev is None and av is not None:
+                    # 新分析的报告反查命中（DB 是最新），expected 滞后 → 跳过
+                    continue
+                if ev != av:
+                    diffs.append(f"starred.users.{login}.items[{url}].{k}: expected={ev!r} actual={av!r}")
+    return diffs
+
+
 def cmd_verify(args: argparse.Namespace) -> int:
     all_diffs: list[str] = []
     all_diffs += verify_reports()
     all_diffs += verify_tags()
+    all_diffs += verify_starred()
     if not all_diffs:
         print("✅ verify 通过：DB dump 与现有文件字典级一致")
         return 0
