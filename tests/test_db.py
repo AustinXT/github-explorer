@@ -248,6 +248,101 @@ class TestStarredJsonRoundtrip(TempDBTest):
         self.assertEqual(data["users"][0]["tags"], ["b-tag", "a-tag"])
 
 
+class TestPublishHistory(TempDBTest):
+    def test_state_check_constraint(self):
+        c = self.conn()
+        with self.assertRaises(sqlite3.IntegrityError):
+            c.execute(
+                "INSERT INTO publish_history (recorded_at, slug, state) "
+                "VALUES ('2026-01-01T00:00:00Z', 'a', 'wrong_state')"
+            )
+        c.close()
+
+    def test_v_publish_latest_by_recorded_at(self):
+        """同 slug 多行时，v_publish_latest 取 recorded_at 最新行。"""
+        c = self.conn()
+        # pending → published 状态变化
+        c.execute(
+            "INSERT INTO publish_history (recorded_at, slug, state, published_at, reason) "
+            "VALUES ('2026-01-10T00:00:00Z', 'foo', 'pending', '2026-01-10', '自动生成')"
+        )
+        c.execute(
+            "INSERT INTO publish_history (recorded_at, slug, state, published_at, title) "
+            "VALUES ('2026-02-15T00:00:00Z', 'foo', 'published', '2026-02-15', 'Foo 标题')"
+        )
+        c.commit()
+
+        row = c.execute(
+            "SELECT state, published_at, title, reason FROM v_publish_latest WHERE slug='foo'"
+        ).fetchone()
+        self.assertEqual(row, ("published", "2026-02-15", "Foo 标题", None))
+        c.close()
+
+    def test_reconcile_reports_published(self):
+        """reconcile_reports_published 应从 v_publish_latest 反查更新 reports.published_*。"""
+        import init_db
+        c = self.conn()
+        c.execute(
+            "INSERT INTO reports (slug, title, mtime) VALUES ('foo', 'Foo', '2026-01-01')"
+        )
+        c.execute(
+            "INSERT INTO reports (slug, title, mtime) VALUES ('bar', 'Bar', '2026-01-01')"
+        )
+        c.execute(
+            "INSERT INTO publish_history (recorded_at, slug, state, published_at, title, reason) "
+            "VALUES ('2026-02-01T00:00:00Z', 'foo', 'published', '2026-02-01', 'Foo 公众号', null)"
+        )
+        c.execute(
+            "INSERT INTO publish_history (recorded_at, slug, state, reason) "
+            "VALUES ('2026-02-01T00:00:00Z', 'bar', 'excluded', '重复')"
+        )
+        c.commit()
+        n = init_db.reconcile_reports_published(c)
+        self.assertEqual(n, 2)
+        foo = c.execute(
+            "SELECT published_state, published_at, published_title FROM reports WHERE slug='foo'"
+        ).fetchone()
+        self.assertEqual(foo, ("published", "2026-02-01", "Foo 公众号"))
+        bar = c.execute(
+            "SELECT published_state, published_reason FROM reports WHERE slug='bar'"
+        ).fetchone()
+        self.assertEqual(bar, ("excluded", "重复"))
+        c.close()
+
+    def test_seed_publish_history_from_jsonl(self):
+        """seed_publish_history 应从 jsonl 全量重建 publish_history 表。"""
+        import init_db
+        c = self.conn()
+        # 先插入一行旧数据，确认 seed 会清空
+        c.execute(
+            "INSERT INTO publish_history (recorded_at, slug, state) "
+            "VALUES ('2026-01-01T00:00:00Z', 'stale', 'pending')"
+        )
+        c.commit()
+
+        # 写一个临时 jsonl
+        with tempfile.NamedTemporaryFile("w", suffix=".jsonl", delete=False, encoding="utf-8") as f:
+            f.write(json.dumps({
+                "recorded_at": "2026-02-01T00:00:00Z",
+                "slug": "fresh", "state": "published", "published_at": "2026-02-01",
+                "title": "T", "reason": None, "ci_run_id": None,
+            }, ensure_ascii=False) + "\n")
+            f.write(json.dumps({  # 无效 state 应被跳过
+                "recorded_at": "2026-02-02T00:00:00Z",
+                "slug": "bad", "state": "wrong", "published_at": None,
+            }, ensure_ascii=False) + "\n")
+            jsonl_path = Path(f.name)
+
+        try:
+            n = init_db.seed_publish_history(c, jsonl_path)
+            self.assertEqual(n, 1)
+            rows = c.execute("SELECT slug, state FROM publish_history").fetchall()
+            self.assertEqual(rows, [("fresh", "published")])
+        finally:
+            os.unlink(jsonl_path)
+        c.close()
+
+
 class TestTrending(TempDBTest):
     def _insert_snapshot(self, c, period_type, period_key, url, stars=100, forks=10, rank=None):
         c.execute(

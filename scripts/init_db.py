@@ -28,6 +28,7 @@ REPORTS_JSON = DATA_DIR / "reports.json"
 TAGS_YAML = DATA_DIR / "tags.yaml"
 STARRED_JSON = DATA_DIR / "starred.json"
 TRENDING_DEDUP_JSON = ROOT / "src" / "trending_repo" / "all_repos_deduped.json"
+PUBLISH_JSONL = DATA_DIR / "publish_history.jsonl"
 
 
 # ---------------------------------------------------------------- schema migrations
@@ -186,6 +187,33 @@ MIGRATIONS: dict[int, str] = {
           SUM(CASE WHEN period_type='weekly'  THEN 1 ELSE 0 END) AS weekly_count,
           SUM(CASE WHEN period_type='monthly' THEN 1 ELSE 0 END) AS monthly_count
         FROM trending_snapshots GROUP BY url;
+    """,
+    4: """
+        -- 阶段 4：发布历史（替代 publish.md 手工表格）
+        -- SoR 是 src/data/publish_history.jsonl（append-only，入 Git）
+        -- 本表是该 jsonl 的查询索引，由 init_db.py seed-publish 重建
+        CREATE TABLE publish_history (
+          id            INTEGER PRIMARY KEY AUTOINCREMENT,
+          recorded_at   TEXT    NOT NULL,        -- ISO 8601
+          slug          TEXT    NOT NULL,        -- 报告 slug（弱引用，允许指向已删除的报告）
+          title         TEXT,                    -- 公众号标题（可能与 reports.title 不同）
+          state         TEXT    NOT NULL CHECK (state IN ('pending','draft','excluded','published')),
+          published_at  TEXT,                    -- 'YYYY-MM-DD' 或 NULL
+          reason        TEXT,
+          ci_run_id     TEXT
+        );
+        CREATE INDEX idx_publish_slug  ON publish_history(slug);
+        CREATE INDEX idx_publish_state ON publish_history(state, published_at DESC);
+
+        -- 每个 slug 的最新状态（被 reports.published_* 字段反查）
+        -- 当同一 slug 多次记录时，recorded_at 最大的胜出
+        CREATE VIEW v_publish_latest AS
+        SELECT slug, state, published_at, title, reason, recorded_at
+        FROM (
+          SELECT *, ROW_NUMBER() OVER (PARTITION BY slug ORDER BY recorded_at DESC, id DESC) AS rn
+          FROM publish_history
+        )
+        WHERE rn = 1;
     """,
 }
 
@@ -634,14 +662,109 @@ def cmd_init(args: argparse.Namespace) -> int:
     return 0
 
 
+# ---------------------------------------------------------------- seed-publish
+
+def seed_publish_history(conn: sqlite3.Connection, jsonl_path: Path = PUBLISH_JSONL) -> int:
+    """读 publish_history.jsonl → 全量重建 publish_history 表。
+
+    返回写入的行数。jsonl 不存在或为空时不修改表。"""
+    if not jsonl_path.exists():
+        return 0
+    rows: list[tuple] = []
+    bad = 0
+    for lineno, line in enumerate(jsonl_path.read_text(encoding="utf-8").splitlines(), 1):
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            obj = json.loads(line)
+        except json.JSONDecodeError:
+            bad += 1
+            continue
+        state = obj.get("state")
+        if state not in ("pending", "draft", "excluded", "published"):
+            bad += 1
+            continue
+        rows.append((
+            obj.get("recorded_at"),
+            obj.get("slug"),
+            obj.get("title"),
+            state,
+            obj.get("published_at"),
+            obj.get("reason"),
+            obj.get("ci_run_id"),
+        ))
+    if bad:
+        print(f"⚠️  jsonl 中跳过 {bad} 行（格式不合法或 state 非法）")
+    with conn:
+        conn.execute("DELETE FROM publish_history")
+        conn.executemany(
+            "INSERT INTO publish_history "
+            "(recorded_at, slug, title, state, published_at, reason, ci_run_id) "
+            "VALUES (?, ?, ?, ?, ?, ?, ?)",
+            rows,
+        )
+    return len(rows)
+
+
+def cmd_seed_publish(args: argparse.Namespace) -> int:
+    conn = get_connection()
+    ensure_schema(conn)
+    n = seed_publish_history(conn)
+    conn.close()
+    if n == 0:
+        print(f"⚠️  {PUBLISH_JSONL.relative_to(ROOT)} 不存在或为空，publish_history 表保持原状")
+    else:
+        print(f"✅ seed publish_history: {n} 行 ← {PUBLISH_JSONL.relative_to(ROOT)}")
+    return 0
+
+
+# ---------------------------------------------------------------- reconcile reports.published_*
+
+def reconcile_reports_published(conn: sqlite3.Connection) -> int:
+    """从 v_publish_latest 反查更新 reports 表的 published_* 字段。
+
+    仅当 publish_history 表非空时执行。返回更新的报告数。"""
+    n = conn.execute("SELECT COUNT(*) FROM publish_history").fetchone()[0]
+    if n == 0:
+        return 0
+    with conn:
+        # 先清除 reports 中可能由旧 parse_publish_index 残留的 published_* 字段
+        conn.execute(
+            "UPDATE reports SET published_state=NULL, published_at=NULL, "
+            "published_title=NULL, published_reason=NULL"
+        )
+        # 从 v_publish_latest 反查（slug 只可能在 publish_history 中存在但 reports 中已删除，跳过）
+        cur = conn.execute("""
+            UPDATE reports
+            SET published_state  = (SELECT state FROM v_publish_latest WHERE slug = reports.slug),
+                published_at     = (SELECT published_at FROM v_publish_latest WHERE slug = reports.slug),
+                published_title  = (SELECT title FROM v_publish_latest WHERE slug = reports.slug),
+                published_reason = (SELECT reason FROM v_publish_latest WHERE slug = reports.slug)
+            WHERE EXISTS (SELECT 1 FROM v_publish_latest WHERE slug = reports.slug)
+        """)
+        return cur.rowcount
+
+
+def cmd_reconcile_published(args: argparse.Namespace) -> int:
+    conn = get_connection()
+    ensure_schema(conn)
+    n = reconcile_reports_published(conn)
+    conn.close()
+    print(f"✅ reconcile reports.published_*: 更新 {n} 篇报告（从 v_publish_latest 反查）")
+    return 0
+
+
 # ---------------------------------------------------------------- CLI
 
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = p.add_subparsers(dest="cmd", required=True)
     sub.add_parser("init", help="建库 + 应用 schema migration")
-    sub.add_parser("export-json", help="从 DB dump → reports.json / tags.yaml")
+    sub.add_parser("export-json", help="从 DB dump → reports.json / tags.yaml / starred.json / all_repos_deduped.json")
     sub.add_parser("verify", help="dump 到内存后与现有文件字典级比对")
+    sub.add_parser("seed-publish", help="从 publish_history.jsonl 灌入 publish_history 表")
+    sub.add_parser("reconcile-published", help="从 v_publish_latest 反查更新 reports.published_*")
     return p
 
 
@@ -649,6 +772,8 @@ COMMANDS: dict[str, Callable[[argparse.Namespace], int]] = {
     "init": cmd_init,
     "export-json": cmd_export_json,
     "verify": cmd_verify,
+    "seed-publish": cmd_seed_publish,
+    "reconcile-published": cmd_reconcile_published,
 }
 
 

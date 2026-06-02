@@ -345,7 +345,10 @@ def main() -> int:
         print(f"❌ 找不到报告目录: {REPORTS_DIR}", file=sys.stderr)
         return 1
 
-    publish_index = parse_publish_index()
+    # 阶段 4 起：publish 字段不再从 publish.md 解析，由 init_db.py reconcile-published
+    # 在本脚本之后从 v_publish_latest 反查更新。这里给 parse_report 传空 publish_index
+    # 即可（其余 parse 逻辑不变）。
+    publish_index: dict[str, dict] = {}
     md_files = sorted(REPORTS_DIR.glob("*.md"))
     NON_REPORT = {"repos", "README"}
     reports: list[dict] = []
@@ -365,16 +368,20 @@ def main() -> int:
     ensure_schema(conn)
     try:
         write_reports(conn, reports)
+        # 阶段 4：写完 reports 后立即从 v_publish_latest 反查回填 published_* 字段。
+        # 前提是 init_db.py seed-publish 已在本脚本之前跑过（CI workflow 已编排）。
+        sys.path.insert(0, str(ROOT / "scripts"))
+        from init_db import reconcile_reports_published
+        n_reconciled = reconcile_reports_published(conn)
     except sqlite3.IntegrityError as e:
         print(f"❌ 写入 DB 失败（schema 约束违规）: {e}", file=sys.stderr)
         return 2
     finally:
         conn.close()
 
-    # 字段非空率统计
     keys = ("stars", "language", "age_months", "heat", "summary", "cover", "original_url")
     print(f"✅ 写入 {len(reports)} 篇报告，跳过 {skipped} 篇 → db.sqlite (reports + report_highlights)")
-    print(f"   publish.md 解析命中 {len(publish_index)} 条")
+    print(f"   从 v_publish_latest 反查回填 published_* 字段: {n_reconciled} 篇")
     print("   字段非空率:")
     for k in keys:
         n = sum(1 for r in reports if r.get(k) is not None)
