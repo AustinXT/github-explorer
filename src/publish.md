@@ -1,4 +1,11 @@
-# 公众号发布记录
+# 公众号发布记录（只读归档）
+
+> ⚠️ 自阶段 4 起，此文件转为只读历史归档。新发布请走 `src/data/publish_history.jsonl`：
+> - 自动追加：`auto-analyze.yml` 已切换为调 `scripts/record_publish.py`
+> - 手工追加：`python3 scripts/record_publish.py --slug <s> --state <published|pending|excluded> ...`
+> - DB 视图 `v_publish_latest` 取每个 slug 最新一行作为 `reports.published_*` 字段
+>
+> 本文件的内容已通过 `scripts/migrate_publish_md.py` 一次性导入 publish_history.jsonl。
 
 | 文件 | 标题 | 发布日期 |
 |------|------|----------|
