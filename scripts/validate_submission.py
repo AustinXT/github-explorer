@@ -20,6 +20,7 @@ import os
 import re
 import subprocess
 import sys
+import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -68,15 +69,43 @@ def extract_url(body: str) -> str | None:
     return None
 
 
+_RATE_LIMIT_PAT = re.compile(r"(rate limit|secondary rate|API rate limit exceeded)", re.I)
+_RETRY_AFTER_PAT = re.compile(r"retry[- ]after[:= ]+(\d+)", re.I)
+
+
+def _gh_api_with_retry(args: list[str], *, timeout: int = 20) -> subprocess.CompletedProcess:
+    """gh api 调用，对 rate-limit 类错误退避后重试一次。
+
+    GitHub 在 secondary rate limit 时 stderr 会带 'rate limit' / 'Retry-After'，
+    短暂 sleep 后通常恢复。其它错误（404 / 403 权限 / 网络）维持原行为，
+    由调用方处理。
+    """
+    r = subprocess.run(args, capture_output=True, text=True, timeout=timeout)
+    if r.returncode == 0:
+        return r
+    stderr = r.stderr or ""
+    if not _RATE_LIMIT_PAT.search(stderr):
+        return r
+    # 解析 Retry-After，缺失或异常时默认 30s；上限 60s 防止卡住
+    m = _RETRY_AFTER_PAT.search(stderr)
+    delay = 30
+    if m:
+        try:
+            delay = max(1, min(60, int(m.group(1))))
+        except ValueError:
+            pass
+    print(
+        f"WARN: gh api 触发 rate limit，{delay}s 后重试一次",
+        file=sys.stderr,
+    )
+    time.sleep(delay)
+    return subprocess.run(args, capture_output=True, text=True, timeout=timeout)
+
+
 def repo_exists_public(owner: str, name: str) -> tuple[bool, str | None]:
     """用 gh api 检查仓库是否公开存在"""
     try:
-        r = subprocess.run(
-            ["gh", "api", f"repos/{owner}/{name}"],
-            capture_output=True,
-            text=True,
-            timeout=20,
-        )
+        r = _gh_api_with_retry(["gh", "api", f"repos/{owner}/{name}"], timeout=20)
     except FileNotFoundError:
         return False, "gh CLI 未安装"
     except subprocess.TimeoutExpired:
