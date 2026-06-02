@@ -179,7 +179,7 @@ def main() -> int:
     tmp.replace(args.publish_md)
     print(f"\n✅ 已写入 {args.publish_md.relative_to(REPO_ROOT)}")
     print(f"   新增 {len(additions)} 行 + 更新 {len(changes_update)} 行")
-    print("\n后续：python3 scripts/build_reports_index.py  # 同步进 reports.json")
+    print("\n后续：python3 src/scripts/build_reports_index.py  # 同步进 reports.json")
     return 0
 
 

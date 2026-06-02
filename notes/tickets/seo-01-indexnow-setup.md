@@ -9,7 +9,7 @@
 1. 生成 UUID（任意 v4）作为 IndexNow key — 用 `uuidgen` 或 `python3 -c "import uuid; print(uuid.uuid4().hex)"`
 2. 在 `site/public/` 写一个 `{KEY}.txt` 文件，**文件内容就是 key 本身**（IndexNow 通过 HTTP 拉这个文件校验所有权）
 3. 把 key 加到 GitHub 仓库 secret：`gh secret set INDEXNOW_KEY --body "{KEY}"`
-4. 推 main 触发 `pages.yml`；deploy 后 `ping` job 会自动调 `scripts/ping_search_engines.py` 推送
+4. 推 main 触发 `pages.yml`；deploy 后 `ping` job 会自动调 `src/scripts/ping_search_engines.py` 推送
 
 ## Claude 可直接执行
 

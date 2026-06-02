@@ -28,7 +28,7 @@ ROOT = Path(__file__).resolve().parent.parent
 PUBLISH_MD = ROOT / "src" / "publish.md"
 PUBLISH_JSONL = ROOT / "src" / "data" / "publish_history.jsonl"
 
-sys.path.insert(0, str(ROOT / "scripts"))
+sys.path.insert(0, str(ROOT / "src" / "scripts"))
 from build_reports_index import parse_publish_index  # noqa: E402
 
 

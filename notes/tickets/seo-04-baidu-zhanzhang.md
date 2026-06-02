@@ -1,6 +1,6 @@
 # SEO-04 · 百度站长平台
 
-**目标**：让百度收录中文内容（中文搜索流量主力）+ 拿到推送 token 让 [scripts/ping_search_engines.py](../../scripts/ping_search_engines.py) 自动推。
+**目标**：让百度收录中文内容（中文搜索流量主力）+ 拿到推送 token 让 [src/scripts/ping_search_engines.py](../../src/scripts/ping_search_engines.py) 自动推。
 
 **自动化等级**：🔴 **必须手动**（域名归属 + 当前 GitHub Pages 子路径百度收录困难）。
 
@@ -27,7 +27,7 @@
 ### 阶段 B — Claude 接管
 
 1. 用户贴 token → Claude 执行 `gh secret set BAIDU_PUSH_TOKEN --body "..."`
-2. push 触发 `pages.yml` 的 `ping` job → 调 `scripts/ping_search_engines.py` 推送
+2. push 触发 `pages.yml` 的 `ping` job → 调 `src/scripts/ping_search_engines.py` 推送
 3. 站长平台 → "推送日志" 查看接收数
 
 ### Claude + Chrome 模拟可行性

@@ -24,11 +24,11 @@ from pathlib import Path
 
 import yaml
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parents[2]
 RULES_FILE = ROOT / "src" / "data" / "tag-rules.yaml"
 TAGS_FILE = ROOT / "src" / "data" / "tags.yaml"
 
-sys.path.insert(0, str(ROOT / "scripts"))
+sys.path.insert(0, str(ROOT / "src" / "scripts"))
 from init_db import get_connection, ensure_schema  # noqa: E402
 
 

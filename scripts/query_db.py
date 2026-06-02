@@ -23,7 +23,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(ROOT / "scripts"))
+sys.path.insert(0, str(ROOT / "src" / "scripts"))
 from init_db import DB_PATH  # noqa: E402
 
 
@@ -103,7 +103,7 @@ def print_table(headers: list[str], rows: list[tuple]) -> None:
 
 def run_sql(sql: str) -> int:
     if not DB_PATH.exists():
-        print(f"❌ {DB_PATH} 不存在，先运行：python3 scripts/init_db.py init", file=sys.stderr)
+        print(f"❌ {DB_PATH} 不存在，先运行：python3 src/scripts/init_db.py init", file=sys.stderr)
         return 1
     conn = sqlite3.connect(DB_PATH)
     conn.execute("PRAGMA foreign_keys=ON")

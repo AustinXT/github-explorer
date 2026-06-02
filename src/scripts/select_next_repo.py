@@ -4,7 +4,7 @@
 
 去重逻辑：
   - 命中 src/analysis_report/{owner}_{repo}.md 的视为已分析
-  - 命中 docs/analysis_report/repos.md 里 "❌ <url>" 的视为黑名单
+  - 命中 src/analysis_report/repos.md 里 "❌ <url>" 的视为黑名单
 
 排序：trending_days desc, stars desc
 
@@ -21,10 +21,10 @@ import re
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parents[2]
 TRENDING_JSON = ROOT / "src" / "trending_repo" / "all_repos_deduped.json"
 ANALYSIS_DIR = ROOT / "src" / "analysis_report"
-BLACKLIST_FILE = ROOT / "docs" / "analysis_report" / "repos.md"
+BLACKLIST_FILE = ROOT / "src" / "analysis_report" / "repos.md"
 
 
 def load_candidates() -> list[dict]:

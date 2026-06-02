@@ -21,7 +21,7 @@ import sys
 from pathlib import Path
 from typing import Any, Callable
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parents[2]
 DATA_DIR = ROOT / "src" / "data"
 DB_PATH = DATA_DIR / "db.sqlite"
 REPORTS_JSON = DATA_DIR / "reports.json"

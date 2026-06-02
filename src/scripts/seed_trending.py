@@ -24,10 +24,10 @@ import sqlite3
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parents[2]
 TRENDING_DIR = ROOT / "src" / "trending_repo"
 
-sys.path.insert(0, str(ROOT / "scripts"))
+sys.path.insert(0, str(ROOT / "src" / "scripts"))
 from init_db import get_connection, ensure_schema, normalize_url  # noqa: E402
 
 

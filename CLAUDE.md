@@ -32,9 +32,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 python3 src/trending_repo/parse_trending.py
 
 # 刷新站点元数据（reports.json / tags.yaml / starred.json）
-python3 scripts/build_reports_index.py
-python3 scripts/extract_tags.py
-python3 scripts/parse_starred.py
+python3 src/scripts/build_reports_index.py
+python3 src/scripts/extract_tags.py
+python3 src/scripts/parse_starred.py
 
 # 本地预览站点
 cd site && npm install && npm run dev   # http://localhost:4321
@@ -53,7 +53,8 @@ cd site && npm run build                # 输出 site/dist + pagefind 索引
 - **src/starred_repo/** — GitHub 用户 Star 仓库分析快照
 - **src/trending_repo/** — GitHub Trending 数据（daily/weekly/monthly JSON + 去重汇总）
 - **src/data/** — 站点元数据与配置：`reports.json` / `tags.yaml` / `tag-rules.yaml` / `users.yaml` / `trending-config.yaml` / `starred.json`
-- **scripts/** — 数据提取脚本：`build_reports_index.py` / `extract_tags.py` / `parse_starred.py` / `validate_submission.py`
+- **src/scripts/** — 项目核心脚本（被 CI workflow 调用）：建库 `init_db.py`、索引 `build_reports_index.py`、标签 `extract_tags.py`、Star 解析 `parse_starred.py`、Trending 入库 `seed_trending.py`、选题 `select_next_repo.py`、提交校验 `validate_submission.py`、发布记录 `record_publish.py`、索引推送 `ping_search_engines.py`、CI 环境 `setup_ci_env.sh` / 技能调用 `run_skill.sh` / 评论解析 `parse_issue_comment.py`
+- **scripts/** — 一次性 / 辅助脚本（不入 CI）：公众号相关 `wechat_publish.py` / `_wechat_api.py` / `sync_wechat_status.py` / `apply_wechat_mapping.py` / `match_wechat_to_slugs.py` / `fetch_wechat_published.js`、DB 查询 `query_db.py`、历史迁移 `migrate_publish_md.py`
 - **site/** — Astro 静态站点（GitHub Pages 部署源）
 - **.github/** — Issue 模板 + Workflows（`pages.yml` 构建部署 / `analyze.yml` Issue 触发分析）
 - **notes/** — 分析过程中间产物（`{repo}-network-analysis.md`、`-meta-analysis.md`、`-content-analysis.md`）
@@ -72,7 +73,7 @@ cd site && npm run build                # 输出 site/dist + pagefind 索引
 | `auto-analyze.yml`（已存在）| 定时 / 手动 dispatch / 维护者 `/analyze` 评论 | 直接 push main + 公众号草稿 | 自动选题、维护者命令 |
 | `analyze.yml`（站点提交）| `issues.opened` + `analyze-request` 标签 | 开 PR 待审核 | 外部用户站点 `/submit` 提交 |
 
-两者都复用 `scripts/setup_ci_env.sh` + `scripts/run_skill.sh`（Minimax / Anthropic 双后端 fallback）。
+两者都复用 `src/scripts/setup_ci_env.sh` + `src/scripts/run_skill.sh`（Minimax / Anthropic 双后端 fallback）。
 
 **用户提交链路**：
 1. 用户在 `/submit` 表单填 URL → 跳到预填的 GitHub Issue
@@ -107,7 +108,7 @@ cd site && npm run build                # 输出 site/dist + pagefind 索引
 
 **站长平台验证**：拿到 code 后填入 `site/src/lib/data.ts` 的 `SITE.verify.{google,baidu,bing}`，Base.astro 自动渲染 meta；或者把平台给的验证文件放到 `site/public/` 用文件法验证。
 
-**索引推送**：每次 `pages.yml` 部署完成后自动跑 `scripts/ping_search_engines.py`，diff `tmp/last_indexed.json` 快照后只推新增/更新的报告 URL；本地干跑 `python3 scripts/ping_search_engines.py --dry-run`。
+**索引推送**：每次 `pages.yml` 部署完成后自动跑 `src/scripts/ping_search_engines.py`，diff `tmp/last_indexed.json` 快照后只推新增/更新的报告 URL；本地干跑 `python3 src/scripts/ping_search_engines.py --dry-run`。
 
 ## 规则
 

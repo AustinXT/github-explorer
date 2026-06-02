@@ -32,7 +32,7 @@ Bing Webmaster 支持「**Import from Google Search Console**」一键导入已�
 
 Bing 有 [Webmaster API](https://learn.microsoft.com/en-us/bingwebmaster/getting-access)（需先去 API Key 页面拿 key）。可以纯 HTTP 调，无 OAuth。
 
-但既然已经写了 [scripts/ping_search_engines.py](../../scripts/ping_search_engines.py) 用 IndexNow 推送，**Bing 这边 API 不必再加** — IndexNow 已经覆盖了 Bing 的"通知新 URL"需求。Bing Webmaster Tools 主要是用来**看数据**而非"推送 URL"。
+但既然已经写了 [src/scripts/ping_search_engines.py](../../src/scripts/ping_search_engines.py) 用 IndexNow 推送，**Bing 这边 API 不必再加** — IndexNow 已经覆盖了 Bing 的"通知新 URL"需求。Bing Webmaster Tools 主要是用来**看数据**而非"推送 URL"。
 
 ## 验证
 

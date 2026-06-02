@@ -23,7 +23,7 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parents[2]
 REPORTS_JSON = ROOT / "src" / "data" / "reports.json"
 SNAPSHOT = ROOT / "tmp" / "last_indexed.json"
 

@@ -9,7 +9,7 @@
 /repo-miner https://github.com/owner/repo
 
 # 批量并发分析
-./batch_analyze.sh docs/analysis_report/repos.md 1 0 8
+./batch_analyze.sh src/analysis_report/repos.md 1 0 8
 
 # 发布报告到公众号草稿箱
 /md2wechat src/analysis_report/{username}_{repo}.md
@@ -49,7 +49,7 @@ claude -p "/repo-miner …" --dangerously-skip-permissions
    ANTHROPIC_API_KEY    = (清空，避免冲突)
 ```
 
-同后端失败时自动重试 1 次（默认值，`--retries N` 可调）。**用国际版** `api.minimax.io/anthropic` 时把 `scripts/run_skill.sh` 顶部 `MINIMAX_ENDPOINT` 改掉，或临时设环境变量 `MINIMAX_BASE_URL_OVERRIDE`。
+同后端失败时自动重试 1 次（默认值，`--retries N` 可调）。**用国际版** `api.minimax.io/anthropic` 时把 `src/scripts/run_skill.sh` 顶部 `MINIMAX_ENDPOINT` 改掉，或临时设环境变量 `MINIMAX_BASE_URL_OVERRIDE`。
 
 **应急降级**：万一 Minimax 在某个 skill 行为上不兼容（例如 subagent / tool use 协议），可手动 dispatch 时选 `force_backend=anthropic`，前提是先配了 `ANTHROPIC_API_KEY` secret。这只是「跑通」兜底，**不是常态用法**。
 
@@ -101,6 +101,7 @@ git add ci/skills && git commit -m "chore: 同步 vendored skills"
 - `src/starred_repo/` — GitHub 用户 Star 仓库分析
 - `src/trending_repo/` — Trending 数据采集 + 去重汇总
 - `notes/` — 三阶段分析中间产物
-- `scripts/` — CI 用脚本（select / run_skill / setup）
+- `src/scripts/` — CI / 核心脚本（select_next_repo / run_skill / setup_ci_env 等）
+- `scripts/` — 一次性辅助脚本（公众号同步、DB 查询、历史迁移）
 - `ci/skills/` — vendored skill 文件，CI 启动时拷到 runner 的 `~/.claude/skills/`
 - `.github/workflows/auto-analyze.yml` — 主自动化 workflow

@@ -21,7 +21,7 @@ readonly REQ_FILE_REL="requirements-ci.txt"
 
 log() { printf '\033[1;36m[setup]\033[0m %s\n' "$*"; }
 
-REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 REQ_FILE="$REPO_ROOT/$REQ_FILE_REL"
 
 # 让后续 step 自动找到用户级 bin（GITHUB_PATH 是 actions runner 提供的）

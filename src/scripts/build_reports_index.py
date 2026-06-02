@@ -22,12 +22,12 @@ import sys
 from datetime import datetime
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parents[2]
 REPORTS_DIR = ROOT / "src" / "analysis_report"
 PUBLISH_FILE = ROOT / "src" / "publish.md"
 
 # init_db.py 与本文件同目录，import 直读
-sys.path.insert(0, str(ROOT / "scripts"))
+sys.path.insert(0, str(ROOT / "src" / "scripts"))
 from init_db import get_connection, ensure_schema, normalize_url  # noqa: E402
 
 
@@ -370,7 +370,7 @@ def main() -> int:
         write_reports(conn, reports)
         # 阶段 4：写完 reports 后立即从 v_publish_latest 反查回填 published_* 字段。
         # 前提是 init_db.py seed-publish 已在本脚本之前跑过（CI workflow 已编排）。
-        sys.path.insert(0, str(ROOT / "scripts"))
+        sys.path.insert(0, str(ROOT / "src" / "scripts"))
         from init_db import reconcile_reports_published
         n_reconciled = reconcile_reports_published(conn)
     except sqlite3.IntegrityError as e:

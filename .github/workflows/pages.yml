@@ -44,13 +44,13 @@ jobs:
         # 阶段 1-4 已迁库：reports + tags + starred + trending + publish_history 全部主写 DB
         # JSON/YAML 由 init_db.py export-json dump；jsonl 是 publish 历史的 SoR
         run: |
-          python3 scripts/init_db.py init
-          python3 scripts/init_db.py seed-publish
-          python3 scripts/build_reports_index.py
-          python3 scripts/extract_tags.py
-          python3 scripts/parse_starred.py
-          python3 scripts/seed_trending.py
-          python3 scripts/init_db.py export-json
+          python3 src/scripts/init_db.py init
+          python3 src/scripts/init_db.py seed-publish
+          python3 src/scripts/build_reports_index.py
+          python3 src/scripts/extract_tags.py
+          python3 src/scripts/parse_starred.py
+          python3 src/scripts/seed_trending.py
+          python3 src/scripts/init_db.py export-json
 
       - name: Set up Node
         uses: actions/setup-node@v4
@@ -109,5 +109,5 @@ jobs:
           PUBLIC_BASE_PATH: ${{ vars.PUBLIC_BASE_PATH || '/github-explorer' }}
           INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
           BAIDU_PUSH_TOKEN: ${{ secrets.BAIDU_PUSH_TOKEN }}
-        run: python3 scripts/ping_search_engines.py
+        run: python3 src/scripts/ping_search_engines.py
         continue-on-error: true

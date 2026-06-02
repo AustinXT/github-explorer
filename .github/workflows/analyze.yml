@@ -54,7 +54,7 @@ jobs:
 
       - name: Validate submission
         id: validate
-        run: python3 scripts/validate_submission.py /tmp/runner/issue_body.md
+        run: python3 src/scripts/validate_submission.py /tmp/runner/issue_body.md
 
       - name: Reject & close on validation failure
         if: failure() && steps.validate.outcome == 'failure'
@@ -76,17 +76,17 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/.local/bin/tokei
-          key: tokei-${{ runner.os }}-${{ hashFiles('scripts/setup_ci_env.sh') }}
+          key: tokei-${{ runner.os }}-${{ hashFiles('src/scripts/setup_ci_env.sh') }}
 
       # 缓存用户级 npm 全局目录（含 @anthropic-ai/claude-code）；同上 key 策略
       - name: Cache npm global (claude-code CLI)
         uses: actions/cache@v4
         with:
           path: ~/.npm-global
-          key: npm-global-${{ runner.os }}-${{ hashFiles('scripts/setup_ci_env.sh') }}
+          key: npm-global-${{ runner.os }}-${{ hashFiles('src/scripts/setup_ci_env.sh') }}
 
       - name: Bootstrap CI env (gh / jq / tokei / claude / vendored skills)
-        run: bash scripts/setup_ci_env.sh
+        run: bash src/scripts/setup_ci_env.sh
 
       - name: Run /repo-miner (via run_skill.sh, dual-backend)
         env:
@@ -94,7 +94,7 @@ jobs:
           REPORT_PATH: ${{ steps.validate.outputs.report_path }}
         run: |
           PROMPT="/repo-miner $REPO_URL ，中间过程文件输出到 notes/ ，最终分析报告输出到 $REPORT_PATH"
-          bash scripts/run_skill.sh "$PROMPT" --timeout 1800 --log "tmp/logs/repo-miner-$ISSUE_NUMBER.log"
+          bash src/scripts/run_skill.sh "$PROMPT" --timeout 1800 --log "tmp/logs/repo-miner-$ISSUE_NUMBER.log"
 
       - name: Verify report file
         id: verify
@@ -111,13 +111,13 @@ jobs:
         # 阶段 1-4：reports + tags + starred + trending + publish_history 主写 DB
         # JSON/YAML 由 export-json dump；publish_history.jsonl 是 publish 历史的 SoR
         run: |
-          python3 scripts/init_db.py init
-          python3 scripts/init_db.py seed-publish
-          python3 scripts/build_reports_index.py
-          python3 scripts/extract_tags.py
-          python3 scripts/parse_starred.py
-          python3 scripts/seed_trending.py
-          python3 scripts/init_db.py export-json
+          python3 src/scripts/init_db.py init
+          python3 src/scripts/init_db.py seed-publish
+          python3 src/scripts/build_reports_index.py
+          python3 src/scripts/extract_tags.py
+          python3 src/scripts/parse_starred.py
+          python3 src/scripts/seed_trending.py
+          python3 src/scripts/init_db.py export-json
 
       - name: Open PR
         if: success()

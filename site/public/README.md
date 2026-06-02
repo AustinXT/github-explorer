@@ -18,4 +18,4 @@
 
 ## IndexNow Key 文件
 
-启用 IndexNow 推送（Bing/Yandex/AI 搜索）后，需要在本目录放一个 `{KEY}.txt` 文件，内容就是 KEY 本身。`scripts/ping_search_engines.py` 启动时会从环境变量 `INDEXNOW_KEY` 读 key 并校验。
+启用 IndexNow 推送（Bing/Yandex/AI 搜索）后，需要在本目录放一个 `{KEY}.txt` 文件，内容就是 KEY 本身。`src/scripts/ping_search_engines.py` 启动时会从环境变量 `INDEXNOW_KEY` 读 key 并校验。

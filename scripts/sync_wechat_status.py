@@ -522,7 +522,7 @@ def main() -> int:
 
     atomic_write(publish_md, new_lines)
     print(f"\n✅ 已写入 {publish_md}（{len(will_change)} 条变更）")
-    print("后续：python3 scripts/build_reports_index.py  # 同步进 reports.json")
+    print("后续：python3 src/scripts/build_reports_index.py  # 同步进 reports.json")
     return 0
 
 

@@ -21,4 +21,4 @@ cp -RL .claude/skills/md2wechat ci/skills/
 git add ci/skills && git commit -m "chore: 同步 vendored skills"
 ```
 
-CI 启动时由 `scripts/setup_ci_env.sh` 拷贝到 runner 的 `~/.claude/skills/`。
+CI 启动时由 `src/scripts/setup_ci_env.sh` 拷贝到 runner 的 `~/.claude/skills/`。
