@@ -91,6 +91,54 @@ def http_json(url: str, **kw) -> dict:
         sys.exit(f"ERR: 非 JSON 响应 from {url[:80]}…\n  {raw[:300]!r}")
 
 
+# ─── 带重试的 wrapper ──────────────────────────────────────────────
+# 设计要点：
+# - 只对网络层错误（HttpError）重试，不对业务错误（200 + errcode）重试
+#   → 草稿 API 收到 200 即视为成功 / 业务失败，重试不会创建重复草稿
+# - 退避 [2,8,30]s，总上限 ≤ 40s，避免拖累外层 timeout
+# - 强制 raise_on_error=True，让 HttpError 能被 catch 而不是 sys.exit
+_DEFAULT_BACKOFFS = (2, 8, 30)
+
+
+def http_with_retry(
+    url: str,
+    *,
+    max_attempts: int = 3,
+    backoffs: tuple[int, ...] = _DEFAULT_BACKOFFS,
+    **kw,
+) -> bytes:
+    """同 http()，但对网络错误退避重试。
+
+    业务错误（HTTPError 含 4xx/5xx body）走 raise_on_error 路径同样会被
+    catch 后重试 —— 这对 5xx 是想要的；对 4xx（如 invalid token）属于
+    无效重试但成本可忽略（单次 1-2s 网络 RTT）。
+    """
+    kw["raise_on_error"] = True
+    last_err: Exception | None = None
+    for i in range(max_attempts):
+        try:
+            return http(url, **kw)
+        except HttpError as e:
+            last_err = e
+            if i < max_attempts - 1:
+                delay = backoffs[i] if i < len(backoffs) else backoffs[-1]
+                print(
+                    f"WARN: {url[:60]}… 失败，{delay}s 后重试 ({i+1}/{max_attempts})",
+                    file=sys.stderr,
+                )
+                time.sleep(delay)
+    # 用尽：恢复 sys.exit 语义，与原 http() 保持一致
+    sys.exit(f"ERR: {last_err}")
+
+
+def http_json_with_retry(url: str, **kw) -> dict:
+    raw = http_with_retry(url, **kw)
+    try:
+        return json.loads(raw)
+    except json.JSONDecodeError:
+        sys.exit(f"ERR: 非 JSON 响应 from {url[:80]}…\n  {raw[:300]!r}")
+
+
 def check_wechat_ok(resp: dict, context: str) -> None:
     if resp.get("errcode"):
         sys.exit(
@@ -132,7 +180,7 @@ def get_access_token(env_dict: dict[str, str], *, force_refresh: bool = False) -
         f"&appid={urllib.parse.quote(env_dict['appid'])}"
         f"&secret={urllib.parse.quote(env_dict['appsecret'])}"
     )
-    r = http_json(url, headers=proxy_headers(env_dict))
+    r = http_json_with_retry(url, headers=proxy_headers(env_dict))
     check_wechat_ok(r, "get token")
     if "access_token" not in r:
         sys.exit(f"ERR: 响应里没 access_token: {r}")
@@ -153,7 +201,8 @@ def wechat_post(
         f"{env_dict['api_base']}{path}"
         f"?access_token={urllib.parse.quote(access_token)}"
     )
-    return http_json(
+    # 走 retry 版本：网络抖动 / 5xx 自愈；业务错误（200+errcode）由 check_wechat_ok 判
+    return http_json_with_retry(
         url,
         headers={**proxy_headers(env_dict), "Content-Type": "application/json"},
         data=json.dumps(body, ensure_ascii=False).encode("utf-8"),

@@ -40,6 +40,7 @@ from _wechat_api import (
     get_access_token,
     http,
     http_json,
+    http_json_with_retry,
     load_wechat_env,
     proxy_headers,
 )
@@ -156,7 +157,7 @@ def upload_external_images(
             if "." not in filename:
                 filename += ".png"
             boundary, body = build_multipart(filename, img_data)
-            r = http_json(
+            r = http_json_with_retry(
                 url,
                 headers={
                     **proxy_headers,
@@ -192,6 +193,29 @@ def compact_lists(soup: BeautifulSoup) -> None:
                 child.extract()
 
 
+def promote_strong_colon(soup: BeautifulSoup) -> int:
+    """把列表项里 `<strong>X</strong>：Y` 改写为 `<strong>X：</strong>Y`。
+
+    公众号 Web 后台编辑器会把 <li> 内容外包 <p>，叠加 wechat.css 的
+    p { text-align: justify }，导致 `</strong>` 紧跟的全角冒号被推到下一行
+    （移动端不外包 <p>，所以无此问题）。把冒号挪进 strong 让编辑器视为同一
+    个不可拆分块，绕过该换行触发。返回处理过的列表项数。
+    """
+    from bs4 import NavigableString
+    count = 0
+    for li in soup.find_all("li"):
+        for strong in li.find_all("strong"):
+            nxt = strong.next_sibling
+            if not isinstance(nxt, NavigableString):
+                continue
+            text = str(nxt)
+            if text and text[0] in ("：", ":"):
+                strong.append(text[0])
+                nxt.replace_with(text[1:])
+                count += 1
+    return count
+
+
 def md_to_html(md_text: str) -> str:
     """Markdown → 微信兼容 HTML 片段（含 <style> 头）。
 
@@ -205,6 +229,7 @@ def md_to_html(md_text: str) -> str:
     for h1 in soup.find_all("h1"):
         h1.decompose()
     compact_lists(soup)
+    promote_strong_colon(soup)
     return f"<style>{DEFAULT_CSS}</style>\n{soup}"
 
 
@@ -311,7 +336,7 @@ def main() -> int:
         f"?access_token={urllib.parse.quote(access_token)}&type=image"
     )
     boundary, body = build_multipart("cover.jpg", cover_data)
-    r = http_json(
+    r = http_json_with_retry(
         upload_url,
         headers={
             **proxy_h,
