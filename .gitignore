@@ -43,3 +43,8 @@ node_modules/
 site/dist/
 site/.astro/
 site/.pagefind/
+
+# SQLite 数据库（CI 期重建，不入 Git；详见 .claude/plans/splendid-swinging-meteor.md）
+src/data/db.sqlite
+src/data/db.sqlite-shm
+src/data/db.sqlite-wal

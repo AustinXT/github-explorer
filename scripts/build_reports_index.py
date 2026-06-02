@@ -1,34 +1,23 @@
 #!/usr/bin/env python3
-"""
-扫描 src/analysis_report/*.md，从已有 Markdown 结构提取元数据，输出 src/data/reports.json。
-报告原文不做修改 —— 所有元数据来自约定的标题/表格/段落。
+"""扫描 src/analysis_report/*.md，从约定的标题/表格/段落提取元数据，写入 db.sqlite。
 
-字段说明（缺失时设为 null）：
-    slug          文件名去 .md
-    title         一级标题去掉「深度分析报告」尾缀
-    originalUrl   `> GitHub: <url>` 行
-    summary       「一句话总结」段首
-    highlights    「值得关注的理由」前 3 条要点的纯文本
-    stars / forks 项目画像表「Star / Fork」拆分（int）
-    language      项目画像表「代码行数」中识别到的主语言
-    locKept       项目画像表「代码行数」原文（人类可读）
-    ageMonths     项目画像表「项目年龄」按月折算（float）
-    ageRaw        原文
-    stage         开发阶段
-    contribution  贡献模式
-    heat          热度定位（取冒号前级别）
-    quality       质量评级原文
-    license       许可证（若表中有）
-    cover         「项目展示」段首张图片 URL
-    mtime         文件 mtime（YYYY-MM-DD）
-    published     在 src/publish.md 命中的发布状态（"已发布:{date}" / "待发布" / null）
-    publishedTitle 在 publish.md 的标题列文本
+数据流：
+    Markdown 报告 + publish.md → parse → INSERT into reports + report_highlights
+    （阶段 4 后 publish.md 的 SoR 身份会被 src/data/publish_history.jsonl 接管）
+
+reports.json 不再由本脚本写出，统一由 `scripts/init_db.py export-json` 从 DB dump。
+site/ 仍读 JSON 不变。
+
+DB schema 约束（详见 scripts/init_db.py）自动保证：
+    - slug 唯一（PRIMARY KEY）
+    - original_url 唯一（UNIQUE，防重复抓取）
+    - published_state ∈ {pending, draft, excluded, published} 或 NULL（CHECK）
+    - stars/forks/age_months 非负（CHECK）
 """
 from __future__ import annotations
 
-import json
-import os
 import re
+import sqlite3
 import sys
 from datetime import datetime
 from pathlib import Path
@@ -36,45 +25,95 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 REPORTS_DIR = ROOT / "src" / "analysis_report"
 PUBLISH_FILE = ROOT / "src" / "publish.md"
-OUTPUT_FILE = ROOT / "src" / "data" / "reports.json"
+
+# init_db.py 与本文件同目录，import 直读
+sys.path.insert(0, str(ROOT / "scripts"))
+from init_db import get_connection, ensure_schema, normalize_url  # noqa: E402
 
 
 def read_text(p: Path) -> str:
     return p.read_text(encoding="utf-8", errors="replace")
 
 
-# ---------- publish.md 解析 ----------
+# ---------- publish.md 解析（三种行格式全覆盖） ----------
+
+# 1) 4 列链接行（已发布）：| [name.md](path) | 标题 | YYYY-MM-DD |
+LINK_4COL_RE = re.compile(
+    r"^\|\s*\[([^\]]+)\]\(([^)]+)\)\s*\|\s*([^|]+?)\s*\|\s*([^|]+?)\s*\|\s*$"
+)
+# 2) 2 列链接行（不发布列表的原因行）：| [name.md](path) | 原因 |
+LINK_2COL_RE = re.compile(
+    r"^\|\s*\[([^\]]+)\]\(([^)]+)\)\s*\|\s*([^|]+?)\s*\|\s*$"
+)
+# 3) 3 列裸文件名行（auto-analyze 追加到不发布列表）：| name.md | 自动生成 | YYYY-MM-DD (已入草稿) |
+BARE_3COL_RE = re.compile(
+    r"^\|\s*([\w\-_.]+\.md)\s*\|\s*([^|]+?)\s*\|\s*([^|]+?)\s*\|\s*$"
+)
+DATE_TAG_RE = re.compile(r"^(\d{4}-\d{2}-\d{2})(?:\s*\(([^)]+)\))?\s*$")
+
+
+def _slug_from_link(link_text: str, link_path: str) -> str:
+    """从 [link_text](link_path) 提取 slug（小写，与 Astro entry.id 一致）"""
+    slug = Path(link_path).stem if "/" in link_path else link_text.replace(".md", "")
+    return slug.strip().lower()
+
+
 def parse_publish_index() -> dict[str, dict]:
+    """返回 {slug: {state, at, title, reason}}。
+
+    state ∈ {pending, excluded, published, None}；published 时 at = YYYY-MM-DD。
+
+    历史 bug 修复（详见 .claude/plans/splendid-swinging-meteor.md）：
+    - 旧版正则要求 4 列管道，导致不发布列表的 2 列行 与 auto-analyze 追加的 3 列裸文件名行均被丢弃。
+    - 修复后这些 slug 的 published 字段从 null 变为有值；site/ 消费者只判断 null vs 非 null，无破坏。
+    """
     if not PUBLISH_FILE.exists():
         return {}
     out: dict[str, dict] = {}
     in_excluded = False
-    for line in read_text(PUBLISH_FILE).splitlines():
-        line = line.strip()
+    for raw in read_text(PUBLISH_FILE).splitlines():
+        line = raw.strip()
         if line.startswith("## 不发布"):
             in_excluded = True
             continue
-        m = re.match(r"\|\s*\[([^\]]+)\]\(([^)]+)\)\s*\|\s*([^|]+?)\s*\|\s*([^|]+?)\s*\|", line)
-        if not m:
+
+        # 优先：4 列链接行
+        m = LINK_4COL_RE.match(line)
+        if m:
+            link_text, link_path, title, status = m.groups()
+            slug = _slug_from_link(link_text, link_path)
+            if in_excluded:
+                # 不发布列表里的 4 列行（罕见但允许）
+                out[slug] = {"state": "excluded", "at": None, "title": title.strip(), "reason": status.strip()}
+            elif re.match(r"\d{4}-\d{2}-\d{2}", status):
+                out[slug] = {"state": "published", "at": status.strip()[:10], "title": title.strip(), "reason": None}
+            else:
+                out[slug] = {"state": "pending", "at": None, "title": title.strip(), "reason": None}
             continue
-        link_text, link_path, title, status = m.groups()
-        slug = link_text.replace(".md", "").strip()
-        if "/" in link_path:
-            slug = Path(link_path).stem
-        slug = slug.lower()  # 与 Astro 一致
-        info = {"title": title.strip()}
-        if in_excluded:
-            info["published"] = "excluded"
-            info["reason"] = status.strip()
-        elif re.match(r"\d{4}-\d{2}-\d{2}", status):
-            info["published"] = f"published:{status.strip()}"
-        else:
-            info["published"] = "pending"
-        out[slug] = info
+
+        # 其次：2 列链接行（只在不发布段语义为 excluded）
+        m = LINK_2COL_RE.match(line)
+        if m:
+            link_text, link_path, second = m.groups()
+            slug = _slug_from_link(link_text, link_path)
+            if in_excluded:
+                out[slug] = {"state": "excluded", "at": None, "title": None, "reason": second.strip()}
+            # 已发布段的 2 列链接不应出现（表头/分隔行不会被匹配），忽略
+            continue
+
+        # 最后：3 列裸文件名行（auto-analyze 追加，语义为 pending 待发布）
+        m = BARE_3COL_RE.match(line)
+        if m:
+            filename, source, date_status = m.groups()
+            slug = filename.replace(".md", "").strip().lower()
+            dm = DATE_TAG_RE.match(date_status.strip())
+            at = dm.group(1) if dm else None
+            out[slug] = {"state": "pending", "at": at, "title": None, "reason": source.strip()}
+            continue
     return out
 
 
-# ---------- 单篇报告解析 ----------
+# ---------- 单篇报告解析（纯函数，无 I/O） ----------
 H1_SUFFIX_RE = re.compile(r"\s*深度分析报告\s*$")
 GITHUB_URL_RE = re.compile(r"^>\s*GitHub:\s*(https?://github\.com/\S+)", re.I)
 IMG_RE = re.compile(r"!\[[^\]]*\]\(([^)]+)\)")
@@ -93,7 +132,6 @@ def parse_int_with_commas(s: str) -> int | None:
 
 
 def parse_age_months(raw: str) -> float | None:
-    """从 '35 个月（2023-05 至今）' / '5.4 年' / '17.5 个月（首次提交 2024-10-07）' 提取月数"""
     m = re.search(r"([\d.]+)\s*个月", raw)
     if m:
         try:
@@ -119,15 +157,12 @@ KNOWN_LANGUAGES = (
 
 
 def parse_language(raw: str) -> str | None:
-    """从 '23,288 行（Python 84.3%, GLSL 3.4%）' 之类提取主语言。
-    顺序：百分比格式 → 「N 行 Python」格式 → 已知语言名兜底。"""
     m = re.search(r"[（(]\s*([A-Za-z+#./_-]+(?:\s*[A-Za-z+#./_-]+)?)\s+[\d.]+%", raw)
     if m:
         return m.group(1).strip()
     m = re.search(r"\d+(?:[,，]\d+)*\s*行\s*([A-Za-z+#./_-]+)", raw)
     if m:
         return m.group(1).strip()
-    # 兜底：扫已知语言名（按长度倒序避免 C 被截到 C++）
     for lang in sorted(KNOWN_LANGUAGES, key=len, reverse=True):
         if re.search(rf"\b{re.escape(lang)}\b", raw):
             return lang
@@ -135,15 +170,13 @@ def parse_language(raw: str) -> str | None:
 
 
 def parse_heat(raw: str) -> str | None:
-    """从 '大众热门（32K+ Star，AI coding 赛道头部）' 取「大众热门」"""
     m = re.match(r"\s*([^（(:：]+)", raw)
     return m.group(1).strip() if m else None
 
 
 def split_section_body(lines: list[str], start: int) -> list[str]:
-    """返回从 start+1 行起到下一个二级标题之前的内容（已去除空白行首尾）"""
     body: list[str] = []
-    for line in lines[start + 1 :]:
+    for line in lines[start + 1:]:
         if line.startswith("## "):
             break
         body.append(line)
@@ -159,18 +192,15 @@ def extract_summary(body_lines: list[str]) -> str | None:
 
 
 def extract_highlights(body_lines: list[str], n: int = 3) -> list[str]:
-    """从「值得关注的理由」抽前 n 条要点，去掉编号和加粗符"""
     items: list[str] = []
     for line in body_lines:
         s = line.strip()
         if not s:
             continue
-        # 兼容 "1. **xxx**" / "- **xxx**" / "1) xxx"
         m = re.match(r"^(?:\d+[.)]|\-|\*)\s+(.*)$", s)
         if not m:
             continue
         text = m.group(1).strip()
-        # 取首句（句号前）并清除粗体
         text = re.sub(r"\*\*([^*]+)\*\*", r"\1", text)
         text = re.split(r"——|--|—", text, maxsplit=1)[0].strip()
         text = re.split(r"[。；;]", text, maxsplit=1)[0].strip()
@@ -185,17 +215,16 @@ def extract_cover(body_lines: list[str]) -> str | None:
     for line in body_lines:
         m = IMG_RE.search(line)
         if m:
-            url = m.group(1).strip().split()[0]  # 去掉可能的 " title"
+            url = m.group(1).strip().split()[0]
             if url.startswith("http"):
                 return url
     return None
 
 
 def parse_profile_table(body_lines: list[str]) -> dict[str, str]:
-    """项目画像表 → {标题列文本: 数据列文本}"""
     out: dict[str, str] = {}
     for line in body_lines:
-        if "---" in line:  # 表头分隔
+        if "---" in line:
             continue
         m = TABLE_ROW_RE.match(line.rstrip())
         if not m:
@@ -208,8 +237,6 @@ def parse_profile_table(body_lines: list[str]) -> dict[str, str]:
 
 
 def parse_report(path: Path, publish_index: dict[str, dict]) -> dict | None:
-    # Astro 的 content collection 会把文件名 lowercase 作为 entry.id；
-    # 此处保持一致，避免站点侧反查元数据时大小写不匹配。
     slug = path.stem.lower()
     text = read_text(path)
     lines = text.splitlines()
@@ -224,13 +251,13 @@ def parse_report(path: Path, publish_index: dict[str, dict]) -> dict | None:
         if original_url is None:
             m = GITHUB_URL_RE.match(raw_line)
             if m:
-                original_url = m.group(1).rstrip(".,;")
+                # 先去掉常见尾部标点，再走全局 normalize_url（rstrip('/').lower()）
+                original_url = normalize_url(m.group(1).rstrip(".,;"))
         m = SECTION_RE.match(raw_line)
         if m:
             sections[m.group(1).strip()] = split_section_body(lines, i)
 
     if not title:
-        # 无 h1，跳过
         return None
 
     summary = extract_summary(sections.get("一句话总结", []))
@@ -262,26 +289,55 @@ def parse_report(path: Path, publish_index: dict[str, dict]) -> dict | None:
     return {
         "slug": slug,
         "title": title,
-        "originalUrl": original_url,
+        "original_url": original_url,
         "summary": summary,
         "highlights": highlights,
         "stars": stars,
         "forks": forks,
         "language": language,
-        "locRaw": loc_raw,
-        "ageMonths": age_months,
-        "ageRaw": age_raw,
+        "loc_raw": loc_raw,
+        "age_months": age_months,
+        "age_raw": age_raw,
         "stage": profile_raw.get("开发阶段"),
         "contribution": profile_raw.get("贡献模式"),
         "heat": heat,
-        "heatRaw": heat_raw,
+        "heat_raw": heat_raw,
         "quality": profile_raw.get("质量评级"),
         "license": profile_raw.get("许可证"),
         "cover": cover,
         "mtime": mtime,
-        "published": pub.get("published"),
-        "publishedTitle": pub.get("title"),
+        "published_state": pub.get("state"),
+        "published_at": pub.get("at"),
+        "published_title": pub.get("title"),
+        "published_reason": pub.get("reason"),
     }
+
+
+# ---------- 写入 DB ----------
+
+REPORT_COLS = (
+    "slug", "title", "original_url", "summary", "stars", "forks",
+    "language", "loc_raw", "age_months", "age_raw", "stage", "contribution",
+    "heat", "heat_raw", "quality", "license", "cover", "mtime",
+    "published_state", "published_at", "published_title", "published_reason",
+)
+
+
+def write_reports(conn: sqlite3.Connection, reports: list[dict]) -> None:
+    """事务内全量重写 reports + report_highlights。"""
+    placeholders = ",".join("?" * len(REPORT_COLS))
+    insert_sql = f"INSERT INTO reports ({','.join(REPORT_COLS)}) VALUES ({placeholders})"
+    with conn:  # auto-commit on success, rollback on exception
+        conn.execute("DELETE FROM report_highlights")
+        conn.execute("DELETE FROM reports")
+        for r in reports:
+            row = tuple(r[c] for c in REPORT_COLS)
+            conn.execute(insert_sql, row)
+            for pos, text in enumerate(r["highlights"]):
+                conn.execute(
+                    "INSERT INTO report_highlights (slug, position, text) VALUES (?, ?, ?)",
+                    (r["slug"], pos, text),
+                )
 
 
 def main() -> int:
@@ -291,7 +347,6 @@ def main() -> int:
 
     publish_index = parse_publish_index()
     md_files = sorted(REPORTS_DIR.glob("*.md"))
-    # 显式排除：非报告文件
     NON_REPORT = {"repos", "README"}
     reports: list[dict] = []
     skipped = 0
@@ -306,22 +361,23 @@ def main() -> int:
             continue
         reports.append(rep)
 
-    # 统计字段非空率
-    if reports:
-        keys = ("stars", "language", "ageMonths", "heat", "summary", "cover", "originalUrl")
-        coverage = {k: sum(1 for r in reports if r.get(k) is not None) for k in keys}
-    else:
-        coverage = {}
+    conn = get_connection()
+    ensure_schema(conn)
+    try:
+        write_reports(conn, reports)
+    except sqlite3.IntegrityError as e:
+        print(f"❌ 写入 DB 失败（schema 约束违规）: {e}", file=sys.stderr)
+        return 2
+    finally:
+        conn.close()
 
-    OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
-    OUTPUT_FILE.write_text(
-        json.dumps(reports, ensure_ascii=False, indent=2) + "\n",
-        encoding="utf-8",
-    )
-
-    print(f"✅ 解析 {len(reports)} 篇报告，跳过 {skipped} 篇 → {OUTPUT_FILE.relative_to(ROOT)}")
+    # 字段非空率统计
+    keys = ("stars", "language", "age_months", "heat", "summary", "cover", "original_url")
+    print(f"✅ 写入 {len(reports)} 篇报告，跳过 {skipped} 篇 → db.sqlite (reports + report_highlights)")
+    print(f"   publish.md 解析命中 {len(publish_index)} 条")
     print("   字段非空率:")
-    for k, n in coverage.items():
+    for k in keys:
+        n = sum(1 for r in reports if r.get(k) is not None)
         pct = n * 100 / max(len(reports), 1)
         print(f"     {k:<14} {n:>4} / {len(reports)} ({pct:5.1f}%)")
     return 0
