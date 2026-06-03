@@ -1,6 +1,6 @@
 {
-  "title": "9 年 78K stars：渗透测试红队的「复制即用」字典怎么炼成的",
-  "digest": "独立红队研究员 9.5 年沉淀的 payload + WAF bypass 字典，按攻击面切目录、PR 替代 issue、Markdown 即文档，成为红队与 Bug Bounty 的「基础设施级」参考仓。",
+  "title": "9.6 年 78K stars：一个人撑起的 Web 渗透 Payload 字典",
+  "digest": "9 年、72 个漏洞章节、333 位贡献者,PayloadsAllTheThings 用「同构范式 + 卫生标准 + 家族化品牌」三件套,做成 Web 渗透测试人员人手一份的 Payload 字典,GitHub 生态内无同量级对手。",
   "author": "NVoyager",
   "theme": "stars,universe,dark"
 }
