@@ -1,6 +1,6 @@
 {
-  "title": "9.6 年、78K star、零代码：PayloadsAllTheThings 凭什么成红队圣经",
-  "digest": "注释:代码 26:1 的文档型 GitHub 仓库，零 runtime 拿下 78K star 与 333 贡献者；用模板化贡献 + 消毒占位符 + Burp 字典绑定三件套，做成 Bug Bounty payload 字典事实标准。",
+  "title": "9.6 年、78K star、零代码仓库：PayloadsAllTheThings 凭什么把渗透 payload 写成「行业基础设施」",
+  "digest": "注释:代码 26:1 的「反常识」文档型 GitHub 仓库，零 runtime 拿下 78K star 与 333 贡献者；用模板化贡献 + 消毒占位符 + Burp 字典绑定三件套，做成 Bug Bounty payload 字典事实标准。",
   "author": "NVoyager",
   "theme": "stars,universe,dark"
 }
