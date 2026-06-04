@@ -1,6 +1,6 @@
 {
-  "title": "PayloadsAllTheThings：9.6 年 78K star 的渗透 payload 行业基础设施",
-  "digest": "注释:代码 26:1 的文档型 GitHub 仓库，用模板化贡献 + 消毒占位符 + Burp 字典绑定三件套，把 333 位陌生人变成 9.6 年可持续搬运工，跻身 Bug Bounty 实战链条事实标准。",
+  "title": "9 年 78K stars：一份「payload 字典」如何成为安全行业的基础设施",
+  "digest": "PayloadsAllTheThings 把碎片化渗透 payload 收成「人读 + Burp 直接吃」的双消费字典，靠占位符消毒 + 模板化贡献沉淀 9.6 年、333 贡献者，成为 Bug Bounty 事实标准。",
   "author": "NVoyager",
   "theme": "stars,universe,dark"
 }
