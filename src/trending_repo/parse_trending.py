@@ -10,19 +10,40 @@
 """
 
 import json
+import os
 import re
 from collections import defaultdict
 from datetime import datetime, timedelta
 from pathlib import Path
 
-ARCHIVE_DIR = Path("/tmp/github-trending-archive/data")
+# 归档源目录（duzhuoshanwai/github-trending-archive 的 data/，格式 data/YYYY-MM/YYYY-MM-DD.md）。
+# 默认 /tmp/github-trending-archive/data，可用 TRENDING_ARCHIVE_DIR 覆盖。
+ARCHIVE_DIR = Path(
+    os.environ.get("TRENDING_ARCHIVE_DIR", "/tmp/github-trending-archive/data")
+)
 OUTPUT_DIR = Path(__file__).parent
 # SoR 落到 src/data/（与 publish_history.jsonl 同处）
 SNAPSHOTS_FILE = OUTPUT_DIR.parent / "data" / "trending_snapshots.jsonl"
 
-# 半年范围：2025-09-22 到 2026-04-06
-START_DATE = datetime(2025, 9, 22)
-END_DATE = datetime(2026, 4, 6)
+
+def _date_env(name: str, default: datetime) -> datetime:
+    """从环境变量读 YYYY-MM-DD，缺失/非法则回退 default。"""
+    raw = os.environ.get(name)
+    if not raw:
+        return default
+    try:
+        return datetime.strptime(raw.strip(), "%Y-%m-%d")
+    except ValueError:
+        print(f"⚠️  {name}={raw!r} 非法（应为 YYYY-MM-DD），回退 {default.date()}")
+        return default
+
+
+# 回填起点固定 2025-09-22（archive 含完整历史，全量重扫幂等），END 默认到运行当日。
+# 可用 TRENDING_START_DATE / TRENDING_END_DATE 覆盖。
+START_DATE = _date_env("TRENDING_START_DATE", datetime(2025, 9, 22))
+END_DATE = _date_env("TRENDING_END_DATE", datetime.now().replace(
+    hour=0, minute=0, second=0, microsecond=0
+))
 
 
 def _snapshot_rows(period_type: str, period_key: str, repos: list[dict]) -> list[dict]:
