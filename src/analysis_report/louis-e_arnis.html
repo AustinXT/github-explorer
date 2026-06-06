@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+/* ====== 微信公众号排版 CSS ====== */
+
+body {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #3e3e3e;
+    background: #fff;
+}
+
+/* 正文段落 */
+p {
+    font-size: 15px !important;
+    line-height: 2 !important;
+    margin: 0 !important;
+    padding-top: 0.5em !important;
+    padding-bottom: 0.5em !important;
+    padding-right: 1.2em !important;
+    padding-left: 1.2em !important;
+    text-align: justify !important;
+}
+p + p {
+    margin-top: 0 !important;
+}
+
+/* 标题 */
+h1 {
+    font-size: 20px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 16px 0 !important;
+    padding: 0 !important;
+}
+h2 {
+    font-size: 18px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 24px 0 !important;
+    padding: 0 !important;
+}
+h3 {
+    font-size: 15px !important;
+    font-weight: bold !important;
+    color: #3e3e3e !important;
+    text-align: left !important;
+    margin: 16px 0 16px 0 !important;
+    padding: 0 0 0 1.2em !important;
+}
+h4 {
+    font-size: 15px !important;
+    color: rgb(0, 122, 170) !important;
+    margin: 12px 0 8px 0 !important;
+    padding: 0 !important;
+}
+
+/* 列表 */
+ul,
+ol {
+    padding-left: 2em !important;
+    margin: 1em 0 !important;
+    font-size: 15px !important;
+}
+li {
+    margin: 0.5em 0 !important;
+    line-height: 1.8em !important;
+    font-size: 15px !important;
+    color: #3e3e3e !important;
+}
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+    margin: 0 !important;
+    padding-left: 1.2em !important;
+}
+
+/* 引用 */
+blockquote {
+    border-left: 4px solid #888 !important;
+    padding: 8px 16px !important;
+    margin: 1em 0 !important;
+    color: #666 !important;
+    background: #f9f9f9 !important;
+}
+blockquote > p {
+    margin: 0.5em 0 !important;
+    padding: 0 !important;
+}
+blockquote::before,
+blockquote::after {
+    content: none !important;
+}
+
+/* 代码块 */
+pre {
+    font-size: 14px !important;
+    line-height: 1.4em !important;
+    color: #3e3e3e !important;
+    background: #f8f8f8 !important;
+    padding: 12px 16px !important;
+    border-radius: 4px !important;
+    overflow: auto !important;
+    margin: 1em 0 !important;
+}
+
+/* 脚注 */
+.footnotes {
+    font-size: 11px !important;
+    color: #666 !important;
+    line-height: 1.2 !important;
+    margin: 8px 0 0 0 !important;
+    padding: 4px 0 0 0 !important;
+    border-top: 1px solid #eee !important;
+}
+.footnotes p {
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #666 !important;
+}
+
+/* 上标 */
+sup {
+    font-size: 0.75em !important;
+    vertical-align: super !important;
+    color: #e51f42 !important;
+    margin: 0 2px !important;
+}
+
+</style>
+</head>
+<body>
+<blockquote><p>GitHub: <a href="https://github.com/louis-e/arnis">https://github.com/louis-e/arnis</a></p></blockquote>
+<h2>一句话总结</h2>
+<p>Arnis 是一款 Rust 写的开源工具，把 OpenStreetMap + AWS Terrain Tiles + ESA WorldCover 卫星分类实时拼装成可玩的 Minecraft 世界，同时支持 Java / Bedrock / Luanti 三种世界格式输出，4 个月从 Python 原型重写后 star 突破 1.6 万。</p>
+<h2>值得关注的理由</h2>
+<ul>
+<li><strong>垂直赛道近乎垄断的工程实现</strong>：开源世界把『OSM → MC 世界』做成产品级工具，Terra 1-to-1 (1800 stars) 已停更、BuildTheEarth 是人工 1:1 体力活、OSM2World/blosm 不直接出 MC 世界——Arnis 几乎没有同量级对手。</li>
+<li><strong>真实的工程取舍案例</strong>：Minecraft Y=384 硬高度限制 vs 真实世界任意 bbox 海拔差，用『归一化 + bundled datapack 拉到 4064』双层化解，是少有的『游戏引擎 vs 真实世界』边界处理范例。</li>
+<li><strong>学术 + 行业 + 玩家三圈层背书</strong>：AWS Public Sector 博客、Hackaday、Tom's Hardware、XDA 持续报道；K-12 教育论文（Floodcraft）作平台引用；Discord 1.3 万成员。</li>
+</ul>
+<h2>项目展示</h2>
+<img src="https://raw.githubusercontent.com/louis-e/arnis/main/assets/git/banner.png" alt="Banner" />
+<img src="https://raw.githubusercontent.com/louis-e/arnis/main/assets/git/preview.jpg" alt="Minecraft Preview" />
+<p><i>海德堡老城 1:1 还原——你能在自己长大的地方玩 Minecraft。</i></p>
+<img src="https://raw.githubusercontent.com/louis-e/arnis/main/assets/git/gui.png" alt="GUI" />
+<p><i>Tauri 2.0 桌面客户端，矩形工具选区域，点 Start Generation 即可。</i></p>
+<img src="https://raw.githubusercontent.com/louis-e/arnis/main/assets/git/documentation.png" alt="Documentation" />
+<p><i>完整 Wiki 覆盖技术原理、FAQ、贡献指南、Roadmap。</i></p>
+<blockquote><p>背景演示视频：<a href="https://github.com/user-attachments/assets/420acc19-a850-418e-8397-1a45b05582ab">backgroundvid.webm</a></p></blockquote>
+<h2>项目画像</h2>
+<table>
+<thead><tr>
+<th>维度</th>
+<th>数据</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>GitHub</td>
+<td><a href="https://github.com/louis-e/arnis">https://github.com/louis-e/arnis</a></td>
+</tr>
+<tr>
+<td>Star / Fork</td>
+<td>15,949 / 1,316</td>
+</tr>
+<tr>
+<td>代码行数</td>
+<td>76,603（Rust 53.2% / JavaScript 36.0% / JSON 4.6% / CSS 4.5%，纯 Rust 50,593 行）</td>
+</tr>
+<tr>
+<td>项目年龄</td>
+<td>44.9 个月（2022-09-10 至今）</td>
+</tr>
+<tr>
+<td>开发阶段</td>
+<td>密集开发（近 30 天 155 commit，近 90 天 568 commit）</td>
+</tr>
+<tr>
+<td>贡献模式</td>
+<td>独立开发为主（louis-e 81.2% commit）+ 多国社区 PR 补位（53 贡献者）</td>
+</tr>
+<tr>
+<td>热度定位</td>
+<td>大众热门（2024-12 破圈后稳定在 15K+ stars）</td>
+</tr>
+<tr>
+<td>质量评级</td>
+<td>代码 [优秀] 文档 [优秀] 测试 [基本] CI/CD [完善] 错误处理 [规范]</td>
+</tr>
+</tbody>
+</table>
+<h2>作者视角：为什么存在这个项目</h2>
+<h3>创始人/作者背景</h3>
+<p>Louis Erbkamm (louis-e)，20 岁，BMW 集团 Android/AOSP 平台工程师（巴伐利亚/慕尼黑），bio: "🌌 space & science fanatic // 20 y/o"。GitHub 7.6 年，主业负责蓝牙/Wi-Fi/Neue Klasse 平台层，2024 年转正。早期经历 freelance web → TV1 GmbH 3D 直播 → BMW 学徒——把『3D 直播渲染经验 + AOSP 平台层抽象（feature gate / stub module） + Rust 高性能』三件套用在 Minecraft 上。</p>
+<blockquote><p>公开博客：louisdev.de</p></blockquote>
+<h3>问题判断</h3>
+<p>作者看到的是<strong>『OSM 数据丰富 + Minecraft 玩家基础大 + 自动化 1:1 地图工具稀缺』</strong>的三方错位。Terra 1-to-1 等老牌工具停留在 Python+Tkinter、只支持 Java、不做高程。BuildTheEarth 是全球社区人工体力活。OSM2World/blosm 面向通用 3D 引擎不直接出 MC 世界——<strong>没有人在维护『开源、自动、跨版本、能真实还原地形』这条产品线</strong>。</p>
+<p>时机：2024-12 月 AWS Terrain Tiles 等开放 DEM 数据成熟、OSM Overpass API 稳定、Tauri 2.0 解决跨平台桌面应用打包。三件事凑齐，作者顺势把 Python 原型重写为 Rust。</p>
+<h3>解法哲学</h3>
+<p><strong>拒绝单一完美方案，转向多源自适应 + 多格式输出 + 模块化替换</strong>——这跟 ML 圈『一个模型压全场』的趋势相反，更接近 Unix 哲学 + 微内核 + 平台工程的现代合流：</p>
+<ul>
+<li><strong>不追求『1:1 真实海拔』</strong>：承认 Minecraft 384 块硬约束是 game-engine 与 real-world 的本质 gap，默认做归一化、玩家可启用扩展 datapack</li>
+<li><strong>不押注单一数据源</strong>：6 个 elevation provider（AWS Terrain Tiles / Overture Maps / USGS 3DEP / IGN France / IGN Spain / SRTM）自适应 fallback</li>
+<li><strong>不做 AI 推演</strong>：纯规则算法（OSM tag → 块类型映射），确定性、可复现、零幻觉</li>
+<li><strong>不强制 GUI</strong>：同一二进制默认 GUI，--no-default-features 编 headless CLI 跑 Docker / CI</li>
+<li><strong>不锁定 Minecraft 版本</strong>：Java 1.17+ / Bedrock / Luanti 三套世界格式共用内存数据模型</li>
+</ul>
+<h3>战略意图</h3>
+<p>主仓保持 Apache-2.0 + 强烈 open-core 倾向。<strong>MapSmith</strong>（README 提到的浏览器 SaaS 化补充）可能是商业化试水——『开源是开发者入口，浏览器 SaaS 是大众入口』的经典双轨。最大 250 km² 的浏览器生成服务，可能走『免费额度 + 付费扩大 + 商业 API』路径。</p>
+<blockquote><p>AWS Public Sector 博客背书说明已进入『学者 + 行业 + 玩家』三圈层。</p></blockquote>
+<h2>核心价值提炼</h2>
+<h3>创新之处</h3>
+<p>按新颖度×实用性排序：</p>
+<ol>
+<li><strong>Land-cover-aware elevation repair</strong>（histogram mode 水面 + Gaussian σ=30m 平滑建成区 + 25m 海岸线 BFS 内插）—— 一次性解决 DEM+DSM 城市区域『看起来像被啃了』的伪影，可迁移到任何『栅格地形 + 卫星分类 mask』pipeline</li>
+<li><strong>Y=384 hard cap 倒逼的『归一化 + bundled datapack』双层设计</strong>—— 不与引擎硬约束抗争，先 scale_to_minecraft 压缩、必要时 bundled datapack 把 min_y 拉到 -2032 / height 4064；通过运行时改写 level.dat 注入 file/arnis_tall 来『装载时扩界』</li>
+<li><strong>Overture Maps GeoParquet 远程 row-group 过滤</strong>—— HTTP Range 读 footer → ParquetMetaData → bbox-overlap 过滤 row group → 只下载相关 row group 的列数据，避免下载 TB 级文件；OSM ID 高位加 0x8000_0000_0000_0000 避免冲突</li>
+<li><strong>Cloud-Optimized GeoTIFF HTTP Range 读 + ESA WorldCover land cover 流水线</strong>—— ESA WorldCover 10m 分辨率 ~500MB/tile，用 HTTP Range 读 COG 内部 tile 而不下载整文件；通用 COG 处理模式，可直接 copy 到 S2 / Sentinel / NAIP</li>
+<li><strong>预计算 floodfill + 1-bit 坐标位图 + Arc<Shared> 缓存</strong>—— 24 个 element 子模块都要 flood fill 同样的 OSM way，主循环前 rayon 并行预计算；Arc<Vec<(i32, i32)>> 共享（refcount bump 代替 deep clone）；1-bit 位图（5000×5000 = 3MB）替代 HashSet（1.2GB）做 footprint 集合</li>
+</ol>
+<h3>可复用的模式与技巧</h3>
+<ul>
+<li><strong>Feature-gate 双入口 + stub module</strong>：Cargo.toml 的 default = ["gui"] 让 cargo run 起 GUI，cargo run --no-default-features 编 headless CLI；#[cfg(feature = "gui")] 隔离 progress/telemetry 依赖。任何『GUI 可选 / 跨多个 headless 入口』的 Rust 项目都可借鉴</li>
+<li><strong>Provider 链 + bbox overlap + 自适应 fallback</strong>：按分辨率倒序选择 → bbox overlap 检测 → 失败时 fallback → 区域空数据率 >50% 时再次 fallback → NaN ratio 自检；任何『多源异构数据 + 自动选最佳源 + 失败降级』的 pipeline 都适用</li>
+<li><strong>Precompute + Arc<Shared> + empty sentinel</strong>：主循环前并行预计算 → Arc 共享 → OnceLock 静态空集零分配；『内存敏感 + 并行热点 + 多 consumer』场景的通用模式</li>
+<li><strong>Datapack/runtime pack 注入扩界</strong>：游戏引擎硬约束（build height / 物件数）需要用户态『临时加 mod』绕过的工程模式</li>
+<li><strong>HTTP Range 读 COG/Parquet 远程 footer</strong>：TB 级地理数据在云上，做 bbox 局部切片又不下载全文件的标准做法</li>
+</ul>
+<h3>关键设计决策</h3>
+<ul>
+<li><strong>OSM 北向上 vs MC 玩家朝北向小 Z 的冲突</strong>：用 lat → -z 翻转一次性解决，<strong>拒绝 Issue #97 的任意角度旋转请求</strong>——反映对浮点误差 + 性能的硬约束。代价：玩家必须接受「北向上」作为约束</li>
+<li><strong>land cover 修正 elevation 而非反过来</strong>：elevation/postprocess.rs:151-211 后处理流水线做 MAD 异常修复 → IQR 双向过滤 → NaN 邻域填 → land-cover-aware repair；承认数据噪声不可避免，用分类 mask 当先验</li>
+<li><strong>多源 elevation provider 链</strong>：6 个 provider（AWS Terrain Tiles 30m 兜底 / Overture Maps / USGS 3DEP 1m / IGN France / IGN Spain / SRTM），按地区自动选最佳</li>
+<li><strong>三套 world format 抽象 + 共用 WorldToModify 内存模型</strong>：Java Anvil（fastanvil + NBT gzip）/ Bedrock（LevelDB + zip mcworld）/ Luanti（sqlite map.sqlite），写时统一修改内存 WorldToModify，save 时三个后端各自序列化</li>
+<li><strong>Claude Issue Bot 自动回复</strong>：2026-05 上线，claude-code-action 驱动 Sonnet，给新 issue 自动找最多 3 个重复 + 高置信 grounded 解决提示；prompt 要求『只输出 grounded 证据（PR 号 / 合并的修复 / 版本）』，禁止泛化排错和臆造</li>
+</ul>
+<h2>竞品格局与定位</h2>
+<h3>竞品对比矩阵</h3>
+<table>
+<thead><tr>
+<th>维度</th>
+<th>Arnis</th>
+<th>Terra 1-to-1</th>
+<th>BuildTheEarth</th>
+<th>OSM2World/blosm</th>
+<th>国家地理院项目 (minecraft.ign.fr)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Stars</td>
+<td>15,949</td>
+<td>~1,800</td>
+<td>~1,000</td>
+<td>数百~千</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>维护状态</td>
+<td>密集开发</td>
+<td>已停更</td>
+<td>社区活跃</td>
+<td>中等活跃</td>
+<td>一次性</td>
+</tr>
+<tr>
+<td>自动化程度</td>
+<td>完全自动</td>
+<td>完全自动</td>
+<td>全人工</td>
+<td>完全自动</td>
+<td>半自动</td>
+</tr>
+<tr>
+<td>跨版本</td>
+<td>Java 1.17+ / Bedrock / Luanti</td>
+<td>仅 Java</td>
+<td>任意</td>
+<td>不产 MC</td>
+<td>不产 MC</td>
+</tr>
+<tr>
+<td>跨平台</td>
+<td>Win/macOS/Linux + 云端</td>
+<td>桌面</td>
+<td>任意</td>
+<td>任意</td>
+<td>不可下载</td>
+</tr>
+<tr>
+<td>高程数据</td>
+<td>6 个 provider + land cover 修正</td>
+<td>无</td>
+<td>N/A</td>
+<td>无</td>
+<td>专业级</td>
+</tr>
+<tr>
+<td>输出</td>
+<td>直接可玩 MC 世界</td>
+<td>MC 世界</td>
+<td>MC 世界</td>
+<td>OBJ/Blender</td>
+<td>不可下载</td>
+</tr>
+<tr>
+<td>3D 模型</td>
+<td>3DMR + Wikimedia glTF</td>
+<td>无</td>
+<td>N/A</td>
+<td>通用 mesh</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>GUI</td>
+<td>Tauri 2 桌面</td>
+<td>Tkinter</td>
+<td>无</td>
+<td>桌面</td>
+<td>不可下载</td>
+</tr>
+<tr>
+<td>学术引用</td>
+<td>✅ K-12 论文</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>有限</td>
+</tr>
+<tr>
+<td>商业模式</td>
+<td>开源 + MapSmith SaaS</td>
+<td>无</td>
+<td>众筹</td>
+<td>无</td>
+<td>官方项目</td>
+</tr>
+</tbody>
+</table>
+<h3>差异化护城河</h3>
+<ul>
+<li><strong>技术栈</strong> = 6 个 provider 自适应 + 三 world format 共用内存模型 + 3DMR 嵌入 + Land-cover-aware elevation repair——<strong>这套管线竞品几乎无法快速复制</strong>，因为它需要同时懂 OSM 数据生态、MC 世界格式反向工程、地理数据科学</li>
+<li><strong>生态</strong> = Discord 1.3 万成员、AWS Public Sector 博客、Hackaday / Tom's Hardware / XDA 持续报道、3 篇学术论文引用、Floodcraft K-12 教育落地</li>
+<li><strong>数据飞轮</strong> = 贡献者按 OSM 区域聚集（Oleg4260 拉脱维亚、TheComputerGuy96 立陶宛、HelleBenjamin 爱沙尼亚、krvstek 波兰、XianlinSheng 中文），『按真实城市生成』设计天然吸引本地 OSM 贡献者</li>
+</ul>
+<h3>竞争风险</h3>
+<ul>
+<li><strong>最大风险</strong> = MapSmith（自家 SaaS）一旦成熟可能把开源版边缘化；但作者明确表示主仓保持 Apache-2.0 + 强烈 open-core</li>
+<li><strong>次要风险</strong> = Minecraft 协议变更（Bedrock 区块结构、Java datapack 格式）需要持续跟进——louis-e 2025-01 社区 PR 爆发说明这是个『单人核心 + 社区补位』的良性循环</li>
+<li><strong>长尾风险</strong> = 国家地理院项目若出大众版（法国/荷兰已存在），可能蚕食教育市场；但 Arnis 的『任意 bbox』优势仍在</li>
+</ul>
+<h3>生态定位</h3>
+<p>在整个『MC + 开放地理数据』的交叉点，Arnis 是<strong>明显头部项目</strong>，填补了『自动化 + MC 原生世界格式 + 多源高程 + 卫星 land cover + 跨版本』五件事的空白。</p>
+<h2>套利机会分析</h2>
+<ul>
+<li><strong>信息差</strong>: 已大众曝光（AWS / Hackaday / Tom's Hardware），不是被低估潜力股；但<strong>垂直赛道近乎垄断位置稳固</strong>，长期持有价值高</li>
+<li><strong>技术借鉴</strong>:</li>
+<li><strong>HTTP Range 读 COG/Parquet 远程 footer</strong> 模式可迁移到任何 TB 级地理数据 ETL</li>
+<li><strong>Feature-gate 双入口</strong> 模式适用于任何 CLI + GUI 双形态的 Rust 项目</li>
+<li><strong>Land-cover-aware elevation repair</strong> 适用于城市规划可视化、洪水模拟、地形数据预处理</li>
+<li><strong>Datapack 注入扩界</strong> 适用于任何『游戏引擎硬约束 vs 真实数据』场景（UE / Unity / Roblox）</li>
+<li><strong>生态位</strong>: 填补了『MC + 开放地理数据』交叉点的空白；与 K-12 教育（防洪 / 城市规划）、OSM 社区可视化、独立游戏 modpack 三个方向都有合作空间</li>
+<li><strong>趋势判断</strong>:</li>
+<li>✅ <strong>在增长</strong>（4 年累计 15.9K stars，2024-12 破圈后稳定流入）</li>
+<li>✅ <strong>符合技术趋势</strong>（开放数据 / 数字孪生 / 地理可视化 / 游戏化学习）</li>
+<li>✅ <strong>后发优势</strong>（Rust 重写后 4 个月 commit 量比 Python 时代 1 年还多，吞吐量提升约 5-6 倍）</li>
+</ul>
+<h2>风险与不足</h2>
+<ul>
+<li><strong>测试覆盖偏弱</strong>：184 个 #[test] 函数覆盖坐标变换、provider 选择、postprocess、cache 清理、JSON 解析等纯逻辑；<strong>缺端到端测试</strong>（生成结果的视觉/结构正确性靠人工），无 fixture 完整世界</li>
+<li><strong>没有 CHANGELOG.md</strong>：用 git log + GitHub Releases 代替，对 changelog-driven 工具链（如 release-please）不友好</li>
+<li><strong>Issue #97 旋转地图至今未做</strong>：核心玩家诉求未满足（OSM 默认地理北向上 vs MC 玩家习惯出生点为南），<strong>暴露当前轴系约束仍未解决</strong>——CoordinateTransformer 的 lat→-z 翻转是一次性设计</li>
+<li><strong>Minecraft 协议强耦合</strong>：fastanvil / fastnbt / bedrockrs_level / nbtx 全部 git pin 在 rev 上，<strong>Mojang / Bedrock 协议变更时需要 4 个上游同步更新</strong></li>
+<li><strong>国际化是社区驱动</strong>：俄 / 乌 / 瑞 / 韩 / 西 / 土 / 阿多语种 PR 涌入，作者只做框架与合并；<strong>单点故障风险</strong>：louis-e 一人占 81% commit</li>
+<li><strong>macOS 构建历史问题</strong>：test-macos-build.yml.disabled 备而不用，说明 macOS 构建曾有问题</li>
+<li><strong>OOM / TIFF / cache 修复是反复话题</strong>：2026-04 月 276 commit 大部分是修多源高程管线的 OOM、TIFF 损坏、cache 失效——<strong>地理数据管线的稳定性是持续投入项</strong></li>
+</ul>
+<h2>行动建议</h2>
+<h3>如果你要用它</h3>
+<ul>
+<li><strong>普通玩家</strong>：直接下载 <a href="https://github.com/louis-e/arnis/releases">Release</a> GUI 版本，矩形选区域 → Start Generation。Java 1.17+ / Bedrock 都可</li>
+<li><strong>模组服主 / 大型生成</strong>：CLI 版本（cargo run --no-default-features）+ --bbox 参数，可跑 Docker / CI 批量生成</li>
+<li><strong>教育场景</strong>：K-12 防洪教学参考 <a href="https://www.researchgate.net/publication/384644535">Floodcraft 论文</a></li>
+<li><strong>移动端 / 不想装</strong>：用 <a href="https://arnismc.com/mapsmith/">MapSmith</a> 浏览器版，最大 250 km²</li>
+</ul>
+<h3>如果你要学它</h3>
+<p>重点关注以下文件/模块（按 learning value 排序）：</p>
+<table>
+<thead><tr>
+<th>文件</th>
+<th>改动次数</th>
+<th>学习价值</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>src/elevation/postprocess.rs</td>
+<td>-</td>
+<td>Land-cover-aware elevation repair（histogram mode + Gaussian + BFS）</td>
+</tr>
+<tr>
+<td>src/elevation/selector.rs:26-50</td>
+<td>-</td>
+<td>多源 provider 链 + bbox overlap + 自适应 fallback</td>
+</tr>
+<tr>
+<td>src/floodfill_cache.rs</td>
+<td>-</td>
+<td>Precompute + Arc<Shared> + 1-bit 位图 + empty sentinel</td>
+</tr>
+<tr>
+<td>src/coordinate_system/</td>
+<td>-</td>
+<td>LLBBox/XZBBox/CoordTransformer 隔离 lat/lng 地理坐标与 XZ 局部笛卡尔</td>
+</tr>
+<tr>
+<td>src/element_processing/buildings.rs</td>
+<td>175</td>
+<td>OSM tag → Minecraft 块映射的建筑核心（门窗/屋顶/楼层）</td>
+</tr>
+<tr>
+<td>src/world_editor/</td>
+<td>134</td>
+<td>三套世界格式（Java/Bedrock/Luanti）+ 共用内存模型</td>
+</tr>
+<tr>
+<td>src/main.rs:362-381</td>
+<td>126</td>
+<td>CLI/GUI 双入口分发 + #[cfg(feature = "gui")] 隔离</td>
+</tr>
+<tr>
+<td>src/models_3d/</td>
+<td>-</td>
+<td>3DMR / Wikimedia glTF → dda-voxelize → 替换方块（保留 magenta sentinel 做 GLASS）</td>
+</tr>
+<tr>
+<td>src/overture.rs</td>
+<td>-</td>
+<td>Overture Maps GeoParquet 远程 row-group 过滤</td>
+</tr>
+</tbody>
+</table>
+<h3>如果你要 fork 它</h3>
+<p>可以改进的方向：</p>
+<ul>
+<li><strong>E2E 测试</strong>：用黄金截图 + 区块结构 diff 验证生成结果（参考 <a href="https://github.com/llasram/mc-world-rs">Minecraft 快照测试框架</a>）</li>
+<li><strong>Issue #97 旋转地图</strong>：CoordinateTransformer 引入 quaternion 旋转 + bbox 重投影（代价：浮点误差 + 性能，<strong>这是个 trade-off 学习机会</strong>）</li>
+<li><strong>更多 world format</strong>：Hytale / Vintage Story / Vintage Story 的 <a href="https://github.com/ancientmultitudes-org/vintage-story-essentials">C# 实现</a> 可参考</li>
+<li><strong>WebAssembly 编译</strong>：Tauri 2 + Rust → WASM 可以在浏览器本地生成（与 MapSmith SaaS 互补）</li>
+<li><strong>更精细的建筑语义</strong>：从 OSM Multipolygon → 房间分割 / 门窗放置（参考 <a href="https://github.com/a-b-street/osm2streets">osm2streets</a> 街道语义）</li>
+<li><strong>生成结果可视化</strong>：Tauri 窗口内嵌 3D 预览（用 <a href="https://threejs.org/">three.js</a> 加载区块）—— 这是从『生成工具』升级到『设计工具』的关键</li>
+</ul>
+<h3>知识入口</h3>
+<table>
+<thead><tr>
+<th>资源</th>
+<th>链接</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>DeepWiki</td>
+<td><a href="https://deepwiki.com/louis-e/arnis">https://deepwiki.com/louis-e/arnis</a></td>
+</tr>
+<tr>
+<td>Zread.ai</td>
+<td><a href="https://zread.ai/louis-e/arnis">https://zread.ai/louis-e/arnis</a></td>
+</tr>
+<tr>
+<td>关联论文</td>
+<td><a href="https://www.researchgate.net/publication/384644535">Floodcraft: Game-based Interactive Learning Environment using Minecraft for Flood Mitigation</a></td>
+</tr>
+<tr>
+<td>AWS 案例研究</td>
+<td><a href="https://aws.amazon.com/de/blogs/publicsector/building-realistic-minecraft-worlds-with-open-data-on-aws-how-arnis-uses-elevation-datasets-at-scale/">Building realistic Minecraft worlds with Open Data on AWS</a></td>
+</tr>
+<tr>
+<td>媒体评测</td>
+<td><a href="https://hackaday.com/2024/12/30/bringing-openstreetmap-data-into-minecraft/">Hackaday</a> / <a href="https://www.tomshardware.com/video-games/pc-gaming/minecraft-tool-lets-you-create-scale-replicas-of-real-world-locations-arnis-uses-geospatial-data-from-openstreetmap-to-generate-minecraft-maps">Tom's Hardware</a> / <a href="https://www.xda-developers.com/hometown-minecraft-map-arnis/">XDA Developers</a></td>
+</tr>
+<tr>
+<td>在线 Demo</td>
+<td><a href="https://arnismc.com/mapsmith/">MapSmith 浏览器版</a>（最大 250 km²）</td>
+</tr>
+<tr>
+<td>官方 Wiki</td>
+<td><a href="https://github.com/louis-e/arnis/wiki/">https://github.com/louis-e/arnis/wiki/</a></td>
+</tr>
+<tr>
+<td>作者博客</td>
+<td><a href="https://louisdev.de">https://louisdev.de</a></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

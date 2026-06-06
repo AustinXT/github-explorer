@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+/* ====== 微信公众号排版 CSS ====== */
+body {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #3e3e3e;
+    background: #fff;
+}
+
+/* 正文段落 */
+p {
+    font-size: 15px !important;
+    line-height: 2 !important;
+    margin: 0 !important;
+    padding-top: 0.5em !important;
+    padding-bottom: 0.5em !important;
+    padding-right: 1.2em !important;
+    padding-left: 1.2em !important;
+    text-align: justify !important;
+}
+p + p {
+    margin-top: 0 !important;
+}
+
+/* 标题 */
+h1 {
+    font-size: 20px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 16px 0 !important;
+    padding: 0 !important;
+}
+h2 {
+    font-size: 18px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 24px 0 !important;
+    padding: 0 !important;
+}
+h3 {
+    font-size: 15px !important;
+    font-weight: bold !important;
+    color: #3e3e3e !important;
+    text-align: left !important;
+    margin: 16px 0 16px 0 !important;
+    padding: 0 0 0 1.2em !important;
+}
+h4 {
+    font-size: 15px !important;
+    color: rgb(0, 122, 170) !important;
+    margin: 12px 0 8px 0 !important;
+    padding: 0 !important;
+}
+
+/* 列表 */
+ul,
+ol {
+    padding-left: 2em !important;
+    margin: 1em 0 !important;
+    font-size: 15px !important;
+}
+li {
+    margin: 0.5em 0 !important;
+    line-height: 1.8em !important;
+    font-size: 15px !important;
+    color: #3e3e3e !important;
+}
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+    margin: 0 !important;
+    padding-left: 1.2em !important;
+}
+
+/* 引用 */
+blockquote {
+    border-left: 4px solid #888 !important;
+    padding: 8px 16px !important;
+    margin: 1em 0 !important;
+    color: #666 !important;
+    background: #f9f9f9 !important;
+}
+blockquote > p {
+    margin: 0.5em 0 !important;
+    padding: 0 !important;
+}
+blockquote::before,
+blockquote::after {
+    content: none !important;
+}
+
+/* 代码块 */
+pre {
+    font-size: 14px !important;
+    line-height: 1.4em !important;
+    color: #3e3e3e !important;
+    background: #f8f8f8 !important;
+    padding: 12px 16px !important;
+    border-radius: 4px !important;
+    overflow: auto !important;
+    margin: 1em 0 !important;
+}
+
+/* 脚注 */
+.footnotes {
+    font-size: 11px !important;
+    color: #666 !important;
+    line-height: 1.2 !important;
+    margin: 8px 0 0 0 !important;
+    padding: 4px 0 0 0 !important;
+    border-top: 1px solid #eee !important;
+}
+.footnotes p {
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #666 !important;
+}
+
+/* 上标 */
+sup {
+    font-size: 0.75em !important;
+    vertical-align: super !important;
+    color: #e51f42 !important;
+    margin: 0 2px !important;
+}
+</style>
+</head>
+<body>
+
+<blockquote><p>GitHub: <a href="https://github.com/pkuflyingpig/cs-self-learning">https://github.com/pkuflyingpig/cs-self-learning</a></p></blockquote>
+
+<h2>一句话总结</h2>
+
+<p>一个 PKU CS 博士在 4.6 年里把 MIT / CMU / Stanford / UC Berkeley / ETH 的顶级公开课系统化串联成中文学习路径，配套自己亲手做的 6 门作业仓库，沉淀成 7.3 万 star、5.9 千行 markdown 笔记的<strong>中文 CS 自学资源站事实标准</strong>。</p>
+
+<h2>值得关注的理由</h2>
+
+<ul>
+<li><strong>稀缺的双层资源结构</strong>：解决了 awesome-list 长期以来的「信任问题」——每门推荐课都挂一个作者亲历的 GitHub 作业仓库，让「收藏夹里吃灰」变成了「开箱即学」。</li>
+<li><strong>中文圈没有等量对手</strong>：OSSU 偏英文、Coding-Interview-University 偏面试、TeachYourselfCS-CN 颗粒粗、REKCARC-TSC 局限清华课程——「成体系 + 持续维护 + 作者本人修完 + 跨校横向对比」四象限的唯一解。</li>
+<li><strong>信息架构值得所有资源站学习</strong>：6 个核心决策（学科×学校二维矩阵、5 节课程模板、多源学校同课对比、i18n 目录翻译、必学工具独立分支、学习路径与课程解耦）每一个都解决一类经典问题。</li>
+</ul>
+
+<h2>项目展示</h2>
+
+<p><img src="https://api.star-history.com/svg?repos=PKUFlyingPig/cs-self-learning&type=Timeline" alt="Star History" /> — 类型: hero。Star 增长曲线，4.6 年累积 7.3 万 star 的可视化轨迹。</p>
+
+<p><img src="https://contrib.rocks/image?repo=PKUFlyingPig/cs-self-learning" alt="Contributors" /> — 类型: screenshot。185 位贡献者头像墙。</p>
+
+<blockquote><p>README 主要是目录与文案，官网 <a href="https://csdiy.wiki">https://csdiy.wiki</a> 是 mkdocs material 主题站点，<strong>没有产品截图 / Demo 视频 / 架构图</strong>——所以本节只保留 Star History 与 Contributors 墙。</p></blockquote>
+
+<h2>项目画像</h2>
+
+<table>
+<thead>
+<tr><th>维度</th><th>数据</th></tr>
+</thead>
+<tbody>
+<tr><td>GitHub</td><td><a href="https://github.com/pkuflyingpig/cs-self-learning">https://github.com/pkuflyingpig/cs-self-learning</a></td></tr>
+<tr><td>Star / Fork</td><td>73,068 / 7,891</td></tr>
+<tr><td>代码行数</td><td>310（YAML 94.5% + HTML 5.5%，仅 mkdocs 配置），实际资产是 5,898 行 markdown 笔记</td></tr>
+<tr><td>项目年龄</td><td>55.6 个月（2021-10 创建，2026-02 末次提交）</td></tr>
+<tr><td>开发阶段</td><td>低维护 / 事实性休眠（近 90 天 0 commit，年化仅 35 commit）</td></tr>
+<tr><td>贡献模式</td><td>核心少数 + 社区（30 贡献者，Top 1 占 57.4%，185 人社区）</td></tr>
+<tr><td>热度定位</td><td>大众热门（中文圈 CS 自学指南事实标准）</td></tr>
+<tr><td>质量评级</td><td>文档「优秀」+ 站点工程「完善」+ 协作流程「完善」+ CI/CD「基本」+ 测试「无（合理缺失）」</td></tr>
+<tr><td>版本管理</td><td>语义化版本 v1.0.0 → v1.2.0（5 个 release）</td></tr>
+<tr><td>License</td><td>MIT</td></tr>
+</tbody>
+</table>
+
+<h2>作者视角：为什么存在这个项目</h2>
+
+<h3>创始人/作者背景</h3>
+
+<p><strong>钟旻旻（Yinmin Zhong）</strong>，北大计算机学院博士四年级，导师靳鑫、刘譞哲，研究方向为 LLM 训练 / 推理系统（Machine Learning Systems）。本科 PKU 信科，实习经历横跨 StepFun、字节 Seed、阿里达摩院、Berkeley Sky Lab。账号 6.3 年，公开仓库 79 个，9,963 followers——cs-self-learning 73k star 是他所有仓库中绝对的「一枝独秀」（第二名 312 star），是这个学术品牌最具公众辨识度的资产。</p>
+
+<p><strong>这如何塑造项目</strong>：作者本人是「系统方向研究者 + 终身学习者」，对北美 CS 顶流课程有亲历、有比较视野、有跨校（PKU 视角 vs 美本视角）的方法论。这与做中文 CS 自学指南的动机高度一致——他既是用户也是评判者。</p>
+
+<h3>问题判断</h3>
+
+<p>作者看到了两个别人没重视或没系统解决的问题：</p>
+
+<ol>
+<li><strong>awesome-list 的「收藏夹吃灰」问题</strong>：GitHub 上 CS 自学资源极多，但用户收藏后无法开始。原因是<strong>没有筛选标准、没有学习顺序、没有配套作业、没有中文门槛说明</strong>——CS 自学需要的是「<strong>可执行的路径</strong>」而非「<strong>资源清单</strong>」。</li>
+<li><strong>中文区的「英文材料 + 中国学生」错位</strong>：OSSU 等英文资源虽然齐全，但对中国大陆学生有 GitHub 访问、YouTube 访问、英语阅读速度等多重门槛。中文圈需要一个「<strong>接受英语壁垒但有中文导览</strong>」的中间层。</li>
+</ol>
+
+<p><strong>时机</strong>：2021 年底——MIT 6.S081、CMU 15-445、CS224n 等关键课程的公开课基础设施已成熟（视频、讲义、作业、讨论区都齐备），GitHub Actions + mkdocs gh-deploy 降低了开源协作站点门槛，疫情后线上自学需求爆发。三个条件在 2021 年首次同时具备。</p>
+
+<h3>解法哲学</h3>
+
+<p>作者明确选择了<strong>人工策展 + 课程模板 + 多源对比</strong>的路径，明确不做什么也极有价值：</p>
+
+<ul>
+<li><strong>不做自动聚合</strong>——所有课程都经过「独立课程站 + 教授教材 + 阶梯式项目 + 每周讨论课」4 条硬筛选，<strong>机器爬不到的东西人才写得出来</strong>。</li>
+<li><strong>不做单一推荐</strong>——同一门 OS 课推荐 MIT 6.S081 + CMU 15-410 + Berkeley CS162 三个版本，让用户按自己节奏挑。<strong>这是反「top 1」逻辑的——CS 自学没有「唯一最优解」。</strong></li>
+<li><strong>不做平台化社区</strong>——Discord / 微信群需求出现 3+ 年作者未给官方解法，是有意克制（避免运营社群被社群反向消耗精力）。</li>
+<li><strong>不做课程笔记二次创作</strong>——只做<strong>导览 + 链接</strong>，不替教授写讲义。<strong>这是反「内容农场」逻辑的——尊重原作者 IP，把自己定位为索引层而非内容层。</strong></li>
+</ul>
+
+<h3>战略意图</h3>
+
+<p>项目是作者<strong>学术品牌的公众层</strong>——PhD 阶段产出都偏研究（论文、代码仓库），cs-self-learning 7.3 万 star 让他在中文技术圈拥有「<strong>CS 知识地图</strong>」的话语权。<strong>商业化路径不明显</strong>——MIT 协议、5 个 SemVer release 都是「做产品」姿态，但作者目前精力仍以 LLM 系统研究为主，<strong>项目是他的「学术品牌入口」而非「变现工具」</strong>。</p>
+
+<blockquote><p>Phase 1 标注：作者无独立技术博客（站点即课程指南），所以无公开架构文章可引——本节判断全部基于仓库本身与作者 bio。</p></blockquote>
+
+<h2>核心价值提炼</h2>
+
+<h3>创新之处</h3>
+
+<p>按 新颖度 × 实用性 × 可迁移性 综合排序：</p>
+
+<ol>
+<li><strong>「作者亲历 + 一课一作业仓库」双层资源结构</strong>
+<ul>
+<li><strong>描述</strong>：每门推荐课挂一个作者亲手做的 GitHub 作业仓库（CMU10-714、NandToTetris、CS224n 等 6+ 个），让「收藏 → 开始」的距离缩到点击 1 次。</li>
+<li><strong>新颖度</strong>：5/5（awesome-list 圈 3 年没人想到）| <strong>实用性</strong>：5/5（直接可用）| <strong>可迁移性</strong>：5/5（任何资源聚合类项目都适用）</li>
+</ul>
+</li>
+<li><strong>「多源学校同课对比」横向矩阵</strong>
+<ul>
+<li><strong>描述</strong>：OS 一节列 MIT 6.S081、CMU 15-410、Berkeley CS162 三家；编译原理列 6 所学校的实现路径；让用户横向比较。</li>
+<li><strong>新颖度</strong>：4/5 | <strong>实用性</strong>：5/5 | <strong>可迁移性</strong>：4/5</li>
+</ul>
+</li>
+<li><strong>「5 节课程模板 + 难度星标」的结构化元数据</strong>
+<ul>
+<li><strong>描述</strong>：每门课固定包含先修要求 / 编程语言 / 难度🌟 / 学时 + 简介 / 资源 / 资源汇总 / 备注。降低读者的决策成本。</li>
+<li><strong>新颖度</strong>：3/5 | <strong>实用性</strong>：5/5 | <strong>可迁移性</strong>：5/5</li>
+</ul>
+</li>
+<li><strong>「必学工具独立分支 + 内地 CS 真实约束」设计</strong>
+<ul>
+<li><strong>描述</strong>：把 Vim/Emacs/Git/CMake/Docker/LaTeX 等工具链独立成节，并坦诚处理翻墙 / 镜像 / GitHub 访问等<strong>中国大陆学生才会碰到的真实痛点</strong>。</li>
+<li><strong>新颖度</strong>：4/5（海外项目不会考虑这个）| <strong>实用性</strong>：5/5 | <strong>可迁移性</strong>：3/5（仅适用有类似地缘约束的群体）</li>
+</ul>
+</li>
+<li><strong>「学习路径与课程解耦」的灵活性设计</strong>
+<ul>
+<li><strong>描述</strong>：《CS学习规划》反复声明「仅供参考」，课程页本身可独立访问。读者可以挑跳、按自己基础裁剪。</li>
+<li><strong>新颖度</strong>：3/5 | <strong>实用性</strong>：5/5 | <strong>可迁移性</strong>：5/5</li>
+</ul>
+</li>
+</ol>
+
+<h3>可复用的模式与技巧</h3>
+
+<ol>
+<li><strong>双层资源结构（资源清单 + 作者亲历作业）</strong>：适用任何「教程聚合 / Awesome-list」类项目，解决「收藏夹吃灰」经典问题。</li>
+<li><strong>结构化元数据 + 模板</strong>：template.md + template.en.md 双语模板，强制每门课按统一节写。降低读者决策成本 + 降低贡献者写作成本。</li>
+<li><strong>多源同课对比矩阵</strong>：当一个领域有多门课都值得学时，横向矩阵（学校 / 时长 / 难度 / 语言 / 是否含项目）比单条推荐更友好。</li>
+<li><strong>三分类使用指南</strong>：《使用指南》把读者分成「已经在学 / 想转码 / 想补基础」三类，给出不同起点。降低入口摩擦。</li>
+<li><strong>软导览 + 元能力</strong>：不只列课，还教「怎么选课 / 怎么记笔记 / 怎么坚持」等元能力。这是非常典型的「<strong>学 vs 学到</strong>」分水岭处理。</li>
+<li><strong>i18n 目录翻译 + 重点页双语</strong>：mkdocs-static-i18n 把整个目录树翻译，template.md/template.en.md 是双语文档模板。<strong>用最小工程量做到中英兼容。</strong></li>
+<li><strong>mkdocs 最小工程栈</strong>：仅 6 个依赖（mkdocs + material + pymdownx + i18n 等），<strong>用最少的代码把 markdown 装订成静态站</strong>。这是「<strong>不造轮子</strong>」的范式。</li>
+<li><strong>编辑导读页（roadmap.md）作内容枢纽</strong>：在内容扩张到 268 个 markdown 后，用 roadmap.md 做「<strong>编辑视角的入口</strong>」——这是 wiki 项目的核心枢纽。</li>
+</ol>
+
+<h3>关键设计决策</h3>
+
+<ol>
+<li><strong>决策</strong>：按「学科 × 学校」二维矩阵组织课程
+<ul>
+<li><strong>问题</strong>：CS 学科有 14+ 方向，每个方向有 4-6 所学校的优质课，怎么组织才能让读者既能找到「我感兴趣的学科」也能横向比较「同一学科各校差异」？</li>
+<li><strong>方案</strong>：docs/学科/课程.md 二级目录 + 《CS学习规划.md》跨学科总览。<strong>目录树是「分类学」，规划文档是「时间轴」</strong>，两个维度解耦。</li>
+<li><strong>Trade-off</strong>：放弃了「<strong>严格的单一学习顺序</strong>」——同一 OS 三家学校都能选，新手可能犹豫。<strong>换来</strong>：可裁剪的灵活性，读者能按已有基础跳过。</li>
+<li><strong>可迁移性</strong>：高</li>
+</ul>
+</li>
+<li><strong>决策</strong>：每门课固定 5 节模板（先修/语言/难度🌟/学时 + 简介/资源/资源汇总/备注）
+<ul>
+<li><strong>问题</strong>：内容型 wiki 最大的痛点是<strong>每篇格式不一致</strong>，读者每读一门课都要重新适应结构。</li>
+<li><strong>方案</strong>：template.md + template.en.md 双语模板，CI 检查（猜测）。<strong>强制 5 节</strong>。</li>
+<li><strong>Trade-off</strong>：写作者要适应模板，对「我想写个新内容」有摩擦。<strong>换来</strong>：读者体验<strong>一致化</strong>，新贡献者上手有现成骨架。</li>
+<li><strong>可迁移性</strong>：高</li>
+</ul>
+</li>
+<li><strong>决策</strong>：每门课挂作者自己的作业仓库作「信任锚」
+<ul>
+<li><strong>问题</strong>：GitHub 上推课的 awesome-list 极多，<strong>用户已经不相信「作者亲历」</strong>。</li>
+<li><strong>方案</strong>：每门推荐课挂一个作者亲手做的 GitHub 仓库，<strong>把「亲历」从话术变成可点击的代码提交记录</strong>。</li>
+<li><strong>Trade-off</strong>：作者要真修完这门课才能写，<strong>写作门槛极高</strong>。<strong>换来</strong>：仓库从「课程列表」升级为「<strong>个人学习轨迹的镜像</strong>」，<strong>信任度</strong>指数级提升。</li>
+<li><strong>可迁移性</strong>：高</li>
+</ul>
+</li>
+<li><strong>决策</strong>：mkdocs 最小工程栈（仅 6 个依赖）
+<ul>
+<li><strong>问题</strong>：用 5.9 千行 markdown 笔记，<strong>怎么装订成可访问的站点</strong>？</li>
+<li><strong>方案</strong>：mkdocs + material 主题 + pymdownx 扩展 + mkdocs-static-i18n + mkdocs-include-markdown-plugin。<strong>只装必要的</strong>。</li>
+<li><strong>Trade-off</strong>：放弃了 Hugo / Docusaurus / VitePress 等更现代框架的某些高级特性（搜索性能、SSR、组件化）。<strong>换来</strong>：依赖最少、构建快、<strong>作者能 5 年不换栈</strong>。</li>
+<li><strong>可迁移性</strong>：高</li>
+</ul>
+</li>
+<li><strong>决策</strong>：i18n 目录翻译 + 重点页双语
+<ul>
+<li><strong>问题</strong>：中英文用户都看，但每页都翻译工作量太大。</li>
+<li><strong>方案</strong>：mkdocs-static-i18n 整个目录树双语 + template.md/template.en.md 双语模板 + 关键页（README / 后记）双语。<strong>不全翻译，仅翻译「元信息」</strong>。</li>
+<li><strong>Trade-off</strong>：内容页仍是中文主导，<strong>英文用户只看到导航级内容</strong>。<strong>换来</strong>：英文圈搜索流量（GitHub SEO）能进来，<strong>翻译成本可控</strong>。</li>
+<li><strong>可迁移性</strong>：中</li>
+</ul>
+</li>
+</ol>
+
+<h2>竞品格局与定位</h2>
+
+<h3>竞品对比矩阵</h3>
+
+<table>
+<thead>
+<tr><th>维度</th><th>cs-self-learning</th><th>OSSU</th><th>CIU</th><th>TeachYourselfCS-CN</th><th>REKCARC-TSC</th></tr>
+</thead>
+<tbody>
+<tr><td>Star 数</td><td>73k</td><td>205k</td><td>351k</td><td>22.1k</td><td>13k+</td></tr>
+<tr><td>目标用户</td><td>中文本/CSer 想要系统补 CS</td><td>全球自学学位者</td><td>求职面试者</td><td>中文读者粗略入门</td><td>清华学生</td></tr>
+<tr><td>覆盖广度</td><td>14+ 学科方向</td><td>全 CS 学位</td><td>偏算法/系统</td><td>9 个核心方向</td><td>清华课程为主</td></tr>
+<tr><td>课程深度</td><td>深度（每课作业仓库）</td><td>中（链接为主）</td><td>浅（checklist）</td><td>浅（书单）</td><td>极深（清华笔记）</td></tr>
+<tr><td>维护活跃</td><td>低维护（90 天 0 commit）</td><td>持续</td><td>偶发</td><td>偶发</td><td>持续</td></tr>
+<tr><td>中文适配</td><td>强</td><td>无</td><td>无</td><td>强</td><td>中（清华系中文）</td></tr>
+<tr><td>多源对比</td><td>强（OS 列 4 校、编译列 6 校）</td><td>弱</td><td>无</td><td>无</td><td>无</td></tr>
+<tr><td>配套作业</td><td>强（6+ 仓库）</td><td>弱</td><td>无</td><td>无</td><td>中</td></tr>
+<tr><td>跨校视角</td><td>全球（MIT/CMU/UCB/Stanford/ETH）</td><td>全球</td><td>全球</td><td>英文圈</td><td>清华系</td></tr>
+</tbody>
+</table>
+
+<h3>差异化护城河</h3>
+
+<ul>
+<li><strong>信任护城河</strong>：作者本人修完所有推荐课 + 配套 6+ 个作业仓库——任何竞品短期都很难复制，因为这是<strong>作者个人时间</strong>而不是「技术 trick」。</li>
+<li><strong>信息架构护城河</strong>：6 个核心决策（学科×学校矩阵、5 节课程模板、多源对比、i18n 翻译、必学工具独立、学习路径与课程解耦）构成<strong>结构化壁垒</strong>——竞品要追赶需要 2-3 年的内容重写。</li>
+<li><strong>中文圈生态护城河</strong>：7.3 万 star、7.8k fork、185 贡献者、125 open issues、5 个 SemVer release 形成的<strong>飞轮效应</strong>——新读者进来 → 找群求组队 → 贡献 issue → 推荐给下一个人。</li>
+</ul>
+
+<h3>竞争风险</h3>
+
+<ul>
+<li><strong>风险 1：AI 时代重塑信息获取方式</strong>。LLM 可以即时回答「我想学 OS，该选 MIT 还是 CMU」——仓库的<strong>信息价值</strong>会被 LLM 稀释。但<strong>「亲历+作业仓库」的信任价值</strong>不易被 LLM 替代。</li>
+<li><strong>风险 2：作者精力分散</strong>。PKU 博士 + ML Systems 研究 + 字节 StepFun 实习，<strong>作者时间已饱和</strong>，近 90 天 0 commit 是事实性休眠信号。<strong>如果作者毕业 / 转行</strong>没有接班人，项目会缓慢失活。</li>
+<li><strong>风险 3：中文区同类项目冒头</strong>。REKCARC-TSC（清华系）如果扩张为全 CS 自学路径，会是直接对标。但目前<strong>清华笔记的「亲历 + 体系化」还未到这个水位</strong>。</li>
+</ul>
+
+<h3>生态定位</h3>
+
+<p>在整个 CS 自学生态里，cs-self-learning 扮演<strong>「中文圈的 OSSU 镜像 + 个人学习轨迹」</strong>双重角色：</p>
+
+<ul>
+<li>与 <strong>OSSU</strong> 形成「中文版 / 英文版」<strong>双寡头格局</strong>——OSSU 全 CS 学位覆盖但英文材料，cs-self-learning 中文导览 + 海外课深度对比。</li>
+<li>与 <strong>awesome-cs</strong>、<strong>CS 学习路线图</strong>类资源站相比，<strong>它是「有策展标准 + 有学习顺序 + 有配套作业」的资源站</strong>——其他是「资源清单」。</li>
+</ul>
+
+<h2>套利机会分析</h2>
+
+<ul>
+<li><strong>信息差</strong>：极低——7.3 万 star 已是中文圈事实标准，信息差套利空间在<strong>深度应用</strong>而非「再发现一个资源站」。</li>
+<li><strong>技术借鉴</strong>：
+<ul>
+<li><strong>资源聚合类项目</strong>应直接学「<strong>双层资源结构</strong>」——把 awesome-list 升级为「清单 + 亲历作业仓库」。</li>
+<li><strong>内容型 wiki</strong>应学「<strong>5 节模板 + i18n 翻译 + 最小工程栈</strong>」三件套。</li>
+<li><strong>学术品牌建设</strong>应学「<strong>用 1 个明星开源项目建立公众辨识度</strong>」——PhD 期间最大的杠杆资产。</li>
+</ul>
+</li>
+<li><strong>生态位</strong>：
+<ul>
+<li><strong>未填空白 1</strong>：中国本土课程（MOOC / 慕课 / B 站课程）的类似结构化——目前推荐的都是海外课，国内课程资源没有同等标准。</li>
+<li><strong>未填空白 2</strong>：个性化学习路径推荐——基于用户已有基础生成「<strong>这学期该修哪些课</strong>」的 LLM 增强版。</li>
+<li><strong>未填空白 3</strong>：课程笔记的「<strong>质量评分 + 替代链接自动检测</strong>」——目前链接失效要靠人工 PR。</li>
+</ul>
+</li>
+<li><strong>趋势判断</strong>：
+<ul>
+<li>增长：仓库 star 还在两位数/天流入（2024-02 采样窗口 5 天 200 个 stargazer），<strong>没有走下坡路</strong>。</li>
+<li>趋势：AI 时代下「<strong>人工策展 + 信任锚</strong>」反而更有价值（LLM 内容同质化让人更想要人工筛选）。</li>
+<li>后发优势：竞品要追赶作者已经花的 4.6 年时间和 6+ 作业仓库，<strong>护城河很厚</strong>。</li>
+</ul>
+</li>
+</ul>
+
+<h2>风险与不足</h2>
+
+<ul>
+<li><strong>维护风险（最大）</strong>：作者是 PKU 博四 + ML Systems 研究，<strong>近 90 天 0 commit</strong> 是事实性休眠信号。如果作者毕业 / 转向工业界 / 重心完全转入研究，<strong>项目可能进入长期低维护</strong>。<strong>没有明确的继任机制</strong>——Top 1 占比 57.4% 是单点依赖。</li>
+<li><strong>课程内容时效性</strong>：仓库推荐的核心课程（MIT 6.S081、CMU 15-445、CS224n）都在 2020-2022 期间成型，<strong>2023 年后的新开课</strong>（如 CMU 11-667 LLM 系列、MIT 6.5940 TinyML）虽有补充但密度低于主流课。</li>
+<li><strong>链接可访问性</strong>：推荐的外链大量指向 GitHub/YouTube，对中国大陆读者有可访问性门槛。<strong>虽然有「必学工具/翻墙页」处理但仍不彻底</strong>。</li>
+<li><strong>协作基建不足</strong>：Discord/微信群需求反复出现 3+ 年未给官方解法；<strong>无 PR/Issue 模板</strong>；<strong>无链接自动校验</strong>（lychee/markdown-link-check 缺失）——读者报告坏链的成本高。</li>
+<li><strong>测试/工程化几乎为零</strong>：310 行代码无法谈工程化，<strong>整个仓库的「技术债」在内容侧</strong>——内容更新质量靠作者人工把关，<strong>没有自动化校验</strong>（拼写、死链、图片失效等）。</li>
+<li><strong>内容型项目的固有风险</strong>：仓库一旦被作者放弃，<strong>7.3 万 star 形成的「准官方 CS 资源」地位</strong>会形成误导性引用——读者按过期路径学 CS，<strong>没有显眼的「本项目已停止维护」提示</strong>。</li>
+</ul>
+
+<h2>行动建议</h2>
+
+<h3>如果你要用它</h3>
+
+<ul>
+<li><strong>作为「CS 系统学习路径」的起点</strong>：从《CS学习规划》开始 → 按你已有基础跳着选课 → 优先选作者做了作业仓库的课（亲历过的，比纯链接可靠）。</li>
+<li><strong>作为「求职方向补强」的目录</strong>：想去 ML Systems 方向看「深度学习 + 编译 + 操作系统 + 数据库」四个交叉；想去 SDE 看「CS61A/B + 6.S081 + CSAPP」传统路线。</li>
+<li><strong>不要把它当「唯一权威」</strong>：仓库 2026-02 后进入低维护期，<strong>最新课程（2024-2026）覆盖不全</strong>，需要自己补充最新的 LLM / AI 课程。</li>
+</ul>
+
+<h3>如果你要学它</h3>
+
+<ul>
+<li><strong>重点关注文件</strong>：
+<ul>
+<li>mkdocs.yml（116 次改动）—— 信息架构的<strong>核心配置</strong></li>
+<li>docs/CS学习规划.md（37,971 字、49 次改动）—— 跨学科学习路径的「<strong>编辑视角</strong>」</li>
+<li>template.md + template.en.md —— 课程笔记的<strong>结构化模板</strong></li>
+<li>docs/后记.md —— 作者的<strong>写作动机 / 价值观</strong></li>
+<li>docs/使用指南.md —— <strong>读者分流策略</strong></li>
+<li>任何 docs/学科/课程.md —— 单门课的<strong>5 节模板范例</strong></li>
+</ul>
+</li>
+<li><strong>重点关注决策</strong>：信息架构 6 大决策（学科×学校矩阵、5 节课程模板、多源同课对比、i18n 翻译、必学工具独立、学习路径与课程解耦）。</li>
+</ul>
+
+<h3>如果你要 fork 它</h3>
+
+<ul>
+<li><strong>方向 1：AI 增强版</strong>——用 LLM 做「<strong>个性化学习路径推荐</strong>」，根据用户已有基础生成该修哪些课。这是 AI 时代未被填的空白。</li>
+<li><strong>方向 2：中国本土化版</strong>——把海外课替换为国内 MOOC / B 站课程镜像版，<strong>降低访问门槛</strong>，并补 2024-2026 年的新开课。</li>
+<li><strong>方向 3：求职导向版</strong>——把仓库「系统学习」定位切换为「<strong>求职方向</strong>」，从 J washam/coding-interview-university 抢受众。</li>
+<li><strong>方向 4：协作基建补完</strong>——加 GitHub PR 模板、lychee 链接校验、Crowdin 协作翻译——把作者留下的「<strong>协作基础设施缺口</strong>」补上。</li>
+<li><strong>方向 5（最现实）</strong>：不要 fork 直接做。<strong>给作者开 issue / PR</strong>——项目还在主仓库，<strong>真正的贡献是给作者减负</strong>而不是再起炉灶。</li>
+</ul>
+
+<h3>知识入口</h3>
+
+<table>
+<thead>
+<tr><th>资源</th><th>链接</th></tr>
+</thead>
+<tbody>
+<tr><td>DeepWiki</td><td>未收录</td></tr>
+<tr><td>Zread.ai</td><td>未收录</td></tr>
+<tr><td>关联论文</td><td>无（项目本身是资源聚合站，不产出研究）</td></tr>
+<tr><td>在线 Demo</td><td><a href="https://csdiy.wiki">https://csdiy.wiki</a>（唯一交互面）</td></tr>
+<tr><td>作者主页</td><td><a href="https://yinminzhong.com">https://yinminzhong.com</a></td></tr>
+</tbody>
+</table>
+
+</body>
+</html>

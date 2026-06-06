@@ -1,0 +1,6 @@
+{
+  "title": "17 年 4.5K commits：Google 内部 C++ 测试框架如何炼成行业事实标准",
+  "digest": "GoogleTest 以 17 年 4.5K+ commits 与 486 位贡献者，把 xUnit + GoogleMock + 跨平台死亡测试三件套，打成 C++ 生态 90% 头部项目的默认测试底座。",
+  "author": "NVoyager",
+  "theme": "stars,universe,dark"
+}
