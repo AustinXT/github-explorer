@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #3e3e3e;
+    background: #fff;
+}
+p {
+    font-size: 15px !important;
+    line-height: 2 !important;
+    margin: 0 !important;
+    padding-top: 0.5em !important;
+    padding-bottom: 0.5em !important;
+    padding-right: 1.2em !important;
+    padding-left: 1.2em !important;
+    text-align: justify !important;
+}
+p + p {
+    margin-top: 0 !important;
+}
+h1 {
+    font-size: 20px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 16px 0 !important;
+    padding: 0 !important;
+}
+h2 {
+    font-size: 18px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 24px 0 !important;
+    padding: 0 !important;
+}
+h3 {
+    font-size: 15px !important;
+    font-weight: bold !important;
+    color: #3e3e3e !important;
+    text-align: left !important;
+    margin: 16px 0 16px 0 !important;
+    padding: 0 0 0 1.2em !important;
+}
+h4 {
+    font-size: 15px !important;
+    color: rgb(0, 122, 170) !important;
+    margin: 12px 0 8px 0 !important;
+    padding: 0 !important;
+}
+ul,
+ol {
+    padding-left: 2em !important;
+    margin: 1em 0 !important;
+    font-size: 15px !important;
+}
+li {
+    margin: 0.5em 0 !important;
+    line-height: 1.8em !important;
+    font-size: 15px !important;
+    color: #3e3e3e !important;
+}
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+    margin: 0 !important;
+    padding-left: 1.2em !important;
+}
+blockquote {
+    border-left: 4px solid #888 !important;
+    padding: 8px 16px !important;
+    margin: 1em 0 !important;
+    color: #666 !important;
+    background: #f9f9f9 !important;
+}
+blockquote > p {
+    margin: 0.5em 0 !important;
+    padding: 0 !important;
+}
+blockquote::before,
+blockquote::after {
+    content: none !important;
+}
+pre {
+    font-size: 14px !important;
+    line-height: 1.4em !important;
+    color: #3e3e3e !important;
+    background: #f8f8f8 !important;
+    padding: 12px 16px !important;
+    border-radius: 4px !important;
+    overflow: auto !important;
+    margin: 1em 0 !important;
+}
+.footnotes {
+    font-size: 11px !important;
+    color: #666 !important;
+    line-height: 1.2 !important;
+    margin: 8px 0 0 0 !important;
+    padding: 4px 0 0 0 !important;
+    border-top: 1px solid #eee !important;
+}
+.footnotes p {
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #666 !important;
+}
+sup {
+    font-size: 0.75em !important;
+    vertical-align: super !important;
+    color: #e51f42 !important;
+    margin: 0 2px !important;
+}
+</style>
+</head>
+<body>
+<blockquote>
+<p>GitHub: <a href="https://github.com/earendil-works/pi">https://github.com/earendil-works/pi</a></p>
+</blockquote>
+<h2>一句话总结</h2>
+<p>Pi 是一款<strong>「故意克制到极致」</strong>的终端 AI 编码 Agent：<strong>系统提示词 + 4 个工具合计 < 1 000 token，runtime 依赖 0</strong>，却在 9.9 个月内统一了 9 种 LLM 协议、跑出 60K stars 和 100 个 release，把 Claude Code 一类「功能堆叠」产品反向拆回了「<strong>极简内核 + 自扩展</strong>」。</p>
+<h2>值得关注的理由</h2>
+<ul>
+<li><strong>极简哲学罕见地跑通了</strong>：17.6 万行 TS、零 runtime 依赖、281 tag、每 3 天一个版本，月度 commit 稳定在 400-500，证明「不内建 MCP / Plan / Sub-agents / TODO」的产品克制是能 scale 的。</li>
+<li><strong>跨 9 协议统一 API 的工程硬功夫</strong>：<code>Model&lt;TApi&gt;</code> 泛型 + 条件 <code>compat</code> 字段 + <code>satisfies</code> 三连，把 Anthropic / OpenAI Responses / OpenAI Completions / Google / Bedrock 等 wire-format 异构性收口到 TS 类型层。</li>
+<li><strong>真实训练数据飞轮</strong>：<code>pi-share-hf</code> + Hugging Face <code>badlogicgames/pi-mono</code>（2 069 月下载）让 Pi 跑出「真实编码 Agent 会话 → 公开数据 → 第三方微调（Qwen3.5-9B-Pi-Agent）」的完整闭环。</li>
+</ul>
+<h2>项目展示</h2>
+<h3>第三方截屏与演示</h3>
+<ol>
+<li><img src="https://pi.dev/doom-extension.png" alt="Pi Doom 扩展截图" /> — 类型: hero。把「Pi 不只是 CLI，它是个可装 Doom 的终端宿主」打到屏幕上（来源：pi.dev/press-kit）。</li>
+<li><img src="https://pi.dev/tree-view.png" alt="Session Tree 视图" /> — 类型: architecture。展示「树状 session 历史 + 分支 / 书签 / 过滤」这一非传统竞品的关键能力（来源：pi.dev/press-kit）。</li>
+<li><img src="https://pi.dev/logo-auto.svg" alt="Pi logo" /> — 类型: brand。来自 README 的官方 logo。</li>
+<li><img src="https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/images/exy.png" alt="Exy 吉祥物" /> — 类型: screenshot。来自 README，<code>exe.dev</code> 捐赠 <code>pi.dev</code> 域名的致谢。</li>
+<li><strong>官方主页内联演示 GIF 集合</strong>：<a href="https://pi.dev">pi.dev</a> — 类型: demo。中途 <code>/model</code> 切模型、运行中 steer 跟车、Crooked UI 切换、build a custom extension、session tree 分支分享等动图集中在主页段落，公众号发布时可由作者站点直接引用。</li>
+</ol>
+<blockquote>
+<p>演示视频：<a href="https://x.com/badlogicgames/status/2041151967695634619">Mario 演示如何用 pi-share-hf 发布会话（X/Twitter）</a></p>
+</blockquote>
+<h2>项目画像</h2>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>数据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GitHub</td>
+<td><a href="https://github.com/earendil-works/pi">https://github.com/earendil-works/pi</a></td>
+</tr>
+<tr>
+<td>Star / Fork</td>
+<td>60 333 / 7 242（2026-06-06 快照）</td>
+</tr>
+<tr>
+<td>Watcher / Open Issue / Open PR</td>
+<td>209 / 49 / 5</td>
+</tr>
+<tr>
+<td>代码行数</td>
+<td>176 155 行（注释 24 233 行，注释比 13.8%）</td>
+</tr>
+<tr>
+<td>语言分布</td>
+<td>TypeScript 89.9% / JSON 5.6% / JavaScript 3.5% / CSS 0.5% / Shell 0.3%</td>
+</tr>
+<tr>
+<td>文件数</td>
+<td>781</td>
+</tr>
+<tr>
+<td>运行时依赖</td>
+<td><strong>0</strong>（dev 依赖 10：biome、esbuild、husky、jiti、tsx、tsgo 等）</td>
+</tr>
+<tr>
+<td>项目年龄</td>
+<td>9.9 个月（2025-08-09 → 2026-06-05）</td>
+</tr>
+<tr>
+<td>总 commit</td>
+<td>4 429（近 30 天 437 / 近 90 天 1 287）</td>
+</tr>
+<tr>
+<td>Release</td>
+<td>100 个 / 281 tag / 最新 v0.78.1 / 节奏 ≈ 每 3 天一版</td>
+</tr>
+<tr>
+<td>开发阶段</td>
+<td>密集开发（已进入高频打磨期，非爆发成长期）</td>
+</tr>
+<tr>
+<td>开发模式</td>
+<td>职业项目（周末 25% + 夜间 44%，月度稳态 400-500 commit）</td>
+</tr>
+<tr>
+<td>贡献模式</td>
+<td>核心少数 + 社区：Mario Zechner 73.4% 占比、Top3 80.5%、总计 229 位贡献者</td>
+</tr>
+<tr>
+<td>热度定位</td>
+<td>大众热门（60K stars / 半年内 TS 项目第一梯队）</td>
+</tr>
+<tr>
+<td>许可证</td>
+<td>MIT</td>
+</tr>
+<tr>
+<td>质量评级</td>
+<td>代码[优秀] 文档[优秀] 测试[充分] 治理[完善]</td>
+</tr>
+</tbody>
+</table>
+<h2>作者视角：为什么存在这个项目</h2>
+<h3>创始人/作者背景</h3>
+<p><strong>Mario Zechner</strong>（GitHub <code>badlogic</code>，奥地利 Graz）—— 15+ 年跨 ML / 数据科学 / 编译器 / 图形学经验，libGDX 与 RoboVM 作者。其个人站 <code>mariozechner.at</code> 2025 年 6-11 月连续发 5 篇前置博文：Claude Code 系统提示漂移分析 → Patching Claude Code for /cost → MCP vs CLI benchmark → What if you don't need MCP（2025-11-02）→ What I learned building an opinionated and minimal coding agent（2025-11-30），是 Pi 的直接思想源流。<strong>Earendil Inc.</strong>（奥地利）为公司主体，旗下 Pi + Lefos 双产品线，<code>pi.dev</code> 域名由 <code>exe.dev</code> 捐赠。</p>
+<p><strong>次重要合作者</strong>：Armin Ronacher（<code>mitsuhiko</code>，Flask / Rye 作者，176 commits）从 Vercel AI SDK 短板（自托管模型、工具调用）切入；Helmut Januschka / Aliou Diallo / Markus Ylisiurunen / Nico Bailon 等 4-5 人稳定协作者 + 长尾 PR 构成外围；github-actions[bot] 105 commits 跑自动发版。</p>
+<p><strong>治理风格</strong>：<code>.github/APPROVED_CONTRIBUTORS</code> 白名单（117 次更新） + 新人 issue/PR 默认 auto-close（maintainer 每日 review）—— 一种「反 slop 优先于实时 PR review」的非常规开源治理。</p>
+<h3>问题判断</h3>
+<p>2025 下半年 Claude Code 凭借「内置一切」登顶 AI 编码 Agent 市场，但 Mario 在自己的博文中反复揭示其隐性代价：</p>
+<ul>
+<li><strong>系统提示词臃肿到数千行</strong>，Mario 多次发文分析其 prompt drift 现象（甚至专门写了一篇《Patching Claude Code for /cost》—— 给 Claude Code 打补丁显示成本失控）。</li>
+<li><strong>MCP（Model Context Protocol）被当作「AI Agent 的 HTTP」普遍接入</strong>，但 Mario 用 benchmark 论证「多数 MCP 工具的调用其实可以直接走 bash + file read」—— MCP 是过度抽象。</li>
+<li><strong>闭源商业 Agent 把 provider 锁死</strong>，单协议栈无法跨 OpenAI / Anthropic / Bedrock / 本地模型自由切换。</li>
+</ul>
+<p><strong>时机</strong>：<strong>2025-12 → 2026-Q2</strong> 是「Claude Code 臃肿化反扑窗口」 + 「OpenAI 兼容协议 + Claude Code 协议 + Anthropic Messages 协议三家割据」双重红利的交汇点 —— 极简 + 跨协议的「中间层」恰好踩中。</p>
+<h3>解法哲学</h3>
+<p>Pi 的「设计哲学」不是 feature list，而是一组<strong>显式的负面承诺</strong>：</p>
+<ol>
+<li><strong>不内建 MCP</strong>（Mario 2025-11-02 博文主题）</li>
+<li><strong>不内建 Plan mode / Sub-agents / Built-in TODO / Background bash / Permission 弹窗</strong>（Mario 2025-11-30 博文）</li>
+<li><strong>不补全 LLM 协议差异</strong> —— 4 协议全部用 < 1 000 token 系统提示词统一表达</li>
+<li><strong>默认 YOLO</strong>（拿到调用者全部权限），主张「安全护栏在 Agent 能读+能执行的现实下多半是 theatre」，容器化（Gondolin micro-VM / OpenShell / Docker）外移</li>
+<li><strong>「If I don't need it, it won't be built」</strong>（Mario 自述）</li>
+</ol>
+<p>「系统的所有功能」通过外部化策略达成：扩展、容器、prompt 模板、技能（Skills）、主题、Pi 包。</p>
+<h3>战略意图</h3>
+<p><code>badlogicgames/pi-mono</code> Hugging Face 数据集 + <code>pi-share-hf</code> 真实会话上传工具 + 第三方基于该数据集微调 Qwen3.5-9B-Pi-Agent 等模型 —— 这是 Pi 项目的<strong>真实护城河</strong>：</p>
+<blockquote>
+<p><strong>跑出 Anthropic 训练自家模型用的那种「真实编码 Agent 会话」飞轮</strong>，让 Pi 用户每一次共享会话都反哺公开数据集，反过来又让第三方小模型能在 Pi 上跑得更好 —— 形成「<strong>使用 → 共享 → 微调 → 更好模型 → 更多使用</strong>」的正向循环。</p>
+</blockquote>
+<p>Earendil Inc. 的商业化路径推测是「Pi 核心开源 + Lefos 商业化（猜测是云端 SaaS / 企业版）+ Hugging Face 生态影响力」。</p>
+<h2>核心价值提炼</h2>
+<h3>创新之处</h3>
+<p>按新颖度 × 实用性排序：</p>
+<ol>
+<li><strong>泛型 <code>Model&lt;TApi&gt;</code> + 条件类型 <code>compat</code> 字段做「编译时协议隔离」</strong>（<code>packages/ai/src/types.ts:566-596</code>）。把 9 种 Api 的 wire-format 异构性压到 <code>compat</code> interface 上：调用方拿 <code>Model&lt;"openai-responses"&gt;</code> 时 <code>compat</code> 自动是 <code>OpenAIResponsesCompat</code>，写 <code>compat.thinkingFormat</code> 不会被允许到 Anthropic 字段。Provider 内部代码（<code>anthropic.ts</code> / <code>openai-responses.ts</code> / <code>openai-codex-responses.ts</code>）各自读自己 <code>compat</code> 字段，没有交叉。<code>models.generated.ts</code> 16 939 行全靠 <code>satisfies Model&lt;"..."&gt;</code> 在构建时验证 metadata 合法。<strong>这是 TS 类型系统被工程化用足的项目里极少数之一</strong>。</li>
+<li><strong>Pull-push 混合流 <code>EventStream&lt;T, R&gt;</code></strong>（<code>packages/ai/src/utils/event-stream.ts:4-88</code>，仅 88 行）。push 端 <code>push(event)</code> 把事件入队或直接递给等待 consumer；<code>end(result?)</code> 终结 + 解析 final result promise。调用方用 <code>for await (const e of stream)</code> 拉取，<strong>同时</strong>可以 <code>await stream.result()</code> 拿终止态。失败不抛，<strong>必须</strong>emit <code>error</code> 事件 + <code>AssistantMessage.stopReason = "error"/"aborted"</code> + <code>errorMessage</code>。整个 agent loop 因此可以<strong>全异步、无 catch 块</strong>地写完。</li>
+<li><strong>4 层 timeout 架构</strong>（transport / SSE header / WS connect / idle stream / retry-backoff）。<code>openai-codex-responses.ts:1190-1201</code> 显式命名 <code>idleTimeoutMs</code>，<code>http-dispatcher.ts:38-55</code> 控制 undici dispatcher 的 <code>headersTimeout</code> / <code>bodyTimeout</code> / <code>allowH2: false</code>。每层 timeout 是单独一层的，issue 定位能精确定位到哪一层失效。</li>
+<li><strong>极简 + 可自扩展组合</strong>：系统提示词 < 1 000 token + 4 工具（read / bash / edit / write）vs Claude Code 17+ 工具的 4-5× 差距，换来 prompt cache 命中率 + 用户自定义时的「可解释性」。<code>grep/find/ls</code>（<code>tools/index.ts:147-154</code>）被刻意拆出为 read-only 集合，默认不带。</li>
+<li><strong>扩展可声明 provider/model —— 第三方「软官方」补位</strong>：<code>registerProvider(name, config)</code>（<code>extensions/types.ts:1301-1316</code>）让 extension 注册<strong>全新 provider</strong>（不仅是 model）。Ollama / LM Studio / vLLM 等本地 LLM 不进 <code>KnownProvider</code>，让第三方 extension 用 <code>registerProvider</code> 填位。Issue #3357「官方 local LLM provider」22 评论 0 维护者回复 —— Pi 故意不背书，由生态补位。</li>
+</ol>
+<h3>可复用的模式与技巧</h3>
+<ol>
+<li><strong>「负面承诺」做产品定位</strong>：把「不做什么」写进 README / CONTRIBUTING.md / 官方博文的硬规则，比 feature list 更能吸引「不想被工具栈绑架」的核心用户群。</li>
+<li><strong><code>AGENTS.md</code> 用第二人称对 LLM agent 下规则</strong>：<code>AGENTS.md:14-15</code> 显式「Read files in full before wide-ranging changes... Do not rely on search snippets for broad changes.」+ <code>AGENTS.md:18</code>「No inline imports」+ <code>AGENTS.md:23</code>「Never hardcode key checks」 —— 把「反 LLM slop」做硬规则，对应 <code>CONTRIBUTING.md:7</code> 的「The One Rule: You must understand your code. Using AI to write code is fine. Submitting AI-generated slop without understanding it is not.」。</li>
+<li><strong>测试前自动备份 <code>~/.pi/agent/auth.json</code> + unset 30+ API key</strong>（<code>test.sh:1-77</code>）—— 防「开发本地凭据污染 CI」的反 slop 实践，可直接迁移到任何需要多 API key 的项目。</li>
+<li><strong>issue 编号命名的回归测试</strong>：<code>packages/coding-agent/test/suite/regressions/</code> 19 个 issue-编号命名的回归测试（<code>AGENTS.md:33</code> 规范 <code>&lt;issue-number&gt;-&lt;short-slug&gt;.test.ts</code>），可迁移到任何 monorepo。</li>
+<li><strong><code>.npmrc</code> 设 <code>min-release-age=2</code> + 直接依赖钉死精确版本 + CI 跑 <code>npm audit signatures</code></strong>（<code>scripts/check-pinned-deps.mjs</code>）—— 供应链加固的标准范式，<strong>可零成本迁移</strong>到任何 npm 项目。</li>
+<li><strong>「核心少数 + 社区」 monorepo 治理</strong>：1 个绝对主力（71.7%） + 4-5 个稳定外部协作者 + 长尾 PR —— 对应「<code>.github/APPROVED_CONTRIBUTORS</code> 白名单 + 新人 issue/PR auto-close + maintainer 每日 review」，适合「核心质量优先于社区规模」的开源项目。</li>
+</ol>
+<h3>关键设计决策</h3>
+<h4>决策 A：泛型 <code>Model&lt;TApi&gt;</code> + 条件类型 <code>compat</code> 字段做「编译时协议隔离」</h4>
+<ul>
+<li><strong>问题</strong>：要在一个 SDK 里支持 9 种 <code>Api</code>，每种协议在「tool call id 字符集」「tool_choice 格式」「cache_control 字段名」「thinking 参数」上都是异构的。union + 判别式 → 调用方每个分支都要重新 <code>if (api === "anthropic-messages") { ... }</code>，switch hell；基类继承 → 行为差异变成 virtual override，无法在 TS 类型系统里精确定位。</li>
+<li><strong>方案</strong>：<code>Model&lt;TApi&gt;</code> 是泛型（<code>types.ts:566-596</code>），<code>compat</code> 字段定义为条件类型（<code>types.ts:589-595</code>）—— 写 <code>Model&lt;"openai-responses"&gt;</code> 时 <code>compat</code> 自动是 <code>OpenAIResponsesCompat</code>，跨字段误用根本编译不过。<code>models.generated.ts</code> 每个 entry 用 <code>satisfies Model&lt;"bedrock-converse-stream"&gt;</code> 形式声明，metadata 写入时 TS 已把字段合法性验证过一遍。</li>
+<li><strong>Trade-off</strong>：写 provider 的人必须为每种 api 写独立 <code>Compat</code> interface（<code>AnthropicMessagesCompat</code> 在 <code>types.ts:431-476</code> 已 ~45 行）—— 新增 provider 意味着新 interface。但换来的好处是：每条 wire-format 异构性都被收口在「compat field + provider 内部」两处，<strong>没有运行时 type assertion</strong>。</li>
+<li><strong>可迁移性</strong>：<strong>高</strong>。任何做「跨协议 SDK」的 TS 项目都能用。关键是「把字段异构性的全部复杂性提前到类型层、在 compat interface 一次性收口」。</li>
+</ul>
+<h4>决策 B：把 agent 状态机收口到 <code>runAgentLoop</code>，用 8 个回调钩子暴露扩展点</h4>
+<ul>
+<li><strong>问题</strong>：agent loop 一般有多个「我想加一段逻辑」的入口点：上下文转换前/后、tool call 前/后、steering、follow-up、决定 stop 等。如果做成可继承的 virtual method，扩展者必须继承整个 class 才能改一处；如果做成 event bus，扩展者会反复注册 listener，listener 之间的 priority 又是新问题。</li>
+<li><strong>方案</strong>：<code>AgentLoopConfig</code>（<code>types.ts:135-277</code>）是<strong>纯数据 interface</strong>，8 个回调钩子签名被 JSDoc 严格说明「不抛不拒，返回 safe fallback」（<code>types.ts:144-146</code> / <code>182-185</code> / <code>194</code> / <code>206</code> / <code>228</code> / <code>241</code>）。<code>runAgentLoop</code>（<code>agent-loop.ts:95-269</code>）内部只有 ~170 行 pure function：外层 while 循环处理「agent 走完一圈后看是否有 follow-up」，内层 while 处理「一个 turn 内的 tool call + steering」。扩展点 = 改 <code>config.beforeToolCall</code> 一个 lambda，不需要 class 继承。</li>
+<li><strong>Trade-off</strong>：8 个回调对简单 case 显啰嗦；中途改 config 的语义（<code>prepareNextTurn</code> 返回新 model）需要接受 partial override 的 merge 规则（<code>agent-loop.ts:226-239</code>）。但「<strong>不抛不拒、返回 safe fallback</strong>」是这一设计的灵魂 —— 任何一个钩子写错了不会 crash loop，只会「某次 turn 行为偏一次」。</li>
+<li><strong>可迁移性</strong>：<strong>高</strong>。JS/TS 任何 agent 框架都能用这套 pattern，但<strong>关键不是「回调」本身，而是 JSDoc 里写死的「contract」</strong>：每个钩子都被明确说明「不能 throw」「返回什么算 noop」「何时被调用」。</li>
+</ul>
+<h4>决策 C：扩展加载用 <code>jiti</code> + 虚拟模块映射，<strong>不</strong>做 plugin classloader</h4>
+<ul>
+<li><strong>问题</strong>：让 extension 在 Bun 二进制和 Node 源码两种模式下都工作，且 extension 可以 <code>import</code> 整套 pi 包（<code>@earendil-works/pi-ai</code> / <code>typebox</code> 等），传统做法是给 extension 一个独立 module loader + 自定义 resolver。会导致：① 路径解析在不同 runtime 行为不一致；② 调试时 extension 的 stack trace 路径错位；③ 第三方 extension 可能 import 了一个 runtime 不存在的包。</li>
+<li><strong>方案</strong>：<code>extension/loader.ts:44-116</code> 维护两个路径：
+<ul>
+<li><strong>Bun binary 模式</strong>：<code>VIRTUAL_MODULES</code> 字典（<code>loader.ts:44-61</code>），把 <code>typebox</code> / <code>@earendil-works/pi-coding-agent</code> 等映射到<strong>已经静态 import</strong>过的 namespace 对象。Bun bundle 时把它们塞进 bundle，extension import 时<strong>完全不走 node_modules 解析</strong>。</li>
+<li><strong>Node 模式</strong>：<code>getAliases()</code>（<code>loader.ts:71-116</code>）解析到 <code>node_modules</code> 里的 dist 文件或 workspace 软链，作为 jiti 的 alias。</li>
+<li>注释直白说明（<code>loader.ts:16-18</code>）：「These MUST be static so Bun bundles them into the compiled binary.」</li>
+</ul>
+</li>
+<li><strong>Trade-off</strong>：每次加新 package 都要同时改 <code>VIRTUAL_MODULES</code> 和 <code>getAliases()</code> 两处 —— 重复 boilerplate。但<strong>消除了运行时 resolver 的不确定性</strong>。</li>
+<li><strong>可迁移性</strong>：<strong>中</strong>。任何做「app + plugin」的项目都能用，但关键 insight 是<strong>「把 import target 锁死在 build 时刻」</strong>比「让 plugin 自己写 import 路径」更安全。</li>
+</ul>
+<h2>竞品格局与定位</h2>
+<h3>竞品对比矩阵</h3>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>Pi (earendil-works/pi)</th>
+<th>Claude Code</th>
+<th>OpenAI Codex CLI</th>
+<th>OpenCode</th>
+<th>Aider</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>工具集</td>
+<td>4（read / bash / edit / write）</td>
+<td>17+</td>
+<td>单一</td>
+<td>自带丰富</td>
+<td>偏 git / 文件 diff</td>
+</tr>
+<tr>
+<td>系统提示词</td>
+<td>< 1 000 token</td>
+<td>数千行（Mario 多次发文分析其 prompt drift）</td>
+<td>单一</td>
+<td>较丰富</td>
+<td>较精简</td>
+</tr>
+<tr>
+<td>MCP</td>
+<td>故意不内建</td>
+<td>原生</td>
+<td>原生</td>
+<td>原生</td>
+<td>有限</td>
+</tr>
+<tr>
+<td>Plan mode</td>
+<td>故意不内建</td>
+<td>原生</td>
+<td>无</td>
+<td>自带</td>
+<td>无</td>
+</tr>
+<tr>
+<td>跨 provider</td>
+<td>9 种 Api + 30+ providers</td>
+<td>仅 Anthropic + Bedrock + Vertex</td>
+<td>仅 OpenAI Responses / Codex Responses</td>
+<td>多 provider</td>
+<td>多 provider</td>
+</tr>
+<tr>
+<td>协议统一抽象</td>
+<td>4 协议统一（Anthropic Messages / OpenAI Completions / OpenAI Responses / Google GenAI）</td>
+<td>单一自家</td>
+<td>单一</td>
+<td>多</td>
+<td>多</td>
+</tr>
+<tr>
+<td>容器化安全</td>
+<td>外部（Gondolin / OpenShell / Docker）</td>
+<td>工具级 permission 弹窗</td>
+<td>单一</td>
+<td>自带</td>
+<td>较轻</td>
+</tr>
+<tr>
+<td>扩展生态</td>
+<td>第三方 Pi 包生态（pi.dev/packages 3 672 个，Top 5 月下载 50K-130K）</td>
+<td>无（闭源）</td>
+<td>弱</td>
+<td>弱</td>
+<td>配置 + repo map</td>
+</tr>
+<tr>
+<td>训练数据飞轮</td>
+<td>pi-share-hf → Hugging Face <code>badlogicgames/pi-mono</code>（2 069 月下载）→ 第三方微调</td>
+<td>闭源</td>
+<td>闭源</td>
+<td>弱</td>
+<td>弱</td>
+</tr>
+<tr>
+<td>商业模式</td>
+<td>MIT 开源 + 第三方扩展生态</td>
+<td>闭源 + 订阅</td>
+<td>闭源 + 订阅</td>
+<td>MIT 开源</td>
+<td>MIT 开源</td>
+</tr>
+<tr>
+<td>基准成绩</td>
+<td>Terminal-Bench 2.0 与 Codex / Cursor / Windsurf 同台</td>
+<td>同上</td>
+<td>同上</td>
+<td>较弱</td>
+<td>同上</td>
+</tr>
+</tbody>
+</table>
+<h3>差异化护城河</h3>
+<ol>
+<li><strong>心智模式壁垒</strong>：「极简内核 + 显式反对 MCP 列入」是<strong>信念问题</strong>不是技术问题 —— 任何想做同样定位的人都要先回答「为什么需要 MCP / Plan mode / Sub-agents」。</li>
+<li><strong>真实训练数据飞轮</strong>：<code>pi-share-hf</code> → Hugging Face 公开数据 → 第三方微调（<code>Qwen3.5-9B-Pi-Agent</code>） → 更好小模型能在 Pi 上跑。这是其他竞品都没有的生态资产。</li>
+<li><strong>跨 9 协议统一 API 的工程硬功夫</strong>：4 协议 wire-format 异构性收口到 TS 类型层 + <code>compat</code> 条件类型，可读可审。<code>models.generated.ts</code> 16 939 行 metadata 全部 <code>satisfies</code> 静态校验，新增 provider 只需写 1 个 <code>Compat</code> interface。</li>
+</ol>
+<h3>竞争风险</h3>
+<ul>
+<li><strong>最可能被 Claude Code 替代</strong>：当 Claude Code 团队（Anthropic）决定做「精简模式」时，闭源 + 订阅的商业产品可以快速复制 Pi 的产品哲学。Pi 的差异化「开源 + 极简」对部分用户<strong>不可替代</strong>。</li>
+<li><strong>可能被 OpenCode 替代</strong>：当 OpenCode 决定「显式拒绝 MCP / Plan」时，开源同行 + 自带功能齐全可能比 Pi 更有竞争力。OpenCode 已经在 Pi 的 CHANGELOG 里作为兼容性 fix 出现（0.78.1 修复 OpenCode Go Kimi K2.6 thinking requests）。</li>
+<li><strong>多 Provider 抽象的债务</strong>：#4945 / #4251 / #5089 共同暴露「多 provider × 多 transport 的横切关注点（超时、模型发现、协议兼容）尚未完全收敛」—— 这是技术债，但 Mario 71.7% 单核占比意味着短期只能让 issue 自然消化。</li>
+</ul>
+<h3>生态定位</h3>
+<p>Pi 填补了<strong>「多 provider + 极简内核 + 可自扩展」三角</strong>的生态空白 —— 整个 AI 编码 Agent 赛道里<strong>唯一</strong>以这三角为定位的项目。其他产品在至少一个轴上妥协：Claude Code 选「功能齐全」；Codex CLI 选「单协议栈」；Aider 选「git-first」；OpenCode 选「功能齐全」。</p>
+<h2>套利机会分析</h2>
+<ul>
+<li><strong>信息差</strong>：60K stars / 100 release / 4 429 commits + libGDX 老兵作者 + 真实训练数据飞轮 = 「公开信息 + 但工程深度被严重低估」。多数中文技术社区还在把 Pi 当成「又一个 Claude Code 替代品」，没看到其<strong>类型系统级</strong>的工程贡献。</li>
+<li><strong>技术借鉴</strong>：
+<ul>
+<li>跨协议 SDK 的 <code>Model&lt;TApi&gt;</code> + 条件 <code>compat</code> + <code>satisfies</code> 三连 —— 可迁移到任何多供应商适配场景（云厂商 SDK、支付 SDK、消息队列 SDK）。</li>
+<li><code>EventStream&lt;T, R&gt;</code> pull-push 混合流 —— 失败不抛、用 protocol 事件编码的「错误即数据」哲学，可迁移到任何长连接 / 流式 SDK。</li>
+<li><code>AGENTS.md</code> 用第二人称对 LLM agent 下规则 —— 可作为「AI 编码 agent 友好的项目文档」范式直接借鉴。</li>
+</ul>
+</li>
+<li><strong>生态位</strong>：填补了「<strong>真正想自己掌控 prompt + 上下文的硬核开发者</strong>」这一长期被商业产品忽视的用户群；同时填补了「<strong>多 provider + 极简 + 跨协议</strong>」的技术生态位。</li>
+<li><strong>趋势判断</strong>：2025-12 → 2026-Q2 是「Claude Code 臃肿化反扑窗口」 + 「跨 provider 切换需求爆发」双重红利的交汇期。Pi 在正确的时间踩中了正确的产品克制。Mario 71.7% 单核占比是<strong>最大风险</strong>也是<strong>最大优势</strong> —— 没有公司化决策稀释，每 3 天一版的迭代节奏让 Pi 在 Terminal-Bench 2.0 上保持竞争力。</li>
+</ul>
+<h2>风险与不足</h2>
+<ul>
+<li><strong>单核作者风险（bus factor = 1）</strong>：Mario Zechner <strong>73.4% 占比</strong> + 周末 25% + 夜间 44% 的高强度投入 = 项目可持续性高度依赖 Mario 个人节奏。任何人身/职业变故都会直接传导到项目。</li>
+<li><strong>超大单文件未拆分</strong>：<code>packages/coding-agent/src/modes/interactive/interactive-mode.ts</code> 5 678 行（402 次变更） + <code>packages/ai/src/models.generated.ts</code> 16 939 行（397 次变更）—— 是项目<strong>两大 hot file</strong>，9.9 个月里没有把它拆出去。</li>
+<li><strong>200 采样 commit 里 <code>refactor</code> 仅 0.5%（1 次）</strong>：4 429 commit 的项目<strong>只显式 refactor 1 次</strong>非常反常，与 17.6 万行代码体量是显著反差。项目处于「feature 优先 + 后期 debt 累积」阶段，下半年大概率需要一波系统性 refactor。</li>
+<li><strong><code>packages/agent-old</code> 仍有 36 次修改</strong>：意味着重构有遗留，对潜在贡献者是入场门槛。</li>
+<li><strong>多 Provider 抽象的横切关注点尚未完全收敛</strong>：Issue #4945（Codex hang on Working...）53 评论、#4251（OpenCode Go Kimi K2.6 协议错误）、#5089（timeoutMs 大值被静默截断）—— 三者共同指向「多 provider × 多 transport 的超时 / 模型发现 / 协议兼容」架构债务。</li>
+<li><strong>默认 YOLO 安全姿态</strong>：项目立场是「安全护栏在 Agent 能读+能执行的现实下多半是 theatre」，容器化建议外移。对企业用户来说这是一个明确的<strong>合规阻力</strong>。</li>
+<li><strong>核心抽象层 0 处 <code>as any</code>，但 <code>openai-completions.ts</code> 单文件 20 处</strong>：provider 差异兜底集中在 <code>openai-completions.ts</code>，需要后续关注。</li>
+<li><strong>第三方生态依赖冷启动</strong>：「核心不提供 / 官方生态提供」的反向工作模型（Ollama / 本地 LLM 不进 <code>KnownProvider</code>）依赖扩展生态，已有 3 672 个第三方包但「软官方」地位尚未稳定。</li>
+</ul>
+<h2>行动建议</h2>
+<ul>
+<li><strong>如果你要用它</strong>：
+<ul>
+<li>适合「<strong>多 provider 切换 + 跨协议调试</strong>」的重度用户（OpenAI / Anthropic / Bedrock / Google / 本地 LLM 自由切）。</li>
+<li>适合「<strong>想自己掌控 prompt + 上下文</strong>」的硬核开发者（4 工具 + < 1 000 token 系统提示词 + extension）。</li>
+<li>适合「<strong>真实训练数据飞轮</strong>」研究 / 微调工作（Qwen3.5-9B-Pi-Agent 等小模型反哺）。</li>
+<li><strong>不适合</strong>：纯商业闭源需求（请直接用 Claude Code）；不想写 extension 的轻度用户（pi 的 4 工具极简需要你接受「先写 extension 再用」心智）。</li>
+</ul>
+</li>
+<li><strong>如果你要学它</strong>：重点关注
+<ul>
+<li><code>packages/ai/src/types.ts:566-596</code> —— <code>Model&lt;TApi&gt;</code> + 条件 <code>compat</code> 字段的「编译时协议隔离」范式</li>
+<li><code>packages/ai/src/utils/event-stream.ts:4-88</code> —— 88 行实现 pull-push 混合流</li>
+<li><code>packages/agent/src/agent-loop.ts:31-269</code> —— 8 个回调钩子替代 class 继承的 agent 状态机</li>
+<li><code>packages/coding-agent/src/core/extensions/loader.ts:44-116</code> —— <code>jiti</code> + 虚拟模块映射的 Bun / Node 双 runtime 扩展加载</li>
+<li><code>packages/ai/src/providers/openai-codex-responses.ts:1190-1201</code> —— 4 层 timeout 架构的实战样例</li>
+<li><code>AGENTS.md</code> + <code>CONTRIBUTING.md</code> —— 反 LLM slop 的工程文化（The One Rule + Read files in full + No inline imports）</li>
+</ul>
+</li>
+<li><strong>如果你要 fork 它</strong>：可以改进的方向
+<ul>
+<li>把 <code>interactive-mode.ts</code> 5 678 行拆为「TUI 渲染 / 模式分发 / 用户输入处理」三个模块</li>
+<li>引入「显式 refactor」commit 规约，把现有 4 429 commit 中的「隐式重构」(<code>chore:</code> / <code>feat:</code> 内的重构) 显式化</li>
+<li>补齐 Ollama / LM Studio / vLLM 的「官方级」<code>registerProvider</code> 示例（Issue #3357 22 评论 0 维护者回复）</li>
+<li>给 <code>pi-ai</code> 添加 OpenTelemetry / structured logging hooks（目前 <code>telemetry</code> 不在产品定位内）</li>
+<li>把 <code>models.generated.ts</code> 16 939 行从「自动生成 metadata」升级为「自动生成 metadata + 静态校验 + 文档生成」三连</li>
+</ul>
+</li>
+</ul>
+<h3>知识入口</h3>
+<table>
+<thead>
+<tr>
+<th>资源</th>
+<th>链接</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DeepWiki</td>
+<td><a href="https://deepwiki.com/earendil-works/pi">deepwiki.com/earendil-works/pi</a>（已索引，最近同步 2026-06-03）</td>
+</tr>
+<tr>
+<td>Zread.ai</td>
+<td>未收录（403）</td>
+</tr>
+<tr>
+<td>关联论文</td>
+<td>无</td>
+</tr>
+<tr>
+<td>在线 Demo</td>
+<td><a href="https://pi.dev">pi.dev</a>（官网 + 演示 GIF 集合） + <a href="https://pi.dev/packages">pi.dev/packages</a>（3 672 个第三方 Pi 包）</td>
+</tr>
+<tr>
+<td>官方博文</td>
+<td><a href="https://mariozechner.at/posts/2025-11-30-pi-coding-agent/">What I learned building an opinionated and minimal coding agent（2025-11-30）</a> · <a href="https://mariozechner.at/posts/2025-11-02-what-if-you-dont-need-mcp/">What if you don't need MCP（2025-11-02）</a> · <a href="https://mariozechner.at/posts/2025-08-15-mcp-vs-cli/">MCP vs CLI benchmark（2025-08-15）</a> · <a href="https://mariozechner.at/posts/2025-08-06-patching-claude-code/">Patching Claude Code for /cost（2025-08-06）</a> · <a href="https://mariozechner.at/posts/2025-06-02-prompts-are-code/">Prompts are code（2025-06-02）</a></td>
+</tr>
+<tr>
+<td>训练数据</td>
+<td><a href="https://huggingface.co/datasets/badlogicgames/pi-mono">huggingface.co/datasets/badlogicgames/pi-mono</a>（146 喜欢 / 2 069 月下载）</td>
+</tr>
+<tr>
+<td>关键 Issue</td>
+<td><a href="https://github.com/earendil-works/pi/issues/4945">#4945 openai-codex hang on Working...</a> · <a href="https://github.com/earendil-works/pi/issues/3357">#3357 Official local LLM provider extension</a> · <a href="https://github.com/earendil-works/pi/issues/5089">#5089 Doesn't respect timeoutMs past a certain value</a></td>
+</tr>
+<tr>
+<td>演示视频</td>
+<td><a href="https://x.com/badlogicgames/status/2041151967695634619">Mario 演示 pi-share-hf 发布会话（X/Twitter）</a></td>
+</tr>
+<tr>
+<td>官方媒体素材</td>
+<td><a href="https://pi.dev/press-kit">pi.dev/press-kit</a></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
