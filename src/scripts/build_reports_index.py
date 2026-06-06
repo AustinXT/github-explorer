@@ -16,6 +16,7 @@ DB schema 约束（详见 scripts/init_db.py）自动保证：
 """
 from __future__ import annotations
 
+import json
 import re
 import sqlite3
 import sys
@@ -24,6 +25,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 REPORTS_DIR = ROOT / "src" / "analysis_report"
+ENRICH_JSON = ROOT / "src" / "data" / "repo_enrich.json"
 
 # init_db.py 与本文件同目录，import 直读
 sys.path.insert(0, str(ROOT / "src" / "scripts"))
@@ -163,6 +165,11 @@ def parse_profile_table(body_lines: list[str]) -> dict[str, str]:
 
 def parse_report(path: Path, publish_index: dict[str, dict]) -> dict | None:
     slug = path.stem.lower()
+    # 门禁：三阶段分析的中间产物（如 *_phase3.md / *.phase3.md）不应入库，
+    # 正式合并版才是报告。文件名以 phase[N] 结尾者一律跳过，防止污染 reports。
+    if re.search(r"[._-]phase\d*$", path.stem, re.I):
+        print(f"⚠️  跳过疑似中间产物（phase 文件）: {path.name}", file=sys.stderr)
+        return None
     text = read_text(path)
     lines = text.splitlines()
 
@@ -238,6 +245,38 @@ def parse_report(path: Path, publish_index: dict[str, dict]) -> dict | None:
     }
 
 
+# ---------- enrich 兜底（gh api 缓存补 md 解析不到的客观字段） ----------
+
+def load_enrich() -> dict[str, dict]:
+    """读 repo_enrich.json（fetch_repo_enrich.py 产出的 gh api 缓存）。
+    key 为 normalize_url(original_url)，与 reports.original_url 对齐。不存在则空 dict。"""
+    if not ENRICH_JSON.exists():
+        return {}
+    try:
+        return json.loads(ENRICH_JSON.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return {}
+
+
+# 仅客观、有 gh api 等价物的字段才兜底；loc_raw/stage/quality 等主观字段不补
+ENRICH_FIELDS = ("stars", "forks", "language", "license", "age_months")
+
+
+def apply_enrich(reports: list[dict], enrich: dict[str, dict]) -> int:
+    """对每篇报告，若某字段为 None 且缓存有值则补上（md/SoR 优先，只填 None）。
+    返回补全的字段总数（供日志）。"""
+    filled = 0
+    for r in reports:
+        e = enrich.get(r.get("original_url") or "")
+        if not e:
+            continue
+        for f in ENRICH_FIELDS:
+            if r.get(f) is None and e.get(f) is not None:
+                r[f] = e[f]
+                filled += 1
+    return filled
+
+
 # ---------- 写入 DB ----------
 
 REPORT_COLS = (
@@ -289,6 +328,10 @@ def main() -> int:
             continue
         reports.append(rep)
 
+    # enrich 兜底：md 解析不到的客观字段（stars/forks/language/license/age_months）
+    # 用 gh api 缓存补全（md/SoR 优先，只填 None）。缓存由 fetch_repo_enrich.py 维护。
+    n_enriched = apply_enrich(reports, load_enrich())
+
     conn = get_connection()
     ensure_schema(conn)
     try:
@@ -304,8 +347,9 @@ def main() -> int:
     finally:
         conn.close()
 
-    keys = ("stars", "language", "age_months", "heat", "summary", "cover", "original_url")
+    keys = ("stars", "forks", "language", "license", "age_months", "heat", "summary", "cover", "original_url")
     print(f"✅ 写入 {len(reports)} 篇报告，跳过 {skipped} 篇 → db.sqlite (reports + report_highlights)")
+    print(f"   enrich 兜底补全字段数（stars/forks/language/license/age_months）: {n_enriched}")
     print(f"   从 v_publish_latest 反查回填 published_* 字段: {n_reconciled} 篇")
     print("   字段非空率:")
     for k in keys:

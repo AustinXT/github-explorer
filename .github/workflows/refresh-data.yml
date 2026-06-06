@@ -40,6 +40,11 @@ jobs:
       - name: Fetch starred snapshots
         run: python3 src/scripts/fetch_starred.py
 
+      # ── 1b. repo enrich：对所有报告 url 用 gh api 补 stars/forks/language/license/age
+      #        → repo_enrich.json，供 build_reports_index.py 兜底 md 解析不到的客观字段
+      - name: Fetch repo enrich
+        run: python3 src/scripts/fetch_repo_enrich.py
+
       # ── 2. trending：浅克隆第三方 archive（所有日期 md 都在最新 commit 工作树里）
       - name: Clone trending archive
         run: |

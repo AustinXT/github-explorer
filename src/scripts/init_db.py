@@ -162,7 +162,7 @@ MIGRATIONS: dict[int, str] = {
           url          TEXT    NOT NULL,
           stars        INTEGER NOT NULL CHECK (stars >= 0),
           forks        INTEGER NOT NULL DEFAULT 0 CHECK (forks >= 0),
-          rank         INTEGER,             -- 当时榜单位置（原 JSON 无此字段，预留）
+          rank         INTEGER,             -- 当时榜单位置（由 parse_trending enumerate(start=1) 推导填充，已全量有值）
           PRIMARY KEY (period_type, period_key, url),
           FOREIGN KEY (url) REFERENCES trending_repos(url) ON DELETE CASCADE
         );
