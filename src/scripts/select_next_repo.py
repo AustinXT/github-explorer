@@ -22,7 +22,12 @@
 输出：
   - stdout: 选中的 URL（一行）
   - $GITHUB_OUTPUT: repo_url / repo_name / repo_slug / repo_stars / repo_star_users
-  - 无候选: exit 78（GitHub Actions 视为 neutral skip）
+  - 无合格候选 / 达产量上限: exit 0 且不输出 repo_url（workflow 据此优雅空转跳过）
+  - 数据源缺失/损坏: exit 1（真错误）
+
+节流闸门（均由 auto-analyze.yml schedule 路径传入；默认 0 = 不节流，向后兼容）：
+  - MIN_SCORE：质量闸，最优候选 score < MIN_SCORE 则跳过（score = trending_days + star_users*8）
+  - DAILY_CAP：产量闸，最近 24h 已产出 >= DAILY_CAP 篇则跳过
 """
 from __future__ import annotations
 
@@ -30,6 +35,7 @@ import json
 import os
 import re
 import sys
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -41,6 +47,9 @@ PUBLISH_JSONL = ROOT / "src" / "data" / "publish_history.jsonl"
 
 STAR_WEIGHT = int(os.environ.get("STAR_WEIGHT", "8"))
 STAR_MIN_USERS = int(os.environ.get("STAR_MIN_USERS", "2"))
+MIN_SCORE = int(os.environ.get("MIN_SCORE", "0"))  # 0 = 不设质量闸（向后兼容）
+DAILY_CAP = int(os.environ.get("DAILY_CAP", "0"))  # 0 = 不限产量（向后兼容）
+_COUNTED_STATES = {"pending"}  # 自动产出记录都是 pending
 
 
 def load_trending() -> list[dict]:
@@ -116,6 +125,46 @@ def load_blacklist_urls() -> set[str]:
         if m:
             urls.add(m.group(1).rstrip("/").lower())
     return urls
+
+
+def _parse_recorded_at(value) -> datetime | None:
+    """解析 publish_history 的 recorded_at；兼容 '...Z' 与 '...+00:00'。失败/缺失 → None。"""
+    if not value or not isinstance(value, str):
+        return None
+    txt = value.strip()
+    if txt.endswith("Z"):  # Python<=3.10 的 fromisoformat 不认 Z
+        txt = txt[:-1] + "+00:00"
+    try:
+        dt = datetime.fromisoformat(txt)
+    except ValueError:
+        return None
+    if dt.tzinfo is None:  # 裸时间戳兜底按 UTC
+        dt = dt.replace(tzinfo=timezone.utc)
+    return dt
+
+
+def count_recent_published(window_hours: int = 24) -> int:
+    """最近 window_hours 小时内、state ∈ _COUNTED_STATES 的记录数（产量闸）。
+
+    坏行 / 坏时间戳一律跳过不计，不让单条脏数据拖垮选题。"""
+    if not PUBLISH_JSONL.exists():
+        return 0
+    cutoff = datetime.now(timezone.utc) - timedelta(hours=window_hours)
+    n = 0
+    for line in PUBLISH_JSONL.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            rec = json.loads(line)
+        except json.JSONDecodeError:
+            continue
+        if rec.get("state") not in _COUNTED_STATES:
+            continue
+        dt = _parse_recorded_at(rec.get("recorded_at"))
+        if dt is not None and dt >= cutoff:
+            n += 1
+    return n
 
 
 def slug_of(name: str) -> str:
@@ -211,13 +260,33 @@ def main() -> int:
         file=sys.stderr,
     )
 
+    # 节流跳过一律 return 0 且不输出 repo_url（workflow 据已有 if 守卫优雅空转）。
+    # 顺序：池空 → 质量闸 → 产量闸（廉价的先判）。
     if not pool:
-        print("没有可分析的新仓库", file=sys.stderr)
-        return 78
+        print("跳过：候选池为空（无新选题）", file=sys.stderr)
+        return 0
 
     picked = pool[0]
+    top = score_of(picked)
+
+    if top < MIN_SCORE:  # 质量闸：连最优候选都不达标
+        print(
+            f"跳过：最优候选 score={top} < MIN_SCORE={MIN_SCORE}（{picked['name']}）",
+            file=sys.stderr,
+        )
+        return 0
+
+    if DAILY_CAP > 0:  # 产量闸：最近 24h 已达上限
+        recent = count_recent_published(24)
+        if recent >= DAILY_CAP:
+            print(
+                f"跳过：最近 24h 已产出 {recent} 篇 ≥ DAILY_CAP={DAILY_CAP}",
+                file=sys.stderr,
+            )
+            return 0
+
     print(
-        f"选中: {picked['name']} (score={score_of(picked)}, "
+        f"选中: {picked['name']} (score={top}, "
         f"stars={picked.get('stars')}, trending_days={picked.get('trending_days')}, "
         f"star_users={picked.get('star_users')}, sources={'+'.join(picked['sources'])})",
         file=sys.stderr,

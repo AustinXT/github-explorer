@@ -2,9 +2,10 @@ name: Auto Analyze & Publish
 
 on:
   schedule:
-    # 每 2 小时跑一篇，覆盖北京时间 08/10/12/14/16/18 = UTC 00/02/04/06/08/10
-    # = 每天 6 篇；月计 ~1800 GitHub Actions 分钟（卡 90% 免费额度）
-    - cron: '0 0,2,4,6,8,10 * * *'
+    # 每小时触发一次；实际产量由 select_next_repo.py 的 MIN_SCORE / DAILY_CAP 节流：
+    # 仅在「有够分的新选题且最近 24h 未达产量上限」时才真正产出一篇，否则优雅空转跳过。
+    # 本仓库 public，标准 runner 的 Actions 分钟免费且无上限，频率不受其约束。
+    - cron: '0 * * * *'
   workflow_dispatch:
     inputs:
       repo_url:
@@ -124,6 +125,9 @@ jobs:
         id: pick
         env:
           COMMENT_BODY: ${{ github.event.comment.body }}
+          # 节流仅作用于 schedule 自动选题；dispatch 不给 URL 时 0/0=不节流（手动点即强出一篇）
+          MIN_SCORE: ${{ needs.guard.outputs.trigger == 'schedule' && '3' || '0' }}
+          DAILY_CAP: ${{ needs.guard.outputs.trigger == 'schedule' && '6' || '0' }}
         run: |
           set -euo pipefail
           case "${{ needs.guard.outputs.trigger }}" in
