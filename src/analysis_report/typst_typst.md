@@ -1,0 +1,213 @@
+# 7 年 54K stars：Rust 写的排版新王 Typst，怎么把 LaTeX 用户抢过来
+
+> GitHub: https://github.com/typst/typst
+
+## 一句话总结
+Typst 是 7 年 54K+ stars 的 Rust 排版新王：把 LaTeX 的学术排版能力、Word 的易用性、毫秒级增量编译、开箱即用的 PDF/UA-1 可达性焊在同一个 11 万行 Rust 编译器里，已经把 Zerodha 150 万份月末报表提速 4×，并被 Posit Quarto 1.4+ 收为 first-class 后端。
+
+## 值得关注的理由
+- **学术写作市场的"LaTeX 杀手"叙事真正落地**：54K stars、3500+ 高校、1000+ 企业（Zerodha、UBS、Destatis、Posit、Universität des Saarlandes）真金白银在用，Posit（前 RStudio）公开背书。
+- **技术深度撑得起叙事**：自研 comemo 增量编译框架 + 17 个 crate 拆分 + numbered span 增量 reparse + custom vtable 元素容器，把"毫秒级重编译"做成可证的语言级保证。
+- **商业化路径清晰**：开源 Apache-2.0 编译器 + 闭源 typst.app SaaS 协作编辑器 + Posit/Zerodha/NLnet 种子轮，形成可复制的"编译器即基础设施 + 云服务即商业化"范式。
+
+## 项目展示
+
+![Typst Logo + Wordmark](https://user-images.githubusercontent.com/17899797/226108480-722b770e-6313-40d7-84f2-26bebb55a281.png) — 品牌 hero 图
+
+![Example document](https://user-images.githubusercontent.com/17899797/228031796-ced0e452-fcee-4ae9-92da-b9287764ff25.png) — 一图展示 set rules / heading / math / scripting / table 综合能力的旗舰示例
+
+![Markup showcase](https://typst.app/_astro/1-markup.DoFdEkLd_Auxs4.webp) — 官方站首屏 5 大核心能力 Mark-up / Styling / Scripting / Introspection / Data loading 之一
+
+![Scripting showcase](https://typst.app/_astro/2-scripting.BhQ4YTCQ_ZmRwsz.webp) — `#` 前缀函数式脚本与文档内容无缝混排的展示
+
+![Document type gallery — letter template](https://typst.app/assets/images/doctypes/letter-160h-color.webp) — 14 种文档类型图标之一，体现模板覆盖广度
+
+![Git integration UI](https://typst.app/_astro/3-styling.C1GPif9A_Z1ze75X.webp) — set/show 规则 + GitHub/GitLab sync 协作流
+
+## 项目画像
+
+| 维度 | 数据 |
+|------|------|
+| GitHub | https://github.com/typst/typst |
+| Star / Fork | 54,028 / 1,592 |
+| 关注者 | 137 |
+| 代码行数 | 109,902 行（Rust 94.7%、CSS 2.1%、JS 1.2%、TOML 1.0%） |
+| 文件数 | 585 个（其中 Rust 源文件 405 个） |
+| 依赖数量 | 13 个 runtime 依赖（极克制） |
+| 项目年龄 | 87.8 个月 ≈ 7.3 年（首次提交 2019-02-12） |
+| 总 commits | 4,734 |
+| 贡献者 | 458 人（主创 Laurenz 51.6% + Top 10 累计 ~80%） |
+| 开发阶段 | 密集开发（近 365 天 1,044 commit / 30 天 107 / 90 天 261 几乎线性） |
+| 贡献模式 | 核心少数 + 社区（主创 + 商业团队 + 458 名贡献者） |
+| 热度定位 | 大众热门（排版系统分类第一） |
+| 质量评级 | 代码 优秀 / 文档 优秀 / 测试 优秀 / CI 优秀 / 错误处理 优秀 |
+| 版本 | v23-03-28（27 个 tag，混合 semver 0.6~0.14 + 早期日期版本） |
+
+## 作者视角：为什么存在这个项目
+
+### 创始人/作者背景
+Typst 的灵魂是 Laurenz Mädje（TU Berlin 计算机系硕士），他的 2022 年硕士论文《A Programmable Markup Language for Typesetting》本身就是 typst 的设计原型——这是一段"学术研究 → 系统实现"的真实路径，而不是 dogfooding 驱动的副产品。联合创始人 Martin Haug 同为 TU Berlin 校友，2022 年完成《Fast typesetting with incremental compilation》论文，把 incremental compilation 落地为独立的 comemo 库。两位创始人在 2020 年成立 Typst 组织，2023 年起获得 Posit（前 RStudio）、Zerodha、NLnet 的工程师资助与种子轮投资；目前 Typst GmbH 落地 Berlin，是编译器开源 + 闭源协作 SaaS 的双轨结构。
+
+### 问题判断
+Laurenz 与 Martin 在 TU Berlin 上 LLVM/Rust 编译器课时就注意到：LaTeX 已经统治学术写作 35+ 年，但其 macro/expansion 模型与 1980 年代的 token 化机制让"增量编译"几乎不可行；Tectonic 重写了 LaTeX 引擎却仍跑 LaTeX 范式，无法根治宏层与增量的冲突；Word/InDesign 是"所见即所得"+ 闭源格式，自动化能力弱；Pandoc 输出 PDF 时继承了下游 LaTeX 的所有痛点。**他们判断的"现在时机"是三层外部条件叠在一起**：
+- ① Rust 编译器工具链成熟到能稳定产出 paged-media layout；
+- ② Unicode 15/ICU segmenter/shaper 等字体栈开源化（rustybuzz、ttf-parser、hypher、unicode-bidi）；
+- ③ PDF/UA-1 与欧洲 EAA / 美国 ADA 无障碍法规落地带来商业需求。
+
+### 解法哲学
+「少即多 + 组合性 + 增量优先」是写在 typst 论文里的三条设计原则。具体落地：
+- **简单 vs 功能完整**：不堆宏包生态，把 LaTeX 中 `\usepackage{knith}` 的 99% 用法下沉到 12 个核心模块（foundations/loading/visualize/text/layout/model/math/introspection）；需要扩展的用 WASM plugin 或自研的极简 package 协议。
+- **性能 vs 易用**：把"性能"翻译成"增量编译必须可证"——每个语言特性都要回答"重新求值时如何只算变化的部分"。`eval_string` / `eval_closure` / `layout_document` 全部 `#[comemo::memoize]`，把脏值追踪下沉到独立维护的 comemo 库。
+- **开放 vs 封闭**：开源 Apache-2.0 编译器 + 闭源 typst.app 协作编辑器 + 商业云服务，典型 open-core + 商业 SaaS 双轨。
+- **明确不做什么**：0.14 changelog 明确不做的（PDF/UA-2 未支持、math/HTML 边界张力如 #366、PDF 输出仍标记「sadly untested so far」），体现"先把核心跑通"的克制。
+- **友好错误优先**：`crates/typst-library/src/diag.rs` 的 1,114 行定义 `bail!` / `error!` / `warning!` / `hint!` 宏，错误带 `SourceDiagnostic` + hints + 多级错误（delayed errors 还能在 introspect loop 收敛后再升级 fatal）。
+
+### 战略意图
+编译器（typst repo）是核心产品，商业 SaaS（typst.app 闭源协作编辑器 + 云端编译）是收入入口。跨产品基础由同团队的 krilla（Rust PDF 序列化器）支撑，被 `typst-pdf` 依赖形成生态分层。`CONTRIBUTING.md` 第 33 行明文「Contributions that were implemented by an AI model will not be accepted」——这是创始人阶段护城河与代码质量的硬约束，也是 LLM 时代 OSS 治理的早期实验案例。
+
+## 核心价值提炼
+
+### 创新之处
+
+#### 1. comemo 增量编译框架 — `#[comemo::memoize]` + `Tracked/TrackedMut` 容器
+**新颖度 4/5 | 实用性 5/5 | 可迁移性 4/5**
+typst 整个排版管线的核心。从 `crates/typst-eval/src/lib.rs::eval` 到 `crates/typst-layout/src/pages/mod.rs::layout_document` 全部 `#[comemo::memoize]`；函数签名里把可能脏的值标成 `Tracked<dyn World>` / `Tracked<Traced>` / `TrackedMut<Sink>`，被追踪值 hash 变就重算闭包结果；cache key 由"函数指针 + 全部参数 hash"组成。Zerodha 的"150 万份 PDF 在 25 分钟内生成"案例就是 comemo 批量复用 memoize 结果的直接产物。**So what**：把 React/Vue 重渲染、rust-analyzer 重分析、Tectonic 整文档重编译统统降级为"漏斗式 cache"——任何长生命周期的"重编译/重新布局/重渲染"工作流（编辑器、笔记、报表、可重现 build）都能直接借鉴。
+
+#### 2. Numbered Span + Stable ID — 让编辑对 memoize cache 友好
+**新颖度 3/5 | 实用性 5/5 | 可迁移性 5/5**
+`crates/typst-syntax/src/span.rs` 给每个 syntax node 分配 stable u32 编号（8 字节紧凑 span），而不是用 byte range；编号在 incremental reparse 时尽量保持稳定（远端编辑对近端节点 ID 无影响）。reparser 自下而上找最内层完整包含替换区的节点并验证 delimiter nesting 平衡。所有 `Eval::eval` / `#[comemo::memoize]` 函数签名都用 `Span` 作为输入。**So what**："在文件中间插入一行"不会让后续所有 cache 失效——LSP、Notebook 引擎、富文本编辑器、任何带"重计算 IDE 功能"的项目都能直接套用。
+
+#### 3. Custom Vtable + `repr(C)` 元素容器（`Content` = `Copy`）
+**新颖度 4/5 | 实用性 4/5 | 可迁移性 3/5**
+`crates/typst-library/src/foundations/content/raw.rs` 用 `NonNull<Header>` + 静态 `&'static ContentVtable` 实现手写 fat pointer；`Inner<E>` 是 `#[repr(C)]` 第一个字段是共享 `Header`，靠 ISO C 标准的「结构体指针指向其首成员」实现「`*Inner<E>` 与 `*Header` 的可逆 cast」；vtable 来自 `#[elem]` 宏在编译期生成；`is::<E>()` 比较 vtable 指针省去 dyn dispatch。比 `Arc<dyn Trait>` 多了两个能力：① vtable 里可挂字段级 sub-vtable；② vtable 自身可作为 static 变量被指针比较。**So what**：高密度 AST（CSS rule engine、Rule engine、游戏 ECS、SVG/DOM 元素）都能借鉴这种"零分配 + O(1) 类型比较 + sub-vtable"的容器设计。
+
+#### 4. `Routines` 函数指针表打破 crate 循环依赖
+**新颖度 3/5 | 实用性 4/5 | 可迁移性 4/5**
+`crates/typst-library/src/routines.rs` 写一个 `routines!` 宏生成 `Routines` struct，里面全是 `for<'a> fn(...) -> ...` 字段；`typst/src/lib.rs` 的 `ROUTINES: LazyLock<Routines>` 在初始化时把 17 个 crate 注册的 `eval_closure` / `realize` / `layout_frame` / `html_module` 塞进去；调用时通过 `engine.library.routines.realize(...)` 间接跳转。**So what**：失去静态分发（每次调用走间接函数指针），换来 crate 间零耦合 + 可单独替换 backend（HTML 还在 `--features html` flag 后才能用，正是因为它是 routines 中的可选注入）。任何想"主 crate lib + 多后端 exporter"的项目（如 CSS-in-X 引擎、多图表后端的报表系统）都能直接套这套「动态链接 + 按 backend 注入」模式。
+
+#### 5. Realize → Layout 二阶段分离 + introspect fixed-point loop
+**新颖度 3/5 | 实用性 4/5 | 可迁移性 4/5**
+`crates/typst-realize/src/lib.rs` 把"应用所有 show rule、收集 layoutable items"单做一阶段，结果是 `Vec<Pair<'a>>`；layout 阶段才真正算几何。Realize 本身支持多种 `RealizationKind`（Document/Fragment/Par/Math/Bundle），同套 realize 代码被 bundle export 与 paged export 共用。Layout 阶段跑 counter/页码循环依赖的不动点（`MAX_ITERS=5`），每轮用 `comemo::Constraint` 验证 introspector 是否稳定；不稳定且超过 5 次时给"never stabilizes"警告 + 用最后一次结果。**So what**：「先解样式、再排几何、分阶段 memoize + 循环引用走 fixed-point」是分页 + 流式双后端编译器的基本功，可直接借鉴给任何多后端共享样式处理 + 循环引用的场景。
+
+#### 6. Perceptual Color Space 优先 + PDF 端「stop 加密」绕开 sRGB 限制
+**新颖度 3/5 | 实用性 4/5 | 可迁移性 3/5**
+默认 gradient 插值走 Oklab（perceptual uniform color space），避免 sRGB/HSL 上做渐变时出现的"中段发灰"问题。`crates/typst-pdf/src/paint.rs:303-340` 对 Oklab/hue-based gradient 主动插入几十/几百个中间 stop 绕开 PDF 原生 color space 的 sRGB 转换（line 308 注释明示"insert stops in-between to make the gradient smoother without interpolation issues with native color spaces"）；conic 渐变用 0.005/0.05/0.25 max_dt 精细化。**So what**：色彩学 + PDF 规范双层认知的直接产物；任何数据可视化、出版级 PDF、印前输出场景都能借鉴「perceptual uniform space 做插值」这一原则。
+
+#### 7. Closure Capture Visitor 显式捕获语义
+**新颖度 3/5 | 实用性 4/5 | 可迁移性 5/5**
+`crates/typst-eval/src/call.rs::CapturesVisitor` 在闭包定义时遍历 AST，识别所有"非本闭包内绑定"的 ident 引用，把它们 clone 进 `Closure.captured: Scope`；调用时新 VM 栈用 captured scope 初始化。**So what**：AST 二次扫描（closure 定义时开销），换来「闭包可以安全 `#[comemo::memoize]`」——closure 调用结果只与 (closure_syntax, captured, args) 三个 hash 有关，重新编辑模块不污染已 memoize 的闭包调用结果。配置 DSL、用户脚本、模板语言、字节码 VM、函数式语言运行时都能直接借鉴。
+
+#### 8. StyleChain 链表化样式链 + Fold trait
+**新颖度 4/5 | 实用性 5/5 | 可迁移性 4/5**
+`crates/typst-library/src/foundations/styles.rs::StyleChain<'a>` 用"链表 + `head: &[LazyHash<Style>]` + `tail: Option<&Self>`"实现；set/show 规则按作用域形成链，属性读取时从内向外走，遇 `Fold` trait 标记的字段（`Fold` / `AlternativeFold` / `Depth` 等）累积合并。**So what**：CSS-in-Rust、Theme 系统、可继承配置系统都能借鉴这种"多层样式作用域下的属性查询 + Fold 合并语义"。
+
+#### 9. Incremental Reparser 的 minimal-reparse 策略
+**新颖度 3/5 | 实用性 4/5 | 可迁移性 4/5**
+`crates/typst-syntax/src/reparser.rs` 从最内层向外扩，节点必须能完全包含替换区；要求 reparsed 块的 delimiter nesting 与旧块一致（防 typo 破坏树结构）；失败则回退到全 reparse。注释明确写"我们目前只对顶层 markup 表达式 reparse，不重 parse 列表/标题内的 markup——曾经的实现 bug 太多"。**So what**：任何"编辑器里编辑结构化文本"的场景（Markdown、Latex、Notebook、代码结构化编辑器）都能借鉴"最小可重 parse 区域 + delimiter nesting 验证 + 失败回退"三件套。
+
+### 可复用的模式与技巧
+- **`#[comemo::memoize]` + Tracked 参数**：把"增量计算"当成纯类型系统级别的可组合组件
+- **Numbered Span / Stable ID**：跨编辑保持稳定的节点标识
+- **Custom Vtable with `repr(C)` + Header + 静态指针**：用 ISO C 「结构体首成员指针」规则做零成本类型擦除容器
+- **StyleChain 链表 + Fold trait**：多层样式作用域下的属性查询
+- **`Routines` 函数指针表**：解开 crate 间循环依赖
+- **CapturesVisitor 显式捕获**：tree-walking interpreter 闭包语义化
+- **Realize → Layout 分离 + fixed-point introspect loop**：多后端共享样式处理 + 循环引用通过不动点求解
+
+### 关键设计决策
+
+#### 1. workspace 17 个 crate + 编译流程四阶段
+**问题**：要支持 PDF/HTML/SVG 多 exporter + 增量编译 + 友好错误 + 多模块语言
+**方案**：`typst`（lib 入口 + reexport）/ `typst-cli`（thin wrapper）/ `typst-syntax`（parser/AST）/ `typst-eval`（tree-walking interpreter）/ `typst-library`（stdlib + 引擎核心类型）/ `typst-realize`（show rule 应用）/ `typst-layout`（排版引擎）/ `typst-pdf` / `typst-svg` / `typst-html` / `typst-bundle` / `typst-render` / `typst-ide` / `typst-utils` / `typst-timing` / `typst-macros` / `typst-kit`；编译流程 Parse → Eval → Realize → Layout → Export，每阶段独立 memoize，跨阶段只通过序列化数据（`Content` / `Module` / `Frame` / `PagedDocument`）。
+**Trade-off**：17 个 crate 的 cargo 编译时间成本（typst 一次 cold build 接近 5 分钟），换来清晰的职责切分与可独立测试的子模块。
+**可迁移性**：高。
+
+#### 2. 拒绝 AI 自动贡献（`CONTRIBUTING.md` 第 33 行）
+**问题**：LLM 时代 OSS 治理要避免低质量 PR 涌入
+**方案**：明文「Contributions that were implemented by an AI model will not be accepted」
+**Trade-off**：失去一部分社区贡献量，换来代码质量护城河。
+**可迁移性**：中（看项目创始人的判断）。
+
+## 竞品格局与定位
+
+### 竞品对比矩阵
+
+| 维度 | Typst | LaTeX | Pandoc | Tectonic | Quarto |
+|------|-------|-------|--------|----------|--------|
+| 编译延迟（watch 模式） | 毫秒级（comemo 增量） | 整文档重编译（秒级~分钟级） | 不出 PDF（外接 LaTeX） | 整文档重编译（沙箱拉包） | 整文档重编译 |
+| 学习曲线 | 友好（markup+scripting 统一） | 陡（macro 语义反直觉） | 低（CLI 工具） | 中（仍是 LaTeX 范式） | 低（Notebook 工作流） |
+| 错误信息 | 带 span + hint（Assists） | 经典晦涩 | 取决于后端 | 与 LaTeX 类似 | 取决于后端 |
+| PDF/UA-1 可达性 | 内建（0.14 已合入） | 需宏包 | 不直接出 PDF | 需 LaTeX 宏包 | 取决于后端 |
+| 学术模板生态 | 7 年积累，期刊模板仍在追赶 | 35+ 年（journal class files 几乎都有 LaTeX 版） | 不适用 | 完全继承 LaTeX | 部分（自带 + Quarto Journal Article） |
+| 数学/复杂宏库 | 中等（化学式、commutative diagram 仍弱） | 强（tikz-pgf、pgfplots、chemfig、tcolorbox） | 不适用 | 强（继承 LaTeX） | 中等 |
+| 商业化 | typst.app SaaS + 闭源 IDE | 无 | 无 | 无 | Posit 商业版 |
+| 月活用户 | 1000+ 企业 + 3500+ 高校 | 数十万级（学术出版事实标准） | 数十万级（转换器） | LaTeX 用户的子集 | 快速增长（Quarto 1.4+ 推动） |
+| 主要语言实现 | Rust 94.7% | TeX + 周边语言 | Haskell | Rust | TypeScript + 周边 |
+
+### 差异化护城河
+**「编译器级增量 + 友好错误 + 可达性 PDF + SaaS 闭环」**是 LaTeX 系、Markdown 系、Office 系都没有的组合；comemo 增量框架是技术护城河的核心（独立维护 + 开源）；typst.app SaaS 是商业护城河的核心（云端编译 + 协作 + Git sync + Zotero 集成 + 私有包）。
+
+### 竞争风险
+- ① **学术期刊采用速度慢于 LaTeX**（35+ 年生态壁垒是真实的）
+- ② **数学公式的「复杂宏库」**（tikz-pgf、pgfplots、tcolorbox、chemfig）的等效实现仍欠缺
+- ③ **HTML 输出长期处于 alpha**（#721 揭示分页 → 流式布局的本质张力，开放 114 评论仍未合入）
+- ④ **Tectonic/Quarto 等「改良 LaTeX」系**可能在用户来不及学新语言时先吃掉中等复杂度用户
+- ⑤ **打印机驱动差异**（#2963 反映「不同打印机驱动对 PDF 渲染差异」仍是商业化落地的最大现实障碍）
+
+### 生态定位
+**不是「下一个 LaTeX 杀手」，而是「下一个 Word + LaTeX 的中间地带」+ 排版引擎基础设施（typst-as-a-library 嵌入商业产品）**。在 Pandoc、Quarto、Tectonic 的生态里，Typst 是后端之一；在学术出版领域，Typst 是 Word/LaTeX 的中间地带；在企业文档场景（Zerodha 150 万份月末报表、UBS、Destatis），Typst 是 LaTeX 的提速替代。
+
+## 套利机会分析
+- **信息差**：低关注度但高质量？— 否，已是 Rust 排版领域事实标准 + 商业化公司背书，**不属于被低估项目**。但学术/出版替代 LaTeX 的叙事红利仍在释放中：3500+ 高校、1000+ 企业用户、Zerodha 150 万份 PDF 案例意味着「技术已被验证，大规模企业落地正在进行」。
+- **技术借鉴**：comemo 增量框架、Numbered Span、Custom Vtable、Routines 函数指针表、Realize→Layout 分离、Oklab 颜色空间优先——这 6 项都是可迁移到任何"重编译/重布局/重渲染"项目的通用模式。
+- **生态位**：在 Pandoc + Quarto + Tectonic + AsciiDoctor 的工具链里，Typst 是 first-class 后端之一（Quarto 1.4+ 内建 Typst 输出）；在 LaTeX/Word 中间地带，Typst 是"可编程排版引擎 + 商业 SaaS"的差异化定位。
+- **趋势判断**：增长趋势明显（54K stars、爆发型增长、近 365 天 1,044 commit、密集开发 + 职业项目节奏）；符合"Rust 编译器 + 学术 PDF 无障碍合规"两条技术趋势；比 LaTeX 生态有"后发优势"（增量 + 友好错误 + SaaS 闭环），比 Tectonic 有"语言级创新优势"（不再跑 LaTeX 范式）。
+
+## 风险与不足
+- **HTML 输出长期未合入**（#721 开放 114 评论，揭示「Typst 内容模型与 HTML 流式布局存在根本张力」：layout 为分页介质设计，HTML 需要连续媒体 + 可访问性 + 样式映射）
+- **复杂宏库欠缺**（化学式、复杂 commutative diagram、tikz-pgf 类等效实现仍弱）
+- **学术期刊采用速度慢**（35+ 年 LaTeX 生态壁垒）
+- **打印机驱动差异**（#2963 反映「不同打印机驱动对 PDF 渲染差异」仍是商业化落地最大现实障碍）
+- **商业化变现尚未规模化**（typst.app SaaS + 种子轮融资中，路径清晰但尚未达到"开源 + 商业"双轮自洽）
+- **主创单人占比 51.6%**（bus factor 风险，458 贡献者分散在文档与 bug 修复层）
+
+## 行动建议
+
+### 如果你要用它
+- **学术写作**：从 LaTeX 迁来，文本作者迁移成本低（数学语法、文档结构相似），模板作者几乎要重写（`\usepackage{...}` 没了）；建议从 `tests/README.md` 测试 + `https://typst.app` 云端编译 + 官方 `touying` / `cetz` / `fletcher` / `lilaq` 模板起步
+- **企业批量 PDF 生成**（如 Zerodha 月末报表）：参考 Zerodha「150 万份 PDF 在 25 分钟内生成」案例，typst-cli + watch 模式 + comemo 增量是核心收益
+- **科学出版 + Notebook**：用 Quarto 1.4+ 的 `quarto render --to typst` 直接拿 Typst 当后端，享受 Quarto 多语言内联 + Typst 排版质量
+- **不要用它的场景**：需要 HTML 输出（仍在 alpha）、需要 tikz-pgf 等复杂宏库、需要现成期刊 LaTeX 模板
+
+### 如果你要学它
+- **重点关注文件**（按可迁移性排序）：
+  - `crates/comemo`（独立仓库）— 增量编译框架
+  - `crates/typst-library/src/routines.rs` — `Routines` 函数指针表打破 crate 循环依赖
+  - `crates/typst-library/src/foundations/content/raw.rs` + `vtable.rs` — Custom Vtable + `repr(C)` 元素容器
+  - `crates/typst-syntax/src/span.rs` + `reparser.rs` — Numbered Span + Incremental Reparser
+  - `crates/typst-library/src/diag.rs` — SourceDiagnostic + hints + delayed errors
+  - `crates/typst-library/src/foundations/styles.rs` — StyleChain 链表 + Fold trait
+  - `crates/typst-eval/src/call.rs` — CapturesVisitor 显式闭包捕获
+  - `crates/typst-realize/src/lib.rs` + `crates/typst-layout/src/pages/mod.rs` — Realize → Layout 二阶段分离
+  - `docs/dev/architecture.md` — 贡献者架构文档（解释整个编译管线）
+  - `tests/README.md` — 测试方法论（golden test + 视觉测试 20 KiB 上限 + 自动 regen）
+
+### 如果你要 fork 它
+- **改进方向**：
+  - HTML 导出层（#721 的设计张力需要重新设计内容模型）
+  - 复杂宏库（化学式、commutative diagram、tikz-pgf 等效实现）
+  - WASM plugin 生态（typst-community 正在发展，可考虑成为 plugin 模板作者）
+  - 跨平台 GUI 编辑器（typstudio WIP，Rust 原生 IDE 仍是空白）
+  - 与 LSP 深度整合（typst-ide 已存在，VS Code extension 仍是主要载体）
+
+### 知识入口
+
+| 资源 | 链接 |
+|------|------|
+| DeepWiki | [https://deepwiki.com/typst/typst](https://deepwiki.com/typst/typst) — 收录，含 19 个章节覆盖 crate 架构、解析/求值/布局/导出全管线（最近更新 2026-05-06） |
+| Zread.ai | 未收录（HTTP 403） |
+| 关联论文 | [A Programmable Markup Language for Typesetting — Laurenz Mädje 硕士论文 (TU Berlin, 2022)](https://laurmaedje.github.io/programmable-markup-language-for-typesetting.pdf) — Typst 语言设计的奠基文献 |
+| 关联论文 | [Fast typesetting with incremental compilation — Martin Haug 硕士论文 (TU Berlin, 2022)](https://laurmaedje.github.io/fast-typesetting-with-incremental-compilation.pdf) — 增量编译系统 comemo 的设计文献 |
+| 在线 Demo | [https://typst.app](https://typst.app) — 云端协作编辑器，免费 tier 可用，无需登录即可体验基础编译 |
+| 外部深度视角 | [Posit: Posit and Typst](https://posit.co/blog/posit-and-typst/) — Quarto 团队认为「set/show 规则 + 函数式一切」彻底消除 LaTeX 宏的神秘感，毫秒级反馈是 LaTeX 不可比的体验提升 |
+| 外部深度视角 | [Zerodha: 1.5 million PDFs in 25 minutes](https://zerodha.tech/blog/1-5-million-pdfs-in-25-minutes/) — 大规模金融 PDF 批量生成场景下 Typst 比 LaTeX 提速约 4×，单进程吞吐即满足月末报表规模 |
