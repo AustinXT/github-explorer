@@ -336,6 +336,11 @@ entries:
   - devtools
   dokploy_dokploy:
   - security
+  dolthub_dolt:
+  - ai-agent
+  - devtools
+  - database
+  - protocol-spec
   done-0_fuck-u-code:
   - protocol-spec
   dontizi_rlama:
@@ -365,6 +370,12 @@ entries:
   - llm-inference
   - model-foundation
   - workflow-automation
+  earendil-works_pi:
+  - ai-agent
+  - ai-coding
+  - llm-training
+  - model-foundation
+  - protocol-spec
   ebookfoundation_free-programming-books:
   - education
   edent_supertinyicons:
@@ -906,6 +917,9 @@ entries:
   - ai-agent
   - ai-coding
   - devtools
+  openai_whisper:
+  - editor-kms
+  - video-audio
   openbb-finance_openbb:
   - ai-agent
   - devtools
@@ -1025,6 +1039,8 @@ entries:
   - database
   - web-framework
   rssnext_folo:
+  - protocol-spec
+  rustdesk_rustdesk:
   - protocol-spec
   rustfs_rustfs:
   - ai-agent
@@ -1153,6 +1169,8 @@ entries:
   tencent_weknora:
   - llm-framework
   - workflow-automation
+  tesseract-ocr_tesseract:
+  - uncategorized
   thealgorithms_python:
   - uncategorized
   thedotmack_claude-mem:
@@ -1165,6 +1183,9 @@ entries:
   - education
   tibixdev_winboat:
   - workflow-automation
+  tinyhumansai_openhuman:
+  - ai-agent
+  - editor-kms
   tobi_qmd:
   - ai-agent
   - llm-training
