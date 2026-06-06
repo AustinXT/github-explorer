@@ -3756,6 +3756,33 @@
     "publishedTitle": null
   },
   {
+    "slug": "google_googletest",
+    "title": "17 年 4.5K commits：Google 内部 C++ 测试框架如何炼成行业事实标准",
+    "originalUrl": "https://github.com/google/googletest",
+    "summary": "GoogleTest 是 Google 内部 C++ 基础设施的开源版本，以 17 年持续维护、4.5K+ commits、486 位贡献者，把「xUnit 测试 + GoogleMock 模拟 + 跨平台死亡测试」三件套打成 C++ 生态 90% 项目的默认测试底座。",
+    "highlights": [
+      "事实标准的 C++ 测试框架：Chromium、LLVM、Protobuf、gRPC、Abseil、OpenCV、Fuchsia 等头部项目都内置使用，BSD 3-Clause 许可证允许商用与闭源衍生",
+      "教科书级的 C++ 库设计范本：把「宏元编程 + 模板元编程 + 平台抽象层 + 责任链监听器」四套技艺凝缩在 6.2 万行 C++ 代码中，是学习工业级 C++ 库 API 治理的最佳样本",
+      "18 年只锁 1.x 大版本：v1.7 → v1.17 横跨 10+ 年保持 ABI 基本稳定，靠的是「薄公共头 + 厚 internal 命名空间」分层，是开源基础设施的 API 治理纪律典范"
+    ],
+    "stars": 38684,
+    "forks": 10788,
+    "language": "C++",
+    "locRaw": "62,620 行（C++ 64.6% / C Header 25.7% / Python 8.0% / CMake 0.9%）",
+    "ageMonths": 215.0,
+    "ageRaw": "215 个月 ≈ 18 年（首次提交 2008-07-03，GitHub 仓库 2015-07-28 迁入）",
+    "stage": "低维护稳态（近 90 天 12 次 commit）",
+    "contribution": "核心少数 + 社区（Top 1 占 20.7%，Top 3 占 34.4%，486 位贡献者）",
+    "heat": "大众热门",
+    "heatRaw": "大众热门（C++ 工具库第一梯队）",
+    "quality": "代码[优秀] 文档[优秀] 测试[充分] CI[完善]",
+    "license": "BSD 3-Clause",
+    "cover": null,
+    "mtime": "2026-06-06",
+    "published": "pending",
+    "publishedTitle": null
+  },
+  {
     "slug": "google_langextract",
     "title": "langextract",
     "originalUrl": "https://github.com/google/langextract",
@@ -4620,6 +4647,33 @@
     "publishedTitle": null
   },
   {
+    "slug": "is-a-dev_register",
+    "title": "12,000 人抢注 1 个子域名：5 年 75K commits，0 行运行时代码的 is-a.dev 怎么做到的",
+    "originalUrl": "https://github.com/is-a-dev/register",
+    "summary": "is-a-dev/register 是一个用「GitHub PR 即域名注册」+「dnscontrol 编译时编排」实现的 0 美元、0 运行时代码的免费子域名公共服务，5 年承载 13,000 贡献者、12,000+ 注册记录、近 75,000 次 commit，是「开发者免费地皮」赛道的成熟公共物品。",
+    "highlights": [
+      "极致架构反常识：服务 12,000+ 用户的子域名系统，仓库里 0 行运行时代码（99.9% 是 JSON 数据），没有数据库、没有后台、没有 daemon",
+      "可复用的工程范式：把「PR 流程」当成「用户态数据」注册中心",
+      "奇高的 fork:star = 2.14:1（22,345 forks vs 10,419 stars）：罕见的数据信号，说明用户必须 fork 才能提交注册，真实用户基数通过 fork 体现"
+    ],
+    "stars": 10419,
+    "forks": 22345,
+    "language": "JSON",
+    "locRaw": "117,204 行（JSON 99.9%，SVG 0.1%）",
+    "ageMonths": 68.0,
+    "ageRaw": "68 个月（首次提交 2020-10-04）",
+    "stage": "密集开发（近 30 天 3,514 commit）",
+    "contribution": null,
+    "heat": "大众热门",
+    "heatRaw": "大众热门（heat_level 最高档）",
+    "quality": "代码优秀 / 文档良好 / 测试充分 / CI 完善",
+    "license": null,
+    "cover": "https://raw.githubusercontent.com/is-a-dev/register/main/media/banner.png",
+    "mtime": "2026-06-06",
+    "published": "pending",
+    "publishedTitle": null
+  },
+  {
     "slug": "itzcrazykns_vane",
     "title": "Vane",
     "originalUrl": "https://github.com/itzcrazykns/vane",
@@ -5454,6 +5508,33 @@
     "cover": "https://github.com/user-attachments/assets/e1ecb9c3-2dd3-431e-bd97-5a819c30e551",
     "mtime": "2026-05-11",
     "published": null,
+    "publishedTitle": null
+  },
+  {
+    "slug": "louis-e_arnis",
+    "title": "4 个月从 0 到 16K stars：20 岁 BMW 工程师用 Rust 把地球搬进 Minecraft",
+    "originalUrl": "https://github.com/louis-e/arnis",
+    "summary": "Arnis 是一款 Rust 写的开源工具，把 OpenStreetMap + AWS Terrain Tiles + ESA WorldCover 卫星分类实时拼装成可玩的 Minecraft 世界，同时支持 Java / Bedrock / Luanti 三种世界格式输出，4 个月从 Python 原型重写后 star 突破 1.6 万。",
+    "highlights": [
+      "垂直赛道近乎垄断的工程实现：开源世界把『OSM → MC 世界』做成产品级工具，Terra 1-to-1 (1800 stars) 已停更、BuildTheEarth 是人工 1:1 体力活、OSM2World/blosm 不直接出 MC 世界",
+      "真实的工程取舍案例：Minecraft Y=384 硬高度限制 vs 真实世界任意 bbox 海拔差，用『归一化 + bundled datapack 拉到 4064』双层化解，是少有的『游戏引擎 vs 真实世界』边界处理范例",
+      "学术 + 行业 + 玩家三圈层背书：AWS Public Sector 博客、Hackaday、Tom's Hardware、XDA 持续报道"
+    ],
+    "stars": 15949,
+    "forks": 1316,
+    "language": "Rust",
+    "locRaw": "76,603（Rust 53.2% / JavaScript 36.0% / JSON 4.6% / CSS 4.5%，纯 Rust 50,593 行）",
+    "ageMonths": 44.9,
+    "ageRaw": "44.9 个月（2022-09-10 至今）",
+    "stage": "密集开发（近 30 天 155 commit，近 90 天 568 commit）",
+    "contribution": "独立开发为主（louis-e 81.2% commit）+ 多国社区 PR 补位（53 贡献者）",
+    "heat": "大众热门",
+    "heatRaw": "大众热门（2024-12 破圈后稳定在 15K+ stars）",
+    "quality": "代码 [优秀] 文档 [优秀] 测试 [基本] CI/CD [完善] 错误处理 [规范]",
+    "license": null,
+    "cover": "https://raw.githubusercontent.com/louis-e/arnis/main/assets/git/banner.png",
+    "mtime": "2026-06-06",
+    "published": "pending",
     "publishedTitle": null
   },
   {
@@ -7317,6 +7398,33 @@
     "cover": null,
     "mtime": "2026-05-11",
     "published": null,
+    "publishedTitle": null
+  },
+  {
+    "slug": "pkuflyingpig_cs-self-learning",
+    "title": "7.3 万 star、5 年沉淀：北大 CS 博士的中文 CS 自学指南成了事实标准",
+    "originalUrl": "https://github.com/pkuflyingpig/cs-self-learning",
+    "summary": "一个 PKU CS 博士在 4.6 年里把 MIT / CMU / Stanford / UC Berkeley / ETH 的顶级公开课系统化串联成中文学习路径，配套自己亲手做的 6 门作业仓库，沉淀成 7.3 万 star、5.9 千行 markdown 笔记的中文 CS 自学资源站事实标准。",
+    "highlights": [
+      "稀缺的双层资源结构：解决了 awesome-list 长期以来的「信任问题」",
+      "中文圈没有等量对手：OSSU 偏英文、Coding-Interview-University 偏面试、TeachYourselfCS-CN 颗粒粗、REKCARC-TSC 局限清华课程",
+      "信息架构值得所有资源站学习：6 个核心决策（学科×学校二维矩阵、5 节课程模板、多源学校同课对比、i18n 目录翻译、必学工具独立分支、学习路径与课程解耦）每一个都解决一类经典问题"
+    ],
+    "stars": 73068,
+    "forks": 7891,
+    "language": "YAML",
+    "locRaw": "310（YAML 94.5% + HTML 5.5%，仅 mkdocs 配置），实际资产是 5,898 行 markdown 笔记",
+    "ageMonths": 55.6,
+    "ageRaw": "55.6 个月（2021-10 创建，2026-02 末次提交）",
+    "stage": "低维护 / 事实性休眠（近 90 天 0 commit，年化仅 35 commit）",
+    "contribution": "核心少数 + 社区（30 贡献者，Top 1 占 57.4%，185 人社区）",
+    "heat": "大众热门",
+    "heatRaw": "大众热门（中文圈 CS 自学指南事实标准）",
+    "quality": "文档「优秀」+ 站点工程「完善」+ 协作流程「完善」+ CI/CD「基本」+ 测试「无（合理缺失）」",
+    "license": null,
+    "cover": "https://api.star-history.com/svg?repos=PKUFlyingPig/cs-self-learning&type=Timeline",
+    "mtime": "2026-06-06",
+    "published": "pending",
     "publishedTitle": null
   },
   {
@@ -9304,6 +9412,33 @@
     "mtime": "2026-05-11",
     "published": "published:2026-04-05",
     "publishedTitle": "拆解 Twitter 推荐算法：6000 个特征背后的工业级复杂度"
+  },
+  {
+    "slug": "typst_typst",
+    "title": "7 年 54K stars：Rust 写的排版新王 Typst，怎么把 LaTeX 用户抢过来",
+    "originalUrl": "https://github.com/typst/typst",
+    "summary": "Typst 是 7 年 54K+ stars 的 Rust 排版新王：把 LaTeX 的学术排版能力、Word 的易用性、毫秒级增量编译、开箱即用的 PDF/UA-1 可达性焊在同一个 11 万行 Rust 编译器里，已经把 Zerodha 150 万份月末报表提速 4×，并被 Posit Quarto 1.4+ 收为 first-class 后端。",
+    "highlights": [
+      "学术写作市场的\"LaTeX 杀手\"叙事真正落地：54K stars、3500+ 高校、1000+ 企业（Zerodha、UBS、Destatis、Posit、Universität des Saarlandes）真金白银在用，Posit（前 RStudio）公开背书",
+      "技术深度撑得起叙事：自研 comemo 增量编译框架 + 17 个 crate 拆分 + numbered span 增量 reparse + custom vtable 元素容器，把\"毫秒级重编译\"做成可证的语言级保证",
+      "商业化路径清晰：开源 Apache-2.0 编译器 + 闭源 typst.app SaaS 协作编辑器 + Posit/Zerodha/NLnet 种子轮，形成可复制的\"编译器即基础设施 + 云服务即商业化\"范式"
+    ],
+    "stars": 54028,
+    "forks": 1592,
+    "language": "Rust",
+    "locRaw": "109,902 行（Rust 94.7%、CSS 2.1%、JS 1.2%、TOML 1.0%）",
+    "ageMonths": 87.8,
+    "ageRaw": "87.8 个月 ≈ 7.3 年（首次提交 2019-02-12）",
+    "stage": "密集开发（近 365 天 1,044 commit / 30 天 107 / 90 天 261 几乎线性）",
+    "contribution": "核心少数 + 社区（主创 + 商业团队 + 458 名贡献者）",
+    "heat": "大众热门",
+    "heatRaw": "大众热门（排版系统分类第一）",
+    "quality": "代码 优秀 / 文档 优秀 / 测试 优秀 / CI 优秀 / 错误处理 优秀",
+    "license": null,
+    "cover": "https://user-images.githubusercontent.com/17899797/226108480-722b770e-6313-40d7-84f2-26bebb55a281.png",
+    "mtime": "2026-06-06",
+    "published": "pending",
+    "publishedTitle": null
   },
   {
     "slug": "unclecode_crawl4ai",

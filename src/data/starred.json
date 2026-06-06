@@ -4999,7 +4999,8 @@
           "url": "https://github.com/louis-e/arnis",
           "stars": 12030,
           "description": "Generate any location from the real world in Minecraft with a high level of detail.",
-          "starredAt": "2025-01-01"
+          "starredAt": "2025-01-01",
+          "reportSlug": "louis-e_arnis"
         },
         {
           "name": "oldmoe/litestack",
@@ -9696,7 +9697,8 @@
           "url": "https://github.com/google/googletest",
           "stars": 38387,
           "description": "GoogleTest - Google Testing and Mocking Framework",
-          "starredAt": "2025-03-15"
+          "starredAt": "2025-03-15",
+          "reportSlug": "google_googletest"
         },
         {
           "name": "google/leveldb",
@@ -12488,7 +12490,8 @@
           "url": "https://github.com/is-a-dev/register",
           "stars": 10006,
           "description": "Grab your own sweet-looking '.is-a.dev' subdomain.",
-          "starredAt": "2025-02-03"
+          "starredAt": "2025-02-03",
+          "reportSlug": "is-a-dev_register"
         },
         {
           "name": "blakeblackshear/frigate",
@@ -14077,7 +14080,8 @@
           "url": "https://github.com/pkuflyingpig/cs-self-learning",
           "stars": 71962,
           "description": "计算机自学指南",
-          "starredAt": "2024-04-07"
+          "starredAt": "2024-04-07",
+          "reportSlug": "pkuflyingpig_cs-self-learning"
         },
         {
           "name": "plandex-ai/plandex",
@@ -14114,7 +14118,8 @@
           "url": "https://github.com/typst/typst",
           "stars": 52217,
           "description": "A markup-based typesetting system that is powerful and easy to learn.",
-          "starredAt": "2024-04-07"
+          "starredAt": "2024-04-07",
+          "reportSlug": "typst_typst"
         },
         {
           "name": "mozilla/readability",

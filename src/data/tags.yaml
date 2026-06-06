@@ -493,6 +493,8 @@ entries:
   google_adk-go:
   - ai-agent
   - protocol-spec
+  google_googletest:
+  - uncategorized
   google_langextract:
   - uncategorized
   google_tunix:
@@ -598,6 +600,8 @@ entries:
   - protocol-spec
   iptv-org_iptv:
   - workflow-automation
+  - database
+  is-a-dev_register:
   - database
   itzcrazykns_vane:
   - llm-framework
@@ -706,6 +710,8 @@ entries:
   longbridge_gpui-component:
   - design-ui
   - trading-finance
+  louis-e_arnis:
+  - iot-hardware
   luongnv89_claude-howto:
   - ai-coding
   - education
@@ -957,6 +963,9 @@ entries:
   - database
   pixelguys_cubyz:
   - protocol-spec
+  pkuflyingpig_cs-self-learning:
+  - editor-kms
+  - education
   plandex-ai_plandex:
   - ai-agent
   playcanvas_engine:
@@ -1191,6 +1200,8 @@ entries:
   twentyhq_twenty:
   - uncategorized
   twitter_the-algorithm:
+  - uncategorized
+  typst_typst:
   - uncategorized
   unclecode_crawl4ai:
   - uncategorized
