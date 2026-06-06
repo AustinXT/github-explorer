@@ -1,16 +1,22 @@
 name: reconcile-wechat
 
 # 用公众号真实「已群发」事实核对 / 翻正 publish_history.jsonl 的 state。
-# 复用与发布相同的反代（WECHAT_API_BASE / WECHAT_PROXY_TOKEN），从固定出口 IP
-# 命中公众号 IP 白名单。脚本纯 stdlib（urllib / json / difflib），无需 pip install。
+#
+# 为什么走 SSH 跳板而非直连 wx.nightvoyager.top 反代：runner 连不上反代不是微信 IP 白名单问题
+# （反代固定出口 IP 早已在白名单内），而是阿里云对 Azure/GitHub runner 出口 IP 段在网络层对
+# :443 做 TCP RESET（见 commit a73d635，nginx 一条日志都没有，连接根本到不了 nginx）。22/SSH
+# 存活，故照搬发布链路：把核对所需文件打 tar 经 SSH stdin 送到白名单机 ali-demo（47.113.202.7），
+# 由那边的 reconcile-from-runner.sh 在白名单网络里跑核对，把（可能被 --apply 翻正过的）
+# publish_history.jsonl 经 stdout 回传给 runner commit。stderr=诊断日志。
 #
 # 触发：
 #   · workflow_dispatch 手动 —— 默认 dry-run 预览；勾 apply 才回写并 commit
 #   · schedule 每日 —— 自动 apply + high 置信，长期保持 SoR 与公众号一致
 #
-# ⚠️ 首跑提醒：历史上 runner 直连反代曾因 IP 白名单失败（见 commit 725810d）。
-# 本版仍直连，请先手动 dispatch（apply=false）看 [1/4] 获取 access_token 是否成功；
-# 若报 errcode 40164 / invalid ip，说明反代仍不通，先别开 cron。
+# 依赖（一次性配好，见 scripts/reconcile-from-runner.sh 头部说明）：
+#   - ali-demo 上部署 reconcile-from-runner.sh + 微信凭证（/opt/github-explorer/wechat.env）
+#   - secrets.ALI_DEMO_RECONCILE_KEY（独立 key，推荐）或复用 secrets.ALI_DEMO_SSH_KEY
+#   - secrets.ALI_DEMO_KNOWN_HOSTS（与发布同一台 47.113.202.7）
 on:
   workflow_dispatch:
     inputs:
@@ -42,12 +48,6 @@ jobs:
   reconcile:
     runs-on: ubuntu-latest
     timeout-minutes: 15
-    env:
-      WECHAT_APPID: ${{ secrets.WECHAT_APPID }}
-      WECHAT_APPSECRET: ${{ secrets.WECHAT_APPSECRET }}
-      # 经固定出口 IP 反代访问微信 API（命中公众号 IP 白名单）
-      WECHAT_API_BASE: ${{ vars.WECHAT_API_BASE || 'https://wx.nightvoyager.top' }}
-      WECHAT_PROXY_TOKEN: ${{ secrets.WECHAT_PROXY_TOKEN }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -60,26 +60,110 @@ jobs:
           python-version: '3.11'
           # 脚本纯 stdlib，无需 requirements-ci.txt
 
-      - name: Reconcile WeChat publish state
+      - name: Decide mode
+        id: mode
         run: |
           set -euo pipefail
           # schedule → 自动 apply + high 置信（防模糊标题误翻正）；manual → 看 inputs
           if [[ "${{ github.event_name }}" == "schedule" ]]; then
-            APPLY=1; MINCONF=high; DRAFTS=0
+            echo "apply=1"      >> "$GITHUB_OUTPUT"
+            echo "minconf=high" >> "$GITHUB_OUTPUT"
+            echo "drafts=0"     >> "$GITHUB_OUTPUT"
           else
-            APPLY=${{ inputs.apply && '1' || '0' }}
-            MINCONF="${{ inputs.min_confidence }}"
-            DRAFTS=${{ inputs.include_drafts && '1' || '0' }}
+            echo "apply=${{ inputs.apply && '1' || '0' }}"           >> "$GITHUB_OUTPUT"
+            echo "minconf=${{ inputs.min_confidence }}"              >> "$GITHUB_OUTPUT"
+            echo "drafts=${{ inputs.include_drafts && '1' || '0' }}" >> "$GITHUB_OUTPUT"
           fi
-          args=(--min-confidence "$MINCONF")
-          [[ "$DRAFTS" == "1" ]] && args+=(--include-drafts)
-          [[ "$APPLY"  == "1" ]] && args+=(--apply --ci-run-id "${{ github.run_id }}")
-          python3 scripts/reconcile_wechat_publish.py "${args[@]}"
 
-      - name: Commit & Push（仅当 publish_history 有回写变更）
+      # runner 预算 slug→H1 标题字典，避免把 384 个 .md 全塞进 payload
+      - name: Build payload
+        run: |
+          set -euo pipefail
+          mkdir -p tmp/reconcile-payload tmp/logs
+          python3 - <<'PY'
+          import sys, json
+          from pathlib import Path
+          sys.path.insert(0, "scripts")
+          from sync_wechat_status import load_analysis_h1s
+          h1 = load_analysis_h1s(analysis_dir=Path("src/analysis_report"))
+          json.dump(h1, open("tmp/reconcile-payload/h1.json", "w"), ensure_ascii=False)
+          print(f"h1.json: {len(h1)} 篇报告标题")
+          PY
+          cp scripts/reconcile_wechat_publish.py \
+             scripts/sync_wechat_status.py \
+             scripts/_wechat_api.py \
+             src/data/publish_history.jsonl \
+             tmp/reconcile-payload/
+          tar czf /tmp/reconcile-payload.tgz -C tmp/reconcile-payload .
+          echo "payload 大小: $(du -h /tmp/reconcile-payload.tgz | cut -f1)"
+
+      - name: Run reconcile on ali-demo (SSH 跳板)
+        id: run
+        env:
+          SSH_KEY: ${{ secrets.ALI_DEMO_RECONCILE_KEY || secrets.ALI_DEMO_SSH_KEY }}
+          KNOWN_HOSTS: ${{ secrets.ALI_DEMO_KNOWN_HOSTS }}
+          APPLY: ${{ steps.mode.outputs.apply }}
+          MINCONF: ${{ steps.mode.outputs.minconf }}
+          DRAFTS: ${{ steps.mode.outputs.drafts }}
+          RUN_ID: ${{ github.run_id }}
+        run: |
+          set -uo pipefail
+          mkdir -p ~/.ssh tmp/logs
+          printf '%s\n' "$SSH_KEY" > ~/.ssh/ali_demo
+          chmod 600 ~/.ssh/ali_demo
+          printf '%s\n' "$KNOWN_HOSTS" > ~/.ssh/known_hosts
+          chmod 644 ~/.ssh/known_hosts
+
+          # 拼远端命令（forced-command 只白名单解析这些参数）
+          remote_cmd="reconcile --min-confidence ${MINCONF}"
+          [[ "$DRAFTS" == "1" ]] && remote_cmd="$remote_cmd --include-drafts"
+          [[ "$APPLY"  == "1" ]] && remote_cmd="$remote_cmd --apply --ci-run-id ${RUN_ID}"
+
+          # stdin: tar.gz；stdout → 回传的 publish_history.jsonl；stderr → 诊断日志
+          ssh_ok=0
+          for i in 1 2 3; do
+            if ssh -i ~/.ssh/ali_demo \
+                -o UserKnownHostsFile=~/.ssh/known_hosts \
+                -o StrictHostKeyChecking=yes \
+                -o ConnectTimeout=30 \
+                root@47.113.202.7 "$remote_cmd" \
+                < /tmp/reconcile-payload.tgz \
+                > tmp/publish_history.returned.jsonl \
+                2> tmp/logs/reconcile.log; then
+              ssh_ok=1
+              break
+            fi
+            echo "::warning::SSH reconcile 第 $i/3 次失败"
+            cat tmp/logs/reconcile.log >&2 || true
+            if [[ $i -lt 3 ]]; then sleep $((i * 15)); fi
+          done
+
+          echo "=== 远端日志 ==="
+          cat tmp/logs/reconcile.log || true
+
+          if [[ $ssh_ok -ne 1 ]]; then
+            echo "::error::ali-demo 上的 reconcile 3 次均失败。检查：forced-command 是否分流到 reconcile-from-runner.sh、ali-demo 微信凭证、SSH key/known_hosts。"
+            exit 1
+          fi
+          echo "ssh_ok=1" >> "$GITHUB_OUTPUT"
+
+      - name: Commit & Push（仅 apply 且 publish_history 有回写变更）
+        if: steps.run.outputs.ssh_ok == '1' && steps.mode.outputs.apply == '1'
         # 不开 -e：push 重试失败时本地 commit 已存，不应让 job fail
         run: |
           set -uo pipefail
+          returned="tmp/publish_history.returned.jsonl"
+          # 校验回传文件非空且末行可解析为 JSON，避免坏数据 / 日志混入覆盖 SoR
+          if [[ ! -s "$returned" ]]; then
+            echo "::error::回传的 publish_history.jsonl 为空，拒绝覆盖 SoR"
+            exit 1
+          fi
+          if ! tail -n1 "$returned" | python3 -c 'import sys,json; json.loads(sys.stdin.readline())' 2>/dev/null; then
+            echo "::error::回传文件末行不是合法 JSON，拒绝覆盖 SoR（疑似远端日志混入 stdout）"
+            exit 1
+          fi
+          cp "$returned" src/data/publish_history.jsonl
+
           if git diff --quiet src/data/publish_history.jsonl; then
             echo "::notice::publish_history 无回写变更，跳过提交"
             exit 0

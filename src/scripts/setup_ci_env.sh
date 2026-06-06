@@ -101,7 +101,8 @@ fi
 # 其它场景（PR 流 analyze.yml / skip_publish=true）只 WARN 不阻断
 if [[ "${REQUIRE_PUBLISH:-0}" == "1" ]]; then
     missing=()
-    for var in WECHAT_APPID WECHAT_APPSECRET WECHAT_PROXY_TOKEN; do
+    # 发布走 SSH 跳板到 ali-demo，runner 不再直连反代 → 不校验 WECHAT_PROXY_TOKEN
+    for var in WECHAT_APPID WECHAT_APPSECRET; do
         [[ -z "${!var:-}" ]] && missing+=("$var")
     done
     if (( ${#missing[@]} > 0 )); then
