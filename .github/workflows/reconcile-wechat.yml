@@ -1,0 +1,106 @@
+name: reconcile-wechat
+
+# 用公众号真实「已群发」事实核对 / 翻正 publish_history.jsonl 的 state。
+# 复用与发布相同的反代（WECHAT_API_BASE / WECHAT_PROXY_TOKEN），从固定出口 IP
+# 命中公众号 IP 白名单。脚本纯 stdlib（urllib / json / difflib），无需 pip install。
+#
+# 触发：
+#   · workflow_dispatch 手动 —— 默认 dry-run 预览；勾 apply 才回写并 commit
+#   · schedule 每日 —— 自动 apply + high 置信，长期保持 SoR 与公众号一致
+#
+# ⚠️ 首跑提醒：历史上 runner 直连反代曾因 IP 白名单失败（见 commit 725810d）。
+# 本版仍直连，请先手动 dispatch（apply=false）看 [1/4] 获取 access_token 是否成功；
+# 若报 errcode 40164 / invalid ip，说明反代仍不通，先别开 cron。
+on:
+  workflow_dispatch:
+    inputs:
+      apply:
+        description: '回写翻正并 commit（默认只 dry-run 预览，不改文件）'
+        type: boolean
+        default: false
+      include_drafts:
+        description: '同时拉草稿箱（material/batchget_material，草稿无 url）'
+        type: boolean
+        default: false
+      min_confidence:
+        description: '算作命中的最低标题匹配置信度'
+        type: choice
+        options: [high, medium, low]
+        default: medium
+  schedule:
+    # 每日 UTC 22:00（北京 06:00），错开 refresh-data(20:00) 与 auto-analyze(整点)
+    - cron: '0 22 * * *'
+
+permissions:
+  contents: write          # 回写 publish_history.jsonl 需要 push 权限
+
+concurrency:
+  group: reconcile-wechat
+  cancel-in-progress: false
+
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      WECHAT_APPID: ${{ secrets.WECHAT_APPID }}
+      WECHAT_APPSECRET: ${{ secrets.WECHAT_APPSECRET }}
+      # 经固定出口 IP 反代访问微信 API（命中公众号 IP 白名单）
+      WECHAT_API_BASE: ${{ vars.WECHAT_API_BASE || 'https://wx.nightvoyager.top' }}
+      WECHAT_PROXY_TOKEN: ${{ secrets.WECHAT_PROXY_TOKEN }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          # 脚本纯 stdlib，无需 requirements-ci.txt
+
+      - name: Reconcile WeChat publish state
+        run: |
+          set -euo pipefail
+          # schedule → 自动 apply + high 置信（防模糊标题误翻正）；manual → 看 inputs
+          if [[ "${{ github.event_name }}" == "schedule" ]]; then
+            APPLY=1; MINCONF=high; DRAFTS=0
+          else
+            APPLY=${{ inputs.apply && '1' || '0' }}
+            MINCONF="${{ inputs.min_confidence }}"
+            DRAFTS=${{ inputs.include_drafts && '1' || '0' }}
+          fi
+          args=(--min-confidence "$MINCONF")
+          [[ "$DRAFTS" == "1" ]] && args+=(--include-drafts)
+          [[ "$APPLY"  == "1" ]] && args+=(--apply --ci-run-id "${{ github.run_id }}")
+          python3 scripts/reconcile_wechat_publish.py "${args[@]}"
+
+      - name: Commit & Push（仅当 publish_history 有回写变更）
+        # 不开 -e：push 重试失败时本地 commit 已存，不应让 job fail
+        run: |
+          set -uo pipefail
+          if git diff --quiet src/data/publish_history.jsonl; then
+            echo "::notice::publish_history 无回写变更，跳过提交"
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/publish_history.jsonl
+          git commit -m "chore(reconcile): 用公众号真实状态翻正 publish_history [skip ci]"
+
+          # 3 次重试 + rebase 自愈临时冲突 / 网络抖动（append-only，冲突极少）
+          pushed=0
+          for i in 1 2 3; do
+            if git push; then
+              pushed=1
+              break
+            fi
+            echo "::warning::push 第 $i/3 次失败，尝试 rebase 后重试"
+            git pull --rebase --autostash origin main \
+              || echo "::warning::rebase 也失败（第 $i 次），继续重试"
+            sleep $((i * 5))
+          done
+          if [[ $pushed -eq 0 ]]; then
+            echo "::error::3 次 push 均失败，本地 commit 已保留，下次运行会带上。"
+          fi
