@@ -98,6 +98,7 @@ cd site && npm run build                # 输出 site/dist + pagefind 索引
 - 大牛白名单：编辑 `src/data/users.yaml`
 - Trending 参数：编辑 `src/data/trending-config.yaml`
 - 标签规则：编辑 `src/data/tag-rules.yaml`；手工校正某条则把 slug 加入 `tags.yaml` 的 `manual:` 列表
+- 自动分析频率与节流：`auto-analyze.yml` cron 每小时触发，schedule 路径给 `select_next_repo.py` 传 `MIN_SCORE`（质量闸，默认 3 = trending≥3 天 或 被大牛 star）/ `DAILY_CAP`（最近 24h 产量上限，默认 6）；不达标时优雅空转跳过，调这两个三元值即可改激进程度
 - Repo Secrets：`ANTHROPIC_API_KEY`（必需）+ `MINIMAX_API_KEY`/`MINIMAX_BASE_URL`（可选，作为主后端）；公众号发布另需 `WECHAT_APPID`/`WECHAT_APPSECRET`
 
 ## SEO 与索引推送

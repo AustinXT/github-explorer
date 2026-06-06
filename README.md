@@ -21,7 +21,7 @@
 
 | 方式 | 适用场景 |
 |---|---|
-| `schedule` cron | 每日 06:00（北京时间）自动跑 1 篇 |
+| `schedule` cron | 每小时触发 + 自动节流：仅在「有够分的新选题且最近 24h 未达产量上限」时才出 1 篇，否则空转跳过（阈值 `MIN_SCORE`/`DAILY_CAP` 见 `select_next_repo.py`） |
 | `workflow_dispatch` | Actions 页面手动触发，可选输入 `repo_url` / `skip_publish` / `force_backend` |
 | `issue_comment` | 在仓库新建 issue 后评论 `/analyze <github-url>` 即可触发（仅授权用户） |
 
