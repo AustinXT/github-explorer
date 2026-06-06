@@ -1,0 +1,6 @@
+{
+  "title": "23K stars 的 Git for Data：Dolt 把 MySQL 变成可分支的数据库",
+  "digest": "Dolt 把 Git 的 fork/branch/merge 移植到 MySQL 兼容的 SQL 引擎上，用自研 Prolly Tree + NBS 存储，成为 AI agent 持久化记忆的热门选择。",
+  "author": "NVoyager",
+  "theme": "stars,universe,dark"
+}

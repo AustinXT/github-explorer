@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #3e3e3e;
+    background: #fff;
+}
+p {
+    font-size: 15px !important;
+    line-height: 2 !important;
+    margin: 0 !important;
+    padding-top: 0.5em !important;
+    padding-bottom: 0.5em !important;
+    padding-right: 1.2em !important;
+    padding-left: 1.2em !important;
+    text-align: justify !important;
+}
+p + p {
+    margin-top: 0 !important;
+}
+h2 {
+    font-size: 18px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 24px 0 !important;
+    padding: 0 !important;
+}
+h3 {
+    font-size: 15px !important;
+    font-weight: bold !important;
+    color: #3e3e3e !important;
+    text-align: left !important;
+    margin: 16px 0 16px 0 !important;
+    padding: 0 0 0 1.2em !important;
+}
+ul, ol {
+    padding-left: 2em !important;
+    margin: 1em 0 !important;
+    font-size: 15px !important;
+}
+li {
+    margin: 0.5em 0 !important;
+    line-height: 1.8em !important;
+    font-size: 15px !important;
+    color: #3e3e3e !important;
+}
+ul ul, ul ol, ol ul, ol ol {
+    margin: 0 !important;
+    padding-left: 1.2em !important;
+}
+blockquote {
+    border-left: 4px solid #888 !important;
+    padding: 8px 16px !important;
+    margin: 1em 0 !important;
+    color: #666 !important;
+    background: #f9f9f9 !important;
+}
+blockquote > p {
+    margin: 0.5em 0 !important;
+    padding: 0 !important;
+}
+blockquote::before, blockquote::after {
+    content: none !important;
+}
+pre {
+    font-size: 14px !important;
+    line-height: 1.6em !important;
+    color: #3e3e3e !important;
+    background: #f8f8f8 !important;
+    padding: 12px 16px !important;
+    border-radius: 4px !important;
+    overflow: auto !important;
+    margin: 1em 0 !important;
+    white-space: pre-wrap !important;
+    word-wrap: break-word !important;
+    font-family: Consolas, Monaco, monospace !important;
+}
+table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+    margin: 1em 0 !important;
+    font-size: 14px !important;
+}
+th {
+    background: #f5f5f5 !important;
+    color: #3e3e3e !important;
+    font-weight: bold !important;
+    text-align: left !important;
+    border: 1px solid #ddd !important;
+    padding: 8px !important;
+}
+td {
+    border: 1px solid #ddd !important;
+    padding: 8px !important;
+    color: #3e3e3e !important;
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+}
+code {
+    font-family: Consolas, Monaco, monospace !important;
+    font-size: 14px !important;
+    background: #f5f5f5 !important;
+    padding: 2px 4px !important;
+    border-radius: 3px !important;
+    color: #e51f42 !important;
+}
+img {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    margin: 1em auto !important;
+}
+</style>
+</head>
+<body>
+<blockquote><p>GitHub: <a href="https://github.com/dolthub/dolt">https://github.com/dolthub/dolt</a></p></blockquote>
+<h2>一句话总结</h2>
+<p>Dolt 是 Dolthub 公司商业主推、Apache 2.0 全开源的 <strong>MySQL 兼容 SQL 数据库</strong>，把 Git 的 fork/clone/branch/merge/diff/blame 完整移植到行级数据上，是当下唯一同时满足「可写 + SQL + Git 范式」三件套的开源产品。</p>
+<h2>值得关注的理由</h2>
+<ol>
+  <li><strong>稀缺三角交集</strong>：在「可写 SQL 引擎 + Git-like 版本控制 + MySQL 协议兼容」三个属性的交集里，Dolt 几乎没有直接对手，护城河来自底层自研的 Prolly Tree（概率 B-tree）+ NBS（Nomad Block Store）内容寻址存储。</li>
+  <li><strong>工程化深度第一梯队</strong>：40+ GitHub Actions workflow、200+ BATS 集成测试、14 种语言 MySQL 客户端跨语言测试、4 种 ORM 兼容测试——商业公司的资源投入远超普通开源数据库。</li>
+  <li><strong>AI agent memory 押注成功</strong>：2025-2026 期间日均 ~138 stars（爆发型增长），topics 中 5/20 是 agent 相关，已被 Beads、Gas Town 等多 agent 框架选作持久化记忆层，是 LLM 时代少有的「数据版本控制」可商用方案。</li>
+</ol>
+<h2>项目展示</h2>
+<p><img src="https://raw.githubusercontent.com/dolthub/dolt/main/images/Dolt-Logo@3x.svg" alt="Dolt Logo" /> — 类型: hero</p>
+<p><a href="https://www.youtube.com/watch?v=H2iZy0Cme10">📺 Dolt 官方介绍视频</a> — 类型: video（缩略图：<a href="https://img.youtube.com/vi/H2iZy0Cme10/maxresdefault.jpg">https://img.youtube.com/vi/H2iZy0Cme10/maxresdefault.jpg</a>）</p>
+<p><a href="https://deepwiki.com/dolthub/dolt">https://deepwiki.com/dolthub/dolt</a> — 类型: 架构图（页面可访问，未收录静态图）</p>
+<h2>项目画像</h2>
+<table>
+<thead>
+<tr><th>维度</th><th>数据</th></tr>
+</thead>
+<tbody>
+<tr><td>GitHub</td><td><a href="https://github.com/dolthub/dolt">https://github.com/dolthub/dolt</a></td></tr>
+<tr><td>Star / Fork</td><td>23,238 / 794</td></tr>
+<tr><td>代码行数</td><td>369,316（Go 92.2% / SQL 3.2% / YAML 1.8% / 其他 2.8%）</td></tr>
+<tr><td>项目年龄</td><td>11 年（首 commit 2015-06-02，GitHub 仓库 2019-07-24 创建）</td></tr>
+<tr><td>开发阶段</td><td>密集开发（v2.1.4 持续迭代中，30 天 349 commits）</td></tr>
+<tr><td>贡献模式</td><td>商业公司核心团队（7-10 人主力）+ 185 人社区增量</td></tr>
+<tr><td>热度定位</td><td>大众热门（24h 采样 138 stars/天）</td></tr>
+<tr><td>质量评级</td><td>代码 9/10 | 文档 8/10 | 测试 9/10 | CI 10/10</td></tr>
+</tbody>
+</table>
+<h2>作者视角：为什么存在这个项目</h2>
+<h3>创始人/作者背景</h3>
+<p>Dolt 由 <strong>Dolthub Inc.</strong>（Santa Monica, CA，2018 年成立）开发，旗舰产品，由 CTO <strong>Zach Musgrave</strong>（贡献 3,448 commits，14% 占比）作为主程。其技术血脉来自 Liquidata 时代的 <strong>Noms</strong> 项目——一个 Go 写的版本化数据原语库。Dolthub 把 Noms 的存储内核产品化，套上 MySQL 兼容 SQL 引擎形成 Dolt。Top 10 贡献者中还有前微软 V8/TypeScript 团队的 <strong>Erik Arvidsson</strong>（754 commits），侧面印证 Prolly Tree 自定义 B-tree 的技术深度。</p>
+<h3>问题判断</h3>
+<p><strong>传统数据版本控制工具的痛点</strong>：</p>
+<ul>
+  <li><strong>DVC/lakeFS/Iceberg</strong> 等是「表格式层」或「文件版本层」，不替代数据库本身，下游要 <code>dvc get</code> 取出后才能用；</li>
+  <li><strong>MySQL/MariaDB/TiDB</strong> 等 OLTP 数据库虽然能 <code>INSERT/UPDATE</code>，但没有 commit/branch/merge/diff/blame 的概念——schema migration 永远是单向前进；</li>
+  <li><strong>Git</strong> 处理行级数据很顺，但 SQL 客户端和 ORM 工具链接入成本高。</li>
+</ul>
+<p>Dolt 团队看到的机会窗口是：<strong>把 Git 范式完整搬到「行级结构化数据」上，并保持 MySQL 协议兼容</strong>——这意味着任何 MySQL 客户端、ORM、BI 工具零修改可用。</p>
+<p><strong>时机为什么是现在</strong>：</p>
+<ul>
+  <li><strong>2015-2017 Noms 时代先做底层原语，2017-2018 沉寂 14 个月</strong>（Liquidata → Dolthub 商业化转型期），2019 拿到融资重启；</li>
+  <li><strong>2022-06 v1.0 GA 赶上数据团队「协作 + 审计」需求爆发</strong>；</li>
+  <li><strong>2025-2026 AI agent 多机协作场景给「行级版本控制」找到新杀手级应用</strong>（agent memory）。</li>
+</ul>
+<h3>解法哲学</h3>
+<p><strong>明确选择做什么</strong>：</p>
+<ul>
+  <li><strong>MySQL 兼容</strong>（不发明新 SQL 方言）—— 复用 go-mysql-server 作为 SQL 引擎，零客户端改造；</li>
+  <li><strong>Git 范式当一等公民</strong>（不是补丁式 migration）—— <code>CALL dolt_commit()</code>、<code>SELECT * FROM dolt_log</code> 都是核心 API；</li>
+  <li><strong>自研 Prolly Tree</strong>（不基于 PostgreSQL/MySQL 二次开发）—— 因为 B+ tree 的 page 内部变更会丢失行级 lineage；</li>
+  <li><strong>NBS 内容寻址存储</strong>（不依赖 LSM 树或 B+ 树）—— 让「修改一行」只哈希链路上的祖先节点，未变化子树天然 dedup。</li>
+</ul>
+<p><strong>明确不做什么</strong>：</p>
+<ul>
+  <li>不做分布式事务/水平扩展（Hosted Dolt 是 SaaS，单机为主）；</li>
+  <li>不做 HTAP / 列存分析（写吞吐本身已让位给 lineage，OLAP 不是目标）；</li>
+  <li>不发明新 SQL 语法（<code>DOLT_*</code> 用 stored procedure 而非新关键字——保证 MySQL 客户端零修改）；</li>
+  <li>不跟进 PostgreSQL 高级特性（交给 Doltgres）。</li>
+</ul>
+<h3>战略意图</h3>
+<p>Dolthub Inc. 三条商业线：</p>
+<ul>
+  <li><strong>DoltHub</strong>（公共托管，类似 GitHub for databases）；</li>
+  <li><strong>DoltLab</strong>（自托管企业版）；</li>
+  <li><strong>Hosted Dolt</strong>（托管 Dolt 服务）。</li>
+</ul>
+<p>Dolt 是开源引流 + 商业服务的核心引擎。<strong>同公司产品矩阵</strong>：Dolt (MySQL) + Doltgres (PG) + DoltLite (SQLite) + Dumbo (Mongo) 共用同一颗 Prolly Tree + NBS 内核，是「版本化 SQL」产品家族。</p>
+<h2>核心价值提炼</h2>
+<h3>创新之处</h3>
+<p>按新颖度×实用性排序：</p>
+<ol>
+  <li><strong>Prolly Tree（概率 B-tree）</strong> — 新颖度 4/5，实用性 5/5，可迁移性 4/5
+    <ul>
+      <li>节点不是固定 page size，而是自适应到目标块大小（4KB），天然能映射到内容寻址 chunk</li>
+      <li>行级 lineage、跨版本/跨分支 diff/merge 变一阶操作</li>
+      <li>任何「对树状数据集做时间旅行+分支合并」场景都可借鉴</li>
+    </ul>
+  </li>
+  <li><strong>DOLT_* 存储过程 + 系统表桥</strong> — 新颖度 4/5，实用性 5/5，可迁移性 4/5
+    <ul>
+      <li>把 Git 命令翻译成 SQL stored procedure，把 Git 数据投影成可 SELECT 的系统表</li>
+      <li>任何 MySQL 客户端（5.7+）零修改可用——TablePlus、MySQL Workbench、各语言 ORM</li>
+      <li>是 Dolt 商业落地的关键护城河</li>
+    </ul>
+  </li>
+  <li><strong>3-way merge for SQL data</strong> — 新颖度 5/5，实用性 5/5，可迁移性 3/5
+    <ul>
+      <li>把文本三路 merge 算法搬到 Prolly Tree 上</li>
+      <li>cell-wise 冲突解决——多人在同表不同分支改同一行不会丢数据</li>
+      <li>依赖 Prolly Tree 抽象，迁移成本高</li>
+    </ul>
+  </li>
+  <li><strong>NBS（Nomad Block Store）</strong> — 新颖度 3/5，实用性 5/5，可迁移性 5/5
+    <ul>
+      <li>内容寻址 chunk store + manifest CAS 乐观锁</li>
+      <li>纯工程模式，移植到任何「只追加」系统都可</li>
+    </ul>
+  </li>
+  <li><strong>自适应 Tuple 编码（Adaptive Tuple Encoding）</strong> — 新颖度 3/5，实用性 4/5，可迁移性 3/5
+    <ul>
+      <li><code>go/store/val/</code> 的 <code>TupleDesc</code> 可对每列指定不同编码</li>
+      <li>列存项目的常规做法，参考 ClickHouse/DuckDB</li>
+    </ul>
+  </li>
+</ol>
+<h3>可复用的模式与技巧</h3>
+<ol>
+  <li><strong>Merkle DAG + 内容寻址是处理可版本化数据的通用模式</strong>——Git、IPFS、Cassandra SSTable 都是同源思想，Dolt 把这套思想下沉到行级。</li>
+  <li><strong>go-mysql-server 适配模式</strong>——用接口断言（<code>var _ sql.StoredProcedureDatabase = Database{}</code>）把「业务能力」挂到「通用引擎」上，比自己写解析器/优化器高 ROI 10 倍。</li>
+  <li><strong>stored procedure + 系统表桥接</strong>——想给已有协议/工具加新概念时，<strong>先想怎么映射到已有协议</strong>，而不是发明新协议。</li>
+  <li><strong>测试矩阵化</strong>——Dolt 把 14 种语言 MySQL 客户端 + 4 种 ORM + 5 个 OS 都做成 CI 矩阵，是「产品承诺=测试用例」的典范。</li>
+  <li><strong>feature_version 字段</strong>——RootValue 根上带 <code>DoltFeatureVersion = 7</code>，新格式 vs 旧格式数据共存时按版本号分支处理，规避「老二进制读新数据崩溃」。</li>
+</ol>
+<h3>关键设计决策</h3>
+<pre>决策: 用 go-mysql-server 做 SQL 前端，自己只做「Git 包装」
+问题: 重写 SQL 解析器/优化器成本巨大
+方案: 实现 sql.Database / sql.Table / sql.StoredProcedureDatabase 等接口，把版本控制「叠」在 SQL 之上
+Trade-off: ✅ 继承 go-mysql-server 全部 SQL 兼容性、修复、安全补丁 ❌ 紧跟其 API 演化（同组织项目，方便但耦合）
+可迁移性: 高（任何想用 go-mysql-server 的人都能用这套模式）</pre>
+<pre>决策: Prolly Tree 作为表数据的「行级版本化」载体
+问题: B+ tree 的 page 内部变更会丢失行级 lineage
+方案: 自适应节点大小（4KB）+ 内容寻址哈希 + Flatbuffers 编码
+Trade-off: ✅ 行级 diff/merge/blame 一阶操作 ❌ 写吞吐比 InnoDB 慢一个量级
+可迁移性: 中（任何「对树状数据集做版本控制」的项目可借鉴）</pre>
+<pre>决策: DOLT_* 用 stored procedure 而非新 SQL 语法
+问题: MySQL 客户端不会发新关键字（ORM 还会解析失败）
+方案: CALL dolt_commit('-m', 'msg', '-a') + 系统表 dolt_log/dolt_status/dolt_diff_<tab>
+Trade-off: ✅ 任何 MySQL 客户端零修改可用 ❌ 过程调用语法笨拙
+可迁移性: 高（任何想给已有协议加新能力的项目都可用此模式）</pre>
+<pre>决策: RootValue = 一棵 Prolly Tree（数据库级别的「working tree」）
+问题: 怎么把「Git 不可变性」映射到「数据库」
+方案: 所有不可变操作（PutTable/RemoveTables/...）都返回新的 RootValue
+Trade-off: ✅ commit/diff/merge/cherry-pick/revert 都成了一阶操作 ❌ 任何 schema 变更都要重写整个 root 节点
+可迁移性: 高（「不可变树」模式可推广到任何文档/对象存储）</pre>
+<pre>决策: NBS（Nomad Block Store）— 内容寻址 chunk store + manifest
+问题: 怎么支持大量小写不丢 lineage
+方案: 只追加（无 update/delete）+ manifest CAS + table file mmap
+Trade-off: ✅ 节点级 dedup + 跨版本字节级共享 + 多进程乐观锁无锁读 ❌ 随机写效率比 LSM 差
+可迁移性: 高（纯工程模式，移植到任何「只追加」系统都可）</pre>
+<h2>竞品格局与定位</h2>
+<h3>竞品对比矩阵</h3>
+<table>
+<thead>
+<tr><th>维度</th><th>Dolt</th><th>DVC</th><th>lakeFS</th><th>TiDB</th></tr>
+</thead>
+<tbody>
+<tr><td>数据所在</td><td>Dolt 数据库内</td><td>外部存储 + .dvc 元文件</td><td>架在 S3 之上</td><td>TiDB 集群内</td></tr>
+<tr><td>版本单位</td><td>整库/表/行/cell</td><td>文件</td><td>对象（key 级）</td><td>整库（schema migration）</td></tr>
+<tr><td>查询语言</td><td>SQL（MySQL 完整兼容）</td><td>无（要 dvc get 取出）</td><td>配合 Spark/Trino</td><td>SQL（MySQL 完整兼容）</td></tr>
+<tr><td>行级 diff/merge</td><td>✅ 一阶操作</td><td>❌ 只支持文件 diff</td><td>❌ 只支持 key 级</td><td>❌ 无 lineage 概念</td></tr>
+<tr><td>随机写吞吐</td><td>中（commit 瓶颈）</td><td>高</td><td>高</td><td>高（LSM + Raft）</td></tr>
+<tr><td>分布式</td><td>单机为主（Hosted Dolt 是 SaaS）</td><td>不适用</td><td>强（多组件）</td><td>强（水平扩展，TiKV）</td></tr>
+<tr><td>运维成本</td><td>极低（一个二进制）</td><td>低</td><td>高（S3+DB+lakeFS 集群）</td><td>高（PD/TiKV/TiDB）</td></tr>
+<tr><td>学习曲线</td><td>低（会 MySQL 就会）</td><td>中</td><td>中</td><td>中（需理解 Raft/Region）</td></tr>
+</tbody>
+</table>
+<h3>差异化护城河</h3>
+<ul>
+  <li><strong>技术护城河</strong>：Prolly Tree + NBS 是 Dolthub 的独家实现，复制需要 5+ 年的工程积累。</li>
+  <li><strong>生态护城河</strong>：与 go-mysql-server 同组织协同，MySQL 兼容性迭代速度无人能及。</li>
+  <li><strong>信任护城河</strong>：Apache 2.0 全开源 + 商业公司背书 + 6 年生产案例。</li>
+</ul>
+<h3>竞争风险</h3>
+<ul>
+  <li><strong>最可能被替代的场景</strong>：纯 SQL 兼容性需求（无版本控制）会被 TiDB/CockroachDB 抢走；纯大数据版本控制（TB-PB 级）会被 lakeFS/DVC 抢走。</li>
+  <li><strong>核心风险点</strong>：单一公司控制，路线图与商业 DoltHub 强绑定——若 Dolthub 商业化失败，开源版本可能进入「维护期」。</li>
+</ul>
+<h3>生态定位</h3>
+<pre>            写吞吐 ↑
+                     │
+                     │     TiDB
+                     │   lakeFS
+                     │   DVC
+                     │
+                     │                       Dolt
+                     └────────────────────────────────→ 行级版本化
+                          弱                                 强</pre>
+<p>Dolt 在「行级版本化」轴上独占头部位置，代价是写吞吐（落在右下角）。填补了「可写 SQL + Git 范式 + MySQL 兼容」三角交集的空白——这是任何「传统数据库 + 版本控制」叠加方案都做不到的。</p>
+<h2>套利机会分析</h2>
+<ul>
+  <li><strong>信息差</strong>：Dolt 不是「被低估的暗仓库」——23K stars、138/天爆发式增长、媒体曝光充分。<strong>真正的信息差</strong>在于「为什么行级版本控制这么难」（Prolly Tree 的工程深度）和「如何在 AI agent 场景落地」（agent memory 模式）。</li>
+  <li><strong>技术借鉴</strong>：
+    <ul>
+      <li>学 Prolly Tree 的自适应块大小设计——可移植到任何需要「树状数据时间旅行」的场景（文档版本、KV 存储元数据、向量索引元数据）；</li>
+      <li>学 stored procedure + 系统表桥接模式——给已有协议加新能力时，最高 ROI 的方式；</li>
+      <li>学 go-mysql-server 适配模式——任何想基于成熟 SQL 引擎做垂直创新的项目都可参考。</li>
+    </ul>
+  </li>
+  <li><strong>生态位</strong>：填补「行级版本化 SQL」空白，是 Git 范式在结构化数据上的最终归宿之一。</li>
+  <li><strong>趋势判断</strong>：
+    <ul>
+      <li><strong>2025-2026 增长趋势</strong> ✅：AI agent memory 叙事精准命中，日均 138 stars 是同体量项目罕见速度；</li>
+      <li><strong>符合技术趋势</strong> ✅：Merkle DAG + 内容寻址是分布式系统主流范式，Dolt 在 OLTP 场景做了产品化；</li>
+      <li><strong>后发优势</strong> ❌：先发优势强，11 年历史 + 商业公司护城河难以追赶。</li>
+    </ul>
+  </li>
+</ul>
+<h2>风险与不足</h2>
+<h3>技术短板</h3>
+<ol>
+  <li><strong>写吞吐瓶颈</strong>：每次 commit 都要重新哈希 Prolly Tree 链路上的祖先节点，写吞吐比 InnoDB 慢一个量级（公开承认）；</li>
+  <li><strong>历史包袱</strong>：旧 Noms-style <code>types.Value</code> 接口（<code>go/store/types/</code>，2,328 commits）与新 <code>prolly.Map</code> 并存，新人上手需学两套；</li>
+  <li><strong>单测覆盖率不透明</strong>：无 <code>cover.out</code> 提交，可读覆盖率只能依赖 Go 工具本地跑；</li>
+  <li><strong><code>dprocedures/init.go</code> 单文件膨胀</strong>：30+ 个 <code>dolt_*</code> 过程集中在一个文件里——可读性 OK，但维护时小心冲突。</li>
+</ol>
+<h3>生态风险</h3>
+<ol>
+  <li><strong>单点商业依赖</strong>：路线图与商业 DoltHub 强绑定，存在供应商风险；</li>
+  <li><strong>fork 率偏低</strong>：stars/forks ≈ 29.3，说明主要是「看 / 用 SaaS」而非「二次开发」——社区护城河弱；</li>
+  <li><strong>无顶级学术背书</strong>：没有顶会论文，工程实现上的创新点主要在内部文档里。</li>
+</ol>
+<h3>选型场景</h3>
+<ul>
+  <li>✅ <strong>推荐场景</strong>：中小数据（GB 级）+ 频繁 SQL 协作 + 数据审计 / lineage 需求 + AI agent 持久化记忆；</li>
+  <li>❌ <strong>不推荐场景</strong>：高 QPS OLTP（&lt; 10K TPS）、TB-PB 级大数据、需要 PG 高级特性（交给 Doltgres）。</li>
+</ul>
+<h2>行动建议</h2>
+<h3>如果你要用它</h3>
+<ul>
+  <li><strong>数据规模 ≤ 100GB、QPS ≤ 1K、需要 lineage/审计/AI agent memory</strong> → 选 Dolt</li>
+  <li><strong>数据规模 > 1TB、需要分布式水平扩展</strong> → 选 TiDB 或 lakeFS</li>
+  <li><strong>AI agent 持久化记忆</strong> → Dolt 已是 Beads、Gas Town 等多 agent 框架的默认选择，证据充分</li>
+</ul>
+<h3>如果你要学它</h3>
+<p>按学习 ROI 排序：</p>
+<ol>
+  <li><strong><code>go/store/prolly/tree/</code></strong> — Prolly Tree 节点定义、merge 算法、map/tuple 实现（核心创新）</li>
+  <li><strong><code>go/libraries/doltcore/sqle/database.go</code></strong> — 接口断言模式（<code>var _ sql.XxxDatabase = Database{}</code>）看 Dolt 怎么把 Git 能力挂到 go-mysql-server</li>
+  <li><strong><code>go/libraries/doltcore/sqle/dprocedures/init.go</code></strong> — 30+ <code>dolt_*</code> 存储过程注册表</li>
+  <li><strong><code>go/store/nbs/</code></strong> — NBS 内容寻址存储 + manifest CAS</li>
+  <li><strong><code>go/libraries/doltcore/doltdb/root_val.go</code></strong> — RootValue 接口定义（数据库级 working tree）</li>
+  <li><strong><code>integration-tests/bats/</code></strong> — 200+ BATS 端到端测试看真实使用模式</li>
+</ol>
+<h3>如果你要 fork 它</h3>
+<p>可改进方向：</p>
+<ol>
+  <li><strong>补齐 PG 高级特性</strong>：交给 Doltgres，自己可以专注 MySQL 优化</li>
+  <li><strong>优化写吞吐</strong>：把 commit 链路上的祖先节点重哈希做 batch / async 化</li>
+  <li><strong>支持 Iceberg/Delta 表导出</strong>：让 Dolt 写入的数据可被 Spark/Trino 读取</li>
+  <li><strong>Agent memory 框架集成</strong>：提供 LLM-friendly 的 high-level SDK（<code>dolt_agent_memory</code> 之类）</li>
+  <li><strong>清理历史包袱</strong>：把 <code>go/store/types/</code> 的 Noms 旧代码彻底迁到 prolly</li>
+</ol>
+<h3>知识入口</h3>
+<table>
+<thead>
+<tr><th>资源</th><th>链接</th></tr>
+</thead>
+<tbody>
+<tr><td>DeepWiki</td><td><a href="https://deepwiki.com/dolthub/dolt">https://deepwiki.com/dolthub/dolt</a></td></tr>
+<tr><td>Zread.ai</td><td><a href="https://zread.ai/dolthub/dolt">https://zread.ai/dolthub/dolt</a></td></tr>
+<tr><td>关联论文</td><td>无（工程产品，无对应学术论文）</td></tr>
+<tr><td>在线 Demo</td><td><a href="https://www.dolthub.com/">https://www.dolthub.com/</a>（Hosted Dolt 试用）</td></tr>
+<tr><td>官方文档</td><td><a href="https://docs.dolthub.com/">https://docs.dolthub.com/</a></td></tr>
+<tr><td>官方博客</td><td><a href="https://www.dolthub.com/blog">https://www.dolthub.com/blog</a>（含 Prolly Tree、adaptive encoding、merge 算法深度文章）</td></tr>
+</tbody>
+</table>
+</body>
+</html>
