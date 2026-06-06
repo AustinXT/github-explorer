@@ -76,6 +76,8 @@ def main() -> int:
                    help="算作命中的最低置信度（默认 medium）")
     p.add_argument("--analysis-dir", type=Path, default=None,
                    help="analysis_report 目录，默认 <repo>/src/analysis_report")
+    p.add_argument("--h1-json", type=Path, default=None,
+                   help="预生成的 slug→H1 字典 JSON；给了则不扫 analysis-dir（SSH 跳板时由 runner 预算）")
     p.add_argument("--publish-jsonl", type=Path, default=None,
                    help="publish_history.jsonl 路径，默认 <repo>/src/data/publish_history.jsonl")
     args = p.parse_args()
@@ -116,7 +118,7 @@ def main() -> int:
 
     # ── 2. 匹配标题 → slug（仅用 analysis_report H1，不依赖已删除的 publish.md）──
     print("[3/4] 加载报告 H1 标题字典并匹配")
-    h1s = load_analysis_h1s(analysis_dir=args.analysis_dir)
+    h1s = load_analysis_h1s(h1_json=args.h1_json, analysis_dir=args.analysis_dir)
     match_dict = build_match_dict(rows=[], h1s=h1s)
     results = match_articles(articles, match_dict)
 

@@ -1,8 +1,14 @@
 name: reconcile-wechat
 
 # 手动触发：用公众号真实「已群发」事实核对 publish_history.jsonl 的 state。
-# 纯只读 dry-run，不改任何文件、不 commit；差异结果直接打印在本 run 的日志里。
-# 复用与发布相同的反代（WECHAT_API_BASE / WECHAT_PROXY_TOKEN），从而绕过微信 IP 白名单。
+# runner 连不上微信反代（IP 不在白名单），故照搬发布链路：把核对所需文件打 tar 包经 SSH
+# stdin 送到白名单机 ali-demo，由那边的 reconcile-from-runner.sh 跑只读核对并回传差异。
+# 纯只读 dry-run：不发任何东西、不改任何文件、不 commit；差异结果打印在本 run 日志里。
+#
+# 依赖（一次性配好）：
+#   - ali-demo 上部署 scripts/reconcile-from-runner.sh + 微信凭证（见该脚本头部说明）
+#   - secrets.ALI_DEMO_RECONCILE_KEY（独立 key，推荐）或复用 secrets.ALI_DEMO_SSH_KEY
+#   - secrets.ALI_DEMO_KNOWN_HOSTS（与发布同一台 47.113.202.7）
 on:
   workflow_dispatch:
     inputs:
@@ -26,11 +32,6 @@ concurrency:
 jobs:
   reconcile:
     runs-on: ubuntu-latest
-    env:
-      WECHAT_APPID: ${{ secrets.WECHAT_APPID }}
-      WECHAT_APPSECRET: ${{ secrets.WECHAT_APPSECRET }}
-      WECHAT_API_BASE: ${{ vars.WECHAT_API_BASE || 'https://wx.nightvoyager.top' }}
-      WECHAT_PROXY_TOKEN: ${{ secrets.WECHAT_PROXY_TOKEN }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -40,9 +41,56 @@ jobs:
         with:
           python-version: '3.11'
 
-      # 脚本纯 stdlib（urllib / json / difflib），无需 pip install
-      - name: Reconcile WeChat publish state (dry-run)
+      # runner 预算 slug→H1 标题字典，避免把 384 个 .md 全塞进 payload
+      - name: Build payload
         run: |
-          python3 scripts/reconcile_wechat_publish.py \
-            ${{ inputs.include_drafts && '--include-drafts' || '' }} \
-            --min-confidence "${{ inputs.min_confidence }}"
+          set -euo pipefail
+          mkdir -p tmp/reconcile-payload
+          python3 - <<'PY'
+          import sys, json
+          from pathlib import Path
+          sys.path.insert(0, "scripts")
+          from sync_wechat_status import load_analysis_h1s
+          h1 = load_analysis_h1s(analysis_dir=Path("src/analysis_report"))
+          json.dump(h1, open("tmp/reconcile-payload/h1.json", "w"), ensure_ascii=False)
+          print(f"h1.json: {len(h1)} 篇报告标题")
+          PY
+          cp scripts/reconcile_wechat_publish.py \
+             scripts/sync_wechat_status.py \
+             scripts/_wechat_api.py \
+             src/data/publish_history.jsonl \
+             tmp/reconcile-payload/
+          tar czf /tmp/reconcile-payload.tgz -C tmp/reconcile-payload .
+          echo "payload 大小: $(du -h /tmp/reconcile-payload.tgz | cut -f1)"
+
+      - name: Run reconcile on ali-demo (SSH, dry-run)
+        env:
+          SSH_KEY: ${{ secrets.ALI_DEMO_RECONCILE_KEY || secrets.ALI_DEMO_SSH_KEY }}
+          KNOWN_HOSTS: ${{ secrets.ALI_DEMO_KNOWN_HOSTS }}
+          MIN_CONFIDENCE: ${{ inputs.min_confidence }}
+          INCLUDE_DRAFTS: ${{ inputs.include_drafts }}
+        run: |
+          set -uo pipefail
+          mkdir -p ~/.ssh
+          printf '%s\n' "$SSH_KEY" > ~/.ssh/ali_demo
+          chmod 600 ~/.ssh/ali_demo
+          printf '%s\n' "$KNOWN_HOSTS" > ~/.ssh/known_hosts
+          chmod 644 ~/.ssh/known_hosts
+
+          drafts=""
+          [[ "$INCLUDE_DRAFTS" == "true" ]] && drafts="--include-drafts"
+          remote_cmd="reconcile --min-confidence ${MIN_CONFIDENCE} ${drafts}"
+
+          set +e
+          ssh -i ~/.ssh/ali_demo \
+              -o UserKnownHostsFile=~/.ssh/known_hosts \
+              -o StrictHostKeyChecking=yes \
+              -o ConnectTimeout=30 \
+              root@47.113.202.7 "$remote_cmd" \
+              < /tmp/reconcile-payload.tgz
+          rc=$?
+          set -e
+          if [[ $rc -ne 0 ]]; then
+            echo "::error::ali-demo 上的 reconcile 失败（exit $rc）。检查：forced-command 是否已分流到 reconcile-from-runner.sh、ali-demo 的微信凭证、SSH key/known_hosts。"
+            exit $rc
+          fi
