@@ -1,0 +1,48 @@
+name: reconcile-wechat
+
+# 手动触发：用公众号真实「已群发」事实核对 publish_history.jsonl 的 state。
+# 纯只读 dry-run，不改任何文件、不 commit；差异结果直接打印在本 run 的日志里。
+# 复用与发布相同的反代（WECHAT_API_BASE / WECHAT_PROXY_TOKEN），从而绕过微信 IP 白名单。
+on:
+  workflow_dispatch:
+    inputs:
+      include_drafts:
+        description: '同时拉草稿箱（material/batchget_material，草稿无 url）'
+        type: boolean
+        default: false
+      min_confidence:
+        description: '算作命中的最低标题匹配置信度'
+        type: choice
+        options: [high, medium, low]
+        default: medium
+
+permissions:
+  contents: read
+
+concurrency:
+  group: reconcile-wechat
+  cancel-in-progress: true
+
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    env:
+      WECHAT_APPID: ${{ secrets.WECHAT_APPID }}
+      WECHAT_APPSECRET: ${{ secrets.WECHAT_APPSECRET }}
+      WECHAT_API_BASE: ${{ vars.WECHAT_API_BASE || 'https://wx.nightvoyager.top' }}
+      WECHAT_PROXY_TOKEN: ${{ secrets.WECHAT_PROXY_TOKEN }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # 脚本纯 stdlib（urllib / json / difflib），无需 pip install
+      - name: Reconcile WeChat publish state (dry-run)
+        run: |
+          python3 scripts/reconcile_wechat_publish.py \
+            ${{ inputs.include_drafts && '--include-drafts' || '' }} \
+            --min-confidence "${{ inputs.min_confidence }}"
