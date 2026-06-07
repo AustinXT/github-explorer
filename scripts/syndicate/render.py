@@ -34,12 +34,12 @@ def _footer_md(article: Article, *, mp_cta: bool = True, name_wechat: bool = Tru
         if name_wechat:
             lines.append(
                 f"> 关注微信公众号「{mp}」（全网同名，微信搜一搜即达），"
-                "获取更多开源项目深度解析与完整版资料。"
+                "后台回复关键词「repo」领取完整版资料。"
             )
         else:
             lines.append(
                 f"> 关注「{mp}」（全网同名，搜一搜即达），"
-                "获取更多开源项目深度解析与完整版资料。"
+                "后台回复关键词「repo」领取完整版资料。"
             )
     return ("\n\n---\n\n" + "\n>\n".join(lines)) if lines else ""
 

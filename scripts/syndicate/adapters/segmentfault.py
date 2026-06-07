@@ -3,9 +3,9 @@
 思否是经典 markdown 原生编辑器（左写右预览，marked.js + highlight.js），直接把整篇
 markdown 灌进去即可渲染，无需转 HTML。需登录态，Claude-in-Chrome 复用 cookie 直达。
 
-导流：容忍度中等、高于 CSDN。社区《文章编辑规则》：不要在「开头」放推荐/二维码，
-但允许「文末」适当加个人推荐/链接。故 name_wechat=True（文末可提公众号名），但
-playbook 提示别放二维码、别开头硬广。
+导流：写文章引导页明确「不欢迎软文/推广/洗稿/引流」（2026-06 实测，发布前会拦一道
+确认页）。叠加「后台回复领取」强钩子后引流过重，故置 mp_cta=False —— 文末只留
+canonical 回链、不放任何公众号 CTA（与知乎同档），尽量不触发软文判定。
 
 坑：① 标签必填且只能从思否已有标签库搜选（不能任意新建）；② 外链图不自动转存，
 GitHub raw 图一般可直显但不入思否图床，稳妥是先下载再粘贴上传走思否 CDN。
@@ -21,6 +21,8 @@ class SegmentFaultAdapter(BrowserAdapter):
     name = "segmentfault"
     editor_url = "https://segmentfault.com/write"
     content_format = "markdown"   # markdown 原生，整篇直接粘
+    mp_cta = False                # 思否「不欢迎引流」（实测）+「后台回复领取」强钩子张力大 → 降到只 canonical
+    name_wechat = False           # mp_cta=False 时不生效；保留作为档位回调默认
 
     def field_notes(self, article: Article) -> dict:
         return {

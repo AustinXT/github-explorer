@@ -47,10 +47,22 @@ class PlaywrightAdapter(BaseAdapter):
     editor_url = ""
     login_url = ""                   # 登录入口；留空则用 editor_url
 
+    # ── 子类声明的登录标志 ──────────────────────────────────────────
+    LOGIN_COOKIES: set[str] = set()   # 登录后写入的 cookie 名（任一存在即视为已登录）
+
     # ── 子类必须实现 ────────────────────────────────────────────────
     def is_logged_in(self, context) -> bool:
-        """当前上下文是否已登录该平台。子类覆盖（查 context.cookies()，不依赖当前页面 URL）。"""
-        raise NotImplementedError
+        """当前上下文是否已登录该平台。默认实现：查 context.cookies() 是否含 LOGIN_COOKIES
+        任一名（不依赖当前页面 URL）。cookie 判不准的平台可子类覆盖。"""
+        if not self.LOGIN_COOKIES:
+            raise NotImplementedError(
+                f"{self.name} 需声明 LOGIN_COOKIES 或覆盖 is_logged_in()"
+            )
+        try:
+            names = {c.get("name") for c in context.cookies()}
+        except Exception:  # noqa: BLE001 — 跳转瞬间可能取不到 cookie，下轮再试
+            return False
+        return bool(names & self.LOGIN_COOKIES)
 
     def do_publish(
         self, page, article: Article, rendered: RenderedArticle, *,
@@ -103,25 +115,43 @@ class PlaywrightAdapter(BaseAdapter):
 
     # ── --login / --preview 入口 ────────────────────────────────────
     def login(self) -> bool:
-        """有头打开浏览器，人工登录一次，登录态落盘持久化。"""
+        """有头打开浏览器，人工登录一次，登录态落盘持久化。
+
+        不依赖终端交互（stdin 可为非 tty，如 IDE/agent 终端，input() 会瞬间 EOF）：
+        打开登录页后轮询检测登录态，检测到 cookie 写入即视为成功、保存并关闭；
+        超时则放弃。轮询上限可用 SYNDICATE_LOGIN_TIMEOUT（秒，默认 300）覆盖。
+        """
+        import time
+
         from playwright.sync_api import sync_playwright
 
-        print(f"🔐 [{self.name}] 即将打开浏览器，请在弹出的窗口里登录 {self.name} …")
+        try:
+            timeout_s = max(10, int(env("SYNDICATE_LOGIN_TIMEOUT") or "300"))
+        except ValueError:
+            timeout_s = 300
+        poll = 3
+        print(f"🔐 [{self.name}] 已打开浏览器，请在弹出的窗口里登录 {self.name} …")
+        print(f"   登录成功后自动检测并保存（最多等 {timeout_s}s，无需回终端按回车）。")
         ok = False
         with sync_playwright() as p:
             ctx = self._launch(p, headless=False)
             page = self._page(ctx)
             page.goto(self.login_url or self.editor_url, wait_until="domcontentloaded")
-            input(f"   在浏览器里完成 {self.name} 登录后，回到终端按【回车】继续校验… ")
-            try:
-                page.goto(self.editor_url, wait_until="domcontentloaded")
-                page.wait_for_timeout(1500)
-                ok = self.is_logged_in(ctx)
-            except Exception as e:  # noqa: BLE001
-                print(f"   登录态校验时出错：{e}")
+            waited = 0
+            while waited < timeout_s:
+                try:
+                    if self.is_logged_in(ctx):
+                        ok = True
+                        break
+                except Exception:  # noqa: BLE001 — 跳转瞬间可能取不到 cookie，下轮再试
+                    pass
+                time.sleep(poll)
+                waited += poll
+                if waited % 30 == 0:
+                    print(f"   …仍在等待登录（{waited}/{timeout_s}s）")
             ctx.close()
         print("✅ 登录态已保存，后续发布将复用它" if ok
-              else "⚠️ 未检测到登录态，可重试 --login（确认确实登录成功）")
+              else f"⚠️ {timeout_s}s 内未检测到登录态（未登录或 cookie 未写入），可重试 --login")
         return ok
 
     def preview(self, article: Article, rendered: RenderedArticle) -> None:
@@ -193,3 +223,155 @@ class PlaywrightAdapter(BaseAdapter):
         loc.click()
         page.wait_for_timeout(300)
         page.keyboard.insert_text(text)
+
+    # ── JS 注入辅助（绕 actionability：元素在 DOM 里却被判「不可见」时用）──────
+    # 很多富前端编辑器（CSDN/掘金/阿里云…）的标题 input / 编辑区 / 弹窗按钮在 DOM 里
+    # 存在却被特殊 CSS 判定「不可见」，fill()/click() 因 actionability 检查超时失败。
+    # 改走 JS 直接操作 DOM 绕过可见性门槛（实测可行）。
+    @staticmethod
+    def _js_set_value(page, selectors: list[str], value: str) -> bool:
+        """给首个命中的 input/textarea 设 value 并派发 input/change（触发受控框架更新）。"""
+        return bool(page.evaluate(
+            """([sels, v]) => {
+                for (const s of sels) {
+                    const el = document.querySelector(s);
+                    if (el) {
+                        el.focus(); el.value = v;
+                        el.dispatchEvent(new Event('input', {bubbles: true}));
+                        el.dispatchEvent(new Event('change', {bubbles: true}));
+                        return true;
+                    }
+                }
+                return false;
+            }""",
+            [selectors, value],
+        ))
+
+    @staticmethod
+    def _js_focus(page, selectors: list[str]) -> bool:
+        """聚焦首个命中的元素（供随后用 keyboard 灌入 contenteditable）。"""
+        return bool(page.evaluate(
+            """(sels) => {
+                for (const s of sels) {
+                    const el = document.querySelector(s);
+                    if (el) { el.focus(); return true; }
+                }
+                return false;
+            }""",
+            selectors,
+        ))
+
+    @staticmethod
+    def _js_click(page, selectors: list[str]) -> bool:
+        """点击首个命中的元素（纯 CSS selector，不支持 :has-text）。"""
+        return bool(page.evaluate(
+            """(sels) => {
+                for (const s of sels) {
+                    const el = document.querySelector(s);
+                    if (el) { el.click(); return true; }
+                }
+                return false;
+            }""",
+            selectors,
+        ))
+
+    @staticmethod
+    def _js_click_button_text(page, text: str, *, cls_contains: str = "") -> bool:
+        """点文本含 text、且 class 含 cls_contains 的可见 button（按文本精确定位，避免
+        .first 误选近似按钮——如「发布文章」与「定时发布」共用一个 class）。"""
+        return bool(page.evaluate(
+            """([t, cls]) => {
+                const b = [...document.querySelectorAll('button')].find(
+                    e => (e.textContent || '').includes(t)
+                         && (!cls || (e.className || '').includes(cls))
+                         && e.offsetParent !== null
+                );
+                if (b) { b.click(); return true; }
+                return false;
+            }""",
+            [text, cls_contains],
+        ))
+
+    # ── 富文本/CodeMirror 注入：合成 paste 事件（不依赖系统剪贴板）────────────
+    @staticmethod
+    def _paste_inject(page, selectors: list[str], *, html: str = "", text: str = "") -> str:
+        """在首个命中的编辑器元素上 dispatch 一个合成 paste ClipboardEvent，DataTransfer
+        带 text/html 与/或 text/plain——编辑器自己的 paste handler 会把它映射进内部模型
+        （富文本编辑器据此还原结构，CodeMirror 据此插入文本）。
+
+        返回：'no-editor'（没找到元素）/ 'dispatched'（已派发）。注意：合成事件
+        isTrusted=false，少数编辑器会因此忽略——调用方应在事后校验注入是否生效，
+        失败时回退真实剪贴板 + 键盘 Ctrl/Cmd+V。
+        """
+        return str(page.evaluate(
+            """([sels, html, text]) => {
+                let el = null;
+                for (const s of sels) { el = document.querySelector(s); if (el) break; }
+                if (!el) return 'no-editor';
+                el.focus();
+                // 把光标放到编辑区内末尾，handler 才有合法 range 可插入
+                try {
+                    const r = document.createRange();
+                    r.selectNodeContents(el); r.collapse(false);
+                    const sel = window.getSelection();
+                    sel.removeAllRanges(); sel.addRange(r);
+                } catch (e) { /* input/textarea 无需 range */ }
+                const dt = new DataTransfer();
+                if (html) dt.setData('text/html', html);
+                if (text) dt.setData('text/plain', text);
+                el.dispatchEvent(new ClipboardEvent('paste',
+                    {clipboardData: dt, bubbles: true, cancelable: true}));
+                return 'dispatched';
+            }""",
+            [selectors, html, text],
+        ))
+
+    def _paste_html(self, page, selectors: list[str], html: str, *, plain: str = "") -> str:
+        """富文本编辑器注入 HTML（合成 paste，text/html 为主、text/plain 兜底）。"""
+        return self._paste_inject(page, selectors, html=html, text=plain or "")
+
+    def _paste_text(self, page, selectors: list[str], text: str) -> str:
+        """CodeMirror 等纯文本编辑器注入（合成 paste，text/plain）。"""
+        return self._paste_inject(page, selectors, text=text)
+
+    @staticmethod
+    def _clipboard_paste(page, context, selectors: list[str], *, origin: str,
+                         html: str = "", text: str = "") -> bool:
+        """真实剪贴板兜底：授权 → navigator.clipboard.write → 聚焦编辑器 → 真 Ctrl/Cmd+V。
+        走浏览器可信路径（isTrusted=true），合成 paste 被编辑器忽略时用。需 headed + 页面聚焦。"""
+        try:
+            context.grant_permissions(["clipboard-read", "clipboard-write"], origin=origin)
+        except Exception:  # noqa: BLE001 — 个别环境不支持按 origin 授权，忽略后试
+            pass
+        page.bring_to_front()
+        wrote = bool(page.evaluate(
+            """async ([html, text]) => {
+                try {
+                    const data = {};
+                    if (html) data['text/html'] = new Blob([html], {type: 'text/html'});
+                    if (text) data['text/plain'] = new Blob([text], {type: 'text/plain'});
+                    await navigator.clipboard.write([new ClipboardItem(data)]);
+                    return true;
+                } catch (e) { return false; }
+            }""",
+            [html, text],
+        ))
+        if not wrote:
+            return False
+        # 聚焦编辑器后真按粘贴键
+        for s in selectors:
+            loc = page.locator(s).first
+            try:
+                loc.click(timeout=1500)
+                break
+            except Exception:  # noqa: BLE001
+                continue
+        page.keyboard.press("ControlOrMeta+v")
+        return True
+
+    @staticmethod
+    def _extract_id(url: str | None, pattern: str) -> str:
+        """按平台正则从 URL 提取文章 id（pattern 须含一个捕获组）。取不到返回 ''。"""
+        import re
+        m = re.search(pattern, url or "")
+        return m.group(1) if m else ""

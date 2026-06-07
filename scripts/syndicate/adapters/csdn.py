@@ -39,10 +39,12 @@ class CsdnAdapter(PlaywrightAdapter):
         ".article-bar input[type='text']",
     ]
     SEL_EDITOR = [
-        ".cm-content",                 # CodeMirror 6
-        ".CodeMirror textarea",        # CodeMirror 5 隐藏输入
+        "pre.editor__inner[contenteditable='true']",   # CSDN 新版：contenteditable 的 pre
+        ".editor__inner[contenteditable='true']",
+        ".editor__inner",
+        ".cm-content",                 # 旧版 CodeMirror 6 兜底
+        ".CodeMirror textarea",
         ".CodeMirror",
-        "div.editor__inner",
     ]
     SEL_PUBLISH_BTN = [               # 右上「发布文章」（打开发布弹窗）
         "button.btn-publish",
@@ -66,15 +68,32 @@ class CsdnAdapter(PlaywrightAdapter):
         "button.btn-b-red:has-text('发布')",
     ]
 
-    # CSDN 登录后写入的 cookie（任一存在即视为已登录）
+    # CSDN 登录后写入的 cookie（任一存在即视为已登录）；is_logged_in 走基类默认实现。
+    # 标题 input / 编辑区 / 弹窗按钮在 DOM 里存在却被判「不可见」，故全程走基类的
+    # _js_set_value / _js_focus / _js_click / _js_click_button_text 绕 actionability。
     LOGIN_COOKIES = {"UserName", "UserToken", "UserInfo"}
+    ID_RE = r"(?:articleId=|article/details/)(\d+)"
 
-    def is_logged_in(self, context) -> bool:
+    def _fill_tags(self, page, tags: list[str]) -> None:
+        """尽力填文章标签（CSDN 标签为二级弹层，selector 不稳；失败不阻塞发布）。"""
         try:
-            names = {c.get("name") for c in context.cookies()}
-        except Exception:  # noqa: BLE001
-            return False
-        return bool(names & self.LOGIN_COOKIES)
+            page.evaluate("""() => {
+                const el = [...document.querySelectorAll('button,span,a,div')].find(
+                    e => /添加文章标签|文章标签/.test(e.textContent || '') && e.offsetParent !== null
+                );
+                if (el) el.click();
+            }""")
+            page.wait_for_timeout(800)
+            for t in tags:
+                box = page.locator(
+                    "input.el-input__inner:visible, .tag-box input, input[placeholder*='标签']"
+                ).first
+                box.fill(t)
+                page.wait_for_timeout(300)
+                page.keyboard.press("Enter")
+                page.wait_for_timeout(300)
+        except Exception as e:  # noqa: BLE001 — 标签非必填，失败仅提示
+            print(f"   [csdn] 标签填写跳过（{e}）")
 
     def do_publish(
         self, page, article: Article, rendered: RenderedArticle, *,
@@ -86,54 +105,84 @@ class CsdnAdapter(PlaywrightAdapter):
             if existing_post_id else self.editor_url
         )
         page.goto(target, wait_until="domcontentloaded")
-        page.wait_for_timeout(2000)  # 编辑器异步初始化
         if "passport.csdn.net" in page.url:
             raise RuntimeError("打开编辑器被重定向到登录页，登录态可能失效，请重跑 --login")
+        # 标题 input / 编辑区在 DOM 里存在却被 playwright 判定不可见，故等「挂载到 DOM」
+        # （attached）而非 visible，随后全程走 JS 注入操作。
+        page.wait_for_selector("input.article-bar__title", state="attached", timeout=25000)
+        page.wait_for_timeout(1500)
 
-        # 2) 标题
-        title_el = self._first(page, self.SEL_TITLE)
-        title_el.click()
-        title_el.fill(article.title)
+        # 2) 标题（JS 设 value + 派发事件，绕过不可见判定）
+        if not self._js_set_value(
+            page, ["input.article-bar__title", "input[placeholder*='标题']"], article.title
+        ):
+            raise RuntimeError("[csdn] DOM 中找不到标题输入框 input.article-bar__title（编辑器或已改版）")
 
-        # 3) 正文（CodeMirror：聚焦后一次性插入）
-        self._focus_insert(page, self.SEL_EDITOR, rendered.content)
-        page.wait_for_timeout(500)
+        # 3) 正文：JS 聚焦编辑区 → 全选删默认模板 → keyboard 灌入（受控 contenteditable）
+        if not self._js_focus(
+            page,
+            ["pre.editor__inner[contenteditable='true']",
+             ".editor__inner[contenteditable='true']", ".editor__inner"],
+        ):
+            raise RuntimeError("[csdn] DOM 中找不到正文编辑区 .editor__inner（编辑器或已改版）")
+        page.wait_for_timeout(300)
+        page.keyboard.press("ControlOrMeta+a")
+        page.keyboard.press("Delete")
+        page.keyboard.insert_text(rendered.content)
+        page.wait_for_timeout(800)
 
         # 4) 预演到此为止（不点发布、不写历史）
         if not commit:
             return None
 
-        # 5a) 存草稿
+        # 5a) 存草稿（顶部「保存草稿」按钮）
         if not publish:
-            self._click(page, self.SEL_SAVE_DRAFT)
-            page.wait_for_timeout(2000)
-            pid = self._extract_article_id(page.url) or (existing_post_id or "")
+            self._js_click(page, ["button.btn-save"])
+            page.wait_for_timeout(2500)
+            pid = self._extract_id(page.url, self.ID_RE) or (existing_post_id or "")
             return PublishResult(post_id=pid, url=page.url, state="draft")
 
-        # 5b) 发布：打开弹窗 → 填标签 →（类型默认原创、可见默认全部）→ 确认发布
-        self._click(page, self.SEL_PUBLISH_BTN)
-        page.wait_for_timeout(1500)
+        # 5b) 发布：打开弹窗 →（标签尽力填，失败不阻塞）→ 点弹窗内「发布文章」确认
+        self._js_click(page, ["button.btn-publish"])
+        page.wait_for_timeout(2000)
         if article.tags:
-            tag_in = self._first(page, self.SEL_TAG_INPUT, required=False)
-            if tag_in:
-                for t in article.tags[:5]:
-                    tag_in.click()
-                    tag_in.fill(t)
-                    page.wait_for_timeout(300)
-                    page.keyboard.press("Enter")
-        self._click(page, self.SEL_MODAL_PUBLISH)
+            self._fill_tags(page, list(article.tags)[:5])
+        # 弹窗确认：btn-b-red 且文本含「发布文章」（排除同为 btn-b-red 的「定时发布」）
+        if not self._js_click_button_text(page, "发布文章", cls_contains="btn-b-red"):
+            raise RuntimeError("[csdn] 找不到发布弹窗内「发布文章」确认按钮（弹窗未弹出或已改版）")
+        # 新文常进 CSDN「待审核」、不跳详情页，id 多半不反映到当前 url：先给跳转一点时间，
+        # 拿不到再回退「文章管理列表取最新一篇」。
         try:
-            page.wait_for_url("**/article/details/**", timeout=30000)
-        except Exception:  # noqa: BLE001 — 兜底：少数情况停在编辑器并提示成功
+            page.wait_for_url("**/article/details/**", timeout=15000)
+        except Exception:  # noqa: BLE001
             page.wait_for_timeout(3000)
-        pid = self._extract_article_id(page.url) or (existing_post_id or "")
-        url = (
-            page.url if "article/details" in page.url
-            else f"https://blog.csdn.net/article/details/{pid}"
-        )
+        pid = self._extract_id(page.url, self.ID_RE)
+        url = page.url if "article/details" in page.url else ""
+        if not pid:
+            latest = self._latest_article(page)
+            if latest:
+                pid, url = latest
+            else:
+                pid = existing_post_id or ""
+        if not url:
+            url = f"https://blog.csdn.net/article/details/{pid}" if pid else page.url
         return PublishResult(post_id=pid, url=url, state="published")
 
     @staticmethod
-    def _extract_article_id(url: str | None) -> str:
-        m = re.search(r"(?:articleId=|article/details/)(\d+)", url or "")
-        return m.group(1) if m else ""
+    def _latest_article(page) -> tuple[str, str] | None:
+        """去文章管理列表取最新一篇的 (id, url)。CSDN 新文常进「待审核」、不跳详情页，
+        id 不反映到当前 url 时用此兜底（列表按时间倒序，第一篇即刚发的）。"""
+        try:
+            page.goto("https://mp.csdn.net/mp_blog/manage/article",
+                      wait_until="domcontentloaded")
+            page.wait_for_timeout(4000)
+            hrefs = page.eval_on_selector_all(
+                "a[href*='article/details']", "els=>els.map(e=>e.href)"
+            )
+        except Exception:  # noqa: BLE001
+            return None
+        for h in hrefs:
+            m = re.search(r"article/details/(\d+)", h or "")
+            if m:
+                return m.group(1), h
+        return None
