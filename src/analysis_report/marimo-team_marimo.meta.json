@@ -1,0 +1,6 @@
+{
+  "title": "21K stars 反应式 Python Notebook：marimo 怎么把 Jupyter 的「隐藏状态」连根拔起",
+  "digest": "用静态 AST 依赖追踪 + DAG 改写 notebook 内核，把隐藏状态连根拔起；MCP + marimo pair 让 AI agent 改 notebook 时数据流保持一致。",
+  "author": "NVoyager",
+  "theme": "stars,universe,dark"
+}

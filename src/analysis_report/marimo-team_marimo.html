@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+/* ====== 微信公众号排版 CSS ====== */
+
+body {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #3e3e3e;
+    background: #fff;
+}
+
+/* 正文段落 */
+p {
+    font-size: 15px !important;
+    line-height: 2 !important;
+    margin: 0 !important;
+    padding-top: 0.5em !important;
+    padding-bottom: 0.5em !important;
+    padding-right: 1.2em !important;
+    padding-left: 1.2em !important;
+    text-align: justify !important;
+}
+p + p {
+    margin-top: 0 !important;
+}
+
+/* 标题 */
+h1 {
+    font-size: 20px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 16px 0 !important;
+    padding: 0 !important;
+}
+h2 {
+    font-size: 18px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 24px 0 !important;
+    padding: 0 !important;
+}
+h3 {
+    font-size: 15px !important;
+    font-weight: bold !important;
+    color: #3e3e3e !important;
+    text-align: left !important;
+    margin: 16px 0 16px 0 !important;
+    padding: 0 0 0 1.2em !important;
+}
+h4 {
+    font-size: 15px !important;
+    color: rgb(0, 122, 170) !important;
+    margin: 12px 0 8px 0 !important;
+    padding: 0 !important;
+}
+
+/* 列表 */
+ul,
+ol {
+    padding-left: 2em !important;
+    margin: 1em 0 !important;
+    font-size: 15px !important;
+}
+li {
+    margin: 0.5em 0 !important;
+    line-height: 1.8em !important;
+    font-size: 15px !important;
+    color: #3e3e3e !important;
+}
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+    margin: 0 !important;
+    padding-left: 1.2em !important;
+}
+
+/* 引用 */
+blockquote {
+    border-left: 4px solid #888 !important;
+    padding: 8px 16px !important;
+    margin: 1em 0 !important;
+    color: #666 !important;
+    background: #f9f9f9 !important;
+}
+blockquote > p {
+    margin: 0.5em 0 !important;
+    padding: 0 !important;
+}
+blockquote::before,
+blockquote::after {
+    content: none !important;
+}
+
+/* 代码块 */
+pre {
+    font-size: 14px !important;
+    line-height: 1.4em !important;
+    color: #3e3e3e !important;
+    background: #f8f8f8 !important;
+    padding: 12px 16px !important;
+    border-radius: 4px !important;
+    overflow: auto !important;
+    margin: 1em 0 !important;
+}
+
+/* 脚注 */
+.footnotes {
+    font-size: 11px !important;
+    color: #666 !important;
+    line-height: 1.2 !important;
+    margin: 8px 0 0 0 !important;
+    padding: 4px 0 0 0 !important;
+    border-top: 1px solid #eee !important;
+}
+.footnotes p {
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #666 !important;
+}
+
+/* 上标 */
+sup {
+    font-size: 0.75em !important;
+    vertical-align: super !important;
+    color: #e51f42 !important;
+    margin: 0 2px !important;
+}
+
+</style>
+</head>
+<body>
+<blockquote><p>GitHub: https://github.com/marimo-team/marimo</p></blockquote>
+<h2>一句话总结</h2>
+<p>marimo 是一个<strong>以纯 Python 文件存储的反应式 notebook</strong>——运行一个 cell 自动级联所有依赖 cell，从数据结构上消灭 Jupyter 二十年的「隐藏状态」顽疾，并把 notebook、SQL、交互 UI、AI agent 协作统一到 <code>.py</code> 这一个文件里。</p>
+<h2>值得关注的理由</h2>
+<ul><li><strong>代际差距级挑战者</strong>：用静态 AST 依赖追踪 + 数据流图（DAG）重做 notebook 内核，Jupyter 团队至今没追上来；2025-10 被 GPU 云巨头 CoreWeave 收购，验证赛道成立。</li><li><strong>AI 时代的稀缺答案</strong>：MCP 协议 + <code>marimo pair</code> 让 Claude/Cursor 直接改 notebook 时数据流保持一致——这是 Jupyter 给不了的能力。</li><li><strong>5 合 1 工作台</strong>：notebook、脚本、WebAssembly HTML、web app、SQL playground 全在一个 <code>.py</code> 文件里；同时替代 Jupyter + Streamlit + Jupytext + ipywidgets + papermill。</li></ul>
+<h2>项目展示</h2>
+<h3>核心反应式数据流</h3>
+<p><em>reactive execution</em> — 类型: demo</p>
+<p>运行任意 cell，所有依赖该 cell 的下游 cell 自动重跑——从根上消灭「代码与输出不一致」。</p>
+<h3>交互 UI 原语（无 callback）</h3>
+<p><em>UI elements</em> — 类型: demo</p>
+<p><code>mo.ui.slider</code> 返回的对象<strong>就是变量</strong>，下游 cell 引用即触发重算——告别 <code>observe()</code> 回调。</p>
+<h3>SQL 一等公民</h3>
+<p><em>SQL cell</em> — 类型: screenshot</p>
+<p><code>mo.sql(f"SELECT ... FROM {df}")</code>——DuckDB/Postgres/MySQL/Snowflake/Iceberg/SQLite 任意切换，dataframe 列自动作为 SQL 上下文。</p>
+<h3>DataFrame 探索</h3>
+<p><em>dataframe exploration</em> — 类型: demo</p>
+<blockquote><p>视频与在线 Demo：<a href="https://molab.marimo.io/">molab.marimo.io</a>（2025-07 推出的云端 notebook 服务，2026-06 接入 CoreWeave GPU）。</p></blockquote>
+<h2>项目画像</h2>
+<table style="border-collapse:collapse;width:100%;font-size:14px;margin:1em 0;"><thead><tr><th style="border:1px solid #ddd;padding:6px;background:#f6f6f6;">维度</th><th style="border:1px solid #ddd;padding:6px;background:#f6f6f6;">数据</th></tr></thead><tbody><tr><td>GitHub</td><td>https://github.com/marimo-team/marimo</td></tr><tr><td>Star / Fork</td><td>21,336 / 1,130</td></tr><tr><td>代码行数</td><td>585,926 行（Python 56.9% / TypeScript 21.1% / TSX 14.7% / YAML 5.1% / 其他 2.2%），4,180 文件</td></tr><tr><td>项目年龄</td><td>33.8 个月（2023-08-14 首次提交）</td></tr><tr><td>开发阶段</td><td>密集开发（近 30 天 180 commits，近 90 天 674，近 365 天 2,643）</td></tr><tr><td>贡献模式</td><td>小团队主导 + 社区协作（317 贡献者，Top 1 占比 37.5%，Top 3 约 67%）</td></tr><tr><td>热度定位</td><td>大众热门（5 位数 star 阵营，高速增长：约 15 stars/天）</td></tr><tr><td>质量评级</td><td>代码优秀 / 文档优秀 / 测试充分</td></tr><tr><td>License</td><td>Apache-2.0</td></tr><tr><td>最新稳定版</td><td>0.23.9（共 396 tag，100 个 release，语义化版本）</td></tr><tr><td>商业化</td><td>Marimo Inc.（2024-11 完成 $5M 种子轮）→ 2025-10 被 CoreWeave 收购</td></tr></tbody></table>
+<h2>作者视角：为什么存在这个项目</h2>
+<h3>创始人/作者背景</h3>
+<p>Akshay Agrawal（ORCID 0009-0004-6472-0055）和 Myles Scolnick（ORCID 0009-0003-4254-9632）来自机器学习与 Python 工具链背景，分别贡献 1,323 / 2,732 commits。两人在跑 ML 实验时反复撞到 Jupyter 同一个痛点——<strong>改一个 cell，忘了重跑，输出和代码对不上</strong>。Akshay 2024-05 公开宣战文 <em>Lessons learned reinventing the Python notebook</em>，之后连发三篇哲学文（<em>Reinventing notebooks as reusable Python programs</em> 2025-03 / <em>Python notebooks as dataflow graphs</em> 2025-08 / <em>Turning Python notebooks into AI-Accessible Systems</em> 2025-10），把「数据流图 + 纯 Python 存储 + AI 接入」钉死为项目宪法。</p>
+<h3>问题判断</h3>
+<p>Jupyter 看似灵活，本质是<strong>五个同时失能</strong>：</p>
+<ol><li>隐藏状态（删 cell 变量还活）——JetBrains 10M 笔记本分析显示 <strong>36% 不可复现</strong>。</li><li><code>.ipynb</code> 是 JSON，不可 git diff、不可 <code>python notebook.py</code>、不可被 IDE 正确解析。</li><li>UI 控件要手写 <code>observe()</code> callback。</li><li>SQL 是二等公民，dataframe 与数据库要绕一圈。</li><li>AI agent 改 notebook 时无结构化上下文，凭 grep 瞎找。</li></ol>
+<p>marimo 创始人看到的是<strong>第二个 Jupyter</strong>的机会——不是给 Jupyter 打补丁，而是重写存储格式（<code>.py</code> 替代 <code>.ipynb</code>）和执行模型（DAG 替代顺序 cell）。时机为什么是 2023：AST 静态分析（jedi/msgspec）成熟到能在保存时做依赖追踪；Pyodide/WASM 把「notebook 跑在浏览器」做成可量产；2024-2026 的 AI agent 浪潮（Claude/Cursor/MCP）让「可被 agent 编程的 notebook」突然成为新刚需。</p>
+<h3>解法哲学</h3>
+<ul><li><strong>静态分析，零运行时开销</strong>：把反应式做在保存阶段（<code>marimo/_runtime/dataflow/</code> 解析 AST），运行时只做「传播 + 执行」。FAQ 明确承诺「marimo doesn't slow your code down」——<strong>有意放弃运行时 trace 路线</strong>。</li><li><strong>小抽象，大组合</strong>：每个能力都是清晰小抽象——<code>@app.cell</code> / <code>@app.function</code> / <code>mo.ui.slider</code> / <code>mo.sql</code> / <code>mo.persistent_cache</code>，但单仓 「batteries-included」 同时替代 Jupyter + Streamlit + Jupytext + ipywidgets + papermill。</li><li><strong>genuinely open，不是 open-core</strong>：Apache-2.0 + GOVERNANCE.md + CLA + Zenodo DOI；用 molab（云端 GPU）/ marimo pair（agent 协作）/ MCP server（AI 接入）走 SaaS 变现，开源版功能没阉割。</li><li><strong>明确不做什么</strong>：不做 ZMQ 内核协议（用 Starlette ASGI + WebSocket 自建）；不做 <code>.ipynb</code> 双向完美兼容（只单向 <code>marimo convert</code>）；不做 callback widget（UI 元素即变量）。</li></ul>
+<h3>战略意图</h3>
+<p>被 CoreWeave 收购（2025-10）后定位为「<strong>AI 时代的可复现 Python 工作台</strong>」。三角布局：核心 notebook + 编辑器（开源）、molab（云 GPU 托管）、marimo pair + MCP（AI agent 协作）。CoreWeave 收购兑现了 2026-06 molab 上 GPU——开源工具 + GPU 算力 + AI agent 入口三位一体。</p>
+<h2>核心价值提炼</h2>
+<h3>创新之处（按新颖度×实用性排序）</h3>
+<ol><li><strong>DAG-as-AST</strong>：notebook = 数据流图 + 纯 Python 序列化器（<code>marimo/_runtime/dataflow/</code> 5 个子模块：graph/topology/definitions/edges/cycles）。新颖 4/5 / 实用 5/5 / 可迁移 4/5。</li><li><strong>UI 元素即变量（无 callback 反应式 UI</strong>）：<code>mo.ui.slider</code> 返回对象就是变量，下游 cell 引用自动 re-run；事件经 <code>UpdateUIElementCommand</code> 转图上「局部重放」。新颖 3/5 / 实用 5/5 / 可迁移 3/5。</li><li><strong>SQL 多后端 duck-typing 引擎路由</strong>（<code>SUPPORTED_ENGINES</code> 顺序策略链 + <code>is_compatible</code> 探测；dataflow 追踪 SQL 表/列层次引用，dataframe 列作为 SQL 上下文）：DuckDB / Snowflake / Iceberg / Postgres / MySQL 不重写代码。DuckDB WASM 还可在浏览器内跑 SQL。新颖 4/5 / 实用 5/5 / 可迁移 4/5。</li><li><strong>Notebook 即 MCP 资源</strong>（<code>marimo/_mcp/</code>）：把 notebook 上下文暴露给 Claude/Cursor，让 agent 改代码时数据流保持一致。新颖 4/5 / 实用 4/5 / 可迁移 4/5。</li><li><strong><code>.py</code> 即 notebook 存储模型</strong>（codegen 反向序列化 + <code>AppKernelRunner</code> / <code>AppScriptRunner</code> 双模式）：<code>.py</code> 可被 git / pytest / ruff / IDE / <code>python notebook.py</code> 全部识别。Trade-off 是 <code>.ipynb</code> 双向转换难。实用 5/5 / 可迁移 5/5。</li><li><strong>多层 cache 矩阵</strong>（loader × store 二维：pickle/json/lazy/memory × disk/redis/rest/tiered + 哈希签名持久化）：覆盖「内存/磁盘/网络/分层」四象限。新颖 2/5 / 实用 4/5 / 可迁移 5/5。</li><li><strong>Pyodide WASM 自托管</strong>（<code>pyodide/build_and_serve.py</code> 静态站，浏览器内完整 kernel + DuckDB WASM）：分享即链接，包体大。实用 3/5 / 可迁移 3/5。</li><li><strong>6 种 cell runtime 状态 FSM</strong>（<code>idle/queued/running/disabled-transitive</code> × <code>success/exception/cancelled/interrupted/marimo-error/disabled</code>）+ <code>mo.stop</code> 重入控制：换来并发安全。新颖 3/5 / 实用 4/5 / 可迁移 5/5。</li></ol>
+<h3>可复用的模式与技巧</h3>
+<table style="border-collapse:collapse;width:100%;font-size:14px;margin:1em 0;"><thead><tr><th style="border:1px solid #ddd;padding:6px;background:#f6f6f6;">模式</th><th style="border:1px solid #ddd;padding:6px;background:#f6f6f6;">适用场景</th></tr></thead><tbody><tr><td><strong>dataflow 分包</strong>（graph facade + topology + definitions + cycles + edges）</td><td>任何数据流引擎的目录组织模板</td></tr><tr><td><strong>msgspec.Struct + JSON 通道 + 自动生成 TS 类型</strong></td><td>高吞吐前后端消息协议（pydantic 5-10x 性能）</td></tr><tr><td><strong>loader × store 矩阵化抽象</strong></td><td>cache 系统的「格式×介质」二维化设计</td></tr><tr><td><strong>SUPPORTED_ENGINES duck-typing 路由</strong></td><td>插件系统松耦合的策略链模式</td></tr><tr><td><strong>Loro CRDT + Starlette 协同编辑</strong></td><td>Python 后端实现轻量实时协作</td></tr><tr><td><strong>MCP server 作产品入口</strong></td><td>老项目接 AI agent 的参考骨架（仅 50 行：<code>setup_mcp_server</code> 接入 StreamableHTTPSessionManager）</td></tr><tr><td><strong>AST 静态依赖追踪</strong></td><td>「文档 = 代码」项目的通用模板</td></tr><tr><td><strong>Transaction 增量同步协议</strong></td><td>前后端乐观更新+确认</td></tr><tr><td><strong>ContextVar 管理 kernel 单例</strong></td><td>Python 线程安全的全局状态</td></tr><tr><td><strong>哈希签名持久化缓存</strong>（<code>marimo/_save/hash.py</code>）</td><td>ML/ETL 实验性 cache</td></tr></tbody></table>
+<h3>关键设计决策</h3>
+<pre>决策: .py 即 notebook
+问题: .ipynb 是 JSON，git/IDE/pytest/python script 全部失能
+方案: codegen 反向序列化 + AppKernelRunner/AppScriptRunner 双模式
+Trade-off: 双向 .ipynb 转换难；换来 git / pytest / ruff / IDE 全可用
+可迁移性: 高
+
+决策: 静态 AST 依赖追踪
+问题: 运行时 trace 开销大且无法在保存时分析
+方案: marimo/_runtime/dataflow/ 子包分层，环检测在边加入时即时做
+Trade-off: 放弃 exec()/__getattr__ 完美追踪；换来零运行时开销 + 删除 cell 即清变量
+可迁移性: 高
+
+决策: UI 元素即变量
+问题: ipywidgets 要手写 observe() callback
+方案: mo.ui.slider 返回对象就是变量，下游 cell 引用自动 re-run
+Trade-off: 失去"局部状态"；换来无需 callback
+可迁移性: 中
+
+决策: 自建前后端协议
+问题: 复用 JupyterLab 协议意味着继承其设计缺陷
+方案: Starlette ASGI + WebSocket + msgspec 强类型消息 + Transaction 增量同步 + Loro CRDT
+Trade-off: 不能复用 JupyterLab 生态；换来类型安全 + 协作
+可迁移性: 中
+
+决策: SQL 多后端 duck-typing 路由
+问题: dataframe 与数据库要在 Pandas/Polars/SQLAlchemy 间反复横跳
+方案: SUPPORTED_ENGINES 顺序策略链 + is_compatible 探测；dataflow 追踪 SQL 表/列层次
+Trade-off: 调试难；换来看 DuckDB/Snowflake/Iceberg 不重写代码
+可迁移性: 高</pre>
+<h2>竞品格局与定位</h2>
+<h3>竞品对比矩阵</h3>
+<table style="border-collapse:collapse;width:100%;font-size:14px;margin:1em 0;"><thead><tr><th style="border:1px solid #ddd;padding:6px;background:#f6f6f6;">维度</th><th style="border:1px solid #ddd;padding:6px;background:#f6f6f6;">marimo</th><th style="border:1px solid #ddd;padding:6px;background:#f6f6f6;">Jupyter / JupyterLab</th><th style="border:1px solid #ddd;padding:6px;background:#f6f6f6;">Observable</th><th style="border:1px solid #ddd;padding:6px;background:#f6f6f6;">Pluto.jl</th><th style="border:1px solid #ddd;padding:6px;background:#f6f6f6;">Streamlit</th></tr></thead><tbody><tr><td>反应式执行</td><td>✅ AST 静态分析</td><td>❌ 顺序 cell</td><td>✅ JS 引擎内建</td><td>✅ Julia 编译期类型</td><td>❌ rerun 整页</td></tr><tr><td>文件格式</td><td><code>.py</code> 纯 Python</td><td><code>.ipynb</code> JSON</td><td>自有 JSON</td><td><code>.jl</code> 纯 Julia</td><td><code>.py</code></td></tr><tr><td>UI 原语</td><td>✅ 无 callback</td><td>⚠️ ipywidgets 需 callback</td><td>✅ Plot/D3 集成</td><td>✅ @bind 宏</td><td>✅ 组件丰富</td></tr><tr><td>SQL 一等公民</td><td>✅ 10+ 引擎</td><td>❌ 需手写 SQLAlchemy</td><td>⚠️ DuckDB</td><td>❌ 需手写</td><td>❌ 需手写</td></tr><tr><td>AI 集成</td><td>✅ MCP + marimo pair</td><td>⚠️ Jupyter AI 实验性</td><td>⚠️ 自有 AI</td><td>❌ 无</td><td>⚠️ 实验性</td></tr><tr><td>WASM 部署</td><td>✅ 完整 kernel</td><td>⚠️ JupyterLite 有限</td><td>✅ 浏览器内</td><td>❌ 无</td><td>❌ 无</td></tr><tr><td>生态成熟度</td><td>中（21K stars / 3 年）</td><td>统治（22K+ / 10 年+）</td><td>高（私有）</td><td>小（5K / Julia 专用）</td><td>高（38K / 8 年）</td></tr><tr><td>Stars</td><td>21k</td><td>~22k</td><td>私有</td><td>~5k</td><td>~38k</td></tr></tbody></table>
+<h3>差异化护城河</h3>
+<ul><li><strong>技术护城河</strong>：DAG + 静态分析的反应式内核不可被 Jupyter 短期复制——JupyterLab 7 至今在尝试但路线不同。</li><li><strong>生态护城河</strong>：AI-native（marimo pair + MCP）+ 多后端 SQL（DuckDB/Polars/Snowflake/Iceberg 一行切换）+ 实时协作（Loro CRDT）三层叠加。</li><li><strong>信任护城河</strong>：Apache-2.0 + 正式治理（GOVERNANCE.md / CODEOWNERS / CLA）+ Zenodo DOI + 全职创始团队 + CoreWeave 收购背书。</li></ul>
+<h3>竞争风险</h3>
+<ul><li><strong>JupyterLab 7 + Jupyter AI</strong>：Jupyter 团队正在吸收 reactive 思想和 AI 集成，生态基数仍是碾压级别。</li><li><strong>Deepnote / Hex / Observable Canvases 等带 AI 的 SaaS</strong>：抢付费市场，molab 起步晚。</li><li><strong>VS Code 战场 2025-11 才 GA</strong>：落后 Jupyter 多年，IDE 是命门——开发者离不开 IDE。</li></ul>
+<h3>生态定位</h3>
+<p>在 Jupyter（探索）↔ Streamlit（应用）↔ Airflow（pipeline）之间，marimo 是<strong>「AI 时代的 Python 复现性工作台」</strong>——把三件事的「可复现 + 可 git + 可 deploy」统一到一个 <code>.py</code> 文件里。AI agent 时代下，marimo 是<strong>「agent 改 notebook 但保持数据流一致」</strong>的稀缺答案——这是 molab + CoreWeave + MCP 三件套共同撑起的下一段护城河。</p>
+<h2>套利机会分析</h2>
+<ul><li><strong>信息差</strong>: marimo 21K stars 是大众热门，但在中文技术社区覆盖度远低于 Jupyter；中文文档/教程机会仍在。<strong>不是被低估项目</strong>，是「被低估的细分场景」——AI agent × 数据科学交叉点。</li><li><strong>技术借鉴</strong>:</li><ul><li><code>dataflow/</code> 子包分层模板可直接套到任何「文档 = 代码」项目（DSL notebook、ETL 工具、低代码平台）</li><li><code>loader × store</code> 矩阵化抽象是 cache 系统的通用设计</li><li>msgspec + 自动生成 TS 类型是替代 pydantic 的高性能选项</li><li>MCP server 50 行接入是任何 Python web 服务接 Claude/Cursor 的最小骨架</li><li>Loro CRDT + Starlette 是 Python 后端轻量协同编辑的低成本方案</li></ul><li><strong>生态位</strong>: 填补了「AI agent 时代的可复现 Python 工作台」空白——Jupyter 给不了这个答案，Streamlit 给不了 notebook 范式，Pluto.jl 只服务 Julia。</li><li><strong>趋势判断</strong>: 增长曲线在 2025-10 CoreWeave 收购后明显加速（2025-12 后月度 commit 站稳 200+，2026 年开年突破 250），与 AI agent 浪潮时间窗口重合。<strong>后发优势</strong>: VS Code 扩展 2025-11 GA 刚补完 IDE 短板，molab GPU 2026-06 刚补完算力短板，2026-2027 是产品完整度补齐 + 商业化兑现窗口。</li></ul>
+<h2>风险与不足</h2>
+<ul><li><strong>核心团队双核风险</strong>：Myles（37.5%）+ Akshay（17%）合计占 55%，bus factor 偏低；2025-10 CoreWeave 收购后核心人员稳定性待观察。</li><li><strong>VS Code 战场迟到</strong>：2025-11 扩展才 GA，比 Jupyter 晚 5+ 年，IDE 集成是开发者不可让渡的命门。</li><li><strong>商业化与开源的边界尚未完全清晰</strong>：molab 是云端服务，目前免费 + GPU 计费，但 GPU 资源在 CoreWeave 体系内，开源版与 SaaS 版的长期功能切分有待观察。</li><li><strong>生态基数差距</strong>：Jupyter 22K stars + 几乎所有 ML 库默认支持 + 100+ kernels 跨语言，marimo 21K 仍需 2-3 年才能在生态完整度上对标。</li><li><strong>ipynb 单向转换不可逆</strong>：用户从 Jupyter 迁来有 tool，但回不去——锁定风险。</li><li><strong>#3176 持久化缓存</strong>仍是 1.0 路线图最大未完成项（39 条评论），从「玩具到生产」的最后一块拼图。</li></ul>
+<h2>行动建议</h2>
+<ul><li><strong>如果你要用它</strong>：</li><ul><li>✅ 新建 Python 数据/ML 项目首选；尤其是 LLM 应用开发、ETL 探索、ML 实验可复现管理。</li><li>✅ 想要 「notebook 即 web app」 一键部署（Pyodide WASM / molab 云端）。</li><li>✅ AI agent 协作场景（marimo pair + MCP 给 Claude/Cursor 数据流上下文）。</li><li>❌ 跨语言需求（R/Julia/Scala）→ 继续用 Jupyter。</li><li>❌ 已有大量 <code>.ipynb</code> 历史包袱且无迁移计划 → 谨慎评估，<code>marimo convert</code> 是单向工具。</li></ul></ul>
+<ul><li><strong>如果你要学它</strong>：</li><ul><li>核心源码必读：<code>marimo/_ast/app.py</code>（1.1k 行 App + 装饰器）、<code>marimo/_runtime/runtime.py</code>（2.6k 行 Kernel 唯一执行循环）、<code>marimo/_runtime/dataflow/</code>（1.4k 行 DAG 子包，5 个子模块）。</li><li>创新点必读：<code>marimo/_sql/</code>（10+ SQL 引擎 duck-typing 路由）、<code>marimo/_mcp/server/main.py</code>（50 行 MCP 接入）、<code>marimo/_save/</code>（loader × store 矩阵）、<code>frontend/</code>（React + Vite + Loro CRDT）。</li><li>哲学必读：<a href="https://marimo.io/blog">Akshay 的四篇博客</a>——<em>Lessons learned reinventing the Python notebook</em> / <em>Reinventing notebooks as reusable Python programs</em> / <em>Python notebooks as dataflow graphs</em> / <em>Turning Python notebooks into AI-Accessible Systems</em>。</li><li>工程实践：<code>AGENTS.md</code>（仓库根 / <code>marimo/</code> / <code>frontend/</code> 三份）——给 AI agent 写代码规范的最佳实践。</li></ul></ul>
+<ul><li><strong>如果你要 fork 它</strong>：</li><ul><li>多语言 notebook（Rust 内核 + Python DSL？）：<code>marimo/_runtime/dataflow/</code> 的静态分析框架可复用。</li><li>垂直 SQL notebook（专为 Snowflake / Databricks 优化）：<code>marimo/_sql/</code> 的多后端路由可作为模板。</li><li>教学导向 notebook（强调步骤引导 + 防跑偏）：<code>@app.cell</code> / <code>mo.stop</code> / FSM 状态机可作为控制流基础。</li><li>AI agent notebook（强化 LLM 协作 + 代码生成 + 自我修复）：MCP server + marimo pair + Cell 装饰器三件套直接复用。</li></ul></ul>
+<h3>知识入口</h3>
+<table style="border-collapse:collapse;width:100%;font-size:14px;margin:1em 0;"><thead><tr><th style="border:1px solid #ddd;padding:6px;background:#f6f6f6;">资源</th><th style="border:1px solid #ddd;padding:6px;background:#f6f6f6;">链接</th></tr></thead><tbody><tr><td>DeepWiki</td><td><a href="https://deepwiki.com/marimo-team/marimo">https://deepwiki.com/marimo-team/marimo</a> — 已收录（2026-04-15 索引），含 4 种执行模式 / DAG 反应式内核 / API / 技术栈</td></tr><tr><td>Zread.ai</td><td>未收录 / 不可达（WebFetch 403）</td></tr><tr><td>关联论文</td><td>无（marimo 是工程产品；反应式数据流概念以 blog 形式发布，未在 arXiv 发表）</td></tr><tr><td>在线 Demo</td><td><a href="https://molab.marimo.io/">https://molab.marimo.io/</a>（云端 notebook，2025-07 上线，2026-06 接入 CoreWeave GPU）</td></tr><tr><td>哲学奠基文</td><td><a href="https://marimo.io/blog">Akshay 博客</a>：<em>Lessons learned reinventing the Python notebook</em> / <em>Reinventing notebooks as reusable Python programs</em> / <em>Python notebooks as dataflow graphs</em> / <em>Turning Python notebooks into AI-Accessible Systems</em></td></tr></tbody></table>
+</body>
+</html>
