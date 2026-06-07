@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #3e3e3e;
+    background: #fff;
+}
+
+/* 正文段落 */
+p {
+    font-size: 15px !important;
+    line-height: 2 !important;
+    margin: 0 !important;
+    padding-top: 0.5em !important;
+    padding-bottom: 0.5em !important;
+    padding-right: 1.2em !important;
+    padding-left: 1.2em !important;
+    text-align: justify !important;
+}
+p + p {
+    margin-top: 0 !important;
+}
+
+/* 标题 */
+h1 {
+    font-size: 20px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 16px 0 !important;
+    padding: 0 !important;
+}
+h2 {
+    font-size: 18px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 24px 0 !important;
+    padding: 0 !important;
+}
+h3 {
+    font-size: 15px !important;
+    font-weight: bold !important;
+    color: #3e3e3e !important;
+    text-align: left !important;
+    margin: 16px 0 16px 0 !important;
+    padding: 0 0 0 1.2em !important;
+}
+h4 {
+    font-size: 15px !important;
+    color: rgb(0, 122, 170) !important;
+    margin: 12px 0 8px 0 !important;
+    padding: 0 !important;
+}
+
+/* 列表 */
+ul,
+ol {
+    padding-left: 2em !important;
+    margin: 1em 0 !important;
+    font-size: 15px !important;
+}
+li {
+    margin: 0.5em 0 !important;
+    line-height: 1.8em !important;
+    font-size: 15px !important;
+    color: #3e3e3e !important;
+}
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+    margin: 0 !important;
+    padding-left: 1.2em !important;
+}
+
+/* 引用 */
+blockquote {
+    border-left: 4px solid #888 !important;
+    padding: 8px 16px !important;
+    margin: 1em 0 !important;
+    color: #666 !important;
+    background: #f9f9f9 !important;
+}
+blockquote > p {
+    margin: 0.5em 0 !important;
+    padding: 0 !important;
+}
+blockquote::before,
+blockquote::after {
+    content: none !important;
+}
+
+/* 代码块 */
+pre {
+    font-size: 14px !important;
+    line-height: 1.4em !important;
+    color: #3e3e3e !important;
+    background: #f8f8f8 !important;
+    padding: 12px 16px !important;
+    border-radius: 4px !important;
+    overflow: auto !important;
+    margin: 1em 0 !important;
+}
+
+/* 脚注 */
+.footnotes {
+    font-size: 11px !important;
+    color: #666 !important;
+    line-height: 1.2 !important;
+    margin: 8px 0 0 0 !important;
+    padding: 4px 0 0 0 !important;
+    border-top: 1px solid #eee !important;
+}
+.footnotes p {
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #666 !important;
+}
+
+/* 上标 */
+sup {
+    font-size: 0.75em !important;
+    vertical-align: super !important;
+    color: #e51f42 !important;
+    margin: 0 2px !important;
+}
+</style>
+</head>
+<body>
+<blockquote><p>GitHub: <a href="https://github.com/prql/prql">https://github.com/prql/prql</a></p></blockquote>
+<h2>一句话总结</h2>
+<p>PRQL 是一个用 Rust 自研的「管道式关系查询语言」编译器,先把 PRQL 降到自有 RQ（关系代数）中间表示,再通过回溯锚定拆分成原子 SELECT,最终编译到 12 种 SQL 方言——核心是「让查询的阅读顺序 = 执行顺序 = 数据流向」,并把标准库用 PRQL 自己写出来（自举式 stdlib）。</p>
+<h2>值得关注的理由</h2>
+<ul>
+<li><strong>真正的语言层创新,不是方言变体</strong>:绝大多数 SQL 替代品停留在「换个语法糖」,PRQL 设计了一套完整的 <code>PRQL → PR → PL → RQ → PQ → SQL</code> 多遍 IR,加新方言只动 <code>sql/dialect.rs</code>,不动语义层——这是教科书级的编译器分层。</li>
+<li><strong>回溯锚定拆分(reverse-walk pipeline → atomic SELECT)</strong> 是其最具技术含量的设计:从输出列反推,贪心装入单条 SELECT,装不下就回退一格拆 CTE——生成的 SQL 接近人手写,远好于 ORM 自动拼出的废 SQL。</li>
+<li><strong>Wes McKinney（Pandas 之父）+ Jeremiah Lowin（Prefect 创始人）公开站台</strong>,Apache-2.0、RQ 中间表示公开 JSON 化、7+ 语言绑定、9 个编辑器语法——这是一个「中立、开源、被数据圈头部人物背书」的工程化项目,而不是某个公司的 side project。</li>
+</ul>
+<h2>项目展示</h2>
+<p>README 和官网均无展示性图片/视频——README 主体以代码示例和文字为主,无架构图/demo 视频;官网首页的核心「演示」是实时可编辑的 Playground 代码块(Join invoices + customers → 计算 income → 排名),但这是文本代码块而非图片/GIF,无法作为媒体素材收录。</p>
+<blockquote><p>推荐直接访问官方 Playground 看效果:<a href="https://prql-lang.org/playground/">prql-lang.org/playground</a></p></blockquote>
+<pre># PRQL 官方示例:对 invoices 表做 join + 收入计算 + 排名
+from invoices
+join c = customers on ==customer_id
+derive {
+  transaction_fee = 0.8,
+  income = c.revenue - amount * transaction_fee,
+}
+filter c.country == 「USA」
+sort {-income, +amount}
+take 51..100</pre>
+<h2>项目画像</h2>
+<p>GitHub: <a href="https://github.com/prql/prql">https://github.com/prql/prql</a><br/>Star / Fork / Watcher: 10,856 / 256 / 42<br/>Open Issue / PR: 235 / 25<br/>代码行数: 4.8 万 (Rust 73.7%, JSON 9.5%, JS 2.9%, YAML 2.1%, CSS 1.8%, HTML 1.4%, 其他 6.6%)<br/>代码/注释比: 3.4:1（注释占 22.9%）<br/>文件数量: 418<br/>依赖数量: Cargo workspace 多 crate(根 + 5+ 子 crate)<br/>项目年龄: 53.2 个月（2022-01-18 首个 commit,2026-06-07 最近 push）<br/>开发阶段: 密集开发（近 30 天 92 commit、近 90 天 208 commit）<br/>贡献模式: 社区协作 + BDFL 单核（95 人贡献,Top 1 占 48.8%,Top 3 合计 ~78%）<br/>热度定位: 大众热门（万 star 级别,稳态增长,月均 30+ star）<br/>质量评级: 代码[优秀] 文档[优秀] 测试[充分] CI/CD[完善]<br/>License: Apache-2.0（无商业版、无 SaaS）</p>
+<h2>项目速览（不是模板描述,是观察）</h2>
+<p>53 个月的开发里,前两年是「快速立项 + 0.5/0.6 初期版本冲刺」,2023 年中 0.7/0.8 又是发布 crunch;2024 年中段是「重构月 + <code>prql-compiler → prqlc</code> 大搬迁」,月度 commit 跌到 50 上下;2024 末-2025 中半年低位消化期;2025-09 之后 0.13 系列迭代重新加速。这是「预 1.0 收尾 + 文档打磨 + 错误处理精修」期的典型节奏——feature 已收敛,fix/docs 为主,核心作者仍在主推。</p>
+<h2>作者视角:为什么存在这个项目</h2>
+<h3>创始人/作者背景</h3>
+<p><strong>Maximilian Roos (max-sixty)</strong> 是 PRQL 的发起人和主要维护者,个人投入 ~50% commits（2,136 / 4,268）。从 30+ 行业真实 SQL 项目的工程沉淀出发,切身体会到 SQL 在写稍微复杂一点的业务管道时被迫「绕弯子」,Jinja 这种字符串模板只是在伤口上贴创可贴——真正的可组合、可静态分析的语言路径缺位。这个痛点不是纯学术研究,也不是突然拍脑袋,而是 dogfooding 出来的真实需求。</p>
+<p>PRQL 组织旗下还托管 <strong>pyprql（106 stars）/ dbt-prql（108 stars）/ prqlc-r（58 stars）/ prql-vscode（30 stars）/ prqlc-c / prqlc-py / prqlc-js / prqlc-java / prqlc-elixir / prqlc-php</strong> 等绑定/集成包,形成完整生态——BDFL + 组织化扩展是 PRQL 的治理特征。</p>
+<h3>问题判断</h3>
+<p>SQL 是数据查询事实标准,但作者认为「声明式 + 子句顺序写死 + 难以抽象」对数据流水线场景是历史包袱。具体来说:</p>
+<ul>
+<li><strong>dbt</strong>:仍以 SQL + Jinja 模板为内核,Jinja 字符串拼接并不真正解决复用,模板里塞业务规则后期极难维护。</li>
+<li><strong>Malloy</strong>:同样编译到 SQL,但语义更像 BI DSL,绑定 BI 场景,语法不通用;现已并入 MotherDuck,生态独立性下降。</li>
+<li><strong>sqlglot</strong>:是 SQL 解析/转译库,适合做方言转换,并不提供新的查询表达层。</li>
+<li><strong>Polars SQL / DuckDB SQL</strong>:数据库/DataFrame 自己的 SQL 接口,绑死单后端,无法跨方言。</li>
+<li><strong>Jinja + 共享 CTE 模板</strong>:不可组合、调试噩梦、无法静态分析。</li>
+</ul>
+<h3>解法哲学</h3>
+<p>官方五原则即解法哲学的纲领化表达:</p>
+<ul>
+<li><strong>Pipelined</strong>:语法即数据流向,<code>from a | filter … | join b</code> 与执行顺序一致;改写顺序即改写语义,无歧义。</li>
+<li><strong>Simple</strong>:一套管道变换(<code>from / filter / derive / aggregate / sort / take / join / group / loop</code>)覆盖 90% 用例;没有 <code>WHERE</code> vs <code>HAVING</code> 这种分类负担(<code>filter</code> 统一两者)。</li>
+<li><strong>Open</strong>:Apache-2.0,语言规范/语法树可 JSON 化,中间表示 RQ 公开——任何人可以写新后端或新方言。</li>
+<li><strong>Extensible</strong>:std 库(.prql 文件)+ <code>s「…」</code> s-string 逃生口 + 函数定义;做不到的,直接嵌入方言原生 SQL。</li>
+<li><strong>Analytical</strong>:类型系统导向分析查询的列式算子,而不是 OLTP CRUD;明确不做 DDL/INSERT/血缘追踪(交给 dbt)。</li>
+</ul>
+<p><strong>明确不做的清单本身就是哲学的一部分:dbt 解决 lineage,SQL engine 解决执行,PRQL 只解决「写」</strong>。这一定位让项目保持精瘦,不被「我要不要做一整套数据平台」拖垮。</p>
+<h3>战略意图</h3>
+<ul>
+<li><strong>编译器是内核,不是数据库</strong>。PRQL 不做存储、不做执行、不做 lineage、不做 BI 渲染,只做 SQL 之前的「写作层」——这是 1 个项目想做完整数据平台时最容易被反噬的位置;PRQL 主动放弃,换取「所有人都可以用」的中立性。</li>
+<li><strong>生态化绑定</strong>:<code>pyprql</code> / <code>dbt-prql</code> / <code>prql-vscode</code> / <code>prqlc-r</code> / QStudio 集成 / Jupyter magic / DuckDB 直连,通过 7+ 语言绑定把内核塞进各语言生态,绑定包本身是另一个 org(PRQL org)。</li>
+<li><strong>没有商业化</strong>:<code>LICENSE</code> Apache-2.0,无 SaaS/企业版/hosted,纯开源/纯社区。</li>
+<li><strong>战略合作信号</strong>:Wes McKinney(Pandas 之父):「I'm also really excited about efforts to create entire new query languages that compile to SQL, like Malloy and PRQL.」 Jeremiah Lowin(Prefect 创始人)公开称赞——说明上层数据工具圈对「SQL 替代品」有真实需求,这是项目最大的战略资产。</li>
+</ul>
+<h2>核心价值提炼</h2>
+<h3>创新之处</h3>
+<p>1. <strong>RQ(Relational Query)中间表示</strong> — 新颖度 4/5 | 实用性 5/5 | 可迁移性 4/5<br/>把 PL 与 SQL 之间加一层「关系代数层」,<code>from/filter/derive/join/aggregate/...</code> 全部降级为 <code>Transform::From/Compute/Select/Filter/Aggregate/Sort/Take/Join/Append/Loop</code> 枚举 + <code>Expr</code> + 严格类型。任何「用户语言 → 多 SQL 方言」的编译器都能用这个 IR 拆层。</p>
+<p>2. <strong>回溯锚定拆分(reverse-walk pipeline → atomic SELECT)</strong> — 新颖度 5/5 | 实用性 4/5 | 可迁移性 4/5<br/><code>pq/anchor.rs::split_off_back</code> 从输出列开始反推,贪心装入单条 SELECT;装不下就回退一格拆 CTE,直到全部 <code>inputs_required</code> 能在该 SELECT 内物化。配套 <code>CidRedirector</code> + <code>positional_mapping</code> 完成列名重定向与位置对齐。生成的 SQL 通常接近人手写,远好于 ORM。Pandas-style API→SQL、Kotlin Coroutines→Rx、Reactive Streams→SQL 等「线性管道→嵌套表达式」翻译器都可借鉴。</p>
+<p>3. <strong><code>s「…」</code> s-string 逃生口 + 注解驱动方言行为</strong> — 新颖度 4/5 | 实用性 5/5 | 可迁移性 5/5<br/><code>s「LEFT({col:0})」</code> 让用户(以及 std 库本身)直接写方言 SQL,但通过 <code>{col:0}</code> 的位置化插值 + <code>@{window_frame=true, coalesce=「0」}</code> 注解控制方言语义。<code>std.sql.prql</code> 的全部 12 方言算子都是用这个机制写的。GraphQL→SQL、Prisma SQL 模板、任何「有 80% 公共部分 + 20% 方言差异」的项目都能用。</p>
+<p>4. <strong>自举式 std 库(std 库用 PRQL 自己写)</strong> — 新颖度 4/5 | 实用性 4/5 | 可迁移性 4/5<br/><code>std.prql</code>(关系算子 + 运算符,251 行)和 <code>std.sql.prql</code>(12 方言的 SQL 实现,454 行)全部用 PRQL 自身表达;<code>internal std.add</code> 这种「body 由编译器内部实现」标记让 std 既可读又可执行。Elixir stdlib in Elixir、Pharo Smalltalk 风格的自举式语言项目都能借鉴。</p>
+<p>5. <strong><code>type relation = [{..}]</code> + frame 推断</strong> — 新颖度 4/5 | 实用性 4/5 | 可迁移性 3/5<br/>把「列集合」作为类型,编译器在语义阶段对每个 transform 计算出入/出 frame,从源到输出追踪每列的来源、生死、别名,为 0.x 之后加入 LSP/列级 lineage/类型补全做准备。DataFrame API 类型系统、查询 IDE、SQL 静态分析都能用。</p>
+<p>6. <strong>零成本 FFI(<code>prqlc-c</code> + cbindgen)</strong> — 新颖度 3/5 | 实用性 5/5 | 可迁移性 5/5<br/><code>prqlc-c</code> crate 通过 cbindgen 自动生成 <code>prqlc.h</code>/<code>prqlc.hpp</code>,Java/JS/Elixir/PHP/.NET 全部用这套 C ABI 包出各自语言绑定;<code>.NET</code> 还修了 64 位 <code>size_t</code> 映射、Span 指针解引用等 FFI 经典坑(0.13.12 changelog 详列)。</p>
+<h3>可复用的模式与技巧</h3>
+<p>1. <strong>三段式 IR(用户语言 / 关系代数 / 方言 AST)</strong> — 任何想一次写多后端的编译器(GraphQL→多数据库、IaC→多云、policy→多执行引擎)。<br/>2. <strong>s-string escape hatch + 注解驱动方言行为</strong> — 任何「大部分公共 + 少量方言差异」的多目标 codegen(打印机、字体子集化、邮件模板多 ISP)。<br/>3. <strong>insta snapshot + mdBook 文档测试一体化</strong> — 任何「文本输出 + 大量样本」的工具(formatter、codegen、template engine)。<br/>4. <strong><code>Dialect</code> enum + <code>Box&lt;dyn DialectHandler&gt;</code> + <code>Any/TypeId</code> 差异化</strong> — 数据库 driver、打印/字体子集化、protocol 多实现。<br/>5. <strong><code>SourceTree</code> 单文件/项目二合一抽象</strong> — CLI 同时需要 stdin/单文件/项目三种输入模式。<br/>6. <strong><code>OnceLock</code> + 三级 version fallback(env/git/manifest)</strong> — 任何发布期/测试期/构建期需要 version 一致性的 CLI。<br/>7. <strong><code>Test-DBs</code> feature flag + Docker 集成测试</strong> — 需要连真实数据库做集成测试的 ORM、migration、SQL 工具。</p>
+<h3>关键设计决策</h3>
+<p>1. <strong>决策</strong>:三层 AST 多遍编译 <code>PRQL → PR → PL → RQ → PQ → sqlparser::ast → SQL</code></p>
+<p><strong>问题</strong>:SQL 方言多,若 PRQL → SQL 一遍式写,每个方言都得重写一整套语义层,无法复用作用域解析、类型推断、frame 推断。<br/><strong>方案</strong>:把语义层(PL)、关系代数层(RQ)、优化/分区层(PQ)、目标 AST(sqlparser)四层分离开;PL 关心「用户写了什么」,RQ 关心「这是什么样的关系查询」,PQ 关心「管道如何拆分到单条 SELECT」,最后才到方言。<br/><strong>Trade-off</strong>:多一遍 IR = 多一份学习成本 + 多一份维护;换来的是「加一个新方言只动 sql/dialect.rs + 一些 PQ 边角」,而不用动 PL/semantic。<br/><strong>可迁移性</strong>:高。几乎所有「编译到多后端 DSL」类项目(MySQL 方言、Jinja 替代、GraphQL→SQL 等)都能用这套 IR 拆分套路。</p>
+<p>2. <strong>决策</strong>:标准库用 PRQL 自己写(<code>std.prql</code> 251 行,<code>std.sql.prql</code> 454 行),而不是 Rust 硬编码</p>
+<p><strong>问题</strong>:把 std 写在 Rust 里,用户想覆盖 <code>average</code> 换成自己公司的 <code>AVG</code> 表达需要改代码;而且 Rust 里写「<code>@2021-01-01</code> 解析」很别扭。<br/><strong>方案</strong>:把所有 transform / 算子 / 运算符 / 字符串函数都用 PRQL 自身写;s-string <code>s「MIN({column:0})」</code> 是 SQL 模板,<code>internal</code> 是「这个函数体由编译器内部实现」,让 std 既可被用户看、也能复用、还能用 PRQL 自身的类型推断。<code>@{}</code> 注解控制 window frame、coalesce 默认值等方言行为。<br/><strong>Trade-off</strong>:std 改一个语义错误要修两层(PRQL 文本 + 内部实现);运行时要先把 std 注入到 root module,占用一些启动开销。<br/><strong>可迁移性</strong>:高。任何带「std 库」的语言编译器都能用这个模式(Elixir stdlib in Elixir、Pharo Smalltalk 风格)。</p>
+<p>3. <strong>决策</strong>:管道按「原子 SELECT」回溯拆分(<code>pq/anchor.rs::extract_atomic</code>)</p>
+<p><strong>问题</strong>:一条 PRQL 管道可能产生多个相互依赖的中间结果(<code>filter</code> 后再 <code>derive</code> 再 <code>group</code> 再 <code>filter</code>),如果全部塞进一个 SELECT,会出现「在 WHERE 中引用 SELECT 后的列」的非法 SQL;但粗暴地全拆 CTE 又会生成臃肿的 <code>WITH</code> 链。<br/><strong>方案</strong>:反向遍历管道,记录每个 transform 的「输入要求」(<code>inputs_required</code>);遇到无法在该位置物化的列(如窗口函数在 WHERE、聚合后未 GROUP BY 的列)就回退一格拆出一个 CTE,直到剩余管道可以装进一个原子 SELECT。<code>anchor_split</code> + <code>CidRedirector</code> + <code>positional_mapping</code> 三件套完成「在哪个 CTE 里计算、列名如何重定向」的全部工作。<br/><strong>Trade-off</strong>:拆得对不对全靠启发式规则 + 边角修正函数(184 个 snapshot 测试撑住正确性);但生成的 SQL 通常接近人手写,远好于 ORM。<br/><strong>可迁移性</strong>:高。任何「管道式 → 嵌套块式」转换都可借鉴这个反向锚定思想(尤其 ORM、查询构建器、ReactiveX→SQL 翻译器)。</p>
+<h2>竞品格局与定位</h2>
+<h3>竞品对比矩阵</h3>
+<p>PRQL — 编译到 SQL 的语言 / 10.8k stars / 跨方言 12 / 管道语法原生 / Lineage 工具链级别(待 dbt 集成) / 无商业化 / 7+ 语言绑定 + 9 编辑器语法 / 目标用户:数据工程师/分析师</p>
+<p>dbt — SQL + Jinja 框架 / 10k+ stars / 单方言 / Jinja 模拟 / Lineage 完整 / dbt Cloud / dbt 项目/包生态 / 数据团队</p>
+<p>Malloy — 编译到 SQL 的 BI DSL / 1.7k+ stars / 单方言 / BI 风管道 / Lineage 部分 / 已并入 MotherDuck / Notebook + BI / BI 分析师</p>
+<p>sqlglot — SQL 解析/转译库 / 7k+ stars / 多方言 / 无管道语法 / 无 Lineage / 无商业化 / Python 库 / Python 工具作者</p>
+<p>Polars SQL — DataFrame 上的 SQL 接口 / 内置于 Polars / 单后端 / 无管道语法 / 无 Lineage / Polars Cloud / Polars 生态 / DataFrame 用户</p>
+<h3>差异化护城河</h3>
+<ul>
+<li><strong>技术护城河</strong>:RQ 中间表示 + 回溯锚定拆分 + s-string escape hatch 这三件套,让 PRQL 能在「语言表达力 + 多方言输出」同时拉满,同行很难直接复制。</li>
+<li><strong>生态护城河</strong>:7+ 语言绑定 + 9 个编辑器语法 + VSCode / Jupyter / QStudio / dbt-prql 集成,即使是小众语言,接入门槛也极低。</li>
+<li><strong>信任护城河</strong>:Wes McKinney / Jeremiah Lowin 站台 + Apache-2.0 + 公开 JSON AST + PRQL org 治理结构,中立性是个人/单一公司项目无法相比的。</li>
+</ul>
+<h3>竞争风险</h3>
+<ul>
+<li><strong>DuckDB 自带 SQL 持续变强</strong>:如果 DuckDB 把管道语法、CTE 模板做进官方 SQL,PRQL 的「表达力优势」会被蚕食;但 PRQL 的多方言 + 类型系统 + 抽象层仍是 DuckDB 不会碰的。</li>
+<li><strong>dbt 收编上游抽象层</strong>:dbt 可以用 Jinja macros 模拟管道语义;若 dbt 推「Jinja macros + Python models」,PRQL 的「替代 Jinja」空间会缩小。</li>
+<li><strong>项目节奏放缓风险</strong>:README 自陈「development has slowed」,核心作者 (max-sixty) 单核瓶颈未解,新 resolver 没合入前 1.0 难产。</li>
+</ul>
+<h3>生态定位</h3>
+<p><strong>SQL 的写作层 / 关系型查询的 DSL / 函数式 + 关系代数的交叉产品</strong>。不做存储、不做执行、不做 lineage、不做 BI;是「数据工具链最上面那一层」,所有人都能放进来用。整个生态位:PRQL 处于「数据团队从 raw SQL 走向工程化」的入口——dbt 在它下游(项目管理/lineage/CI),DuckDB/Postgres 在它再下游(执行),Malloy 在它的 BI 邻接位(已被 MotherDuck 收编)。</p>
+<h2>套利机会分析</h2>
+<ul>
+<li><strong>信息差</strong>:PRQL 万 star 级别但增速放缓(从月均 100+ 跌到 20-40,2025-09 后才回升),不是被低估的潜力股——是已被广泛认知的「小众但成熟」项目。<strong>真正被低估的是它的「三段式 IR + s-string + 自举式 std」这套技术组合本身</strong>——博客/会议 talk 里讲得不多,中文圈几乎没有深度分析。</li>
+<li><strong>技术借鉴</strong>:回溯锚定拆分(任何链式 API→SQL 的项目都该学)、s-string escape hatch(任何编译到多方言的项目都该学)、自举式 std(任何想加 std 的语言编译器都该学)、insta snapshot + mdBook 文档测试一体化(任何 codegen/formatter 项目都该学)。</li>
+<li><strong>生态位</strong>:填补「SQL 写作层」的空白——<code>dbt-prql</code> 适配器已经存在,意味着你可以「dbt 项目里直接用 PRQL 写模型,编译到 SQL 跑」,不需要替换整个 dbt 栈。</li>
+<li><strong>趋势判断</strong>:2024 末-2025 中半年低谷后,2025-09 之后 0.13 系列重新加速(2026-04/05 跳到 73/92 commit),配合 Playground/文档大量改动——是「再启动期」而非「停滞期」。比 Malloy 强在「社区独立 + 通用语言」,比 sqlglot 强在「是语言不是工具库」,比 dbt 强在「真正的语言抽象 vs 字符串模板」。</li>
+</ul>
+<h2>风险与不足</h2>
+<ul>
+<li><strong>BDFL 单核风险</strong>:Top 1 贡献者占 48.8%,Top 3 合计 ~78%——核心作者 (max-sixty) 是单点故障,README 自陈「development has slowed」。</li>
+<li><strong>预 1.0 收尾期 + 关键功能缺口</strong>:Issue #407(<code>WITH RECURSIVE</code> 递归/迭代查询没有正交表达,1.0 前关键阻塞)、#2857(深递归查询下栈溢出,新 resolver 计划未合入)、#725(标准化集成 vs 深度集成的方向争论)都直接影响 1.0 进度。</li>
+<li><strong>跨方言转义鲁棒性</strong>:Issue #2155(列名 <code>timestamp</code> 转义失败)揭示了「多方言编译」叙事的现实摩擦——每个方言的引号/标识符规则都不同,12 个方言 = 12 套边角。</li>
+<li><strong>生态分散度</strong>:7+ 语言绑定 + 9 编辑器语法 + 多个独立 repo,任何一个维护者疲劳都会拖垮整条线。</li>
+<li><strong>官方定位保守</strong>:PRQL 官网自陈「ready to use by the intrepid」——对生产环境不友好,文档教程里有大量「请谨慎使用」「这个功能还在演进」的免责说明。</li>
+</ul>
+<h2>行动建议</h2>
+<ul>
+<li><strong>如果你要用它</strong>:最适合的场景是「DuckDB + Jupyter/Pandas」的探索式分析——<code>pyprql</code> 走 DuckDB 后端体验最佳,IDE 支持现代化(Playground + VSCode 扩展 + LSP)。<strong>不建议</strong>直接上生产:1.0 未发,关键功能(递归 CTE)缺失,项目自陈「development has slowed」。如果已经在用 dbt,优先用 <code>dbt-prql</code> 适配器,不要整体替换。</li>
+<li><strong>如果你要学它</strong>:</li>
+</ul>
+<p>  - <strong>架构层面</strong>:重点读 <code>prqlc/prqlc/ARCHITECTURE.md</code>(顶层 ASCII 图 + 每个 stage 子步骤)和 <code>prqlc/prqlc/src/lib.rs</code> 顶层入口,理解五层 IR 的拆分逻辑。<br/>  - <strong>创新层面</strong>:重点读 <code>prqlc/prqlc/src/sql/pq/anchor.rs</code>(回溯锚定拆分)和 <code>prqlc/prqlc/src/sql/std.sql.prql</code>(12 方言 std 如何用 s-string + 注解写)。<br/>  - <strong>工程层面</strong>:重点读 <code>prqlc/prqlc-parser/</code>(chumsky 0.12 解析器独立 crate)和 <code>.github/workflows/</code>(25+ workflow,Claude 驱动的 tend bot 已接入 PR review / issue triage / CI fix)。</p>
+<ul>
+<li><strong>如果你要 fork 它</strong>:最值得改进的方向是</li>
+</ul>
+<p>  1. <strong>新 resolver 计划</strong>(Issue #2857 提到的「在深递归查询下解决栈溢出」,目前还没合入,谁能搞定谁就是下一阶段的关键贡献者);<br/>  2. <strong>类型系统支持 LSP 补全</strong>(路线图明列,还没开始);<br/>  3. <strong>SQL→PRQL 自动转译</strong>(路线图明列,可以用 sqlglot 作为逆向前端);<br/>  4. <strong>代数类型系统</strong>(路线图明列);<br/>  5. <strong>Substrait 编译</strong>(路线图明列,RQ 中间表示的天然下游)。</p>
+<h3>知识入口</h3>
+<p>DeepWiki: <a href="https://deepwiki.com/prql/prql">https://deepwiki.com/prql/prql</a>（页面已建立,索引存在,待完整渲染）<br/>Zread.ai: 未收录（HTTP 403）<br/>关联论文: 无（PRQL 是开源语言项目,未发表学术论文）<br/>纲领性博客: <a href="https://prql-lang.org/functional-relations/">A functional approach to relational queries</a> — PRQL 设计哲学的纲领文章,从函数式编程视角重新审视关系查询<br/>官方教程: <a href="https://prql-lang.org/book/">prql-lang.org/book</a> — mdBook 教程,内嵌 PRQL 文档测试<br/>在线 Demo: <a href="https://prql-lang.org/playground/">prql-lang.org/playground</a> — 官方 Playground,浏览器内可编辑并查看编译后的 SQL<br/>标准库源码: <code>prqlc/prqlc/src/semantic/std.prql</code> (251 行) + <code>prqlc/prqlc/src/sql/std.sql.prql</code> (454 行)<br/>架构文档: <code>prqlc/prqlc/ARCHITECTURE.md</code>（仓库内）— 顶层 ASCII 图 + 每个 stage 子步骤</p>
+</body>
+</html>
