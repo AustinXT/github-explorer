@@ -1,0 +1,6 @@
+{
+  "title": "16 年 9.5K stars：Resque 如何把 fork-per-job 变成行业教科书",
+  "digest": "GitHub 2009 年的 Redis-backed Ruby 任务队列，用 fork-per-job 换稳定性，定义了 Ruby 任务队列的产品形态，6 个高价值设计被 Sidekiq/Que/GoodJob 全部继承。",
+  "author": "NVoyager",
+  "theme": "stars,universe,dark"
+}
