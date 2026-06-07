@@ -1,0 +1,6 @@
+{
+  "title": "从工程师内部痛点到 42K stars：LlamaIndex 怎么把 LangChain 逼到反向加数据层",
+  "digest": "LlamaIndex 押注「数据层优先」，用 Index/Retriever/QueryEngine 三段式把 RAG 做成 5 行代码；103 LLM + 78 向量库 + hash 幂等缓存，4 大设计模式可直接迁移。",
+  "author": "NVoyager",
+  "theme": "stars,universe,dark"
+}
