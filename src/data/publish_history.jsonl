@@ -114,3 +114,4 @@
 {"recorded_at": "2026-06-07T05:46:53.521828+00:00", "slug": "run-llama_llama_index", "title": null, "state": "published", "published_at": "2026-06-07", "reason": "自动生成", "ci_run_id": "27083812975"}
 {"recorded_at": "2026-06-07T07:42:48.845057+00:00", "slug": "vercel_ai", "title": null, "state": "published", "published_at": "2026-06-07", "reason": "自动生成", "ci_run_id": "27085947824"}
 {"recorded_at": "2026-06-07T09:35:18.119469+00:00", "slug": "marimo-team_marimo", "title": null, "state": "published", "published_at": "2026-06-07", "reason": "自动生成", "ci_run_id": "27088063160"}
+{"recorded_at": "2026-06-07T11:09:00.508262+00:00", "slug": "toml-lang_toml", "title": null, "state": "published", "published_at": "2026-06-07", "reason": "自动生成", "ci_run_id": "27090232768"}

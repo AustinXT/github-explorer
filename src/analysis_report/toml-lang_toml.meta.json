@@ -1,0 +1,6 @@
+{
+  "title": "13 年只发 11 个版本，TOML 凭什么成为配置文件事实标准",
+  "digest": "TOML 不是软件项目，是 13 年只升过两次大版本的语言规范。1049 行 markdown + 247 行 ABNF + 305 行 release.py 撑起全语言生态的配置文件标准。",
+  "author": "NVoyager",
+  "theme": "stars,universe,dark"
+}
