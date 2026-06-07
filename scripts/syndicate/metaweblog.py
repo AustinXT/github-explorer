@@ -13,6 +13,27 @@ import xmlrpc.client
 
 from .base import Article, BaseAdapter, PublishResult, RenderedArticle
 
+# 部分平台的 WAF（实测开源中国）按 User-Agent 拦截 xmlrpc.client 默认的
+# "Python-xmlrpc/x.y"（含 "python" 的 UA 一律 403），故统一用浏览器 UA 发起 XML-RPC。
+# 博客园不做此拦截，换 UA 后行为不变、一并受益。
+_BROWSER_UA = (
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+)
+
+
+class _UATransport(xmlrpc.client.Transport):
+    user_agent = _BROWSER_UA
+
+
+class _SafeUATransport(xmlrpc.client.SafeTransport):
+    user_agent = _BROWSER_UA
+
+
+def _make_transport(endpoint: str) -> xmlrpc.client.Transport:
+    """按 endpoint 协议选 Transport，并覆盖 UA 绕开「按 UA 拦截」的 WAF。"""
+    return _SafeUATransport() if endpoint.lower().startswith("https") else _UATransport()
+
 
 class MetaWeblogAdapter(BaseAdapter):
     content_format = "html"
@@ -37,7 +58,9 @@ class MetaWeblogAdapter(BaseAdapter):
         existing_post_id: str | None = None,
     ) -> PublishResult:
         c = self._config()
-        server = xmlrpc.client.ServerProxy(c["endpoint"], allow_none=True)
+        server = xmlrpc.client.ServerProxy(
+            c["endpoint"], transport=_make_transport(c["endpoint"]), allow_none=True
+        )
         struct = {
             "title": rendered.title,
             "description": rendered.content,          # HTML 正文
