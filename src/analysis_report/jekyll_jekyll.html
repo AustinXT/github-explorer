@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #3e3e3e;
+    background: #fff;
+}
+p {
+    font-size: 15px !important;
+    line-height: 2 !important;
+    margin: 0 !important;
+    padding-top: 0.5em !important;
+    padding-bottom: 0.5em !important;
+    padding-right: 1.2em !important;
+    padding-left: 1.2em !important;
+    text-align: justify !important;
+}
+p + p {
+    margin-top: 0 !important;
+}
+h1 {
+    font-size: 20px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 16px 0 !important;
+    padding: 0 !important;
+}
+h2 {
+    font-size: 18px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 24px 0 !important;
+    padding: 0 !important;
+}
+h3 {
+    font-size: 15px !important;
+    font-weight: bold !important;
+    color: #3e3e3e !important;
+    text-align: left !important;
+    margin: 16px 0 16px 0 !important;
+    padding: 0 0 0 1.2em !important;
+}
+h4 {
+    font-size: 15px !important;
+    color: rgb(0, 122, 170) !important;
+    margin: 12px 0 8px 0 !important;
+    padding: 0 !important;
+}
+ul, ol {
+    padding-left: 2em !important;
+    margin: 1em 0 !important;
+    font-size: 15px !important;
+}
+li {
+    margin: 0.5em 0 !important;
+    line-height: 1.8em !important;
+    font-size: 15px !important;
+    color: #3e3e3e !important;
+}
+ul ul, ul ol, ol ul, ol ol {
+    margin: 0 !important;
+    padding-left: 1.2em !important;
+}
+blockquote {
+    border-left: 4px solid #888 !important;
+    padding: 8px 16px !important;
+    margin: 1em 0 !important;
+    color: #666 !important;
+    background: #f9f9f9 !important;
+}
+blockquote > p {
+    margin: 0.5em 0 !important;
+    padding: 0 !important;
+}
+blockquote::before, blockquote::after {
+    content: none !important;
+}
+pre {
+    font-size: 14px !important;
+    line-height: 1.4em !important;
+    color: #3e3e3e !important;
+    background: #f8f8f8 !important;
+    padding: 12px 16px !important;
+    border-radius: 4px !important;
+    overflow: auto !important;
+    margin: 1em 0 !important;
+}
+.footnotes {
+    font-size: 11px !important;
+    color: #666 !important;
+    line-height: 1.2 !important;
+    margin: 8px 0 0 0 !important;
+    padding: 4px 0 0 0 !important;
+    border-top: 1px solid #eee !important;
+}
+.footnotes p {
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #666 !important;
+}
+sup {
+    font-size: 0.75em !important;
+    vertical-align: super !important;
+    color: #e51f42 !important;
+    margin: 0 2px !important;
+}
+hr {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 1.5em 0;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1em 0;
+    font-size: 14px;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 6px 10px;
+    text-align: left;
+}
+th {
+    background: #f5f5f5;
+    font-weight: bold;
+}
+</style>
+</head>
+<body>
+<blockquote><p>GitHub: <a href="https://github.com/jekyll/jekyll">https://github.com/jekyll/jekyll</a></p></blockquote>
+
+<h2>一句话总结</h2>
+<p>Jekyll 选择<strong>「git push 即发布」的极简哲学</strong>——以一个线性 <code>Site#process</code> 管线、反射式插件发现、三维 Hooks 注册表、Regenerator 增量构建等朴素但长寿的设计，把「写博客/文档」从数据库+运行时压缩成静态 HTML，让一个 2008 年的 SSG 在 2026 年仍是 GitHub Pages 的官方引擎。</p>
+
+<h2>值得关注的理由</h2>
+<ul>
+<li><strong>生态护城河几乎不可复制</strong>：GitHub Pages 官方默认引擎 = <code>github.io</code> 用户零配置一键发布，13 年沉淀的官方/第三方插件矩阵（feed、seo、sitemap、paginate 等）形成正向飞轮。</li>
+<li><strong>「克制即胜利」的工程哲学样本</strong>：放弃并行/异步换取心智模型清晰；放弃「多格式输出同源」留给插件；放弃内置评论/搜索/表单——明确的 NOT-done 让核心保持瘦。</li>
+<li><strong>长寿命开源项目治理范式</strong>：1,245 名贡献者、Parker Moore 27.9% 主导、<code>master</code> 仍接收提交、<code>History.markdown</code> 13 年没断，160 个 tag 严格 SemVer，是「职业级开源」的标本。</li>
+</ul>
+
+<h2>项目展示</h2>
+
+<blockquote><p>README 媒体在本次采集中未抓到（README 实际存在但 collect 未覆盖），已用官网 hero 图替代。</p></blockquote>
+
+<table>
+<thead>
+<tr><th>资源</th><th>链接</th><th>类型</th></tr>
+</thead>
+<tbody>
+<tr><td>Jekyll 品牌 logo</td><td><a href="https://jekyllrb.com/img/logo-2x.png">https://jekyllrb.com/img/logo-2x.png</a></td><td>hero</td></tr>
+<tr><td>Octojekyll 宣传图</td><td><a href="https://jekyllrb.com/img/octojekyll.png">https://jekyllrb.com/img/octojekyll.png</a></td><td>hero（首页 Octocat 风格）</td></tr>
+</tbody>
+</table>
+
+<h2>项目画像</h2>
+
+<table>
+<tbody>
+<tr><td>GitHub</td><td><a href="https://github.com/jekyll/jekyll">https://github.com/jekyll/jekyll</a></td></tr>
+<tr><td>Star / Fork</td><td>51,475 / 10,283</td></tr>
+<tr><td>Watcher</td><td>1,399</td></tr>
+<tr><td>代码行数</td><td>28,103（不含空行/注释）</td></tr>
+<tr><td>语言分布</td><td>Ruby 60% / Gherkin 16%（Cucumber BDD） / Sass 8% / YAML 6% / JavaScript 4% / HTML 3%</td></tr>
+<tr><td>项目年龄</td><td>211.8 个月（≈17.6 年，首次提交 2008-10-19）</td></tr>
+<tr><td>最近推送</td><td>2026-04-22</td></tr>
+<tr><td>开发阶段</td><td>低维护（稳定末期；近 365 天 27 commit，但 160 个 tag 持续小修小补）</td></tr>
+<tr><td>贡献模式</td><td>社区协作（1,245 名贡献者，Top 1 @parkr 占 27.9%，@jekyllbot 占 22%）</td></tr>
+<tr><td>热度定位</td><td>大众热门（51K stars，SSG 品类事实标准之一）</td></tr>
+<tr><td>质量评级</td><td>代码[优秀] 文档[优秀] 测试[充分] CI/CD[完善] 错误处理[规范]</td></tr>
+<tr><td>话题标签</td><td>ruby, jekyll, static-site-generator, blog-engine, markdown, liquid</td></tr>
+<tr><td>License</td><td>MIT</td></tr>
+<tr><td>Release</td><td>v4.4.1（共 160 个 tag，100 个 GitHub Release，SemVer 严格）</td></tr>
+<tr><td>依赖</td><td>Ruby 2.7.0+，Liquid/Kramdown/Rouge/SafeYAML/Webrick（gem 体系）</td></tr>
+</tbody>
+</table>
+
+<h2>作者视角：为什么存在这个项目</h2>
+
+<h3>创始人/作者背景</h3>
+<p>Jekyll 由 <strong>Tom Preston-Werner（mojombo）</strong>——GitHub 联合创始人——在 2008 年于 GitHub 内部孵化、用于支撑 GitHub Pages。早期核心团队后由社区接管，Parker Moore（@parkr）作为项目维护者占贡献量的 27.9%。@jekyll 组织化运营 13.5 年，54 个公开仓库里 jekyll/jekyll 以 51K stars 远超次席 jekyll-seo-tag 的 1,719，是组织绝对旗舰。Tom 在 GitHub 内部承担过「为每个 Repo 生成静态页面」的运维与一致性压力——他意识到「每次动态渲染」的成本可以前置到「提交时」消化，把构建从运行时搬到 build-time。</p>
+
+<h3>问题判断</h3>
+<p>2008 年时：WordPress/MovableType 等动态博客依赖数据库+运行时（PHP/MySQL），安装、备份、迁移、抗 DDoS 都有成本；安全补丁频发；评论/插件带来的复杂度超出「写文章」本身。真正的静态生成器仍非常小众（Nanoc 偏 Ruby 程序员、Blosxom 偏 Perl、Hugo 尚未诞生），没有面向「非程序员博主」的「开箱即用」工作流。Tom 写 Jekyll 既是解决 GitHub Pages 引擎的内部痛点，又同时把 GitHub Pages 绑定为一个零运维的「发布 SaaS」，形成正向飞轮。</p>
+
+<h3>解法哲学</h3>
+<ul>
+<li><strong>极简 vs 功能完整</strong>：Jekyll does what you tell it to do — no more, no less. Markdown + Liquid + Front Matter + Layouts 完成 80% 博客需求。</li>
+<li><strong>性能 vs 易用</strong>：易用始终优先——<code>Site#process</code> 仍是 reset→read→generate→render→cleanup→write 的同步线性管线，无并行/异步；性能靠 LiquidRenderer 模板 parse 缓存、Regenerator 增量、Cache 落盘「打补丁」。</li>
+<li><strong>开放生态</strong>：Converter/Generator/Command/Tag/Filter/Hook 五大插件入口，<code>Jekyll::Plugin.descendants</code> 反射发现，零样板。</li>
+<li><strong>标准化 vs 魔幻</strong>：YAML + Markdown + Liquid 三件套都来自成熟生态，故意不发明模板 DSL，复用 Shopify/Liquid 生态。</li>
+<li><strong>明确的 NOT-done</strong>：① 不做「多格式输出同源」（HTML/JSON/AMP/feed 共存留给插件，见 Issue #3041 长期开放讨论）② 不内置评论/搜索/表单 ③ 不替代数据库。</li>
+</ul>
+
+<h3>战略意图</h3>
+<p>Jekyll 是「瘦核心 + 胖插件」的开源模式，所有官方可选能力（feed、sitemap、SEO、paginate、redirect-from、coffeescript、gist）都以独立 gem（<code>jekyll-*</code>）发布，与核心解耦——这是 GitHub 在 Ruby 生态里典型的「中央仓 + 卫星包」治理模型。商业化<strong>不在 Jekyll 本体</strong>，而在 GitHub Pages（云端托管/构建）以及 Grav/CloudCannon/Siteleaf 等「编辑体验」第三方。Jekyll 维持 MIT + 完全开源，保护了「GitHub Pages 的引擎」这一定位，这是它能维持 13 年中立性的关键。</p>
+
+<h2>核心价值提炼</h2>
+
+<h3>创新之处</h3>
+<ol>
+<li><strong>Plugin.descendants 反射式插件发现</strong>（新颖度 4/5 / 实用性 5/5 / 可迁移性 5/5）：<code>Jekyll::Plugin.inherited</code> 在子类定义时自动登记到 <code>Set</code>，运行时无需注册表。Ruby/Rails 生态几乎人手一份。</li>
+<li><strong>Hooks 三维注册表</strong>（3/5 / 5/5 / 5/5）：用 <code>[-priority, load_order]</code> 作为排序键，让多个插件在同一阶段按优先级有序执行。调试极简——<code>Jekyll::Hooks.trigger</code> 是同步调用，stack trace 干净。</li>
+<li><strong>Drops 模板沙箱</strong>（3/5 / 4/5 / 4/5）：<code>Jekyll::Drops::Drop &lt; Liquid::Drop</code> 包装内部对象，<code>delegate_method</code> / <code>data_delegator</code> DSL 显式声明「模板能访问哪些字段」，<code>SETTER_KEYS_STASH</code> + <code>NON_CONTENT_METHOD_NAMES</code> 压成本。</li>
+<li><strong>Regenerator 增量构建</strong>（4/5 / 5/5 / 5/5）：每个文档渲染结束记一份 <code>{mtime, deps: [layout_path, include_paths, ...]}</code> 落盘；下次构建按「源变了 OR 任一 dep 变了 OR 目标缺失」判定是否重渲。Issue #380 长期痛点最终靠这个解决。</li>
+<li><strong>Theme = Gem「内容、设计、逻辑」三分离</strong>（4/5 / 4/5 / 3/5）：把皮肤建模为普通 gem，<code>load_theme_configuration</code> 合并主题配置但禁止主题覆盖 Jekyll 默认值；symlink 直接 bail 防止恶意主题指向外部目录。</li>
+<li><strong>parse / render 分阶段缓存</strong>（3/5 / 4/5 / 4/5）：Liquid 模板拆成「parse（昂贵，只一次）+ render（廉价，可重入）」两阶段；<code>stats_table</code> 用 <code>terminal-table</code> 给出 TOP-N 慢模板。</li>
+<li><strong>自指 dogfooding</strong>（3/5 / 4/5 / 3/5）：<code>docs/</code> 目录是 Jekyll 站点的源，<code>docs/_config.yml</code> 用自己的 <code>_layouts</code>/<code>_includes</code>/<code>_data</code>——jekyllrb.com 的部署产物 = Jekyll 构建产物。</li>
+</ol>
+
+<h3>可复用的模式与技巧</h3>
+<ol>
+<li><strong>中央容器 + 显式线性管线（Site#process = reset→read→generate→render→cleanup→write）</strong>——可迁移到任何批量文档生成、报告生成、ETL 流程。</li>
+<li><strong>Plugin 抽象 + 反射发现 + 优先级</strong>——可迁移到任何「用户放个文件就生效」的扩展框架。</li>
+<li><strong>Hooks 三维注册表（owner × event × priority）</strong>——可迁移到构建工具的扩展点、CI runner、IDE processor pipeline。</li>
+<li><strong>配置三层合并（DEFAULTS &lt; _config.yml &lt; override）+ Hash 子类</strong>——可迁移到任何 CLI 工具的配置加载。</li>
+<li><strong>Drops 模板沙箱</strong>——可迁移到 CMS 字段过滤、API 响应脱敏、模板注入防护。</li>
+<li><strong>Regenerator 增量构建（mtime 摘要 + 依赖图）</strong>——可迁移到文档站、报告生成、邮件模板预编译、ETL 增量同步。</li>
+<li><strong>Render 三段式（Liquid → Converter Chain → Layout 俄罗斯套娃）</strong>——可迁移到邮件、PDF、报表、Markdown 文档。</li>
+<li><strong>Theme = Gem</strong>——可迁移到可插拔皮肤系统（CMS 主题、IDE 主题、报表模板）。</li>
+<li><strong><code>benchmark/</code> 目录的 micro-bench 习惯</strong>——<code>symbol-to-proc</code> / <code>schwartzian_transform</code> / <code>native-vs-pathutil-relative</code> 等独立脚本让 PR 评审可以「看到这个改动快了多少」。</li>
+<li><strong><code>rubocop/</code> 自定义风格规则</strong>——避免用 <code>get_</code> 前缀等历史包袱污染主仓库。</li>
+<li><strong>用框架构建框架的官网</strong>——dogfooding 之王道；VitePress、Hexo、Astro 的官方站都是这个模式。</li>
+</ol>
+
+<h3>关键设计决策</h3>
+<ol>
+<li><strong>Site 是中央容器，构建流程是显式线性管线</strong>（reset→read→generate→render→cleanup→write）：放弃「全自动黑盒」灵活性换心智模型清晰，代价是性能（无并行），但通过 Regenerator 增量与 Cache 落盘缓解。</li>
+<li><strong>Plugin 抽象 + 反射式子类发现（<code>descendants</code>）</strong>：不显式注册 → 加载顺序由 <code>Dir[].sort</code> 决定，调试「插件冲突」需要靠 <code>priority</code> 机制兜底。</li>
+<li><strong>Hook 系统按「owner + event + priority」三维注册</strong>：<code>@registry = { owner: { event: [block, ...] } }</code>，每个 block 进入时用 <code>[-priority, load_order]</code> 作为排序键。</li>
+<li><strong>Render 阶段用三层流水线（Liquid → Converter Chain → Layout 俄罗斯套娃）</strong>：默认关闭 Markdown 内的 Liquid（<code>render_with_liquid?</code> 默认 false），避免「<code>{{ something }}</code> 嵌在 Markdown 里没渲染」困扰。</li>
+<li><strong>Configuration 三层合并（DEFAULTS &lt; _config.yml &lt; override）+ Hash 子类</strong>：YAML 反序列化即配置，<code>Configuration#stringify_keys</code> 兜底用户配置里有 <code>clear</code> key 与 Hash#clear 冲突。</li>
+<li><strong>Front Matter Defaults 按「路径 glob + 类型 + 优先级」合并</strong>：声明式比命令式多一层「匹配规则心智」，但用户基本能「照抄示例」就懂。</li>
+<li><strong>safe 模式 + 插件白名单</strong>：<code>safe: true</code> 下 <code>instantiate_subclasses</code> 只保留 <code>klass.safe == true</code> 的插件；同时支持 <code>whitelist: ['my-trusted-plugin']</code>。</li>
+<li><strong>液态模板解析缓存（LiquidRenderer::File）</strong>：模板数量爆炸时是隐患——但博客场景的 layout/include 数量在百级以下，问题不大。</li>
+</ol>
+
+<h2>竞品格局与定位</h2>
+
+<h3>竞品对比矩阵</h3>
+
+<table>
+<thead>
+<tr><th>维度</th><th>Jekyll</th><th>Hugo</th><th>Eleventy (11ty)</th><th>Gatsby</th></tr>
+</thead>
+<tbody>
+<tr><td>引擎语言</td><td>Ruby</td><td>Go</td><td>Node.js</td><td>React + GraphQL</td></tr>
+<tr><td>Stars</td><td>51K</td><td>78K</td><td>30K</td><td>55K</td></tr>
+<tr><td>构建速度（10K 页）</td><td>分钟级</td><td>秒级</td><td>中等</td><td>慢</td></tr>
+<tr><td>部署形式</td><td>Ruby 运行时 + gem</td><td>单二进制</td><td>Node.js</td><td>Node.js + Webpack/Vite</td></tr>
+<tr><td>模板引擎</td><td>Liquid（独家）</td><td>Go template</td><td>Nunjucks/Liquid/Handlebars/Mustache/Pug/EJS</td><td>React/JSX</td></tr>
+<tr><td>增量构建</td><td>✅ Regenerator（成熟）</td><td>✅ 天然</td><td>早期需手写</td><td>✅</td></tr>
+<tr><td>GitHub Pages 原生</td><td>✅ 官方引擎</td><td>❌</td><td>❌</td><td>❌</td></tr>
+<tr><td>冷启动成本</td><td>5 分钟</td><td>中</td><td>中</td><td>高（需懂 React + GraphQL）</td></tr>
+<tr><td>多语言</td><td>靠插件</td><td>✅ 原生</td><td>靠插件</td><td>靠插件</td></tr>
+<tr><td>客户端交互</td><td>弱</td><td>弱</td><td>中</td><td>强（React 运行时）</td></tr>
+<tr><td>数据层</td><td><code>_data/*.yml</code></td><td>模板/数据</td><td><code>_data/*</code></td><td>GraphQL 统一图</td></tr>
+<tr><td>错误可调试性</td><td>优秀（Ruby stack）</td><td>优秀</td><td>优秀</td><td>较差（GraphQL 错误栈劝退新人）</td></tr>
+</tbody>
+</table>
+
+<h3>差异化护城河</h3>
+<ul>
+<li><strong>生态护城河（强）</strong>：GitHub Pages 官方引擎 + 13 年沉淀的官方/第三方插件矩阵 + 大量「用 Jekyll 写」的教程与主题。</li>
+<li><strong>信任护城河（强）</strong>：MIT 协议 + 透明治理（<code>team/</code> 公开 + 议程公开）+ 长期稳定的 API 兼容性。</li>
+<li><strong>技术护城河（中等）</strong>：插件系统、Front Matter Defaults、Incremental build 都是行业早期创新；但 Hugo/11ty 都在这些点上迎头赶上。</li>
+</ul>
+
+<h3>竞争风险</h3>
+<ul>
+<li><strong>被 Hugo 替代（高风险）</strong>：性能敏感 / 大型文档（万页+）/ 多语言用户必然流向 Hugo。</li>
+<li><strong>被 11ty 替代（中风险）</strong>：前端/JS 栈团队若不锁定 GitHub Pages，会选 11ty（更轻量、更多模板引擎）。</li>
+<li><strong>被 Gatsby/Astro 替代（中风险）</strong>：需要客户端交互（登录、评论、表单 SPA）的项目会流向前两者。</li>
+<li><strong>被 Notion/Obsidian Publish/Substack 替代（中等 + 渐进）</strong>：纯写作者越来越倾向「连 git 都不想用」的全托管平台。</li>
+</ul>
+
+<h3>生态定位</h3>
+<p>Jekyll 在静态站生成器生态中的位置是<strong>「最朴素、最长寿、最被托管平台官方支持的内容站引擎」</strong>——它不追求性能/能力极限，而是追求「git push 就能上线」的极简哲学。13 年后仍是 GitHub Pages 的默认引擎，足以说明这种定位的韧性。</p>
+
+<h2>套利机会分析</h2>
+<ul>
+<li><strong>信息差</strong>：Jekyll 不是「被低估」的项目——它的价值已充分定价（GitHub Pages 引擎、51K stars、SSG 品类事实标准）。但作为「老牌稳定」项目的代表，对追求极简部署与 Markdown 优先的工作流仍是首选。</li>
+<li><strong>技术借鉴</strong>：<code>Site#process</code> 线性管线 + 反射式 Plugin 发现 + Hooks 三维注册表 + Drops 沙箱 + Regenerator 增量构建 + Theme = Gem，这一整套设计模式可以<strong>整套迁移</strong>到任何「批量文档生成 / 插件化 CLI / 静态站工具」的新项目，是「插件化框架」的标杆实现。</li>
+<li><strong>生态位</strong>：Jekyll 填补了「零运行时 + 极简心智 + 官方托管」三位一体的空白，13 年未被取代。</li>
+<li><strong>趋势判断</strong>：已进入维护期（近 365 天 27 commit，dev_stage 标记为「低维护」），新功能增长停滞；但增长主要来自存量用户的稳定使用而非爆发新增，GitHub Pages 的引擎定位短期不会变。趋势是「在 GitHub Pages 默认引擎这个生态位上保持稳定，被 Hugo/11ty 蚕食边缘用户」。</li>
+</ul>
+
+<h2>风险与不足</h2>
+<ul>
+<li><strong>构建性能瓶颈</strong>：10K 页以上站点分钟级等待；Regenerator 增量只是缓解，没有根本性解决（Issue #380 长期痛点）。</li>
+<li><strong>「单页单输出」模型限制</strong>：同一页内容如何用不同 layout 输出多格式（HTML/JSON/AMP/feed）是长期 open 议题（Issue #3041），API/feed 等场景需要插件绕路。</li>
+<li><strong>Ruby 生态的版本升级成本</strong>：每次 Ruby 主版本升级都带来 gem 兼容性问题，新人需要懂 Ruby 才能贡献。</li>
+<li><strong>Liquid 模板引擎的双刃剑</strong>：对设计师友好但灵活性差（无法做复杂条件/循环），高端用户会撞墙。</li>
+<li><strong>插件质量参差</strong>：第三方插件是 Jekyll 力量源泉但也是最大的安全/稳定性风险来源——<code>safe</code> 模式只能挡一部分。</li>
+<li><strong>维护期陷阱</strong>：近 30 天 0 commit、近 90 天仅 9 commit，新功能响应慢，社区贡献者可能流失到 11ty/Astro 等更活跃的 SSG。</li>
+</ul>
+
+<h2>行动建议</h2>
+<ul>
+<li><strong>如果你要用它</strong>：<br/>
+  ✅ 选它的场景：博客 / 项目文档 / 营销页 / 中小型内容站（&lt; 1K 页）/ 想 git push 零运维上线。<br/>
+  ❌ 别选它的场景：万页+ 文档站（用 Hugo）/ 需要登录态/评论/表单（用 Gatsby/Astro）/ JS 栈团队（用 11ty）。</li>
+<li><strong>如果你要学它</strong>：<br/>
+  重点读 <code>lib/jekyll/site.rb</code>（构建管线）、<code>lib/jekyll/plugin.rb</code>（反射发现）、<code>lib/jekyll/hooks.rb</code>（三维注册表）、<code>lib/jekyll/drops/drop.rb</code>（沙箱）。<br/>
+  读 <code>lib/site_template/</code> 和 <code>docs/_docs/plugins.md</code> 看「插件作者怎么上手」。<br/>
+  看 <code>History.markdown</code> 2,998 次修改的演变，理解「17 年如何保持 API 稳定」。</li>
+<li><strong>如果你要 fork 它</strong>：<br/>
+  可以改进的方向：① 内置 i18n（取代 jekyll-polyglot 插件）② 多格式输出同源（解决 Issue #3041）③ ESM/TypeScript front matter 支持 ④ Incremental 真正按 page 粒度并行。<br/>
+  风险：13 年的 API 兼容性是 Jekyll 最大的资产，fork 改了 API 就丢了生态。</li>
+</ul>
+
+<h2>知识入口</h2>
+
+<table>
+<tbody>
+<tr><td>DeepWiki</td><td><a href="https://deepwiki.com/jekyll/jekyll">https://deepwiki.com/jekyll/jekyll</a>（已收录，架构与设计哲学解读完整）</td></tr>
+<tr><td>Zread.ai</td><td>未收录</td></tr>
+<tr><td>关联论文</td><td>无（SSG 为工程类项目，学术文献稀少）</td></tr>
+<tr><td>在线 Demo</td><td><a href="https://jekyllrb.com/docs">https://jekyllrb.com/docs</a>（Quickstart 即可在 30 秒内 <code>bundle exec jekyll serve</code> 本地起站）</td></tr>
+</tbody>
+</table>
+
+<hr/>
+
+<h2>附：分阶段分析原始摘要</h2>
+
+<h3>Phase 1 — 网络分析</h3>
+<ul>
+<li><strong>仓库基本数据</strong>：Star 51,475 / Fork 10,283 / Watcher 1,399；Ruby 70.6% / Gherkin 23.1% / JavaScript 3.8%；MIT License；创建 2008-10-20，最近推送 2026-04-22；话题标签 ruby, jekyll, static-site-generator, blog-engine, markdown, liquid。</li>
+<li><strong>作者画像</strong>：@jekyll 组织账号（13.5 年，54 公开仓库，1,269 粉丝），此 repo 投入权重高（排第 1，远超次席）；核心团队 + 1,245 位贡献者社区维护；Top 1 @parkr 占 27.9%。</li>
+<li><strong>社区热度</strong>：大众热门（51K stars，GitHub Pages 官方引擎）；早期高速增长（27 天 200 star ≈ 7.4 star/天）；近期进入维护期（30 天 0 commit、90 天 9 commit）；不算被低估——SSG 品类事实标准之一，价值已充分定价。</li>
+<li><strong>生态网络</strong>：上游依赖 GitHub Pages（官方默认引擎）；同类项目 Hugo/Hexo/Eleventy/Gatsby/Pelican/Octopress/Next.js。</li>
+<li><strong>官方文档洞察</strong>：「Transform your plain text into static websites and blogs」；目标用户：不想折腾数据库/CMS 的内容创作者与开发者；差异化叙事：「No more databases, comment moderation, or pesky updates to install—just your content.」（零运行时）；设计哲学：「just your content」；构建管线 <code>reset → read → generate → render → write</code>。</li>
+<li><strong>关键 Issue 信号</strong>：<ol>
+  <li><a href="https://github.com/jekyll/jekyll/issues/6948">#6948 Jekyll 4.0 Ideas</a> — 揭示 Jekyll 从 3.x 跨向 4.0 的核心设计张力（要不要全面重写渲染管线、是否引入插件签名、kramdown 默认配置如何取舍）</li>
+  <li><a href="https://github.com/jekyll/jekyll/issues/3041">#3041 multiple formats per page</a> — 长期 open 议题：同一页内容如何用不同 layout 输出多格式，反映 Jekyll「单页单输出」模型在 API/feed 等场景下的局限性</li>
+  <li><a href="https://github.com/jekyll/jekyll/issues/380">#380 Incremental regeneration</a> — 大站点构建性能痛点，催生了 <code>--incremental</code> 与 4.x 的部分增量方案</li>
+  </ol></li>
+</ul>
+
+<h3>Phase 2 — 元分析</h3>
+<ul>
+<li><strong>代码规模</strong>：28,103 行（不含空行/注释），Ruby 59.9% / Gherkin 16.3% / Sass 7.6% / YAML 5.5% / JavaScript 3.8% / HTML 3.4%；代码/注释比 1:0.74（注释 20,920 行，比例 74.4%，体现项目对开发者文档化的重视）；698 文件；Ruby gem 项目（无 package.json）。</li>
+<li><strong>开发节奏</strong>：211.8 个月（17.6 年）；总 commit 11,872；近 30 天 0 commit / 90 天 9 commit / 365 天 27 commit；周末占比 23.8%，深夜占比 21.1%；开发阶段「低维护」，开发模式「职业项目」（团队 + 社区双轨）。</li>
+<li><strong>演化轨迹核心文件</strong>（Top 10）：<ol>
+  <li><code>History.markdown</code> — 2,998 次修改（自动生成的版本变更日志，不算核心逻辑）</li>
+  <li><code>lib/jekyll/site.rb</code> — 361 次修改（核心 Site 编排类，最热的真实代码热点）</li>
+  <li><code>jekyll.gemspec</code> — 295 次修改（gem 元数据/依赖声明）</li>
+  <li><code>History.txt</code> — 255 次修改（旧版 changelog）</li>
+  <li><code>lib/jekyll.rb</code> — 246 次修改（顶层入口/自动加载，插件机制与配置默认值）</li>
+  <li><code>Gemfile</code> — 230 次修改（依赖锁文件）</li>
+  <li><code>lib/jekyll/post.rb</code> — 181 次修改（文章/文档模型）</li>
+  <li><code>lib/jekyll/convertible.rb</code> — 177 次修改（统一 Liquid/YAML/Markdown 内容转换）</li>
+  <li><code>test/test_site.rb</code> — 174 次修改（Site 类的单元测试）</li>
+  <li><code>test/test_filters.rb</code> — 157 次修改（Liquid 过滤器测试）</li>
+  </ol></li>
+<li><strong>演化轨迹热点目录</strong>：lib/jekyll 3,846 / docs/_docs 1,197 / site/_docs 744 / site/docs 469 / site/_posts 347 / lib/site_template 315（一等公民脚手架）。</li>
+<li><strong>Commit 类型分布</strong>（近 200 次采样）：Feature/Add 24 (12.0%) / Fix/Bug 24 (12.0%) / Refactor 0 (0.0%) / Docs 12 (6.0%) / Test 3 (1.5%) / Other 137 (68.5%)。feature/fix 几乎 1:1，refactor 0% 佐证架构已稳定；other 68.5% 主要来自 History.markdown 自动 bump。</li>
+<li><strong>月度 commit 节奏亮点</strong>：2013-05 达 306 commit / 2014-05 史上最高 348 commit（GitHub Pages 强整合期） / 2016-01 反弹至 281 commit（3.0 启动期） / 2018-12 ~ 2019-01 v4.0 前后小高峰 / 2022 起断崖式下跌 / 2025-2026 月均 2-6 commit。</li>
+<li><strong>版本发布</strong>：v4.4.1（160 个 tag，100 个 GitHub Release）；SemVer 严格；主线 v2.x（2012-2014）→ v3.x（2015-2019，3.0 引入相对路径）→ v4.x（2019 至今，4.0 引入 GitHub Pages 兼容性、加速构建）；4.5 仍待发。</li>
+</ul>
+
+<h3>Phase 3 — 内容分析（架构与设计）</h3>
+<ul>
+<li><strong>目录结构</strong>：<code>lib/jekyll.rb</code> 顶层用 <code>autoload</code> 按需加载；<code>site.rb</code> 是唯一「大对象」承担构建编排中央调度；<code>plugin.rb</code> 是插件抽象根，Converter/Generator/Command/Hook 派生；<code>drops/</code> 单独成层是给 Liquid 模板一个「安全、只读、防无限递归」的视图；<code>utils/</code> 拆出跨平台/IO/编码工具。</li>
+<li><strong>关键设计决策</strong>（10 条详见上文「关键设计决策」节）：Site 中央容器 + 显式线性管线 / Plugin.descendants 反射发现 / Hooks 三维注册表 / Render 三段式 / Regenerator 增量构建 / Configuration 三层合并 / Drops 模板沙箱 / Front Matter Defaults 路径 glob + 优先级 / safe 模式 + 插件白名单 / LiquidRenderer 模板 parse 缓存 + 渲染 stats。</li>
+<li><strong>代码质量评级</strong>：代码[优秀]（13 年演化 + 显式 YARD 注释 + 自定义 RuboCop 规则）/ 文档[优秀]（40+ 篇 + Jekyll 自指构建）/ 测试[充分]（55 个 Minitest + 20+ Cucumber + benchmark + Earthly）/ CI/CD[完善]（7+ workflow + Dependabot + CodeQL + release-please）/ 错误处理[规范]（Errors 模块 + FatalException + strict_* 开关）。</li>
+<li><strong>质量检查清单</strong>：✅ 测试（unit + E2E + fixtures + benchmark）✅ CI/CD（GitHub Actions + Earthly + Dependabot + CodeQL）✅ 文档（40+ 篇 + 自指）✅ 错误处理 ✅ linter（rubocop/ 自定义规则）✅ CHANGELOG ✅ LICENSE ✅ examples（3 个新站模板）✅ 依赖锁定（Gemfile.lock）✅ 自指 dogfooding ✅ Earthly 多架构多 Ruby 矩阵。</li>
+<li><strong>哲学总结</strong>：Jekyll 的护城河不在性能（输 Hugo）也不在能力（输 Gatsby），而在「零运行时 + 极简心智 + 官方托管」三位一体——<strong>克制即胜利</strong>的工程哲学。</li>
+</ul>
+</body>
+</html>

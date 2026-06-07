@@ -1,0 +1,6 @@
+{
+  "title": "13 年 51K stars：Jekyll 为什么仍是 GitHub Pages 的默认引擎",
+  "digest": "Jekyll 以「git push 即发布」的极简哲学，用线性构建管线、反射式插件发现与 Hooks 三维注册表，把博客从数据库+运行时压缩成静态 HTML。13 年沉淀的官方引擎定位、瘦核心+胖插件生态与明确 NOT-done 边界，是「克制即胜利」的工程哲学样本。",
+  "author": "NVoyager",
+  "theme": "stars,universe,dark"
+}
