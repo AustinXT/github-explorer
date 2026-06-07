@@ -3,6 +3,7 @@ import "~/styles/global.css";
 import { SITE, absoluteUrl } from "~/lib/data";
 import SearchBox from "~/components/SearchBox.astro";
 import JsonLd from "~/components/JsonLd.astro";
+import WeChatFollow from "~/components/WeChatFollow.astro";
 
 interface Props {
   title?: string;
@@ -193,16 +194,19 @@ function isActive(p: string) {
     </main>
 
     <footer class="mt-16 py-8 border-t border-zinc-200 text-sm text-zinc-500">
-      <div class="max-w-6xl mx-auto px-4 flex flex-wrap gap-4 justify-between">
+      <div class="max-w-6xl mx-auto px-4 flex flex-wrap gap-6 justify-between items-center">
         <div>
           © {new Date().getFullYear()} {SITE.title} · 由
           <a class="underline" href={SITE.repoUrl} target="_blank" rel="noopener"
             >AustinXT/github-explorer</a
           > 驱动
         </div>
-        <div class="flex gap-4">
-          <a class="hover:text-zinc-900" href={rssHref}>RSS</a>
-          <a class="hover:text-zinc-900" href={`${base}/submit`}>提交一个仓库 →</a>
+        <div class="flex items-center gap-6">
+          <div class="flex gap-4">
+            <a class="hover:text-zinc-900" href={rssHref}>RSS</a>
+            <a class="hover:text-zinc-900" href={`${base}/submit`}>提交一个仓库 →</a>
+          </div>
+          <WeChatFollow variant="footer" />
         </div>
       </div>
     </footer>

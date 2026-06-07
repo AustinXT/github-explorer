@@ -2,6 +2,7 @@
 import Base from "~/layouts/Base.astro";
 import ReportCard from "~/components/ReportCard.astro";
 import SearchBox from "~/components/SearchBox.astro";
+import WeChatFollow from "~/components/WeChatFollow.astro";
 import {
   getReports,
   getTagsDoc,
@@ -136,5 +137,9 @@ const tagsSorted = Array.from(tagCount.entries())
         </div>
       </div>
     </div>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-4 py-10 border-t border-zinc-200">
+    <WeChatFollow variant="section" />
   </section>
 </Base>

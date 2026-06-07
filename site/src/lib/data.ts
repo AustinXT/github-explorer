@@ -248,6 +248,11 @@ export const SITE = {
     bing: "",
   },
   rssTitle: "GitHub Explorer · 最新报告",
+  // 微信公众号引导关注；qr 相对 public 根，组件内拼 BASE_URL
+  wechat: {
+    name: "智能时代蛮子",
+    qr: "/wechat-qr.png",
+  },
 };
 
 // 拼接绝对 URL（自带 base 子路径），用于 canonical / og:url / sitemap 等

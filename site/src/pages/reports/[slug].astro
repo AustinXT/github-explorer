@@ -3,6 +3,7 @@ import { getCollection, render } from "astro:content";
 import Base from "~/layouts/Base.astro";
 import ReportCard from "~/components/ReportCard.astro";
 import JsonLd from "~/components/JsonLd.astro";
+import WeChatFollow from "~/components/WeChatFollow.astro";
 import {
   getReports,
   getTagsDoc,
@@ -226,6 +227,8 @@ const breadcrumbSchema = {
             }
           </dl>
         </div>
+
+        <WeChatFollow variant="sidebar" />
 
         {
           tags.length > 0 && (
