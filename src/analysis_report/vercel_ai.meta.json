@@ -1,0 +1,6 @@
+{
+  "title": "36个月24.7K stars：Vercel AI SDK如何用一套TS API收编60+ LLM",
+  "digest": "用一套 TypeScript API 屏蔽 60+ 模型厂商差异，v7 canary 正在把它从 SDK 推向 Agent 运行时；4层消息模型、洋葱中间件、可缝合流，14.2M 周下载背后的工程化范本。",
+  "author": "NVoyager",
+  "theme": "stars,universe,dark"
+}
