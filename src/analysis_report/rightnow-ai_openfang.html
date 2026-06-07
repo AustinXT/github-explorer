@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #3e3e3e;
+    background: #fff;
+}
+
+/* 正文段落 */
+p {
+    font-size: 15px !important;
+    line-height: 2 !important;
+    margin: 0 !important;
+    padding-top: 0.5em !important;
+    padding-bottom: 0.5em !important;
+    padding-right: 1.2em !important;
+    padding-left: 1.2em !important;
+    text-align: justify !important;
+}
+p + p {
+    margin-top: 0 !important;
+}
+
+/* 标题 */
+h1 {
+    font-size: 20px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 16px 0 !important;
+    padding: 0 !important;
+}
+h2 {
+    font-size: 18px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 24px 0 !important;
+    padding: 0 !important;
+}
+h3 {
+    font-size: 15px !important;
+    font-weight: bold !important;
+    color: #3e3e3e !important;
+    text-align: left !important;
+    margin: 16px 0 16px 0 !important;
+    padding: 0 0 0 1.2em !important;
+}
+h4 {
+    font-size: 15px !important;
+    color: rgb(0, 122, 170) !important;
+    margin: 12px 0 8px 0 !important;
+    padding: 0 !important;
+}
+
+/* 列表 */
+ul,
+ol {
+    padding-left: 2em !important;
+    margin: 1em 0 !important;
+    font-size: 15px !important;
+}
+li {
+    margin: 0.5em 0 !important;
+    line-height: 1.8em !important;
+    font-size: 15px !important;
+    color: #3e3e3e !important;
+}
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+    margin: 0 !important;
+    padding-left: 1.2em !important;
+}
+
+/* 引用 */
+blockquote {
+    border-left: 4px solid #888 !important;
+    padding: 8px 16px !important;
+    margin: 1em 0 !important;
+    color: #666 !important;
+    background: #f9f9f9 !important;
+}
+blockquote > p {
+    margin: 0.5em 0 !important;
+    padding: 0 !important;
+}
+blockquote::before,
+blockquote::after {
+    content: none !important;
+}
+
+/* 代码块 */
+pre {
+    font-size: 14px !important;
+    line-height: 1.4em !important;
+    color: #3e3e3e !important;
+    background: #f8f8f8 !important;
+    padding: 12px 16px !important;
+    border-radius: 4px !important;
+    overflow: auto !important;
+    margin: 1em 0 !important;
+}
+
+/* 脚注 */
+.footnotes {
+    font-size: 11px !important;
+    color: #666 !important;
+    line-height: 1.2 !important;
+    margin: 8px 0 0 0 !important;
+    padding: 4px 0 0 0 !important;
+    border-top: 1px solid #eee !important;
+}
+.footnotes p {
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #666 !important;
+}
+
+/* 上标 */
+sup {
+    font-size: 0.75em !important;
+    vertical-align: super !important;
+    color: #e51f42 !important;
+    margin: 0 2px !important;
+}
+</style>
+</head>
+<body>
+
+<blockquote>
+<p>GitHub: <a href="https://github.com/rightnow-ai/openfang">https://github.com/rightnow-ai/openfang</a></p>
+</blockquote>
+
+<h2>一句话总结</h2>
+
+<p>OpenFang 是一个用 Rust 写成的「Agent 操作系统」——把 9 种原语（kernel / runtime / memory / channels / skills / hands / security / protocols / desktop）编译成一个 32MB 单二进制，内置 7 个垂直场景「Hand」、40 个 IM 渠道适配器、16 层独立安全模块、同时支持 MCP / A2A / OFP 三种开放协议，是目前唯一走「全功能 OS 范式」、而不是「Python 插件框架范式」的开源 LLM agent 项目。</p>
+
+<h2>值得关注的理由</h2>
+
+<ul>
+<li><strong>范式突破</strong>：3.3 个月、20 万行 Rust、17.7K star，把「LLM agent = LLM + tool calling」的「框架范式」推到了「agent = 长程自治进程」的「OS 范式」，对需要 7×24 部署的工程团队有真价值。</li>
+<li><strong>安全栈一次给齐</strong>：Merkle 哈希链审计、Ed25519 清单签名、WASM 双计费沙箱、taint lattice、capability 继承校验、HMAC-SHA256 mutual auth——这些 Python 系 agent 框架要自己拼，OpenFang 全部内置。</li>
+<li><strong>生态战略精准</strong>：<code>openfang-migrate</code> 专门用来把 OpenClaw 用户虹吸过来，加上 21 个 tool name 映射 + ClawHub 客户端 + FangHub 双市场，是「从竞品抢用户」的产品级打法。</li>
+</ul>
+
+<h2>项目展示</h2>
+
+<p>![OpenFang Logo](<a href="https://raw.githubusercontent.com/rightnow-ai/openfang/main/public/assets/openfang-logo.png">https://raw.githubusercontent.com/rightnow-ai/openfang/main/public/assets/openfang-logo.png</a>) — 类型: hero</p>
+
+<p>![OpenFang vs OpenClaw vs ZeroClaw 对比](<a href="https://raw.githubusercontent.com/rightnow-ai/openfang/main/public/assets/openfang-vs-claws.png">https://raw.githubusercontent.com/rightnow-ai/openfang/main/public/assets/openfang-vs-claws.png</a>) — 类型: screenshot（性能/形态对比）</p>
+
+<h2>项目画像</h2>
+
+<table>
+<thead>
+<tr><th>维度</th><th>数据</th></tr>
+</thead>
+<tbody>
+<tr><td>GitHub</td><td><a href="https://github.com/rightnow-ai/openfang">https://github.com/rightnow-ai/openfang</a></td></tr>
+<tr><td>Star / Fork</td><td>17,752 / 2,258（watchers 124）</td></tr>
+<tr><td>代码行数</td><td>201,584 行（Rust 80.5% / JSON 6.6% / JS 5.1% / TOML 3.1%）</td></tr>
+<tr><td>项目年龄</td><td>3.3 个月（首次提交 2026-02-26）</td></tr>
+<tr><td>开发阶段</td><td>密集开发（但已显放缓，5-12 后主分支静默）</td></tr>
+<tr><td>贡献模式</td><td>职业项目 + 社区（78 人，主作者 jaberjaber23 占 71%）</td></tr>
+<tr><td>热度定位</td><td>大众热门 · 高速增长（13 天净增 152★）</td></tr>
+<tr><td>质量评级</td><td>代码[优秀] 文档[优秀] 测试[优秀] CI[优秀] 错误处理[优秀]</td></tr>
+<tr><td>License</td><td>MIT + Apache 2.0 双协议</td></tr>
+</tbody>
+</table>
+
+<h2>作者视角：为什么存在这个项目</h2>
+
+<h3>创始人/作者背景</h3>
+
+<p>OpenFang 来自 <strong>RightNow AI</strong>（约旦，账号 2025-08 创建），是一家做「GPU AI Code Editor」的 AI 基础设施初创。母公司旗下还有 <code>autokernel</code>（Python 自动内核生成，1.4K★）、<code>picolm</code>（C 推理引擎，1.6K★）、<code>qwen3.5-triton</code>（Triton 内核）、<code>StreamIndex</code>、<code>ouroboros</code> 等横跨 ML 编译器 / 推理运行时 / agent runtime 的硬核底层项目。<strong>整个团队的气质是「OS 工程师 + ML 编译器」的组合</strong>——这解释了为什么 OpenFang 会本能地引入 capability gate、heartbeat、merkle audit、graceful shutdown 这些「非 agent 领域」的设计。</p>
+
+<h3>问题判断</h3>
+
+<p>主流 LLM agent 框架（CrewAI、AutoGen、LangGraph、OpenClaw）本质都是「等你来 prompt 的聊天机器人框架」：Python 包装、依赖繁重、冷启动 2.5–6 秒、内存 180–394 MB，运行时 24/7 自治能力几乎为零；生产部署要的 capability gating、SSRF 防护、审计可追溯、merkle 链、prompt-injection 扫描在 Python 系中要自己拼。<strong>作者把问题重新定义为「一个能在无人值守下持续工作的进程级 OS」</strong>——而这个目标用 Python 根本不可能达到。</p>
+
+<h3>解法哲学</h3>
+
+<ul>
+<li><strong>Measured, not marketed</strong>（README 显式声明）——用「实测 vs 对手」的冷启动、内存、bin 大小表格代替营销话术；</li>
+<li><strong>九种 primitive 编译到一起</strong>（kernel / runtime / memory / channels / wire / skills / hands / api / cli）——不是「插件化」，而是「单体编译为 32MB 二进制」，这是对 LangChain 式「插件森林」的明确反向选择；</li>
+<li><strong>Security-first</strong>——16 层安全是「独立可测、无单点失败」的设计原则；</li>
+<li><strong>明确不做什么</strong>：不搞插件市场泛滥、不搞云绑定、不搞 telemetry、不断送 API key 到云。</li>
+</ul>
+
+<h3>战略意图</h3>
+
+<ul>
+<li><strong>OpenFang 不是商品</strong>：RightNow 的 GPU Code Editor 才是真正的旗舰产品，OpenFang 是它的 runtime 底座；</li>
+<li><strong>Open-core 倾向中等偏弱</strong>：MIT 协议、零云依赖、零 telemetry、单二进制 32MB 即可独立运行，与 crewAI/AutoGen（公司主导）形成鲜明对比；</li>
+<li><strong>生态战略精准</strong>：「承接 OpenClaw 移民」——专门有 <code>openfang-migrate</code> 把 YAML/JSON5 → TOML、21 个 tool name 映射、FangHub + ClawHub 双市场——这是有意识地从已停摆 / 质量下滑的 OpenClaw 虹吸用户。</li>
+</ul>
+
+<h2>核心价值提炼</h2>
+
+<h3>创新之处</h3>
+
+<ol>
+<li>
+<p><strong>Hands 范式：HAND.toml + 内嵌 playbook + manifest signing</strong></p>
+<ul>
+<li>一个 Hand = manifest + 多阶段 system prompt（500+ word 专家程序手册）+ SKILL.md 领域知识 + 工具白名单 + 审批闸门</li>
+<li>7 个 Hand 覆盖短视频剪辑、潜在客户挖掘、OSINT 情报、超级预测、深度研究、Twitter 自治、浏览器自动化</li>
+<li>新颖度 3/5 · 实用性 5/5 · 可迁移性 4/5</li>
+</ul>
+</li>
+<li>
+<p><strong>LoopGuard 5 维防护</strong>（开源 LLM agent 框架罕见）</p>
+<ul>
+<li>Hash 计数 + 全局熔断（30 次总调用直接 kill loop）</li>
+<li>Outcome-aware 同样 call+result 哈希计数（默认阈值 2 警告、3 block）</li>
+<li>Ping-pong 检测（A-B-A-B 滑动窗）</li>
+<li>Poll 工具例外（shell_exec 阈值 ×3）</li>
+<li>Warning bucket + Backoff 建议（5s→10s→30s→60s 渐进）</li>
+<li>新颖度 4/5 · 实用性 5/5 · 可迁移性 5/5</li>
+</ul>
+</li>
+<li>
+<p><strong>Taint lattice + sink 检查</strong>（学术 lattice 模型工程化到 LLM 工具调用层）</p>
+<ul>
+<li>5 个标签（ExternalNetwork / UserInput / Pii / Secret / UntrustedAgent）组成 TaintSet</li>
+<li>外部数据进系统自动打 label</li>
+<li>shell_exec / net_fetch 等 sink 在数据进入时 check_sink，命中就阻断</li>
+<li>解决「LLM 工具调用层的 confused deputy 攻击」</li>
+<li>新颖度 4/5 · 实用性 4/5 · 可迁移性 4/5</li>
+</ul>
+</li>
+<li>
+<p><strong>WASM 双计费 + watchdog 沙箱</strong></p>
+<ul>
+<li><code>consume_fuel(true)</code> 限指令数 + <code>epoch_interruption(true)</code> 限墙钟时间</li>
+<li>独立 watchdog 线程超时强制 <code>increment_epoch()</code></li>
+<li>任何 guest 写得多畸形，host 一定能在 N 秒内夺回控制权</li>
+<li>新颖度 3/5 · 实用性 5/5 · 可迁移性 5/5</li>
+</ul>
+</li>
+<li>
+<p><strong>Merkle hash-chain 审计 + 可选 SQLite 持久化</strong></p>
+<ul>
+<li><code>hash = SHA256(seq ‖ ts ‖ agent_id ‖ action ‖ detail ‖ outcome ‖ prev_hash)</code></li>
+<li>篡改任一条会让所有后续 hash 全部失配</li>
+<li>合规场景（金融 / 医疗 / 审计）直接可用</li>
+<li>新颖度 2/5（思路来自区块链） · 实用性 5/5 · 可迁移性 5/5</li>
+</ul>
+</li>
+<li>
+<p><strong>Tauri 2.0 内嵌 kernel + 随机端口</strong></p>
+<ul>
+<li>桌面 app 直接 <code>cargo build</code> 后内嵌 <code>OpenFangKernel</code>，不用起 daemon</li>
+<li>随机挑端口并通过 IPC 命令 <code>get_port</code> 告诉 WebView</li>
+<li>所有想发桌面 + 不想维护 daemon 的 Rust 团队都能借鉴</li>
+</ul>
+</li>
+</ol>
+
+<h3>可复用的模式与技巧</h3>
+
+<ul>
+<li><strong>KernelHandle trait 解循环依赖</strong>（决策 #1）——任何需要「上层反向调用下层服务」的 Rust 多 crate 项目都适用</li>
+<li><strong>3-driver 覆盖 N-provider 模式</strong>（LlmDriver trait + Anthropic / Gemini / OpenAI-compat 三个 native driver 覆盖 25+ provider）——任何对接多 API 协议的集成层都能套</li>
+<li><strong>SQLite + <code>Arc&lt;Mutex&lt;Connection&gt;&gt;</code> + <code>spawn_blocking</code></strong>（6 个 store 共享连接）——Rust 桌面 / 边缘应用最经济的持久化方案</li>
+<li><strong>Capability 继承校验</strong>（spawn 时 <code>validate_capability_inheritance()</code>）——任何「用户可定义权限的 agent 系统」都该有</li>
+<li><strong>Session Repair 7 步修复管线</strong>（orphan / 错位 / 缺失 / duplicate / 空消息的 LLM 消息历史自愈）——所有 LLM chat 应用都需要这层</li>
+<li><strong>Block-Aware LLM 压缩器</strong>（按 <code>ContentBlock</code> 类型分别处理 + 三阶段回退 full→chunked→minimal）——长期会话 LLM 应用的标配</li>
+<li><strong>OFP 协议 + HMAC-SHA256 + nonce + 常时比较</strong>（用 <code>subtle</code> crate 做 <code>ConstantTimeEq</code>）——所有需要轻量 P2P 鉴权的项目</li>
+<li><strong>渠道格式化器 + 限流桥</strong>（<code>TelegramHTML / SlackMrkdwn / PlainText</code> 三方言 + per-user rate limit）——机器人矩阵项目</li>
+</ul>
+
+<h3>关键设计决策</h3>
+
+<ol>
+<li>
+<p><strong>KernelHandle trait 打破循环依赖</strong></p>
+<ul>
+<li>问题：<code>openfang-runtime</code> 的工具需要调用 kernel，但 kernel 又依赖 runtime。直接互引会形成循环。</li>
+<li>方案：trait 在 runtime 中定义，<code>OpenFangKernel</code> 在 kernel crate 中 <code>impl KernelHandle</code>。</li>
+<li>Trade-off：多一层间接 + dyn dispatch</li>
+<li>换来：crate 边界清晰、可单独测试、可替换实现（mock kernel 做集成测试）</li>
+</ul>
+</li>
+<li>
+<p><strong>WASM 双计费（fuel + epoch + watchdog）</strong></p>
+<ul>
+<li>单一 fuel 计量能挡 CPU-bound 死循环，但挡不了 I/O 阻塞、syscall hang、大线性内存分配</li>
+<li><code>consume_fuel</code> + <code>epoch_interruption</code> + 独立 watchdog 线程强制 <code>increment_epoch()</code></li>
+<li>Trade-off：实现复杂度上升（必须有一个独立 OS 线程做 tick）</li>
+<li>换来：「无论 guest 写得多畸形，host 一定能在 N 秒内夺回控制权」</li>
+</ul>
+</li>
+<li>
+<p><strong>LlmDriver 抽象：3 个 native driver 覆盖 27+ provider</strong></p>
+<ul>
+<li><code>LlmDriver</code> trait（<code>complete</code> + <code>stream</code> + <code>key_required</code>）只有 3 个 native 实现——AnthropicDriver / GeminiDriver / OpenAiCompatDriver</li>
+<li>Trade-off：新 provider 加入要写 config 而非新 driver</li>
+<li>换来：driver 数量从 20+ 降到 3，bug 表面积大幅缩小</li>
+</ul>
+</li>
+</ol>
+
+<h2>竞品格局与定位</h2>
+
+<h3>竞品对比矩阵</h3>
+
+<table>
+<thead>
+<tr><th>维度</th><th>OpenFang</th><th>ZeroClaw</th><th>OpenClaw</th><th>LangGraph</th><th>AutoGen</th></tr>
+</thead>
+<tbody>
+<tr><td>形态</td><td>Rust 单二进制 OS</td><td>Rust 单二进制</td><td>TS Node.js</td><td>Python 框架</td><td>Python 框架</td></tr>
+<tr><td>渠道适配器</td><td>40</td><td>15</td><td>多</td><td>0（用户自己拼）</td><td>0</td></tr>
+<tr><td>内置 Hands</td><td>7</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>安全层数</td><td>16</td><td>6</td><td>3</td><td>1</td><td>1</td></tr>
+<tr><td>冷启动</td><td>180ms</td><td>10ms</td><td>5.98s</td><td>N/A（Python）</td><td>~4s</td></tr>
+<tr><td>内存</td><td>40MB</td><td>&lt;10MB</td><td>~500MB</td><td>200MB+</td><td>200MB+</td></tr>
+<tr><td>Bin 大小</td><td>32MB</td><td>8.8MB</td><td>N/A（需 Node）</td><td>N/A</td><td>N/A</td></tr>
+<tr><td>LLM provider</td><td>27+（3 driver 覆盖）</td><td>28</td><td>25+</td><td>任意</td><td>任意</td></tr>
+<tr><td>协议</td><td>MCP + A2A + OFP</td><td>MCP</td><td>MCP</td><td>MCP</td><td>MCP</td></tr>
+<tr><td>状态</td><td>活跃</td><td>活跃</td><td>维护</td><td>活跃</td><td><strong>已转维护</strong></td></tr>
+<tr><td>路线</td><td>「Agent OS」</td><td>极致嵌入式</td><td>Node.js 全栈</td><td>状态化图编排</td><td>群聊 agent</td></tr>
+</tbody>
+</table>
+
+<h3>差异化护城河</h3>
+
+<ul>
+<li><strong>技术护城河</strong>：单二进制 + WASM 双计费 + merkle + 16 层安全 + cap inheritance + taint——这套组合在 Rust agent 领域几无对手</li>
+<li><strong>生态护城河</strong>：40 渠道 + 60 skill + FangHub/ClawHub 双市场 + 7 Hands + MCP/A2A/OpenAI 三大协议——「渠道 + 内容 + 接入」三重生态</li>
+<li><strong>信任护城河</strong>：MIT 协议、零 telemetry、单文件 32MB、零云依赖——非常适合 on-prem 部署 / 内网 agent 场景</li>
+<li><strong>迁徙护城河</strong>：<code>openfang-migrate</code> 直接接住 OpenClaw + LangChain + AutoGPT 用户</li>
+</ul>
+
+<h3>竞争风险</h3>
+
+<ul>
+<li><strong>最可能替代</strong>：crewAI / LangGraph 如果发力 Rust 客户端或企业版；或 Anthropic / Google 自家推出「first-party agent OS」绑定自家模型</li>
+<li><strong>最可能忽视</strong>：单点性能上输给 ZeroClaw（嵌入式场景，10ms vs 180ms）</li>
+<li><strong>最可能分裂</strong>：MCP + A2A + OFP 三协议并存，若 MCP 真的成为标准，OFP 可能被边缘化</li>
+</ul>
+
+<h3>生态定位</h3>
+
+<p><strong>生产级 Rust Agent OS 之王</strong> + <strong>OpenClaw 移民总站</strong>。在「框架 vs OS」光谱上，OpenFang 是目前唯一走「全功能 OS」路线、且真的把 16 层安全做齐的开源项目。</p>
+
+<h2>套利机会分析</h2>
+
+<ul>
+<li><strong>信息差</strong>：极小——3 个月 17.7K star、13 天净增 152★、登上 Hacker News 多次，<strong>明显被高估风险</strong>而非被低估。但对中文圈读者来说，深度解构 OpenFang 仍属稀缺内容</li>
+<li><strong>技术借鉴</strong>：
+<ul>
+<li>「Agent OS」框架（kernel / scheduler / audit 心智建模 LLM agent）</li>
+<li>安全默认开（capability + taint + merkle + WASM dual-meter 组合）</li>
+<li>迁徙战略（<code>openfang-migrate</code> + 21 tool 映射 + ClawHub 客户端）</li>
+</ul>
+</li>
+<li><strong>生态位</strong>：填补「想 7×24 部署 agent 又不想自己拼安全栈」的开源空白</li>
+<li><strong>趋势判断</strong>：在增长，符合「agent 从玩具到生产」的技术趋势；比 LangGraph / AutoGen 有后发优势（Rust 单二进制、OS 心智、零云依赖）</li>
+</ul>
+
+<h2>风险与不足</h2>
+
+<ul>
+<li><strong>预 1.0，API 仍可能 breaking</strong>：minor 间 schema 变化，依赖前需固定版本</li>
+<li><strong>单人主导风险</strong>：jaberjaber23 占 71% commit，关键决策单点；5-12 后主分支静默存在「版本封板 / 团队休假 / 内部转向」三种可能</li>
+<li><strong>OFP 协议是私货</strong>：MCP / A2A 是开放标准，OFP 是自家协议；若 MCP 成为事实标准，OFP 会被边缘化</li>
+<li><strong>无形式化验证</strong>：安全栈 16 层是「可读的实现」而非「形式化证明」</li>
+<li><strong>修复 commit 占比偏高</strong>（39.5%）：3.3 个月项目，bug 率仍处于早期迭代期</li>
+<li><strong>没有 hosted demo / playground</strong>：要部署才能体验，对评估期读者门槛略高</li>
+</ul>
+
+<h2>行动建议</h2>
+
+<ul>
+<li>
+<p><strong>如果你要用它</strong>：</p>
+<ul>
+<li>适合场景：需要 7×24 长程 agent、内网 on-prem 部署、对安全 / 合规有要求、想替代 OpenClaw</li>
+<li>不适合：想快速搭一个聊天 demo、深度学习 LangChain 已有积累</li>
+<li>用前固定版本（pre-1.0），跑 30 天稳定性观察，关注 5-12 后的主分支动向</li>
+</ul>
+</li>
+<li>
+<p><strong>如果你要学它</strong>：</p>
+<ul>
+<li>重点关注 <code>crates/openfang-runtime/src/loop_guard.rs</code>（5 维防护）</li>
+<li><code>crates/openfang-runtime/src/session_repair.rs</code>（消息历史自愈）</li>
+<li><code>crates/openfang-types/src/taint.rs</code>（lattice 模型）</li>
+<li><code>crates/openfang-runtime/src/sandbox.rs</code>（WASM 双计费）</li>
+<li><code>crates/openfang-kernel/src/capabilities.rs</code>（capability inheritance）</li>
+<li><code>docs/security.md</code>（把每个安全系统都标注了源文件 + 关键结构体）</li>
+</ul>
+</li>
+<li>
+<p><strong>如果你要 fork 它</strong>：</p>
+<ul>
+<li>把 OFP 协议抽出来做成独立 crate，专注 P2P + HMAC-SHA256 mutual auth</li>
+<li>把 Hands 抽出来做成垂直能力包框架（HAND.toml + SKILL.md + 工具白名单 + 审批门）</li>
+<li>把 LoopGuard 抽出来做成独立的 LLM-as-loop-controller 防护 crate</li>
+<li>把 taint + sink 抽出来做成 LLM agent 通用安全库</li>
+</ul>
+</li>
+</ul>
+
+<h3>知识入口</h3>
+
+<table>
+<thead>
+<tr><th>资源</th><th>链接</th></tr>
+</thead>
+<tbody>
+<tr><td>DeepWiki</td><td>未收录</td></tr>
+<tr><td>Zread.ai</td><td>未收录</td></tr>
+<tr><td>关联论文</td><td>无</td></tr>
+<tr><td>在线 Demo</td><td>无（需本地部署，docs/quickstart.md 给出单命令起服务）</td></tr>
+<tr><td>关键文档</td><td><a href="https://github.com/rightnow-ai/openfang/blob/main/docs/architecture.md">architecture.md</a> · <a href="https://github.com/rightnow-ai/openfang/blob/main/docs/security.md">security.md</a> · <a href="https://github.com/rightnow-ai/openfang/blob/main/docs/benchmarks.md">benchmarks.md</a></td></tr>
+</tbody>
+</table>
+
+</body>
+</html>

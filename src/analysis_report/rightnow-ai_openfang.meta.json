@@ -1,0 +1,6 @@
+{
+  "title": "3 个月 17.7K star：约旦团队用 Rust 写了 Agent 操作系统 OpenFang",
+  "digest": "OpenFang 把 9 种原语编译成 32MB Rust 单二进制，内置 7 个 Hand、40 渠道、16 层安全栈与 MCP/A2A/OFP 三协议，是唯一走 OS 范式而非 Python 插件范式的开源 LLM agent。",
+  "author": "NVoyager",
+  "theme": "stars,universe,dark"
+}
