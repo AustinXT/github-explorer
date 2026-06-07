@@ -13,6 +13,9 @@ tmp/
 *.bak
 *.log
 
+# 二维码素材原图（手机截图）；裁出的 site/public/wechat-qr.png 才入库
+IMG_7191.JPG
+
 # repo-miner 三阶段中间产物（写到 tmp/；防误写 notes/ 被提交。notes/prompts 等子目录不受影响）
 notes/*.md
 
