@@ -7,11 +7,12 @@ repo-miner 的 Phase 2 测「代码规模」（tokei 行数），但资源类仓
 「内容规模 + 策展元分析」，并新增：
   - content_scale  : 仓库体积 / 文件类型直方图 / 顶层目录即分类 / README 大纲 / 外链数
   - automation_sig : 提交时刻的分钟级聚集度 → 是否 cron 驱动的自动化策展流水线
-  - detected_type  : awesome | learning | atypical（启发式，--type 可覆盖）
+  - detected_type  : awesome | learning | atypical | skills（启发式，--type 可覆盖）
+  - skills          : Agent Skills 仓库（SKILL.md 合集 / .claude-plugin marketplace）→ roster + flagship 旗舰
 
 用法：
     python3 src/scripts/collect_resource_facts.py <LOCAL_PATH> \
-        [--full-name owner/repo] [--type awesome|learning|atypical] [--out PATH] [--no-network]
+        [--full-name owner/repo] [--type awesome|learning|atypical|skills] [--out PATH] [--no-network]
 
 输出契约同 collect_repo_facts：JSON 写 --out（缺省 tmp/resource-facts-<repo>.json），
 路径打印到 stdout 供 prompt 捕获后 Read。所有指标单独 try，缺失记 null + _warnings，
@@ -105,13 +106,14 @@ def collect_content_scale(repo: str) -> dict:
         "total_bytes": None, "total_human": None, "file_count": None,
         "ext_histogram": [], "main_ext": None, "top_dirs": [],
         "markdown_files": None, "readme": _analyze_readme(repo),
-        "total_link_count": None, "truncated": False,
+        "total_link_count": None, "truncated": False, "skill_md_paths": [],
     }
     total_bytes = 0
     file_count = 0
     ext = Counter()
     topdir_files = Counter()
     md_files = []
+    skill_md_paths = []  # 顺手收集所有 SKILL.md 绝对路径，供 skills 子类型清点（不二次遍历）
     truncated = False
     try:
         for root, dirs, files in os.walk(repo):
@@ -131,6 +133,8 @@ def collect_content_scale(repo: str) -> dict:
                 topdir_files[topseg] += 1
                 if e in (".md", ".markdown", ".mdx") and len(md_files) < 50:
                     md_files.append(fp)
+                if fn == "SKILL.md":
+                    skill_md_paths.append(fp)
                 if file_count >= _MAX_FILES:
                     truncated = True
                     break
@@ -139,6 +143,7 @@ def collect_content_scale(repo: str) -> dict:
     except OSError as e:
         warn(f"遍历仓库失败: {e}")
 
+    out["skill_md_paths"] = skill_md_paths
     out["total_bytes"] = total_bytes
     out["total_human"] = _fmt_size(total_bytes)
     out["file_count"] = file_count
@@ -228,10 +233,180 @@ _LEARNING_KW = re.compile(
 )
 
 
+# ============================================================ Agent Skills 清点
+
+# SKILL.md 路径里任一「整段」命中即视为非真实技能（测试/模板/示例/vendored）。
+# 必须整段匹配，不能子串——否则会误杀 plugins/dotnet-test、dotnet-template-engine 下的真技能。
+_SKILL_EXCLUDE_SEGMENTS = {
+    "tests", "test", "fixtures", "fixture", "template", "templates",
+    "examples", "example", "node_modules", "vendor", ".git", ".github",
+    "__pycache__", "snapshots",
+}
+_SKILL_TOPICS = {
+    "agent-skills", "agentskills", "agent-skill", "claude-skills", "claude-skill",
+    "claude-code-skills", "skill", "skills",
+}
+_ROSTER_CAP = 150  # roster 逐技能读 frontmatter，封顶防极端仓库
+
+
+def _is_real_skill_path(rel_path: str) -> bool:
+    segs = [s.lower() for s in rel_path.replace("\\", "/").split("/")]
+    return not any(s in _SKILL_EXCLUDE_SEGMENTS for s in segs)
+
+
+def _read_frontmatter_name(path: str) -> tuple[str | None, int]:
+    """取 SKILL.md frontmatter 的 name + description 长度；失败回退 (None, 0)。"""
+    try:
+        text = open(path, encoding="utf-8", errors="replace").read(8192)
+    except OSError:
+        return None, 0
+    m = re.match(r"^---\s*\n(.*?)\n---\s*\n", text, re.S)
+    if not m:
+        return None, 0
+    block = m.group(1)
+    name = None
+    nm = re.search(r"^name:\s*(.+?)\s*$", block, re.M)
+    if nm:
+        name = nm.group(1).strip().strip("\"'")
+    desc_len = 0
+    dm = re.search(r"^description:\s*[>|]?\s*(.+?)\s*$", block, re.M)
+    if dm:
+        desc_len = len(dm.group(1).strip())
+    return name, desc_len
+
+
+def _detect_marketplace(repo: str) -> dict:
+    out = {"present": False, "path": None, "plugins_count": None}
+    p = os.path.join(repo, ".claude-plugin", "marketplace.json")
+    if os.path.isfile(p):
+        out["present"] = True
+        out["path"] = ".claude-plugin/marketplace.json"
+        try:
+            data = json.load(open(p, encoding="utf-8"))
+            plugins = data.get("plugins") if isinstance(data, dict) else None
+            if isinstance(plugins, list):
+                out["plugins_count"] = len(plugins)
+        except Exception as e:  # noqa: BLE001
+            warn(f"解析 marketplace.json 失败: {e}")
+    return out
+
+
+def _real_skill_rels(repo: str, content_scale: dict) -> list[tuple[str, str]]:
+    """(abs_path, rel_path) 列表，已剔除测试/模板等非真实技能。"""
+    out = []
+    for ap_ in (content_scale.get("skill_md_paths") or []):
+        rel = os.path.relpath(ap_, repo)
+        if _is_real_skill_path(rel):
+            out.append((ap_, rel))
+    return out
+
+
+def _skills_quick_signals(repo: str, content_scale: dict, network: dict | None) -> dict:
+    """廉价 skills 信号（无 frontmatter 读、无额外 walk），供 detect_type 判型 + 非 skills 仓库的精简 stub。"""
+    raw = content_scale.get("skill_md_paths") or []
+    real = _real_skill_rels(repo, content_scale)
+    rels = [r for _a, r in real]
+    rootdir_cnt = Counter(r.replace("\\", "/").split("/")[0] for r in rels)
+    topics = []
+    if network and isinstance(network.get("repo_basics"), dict):
+        topics = [str(t).lower() for t in (network["repo_basics"].get("topics") or [])]
+    single = (len(real) == 1)
+    return {
+        "real_skill_count": len(real),
+        "raw_skill_md_count": len(raw),
+        "excluded_count": len(raw) - len(real),
+        "single_skill": single,
+        "single_skill_root": single and os.path.dirname(rels[0]) in ("", "."),
+        "marketplace": _detect_marketplace(repo),
+        "plugin_json_present": os.path.isfile(os.path.join(repo, ".claude-plugin", "plugin.json")),
+        "skill_topic": any(t in _SKILL_TOPICS for t in topics),
+        "root_dirs": [{"dir": d, "count": c} for d, c in rootdir_cnt.most_common(10)],
+    }
+
+
+def collect_skills_inventory(repo: str, content_scale: dict, network: dict | None,
+                             quick: dict) -> dict:
+    """在 quick 基础上加 commands/agents 计数 + 逐技能 roster + 预排序 flagship。零-LLM、全 try。"""
+    out = dict(quick)
+    # commands / agents 计数（plugin-marketplace 信号；一次 walk，排除 README）
+    cmds = agents = 0
+    try:
+        for root, dirs, files in os.walk(repo):
+            dirs[:] = [d for d in dirs if d not in _SKIP_DIRS]
+            parts = [p.lower() for p in os.path.relpath(root, repo).split(os.sep)]
+            md = [f for f in files if f.lower().endswith(".md") and f.lower() != "readme.md"]
+            if "commands" in parts:
+                cmds += len(md)
+            if "agents" in parts:
+                agents += len(md)
+    except OSError as e:
+        warn(f"统计 commands/agents 失败: {e}")
+    out["commands_count"] = cmds
+    out["agents_count"] = agents
+
+    readme_head = ""
+    rd = (content_scale.get("readme") or {}).get("path")
+    if rd:
+        try:
+            readme_head = open(os.path.join(repo, rd), encoding="utf-8",
+                               errors="replace").read(4000).lower()
+        except OSError:
+            pass
+
+    real = _real_skill_rels(repo, content_scale)
+    out["roster_truncated"] = len(real) > _ROSTER_CAP
+    records = []
+    for ap_, rel in real[:_ROSTER_CAP]:
+        skill_dir = os.path.dirname(ap_)
+        name, desc_len = _read_frontmatter_name(ap_)
+        if not name:
+            name = os.path.basename(skill_dir) or "(root)"
+        try:
+            body = os.path.getsize(ap_)
+        except OSError:
+            body = 0
+        has_ref = any(os.path.isdir(os.path.join(skill_dir, d)) for d in ("reference", "references"))
+        has_scr = os.path.isdir(os.path.join(skill_dir, "scripts"))
+        has_ast = any(os.path.isdir(os.path.join(skill_dir, d)) for d in ("assets", "resources"))
+        aux = 0
+        try:
+            for _r2, d2, f2 in os.walk(skill_dir):
+                d2[:] = [d for d in d2 if d not in _SKIP_DIRS]
+                aux += sum(1 for f in f2 if f != "SKILL.md")
+                if aux > 999:
+                    break
+        except OSError:
+            pass
+        segs = rel.replace("\\", "/").split("/")
+        group = segs[1] if len(segs) >= 3 else (segs[0] if len(segs) >= 2 else "(root)")
+        records.append({
+            "name": name, "dir": os.path.dirname(rel), "skill_md_bytes": body,
+            "has_reference": has_ref, "has_scripts": has_scr, "has_assets": has_ast,
+            "aux_file_count": aux, "desc_len": desc_len, "group": group,
+        })
+    max_body = max((r["skill_md_bytes"] for r in records), default=1) or 1
+
+    def _score(r: dict) -> float:
+        s = r["skill_md_bytes"] / max_body
+        s += 2 if r["has_reference"] else 0
+        s += 2 if r["has_scripts"] else 0
+        s += 1 if r["has_assets"] else 0
+        s += min(r["aux_file_count"], 10) / 10
+        if r["name"] and r["name"].lower() in readme_head:
+            s += 1
+        return s
+
+    ranked = sorted(records, key=_score, reverse=True)
+    out["roster"] = records
+    out["flagship"] = ranked[0] if ranked else None
+    out["alternates"] = ranked[1:3]
+    return out
+
+
 def detect_type(repo: str, full_name: str | None, network: dict | None,
-                content_scale: dict, override: str | None) -> dict:
+                content_scale: dict, override: str | None, quick: dict) -> dict:
     out = {"detected_type": None, "source": None, "signals": {}}
-    if override in ("awesome", "learning", "atypical"):
+    if override in ("awesome", "learning", "atypical", "skills"):
         out.update(detected_type=override, source="override")
         return out
 
@@ -260,9 +435,24 @@ def detect_type(repo: str, full_name: str | None, network: dict | None,
     link_list_dominant = link_items >= 40 and readme_links >= 60
     sig["link_list_dominant"] = link_list_dominant
 
-    # 优先级：名字含 awesome（最强信号）> 学习关键词（教程/路线图等学习资料常也是链接密集，
-    # 但本质是学习材料，须先于「链接密集→awesome」判定）> 纯链接密集清单 > 多章节文档 > 其它
-    if sig["name_has_awesome"]:
+    # skills 信号（来自廉价 quick；不读 frontmatter、不额外 walk）
+    real_skill_count = quick.get("real_skill_count", 0)
+    mk_present = bool((quick.get("marketplace") or {}).get("present"))
+    sig["real_skill_count"] = real_skill_count
+    sig["marketplace_present"] = mk_present
+    sig["single_skill_root"] = bool(quick.get("single_skill_root"))
+    sig["skill_topic"] = bool(quick.get("skill_topic"))
+    skills_signal = real_skill_count >= 1 or mk_present
+    # strong 守卫：防 awesome/教程仓里一两个杂散 SKILL.md 翻型（需 ≥2 技能 / marketplace /
+    # 单技能在根 / skill topic 之一才算真 skills 仓库）
+    strong_skills = (real_skill_count >= 2 or mk_present
+                     or quick.get("single_skill_root") or quick.get("skill_topic"))
+
+    # 优先级：skills（够强）> 名字含 awesome > 学习关键词（教程/路线图等也常链接密集，须先于
+    # 「链接密集→awesome」）> 纯链接密集清单 > 多章节文档 > 其它
+    if skills_signal and strong_skills:
+        out["detected_type"] = "skills"
+    elif sig["name_has_awesome"]:
         out["detected_type"] = "awesome"
     elif sig["learning_kw"]:
         out["detected_type"] = "learning"
@@ -283,7 +473,7 @@ def main() -> int:
     ap.add_argument("local_path", help="已 clone 的本地仓库路径")
     ap.add_argument("--full-name", help="owner/repo，缺省从 git remote 推断")
     ap.add_argument("--type", dest="type_override",
-                    choices=["awesome", "learning", "atypical"],
+                    choices=["awesome", "learning", "atypical", "skills"],
                     help="强制子类型，缺省由启发式判定")
     ap.add_argument("--out", help="JSON 落地路径，缺省 tmp/resource-facts-<repo>.json")
     ap.add_argument("--no-network", action="store_true",
@@ -308,7 +498,15 @@ def main() -> int:
     elif not full_name:
         warn("无法确定 full_name（owner/repo），跳过 Phase 1 网络采集")
 
-    type_info = detect_type(repo, full_name, network, content_scale, args.type_override)
+    # 廉价 skills 信号 → 判型；仅判为 skills 才建完整清单（roster/flagship）
+    skills_quick = _skills_quick_signals(repo, content_scale, network)
+    type_info = detect_type(repo, full_name, network, content_scale,
+                            args.type_override, skills_quick)
+    if type_info["detected_type"] == "skills":
+        skills_block = collect_skills_inventory(repo, content_scale, network, skills_quick)
+    else:
+        skills_block = skills_quick  # 精简 stub，字段恒存在
+    content_scale.pop("skill_md_paths", None)  # 内部中间产物，不入最终 JSON
 
     facts = {
         "schema_version": 1,
@@ -320,6 +518,8 @@ def main() -> int:
         "type_signals": type_info["signals"],
         # 内容规模与策展元分析（替换 code_scale）
         "content_scale": content_scale,
+        # Agent Skills 清点（skills 子类型=完整 roster+flagship；其它类型=精简 stub）
+        "skills": skills_block,
         # 更新节奏（复用 dev_rhythm）+ 自动化签名
         "update_rhythm": {
             **crf.collect_dev_rhythm(repo),

@@ -139,5 +139,7 @@
 - **awesome**：`代码行数` = `N 条目 / M 个 md 文件 / 外链 K 条`；`质量评级` = `策展[优秀] 覆盖[广/专] 更新[活跃] 失效治理[有/无]`
 - **learning**：`代码行数` = `N 章节 / M 文件 / 含代码示例[有/无]`；`质量评级` = `深度[入门/进阶] 体系[完整/碎片] 维护[活跃/停滞]`
 - **atypical**：按子类（规范/模板库/文档站/媒体列表/服务）选最能体现规模的口径；`质量评级` 突出该类最关键质量轴
+- **skills**：`代码行数` = `N 个技能 / M 带 reference·scripts / 实测旗舰 1 个`（marketplace 无 SKILL.md：`0 技能 / P 命令 / Q 子agent`）；`质量评级` = `质量[高/中/低] 旗舰实测 delta[+X] 裁决[keep/marginal/weak] 象限[scaffolding/leverage/codification/mastery]`（eval 后端不可用降级时：`质量[高/中/低] 实测 N/A（仅结构分） 裁决[—]`）
 
 > 无论怎么微调，**行键不变**（始终是 `代码行数`/`质量评级`），只换括号内取值。
+> skills 的 `代码行数` 取值经核验对 `build_reports_index.parse_language` 安全（无语言词 → 存 loc_raw 原文）。
