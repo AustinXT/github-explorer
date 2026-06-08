@@ -58,28 +58,24 @@ class ZhihuAdapter(PlaywrightAdapter):
         ".DraftEditor-root [contenteditable='true']",
         "div[contenteditable='true']",
     ]
-    SEL_PUBLISH_BTN = [       # 右上「发布」（打开发布面板）
+    # 知乎发布是**内联**（编辑页顶部即有「添加话题」「发布」），非独立面板。实测：
+    # 点「添加话题」→ 出搜索框 → 输入 → 下拉候选(.css-gfrh4c) 点选；再真实点「发布」。
+    SEL_PUBLISH_BTN = [       # 编辑页右上「发布」（实测 class Button css-d0uhtl…，文本恰为「发布」）
+        "button.Button:has-text('发布')",
         "button:has-text('发布')",
-        ".PublishPanel-triggerButton",
-        "button.Button--primary:has-text('发布')",
     ]
-    SEL_MODAL_PUBLISH = [     # 发布面板内最终「发布」确认
-        ".PublishPanel button:has-text('发布')",
-        ".css-publish-panel button:has-text('发布')",
-        ".Modal button.Button--primary:has-text('发布')",
-        "button.Button--blue:has-text('发布')",
+    SEL_TOPIC_TOGGLE = [      # 「添加话题」按钮（点开话题搜索）
+        "button:has-text('添加话题')",
     ]
-    SEL_TOPIC_INPUT = [       # 话题搜索输入框（发布面板内）
+    SEL_TOPIC_INPUT = [       # 话题搜索输入框（点添加话题后出现）
         "input[placeholder*='话题']",
-        ".PublishPanel input[placeholder*='搜索']",
-        ".TopicSelect input",
-        ".Topic-input input",
+        "input[placeholder*='搜索话题']",
+        "input[placeholder*='搜索']",
     ]
-    SEL_TOPIC_OPTION = [      # 话题搜索下拉里的候选项（点第一个匹配）
-        ".TopicSelect-menu .Topic-item",
-        ".Menu .TopicItem",
-        ".Popover-content [role='option']",
-        ".AutoComplete-menuItem",
+    SEL_TOPIC_OPTION = [      # 话题搜索下拉候选项（hashed class 易变，配合文本匹配兜底）
+        ".css-gfrh4c",
+        "[class*='Topic'] [class*='item']",
+        "[role='option']",
     ]
 
     # 知乎登录后写入的 cookie：z_c0 是登录 token，置信度高，任一存在即视为已登录。
@@ -110,38 +106,68 @@ class ZhihuAdapter(PlaywrightAdapter):
         ))
 
     def _select_topics(self, page, tags: list[str]) -> int:
-        """选 2-5 个话题（知乎用「话题」而非分类）：搜索 → 等下拉 → 点第一个匹配。
-        article.tags 优先，不足用 _FALLBACK_TOPICS 补足至少 2 个。返回成功选中的数量。"""
+        """选 2-3 个话题（知乎用「话题」）。实测流程：点「添加话题」→ 出搜索框 → 输入 →
+        点下拉里文本匹配的候选。article.tags 优先，不足用 _FALLBACK_TOPICS 补。返回成功数。"""
         wanted: list[str] = []
         for t in [*tags, *self._FALLBACK_TOPICS]:
             t = (t or "").strip()
             if t and t not in wanted:
                 wanted.append(t)
-        wanted = wanted[:5]
+        wanted = wanted[:3]
 
         picked = 0
         for topic in wanted:
-            if picked >= 5:
+            if picked >= 3:
                 break
             try:
-                box = self._first(page, self.SEL_TOPIC_INPUT, timeout=4000)
+                # 每加一个话题都重新点「添加话题」展开搜索（真实点击，React 才响应）
+                if not self._click(page, self.SEL_TOPIC_TOGGLE, required=False):
+                    self._js_click_button_text(page, "添加话题")
+                page.wait_for_timeout(900)
+                box = self._first(page, self.SEL_TOPIC_INPUT, required=False, timeout=3000)
+                if box is None:
+                    print(f"   [zhihu] 话题「{topic}」未出现搜索框，跳过")
+                    continue
                 box.click()
                 box.fill("")
-                box.fill(topic)
-                page.wait_for_timeout(1200)   # 等下拉异步搜索返回
-                opt = self._first(page, self.SEL_TOPIC_OPTION, required=False, timeout=3000)
-                if opt is None:
+                box.type(topic, delay=50)
+                page.wait_for_timeout(1600)   # 等下拉异步搜索返回
+                if self._click_topic_option(page, topic):
+                    picked += 1
+                    page.wait_for_timeout(600)
+                else:
                     print(f"   [zhihu] 话题「{topic}」无匹配候选，跳过")
-                    continue
-                opt.click()
-                page.wait_for_timeout(600)
-                picked += 1
             except Exception as e:  # noqa: BLE001 — 话题尽力，失败不阻塞发布
                 print(f"   [zhihu] 话题「{topic}」选择失败（{e}）")
         if picked == 0:
-            print("   ⚠️ [zhihu] 0 个话题选中——知乎发布通常要求至少 1 话题，可能发布受阻，"
-                  "请用 codegen 校准 SEL_TOPIC_INPUT/SEL_TOPIC_OPTION")
+            print("   ⚠️ [zhihu] 0 个话题选中——知乎发布要求至少 1 话题，发布会受阻，"
+                  "请用 calibrate.py 校准 SEL_TOPIC_TOGGLE/SEL_TOPIC_INPUT/SEL_TOPIC_OPTION")
         return picked
+
+    def _click_topic_option(self, page, topic: str) -> bool:
+        """点话题下拉里文本匹配的候选（hashed class 易变，故用文本匹配兜底定位）。"""
+        # 先按 selector + 文本
+        for sel in self.SEL_TOPIC_OPTION:
+            try:
+                loc = page.locator(sel).filter(has_text=topic).first
+                loc.wait_for(state="visible", timeout=1500)
+                loc.click()
+                return True
+            except Exception:  # noqa: BLE001
+                continue
+        # 兜底：JS 点首个文本含 topic 的新出现候选元素
+        return bool(page.evaluate(
+            """(t) => {
+                const els = [...document.querySelectorAll('div,span,li,button,a')].filter(
+                    e => e.offsetParent !== null && (e.textContent||'').trim() &&
+                         (e.textContent||'').trim().length < 24 &&
+                         (e.textContent||'').includes(t) &&
+                         /css-|Topic|option|item/i.test(e.className||''));
+                if (els.length) { els[0].click(); return true; }
+                return false;
+            }""",
+            topic,
+        ))
 
     def do_publish(
         self, page, article: Article, rendered: RenderedArticle, *,
@@ -201,31 +227,34 @@ class ZhihuAdapter(PlaywrightAdapter):
             pid = self._extract_id(page.url, self.ID_RE) or (existing_post_id or "")
             return PublishResult(post_id=pid, url=page.url, state="draft")
 
-        # 5b) 发布：点右上「发布」打开面板 → 选话题 → 点面板内「发布」确认
+        # 5b) 发布（知乎内联）：先在编辑页加话题（必填，≥1）→ 真实点「发布」→ 跳离 /edit 视为成功
+        picked = self._select_topics(page, list(article.tags))
+        if picked == 0:
+            raise RuntimeError(
+                "[zhihu] 未能选中任何话题（知乎发布要求≥1 话题）。请用 calibrate.py 校准 "
+                "SEL_TOPIC_TOGGLE / SEL_TOPIC_INPUT / SEL_TOPIC_OPTION。"
+            )
+        page.wait_for_timeout(500)
+        # 真实点「发布」（React 按钮，合成 click 不触发）
         if not self._click(page, self.SEL_PUBLISH_BTN, required=False):
-            self._js_click_button_text(page, "发布")
-        page.wait_for_timeout(1500)
-
-        self._select_topics(page, list(article.tags))
-
-        # 设可见范围=公开（若有该控件，尽力点；无则忽略）
-        try:
-            page.get_by_text("公开", exact=False).first.click(timeout=2000)
-        except Exception:  # noqa: BLE001 — 多数情况下默认即公开，无该控件正常
-            pass
-
-        # 点面板内最终「发布」确认
-        if not self._click(page, self.SEL_MODAL_PUBLISH, required=False):
             if not self._js_click_button_text(page, "发布"):
-                raise RuntimeError("[zhihu] 找不到发布面板内「发布」确认按钮（面板未弹出或已改版）")
+                raise RuntimeError("[zhihu] 找不到「发布」按钮（需校准 SEL_PUBLISH_BTN）")
 
-        # 等跳转到文章页拿 id
+        # 成功判定：URL 跳离 /edit（变为 /p/<id> 文章页）。仍在 /edit 视为未发布、不误报。
+        def _published() -> bool:
+            return "/p/" in page.url and "/edit" not in page.url
         try:
-            page.wait_for_url("**/p/**", timeout=15000)
+            page.wait_for_url(lambda u: "/p/" in u and "/edit" not in u, timeout=12000)
         except Exception:  # noqa: BLE001
-            page.wait_for_timeout(3000)
+            self._js_click_button_text(page, "发布")   # 可能有二次确认，兜底再点
+            try:
+                page.wait_for_url(lambda u: "/p/" in u and "/edit" not in u, timeout=10000)
+            except Exception:  # noqa: BLE001
+                page.wait_for_timeout(1500)
+        if not _published():
+            raise RuntimeError(
+                "[zhihu] 点「发布」后仍停在编辑页（未跳 /p/<id> 文章页），发布可能未完成。"
+                "当前 URL: " + page.url
+            )
         pid = self._extract_id(page.url, self.ID_RE) or (existing_post_id or "")
-        url = page.url if "/p/" in page.url else (
-            f"https://zhuanlan.zhihu.com/p/{pid}" if pid else page.url
-        )
-        return PublishResult(post_id=pid, url=url, state="published")
+        return PublishResult(post_id=pid, url=page.url, state="published")
