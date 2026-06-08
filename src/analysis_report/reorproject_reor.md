@@ -1,24 +1,25 @@
-# 8.5K star 的本地 AI 笔记 Reor 被作者弃坑：全本地 RAG 全栈架构复盘
+# 18 个月、35k 行代码、一人写完 8.5K stars 的本地 AI 笔记：Reor 把 RAG 装进 Markdown 编辑器后归档了
 
 > GitHub: https://github.com/reorproject/reor
 
 ## 一句话总结
 
-Reor 是一个「全本地」的 AI 个人知识管理（PKM）桌面应用：embedding、向量库、LLM 推理全部跑在你自己的机器上，离线可用、隐私拉满——它在 2024 年凭这个理念冲到 8.5K star，又在 2025 年 5 月被单人作者悄悄归档。今天它的价值不是「拿来用」，而是「拿来读」：一份开源界少见的端到端本地 RAG 全栈参考，外加一份「单人英雄项目」如何崩塌的复盘标本。
+Reor 是把「人类写作」和「LLM 检索」做成对等两个生成器、共享同一向量库的本地优先 AI 笔记桌面应用——曾经是 GitHub 上极少数把「AI 原生 + Local-First」都做到位的范式项目，2025-05 主开发停摆，2026-03 被归档，但它的 dual-generator 架构与 LanceDB 实战至今仍是同类产品最有借鉴价值的参考实现。
 
 ## 值得关注的理由
 
-1. **端到端本地 RAG 全栈，开源可读**：Transformers.js 本地 embedding + LanceDB 进程内向量库 + Ollama/llama.cpp 本地推理，全链路离线闭环。这种「不依赖任何外部服务、把语义检索塞进桌面 app」的完整开源实现非常稀缺，整条链路可直接当模板。
-2. **一个有传播力的产品故事**：8.5K star、4 平台打包、79 个 release，最后却被作者归档、官网域名都没续费。「为什么一个破圈的本地 AI 笔记应用会被放弃」本身值得复盘——答案藏在 61% 提交集中于一人、AGPL 劝退接盘者、HN 上密集的崩溃投诉里。
-3. **正反两面都能学**：架构分层、向量库仓储封装、token 预算化上下文拼装是正面教材；而「重构开了头没收尾留下死代码」「front-matter 零防护导致文件损坏」「42.8K 行代码只有 2 个单测」则是难得的工程反面案例。
+- **稀缺的双生成器范式**：在 AI 笔记工具里，多数产品要么走「ChatGPT 套壳 + 知识库」路径（AnythingLLM），要么是「Obsidian + Copilot 插件」那种「AI 事后加上去」的缝合。Reor 是少数把「AI 检索」和「写作流」做到原生同一个向量子系统的工具。
+- **单兵干出 35k 行 TS/TSX 的工程纪律**：从 IPC 强类型、LanceDB schema 自愈、Ollama 三级降级、到 chokidar 与编辑器 debounce 解耦，作者把「做一个能落地的本地 AI 应用」所需的所有工程细节都做了。
+- **AGPL-3.0 + Local-First + 单人主导航量**：三条选择叠加，让 Reor 同时是产品范式、协议范式与「独立项目如何死掉」的反面教材，看完可以同时学到正面与负面教训。
 
 ## 项目展示
 
-> 官网 reorproject.org 域名已失效、在线 Demo 不可用（这本身就是弃坑信号）。以下用 GitHub 自动生成的社交卡片作封面，零维护。
+### README 媒体
 
-![Reor 社交卡片](https://opengraph.githubassets.com/1/reorproject/reor)
+1. ![Reor Logo](https://raw.githubusercontent.com/reorproject/reor/main/logo_or_graphic_representation.png) — 类型: logo
+2. [reor.mov 演示视频](https://github.com/reorproject/reor/raw/main/reor.mov) — 类型: demo 视频
 
-产品历史形态可参考作者当年的 [Show HN 讨论](https://news.ycombinator.com/item?id=39372159)（含早期使用反馈）。
+> 官网原 <https://reorproject.org> 已 301 跳转，2026-03 归档后域名被释放，无有效官网媒体。仓库内 `reor.mov` 是作者留下的唯一完整 Demo 视频。
 
 ## 项目画像
 
@@ -26,106 +27,153 @@ Reor 是一个「全本地」的 AI 个人知识管理（PKM）桌面应用：em
 |------|------|
 | GitHub | https://github.com/reorproject/reor |
 | Star / Fork | 8,563 / 525 |
-| 代码行数 | 71,134 行（真实主体 TypeScript 33.5% + TSX 16.8%；tokei 报的「JSON 47%」是 package-lock 等锁文件假象） |
-| 项目年龄 | 31 个月（2023-10-31 立项 → 2025-05-13 终止，现已归档） |
-| 开发阶段 | 已放弃 / 已归档（近 30/90/365 天 commit 均为 0） |
-| 贡献模式 | 单人主导 + 小社区（共 34 人，samlhuillier 独占约 61%） |
-| 热度定位 | 大众热门（8.5K star，死项目仍有长尾余热） |
-| 质量评级 | 代码组织「良」 文档「差」 测试「很差」 |
+| 代码行数 | 71,015 行（真代码约 35,715 行：TS 23,744 + TSX 11,971） |
+| 项目年龄 | 31.2 个月（首提交 2023-10-31，最后提交 2025-05-13） |
+| 开发阶段 | 已放弃（2026-03-07 archive；近 365 天 commit = 0） |
+| 贡献模式 | 独立开发者（samlhuillier 占 64%，34 名贡献者） |
+| 热度定位 | 大众热门（8.5K stars + 113 open issues） |
+| 质量评级 | 代码 A- / 文档 B+ / 测试 C |
+| License | AGPL-3.0（强传染性） |
+| 最新版本 | v0.2.31（95 tag / 79 Release） |
 
 ## 作者视角：为什么存在这个项目
 
 ### 创始人/作者背景
 
-核心作者是 **Sam L'Huillier**（GitHub: [samlhuillier](https://github.com/samlhuillier)，org 壳 reorproject），在本仓库 1,172 次提交、占约 61%，是绝对的单人主导者。背景：Imperial College London，LLM 微调实践者——代表作是把 Code Llama 微调成 text-to-SQL 的开源 notebook（个人站 [ragntune.com](https://ragntune.com/)）。第二位贡献者 joseplayero 仅 136 commits。这是一个典型的「单人英雄项目」：技术判断可信度高，但可持续性结构性偏低。
+主开发者 **Sam L'Huillier（samlhuillier）** 是英国司法部（ai.justice.gov.uk）的 AI 工程师，账号年龄 2.5 年，个人仓库 39 个，主题集中在 LLM 微调、SQL 生成、RAG——这三条线索与 Reor 的产品定位完全自洽。他以 `reorproject` 组织壳包装这个项目，是个人项目产品化的常见动作。公开兴趣横跨「LLM 微调 / SQL 生成 / RAG」，意味着他并不是从「非技术人写个 AI 笔记 app」的角度出发，而是从「政府/法律场景对本地化的硬需求 + LLM 桌面化拐点」的工程师视角切入。
 
 ### 问题判断
 
-作者要解决的是一对通常互斥的诉求：「AI 增强的笔记」与「隐私/本地」。他看到的缺口是——云 AI 笔记（Notion AI 等）把你的私人思考送上第三方服务器；本地 PKM 事实标准 Obsidian/Logseq 核心不带 AI，语义检索/RAG 靠插件拼凑且多数仍调云 API；纯 RAG 工作台（AnythingLLM）又不是「写作」工具。Reor 想做的是「Obsidian 式 Markdown 编辑器 + 全本地 RAG」的合体。代码里大量 `posthog.capture(...)` 埋点（`chat_message_submitted` / `open_file_from_related_notes`）说明他在观测真实使用行为，是 dogfooding 而非拍脑袋。
+Sam 看到的是「AI 笔记工具」品类的三重原罪：
+
+1. **延迟**：用户刚写的段落几秒后才被索引，问答时拿不到最新内容（Issue #51 「Model doesn't have knowledge about my notes」）
+2. **隐私**：笔记全文经 Embedding 服务/Embedding API 流出去，律师、医生、研究者根本不敢用
+3. **供应商锁定**：嵌入模型/LLM 升一版，所有用户历史数据要重新向量化
+
+而 PKM 工具里「知识是过程不是状态」的共识（Obsidian/Logseq 早已证明双向链接 + 反向索引才是真正范式）告诉他：AI 应该是放大既有写作流，而不是替代。
 
 ### 解法哲学
 
-旗帜鲜明地「选择不做什么」：
+核心是 **Dual-Generator（双生成器）**：把「人类写作」和「LLM 检索」做成对等的两个生成器，共享同一向量库。人类切换文件时 Related notes sidebar 实时显示语义相似的旧笔记，AI 既能做 Q&A 也能做写作伴读。
 
-- **本地优先压倒便利**：宁可要求用户下模型、吃硬件，也不默认走云（`electron/main/llm/models/ollama.ts` 会自动 spawn 打包进 app 的 ollama 二进制）；
-- **拥抱文件系统而非自有格式**：笔记就是目录里的 `.md`，用 chokidar 监听变更增量重索引，不锁定用户数据；
-- **单人能 hold 的范围**：向量库、编辑器、chunking 全部站在巨人肩上（LanceDB / Transformers.js / Ollama / BlockNote 分叉），自己只写「胶水 + UX」。
+由此衍生的工程取舍非常清晰：
+
+- **Local-first by default**——离线 / 隐私 / 性能 / 无数据外流
+- **AI 放大而非取代思考**——不做「AI 自动生成笔记」功能
+- **完全可移植的本地 Markdown 仓库**——笔记以 `.md` 形式落盘，不锁格式
+- **AGPL-3.0 防云厂商白嫖**——保护主义立场与隐私立场一脉相承
 
 ### 战略意图
 
-个人产品化尝试，配 **AGPL-3.0** 强 copyleft——既防大厂白嫖，也实质性劝退了第三方接盘，这是它归档后无人续命的结构性原因之一。当维护者倦怠叠加赛道被 Obsidian 原生 AI / NotebookLM / Khoj 三面夹击时，退场几乎是必然。归档无任何官方公告，综合信号（提交断崖、域名失效、HN 反馈）可推断为单人维护者精力撤离。
+v0.1.x 核心 RAG、v0.2.x 写作助手 + 多平台打包、v1.0 计划（自定义嵌入、Synced Vault、插件 API、移动端）——这四件事任意一件都是 6 个月以上工作量，单人项目难承，作者清楚这是「个人 + 社区」能维护的极限。2025-05 仓库停摆、2026-03 归档，意味着 v1.0 路线被「搁置」而非「取消」——保持项目可被接手而非僵死。组织壳 + AGPL-3.0 + 没有融资信号告诉我们：作者没有走商业化 SaaS 路线，这条项目从一开始就是「做给同类人用的工具」，而不是「做成公司」。
 
 ## 核心价值提炼
 
 ### 创新之处
 
-1. **端到端本地 RAG 桌面全栈**（新颖度 3/5，实用性 4/5，可迁移性 4/5）：摄入链 `chokidar 监听 → 读文件 → heading 感知分块 → Transformers.js feature-extraction(mean pooling + normalize) → LanceDB.add(Apache Arrow)`；检索链 `LanceDB cosine 检索 → 可选日期/路径 prefilter → 可选 bge-reranker 重排`。是开源界少见的「本地优先 AI 应用」起步模板。
-2. **双生成器 RAG（人 + LLM 共用检索）**（新颖度 4/5，实用性 4/5，可迁移性 3/5）：同一个 LanceDB，既在 Q&A 模式把检索结果注入对话上下文（`chat.ts` 的 `injectContextStringIntoMessages`），又在编辑模式给人看「Related notes」侧栏。理念漂亮，但 editor 侧实现很糙（硬截当前文件前 500 字符做 query，代码里自带 `TODO: proper semantic chunking`）——这正是 HN 抱怨「相关笔记推荐没意义」的根因。理念可借，实现别抄。
-3. **嵌入式向量库仓储封装**（新颖度 3/5）：`LanceDBTableWrapper` 把表生命周期收口，`add` 用「先删同 notepath 再插入」做幂等重索引、按平台分批写入（darwin 50 / 其他 40）；schema 变了就 drop + recreate 整表。简单可靠，但 schema/embedding 模型一变就要全量重建索引（大库重灾）。
+1. **Dual-Generator 哲学落地**（新颖 4/5、实用 5/5、可迁移 5/5）：人类与 LLM 共享同一向量库，Q&A 模式与编辑器 Related notes 模式走同一个 `window.database.search` 入口，是「AI 工具如何嵌入既有工作流」的范式参考。
+2. **客户端 hybridSearch（向量 + 关键词加权融合）**（实用 4/5、可迁移 5/5）：完全在渲染进程实现，`combineAndRankResults = vectorScore × 0.7 + keywordScore × 0.3`，不依赖任何后端服务——任何本地 RAG、浏览器内 RAG 都该有。
+3. **Ollama 三级降级链（ping → PATH exec → packaged binary）**（实用 5/5、可迁移 4/5）：开箱即用解决「用户电脑可能没装 Ollama」的现实门槛，依赖外部服务的桌面应用都该有这个降级链。
+4. **LanceDB schema 漂移自愈（dropTable + recreate on schema mismatch）**（实用 4/5）：避免 LanceDB 0.4.x 的 schema migration 痛点。
+5. **多窗口 × 多 vault × 多 embedding 模型独立表**（新颖 4/5）：表名 = `ragnote_table_<model>_<dir>`，强隔离。
+6. **编辑器侧 Related notes（500 字符 chunk → 向量检索 → 浮层列表）**：在用户切换文件时用前 500 字符做查询，结果以「Related notes」列表呈现——是「主动联想」UX 的范式。
 
 ### 可复用的模式与技巧
 
-- **泛型 IPC 桥 `createIPCHandler<T>(channel)`**（`electron/preload/index.ts`）：把每个 `ipcRenderer.invoke` 包成类型安全函数，挂到 `window.database` / `window.llm` 命名空间——任何 Electron 应用想要端到端类型安全的 main↔renderer 通道都能用。
-- **Token 预算化上下文拼装**（`contextLimit.ts`，逐行累加到 `0.9 * limit` 并记录 cutoff）：任何 RAG 的 context window 管理范本。
-- **幂等 upsert 仓储（delete-then-add）+ 平台分批写入**：文件→chunk 的增量重索引，避免重复/脏数据。
-- **heading 感知分块 + 递归字符兜底**（`common/chunking.ts`）：Markdown 文档的语义友好切分。
-- **Schema-diff 自动迁移（drop & recreate）**：本地嵌入式 DB 在客户端版本升级时的轻量迁移思路。
+| 模式 | 适用场景 |
+|---|---|
+| Electron 三层 + 强类型 preload IPC 桥（`createIPCHandler<T>` 工厂） | 30k+ LoC 的 Electron 应用 |
+| LanceDB embedding function adapter（`EnhancedEmbeddingFunction<T>`） | 本地 embedding 模型的 RAG |
+| 标题优先 + RecursiveCharacterTextSplitter 双层 chunking | Markdown / 结构化文档 RAG |
+| chokidar `ignoreInitial: true` + 渲染层主动触发索引 | 本地优先文档编辑器（避免 IO 风暴） |
+| 编辑器变更 debounce 3 秒 → 写盘 + 重新索引 | 实时编辑 + 实时索引的 RAG 编辑器 |
+| hybridSearch 客户端加权融合 | 不依赖后端的本地 RAG |
+| BlockNoteView + 自定义 ProseMirror plugin inline suggestion | TipTap/BlockNote 智能编辑器 |
+| context limit 截断（tiktoken 数 token，保留 90% context window） | 长上下文 RAG |
+| store-migrator 模式 | 长期维护的 Electron 桌面应用 |
 
 ### 关键设计决策
 
-最值得记录的是一处**「重构开了头没收尾」的活样本**：早期 `electron/main/llm/types.ts` 定义了 `LLMSessionService.streamingResponse(...)` 想在主进程做流式生成；现版本改为在**渲染进程**用 Vercel AI SDK 的 `streamText` 直接调 provider（`src/components/Chat/index.tsx`），甚至给 Anthropic 加了 `anthropic-dangerous-direct-browser-access: true` 头从渲染进程直连。结果是主进程那套 `LLMSessionService` 接口、`cleanMessageForAnthropic` 基本沦为死代码。拿到了 AI SDK 的工具调用/流式/多 provider 现成能力，代价是留下半截重构——是很好的「演进留痕」教学反例。
+| 决策 | 方案 | Trade-off | 可迁移性 |
+|---|---|---|---|
+| Electron 三层分离 + contextBridge 窄 API | `createIPCHandler<T>` 工厂把 100+ IPC 通道强类型化 | 维护成本高，但比 nodeIntegration 安全得多 | 高 |
+| LanceDB 表名 = `<model>_<dir_hash>` 强隔离 | schema 漂移时 drop & recreate | 换模型要重新索引全库，但避免误用 | 高 |
+| 双生成器 = 同向量库 + 两种 UI | Q&A 与 Related notes 走同一 `window.database.search` | Related notes 用前 500 字而非光标 chunk，避免性能灾难 | 极高 |
+| chokidar + 渲染层主动索引 | 文件监听只通知，不直接嵌 | 「文件树更新」和「向量库更新」分两步 | 高 |
+| LanceDB schema 自愈 | 检测 schema 不一致直接重建表 | 粗暴但解决了 LanceDB 0.4.x 痛点 | 中 |
 
 ## 竞品格局与定位
 
 ### 竞品对比矩阵
 
-| 维度 | Reor | Khoj | Obsidian + AI 插件 | AnythingLLM |
-|------|------|------|------|------|
-| Stars | 8.5K（已归档） | ~34.5K | 核心闭源 | ~61K |
-| 定位 | 内置全本地 AI 的笔记编辑器 | 自托管 AI 第二大脑 | 本地 PKM 平台 + AI 插件 | 本地 RAG/agent 工作台 |
-| AI 本地化 | 全本地（embedding+LLM 都在本机） | 本地或云可选 | 多数插件仍调云 API | 可接本地或云 |
-| 维护状态 | 已停止 | 活跃 | 活跃 | 活跃 |
+| 维度 | Reor | AnythingLLM | Obsidian + Copilot | Logseq | Khoj |
+|---|---|---|---|---|---|
+| 定位 | AI 原生 PKM | LLM 工作台 | PKM 装上 AI 插件 | 块状 PKM | Obsidian 内 AI 助手 |
+| Star 数 | 8.5k | ~32k | Obsidian 数百万 | ~36k | ~30k+ |
+| AI 集成方式 | 原生（同向量库） | 工作台式 | 第三方插件 | 第三方插件 | 寄生式 |
+| 本地优先 | ✅ 默认 | ❌ 默认 Docker | ⚠️ 默认云同步 | ✅ | ✅ |
+| 编辑器类型 | Markdown | 无（聊天界面） | Markdown | Outliner | 无（聊天界面） |
+| 笔记可移植 | ✅ 纯 .md | ⚠️ 部分导出 | ✅ 纯 .md | ⚠️ 自有格式 | ❌ |
+| License | AGPL-3.0 | MIT | Obsidian 商业 | AGPL-3.0 | AGPL-3.0 |
+| 维护状态 | 已归档 | 活跃 | 活跃 | 活跃 | 活跃 |
 
 ### 差异化护城河
 
-Reor 曾有的护城河是「全本地（含 LLM 与 embedding）+ Markdown 写作编辑器 + 开源」三合一，确实独一份。隐私 + 本地 AI 这一格，它的理念最纯。
+- **「双生成器」叙事**：清晰可传播（「AI 放大而非取代思考」），是叙事资产
+- **AI 与编辑器原生集成深度**：Related notes sidebar、自动嵌入、debounce 写盘，其他竞品做不到
+- **AGPL-3.0 + Local-First**：明确「我不做云服务」的市场定位
+- **单作者深度打磨**：hybridSearch、context window 90% 截断、chunkSize 可配置——大厂工程纪律
 
 ### 竞争风险
 
-护城河是「理念」而非「质量」——这是它已经兑现的致命风险。Obsidian 原生 AI + 插件、Google NotebookLM、Khoj 从三个方向蚕食；单人维护 + AGPL 让它既追不动迭代、又无人接盘。工程稳定性（HN 报告的崩溃、卡死）和 RAG 实用性不足，使理念优势无法落地为体验优势。
+- **Obsidian 官方做 AI**：一旦 Obsidian 官方做 AI，Reor 的「AI 原生 PKM」差异化会被抹平
+- **AnythingLLM 转型**：若推出本地优先模式，团队场景被吸走
+- **v1.0 路线搁置**：自定义嵌入/同步/插件/移动端都是大需求，搁置意味着用户增长天花板
+- **单点故障**：作者单线维护，bus factor = 1（已发生）
 
 ### 生态定位
 
-今天它在生态里的角色已从「值得用/值得贡献」转为「值得复盘」：一份诚实的本地优先 RAG 全栈教学样本 + 单人英雄项目弃坑标本。要省心选 Obsidian，要 RAG 平台用 AnythingLLM，要读全栈开源本地 RAG 源码——读 Reor。
+**AI 时代的 Obsidian 替代品**，目标用户是「对隐私敏感、对 AI 重度、愿意为软件折腾的人」——典型画像：研究员、律师、医生、独立开发者。归档后这块留给 Khoj、Logseq 插件生态、AnythingLLM Desktop 补位。
 
 ## 套利机会分析
 
-- **信息差**：项目已死，**无追新/早鸟价值**。但「8.5K star 的本地 AI 笔记为何被弃」具备传播张力，中文社区缺这类「技术拆解 + 弃坑复盘」内容——价值在叙事与教学，不在工具推荐。
-- **技术借鉴**：本地 RAG 全栈链路、泛型 IPC 桥、token 预算化上下文、幂等 upsert 仓储、heading 感知分块——这些可直接迁移到任何本地优先 AI 应用 / Electron 工具 / RAG 项目。
-- **生态位**：它曾填补「全本地、可写作、开源」的空白；这个生态位至今仍未被完美占据（Obsidian 闭源、Khoj 偏问答、SiYuan 的 AI 走云端），是仍然成立的产品机会——给后来者的启示是「理念之外还要有工程纪律」。
-- **趋势判断**：本地优先 AI 是上升趋势，但 Reor 已不在牌桌。它的教训比它的代码更有价值。
+- **信息差**：8.5K stars + 已归档 = 出现了「开源墓碑效应」。Star 数 2026-02 单月创新高（64 个），是用户发现项目后因归档遗憾而 Star。**对学习者而言这是利好**：被冻结的设计反而成了稳定的参考实现，今天 clone 下来代码不会再变；对潜在用户而言是利空：bug 不会修复，依赖不会升级。
+- **技术借鉴**：Reor 是研究「如何用 Electron 把本地 LLM 嵌进笔记产品」的范本——上面列出的 13 个可复用模式可以原样搬到自己的项目。
+- **生态位**：它填补了「AI 原生 + 本地优先 + 个人开发者」的细分空白。归档后这个空白由 Khoj（一站式）、Logseq AI 插件（外挂式）填补，但目前没有同位替代品——这是 fork 或重写的机会窗口。
+- **趋势判断**：本地 LLM 推理正在变得更便宜、更快（Apple Silicon MLX、Llama.cpp 小模型），Reor 当年的「全套本地化」门槛在 2026 年已经明显降低，思路会比产品本身更有生命力。
 
 ## 风险与不足
 
-诚实地说，这个项目「演示惊艳、长期不可靠」：
-
-- **测试近乎为零**：42.8K 行 RAG 应用只有 2 个单测文件（其一仅 17 行），CI 从不跑 `npm test`，lint 是唯一质量闸，Playwright e2e 近乎空壳；
-- **front-matter 零防护**（已知数据损坏风险）：无任何 YAML/front-matter 解析依赖，BlockNote 编辑器 md↔prosemirror 往返会破坏 YAML 头——这正是 HN「front-matter 损坏」投诉的根因；
-- **健壮性硬伤**：向量库多处 `catch {}` 静默吞错难以诊断、`OllamaService.abort()` 直接 `throw 'not implemented'`、ollama contextLength 硬编码 4096、过滤串靠手工拼接 `notepath IN (...)` 类 SQL 注入式转义；
-- **文档极薄**：全仓 `.md` 仅约 136 行（基本就一个 README），无 CONTRIBUTING/CHANGELOG/examples；
-- **可持续性已破产**：61% 提交集中一人，作者撤离即归档，AGPL + 无文档让社区难以接手。
+- **已归档无维护者**：LanceDB 升级、Electron 升级、TipTap 升级都不会有人跟，依赖漏洞会持续累积
+- **AGPL-3.0 商用风险**：任何衍生作品必须开源 + 网络服务也必须开源，企业使用要慎重评估
+- **测试覆盖率极低**：仅 2 个 jest 文件，UI/AI 流几乎无覆盖（Issue #51/#74/#119 都是测试能挡住但没挡住的 bug）
+- **写入失败无 retry**：`LanceDBTableWrapper.deleteDBItemsByFilePaths` 直接吞掉错误（「no need to throw error」 注释）
+- **CPU 100% 历史 bug**：实时嵌入 + LanceDB 写入是已知性能痛点，3 秒 debounce 是妥协方案
+- **3 秒索引延迟**：用户写完 3 秒后 AI 才「看到」新内容——这是物理/性能权衡，但 UX 上是真实痛点
+- **Sentry 与隐私立场矛盾**：项目自身主张 Local-First，但生产模式默认启用 Sentry 上报 crash，是个值得讨论的设计张力
 
 ## 行动建议
 
-- **如果你要用它**：不建议——项目已归档、官网失效、已知崩溃与文件损坏风险。要本地 AI 笔记今天选 Obsidian + 插件或 Khoj；非要体验可从 GitHub Release 装包试玩。
-- **如果你要学它**：直奔 `electron/main/vector-database/`（LanceDB + Transformers.js embedding + schema）、`electron/main/common/chunking.ts`（分块）、`src/lib/llm/`（流式生成 + provider 抽象）、`src/lib/contextLimit.ts`（上下文预算）、`electron/preload/index.ts`（类型安全 IPC）——这五处是本项目最高价值的浓缩，是一份可直接复用的本地 RAG 全栈拼图。
-- **如果你要 fork 它**：先补 front-matter 解析（gray-matter）止血数据损坏，再补测试与错误显式化，把 editor 侧 related-notes 的「截 500 字符」换成真正的语义分块；但注意 AGPL-3.0 的开源义务。
+- **如果你要用它**（作为在用工具）：**不建议**。已归档 + AGPL-3.0 + 无维护者响应 = 长期使用风险高。需要本地 AI 笔记的用户请转向 Khoj（Obsidian 集成）、Logseq + AI 插件、AnythingLLM Desktop。
+- **如果你要学它**（作为参考项目）：**强烈推荐**。重点关注以下文件：
+  - `electron/main/index.ts` + `electron/preload/index.ts` — Electron 三层 + IPC 工厂范式
+  - `electron/main/vector-database/lance.ts` + `lanceTableWrapper.ts` — LanceDB schema 自愈与多模型隔离
+  - `electron/main/llm/models/ollama.ts` — Ollama 三级降级
+  - `src/components/Sidebars/SimilarFilesSidebar.tsx` — 双生成器的 Related notes 侧栏
+  - `src/lib/db.ts` — hybridSearch 客户端实现
+  - `src/components/Editor/BacklinkExtension.tsx` — ProseMirror plugin 实现 inline suggestion
+- **如果你要 fork 它**：AGPL-3.0 意味着你必须公开源码 + 网络服务端代码，且无法直接转闭源。建议：
+  - 考虑切换到更宽松的 license（需要原作者同意或从头写）
+  - 优先解决「写入失败无 retry」、「LanceDB schema 漂移」等已知痛点
+  - 实现 v1.0 搁置路线图中的「自定义嵌入模型支持」和「插件 API」——这是当前最缺的能力
 
 ### 知识入口
 
 | 资源 | 链接 |
 |------|------|
-| DeepWiki | https://deepwiki.com/reorproject/reor（已收录，覆盖 Electron 架构/向量检索/LLM 集成） |
-| Zread.ai | https://zread.ai/reorproject/reor（未确认，访问返回 403） |
-| 关联论文 | 无（纯工程项目） |
-| 在线 Demo | 无（官网域名已失效；历史反馈见 [Show HN](https://news.ycombinator.com/item?id=39372159)） |
+| DeepWiki | https://deepwiki.com/reorproject/reor（已收录，含架构详解） |
+| Zread.ai | 未收录（403） |
+| 关联论文 | 无 |
+| 在线 Demo | 无（纯本地桌面 App） |
+| 归档前官方文档 | https://www.reorproject.org/docs/documentation/（域名已跳转，可能下线） |
+| Discord 社区 | https://discord.gg/b7zanGCTUY |

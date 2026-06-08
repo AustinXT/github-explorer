@@ -1,0 +1,6 @@
+{
+  "title": "Redis 之父的新战场：13K stars 的 DwarfStar 如何把 1M 上下文搬上 MacBook",
+  "digest": "Redis 之父 antirez 用纯 C 写的 DeepSeek V4 专属本地推理引擎 DwarfStar：1 个月 13K stars，mmap-first + SSD 流式专家，把模型装进 RAM 的硬阈值变连续谱。",
+  "author": "NVoyager",
+  "theme": "stars,universe,dark"
+}

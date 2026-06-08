@@ -1,0 +1,6 @@
+{
+  "title": "10K stars 的 SQL 替代品:PRQL 如何用 5 层 IR 编译到 12 种方言",
+  "digest": "PRQL 用 5 层 IR(PRQL→PR→PL→RQ→PQ→SQL)把管道式查询编译到 12 种 SQL 方言,核心是回溯锚定拆分生成接近人手写的 SQL,标准库用 PRQL 自己写实现自举。",
+  "author": "NVoyager",
+  "theme": "stars,universe,dark"
+}
