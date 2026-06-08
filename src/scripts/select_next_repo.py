@@ -14,6 +14,16 @@
     （即使报告 .md 被删，已分析/已发表过的仓库仍不会被重新选中）
   - 命中 src/analysis_report/repos.md 里 "❌ <url>" 的视为黑名单
 
+GitHub 改名/别名加固（CANONICALIZE，默认开；设 0 关闭）：
+  源数据(trending/starred)可能是仓库的旧名/别名(GitHub 改名后或抓到展示名)，
+  其 slug 会与已分析报告对不上 → 重复生成同一仓库。故对排序后的候选自 top 起
+  用 `gh api repos/<o>/<r>` 解析 GitHub 规范 full_name（会跟随改名重定向）：
+    - 规范名已分析 → 跳过该别名，继续看下一个候选
+    - 规范名未分析 → 选中；若规范名≠原名，改写 name/url 为规范名，
+      让下游 repo-miner 用规范名生成报告（文件名从源头规范，杜绝别名重复）
+    - gh 不可用 / API 失败(404/限流) / 超时 → 降级用原名（退回旧行为，绝不阻断选题）
+  仅对 top（最多 CANONICALIZE_LIMIT 个，默认 25）候选解析，正常只调 1 次 API。
+
 打分排序：score = trending_days + star_users * STAR_WEIGHT，tie-break 用 stars。
   - starred-only 候选需 star_users >= STAR_MIN_USERS（默认 2，过滤单人 Star 噪声）
   - trending 候选不受该阈值限制（上榜本身即信号）
@@ -34,6 +44,7 @@ from __future__ import annotations
 import json
 import os
 import re
+import subprocess
 import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -49,6 +60,8 @@ STAR_WEIGHT = int(os.environ.get("STAR_WEIGHT", "8"))
 STAR_MIN_USERS = int(os.environ.get("STAR_MIN_USERS", "2"))
 MIN_SCORE = int(os.environ.get("MIN_SCORE", "0"))  # 0 = 不设质量闸（向后兼容）
 DAILY_CAP = int(os.environ.get("DAILY_CAP", "0"))  # 0 = 不限产量（向后兼容）
+CANONICALIZE = os.environ.get("CANONICALIZE", "1") != "0"  # GitHub 改名/别名规范化，默认开
+CANONICALIZE_LIMIT = int(os.environ.get("CANONICALIZE_LIMIT", "25"))  # 最多解析多少个 top 候选
 _COUNTED_STATES = {"pending", "published"}  # 自动产出：推草稿箱=published，仅分析/待重发=pending
 
 
@@ -232,6 +245,73 @@ def build_pool(
     return pool
 
 
+def resolve_canonical(name: str, timeout: int = 15) -> str | None:
+    """用 gh api 把 owner/repo 解析为 GitHub 规范 full_name（跟随改名/重定向）。
+
+    返回规范 full_name（如 'BeehiveInnovations/pal-mcp-server'）。
+    gh 不存在 / API 失败(404/限流/私有) / 超时 / 输出为空 → None，
+    调用方据此降级（用原名，保持旧行为，绝不阻断选题）。"""
+    if "/" not in name:
+        return None
+    try:
+        proc = subprocess.run(
+            ["gh", "api", f"repos/{name}", "--jq", ".full_name"],
+            capture_output=True,
+            text=True,
+            timeout=timeout,
+        )
+    except (FileNotFoundError, OSError, subprocess.TimeoutExpired):
+        return None
+    if proc.returncode != 0:
+        return None
+    full = proc.stdout.strip()
+    return full or None
+
+
+def pick_from_pool(pool: list[dict], analyzed: set[str]) -> dict | None:
+    """从已按 score 降序的 pool 选出第一个「GitHub 规范名未被分析过」的候选。
+
+    每个候选用 gh api 解析 canonical full_name，规避「源数据是别名/旧名 →
+    slug 对不上 → 重复生成」：
+      - 规范名已分析 → 跳过该别名，继续看下一个候选
+      - 规范名未分析 → 选中；若规范名≠原名，改写 name/url 为规范名
+        （让下游用规范名生成报告，文件名从源头规范）
+      - 无法解析(gh 不可用/失败) → 降级：按原名选中（退回旧行为）
+
+    开关：CANONICALIZE=0 关闭（直接返回 pool[0]）；
+         CANONICALIZE_LIMIT 限制最多解析多少个 top 候选（防 API 风暴）。
+    返回选中候选；全部 top 候选规范名均已分析则返回 None（优雅跳过）。"""
+    if not pool:
+        return None
+    if not CANONICALIZE:
+        return pool[0]
+
+    for item in pool[:CANONICALIZE_LIMIT]:
+        full = resolve_canonical(item["name"])
+        if full is None:
+            # 无法判断规范名（gh 不可用/失败）→ 不阻断，按原名选中（它已通过 analyzed 过滤）
+            return item
+        if slug_of(full) in analyzed:
+            print(
+                f"跳过别名/改名: {item['name']} → 规范名 {full} 已分析过",
+                file=sys.stderr,
+            )
+            continue
+        if full.lower() != item["name"].lower():
+            print(f"规范化: {item['name']} → {full}", file=sys.stderr)
+            item = dict(item)
+            item["name"] = full
+            item["url"] = f"https://github.com/{full}"
+        return item
+
+    print(
+        f"跳过：top {CANONICALIZE_LIMIT} 个候选的 GitHub 规范名均已分析过"
+        "（疑似全是别名/改名）",
+        file=sys.stderr,
+    )
+    return None
+
+
 def emit_github_output(picked: dict) -> None:
     out_path = os.environ.get("GITHUB_OUTPUT")
     if not out_path:
@@ -261,22 +341,22 @@ def main() -> int:
     )
 
     # 节流跳过一律 return 0 且不输出 repo_url（workflow 据已有 if 守卫优雅空转）。
-    # 顺序：池空 → 质量闸 → 产量闸（廉价的先判）。
+    # 顺序：池空 → 质量闸 → 产量闸 → canonical 规范化选取（廉价的先判，省 gh API）。
     if not pool:
         print("跳过：候选池为空（无新选题）", file=sys.stderr)
         return 0
 
-    picked = pool[0]
-    top = score_of(picked)
-
-    if top < MIN_SCORE:  # 质量闸：连最优候选都不达标
+    # 质量闸早判：连最优候选都不达标就跳过（顺带省去 canonicalize 的 API；
+    # pick_from_pool 只会选 score ≤ pool[0] 的候选，故此处用最优候选判一次足够先筛）
+    best = score_of(pool[0])
+    if best < MIN_SCORE:
         print(
-            f"跳过：最优候选 score={top} < MIN_SCORE={MIN_SCORE}（{picked['name']}）",
+            f"跳过：最优候选 score={best} < MIN_SCORE={MIN_SCORE}（{pool[0]['name']}）",
             file=sys.stderr,
         )
         return 0
 
-    if DAILY_CAP > 0:  # 产量闸：最近 24h 已达上限
+    if DAILY_CAP > 0:  # 产量闸：与具体候选无关，放 canonicalize 前以省 API
         recent = count_recent_published(24)
         if recent >= DAILY_CAP:
             print(
@@ -284,6 +364,20 @@ def main() -> int:
                 file=sys.stderr,
             )
             return 0
+
+    # canonical 规范化：跳过别名/改名指向的已分析仓库，选第一个规范名未分析的候选
+    picked = pick_from_pool(pool, analyzed)
+    if picked is None:
+        print("跳过：无 GitHub 规范名未分析过的合格候选", file=sys.stderr)
+        return 0
+
+    top = score_of(picked)
+    if top < MIN_SCORE:  # 精判：picked 可能因跳过别名而 score 低于最优候选
+        print(
+            f"跳过：规范化后候选 score={top} < MIN_SCORE={MIN_SCORE}（{picked['name']}）",
+            file=sys.stderr,
+        )
+        return 0
 
     print(
         f"选中: {picked['name']} (score={top}, "
