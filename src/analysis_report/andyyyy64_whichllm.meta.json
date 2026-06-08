@@ -1,0 +1,6 @@
+{
+  "title": "本地 LLM 选型不靠猜大小：whichllm 3 个月 3.4K stars 的 evidence-based ranking",
+  "digest": "whichllm 用 6 源评测合并 + lineage 折扣 + MoE 双参数建模，把本地 LLM 推荐升级为可解释、可审计的 evidence-based ranking。",
+  "author": "NVoyager",
+  "theme": "stars,universe,dark"
+}
