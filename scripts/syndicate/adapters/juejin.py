@@ -303,13 +303,42 @@ class JuejinAdapter(PlaywrightAdapter):
                 "[juejin] 找不到抽屉里「确定并发布」按钮（抽屉未弹出或已改版，"
                 "校准 SEL_MODAL_PUBLISH）"
             )
-        # 等跳转到文章详情页 /post/<id>
+        # 发布成功后掘金会跳 /post/<id>（直达）或 /published（已发布列表落地页）——两者都算成功
+        # （实测 article/publish API 返回 200 后即跳 /published）。两者都没等到才算失败。
         try:
-            page.wait_for_url("**/post/**", timeout=15000)
-        except Exception:  # noqa: BLE001 — 跳转慢/未跳，给点时间再读 url
+            page.wait_for_url(lambda u: "/post/" in u or "/published" in u, timeout=15000)
+        except Exception:  # noqa: BLE001
             page.wait_for_timeout(3000)
-        pid = self._extract_id(page.url, self.ID_RE) or (existing_post_id or "")
-        url = page.url if "/post/" in page.url else (
-            f"https://juejin.cn/post/{pid}" if pid else page.url
-        )
+        if "/post/" not in page.url and "/published" not in page.url:
+            raise RuntimeError(
+                "[juejin] 点「确定并发布」后未跳转 /post/ 或 /published，发布可能未完成"
+                "（分类/标签等必填未满足 / selector 需校准）。当前 URL: " + page.url
+            )
+        pid = self._extract_id(page.url, self.ID_RE)
+        url = page.url
+        if not pid:                      # 跳 /published 时 URL 无 id → 去已发布列表取最新一篇兜底
+            latest = self._latest_published(page)
+            if latest:
+                pid, url = latest
+        if not pid:
+            pid = existing_post_id or ""
         return PublishResult(post_id=pid, url=url, state="published")
+
+    @staticmethod
+    def _latest_published(page) -> tuple[str, str] | None:
+        """去掘金「已发布」列表取最新一篇 (id, url)。发布后跳 /published（URL 无 id）时兜底。"""
+        import re
+        for u in ("https://juejin.cn/creator/content/article/published",
+                  "https://juejin.cn/published"):
+            try:
+                page.goto(u, wait_until="domcontentloaded")
+                page.wait_for_timeout(3500)
+                hrefs = page.eval_on_selector_all(
+                    "a[href*='/post/']", "els=>els.map(e=>e.href)")
+            except Exception:  # noqa: BLE001
+                continue
+            for h in hrefs:
+                m = re.search(r"/post/(\d+)", h or "")
+                if m:
+                    return m.group(1), h
+        return None
