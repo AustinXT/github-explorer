@@ -1,6 +1,9 @@
 # 自动生成 + 人工保护混合维护。要保护某条手工标注，把 slug 加入 manual 列表。
 manual: []
 entries:
+  1jehuang_jcode:
+  - ai-agent
+  - ai-coding
   1panel-dev_maxkb:
   - ai-agent
   - llm-framework
@@ -34,6 +37,17 @@ entries:
   - llm-framework
   ad-on-is_rachoon:
   - web-framework
+  adam-maj_tiny-gpu:
+  - iot-hardware
+  affaan-m_ecc:
+  - ai-agent
+  - ai-coding
+  - security
+  affaan-m_everything-claude-code:
+  - ai-agent
+  - ai-coding
+  - database
+  - security
   afkarxyz_spotiflac:
   - devtools
   - video-audio
@@ -44,6 +58,15 @@ entries:
   agentsmd_agents.md:
   - ai-agent
   - ai-coding
+  ahujasid_blender-mcp:
+  - video-audio
+  - protocol-spec
+  aidc-ai_pixelle-video:
+  - ai-coding
+  - devtools
+  - workflow-automation
+  - video-audio
+  - media-generation
   aidenybai_react-scan:
   - devtools
   - web-framework
@@ -75,6 +98,12 @@ entries:
   - database
   - iot-hardware
   - trading-finance
+  alishahryar1_free-claude-code:
+  - ai-agent
+  - ai-coding
+  - llm-inference
+  - model-foundation
+  - protocol-spec
   amlalabs_amla-sandbox:
   - ai-agent
   - llm-framework
@@ -117,6 +146,16 @@ entries:
   - ai-agent
   - trading-finance
   - protocol-spec
+  anthropics_financial-services:
+  - ai-agent
+  - ai-coding
+  - education
+  - trading-finance
+  - protocol-spec
+  anthropics_knowledge-work-plugins:
+  - ai-agent
+  - ai-coding
+  - devtools
   anthropics_prompt-eng-interactive-tutorial:
   - education
   anthropics_skills:
@@ -159,9 +198,14 @@ entries:
   astrbotdevs_astrbot:
   - ai-agent
   - protocol-spec
+  audacity_audacity:
+  - education
+  - video-audio
   automatic1111_stable-diffusion-webui:
   - devtools
   - media-generation
+  axios_axios:
+  - security
   badlogic_pi-mono:
   - ai-agent
   - ai-coding
@@ -171,6 +215,8 @@ entries:
   - ai-coding
   - devtools
   basecamp_omarchy:
+  - iot-hardware
+  basedhardware_omi:
   - iot-hardware
   beehiveinnovations_zen-mcp-server:
   - ai-agent
@@ -215,6 +261,10 @@ entries:
   - workflow-automation
   bytedance_deer-flow:
   - uncategorized
+  bytedance_dolphin:
+  - llm-inference
+  - model-foundation
+  - trading-finance
   bytedance_ui-tars-desktop:
   - ai-agent
   - devtools
@@ -227,6 +277,13 @@ entries:
   - iot-hardware
   - web-framework
   - security
+  can1357_oh-my-pi:
+  - ai-agent
+  - ai-coding
+  carlini_yet-another-applied-llm-benchmark:
+  - security
+  charmbracelet_glow:
+  - devtools
   chenglou_pretext:
   - ai-coding
   - workflow-automation
@@ -234,6 +291,12 @@ entries:
   - llm-framework
   - model-foundation
   - protocol-spec
+  chopratejas_headroom:
+  - ai-agent
+  - llm-framework
+  - protocol-spec
+  chrislgarry_apollo-11:
+  - uncategorized
   chromedevtools_chrome-devtools-mcp:
   - ai-agent
   - devtools
@@ -241,6 +304,10 @@ entries:
   - protocol-spec
   cinnamon_kotaemon:
   - llm-framework
+  cjackhwang_ds2api:
+  - ai-agent
+  - model-foundation
+  - protocol-spec
   cjpais_handy:
   - video-audio
   clash-verge-rev_clash-verge-rev:
@@ -250,6 +317,8 @@ entries:
   - ai-coding
   - devtools
   - protocol-spec
+  cloakhq_cloakbrowser:
+  - ai-agent
   clockworklabs_spacetimedb:
   - database
   cloudcommunity_free-certifications:
@@ -260,6 +329,8 @@ entries:
   - rag-search
   - database
   - protocol-spec
+  cloudflare_capnweb:
+  - uncategorized
   codebuffai_codebuff:
   - ai-agent
   - ai-coding
@@ -267,6 +338,18 @@ entries:
   - editor-kms
   coinbase_x402:
   - ai-agent
+  - protocol-spec
+  colbymchenry_codegraph:
+  - ai-agent
+  - ai-coding
+  - llm-framework
+  - llm-inference
+  - database
+  - trading-finance
+  - protocol-spec
+  coleam00_archon:
+  - ai-agent
+  - devtools
   - protocol-spec
   comfy-org_comfyui:
   - devtools
@@ -280,6 +363,11 @@ entries:
   - ai-agent
   continuedev_continue:
   - ai-coding
+  copilotkit_copilotkit:
+  - ai-agent
+  - ai-coding
+  - llm-framework
+  - protocol-spec
   crewaiinc_crewai:
   - ai-agent
   crosstalk-solutions_project-nomad:
@@ -304,6 +392,11 @@ entries:
   - llm-inference
   - model-foundation
   - security
+  danielmiessler_personal_ai_infrastructure:
+  - ai-coding
+  - devtools
+  - education
+  - security
   datalab-to_chandra:
   - uncategorized
   datalab-to_marker:
@@ -311,6 +404,8 @@ entries:
   datawhalechina_hello-agents:
   - ai-agent
   - education
+  davidxanatos_taskexplorer:
+  - uncategorized
   davila7_claude-code-templates:
   - ai-agent
   - ai-coding
@@ -325,6 +420,10 @@ entries:
   - uncategorized
   decoderesearch_circuit-tracer:
   - uncategorized
+  decolua_9router:
+  - ai-coding
+  - devtools
+  - protocol-spec
   deepseek-ai_deepseek-v3:
   - llm-inference
   - model-foundation
@@ -335,6 +434,10 @@ entries:
   - data-pipeline
   devcaress_guia-entrevistas-de-programacion:
   - uncategorized
+  devlikeapro_waha:
+  - uncategorized
+  dgtlmoon_changedetection.io:
+  - uncategorized
   dicklesworthstone_pi-agent-rust:
   - ai-agent
   - ai-coding
@@ -344,12 +447,19 @@ entries:
   docling-project_docling:
   - ai-agent
   - devtools
+  docusealco_docuseal:
+  - uncategorized
   dokploy_dokploy:
   - security
   dolthub_dolt:
   - ai-agent
   - devtools
   - database
+  - protocol-spec
+  donchitos_claude-code-game-studios:
+  - ai-agent
+  - ai-coding
+  - devtools
   - protocol-spec
   done-0_fuck-u-code:
   - protocol-spec
@@ -408,9 +518,18 @@ entries:
   - llm-inference
   - model-foundation
   - trading-finance
+  eslint_eslint:
+  - uncategorized
+  evershopcommerce_evershop:
+  - database
+  - web-framework
   everyinc_compound-engineering-plugin:
   - ai-coding
   - devtools
+  evomap_evolver:
+  - ai-agent
+  - protocol-spec
+  - security
   exo-explore_exo:
   - llm-inference
   - education
@@ -438,6 +557,14 @@ entries:
   - protocol-spec
   ffmpeg_asm-lessons:
   - video-audio
+  fincept-corporation_finceptterminal:
+  - ai-agent
+  - llm-framework
+  - llm-inference
+  - devtools
+  - rag-search
+  - trading-finance
+  - protocol-spec
   firecrawl_firecrawl:
   - uncategorized
   fishaudio_fish-speech:
@@ -456,6 +583,8 @@ entries:
   fosowl_agenticseek:
   - ai-agent
   - llm-training
+  frappe_erpnext:
+  - database
   fujiwarachoki_moneyprinterv2:
   - llm-inference
   - model-foundation
@@ -467,6 +596,8 @@ entries:
   geeeekexplorer_nano-vllm:
   - llm-inference
   - model-foundation
+  getezy_ezy:
+  - devtools
   getzep_graphiti:
   - ai-agent
   - llm-framework
@@ -485,6 +616,8 @@ entries:
   - devtools
   - iot-hardware
   - protocol-spec
+  ghostty-org_ghostty:
+  - protocol-spec
   gibsonai_memori:
   - ai-agent
   - database
@@ -498,6 +631,11 @@ entries:
   - devtools
   - web-framework
   - protocol-spec
+  github_copilot-sdk:
+  - ai-agent
+  - ai-coding
+  - devtools
+  - protocol-spec
   github_gh-aw:
   - ai-agent
   - ai-coding
@@ -509,6 +647,14 @@ entries:
   - ai-coding
   - protocol-spec
   - security
+  google-ai-edge_gallery:
+  - model-foundation
+  - iot-hardware
+  google-ai-edge_litert-lm:
+  - llm-framework
+  - llm-inference
+  - model-foundation
+  - education
   google-gemini_gemini-cli:
   - ai-agent
   - ai-coding
@@ -522,6 +668,8 @@ entries:
   - uncategorized
   google_langextract:
   - uncategorized
+  google_magika:
+  - security
   google_tunix:
   - ai-agent
   - llm-training
@@ -536,6 +684,8 @@ entries:
   greydgl_pentestgpt:
   - ai-agent
   - security
+  guofei9987_blind_watermark:
+  - uncategorized
   hacksider_deep-live-cam:
   - video-audio
   hailtododongo_pyrite64:
@@ -558,21 +708,52 @@ entries:
   hesreallyhim_awesome-claude-code:
   - ai-coding
   - workflow-automation
+  hkuds_ai-trader:
+  - ai-agent
+  - llm-framework
+  hkuds_cli-anything:
+  - ai-agent
+  - llm-framework
+  - devtools
   hkuds_deepcode:
   - ai-agent
   - ai-coding
   - llm-framework
   - protocol-spec
+  hkuds_deeptutor:
+  - ai-agent
   hkuds_lightrag:
   - llm-framework
+  hkuds_rag-anything:
+  - llm-framework
+  hmbown_deepseek-tui:
+  - ai-agent
+  - ai-coding
+  - model-foundation
+  - devtools
+  home-assistant_core:
+  - workflow-automation
   hoppscotch_hoppscotch:
   - devtools
   - protocol-spec
+  hqarroum_docker-android:
+  - iot-hardware
   hsliuping_tradingagents-cn:
   - ai-agent
   - trading-finance
   huggingface_chat-ui:
   - protocol-spec
+  huggingface_diffusers:
+  - llm-training
+  - video-audio
+  huggingface_ml-intern:
+  - ai-agent
+  - ai-coding
+  - llm-inference
+  - model-foundation
+  - devtools
+  - workflow-automation
+  - trading-finance
   huggingface_open-r1:
   - model-foundation
   - data-pipeline
@@ -587,11 +768,17 @@ entries:
   - ai-agent
   - ai-coding
   - devtools
+  hunxbyts_ghosttrack:
+  - uncategorized
   iam-veeramalla_aws-devops-zero-to-hero:
   - education
   - video-audio
   illuin-tech_colpali:
   - llm-framework
+  immich-app_immich:
+  - devtools
+  - rag-search
+  - video-audio
   imthenachoman_how-to-secure-a-linux-server:
   - workflow-automation
   - education
@@ -607,6 +794,9 @@ entries:
   - ai-agent
   - protocol-spec
   - security
+  influxdata_telegraf:
+  - ai-agent
+  - media-generation
   inkonchain_docs:
   - security
   insforge_insforge:
@@ -634,6 +824,25 @@ entries:
   - protocol-spec
   j178_prek:
   - uncategorized
+  jamiepine_voicebox:
+  - ai-agent
+  - ai-coding
+  - model-foundation
+  - devtools
+  - workflow-automation
+  - video-audio
+  - media-generation
+  - protocol-spec
+  jamwithai_production-agentic-rag-course:
+  - ai-agent
+  - llm-framework
+  - education
+  - web-framework
+  janestreet_magic-trace:
+  - llm-inference
+  - devtools
+  - iot-hardware
+  - trading-finance
   janhq_jan:
   - llm-inference
   - model-foundation
@@ -659,6 +868,12 @@ entries:
   - llm-inference
   - llm-training
   - model-foundation
+  juliangarnier_anime:
+  - uncategorized
+  jundot_omlx:
+  - ai-agent
+  - ai-coding
+  - llm-inference
   juspay_hyperswitch:
   - devtools
   k-dense-ai_claude-scientific-skills:
@@ -684,6 +899,13 @@ entries:
   - model-foundation
   - education
   - video-audio
+  katanemo_plano:
+  - ai-agent
+  - security
+  kellerjordan_modded-nanogpt:
+  - llm-inference
+  - rag-search
+  - trading-finance
   kestra-io_kestra:
   - devtools
   - workflow-automation
@@ -701,6 +923,8 @@ entries:
   - editor-kms
   - education
   - protocol-spec
+  kovidgoyal_calibre:
+  - education
   ladybirdbrowser_ladybird:
   - uncategorized
   langchain-ai_open-swe:
@@ -725,6 +949,15 @@ entries:
   lightpanda-io_browser:
   - ai-agent
   - protocol-spec
+  lima-vm_lima:
+  - ai-agent
+  - devtools
+  lissy93_web-check:
+  - web-framework
+  - security
+  lizardbyte_sunshine:
+  - iot-hardware
+  - protocol-spec
   lobehub_lobehub:
   - ai-agent
   - editor-kms
@@ -739,6 +972,22 @@ entries:
   - trading-finance
   louis-e_arnis:
   - iot-hardware
+  louislam_uptime-kuma:
+  - database
+  - protocol-spec
+  lsdefine_genericagent:
+  - ai-agent
+  - security
+  lukilabs_craft-agents-oss:
+  - ai-agent
+  - ai-coding
+  - devtools
+  - editor-kms
+  lum1104_understand-anything:
+  - ai-agent
+  - ai-coding
+  - llm-framework
+  - rag-search
   luongnv89_claude-howto:
   - ai-coding
   - education
@@ -748,10 +997,21 @@ entries:
   makeplane_plane:
   - web-framework
   - protocol-spec
+  manaflow-ai_cmux:
+  - ai-agent
+  - ai-coding
+  maplibre_maplibre-gl-js:
+  - llm-framework
   marimo-team_marimo:
   - ai-agent
   - ai-coding
   - education
+  - protocol-spec
+  mattpocock_skills:
+  - ai-coding
+  - devtools
+  mempalace_mempalace:
+  - database
   - protocol-spec
   memvid_memvid:
   - llm-framework
@@ -799,6 +1059,9 @@ entries:
   - devtools
   - video-audio
   - protocol-spec
+  microsoft_onnxruntime:
+  - llm-inference
+  - iot-hardware
   microsoft_playwright-mcp:
   - devtools
   - workflow-automation
@@ -808,10 +1071,23 @@ entries:
   microsoft_vibevoice:
   - video-audio
   - media-generation
+  millionco_react-doctor:
+  - ai-agent
+  - ai-coding
+  - devtools
+  - security
   milvus-io_milvus:
   - llm-framework
   - rag-search
   - database
+  mindsdb_mindsdb:
+  - ai-agent
+  - llm-framework
+  - database
+  - protocol-spec
+  minio_minio:
+  - llm-framework
+  - security
   miromindai_mirothinker:
   - ai-agent
   - llm-training
@@ -832,6 +1108,9 @@ entries:
   - ai-agent
   - ai-coding
   - protocol-spec
+  modelcontextprotocol_typescript-sdk:
+  - ai-agent
+  - protocol-spec
   modsetter_surfsense:
   - ai-agent
   - llm-framework
@@ -846,6 +1125,9 @@ entries:
   - ai-agent
   - database
   - data-pipeline
+  mojombo_bertrpc:
+  - protocol-spec
+  - security
   moonshine-ai_moonshine:
   - iot-hardware
   - video-audio
@@ -871,6 +1153,10 @@ entries:
   - rag-search
   - iot-hardware
   - video-audio
+  multica-ai_multica:
+  - ai-agent
+  - ai-coding
+  - devtools
   muratcankoylan_agent-skills-for-context-engineering:
   - ai-agent
   - ai-coding
@@ -883,11 +1169,18 @@ entries:
   nautechsystems_nautilus_trader:
   - llm-inference
   - trading-finance
+  nesquena_hermes-webui:
+  - ai-agent
+  netdata_netdata:
+  - uncategorized
   nevamind-ai_memu:
   - ai-agent
   - devtools
   newton-physics_newton:
   - uncategorized
+  nextcloud_server:
+  - llm-framework
+  - protocol-spec
   nicbarker_clay:
   - uncategorized
   nilsherzig_llocalsearch:
@@ -898,12 +1191,27 @@ entries:
   - rag-search
   - web-framework
   - trading-finance
+  nitrojs_nitro:
+  - data-pipeline
+  - web-framework
+  nocobase_nocobase:
+  - uncategorized
+  nocodb_nocodb:
+  - database
   nousresearch_hermes-agent:
   - ai-agent
   - devtools
   nutlope_llamacoder:
   - model-foundation
   - design-ui
+  nvidia_cosmos:
+  - education
+  - video-audio
+  - media-generation
+  nvidia_personaplex:
+  - model-foundation
+  - video-audio
+  - media-generation
   nvm-sh_nvm:
   - devtools
   obra_superpowers:
@@ -918,6 +1226,11 @@ entries:
   - rag-search
   - protocol-spec
   - security
+  open-llm-vtuber_open-llm-vtuber:
+  - workflow-automation
+  - media-generation
+  open-metadata_openmetadata:
+  - database
   open-webui_open-webui:
   - llm-framework
   - database
@@ -949,14 +1262,28 @@ entries:
   openbmb_chatdev:
   - ai-agent
   - devtools
+  openbmb_voxcpm:
+  - llm-inference
+  - trading-finance
+  - video-audio
+  - media-generation
   openclaw_openclaw:
   - ai-agent
+  - security
+  openclaw_openclaw-windows-node:
+  - ai-agent
+  - ai-coding
+  - devtools
+  - video-audio
+  - protocol-spec
   - security
   opendatalab_mineru:
   - llm-framework
   - workflow-automation
   - protocol-spec
   opendataloader-project_opendataloader-pdf:
+  - uncategorized
+  openemr_openemr:
   - uncategorized
   openhands_openhands:
   - ai-agent
@@ -980,6 +1307,17 @@ entries:
   paperclipai_paperclip:
   - ai-agent
   - devtools
+  paperless-ngx_paperless-ngx:
+  - llm-framework
+  - model-foundation
+  - devtools
+  - rag-search
+  - protocol-spec
+  - security
+  pascalorg_editor:
+  - ai-agent
+  - editor-kms
+  - protocol-spec
   patchy631_ai-engineering-hub:
   - ai-agent
   - llm-framework
@@ -1005,12 +1343,26 @@ entries:
   - ai-agent
   playcanvas_engine:
   - uncategorized
+  playcanvas_supersplat:
+  - uncategorized
+  posthog_posthog:
+  - devtools
+  - database
+  - education
+  - protocol-spec
+  - security
+  powershell_powershell:
+  - workflow-automation
   prefecthq_fastmcp:
   - ai-coding
   - devtools
   - workflow-automation
   - web-framework
   - protocol-spec
+  priorlabs_tabpfn:
+  - llm-training
+  - education
+  - data-pipeline
   promptfoo_promptfoo:
   - workflow-automation
   - security
@@ -1027,8 +1379,23 @@ entries:
   pydantic_monty:
   - ai-agent
   - security
+  python_cpython:
+  - uncategorized
+  pytorch_pytorch:
+  - llm-inference
+  - llm-training
+  - trading-finance
   qeeqbox_social-analyzer:
   - security
+  quantconnect_lean:
+  - llm-inference
+  - trading-finance
+  qwenlm_qwen-code:
+  - ai-agent
+  - ai-coding
+  - model-foundation
+  - devtools
+  - protocol-spec
   qwibitai_nanoclaw:
   - ai-agent
   - security
@@ -1038,14 +1405,28 @@ entries:
   - llm-training
   - model-foundation
   - education
+  reconurge_flowsint:
+  - uncategorized
   redwoodjs_graphql:
   - database
+  reflex-dev_reflex:
+  - education
+  - web-framework
+  remix-run_react-router:
+  - web-framework
   remotion-dev_remotion:
   - uncategorized
   rendercv_rendercv:
   - ai-agent
   - devtools
   - workflow-automation
+  reorproject_reor:
+  - ai-coding
+  - llm-framework
+  - llm-inference
+  - model-foundation
+  - editor-kms
+  - protocol-spec
   resemble-ai_chatterbox:
   - media-generation
   resque_resque:
@@ -1059,6 +1440,12 @@ entries:
   - security
   roboflow_supervision:
   - uncategorized
+  rohitg00_agentmemory:
+  - ai-agent
+  - ai-coding
+  - devtools
+  - database
+  - education
   rowboatlabs_rowboat:
   - ai-agent
   - llm-framework
@@ -1069,6 +1456,9 @@ entries:
   - web-framework
   rssnext_folo:
   - protocol-spec
+  run-llama_liteparse:
+  - llm-framework
+  - model-foundation
   run-llama_llama_index:
   - ai-agent
   - llm-framework
@@ -1080,6 +1470,8 @@ entries:
   - ai-agent
   - devtools
   - protocol-spec
+  rustpython_rustpython:
+  - security
   ruvnet_claude-flow:
   - ai-agent
   - ai-coding
@@ -1107,11 +1499,16 @@ entries:
   - devtools
   - workflow-automation
   - rag-search
+  sdwebimage_sdwebimage:
+  - protocol-spec
   seaweedfs_seaweedfs:
   - llm-framework
   - education
   serengil_deepface:
   - uncategorized
+  servo_servo:
+  - trading-finance
+  - security
   sgl-project_mini-sglang:
   - llm-inference
   sgl-project_sglang:
@@ -1129,6 +1526,9 @@ entries:
   - ai-coding
   sherlock-project_sherlock:
   - security
+  shiyu-coder_kronos:
+  - llm-training
+  - trading-finance
   shubhamsaboo_awesome-llm-apps:
   - ai-agent
   - llm-framework
@@ -1150,6 +1550,12 @@ entries:
   slopus_happy:
   - ai-agent
   - ai-coding
+  smartcontractkit_chainlink:
+  - security
+  soxoj_maigret:
+  - database
+  spipm_depixelization_poc:
+  - security
   sst_opencode:
   - ai-agent
   - ai-coding
@@ -1185,6 +1591,10 @@ entries:
   - ai-coding
   - devtools
   - database
+  supertone-inc_supertonic:
+  - rag-search
+  - video-audio
+  - media-generation
   swisskyrepo_payloadsallthethings:
   - iot-hardware
   - security
@@ -1192,6 +1602,10 @@ entries:
   - ai-agent
   - ai-coding
   - devtools
+  tanstack_router:
+  - devtools
+  - web-framework
+  - security
   tapxworld_chinatextbook:
   - education
   - security
@@ -1200,13 +1614,27 @@ entries:
   - llm-inference
   - devtools
   - trading-finance
+  telegrammessenger_telegram-ios:
+  - uncategorized
   tencent_weknora:
   - llm-framework
   - workflow-automation
+  teng-lin_notebooklm-py:
+  - ai-agent
+  - ai-coding
+  - devtools
+  - education
+  - protocol-spec
+  tensorflow_tensorflow:
+  - uncategorized
   tesseract-ocr_tesseract:
   - uncategorized
   thealgorithms_python:
   - uncategorized
+  thecraighewitt_seomachine:
+  - ai-agent
+  - ai-coding
+  - data-pipeline
   thedotmack_claude-mem:
   - ai-agent
   - ai-coding
@@ -1215,11 +1643,26 @@ entries:
   - ai-coding
   - llm-training
   - education
+  thudm_slime:
+  - ai-agent
+  - llm-inference
+  - llm-training
+  - model-foundation
+  thunderbird_thunderbolt:
+  - ai-agent
+  - ai-coding
+  - llm-inference
+  - model-foundation
+  - devtools
+  - protocol-spec
+  - security
   tibixdev_winboat:
   - workflow-automation
   tinyhumansai_openhuman:
   - ai-agent
   - editor-kms
+  tldraw_tldraw:
+  - uncategorized
   tobi_qmd:
   - ai-agent
   - llm-training
@@ -1230,6 +1673,8 @@ entries:
   - ai-agent
   - devtools
   - rag-search
+  todepond_gulfofmexico:
+  - uncategorized
   toeverything_affine:
   - editor-kms
   - database
@@ -1248,6 +1693,13 @@ entries:
   - workflow-automation
   - protocol-spec
   - security
+  trycua_cua:
+  - ai-agent
+  - data-pipeline
+  turboderp-org_exllamav2:
+  - llm-inference
+  - model-foundation
+  - trading-finance
   tursodatabase_turso:
   - ai-agent
   - database
@@ -1260,6 +1712,12 @@ entries:
   - uncategorized
   typst_typst:
   - uncategorized
+  ultralytics_ultralytics:
+  - llm-inference
+  - security
+  umami-software_umami:
+  - ai-agent
+  - llm-framework
   unclecode_crawl4ai:
   - uncategorized
   unionlabs_union:
@@ -1279,19 +1737,35 @@ entries:
   - web-framework
   - protocol-spec
   - security
+  vaibhavs10_insanely-fast-whisper:
+  - devtools
+  - video-audio
   vectifyai_pageindex:
   - llm-framework
   - rag-search
   - database
   - trading-finance
   - protocol-spec
+  vendure-ecommerce_vendure:
+  - rag-search
+  - protocol-spec
   vercel-labs_agent-browser:
   - ai-agent
   - devtools
   - workflow-automation
   - protocol-spec
+  vercel-labs_open-agents:
+  - ai-agent
+  - devtools
+  vercel-labs_skills:
+  - ai-agent
+  - ai-coding
+  - devtools
+  - security
   vercel_ai:
   - ai-agent
+  - web-framework
+  vercel_next.js:
   - web-framework
   vercel_workflow:
   - ai-agent
@@ -1331,6 +1805,10 @@ entries:
   - database
   - protocol-spec
   - security
+  warpdotdev_warp:
+  - ai-agent
+  - ai-coding
+  - devtools
   wavetermdev_waveterm:
   - llm-inference
   - model-foundation
@@ -1339,6 +1817,11 @@ entries:
   - uncategorized
   wei-shaw_claude-relay-service:
   - ai-coding
+  withastro_flue:
+  - ai-agent
+  - ai-coding
+  - web-framework
+  - protocol-spec
   wolfpld_tracy:
   - devtools
   wshobson_agents:
@@ -1372,10 +1855,21 @@ entries:
   - rag-search
   - database
   - data-pipeline
+  yikart_aitoearn:
+  - ai-agent
+  - ai-coding
+  - workflow-automation
+  - video-audio
+  - protocol-spec
   yimmenu_yimmenuv2:
   - uncategorized
   yt-dlp_yt-dlp:
   - video-audio
+  - security
+  z-lab_dflash:
+  - llm-inference
+  - model-foundation
+  z4nzu_hackingtool:
   - security
   zaidmukaddam_scira:
   - ai-agent
@@ -1386,7 +1880,18 @@ entries:
   - rag-search
   - database
   - security
+  ziglang_zig:
+  - ai-coding
+  zilliztech_claude-context:
+  - llm-framework
+  - devtools
+  - protocol-spec
   zju-llms_foundations-of-llms:
   - uncategorized
+  zuodaotech_everyone-can-use-english:
+  - database
+  - education
+  - video-audio
+  - media-generation
   zyronon_typewords:
   - uncategorized

@@ -13,11 +13,11 @@
     "name": "TapXWorld/ChinaTextbook",
     "url": "https://github.com/tapxworld/chinatextbook",
     "language": "Roff",
-    "stars": 72294,
-    "forks": 16214,
+    "stars": 72902,
+    "forks": 16322,
     "description": "所有小初高、大学PDF教材。",
-    "last_seen": "2026-06-07",
-    "trending_days": 35
+    "last_seen": "2026-06-08",
+    "trending_days": 36
   },
   {
     "name": "nvm-sh/nvm",
@@ -630,6 +630,16 @@
     "trending_days": 10
   },
   {
+    "name": "mvanhorn/last30days-skill",
+    "url": "https://github.com/mvanhorn/last30days-skill",
+    "language": "Python",
+    "stars": 33463,
+    "forks": 2756,
+    "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
+    "last_seen": "2026-06-08",
+    "trending_days": 10
+  },
+  {
     "name": "NevaMind-AI/memU",
     "url": "https://github.com/nevamind-ai/memu",
     "language": "Python",
@@ -777,16 +787,6 @@
     "forks": 4856,
     "description": "Shannon Lite is an autonomous, white-box AI pentester for web applications and APIs. It analyzes your source code, identifies attack vectors, and executes real exploits to prove vulnerabilities before they reach production.",
     "last_seen": "2026-05-17",
-    "trending_days": 9
-  },
-  {
-    "name": "mvanhorn/last30days-skill",
-    "url": "https://github.com/mvanhorn/last30days-skill",
-    "language": "Python",
-    "stars": 29573,
-    "forks": 2502,
-    "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
-    "last_seen": "2026-06-07",
     "trending_days": 9
   },
   {
@@ -1290,6 +1290,16 @@
     "trending_days": 6
   },
   {
+    "name": "CopilotKit/CopilotKit",
+    "url": "https://github.com/copilotkit/copilotkit",
+    "language": "TypeScript",
+    "stars": 33958,
+    "forks": 4290,
+    "description": "The Frontend Stack for Agents & Generative UI. React, Angular, Mobile, Slack, and more. Makers of the AG-UI Protocol",
+    "last_seen": "2026-06-08",
+    "trending_days": 6
+  },
+  {
     "name": "czlonkowski/n8n-mcp",
     "url": "https://github.com/czlonkowski/n8n-mcp",
     "language": "TypeScript",
@@ -1720,16 +1730,6 @@
     "trending_days": 5
   },
   {
-    "name": "CopilotKit/CopilotKit",
-    "url": "https://github.com/copilotkit/copilotkit",
-    "language": "TypeScript",
-    "stars": 32953,
-    "forks": 4215,
-    "description": "The Frontend Stack for Agents & Generative UI. React + Angular. Makers of the AG-UI Protocol",
-    "last_seen": "2026-06-06",
-    "trending_days": 5
-  },
-  {
     "name": "decolua/9router",
     "url": "https://github.com/decolua/9router",
     "language": "JavaScript",
@@ -1877,6 +1877,16 @@
     "forks": 15101,
     "description": "The ultimate space for work and life — to find, build, and collaborate with agent teammates that grow with you. We are taking agent harness to the next level — enabling multi-agent collaboration, effortless agent team design, and introducing agents as the unit of work interaction.",
     "last_seen": "2026-05-08",
+    "trending_days": 5
+  },
+  {
+    "name": "luongnv89/claude-howto",
+    "url": "https://github.com/luongnv89/claude-howto",
+    "language": "Python",
+    "stars": 35562,
+    "forks": 4336,
+    "description": "A visual, example-driven guide to Claude Code — from basic concepts to advanced agents, with copy-paste templates that bring immediate value.",
+    "last_seen": "2026-06-08",
     "trending_days": 5
   },
   {
@@ -2230,6 +2240,16 @@
     "trending_days": 4
   },
   {
+    "name": "danielmiessler/Personal_AI_Infrastructure",
+    "url": "https://github.com/danielmiessler/personal_ai_infrastructure",
+    "language": "TypeScript",
+    "stars": 15269,
+    "forks": 2151,
+    "description": "Agentic AI Infrastructure for magnifying HUMAN capabilities.",
+    "last_seen": "2026-06-08",
+    "trending_days": 4
+  },
+  {
     "name": "daytonaio/daytona",
     "url": "https://github.com/daytonaio/daytona",
     "language": "TypeScript",
@@ -2570,16 +2590,6 @@
     "trending_days": 4
   },
   {
-    "name": "luongnv89/claude-howto",
-    "url": "https://github.com/luongnv89/claude-howto",
-    "language": "Python",
-    "stars": 16536,
-    "forks": 1924,
-    "description": "A visual, example-driven guide to Claude Code — from basic concepts to advanced agents, with copy-paste templates that bring immediate value.",
-    "last_seen": "2026-04-02",
-    "trending_days": 4
-  },
-  {
     "name": "makeplane/plane",
     "url": "https://github.com/makeplane/plane",
     "language": "TypeScript",
@@ -2697,6 +2707,16 @@
     "forks": 2125,
     "description": "NocoBase is the most extensible AI-powered no-code/low-code platform for building business applications and enterprise solutions.",
     "last_seen": "2025-11-09",
+    "trending_days": 4
+  },
+  {
+    "name": "openai/plugins",
+    "url": "https://github.com/openai/plugins",
+    "language": "JavaScript",
+    "stars": 2222,
+    "forks": 281,
+    "description": "OpenAI Plugins",
+    "last_seen": "2026-06-08",
     "trending_days": 4
   },
   {
@@ -2960,6 +2980,16 @@
     "trending_days": 3
   },
   {
+    "name": "aaif-goose/goose",
+    "url": "https://github.com/aaif-goose/goose",
+    "language": "Rust",
+    "stars": 47913,
+    "forks": 5049,
+    "description": "an open source, extensible AI agent that goes beyond code suggestions - install, execute, edit, and test with any LLM",
+    "last_seen": "2026-06-08",
+    "trending_days": 3
+  },
+  {
     "name": "affaan-m/everything-claude-code",
     "url": "https://github.com/affaan-m/everything-claude-code",
     "language": "JavaScript",
@@ -3137,16 +3167,6 @@
     "forks": 6663,
     "description": "🐙 Guides, papers, lecture, notebooks and resources for prompt engineering",
     "last_seen": "2025-10-15",
-    "trending_days": 3
-  },
-  {
-    "name": "danielmiessler/Personal_AI_Infrastructure",
-    "url": "https://github.com/danielmiessler/personal_ai_infrastructure",
-    "language": "TypeScript",
-    "stars": 13102,
-    "forks": 1843,
-    "description": "Agentic AI Infrastructure for magnifying HUMAN capabilities.",
-    "last_seen": "2026-05-13",
     "trending_days": 3
   },
   {
@@ -3570,6 +3590,16 @@
     "trending_days": 3
   },
   {
+    "name": "MemPalace/mempalace",
+    "url": "https://github.com/mempalace/mempalace",
+    "language": "Python",
+    "stars": 54746,
+    "forks": 7150,
+    "description": "The best-benchmarked open-source AI memory system. And it's free.",
+    "last_seen": "2026-06-08",
+    "trending_days": 3
+  },
+  {
     "name": "memvid/memvid",
     "url": "https://github.com/memvid/memvid",
     "language": "Rust",
@@ -3720,16 +3750,6 @@
     "trending_days": 3
   },
   {
-    "name": "openai/plugins",
-    "url": "https://github.com/openai/plugins",
-    "language": "JavaScript",
-    "stars": 1902,
-    "forks": 265,
-    "description": "OpenAI Plugins",
-    "last_seen": "2026-06-07",
-    "trending_days": 3
-  },
-  {
     "name": "openclaw/openclaw-windows-node",
     "url": "https://github.com/openclaw/openclaw-windows-node",
     "language": "C#",
@@ -3737,6 +3757,16 @@
     "forks": 187,
     "description": "Windows companion suite for OpenClaw - System Tray app, Shared library, Node, and PowerToys Command Palette extension",
     "last_seen": "2026-06-06",
+    "trending_days": 3
+  },
+  {
+    "name": "Panniantong/Agent-Reach",
+    "url": "https://github.com/panniantong/agent-reach",
+    "language": "Python",
+    "stars": 23751,
+    "forks": 2006,
+    "description": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
+    "last_seen": "2026-06-08",
     "trending_days": 3
   },
   {
@@ -3857,6 +3887,16 @@
     "forks": 683,
     "description": "A meta-skill that designs domain-specific agent teams, defines specialized agents, and generates the skills they use.",
     "last_seen": "2026-06-01",
+    "trending_days": 3
+  },
+  {
+    "name": "roboflow/supervision",
+    "url": "https://github.com/roboflow/supervision",
+    "language": "Python",
+    "stars": 42080,
+    "forks": 3769,
+    "description": "We write your reusable computer vision tools. 💜",
+    "last_seen": "2026-06-08",
     "trending_days": 3
   },
   {
@@ -4167,16 +4207,6 @@
     "forks": 4012,
     "description": "An MCP-based chatbot | 一个基于MCP的聊天机器人",
     "last_seen": "2025-10-12",
-    "trending_days": 2
-  },
-  {
-    "name": "aaif-goose/goose",
-    "url": "https://github.com/aaif-goose/goose",
-    "language": "Rust",
-    "stars": 47172,
-    "forks": 4969,
-    "description": "an open source, extensible AI agent that goes beyond code suggestions - install, execute, edit, and test with any LLM",
-    "last_seen": "2026-06-07",
     "trending_days": 2
   },
   {
@@ -5390,16 +5420,6 @@
     "trending_days": 2
   },
   {
-    "name": "MemPalace/mempalace",
-    "url": "https://github.com/mempalace/mempalace",
-    "language": "Python",
-    "stars": 54061,
-    "forks": 7093,
-    "description": "The best-benchmarked open-source AI memory system. And it's free.",
-    "last_seen": "2026-06-06",
-    "trending_days": 2
-  },
-  {
     "name": "microsoft/Data-Science-For-Beginners",
     "url": "https://github.com/microsoft/data-science-for-beginners",
     "language": "JupyterNotebook",
@@ -5710,16 +5730,6 @@
     "trending_days": 2
   },
   {
-    "name": "Panniantong/Agent-Reach",
-    "url": "https://github.com/panniantong/agent-reach",
-    "language": "Python",
-    "stars": 21942,
-    "forks": 1885,
-    "description": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
-    "last_seen": "2026-06-06",
-    "trending_days": 2
-  },
-  {
     "name": "pathwaycom/llm-app",
     "url": "https://github.com/pathwaycom/llm-app",
     "language": "JupyterNotebook",
@@ -5830,6 +5840,16 @@
     "trending_days": 2
   },
   {
+    "name": "refactoringhq/tolaria",
+    "url": "https://github.com/refactoringhq/tolaria",
+    "language": "TypeScript",
+    "stars": 13339,
+    "forks": 933,
+    "description": "Desktop app to manage markdown knowledge bases",
+    "last_seen": "2026-06-08",
+    "trending_days": 2
+  },
+  {
     "name": "rmyndharis/OpenWA",
     "url": "https://github.com/rmyndharis/openwa",
     "language": "TypeScript",
@@ -5840,16 +5860,6 @@
     "trending_days": 2
   },
   {
-    "name": "roboflow/supervision",
-    "url": "https://github.com/roboflow/supervision",
-    "language": "Python",
-    "stars": 38724,
-    "forks": 3475,
-    "description": "We write your reusable computer vision tools. 💜",
-    "last_seen": "2026-05-14",
-    "trending_days": 2
-  },
-  {
     "name": "run-llama/liteparse",
     "url": "https://github.com/run-llama/liteparse",
     "language": "Rust",
@@ -5857,6 +5867,16 @@
     "forks": 457,
     "description": "A fast, helpful, and open-source document parser",
     "last_seen": "2026-05-30",
+    "trending_days": 2
+  },
+  {
+    "name": "RyanCodrai/turbovec",
+    "url": "https://github.com/ryancodrai/turbovec",
+    "language": "Python",
+    "stars": 8210,
+    "forks": 771,
+    "description": "A vector index built on TurboQuant, written in Rust with Python bindings",
+    "last_seen": "2026-06-08",
     "trending_days": 2
   },
   {
@@ -6457,6 +6477,16 @@
     "forks": 10613,
     "description": "程序员在家做饭方法指南。Programmer's guide about how to cook at home (Simplified Chinese only).",
     "last_seen": "2025-10-12",
+    "trending_days": 1
+  },
+  {
+    "name": "Andyyyy64/whichllm",
+    "url": "https://github.com/andyyyy64/whichllm",
+    "language": "Python",
+    "stars": 3257,
+    "forks": 194,
+    "description": "Find the local LLM that actually runs and performs best on your hardware. Ranked by real, recency-aware benchmarks, not parameter count. One command, run it instantly.",
+    "last_seen": "2026-06-08",
     "trending_days": 1
   },
   {
@@ -7457,6 +7487,16 @@
     "forks": 232,
     "description": "Open source vulnerability DB and triage service.",
     "last_seen": "2025-10-06",
+    "trending_days": 1
+  },
+  {
+    "name": "google/skills",
+    "url": "https://github.com/google/skills",
+    "language": "Python",
+    "stars": 12181,
+    "forks": 957,
+    "description": "Agent Skills for Google products and technologies",
+    "last_seen": "2026-06-08",
     "trending_days": 1
   },
   {
@@ -8650,6 +8690,16 @@
     "trending_days": 1
   },
   {
+    "name": "phuryn/pm-skills",
+    "url": "https://github.com/phuryn/pm-skills",
+    "language": "Unknown",
+    "stars": 12451,
+    "forks": 1485,
+    "description": "PM Skills Marketplace: 100+ agentic skills, commands, and plugins — from discovery to strategy, execution, launch, and growth.",
+    "last_seen": "2026-06-08",
+    "trending_days": 1
+  },
+  {
     "name": "pi-hole/pi-hole",
     "url": "https://github.com/pi-hole/pi-hole",
     "language": "Shell",
@@ -8790,16 +8840,6 @@
     "trending_days": 1
   },
   {
-    "name": "refactoringhq/tolaria",
-    "url": "https://github.com/refactoringhq/tolaria",
-    "language": "TypeScript",
-    "stars": 12602,
-    "forks": 898,
-    "description": "Desktop app to manage markdown knowledge bases",
-    "last_seen": "2026-06-07",
-    "trending_days": 1
-  },
-  {
     "name": "refly-ai/refly",
     "url": "https://github.com/refly-ai/refly",
     "language": "TypeScript",
@@ -8890,16 +8930,6 @@
     "trending_days": 1
   },
   {
-    "name": "RyanCodrai/turbovec",
-    "url": "https://github.com/ryancodrai/turbovec",
-    "language": "Python",
-    "stars": 6276,
-    "forks": 617,
-    "description": "A vector index built on TurboQuant, written in Rust with Python bindings",
-    "last_seen": "2026-06-07",
-    "trending_days": 1
-  },
-  {
     "name": "safety-research/bloom",
     "url": "https://github.com/safety-research/bloom",
     "language": "Python",
@@ -8917,6 +8947,16 @@
     "forks": 3182,
     "description": "The universal proxy platform",
     "last_seen": "2025-10-20",
+    "trending_days": 1
+  },
+  {
+    "name": "santifer/career-ops",
+    "url": "https://github.com/santifer/career-ops",
+    "language": "JavaScript",
+    "stars": 50127,
+    "forks": 10301,
+    "description": "AI-powered job search system built on Claude Code. 14 skill modes, Go dashboard, PDF generation, batch processing.",
+    "last_seen": "2026-06-08",
     "trending_days": 1
   },
   {
