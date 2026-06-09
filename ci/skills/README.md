@@ -10,12 +10,19 @@
 | `md2wechat/` | `zhiping/creator/md2wechat` v1.0.1（42plugin） | MIT |
 | `ai-daily-ecosystem/` | 本仓库自建（开源 AI 日报） | MIT |
 | `ai-daily-frontier/` | 本仓库自建（AI 前沿日报，对标 MorningAI） | MIT |
+| `resource-miner/` | 本仓库自建（资源类仓库分析：awesome / 学习资料 / 非典型非代码） | MIT |
 
 每个子目录都保留了 `LICENSE` 文件，符合 MIT 协议要求。
 
 两个 `ai-daily-*` 是本项目自建 skill（非 42plugin 上游），直接维护在本目录；它们调用共享
 脚本 `src/scripts/{collect_daily_facts,dedup_daily,record_daily}.py` 与共享配置
 `src/data/ai-daily/*`（采集源 / 评分 rubric / 去重 / 核验规则）。
+
+`resource-miner` 也是本项目自建 skill，与 repo-miner 并列用于「没有代码架构」的资源类仓库
+（套 repo-miner 会得「近零代码行=已放弃」的错误结论）。它**自包含打包**了采集脚本
+`scripts/collect_resource_facts.py` + 其依赖的 `scripts/collect_repo_facts.py`（与
+`src/scripts/` 下的同名文件保持字节一致，参照 repo-miner 自带 `collect_repo_facts.py` 的做法）。
+canonical 源仍在 `src/scripts/collect_resource_facts.py`；改动后需同步回本目录的副本。
 
 ## 同步策略
 
@@ -36,4 +43,10 @@ ln -s "$PWD/ci/skills/ai-daily-ecosystem" .claude/skills/ai-daily-ecosystem
 ln -s "$PWD/ci/skills/ai-daily-frontier"  .claude/skills/ai-daily-frontier
 ```
 
-CI 启动时由 `src/scripts/setup_ci_env.sh` 把全部 4 个 skill 拷贝到 runner 的 `~/.claude/skills/`。
+若想本地用 `/resource-miner` 调用，可反向 symlink 到 `.claude/skills/`（与 ai-daily 同理）：
+
+```bash
+ln -s "$PWD/ci/skills/resource-miner" .claude/skills/resource-miner
+```
+
+CI 启动时由 `src/scripts/setup_ci_env.sh` 把全部 5 个 skill 拷贝到 runner 的 `~/.claude/skills/`。
