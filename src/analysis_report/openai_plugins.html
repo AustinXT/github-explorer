@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+/* ====== 微信公众号排版 CSS ====== */
+
+body {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #3e3e3e;
+    background: #fff;
+}
+
+/* 正文段落 */
+p {
+    font-size: 15px !important;
+    line-height: 2 !important;
+    margin: 0 !important;
+    padding-top: 0.5em !important;
+    padding-bottom: 0.5em !important;
+    padding-right: 1.2em !important;
+    padding-left: 1.2em !important;
+    text-align: justify !important;
+}
+p + p {
+    margin-top: 0 !important;
+}
+
+/* 标题 */
+h1 {
+    font-size: 20px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 16px 0 !important;
+    padding: 0 !important;
+}
+h2 {
+    font-size: 18px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 24px 0 !important;
+    padding: 0 !important;
+}
+h3 {
+    font-size: 15px !important;
+    font-weight: bold !important;
+    color: #3e3e3e !important;
+    text-align: left !important;
+    margin: 16px 0 16px 0 !important;
+    padding: 0 0 0 1.2em !important;
+}
+h4 {
+    font-size: 15px !important;
+    color: rgb(0, 122, 170) !important;
+    margin: 12px 0 8px 0 !important;
+    padding: 0 !important;
+}
+
+/* 列表 */
+ul,
+ol {
+    padding-left: 2em !important;
+    margin: 1em 0 !important;
+    font-size: 15px !important;
+}
+li {
+    margin: 0.5em 0 !important;
+    line-height: 1.8em !important;
+    font-size: 15px !important;
+    color: #3e3e3e !important;
+}
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+    margin: 0 !important;
+    padding-left: 1.2em !important;
+}
+
+/* 引用 */
+blockquote {
+    border-left: 4px solid #888 !important;
+    padding: 8px 16px !important;
+    margin: 1em 0 !important;
+    color: #666 !important;
+    background: #f9f9f9 !important;
+}
+blockquote > p {
+    margin: 0.5em 0 !important;
+    padding: 0 !important;
+}
+blockquote::before,
+blockquote::after {
+    content: none !important;
+}
+
+/* 代码块 */
+pre {
+    font-size: 14px !important;
+    line-height: 1.4em !important;
+    color: #3e3e3e !important;
+    background: #f8f8f8 !important;
+    padding: 12px 16px !important;
+    border-radius: 4px !important;
+    overflow: auto !important;
+    margin: 1em 0 !important;
+}
+
+/* 脚注 */
+.footnotes {
+    font-size: 11px !important;
+    color: #666 !important;
+    line-height: 1.2 !important;
+    margin: 8px 0 0 0 !important;
+    padding: 4px 0 0 0 !important;
+    border-top: 1px solid #eee !important;
+}
+.footnotes p {
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #666 !important;
+}
+
+/* 上标 */
+sup {
+    font-size: 0.75em !important;
+    vertical-align: super !important;
+    color: #e51f42 !important;
+    margin: 0 2px !important;
+}
+
+</style>
+</head>
+<body>
+<blockquote><p>GitHub: <a href="https://github.com/openai/plugins">https://github.com/openai/plugins</a></p></blockquote>
+<h2>一句话总结</h2>
+<p>OpenAI 官方维护的 <strong>Codex 插件示例集与 Marketplace 事实源</strong>——173 个自包含 plugin 子目录、174 条 marketplace 注册表项，承载 ChatGPT plugins 遗产并迁移到 Codex + MCP 协议，<strong>正在定义 AI 插件生态的 form-factor</strong>。</p>
+<h2>值得关注的理由</h2>
+<ul>
+<li><strong>AI 插件 form-factor 定义者</strong>：interface块 12 字段、marketplace 双状态机、plugin.lock.json 版本锁定——正在定义行业标准。</li>
+<li><strong>3 个月 2.6K★ 的官方背书</strong>：开仓即爆发，star/fork ≈8.5（远高于行业基准 4-6），是策展型仓库的典型信号。</li>
+<li><strong>零测试、零重构的工程化反思</strong>：553 个 markdown +174 个 manifest 怎么保证质量？这是个值得思考的反例。</li>
+</ul>
+<h2>项目画像</h2>
+<p><strong>GitHub</strong>：<a href="https://github.com/openai/plugins">https://github.com/openai/plugins</a></p>
+<p><strong>Star / Fork</strong>：2,589 /305（star/fork ≈8.5，策展型高围观低 fork）</p>
+<p><strong>代码行数</strong>：223,579 行（JS58.9% / Python32.8% / Standard ML2.0% / Shell1.4%）</p>
+<p><strong>文件数</strong>：4,248（含 561 个 YAML manifest、148 个 SVG 图标）</p>
+<p><strong>项目年龄</strong>：3.2 个月（首提交 2026-03-04）</p>
+<p><strong>开发阶段</strong>：密集开发（近 90 天 257 commits，月度 106→73→48→39 缓降）</p>
+<p><strong>贡献模式</strong>：openai 组织主导，60 位贡献者，Ashwin Mathews 占 17.8%</p>
+<p><strong>热度定位</strong>：中等热度（2.6K★，官方背书 +爆发型增长）</p>
+<p><strong>质量评级</strong>：代码 N/A（无业务代码）/文档优秀 / 测试 无（合理缺位）</p>
+<h2>项目展示</h2>
+<blockquote><p>仓库 README 与官网均未嵌入展示性图片/视频，跳过此节。</p></blockquote>
+<p>&gt;官方媒体入口：<a href="https://openai.com/index/chatgpt-plugins/">https://openai.com/index/chatgpt-plugins/</a>（ChatGPT plugins 范式官方公告）+ <a href="https://platform.openai.com/docs/guides/codex/plugins">https://platform.openai.com/docs/guides/codex/plugins</a>（Codex 插件平台开发者文档）+ <a href="https://chatgpt.com/plugins">https://chatgpt.com/plugins</a>（用户端入口与分类导航）。</p>
+<h2>作者视角：为什么存在这个项目</h2>
+<h3>创始人/作者背景</h3>
+<p>仓库主是 openai <strong>组织</strong>而非个人——10.7 年历史、123K followers、255 个公开仓库。旗下头部项目矩阵清晰：codex（89.9K★，Rust 写的 CLI 运行时）/ openai-cookbook（74.1K★，示例与最佳实践）/ openai-agents-python（27K★，Agents SDK）/ symphony（25.2K★，Elixir 写的 Symphony）/ gpt-oss（20.1K★），plugins 以 2.6K★ 位列第 6。</p>
+<p>核心维护者 60 人，头部 10 人占 60%+，是「核心少数 +社区」结构。Ashwin Mathews（17.8%占比）是头号贡献者，最近一次提交是 [catalyst] use canonical plugin category #327——直接揭示了当前路线图主线：<strong>规范化 plugin 分类</strong>。</p>
+<h3>问题判断</h3>
+<p>ChatGPT plugins 是 OpenAI2023-03 推出、2024-04 弃用的早期插件范式。弃用的真实原因不是产品失败，而是 <strong>生态被 Anthropic 的 MCP（Model Context Protocol）协议重新定义</strong>——MCP 用更标准的 JSON-RPC over stdio 把「模型 ↔工具」解耦成通用协议，OpenAI 不能不跟。</p>
+<p>但 plugins 范式留下了三个不可丢弃的遗产：</p>
+<ol>
+<li><strong>manifest as source of truth</strong>（plugin.json 即合约）</li>
+<li><strong>marketplace 中央注册</strong>（UI/CLI/Gateway 共用）</li>
+<li><strong>「Code 实体 ↔ NL 接口」的桥梁</strong>（displayName、shortDescription、defaultPrompt 把工具描述给 LLM）</li>
+</ol>
+<p>openai/plugins 这个仓就是承接遗产、并向 Codex + MCP 迁移的「过渡容器」——内部已经全面用 .codex-plugin/plugin.json命名空间，外部仓库命名仍是 openai/plugins保留可发现性。这是 <strong>品牌迁移过渡期的产物</strong>。</p>
+<h3>解法哲学</h3>
+<p>OpenAI 明确选择了：<strong>让仓库承担「生态样板 + Marketplace 事实源」双重角色</strong>，而不是只做 SDK 包装。</p>
+<p>具体选择与不选择：</p>
+<ul>
+<li>✅ <strong>选择</strong>：自包含 plugin 目录约定（manifest + skills + agents + assets +各自 LICENSE）——任何人都能直接 cp -r 一个 plugin 出来作为新仓库起点</li>
+<li>✅ <strong>选择</strong>：marketplace.json 中央注册表（85 次改动 Top1，承担「事实唯一源」）——而非让 UI 层各自维护</li>
+<li>✅ <strong>选择</strong>：plugin.lock.json 版本锁定（figma 示范，类似 Cargo.lock，锁定 vendored skill 的 git ref + sha256）</li>
+<li>❌ <strong>不选择</strong>：单仓库 SDK +插件混杂（每个 plugin 测试仍在各自 SDK 仓）</li>
+<li>❌ <strong>不选择</strong>：协议层独立（manifest schema 即协议）</li>
+</ul>
+<h3>战略意图</h3>
+<p>这个仓库是 OpenAI <strong>「Codex 平台 → plugin 生态 → agent 应用</strong>」链路里的 <strong>生态样板层</strong>——上游是 codex（89.9K★）作为运行时，下游是 agent 应用开发者作为消费者，本仓提供「参考实现 + Marketplace 事实源」。</p>
+<p>商业化路径：不直接商业化，而是 <strong>以生态主导权换商业护城河</strong>——谁定义 plugin form-factor，谁就掌握 agent 应用迁移的「默认目标」。这与 Anthropic 押注 MCP 协议是同一种打法：<strong>抢标准而非抢产品</strong>。</p>
+<blockquote><p>官方文档说明：本仓库 homepage 为空（指向 openai.com），文档入口在 platform.openai.com。已通过 DeepWiki 完成架构补全。</p></blockquote>
+<h2>核心价值提炼</h2>
+<h3>创新之处</h3>
+<ol>
+<li><strong>.codex-plugin/plugin.json schema 作为 AI 插件 form-factor 定义</strong></li>
+</ol>
+<ul>
+<li>interface块 12 字段（displayName、shortDescription、longDescription、developerName、category、capabilities、法务三件套、defaultPrompt、brandColor、composerIcon、logo、screenshots）是「把 Code 实体描述给 LLM」的标准方式</li>
+<li>新颖度 4/5 |实用性 4/5 | 可迁移性 5/5</li>
+</ul>
+<ol>
+<li><strong>marketplace.json 双状态机设计</strong>（installation × authentication 笛卡尔积）</li>
+</ol>
+<ul>
+<li>AVAILABLE / INSTALLED_BY_DEFAULT × ON_INSTALL / ON_USE</li>
+<li>158 条 AVAILABLE/ON_INSTALL 为绝对主流（适合稳定插件）</li>
+<li>2 条 AVAILABLE/ON_USE 用于 sandbox 插件（延迟到首次使用时认证，避免 OAuth 风险）</li>
+<li>15 条加 products:["CODEX"] 白名单（限平台）</li>
+<li>新颖度 3/5 |实用性 5/5 | 可迁移性 4/5</li>
+</ul>
+<ol>
+<li><strong>plugin.lock.json 版本锁定</strong>（figma 示范）</li>
+</ol>
+<ul>
+<li>类似 Cargo.lock：vendored skill 的 git ref + sha256 锁定</li>
+<li>解决了「skill 在 marketplace 里被升级导致行为漂移」的隐患</li>
+<li>新颖度 4/5 |实用性 4/5 | 可迁移性 5/5</li>
+</ul>
+<ol>
+<li><strong>evaluations/目录</strong>（notion 示范）的评测驱动开发范式</li>
+</ol>
+<ul>
+<li>评测用例 JSON schema（query + expected_behavior + success_criteria）</li>
+<li>把 prompt engineering 从「手工调」变成「跑评测看分数」</li>
+<li>新颖度 3/5 |实用性 4/5 | 可迁移性 5/5</li>
+</ul>
+<ol>
+<li><strong>四层 prompt routing</strong>（plugin.json → agents/openai.yaml → SKILL.md → references/）</li>
+</ol>
+<ul>
+<li>从粗粒度（plugin identity）到细粒度（reference data），分层描述工具</li>
+<li>figma-use 用大写关键词 MANDATORY / NEVER强制 LLM 行为约束</li>
+<li>新颖度 3/5 |实用性 5/5 | 可迁移性 5/5</li>
+</ul>
+<h3>可复用的模式与技巧</h3>
+<ol>
+<li><strong>自包含 plugin 目录约定</strong>——每个 plugin 都有 agents/openai.yaml + skills/&amp;lt;name&amp;gt;/SKILL.md + commands/ + assets/ + README.md + LICENSE，<strong>任何人能直接 cp -r 一个 plugin 作为新仓起点</strong>。适用场景：任何需要「多个独立组件共同注册到一个中心」的体系。</li>
+</ol>
+<ol>
+<li><strong>plugin.lock.json 模式</strong>——锁定 vendored 依赖的精确版本（git ref + sha256），避免 marketplace 升级导致插件行为漂移。适用场景：多 plugin 共用 skill 库的场景。</li>
+</ol>
+<ol>
+<li><strong>evaluations/评测驱动开发</strong>——把 LLM 行为的「期望」显式写成可验证的成功标准，而不是埋在 SKILL.md 散文里。适用场景：所有 prompt engineering 工作。</li>
+</ol>
+<ol>
+<li><strong>mandatory/never 强制关键词</strong>——用大写关键词在 SKILL.md 里强制 LLM 行为，比写「请不要」有效得多（LLM 对大写指令敏感度高）。适用场景：所有 prompt engineering 工作。</li>
+</ol>
+<ol>
+<li><strong>脚手架工具的 name validation 三件套</strong>（.agents/skills/plugin-creator/scripts/create_basic_plugin.py）：</li>
+</ol>
+<ul>
+<li>normalize_plugin_name 转 lowercase hyphen-case（保证跨文件系统可移植）</li>
+<li>validate_plugin_name限 64 字符（防止 URL 路径爆炸）</li>
+<li>幂等设计（force 参数，已存在时覆盖）</li>
+</ul>
+<h3>关键设计决策</h3>
+<pre><code>决策: marketplace.json 作为中央注册表（而非每个 plugin各自注册）
+问题:173 个 plugin怎么避免 UI/CLI/Gateway 各维护一份注册信息？
+方案: .agents/plugins/marketplace.json 单文件2099 行，174 条 entry
+Trade-off: 单文件易冲突（85 次改动 Top1），换来「事实唯一源」+原子更新
+可迁移性: 高——任何多组件体系都适用中央注册表模式</code></pre>
+<pre><code>决策: 测试缺位（refactor0% / test0%）
+问题:553 个 SKILL.md +174 个 manifest怎么保证质量？
+方案: 把测试责任下沉到各 plugin 的 SDK仓 + evaluations/评测驱动开发
+Trade-off:失去「单仓 CI 全验证」保护，换来仓库轻量化（173 个 plugin几乎零业务代码）
+可迁移性: 中——这种下沉测试的范式适合清单/策展型仓库，但不适合 SDK仓</code></pre>
+<pre><code>决策:173 个 plugin全部自包含（每个 plugin 自带 LICENSE / README / agents）
+问题:重复内容（每个 plugin都有 README）vs共享困难
+方案: 自包含优于共享——牺牲 DRY换取「任何 plugin 可单独 fork出去」
+可迁移性: 高——适合「生态丰富度优先于代码复用」的场景</code></pre>
+<h2>竞品格局与定位</h2>
+<h3>竞品对比矩阵</h3>
+<p>形态 | 173 个 plugin manifest 集合 | 协议规范 + server 实现 | API 调用片段示例集</p>
+<p>数量 | 174 条注册项（plugin） | MCP server 注册在各自 repo | 数百个 notebook 示例</p>
+<p>主语言 | 多语言（manifest + 各 plugin SDK） | 多语言 SDK（Python/TS/Rust） | Python / JS notebook</p>
+<p>维护方 | OpenAI 官方 | Anthropic +社区 | OpenAI 官方</p>
+<p>协议层 | .codex-plugin/plugin.json schema | JSON-RPC over stdio | 无统一 schema</p>
+<p>Marketplace | marketplace.json 中央注册 | 多源（PulseMCP 等聚合站） | 无</p>
+<p>版本控制 | plugin.lock.json（figma 示范） | 协议层固定（无 schema 演化保护） | 无</p>
+<p>评测驱动 | evaluations/（notion 示范） | 各 MCP server 自管 | 无</p>
+<h3>差异化护城河</h3>
+<ul>
+<li><strong>生态主导权</strong>：OpenAI 旗下 codex（89.9K★）+ agents-python（27K★）+ plugins 形成的「运行时 + SDK +插件集」三件套，是 Anthropic MCP 仅有的「server 注册」所不具备的。</li>
+<li><strong>官方策展</strong>：openai 亲自下场打磨头部 plugin（zoom809 次改动、nvidia506 次、figma393 次、cloudflare382 次），社区贡献者只是补 plugin——保证头部质量下限。</li>
+<li><strong>evaluations/评测驱动</strong>：把 prompt engineering 变成可验证的工程实践，比 MCP server「手工调 prompt」领先一步。</li>
+</ul>
+<h3>竞争风险</h3>
+<ul>
+<li><strong>最可能被替代的对象</strong>：本仓库本身——若 Anthropic MCP 成为行业事实标准（已有 PulseMCP 等聚合站），OpenAI 可能直接弃用 plugins 仓，转向「Codex ↔ MCP bridge」模式（事实上已在 .codex-plugin/plugin.json 的 interface块里埋了 mcp字段兼容）。</li>
+<li><strong>最可能的替代路径</strong>：当 Codex 真正支持「任意 MCP server 一键接入」时，plugins 仓的角色会从「plugin 集合」降级为「Codex 官方精选插件集」。</li>
+</ul>
+<h3>生态定位</h3>
+<p>在整个 AI agent 生态里，openai/plugins 扮演 <strong>「Codex 平台的官方插件集 + Marketplace 事实源</strong>」——不是 SDK，不是协议，而是 <strong>「应用样板的策展层</strong>」。填补了「SDK → 应用」之间的空白：SDK 给工具，plugins 仓给「工具怎么接入 Codex」的参考实现。</p>
+<blockquote><p>行业竞品数量少且定位错位：本仓填补的是「官方 plugin form-factor + Marketplace 中央注册」的双重空白——MCP 只定义了协议、cookbook 只给了示例片段、agents-python 只给了 SDK。三者都未覆盖「官方策展的 plugin 集合 +评测驱动开发示范」。</p></blockquote>
+<h2>套利机会分析</h2>
+<ul>
+<li><strong>信息差</strong>：star/fork ≈8.5 远高于行业基准 4-6，说明开发者来「看范例」多、改源码少——意味着 <strong>plugin manifest schema 与 evaluations/评测范式还没被广泛理解</strong>，提前吃透这些模式的人能拿到定义权红利。</li>
+<li><strong>技术借鉴</strong>：</li>
+<li>自包含 plugin 目录约定 → 直接复用到任何「多组件共注册」体系</li>
+<li>plugin.lock.json →任何 vendored 依赖场景都适用（甚至比 Cargo.lock 更轻）</li>
+<li>evaluations/评测驱动 → 你自己的 prompt engineering 工作立刻可用</li>
+<li><strong>生态位</strong>：本仓填补了「<strong>SDK → 应用</strong>」之间的「官方样板层」空白——没有它，Codex 平台只有 SDK 没有应用示范，外部开发者无从下手。</li>
+<li><strong>趋势判断</strong>：本仓正在「向 Codex + MCP 迁移」——3.2 个月龄、96.6% commits 集中在最近一季度、月度缓降但未衰减，属于 <strong>早期扩展期的健康状态</strong>。比 MCP server 仓（各自为政）有更强的「中央治理」后发优势。</li>
+</ul>
+<h2>风险与不足</h2>
+<ul>
+<li><strong>零 refactor /零 test 提交</strong>（refactor0.0%，test0.0%）——长期可能积累技术债。marketplace.json85 次改动历史里，若有一次手抖改错，没有 CI 兜底。</li>
+<li><strong>License 缺失</strong>（license_info: null）——每个 plugin 内部可能各自有 LICENSE，但顶层未声明，给下游 fork 留下法律不确定性。</li>
+<li><strong>依赖 openai 组织势能</strong>——本仓热度 2.6K★几乎完全来自 openai 品牌背书（codex89.9K★、cookbook74.1K★ 的关注外溢），社区自驱动能力未经验证。</li>
+<li><strong>evaluations/ 仅 notion 示范</strong>——评测驱动开发范式尚未扩展到全部 550 个 skill，大部分 plugin 的 prompt 质量仍依赖手工调优。</li>
+<li><strong>品牌迁移风险</strong>——仓库名仍是 openai/plugins，内部已全面用 .codex-plugin/plugin.json命名空间；某天若 OpenAI 决定放弃 plugins 这个品牌（如直接并入 codex 单仓），本仓的外部可发现性会骤降。</li>
+</ul>
+<h2>行动建议</h2>
+<blockquote><p><strong>一句话结论</strong>：本仓的价值不在 plugin 数量，而在「<strong>官方 form-factor + 中央 marketplace + 评测驱动开发</strong>」三件套——提前吃透就能拿到 AI 插件生态的定义权红利。</p></blockquote>
+<h3>如果你要用它</h3>
+<ul>
+<li><strong>构建 Codex plugin</strong>：直接 cp -r plugins/figma/ 作为新 plugin 起点，按 .codex-plugin/plugin.json schema 填充，提交 PR 到本仓（27 个 open PR 显示活跃合并）。</li>
+<li><strong>接入外部服务</strong>：参考 plugins/{zoom,nvidia,figma,cloudflare} 的 manifest + skills + agents 组合结构。</li>
+<li><strong>评测你的 prompt</strong>：参考 plugins/notion/evaluations/ 的 query + expected_behavior + success_criteria schema。</li>
+</ul>
+<h3>如果你要学它</h3>
+<ul>
+<li><strong>重点关注</strong>：</li>
+<li>plugins/figma/（最高频改动 + plugin.lock.json 示范）</li>
+<li>plugins/notion/（evaluations/评测驱动开发示范）</li>
+<li>.agents/plugins/marketplace.json（2099 行注册中心，看 schema 设计）</li>
+<li>.agents/skills/plugin-creator/scripts/create_basic_plugin.py（脚手架工具，300 行高质量 CLI）</li>
+<li>plugins/figma/skills/figma-use/SKILL.md（MANDATORY/NEVER 大写关键词强制技巧）</li>
+<li><strong>不学什么</strong>：零测试的工程化基线——这在 SDK 仓不可接受。</li>
+</ul>
+<h3>如果你要 fork 它</h3>
+<ul>
+<li><strong>可改进的方向</strong>：</li>
+</ul>
+<ol>
+<li>添加 plugin.schema.json顶层 schema 文件 + JSON Schema 校验 CI（避免 marketplace.json85 次改动里偶发手抖）</li>
+<li>添加 marketplace.json CI 校验（entry 数量、必填字段、URL 可达性）</li>
+<li>把 evaluations/ 从 notion 示范扩展为「每个 plugin 必须有评测」的硬性要求</li>
+<li>添加顶层 LICENSE（Apache2.0 或 MIT，明确法律授权）</li>
+<li>把 plugin.lock.json 从 figma 示范升级为「全部 plugin 强制要求」</li>
+</ol>
+<h3>知识入口</h3>
+<p><strong>DeepWiki</strong>：<a href="https://deepwiki.com/openai/plugins">https://deepwiki.com/openai/plugins</a>（已收录，覆盖 overview/architecture/plugin anatomy/marketplace/evaluation/glossary 全章节）</p>
+<p><strong>Zread.ai</strong>：未收录（403，可能需要登录）</p>
+<p><strong>关联论文</strong>：无（仓库非研究产出）</p>
+<p><strong>在线 Demo</strong>：<a href="https://chatgpt.com/plugins">https://chatgpt.com/plugins</a>（用户端入口与分类导航）+ <a href="https://platform.openai.com/docs/guides/codex/plugins">https://platform.openai.com/docs/guides/codex/plugins</a>（开发者文档）</p>
+</body>
+</html>
