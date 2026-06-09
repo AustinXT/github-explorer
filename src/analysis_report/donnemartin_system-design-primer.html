@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+/* ====== 微信公众号排版 CSS ====== */
+
+body {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #3e3e3e;
+    background: #fff;
+}
+
+/* 正文段落 */
+p {
+    font-size: 15px !important;
+    line-height: 2 !important;
+    margin: 0 !important;
+    padding-top: 0.5em !important;
+    padding-bottom: 0.5em !important;
+    padding-right: 1.2em !important;
+    padding-left: 1.2em !important;
+    text-align: justify !important;
+}
+p + p {
+    margin-top: 0 !important;
+}
+
+/* 标题 */
+h1 {
+    font-size: 20px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 16px 0 !important;
+    padding: 0 !important;
+}
+h2 {
+    font-size: 18px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 24px 0 !important;
+    padding: 0 !important;
+}
+h3 {
+    font-size: 15px !important;
+    font-weight: bold !important;
+    color: #3e3e3e !important;
+    text-align: left !important;
+    margin: 16px 0 16px 0 !important;
+    padding: 0 0 0 1.2em !important;
+}
+h4 {
+    font-size: 15px !important;
+    color: rgb(0, 122, 170) !important;
+    margin: 12px 0 8px 0 !important;
+    padding: 0 !important;
+}
+
+/* 列表 */
+ul,
+ol {
+    padding-left: 2em !important;
+    margin: 1em 0 !important;
+    font-size: 15px !important;
+}
+li {
+    margin: 0.5em 0 !important;
+    line-height: 1.8em !important;
+    font-size: 15px !important;
+    color: #3e3e3e !important;
+}
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+    margin: 0 !important;
+    padding-left: 1.2em !important;
+}
+
+/* 引用 */
+blockquote {
+    border-left: 4px solid #888 !important;
+    padding: 8px 16px !important;
+    margin: 1em 0 !important;
+    color: #666 !important;
+    background: #f9f9f9 !important;
+}
+blockquote > p {
+    margin: 0.5em 0 !important;
+    padding: 0 !important;
+}
+blockquote::before,
+blockquote::after {
+    content: none !important;
+}
+
+/* 代码块 */
+pre {
+    font-size: 14px !important;
+    line-height: 1.4em !important;
+    color: #3e3e3e !important;
+    background: #f8f8f8 !important;
+    padding: 12px 16px !important;
+    border-radius: 4px !important;
+    overflow: auto !important;
+    margin: 1em 0 !important;
+}
+
+/* 脚注 */
+.footnotes {
+    font-size: 11px !important;
+    color: #666 !important;
+    line-height: 1.2 !important;
+    margin: 8px 0 0 0 !important;
+    padding: 4px 0 0 0 !important;
+    border-top: 1px solid #eee !important;
+}
+.footnotes p {
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #666 !important;
+}
+
+/* 上标 */
+sup {
+    font-size: 0.75em !important;
+    vertical-align: super !important;
+    color: #e51f42 !important;
+    margin: 0 2px !important;
+}
+
+</style>
+</head>
+<body>
+<blockquote><p>GitHub: <a href="https://github.com/donnemartin/system-design-primer">https://github.com/donnemartin/system-design-primer</a></p></blockquote>
+<h2>一句话总结</h2>
+<p>这不是一个软件项目，而是一份「系统设计面试圣经」——一个 Facebook Tech Lead 在 2017 年把内部 review design doc 的范式沉淀成开源学习材料，9 年后长成 GitHub Top30、352K star 的事实标准资源：110KB 单文件长文 +8 个系统设计案例 +6 个 OOD 案例 +3 套 Anki 闪卡 +16+ 语言翻译社区。</p>
+<h2>值得关注的理由</h2>
+<ul>
+<li><strong>「Everything is a trade-off」 元规则</strong>：不是把知识点列清单，而是把「如何思考 system design」总结为 4 步方法论（use cases → high level → core components → scale），每步反复强化 trade-off——把「面试套路」上升到「思维框架」。</li>
+<li><strong>DRY 文档架构（教科书级反模式打破）</strong>：8 个 case README 都极简，因为通用原理只写在主 README 一次；case 只讲「如何把通用原理组合到具体问题」。这是软件工程 DRY 思想被借用到文档架构的范例。</li>
+<li><strong>多语言翻译社区治理模型</strong>：English-first 单向流 + per-language maintainer + ISO 语言码前缀 + TRANSLATIONS.md 四态看板（Live/In Progress/Stalled/Not Started）——比 i18n 工具链轻得多、人本而非工具本。</li>
+</ul>
+<h2>项目展示</h2>
+<p><a href="https://raw.githubusercontent.com/donnemartin/system-design-primer/master/images/jj3A5N8.png">Hero — System Design Primer 题图</a></p>
+<p><em>类型：项目 Hero 图（README 顶部、标志性视觉资产）</em></p>
+<p><a href="https://raw.githubusercontent.com/donnemartin/system-design-primer/master/images/OfVllex.png">Study Guide 时间线图</a></p>
+<p><em>类型：学习路径图（Short/Medium/Long 三档时间线）</em></p>
+<p><a href="https://raw.githubusercontent.com/donnemartin/system-design-primer/master/images/jrUBAF7.png">System Design Topics架构图</a></p>
+<p><em>类型：系统设计主题总览架构图（CAP/Consistency/Availability/DNS/CDN/LB/DB/Cache 等模块关系）</em></p>
+<p><a href="https://raw.githubusercontent.com/donnemartin/system-design-primer/master/images/zdCAkB3.png">Anki闪卡示意图</a></p>
+<p><em>类型：Anki 闪卡样张（移动端背单词式复习）</em></p>
+<p><a href="https://raw.githubusercontent.com/donnemartin/system-design-primer/master/images/bWxPtQA.png">System Design Solutions索引图</a></p>
+<p><em>类型：系统设计题库示意图（Twitter/Pastebin/Mint/Crawler/Social Graph/Key-Value Store/Sales Rank/AWS8 大案例总览）</em></p>
+<h2>项目画像</h2>
+<table>
+<thead><tr>
+<th>维度</th>
+<th>数据</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>GitHub</td>
+<td><a href="https://github.com/donnemartin/system-design-primer">https://github.com/donnemartin/system-design-primer</a></td>
+</tr>
+<tr>
+<td>Star / Fork</td>
+<td>352,357 /56,627</td>
+</tr>
+<tr>
+<td>Watcher</td>
+<td>6,860</td>
+</tr>
+<tr>
+<td>主体语言</td>
+<td>Python94.9%（教学骨架）、Shell4.7%、YAML0.4%</td>
+</tr>
+<tr>
+<td>项目年龄</td>
+<td>111.5 个月（2017-02-26 →2026-03-20）</td>
+</tr>
+<tr>
+<td>总 commit</td>
+<td>343（其中 2017-02~04 集中爆发 160 commit 占 47%）</td>
+</tr>
+<tr>
+<td>近 90 天 commit</td>
+<td>5（最近 30 天 0）</td>
+</tr>
+<tr>
+<td>开发阶段</td>
+<td>低维护（内容已定型，作者 2022 后主线停滞）</td>
+</tr>
+<tr>
+<td>贡献模式</td>
+<td>单人主导（Donne Martin167/343 ≈50%；#2 cclauss11、#3 satob10）</td>
+</tr>
+<tr>
+<td>热度定位</td>
+<td>S+ 级（GitHub Top30，长期稳居中文圈系统设计面试圣经）</td>
+</tr>
+<tr>
+<td>质量评级</td>
+<td>文档 5/5，代码 N/A（刻意骨架化），多媒体 5/5，CI/CD1/5</td>
+</tr>
+</tbody>
+</table>
+<h2>作者视角：为什么存在这个项目</h2>
+<h3>创始人/作者背景</h3>
+<p><strong>Donne Martin</strong>，前 Google / Facebook 工程师，现 Meta Engineering Manager（Public Safety Engineering），位于 Washington D.C.。账号 2013-09 注册、粉丝 23,944、公开仓库 27 个。同期还维护姊妹篇 interactive-coding-challenges（编码面试），是这个「面试训练开源系列」的总设计师。</p>
+<h3>问题判断</h3>
+<p>2017 年前后，他在 Facebook 内部 review design doc 时发现：内部分享的「system design cheat sheet」其实很有结构感（use cases → high level → core components → scale 四段式），但外部候选人拿不到。同时他意识到 coding interview 部分已经工具化（LeetCode 等平台），system design 部分却仍停留在「读书 +博客」阶段——学习路径碎片化、跨语言不可达、没有结构化答题框架。</p>
+<h3>解法哲学</h3>
+<ul>
+<li><strong>「Everything is a trade-off」 作为唯一元规则写入 README 顶部</strong>：每个章节结尾都列 pros/cons，强迫读者接受「没有银弹」，反对死记硬背架构图。</li>
+<li><strong>从公司工程博客链接外部权威资源而非重新造轮</strong>：DDIA、highscalability、AWS 文档是引用对象，自己是策展层而非教科书层。</li>
+<li><strong>多媒体互补</strong>：文字 + OmniGraffle 架构图 + Anki 闪卡（间隔重复）+ 代码骨架 + Jupyter notebook——五种载体对应五种学习风格。</li>
+<li><strong>开源社区翻译治理而非中心化翻译</strong>：16+ 语言靠「每语一名 maintainer + native speaker 复核」模型扩散，作者本人只把关英文原文。</li>
+</ul>
+<h3>战略意图</h3>
+<p>早期靠 interactive-coding-challenges验证 GitHub-friendly 学习指南的传播力 →复制到 system design 这个更大赛道 → 用 5 年累积到 35 万 star → 形成天然护城河（GitHub SEO、社区 PR、翻译生态）。后续维护策略转向「被动维稳」——处理死链 / spam，主线不再扩张。</p>
+<h2>核心价值提炼</h2>
+<h3>创新之处</h3>
+<ol>
+<li><strong>「4-step methodology + Everything is a trade-off」 作为方法论元规则</strong></li>
+</ol>
+<ul>
+<li>新颖度 4/5 |实用性 5/5 | 可迁移性 5/5</li>
+<li>不是把 system design 知识点列成清单，而是把「如何思考 system design」总结为 4 步框架，每步反复强化 trade-off。任何开放式问题域（架构设计、论文评审、产品 PRD）都可用「问题澄清 → 高层方案 →核心组件 →规模化/演化」四段式教学。</li>
+</ul>
+<ol>
+<li><strong>「案例驱动 +共享理论索引」双层结构（DRY between case and theory）</strong></li>
+</ol>
+<ul>
+<li>新颖度 3/5 |实用性 5/5 | 可迁移性 5/5</li>
+</ul>
+<p>-8 个 case README 都极简（约 200-400 行），因为通用原理只写在主 README 一次；case 只讲「组合」。这是软件工程 DRY 思想被借用到文档架构的范例。任何「主题索引 +案例研究」型项目（SQL 教程、设计模式书、LeetCode 题解集）都可套这个结构。</p>
+<ol>
+<li><strong>多语言翻译社区的「maintainer + ISO prefix +状态看板」治理模型</strong></li>
+</ol>
+<ul>
+<li>新颖度 4/5 |实用性 4/5 | 可迁移性 4/5</li>
+<li>不是用工具（i18n 框架、Transifex）翻译，而是用治理（人为 maintainer、ISO 语言前缀 PR、TRANSLATIONS.md 状态看板）+ 心智模型（English-first 单向流）翻译。任何想扩散到非英语圈的开源文档项目——尤其是「已经爆火但翻译腐烂」的场景——都可以直接套这个模板。</li>
+</ul>
+<ol>
+<li><strong>Anki flashcard 闭循环（概念 ↔间隔重复 ↔案例）</strong></li>
+</ol>
+<ul>
+<li>新颖度 3/5 |实用性 5/5 | 可迁移性 4/5</li>
+</ul>
+<p>-同一份知识用三种载体承载：长文（深度阅读）→ Anki 卡组（碎片化复习）→ case study（综合演练）。不是替代关系，而是互补。</p>
+<ol>
+<li><strong>「骨架代码 +详尽 README」反主流代码即文档</strong></li>
+</ol>
+<ul>
+<li>新颖度 4/5 |实用性 4/5 | 可迁移性 4/5</li>
+</ul>
+<p>-行业默认「好项目=代码即文档」。本项目反其道——代码极简（pass 占位），README 极详。这是对「学习者 vs 消费者」两类用户画像的明确区分：消费者要 library 文档，学习者要 guide 文档。</p>
+<ol>
+<li><strong>Back-of-the-envelope 计算与 latency numbers 表作为面试工具箱</strong></li>
+</ol>
+<ul>
+<li>新颖度 3/5 |实用性 5/5 | 可迁移性 5/5</li>
+<li>Appendix 里有「powers of two table」和「latency numbers every programmer should know」——把工程师日常估算所需常数集中索引。Pastebin case 里示范「10M pastes/month →12.7 GB/month →450 GB/3 years →4 writes/sec」。</li>
+</ul>
+<h3>可复用的模式与技巧</h3>
+<ol>
+<li><strong>单文件长文 + TOC anchor + GitHub 渲染</strong>：适用场景——学习曲线线性、版本敏感的教程型文档（如 SQLite 文档、PG 文档短篇版）。优势：fork 友好、翻译友好、阅读节奏统一。</li>
+<li><strong>「案例 README 只讲组合，主 README 只讲原理」的 DRY 文档架构</strong>：适用场景——主题索引 +多个案例研究的合集。优势：信息不重复、读者读到 case 时已经具备概念框架。</li>
+<li><strong>English-first 单向翻译流 + per-language maintainer + ISO 前缀</strong>：适用场景——任何已经爆火的英文开源文档想扩散到非英语圈。优势：不需要重写工具链、治理可观察、低翻译腐烂。</li>
+<li><strong>Anki .apkg 作为 README 配套复习层</strong>：适用场景——任何超过 30KB 的纯文本知识库。优势：复用最大公约数间隔重复工具，零自研。</li>
+<li><strong>pass骨架 + docstring-only 代码</strong>：适用场景——教学/面试准备型仓库。优势：迫使读者思考，避免「复制粘贴答案」的反学习行为。</li>
+<li><strong>「study guide timeline」（short / medium / long path 三档进度表）</strong>：适用场景——任何用户时间预算差异大的学习项目。优势：把「你需要做多少」显式化，缓解信息过载焦虑。</li>
+<li><strong>「trade-offs as a first-class citizen」反复强化元规则</strong>：适用场景——任何开放领域教学。优势：把领域内的「软性共识」显性化为可教学规则。</li>
+</ol>
+<h3>关键设计决策</h3>
+<table>
+<thead><tr>
+<th>决策</th>
+<th>问题</th>
+<th>方案</th>
+<th>Trade-off</th>
+<th>可迁移性</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>README 单文件 110KB 而非多页面 wiki</td>
+<td>面试准备是「通读一遍」路径</td>
+<td>单文件 + anchor 跳转代替多页面</td>
+<td>失去 SPA 体验，换来「读完即通关」承诺</td>
+<td>高（任何线性教程）</td>
+</tr>
+<tr>
+<td>案例 README 严格用「Step1/2/3/4」四段式</td>
+<td>面试是 open-ended</td>
+<td>案例只讲组合，通用原则只在主索引里讲一次</td>
+<td>案例间高度同质化，读者复现面试时几乎能 1:1 套用框架</td>
+<td>高</td>
+</tr>
+<tr>
+<td>代码骨架全部 pass 占位</td>
+<td>读者来这是为了「练习面试」不是「看代码」</td>
+<td>lru_cache.py 只有 docstring + 一行 pass，README 用 200 行讲为什么这么设计</td>
+<td>放弃了「代码即文档」的常见解读；与「study guide, not library」定位高度一致</td>
+<td>中</td>
+</tr>
+<tr>
+<td>Anki .apkg复用而非自研客户端</td>
+<td>110KB 长文不可能一遍记住</td>
+<td>三套卡组（System Design / Exercises / OO Design）</td>
+<td>绑定 Anki 生态，但 Anki 本身开源跨平台</td>
+<td>高</td>
+</tr>
+<tr>
+<td>OmniGraffle 作为架构图源格式</td>
+<td>架构图需要在 PR 中可 diffable</td>
+<td>源文件 .graffle +编译产物 .png 入库</td>
+<td>macOS-only 编辑工具（OmniGraffle 无 Linux 版）</td>
+<td>中</td>
+</tr>
+</tbody>
+</table>
+<h2>竞品格局与定位</h2>
+<h3>竞品对比矩阵</h3>
+<table>
+<thead><tr>
+<th>维度</th>
+<th>System Design Primer</th>
+<th>Alex Xu / ByteByteGo</th>
+<th>DDIA</th>
+<th>doocs/system-design 等中文 fork</th>
+<th>Hello Interview / Educative / Neetcode</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>价格</td>
+<td>免费</td>
+<td>付费（订阅/书）</td>
+<td>一次性付费</td>
+<td>免费</td>
+<td>付费（订阅）</td>
+</tr>
+<tr>
+<td>形态</td>
+<td>单文件 README +案例 + Anki</td>
+<td>书 +视频 +订阅</td>
+<td>书</td>
+<td>中文 README +案例</td>
+<td>视频 +交互式 sandbox + AI mock</td>
+</tr>
+<tr>
+<td>维护频率</td>
+<td>低（作者 2022 后停滞）</td>
+<td>高（持续更新）</td>
+<td>不更新（已「完成」）</td>
+<td>中（社区驱动）</td>
+<td>高（商业驱动）</td>
+</tr>
+<tr>
+<td>国际化</td>
+<td>16+ 语言翻译</td>
+<td>主要英文</td>
+<td>主要英文</td>
+<td>中文</td>
+<td>英文</td>
+</tr>
+<tr>
+<td>内容深度</td>
+<td>中（10 主题 +8 案例）</td>
+<td>中-高（理论+案例）</td>
+<td>极深（理论圣经）</td>
+<td>中（偏中文圈热点）</td>
+<td>中-高（含 AI mock）</td>
+</tr>
+<tr>
+<td>面试针对性</td>
+<td>极强（4-step 答题框架）</td>
+<td>极强</td>
+<td>中（理论优先）</td>
+<td>强</td>
+<td>极强（含反馈回路）</td>
+</tr>
+</tbody>
+</table>
+<h3>差异化护城河</h3>
+<ul>
+<li><strong>GitHub SEO +35 万 star 的先发优势难以撼动</strong>：候选人搜索「system design interview resources」时直接命中。</li>
+<li><strong>翻译社区带来的全球化覆盖</strong>：16+ 语言而非仅中文。</li>
+<li><strong>「案例 +理论 + Anki」三合一闭循环</strong>：竞品很难一次性复制。</li>
+<li><strong>「open source canonical」地位</strong>：很多文章引用「see donnemartin/system-design-primer」，已成为事实标准的引用源。</li>
+</ul>
+<h3>竞争风险</h3>
+<ul>
+<li><strong>Alex Xu / ByteByteGo 等商业品牌的内容更新更快</strong>（AI 时代新案例、向量数据库、LLM serving）。</li>
+<li><strong>Educative / Hello Interview 等交互式平台对年轻候选人吸引力更强</strong>（视频 > 长文，含 AI mock interview、模拟面试官）。</li>
+<li><strong>内容深度不足</strong>：本项目停留在 2018 年的工程实践（Lambda@Edge、CloudFront），缺乏 K8s-native、向量数据库、LLM serving 等新主题。</li>
+<li><strong>2022 年后作者维护几乎停滞</strong>（issue 主要变 spam 处理和死链修复），长期保鲜能力存疑。</li>
+</ul>
+<h3>生态定位</h3>
+<p>入门级/中级的 canonical 学习材料 + 中级面试的快速参考手册。不再是「顶级深度」提供者，但仍是「最先被推荐」的入门路径。理想学习路径：<strong>DDIA 理论奠基 → 本项目面试训练 → Alex Xu 应试突击</strong>。</p>
+<h2>套利机会分析</h2>
+<ul>
+<li><strong>信息差</strong>：无新增套利空间。它是基础设施级参考，不是技术趋势信号；维护频次低，更像 「Wikipedia 式」公共资源而非迭代型项目。新的衍生价值在于社区 fork /翻译 /衍生课程（如 ByteByteGo、Hello Interview）。</li>
+<li><strong>技术借鉴</strong>：三个产品决策——「Everything is a trade-off」元规则、案例/理论的 DRY 双层文档架构、per-language maintainer 翻译治理模型——可以直接迁移到任何「开放式领域学习材料 + 多语言 +社区维护」项目。</li>
+<li><strong>生态位</strong>：填补了「系统设计面试系统化学习」的空白（2017 年时只有零散博客和闭源书籍），并通过翻译社区扩展到非英语圈。</li>
+<li><strong>趋势判断</strong>：不在增长（commit 频次极低），但 star 仍日增（400 个 2026-06-07~09 的样本，单日 ~130+）；典型「内容定型、流量永驻」型。不会被取代，但也不会再扩张。</li>
+</ul>
+<h2>风险与不足</h2>
+<ul>
+<li><strong>内容保鲜度不足</strong>：缺乏 K8s-native、向量数据库、LLM serving 等 2023+ 新主题；停留在 2018 年的工程实践。</li>
+<li><strong>作者维护几乎停滞</strong>：近 30 天 0 commit、近 90 天 5 commit、近 365 天 10 commit；PR/Issue 主要变 spam 处理和死链修复。</li>
+<li><strong>OmniGraffle 编辑工具 macOS-only</strong>：贡献门槛高，社区 PR 改图困难。</li>
+<li><strong>大量 spam Issue</strong>：35 万 star 项目作为公共论坛吸引大量 spam，#1198/#1281/#1212 等都需作者亲自关闭。</li>
+<li><strong>翻译腐烂风险</strong>：TRANSLATIONS.md 标记 13 种语言为 Stalled，找 native speaker 长期维护是 hard problem。</li>
+</ul>
+<h2>行动建议</h2>
+<h3>如果你要用它</h3>
+<ul>
+<li><strong>如果你要准备 FAANG / 中大型互联网公司的系统设计面试</strong>：先通读主 README（约 8 小时）+8 个 case study + Anki 卡组背 2 周 → 再去 ByteByteGo 应试突击。这是经典三段式。</li>
+<li><strong>如果你要架构选型 /容量规划</strong>：直接看「Back-of-the-envelope calculations」章节和 latency numbers 表，作为日常估算的常数表。</li>
+<li><strong>对比竞品说明</strong>：选它作为「入门 +框架」层；理论深度配 DDIA，应试突击配 Alex Xu/ByteByteGo，反馈回路配 Educative/Hello Interview。</li>
+</ul>
+<h3>如果你要学它</h3>
+<ul>
+<li><strong>重点关注</strong>：README 顶部的「4-step methodology」和「Everything is a trade-off」元规则——这是核心思想而非细节。</li>
+<li><strong>跳过代码</strong>：Python 骨架是 pass 占位，不要花时间读代码；价值在文字、图、Anki 卡组。</li>
+<li><strong>学习路径</strong>：建议 short path（~3 周）优先：Study guide →4-step methodology →3 个 case study → Anki 卡组。</li>
+</ul>
+<h3>如果你要 fork 它</h3>
+<ul>
+<li><strong>改进方向</strong>：</li>
+<li><strong>加新主题</strong>：K8s-native 部署、向量数据库、Pinecone/Weaviate、LLM serving（vLLM、TGI）、实时数据架构（Kafka + Flink）。</li>
+<li><strong>加新载体</strong>：视频讲解、交互式 sandbox（参考 Hello Interview）、AI mock interview。</li>
+<li><strong>优化治理</strong>：加 CI 检查翻译完整性、Anki 卡组可用性、文档死链（当前 CI/CD1/5 是最大短板）。</li>
+<li><strong>迁移工具</strong>：把 OmniGraffle 换成 draw.io / diagrams.net，降低贡献门槛。</li>
+</ul>
+<h3>知识入口</h3>
+<table>
+<thead><tr>
+<th>资源</th>
+<th>链接</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>DeepWiki</td>
+<td><a href="https://deepwiki.com/donnemartin/system-design-primer">https://deepwiki.com/donnemartin/system-design-primer</a>（已收录，2025-12 最近索引）</td>
+</tr>
+<tr>
+<td>Zread.ai</td>
+<td><a href="https://zread.ai/donnemartin/system-design-primer">https://zread.ai/donnemartin/system-design-primer</a>（本轮抓取 403，但页面 URL 存在）</td>
+</tr>
+<tr>
+<td>关联论文</td>
+<td>CAP theorem（Brewer2000）、MapReduce（Dean & Ghemawat2004）、Bigtable（Chang et al.2006）、GFS（Ghemawat et al.2003）、Dynamo（DeCandia et al.2007）；README 附录 「Real world architectures」 直接索引上述论文</td>
+</tr>
+<tr>
+<td>在线 Demo</td>
+<td>无（仓库是纯文档 + Python 教学代码，无运行实例）；Anki 闪卡通过 <a href="https://apps.ankiweb.net">https://apps.ankiweb.net</a> 学习</td>
+</tr>
+<tr>
+<td>姊妹篇</td>
+<td><a href="https://github.com/donnemartin/interactive-coding-challenges">https://github.com/donnemartin/interactive-coding-challenges</a>（编码面试姊妹篇）</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
