@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+/* ====== 微信公众号排版 CSS ====== */
+
+body {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #3e3e3e;
+    background: #fff;
+}
+
+/* 正文段落 */
+p {
+    font-size: 15px !important;
+    line-height: 2 !important;
+    margin: 0 !important;
+    padding-top: 0.5em !important;
+    padding-bottom: 0.5em !important;
+    padding-right: 1.2em !important;
+    padding-left: 1.2em !important;
+    text-align: justify !important;
+}
+p + p {
+    margin-top: 0 !important;
+}
+
+/* 标题 */
+h1 {
+    font-size: 20px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 16px 0 !important;
+    padding: 0 !important;
+}
+h2 {
+    font-size: 18px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 24px 0 !important;
+    padding: 0 !important;
+}
+h3 {
+    font-size: 15px !important;
+    font-weight: bold !important;
+    color: #3e3e3e !important;
+    text-align: left !important;
+    margin: 16px 0 16px 0 !important;
+    padding: 0 0 0 1.2em !important;
+}
+h4 {
+    font-size: 15px !important;
+    color: rgb(0, 122, 170) !important;
+    margin: 12px 0 8px 0 !important;
+    padding: 0 !important;
+}
+
+/* 列表 */
+ul,
+ol {
+    padding-left: 2em !important;
+    margin: 1em 0 !important;
+    font-size: 15px !important;
+}
+li {
+    margin: 0.5em 0 !important;
+    line-height: 1.8em !important;
+    font-size: 15px !important;
+    color: #3e3e3e !important;
+}
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+    margin: 0 !important;
+    padding-left: 1.2em !important;
+}
+
+/* 引用 */
+blockquote {
+    border-left: 4px solid #888 !important;
+    padding: 8px 16px !important;
+    margin: 1em 0 !important;
+    color: #666 !important;
+    background: #f9f9f9 !important;
+}
+blockquote > p {
+    margin: 0.5em 0 !important;
+    padding: 0 !important;
+}
+blockquote::before,
+blockquote::after {
+    content: none !important;
+}
+
+/* 代码块 */
+pre {
+    font-size: 14px !important;
+    line-height: 1.4em !important;
+    color: #3e3e3e !important;
+    background: #f8f8f8 !important;
+    padding: 12px 16px !important;
+    border-radius: 4px !important;
+    overflow: auto !important;
+    margin: 1em 0 !important;
+}
+
+/* 脚注 */
+.footnotes {
+    font-size: 11px !important;
+    color: #666 !important;
+    line-height: 1.2 !important;
+    margin: 8px 0 0 0 !important;
+    padding: 4px 0 0 0 !important;
+    border-top: 1px solid #eee !important;
+}
+.footnotes p {
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #666 !important;
+}
+
+/* 上标 */
+sup {
+    font-size: 0.75em !important;
+    vertical-align: super !important;
+    color: #e51f42 !important;
+    margin: 0 2px !important;
+}
+
+/* 表格 */
+table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+    margin: 1em 0 !important;
+    font-size: 14px !important;
+}
+th, td {
+    border: 1px solid #ddd !important;
+    padding: 8px 12px !important;
+    text-align: left !important;
+    color: #3e3e3e !important;
+    line-height: 1.6 !important;
+}
+th {
+    background: #f5f5f5 !important;
+    font-weight: bold !important;
+}
+
+/* 图片 */
+img {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    margin: 1em auto !important;
+}
+</style>
+</head>
+<body>
+
+<blockquote>
+<p>GitHub: <a href="https://github.com/addyosmani/agent-skills">https://github.com/addyosmani/agent-skills</a></p>
+</blockquote>
+
+<h2>一句话总结</h2>
+
+<p>把 Google Chrome 团队 16 年沉淀的工程纪律（spec → plan → build → verify → review → ship）打包成 23 份 SKILL.md，让 Claude Code / Cursor / Gemini CLI 等 8 个 Agent harness 强制遵循——<strong>本质是「给 AI 写 SOP，而不是给 AI 喂资料」</strong>。</p>
+
+<h2>值得关注的理由</h2>
+
+<ul>
+<li><strong>品牌 × 内容 × 生态三重背书</strong>：Addy Osmani（Google 工程总监，《Learning JavaScript Design Patterns》作者）+ 23 个 skill 覆盖完整 SDLC + 同时支持 8 个 IDE/harness——是迄今最完整的跨 vendor Agent skill 套件。</li>
+<li><strong>49.7K stars 但只有 277KB</strong>：纯 markdown 知识资产，无 npm 依赖、无运行时，每个 commit 平均带动 ~235 stars——单位 commit 含金量极高。</li>
+<li><strong>Anti-Rationalization Table 首创</strong>：每个 skill 都有一节专门反驳"agent 想偷懒的借口"，把流程型 prompt 的偷工问题结构化解决——这套模式可迁移到任何 prompt 工程场景。</li>
+</ul>
+
+<h2>项目展示</h2>
+
+<p><img src="https://addyosmani.com/assets/images/addys-agent-skills.jpg" alt="Addy's Agent Skills"></p>
+
+<p><em>README 顶部 banner，作者本人品牌色。仓库本身是 markdown 知识库，</em><strong><em>没有 demo GIF、没有架构图</em></strong><em>——SKILL.md 类内容仓库的固有形态，价值在文本而非图。</em></p>
+
+<h2>项目画像</h2>
+
+<table>
+<thead>
+<tr><th>维度</th><th>数据</th></tr>
+</thead>
+<tbody>
+<tr><td>GitHub</td><td><a href="https://github.com/addyosmani/agent-skills">https://github.com/addyosmani/agent-skills</a></td></tr>
+<tr><td>Star / Fork</td><td>49,710 / 5,553</td></tr>
+<tr><td>Watcher</td><td>330</td></tr>
+<tr><td>代码行数</td><td>808（Shell 76.6% / JS 21.7% / JSON 1.7%）</td></tr>
+<tr><td>文档行数</td><td>6564 行 Markdown（23 SKILL.md + 5 reference + 7 docs + 3 agent）</td></tr>
+<tr><td>项目年龄</td><td>3.7 个月（2026-02-15 首 commit）</td></tr>
+<tr><td>开发阶段</td><td>密集开发（近 90 天 177 commit，4 月单月 88 commit 为爆发期）</td></tr>
+<tr><td>贡献模式</td><td>明星项目早期（Addy 本人 55.4%，32 名贡献者，Federico Bartoli 14 commit 是核心 #2）</td></tr>
+<tr><td>热度定位</td><td>大众热门 × 小众精品内核（49.7k stars / 277KB / 211 commits）</td></tr>
+<tr><td>质量评级</td><td>内容[优秀] 文档[优秀] 测试[充分] CI/CD[完善]</td></tr>
+<tr><td>版本</td><td>v0.6.1（3 个 tag，SemVer 0.x 阶段）</td></tr>
+<tr><td>仓库体积</td><td>277KB（与 4.97 万 stars 极不匹配，强证内容型定位）</td></tr>
+</tbody>
+</table>
+
+<h2>作者视角：为什么存在这个项目</h2>
+
+<h3>创始人/作者背景</h3>
+
+<p>Addy Osmani——Google 工程总监，Chrome 团队出身，16.9 年 GitHub 资历，公开身份 "Director at Google working on Gemini and Google Cloud"。著有《Learning JavaScript Design Patterns》《Image Optimization》，是 Web 性能领域的顶级布道者。近一年明显转向 AI 工程化方向：同期维护 web-quality-skills（Lighthouse/CWV 技能集，2202 stars）、agent-engineer、agentic-seo、oust 等姐妹仓。这次把 Chrome 团队长期打磨的工程纪律（Hyrum's Law、Beyonce Rule、Chesterton's Fence、~100-line PR、trunk-based dev）打包成 SKILL.md，<strong>本质是把"Google 工程文化"作为知识资产开源化</strong>。</p>
+
+<h3>问题判断</h3>
+
+<p>作者在《Long-running Agents》一文中明确："shortcuts become archaeology after 30h"——当 AI agent session 持续 30 小时，第 5 小时跳过的 spec、跳过的 test 会在第 25 小时变成要考古的技术债。这是他<strong>自己做长跑任务时被自己绊倒</strong>的痛点，也是当前所有 agentic coding 工具的通病：模型默认走"最短路径到 done"，跳过 spec、跳过 test、跳过 review、跳过 performance verification，导致 prototype-quality 而不是 production-quality 输出。</p>
+
+<h3>解法哲学</h3>
+
+<ul>
+<li><strong>Process over prose</strong>：SKILL 是 workflow 不是 reference doc，每个 skill 都有 steps / checkpoints / exit criteria。</li>
+<li><strong>Anti-Rationalization Tables</strong>：把 agent 想偷懒的借口显式列出并反驳——这是被作者点名为「最独特的设计选择」。</li>
+<li><strong>Verification as non-negotiable exit criterion</strong>：每个 skill 的「完成」必须有可验证证据，不是"我看了就行"。</li>
+<li><strong>Progressive Disclosure</strong>：meta-skill 只把相关 skill 拉进 ~5K token context，而不是 startup-eager-load 全部 23 份。</li>
+<li><strong>Scope Discipline</strong>：「touch only what you're asked to touch」——禁止 agent 借机重构"顺手"代码。</li>
+</ul>
+
+<h3>战略意图</h3>
+
+<p>在作者更大的图景中，agent-skills 是<strong>通用生命周期层</strong>（横向），web-quality-skills 是<strong>领域纵深</strong>（前端质量），agentic-seo / oust / agent-engineer 是其他领域——形成<strong>矩阵布局而非单点产品</strong>。MIT 协议、纯开源、<strong>无 SaaS / 托管版 / 企业版</strong>；商业价值靠作者个人品牌（Google Director + Head of Chrome DX）放大，而非仓库本身变现。</p>
+
+<h2>核心价值提炼</h2>
+
+<h3>创新之处</h3>
+
+<table>
+<thead>
+<tr><th>#</th><th>创新点</th><th>新颖度</th><th>实用性</th><th>可迁移性</th></tr>
+</thead>
+<tbody>
+<tr><td>1</td><td><strong>Anti-Rationalization Table</strong></td><td>4/5</td><td>5/5</td><td>5/5</td></tr>
+<tr><td>2</td><td><strong>Three-Layer Orchestration</strong>（skills + personas + slash commands 分层）</td><td>4/5</td><td>4/5</td><td>5/5</td></tr>
+<tr><td>3</td><td><strong>Validator-Owned Exemption</strong>（被校验文件不能自己声明豁免）</td><td>3/5</td><td>5/5</td><td>5/5</td></tr>
+<tr><td>4</td><td><strong>HTTP 304-Driven Cache</strong>（用服务器验证代替 TTL）</td><td>3/5</td><td>4/5</td><td>5/5</td></tr>
+<tr><td>5</td><td><strong>Block-Level Simplify-Ignore</strong>（注释 + hash 占位的代码保护）</td><td>4/5</td><td>4/5</td><td>4/5</td></tr>
+<tr><td>6</td><td><strong>Parallel Fan-Out + Merge</strong>（多 persona 并行评审，主 agent 合并）</td><td>3/5</td><td>4/5</td><td>4/5</td></tr>
+<tr><td>7</td><td><strong>DAMP Over DRY</strong>（test 里的反 DRY 原则）</td><td>2/5</td><td>5/5</td><td>5/5</td></tr>
+</tbody>
+</table>
+
+<p>最值得借鉴的是 <strong>Anti-Rationalization Table</strong>——<strong>把"agent 会偷懒的借口"显式枚举并反驳</strong>，比"提醒它别偷懒"有效得多。例（test-driven-development）：借口"tests slow me down"，反驳"15 min of tests saves 15 hours of debugging"。</p>
+
+<h3>可复用的模式与技巧</h3>
+
+<ol>
+<li><strong>Skill Anatomy</strong>：每个 prompt skill 必有 name + description + Overview/When to Use/Process/Rationalizations/Red Flags/Verification 五段。</li>
+<li><strong>Meta-Skill Routing</strong>：用 ASCII 决策树把"任务 → skill"映射画出来，作为 session-start hook 的注入内容。</li>
+<li><strong>Cross-IDE Command Adaptation</strong>：同一命令用不同 frontmatter（.claude/commands/spec.md YAML frontmatter vs .gemini/commands/spec.toml TOML）指向同一 skill。</li>
+<li><strong>Section-Budget Hard Cap</strong>：SKILL.md ≤ 500 行是硬约束不是建议——token 经济性做成硬约束。</li>
+<li><strong>Quality Bar 四条</strong>：Specific / Verifiable / Battle-tested / Minimal——4 个形容词 + 一句话解释。</li>
+<li><strong>Validator-Owned Exemption Policy</strong>：豁免权只能 validator 自己授予，不能由被校验对象声明。</li>
+<li><strong>HTTP 304 Cache in Agent Tool Hook</strong>：跨 session 的文档缓存只信任服务器 304 Not Modified，没有 validator 一律不缓存。</li>
+<li><strong>Skill-Override Precedence</strong>：用户级别覆盖 plugin 级别——把 Claude Code 的 scope priority 用规则化语言写进文档。</li>
+</ol>
+
+<h3>关键设计决策</h3>
+
+<table>
+<thead>
+<tr><th>决策</th><th>Trade-off</th><th>适用场景</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Markdown-only 跨 harness 复用</strong></td><td>放弃自动化执行能力，换 8 个 harness 零修改复用</td><td>任何"声明式 prompt pack"项目</td></tr>
+<tr><td><strong>session-start Hook 自动注入 meta-skill</strong></td><td>每次新 session 额外注入 ~2k tokens，换 agent 第一个 prompt 就知道路由表</td><td>所有 Claude Code plugin</td></tr>
+<tr><td><strong>sdd-cache hook 用 HTTP 304 而不是 TTL</strong></td><td>每次 cache miss 多一次 HEAD roundtrip，换"服务器说没变就用"的语义干净性</td><td>所有需要"既要缓存又不能 stale"的 agent 系统</td></tr>
+<tr><td><strong>progressive disclosure + 500-line hard cap</strong></td><td>偶尔需要 agent 主动加载附件，换 23 skill 共用不到 2000 token description 预算</td><td>任何"系统提示 + 知识库"系统</td></tr>
+</tbody>
+</table>
+
+<h2>竞品格局与定位</h2>
+
+<h3>竞品对比矩阵</h3>
+
+<table>
+<thead>
+<tr><th>维度</th><th>addyosmani/agent-skills</th><th>obra/superpowers</th><th>anthropics/skills</th><th>wondelai/skills</th><th>awslabs/agent-plugins</th></tr>
+</thead>
+<tbody>
+<tr><td>Skill 数量</td><td><strong>23</strong>（完整 SDLC）</td><td>~15（集中 TDD/Review/Plan）</td><td>较少（spec + 几个 demo）</td><td>~5~10</td><td>~10（AWS 主题）</td></tr>
+<tr><td>Star</td><td>49.7K</td><td>~116K（数据待核）</td><td>N/A（官方）</td><td>1.2K</td><td>N/A</td></tr>
+<tr><td>跨 IDE 支持</td><td><strong>8 个 harness</strong></td><td>仅 Claude Code</td><td>Claude 生态</td><td>Claude + agentskills.io</td><td>Claude + AWS</td></tr>
+<tr><td>核心差异化</td><td><strong>Anti-Rationalization + Google 工程实践</strong></td><td>协议先驱 / 社区共建</td><td>Spec 权威</td><td>协议胶水</td><td>AWS 工具箱</td></tr>
+<tr><td>工程纪律出处</td><td>SWE-book + eng-practices 可追溯</td><td>社区共识</td><td>Anthropic 内部</td><td>通用</td><td>AWS 架构</td></tr>
+<tr><td>Validator</td><td>自研 validate-skills.js + CI 三 job</td><td>较轻</td><td>官方 SDK</td><td>无显著</td><td>AWS 内部</td></tr>
+<tr><td>作者</td><td>Google Director</td><td>社区</td><td>Anthropic 官方</td><td>个人</td><td>AWS Labs</td></tr>
+</tbody>
+</table>
+
+<h3>差异化护城河</h3>
+
+<p>不是技术护城河（协议开放、markdown 开放），而是三重：</p>
+
+<ul>
+<li><strong>品牌护城河</strong>（最强）：Addy Osmani 个人 IP + Google 工程文化背书；</li>
+<li><strong>内容护城河</strong>：anti-rationalization table + section anatomy + 23 skill 完整度；</li>
+<li><strong>生态护城河</strong>：8 个 IDE/harness 同时支持。</li>
+</ul>
+
+<h3>竞争风险</h3>
+
+<p>最可能被 <strong>anthropics/skills 演化</strong>替代——若 Anthropic 把官方 skill 库扩展到同等规模，agent-skills 的"23 skill 完整度"优势会被磨平；护城河只剩品牌。次风险是 obra/superpowers 继续扩张社区共识。</p>
+
+<h3>生态定位</h3>
+
+<p>处于三层架构的中间层：① Anthropic spec（底层协议）→ ② Addy agent-skills（通用生命周期）→ ③ 领域 skills（web-quality-skills / agentic-seo / oust / agent-engineer，作者姐妹仓纵向）。和 obra/superpowers 是横向竞品，但定位更"产品化"。</p>
+
+<h2>套利机会分析</h2>
+
+<ul>
+<li><strong>信息差</strong>：不算被低估（已是大众热门量级），但作为"知识资产型"仓库，<strong>49.7k stars / 277KB / 211 commits</strong>的密度说明单位 star 含金量高——仍有"小众精品内核 + 大众传播外衣"的组合优势。</li>
+<li><strong>技术借鉴</strong>：Anti-Rationalization Table、Three-Layer Orchestration、Validator-Owned Exemption、HTTP 304 Cache in Hook——这四个模式可直接迁移到任何 prompt 工程、multi-agent 系统、linter 工具。</li>
+<li><strong>生态位</strong>：填补了"通用工程流程层"的空白——既不是 spec 定义者（Anthropic），也不是领域专题（web-quality-skills），而是<strong>横向全生命周期</strong>。</li>
+<li><strong>趋势判断</strong>：<strong>强烈增长</strong>——4 个月 49.7K stars，单日 ~200 stars 的爆发曲线说明仍在加速；8 harness 适配矩阵和 v0.6.1 节奏说明产品成熟度还在提升。<strong>比 superpowers 有后发优势</strong>（更完整 + 更跨平台）。</li>
+</ul>
+
+<h2>风险与不足</h2>
+
+<ol>
+<li><strong>协议依赖风险</strong>：完全依赖 Anthropic Agent Skills 协议的稳定性。若协议改版（frontmatter schema、description 长度限制、progressive disclosure 模型），全部 23 个 skill 需同步修订——这是"协议红利"的反面。</li>
+<li><strong>作者集中度</strong>：Addy 55-67% commits 是真实投入也是单点风险——若 Google 工作变化或个人兴趣转移，节奏可能断档。Issue 矩阵里多处提到 Addy 个人 review bot 化的可能。</li>
+<li><strong>Hook 兼容性脆弱</strong>：Issue #110 揭示 SessionStart hook 在 Claude Code 上 silently fail 是已知问题——把 hook 当作 enforcement layer 使用的策略与上游 harness 的稳定性耦合。</li>
+<li><strong>版本号不一致</strong>：.claude-plugin/plugin.json 写 1.0.0 而 git tag 是 0.6.0（Issue #145 已 close），但仍是未来隐患。</li>
+<li><strong>零测试代码</strong>：Test commit 仅 0.5%（1 次），验证手段靠 frontmatter 校验 + 人工 review，不是单元测试——对"流程型 prompt"而言可接受，但与生产代码项目标准差距大。</li>
+<li><strong>markdown-only 张力</strong>：Issue #136 揭示部分 skill 提到 scripts 目录却没有脚本——刻意拒绝做成"可执行代码项目"的代价是一些 skill 的"可执行"承诺无法兑现。</li>
+</ol>
+
+<h2>行动建议</h2>
+
+<ul>
+<li><strong>如果你要用它</strong>：直接通过 /plugin marketplace add addyosmani/agent-skills 装 Claude Code，或参考 docs/ 下对应 IDE setup；推荐先用 /ship 跑一个真实 PR 体验三层 orchestration，再逐步启用 test-driven-development + code-review-and-quality + security-and-hardening 三个核心 skill。<strong>不建议装完全部 23 个</strong>——按团队痛点选 3-5 个试用，渐进引入。</li>
+<li><strong>如果你要学它</strong>：优先读 4 份文件——skills/using-agent-skills/SKILL.md（meta-skill 路由决策树）、docs/skill-anatomy.md（skill 写作规范）、references/orchestration-patterns.md（5 种 endorsed + 5 种 anti-pattern 模式）、scripts/validate-skills.js（豁免权管理）。这四份覆盖了<strong>怎么写 skill、怎么路由、怎么编排、怎么校验</strong>的完整闭环。</li>
+<li><strong>如果你要 fork 它</strong>：可改进方向——① 给 validate-skills.js 加 custom rule 插件机制，让下游 fork 可以扩展规则集；② 把 simplify-ignore 的 block-level 保护做成语言无关（当前依赖 JS/TS 注释语法）；③ 补一个 scripts/run-eval.js——把每个 skill 的"能否让 agent 实际遵循"做成可度量的 eval（不只是 frontmatter 合规）；④ 把 sdd-cache 的 HTTP 304 缓存做成可插拔 backend（目前用本地 JSON，未来可支持 Redis / SQLite）。</li>
+</ul>
+
+<h3>知识入口</h3>
+
+<table>
+<thead>
+<tr><th>资源</th><th>链接</th></tr>
+</thead>
+<tbody>
+<tr><td>DeepWiki</td><td><a href="https://deepwiki.com/addyosmani/agent-skills">https://deepwiki.com/addyosmani/agent-skills</a></td></tr>
+<tr><td>Zread.ai</td><td><a href="https://zread.ai/addyosmani/agent-skills">https://zread.ai/addyosmani/agent-skills</a></td></tr>
+<tr><td>关联论文</td><td>无（仓库本质是工程实践集，非研究产物）</td></tr>
+<tr><td>在线 Demo</td><td>无（每个 skill 设计为在 Claude Code/Cursor 中实际执行，隐式 demo）</td></tr>
+<tr><td>作者博客</td><td><a href="https://addyosmani.com/blog/agent-harness-engineering/">Agent Harness Engineering</a> · <a href="https://addyosmani.com/blog/long-running-agents/">Long-running Agents</a></td></tr>
+</tbody>
+</table>
+
+</body>
+</html>
