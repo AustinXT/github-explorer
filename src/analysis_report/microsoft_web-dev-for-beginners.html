@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #3e3e3e;
+    background: #fff;
+}
+p {
+    font-size: 15px !important;
+    line-height: 2 !important;
+    margin: 0 !important;
+    padding-top: 0.5em !important;
+    padding-bottom: 0.5em !important;
+    padding-right: 1.2em !important;
+    padding-left: 1.2em !important;
+    text-align: justify !important;
+}
+p + p {
+    margin-top: 0 !important;
+}
+h1 {
+    font-size: 20px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 16px 0 !important;
+    padding: 0 !important;
+}
+h2 {
+    font-size: 18px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 24px 0 !important;
+    padding: 0 !important;
+}
+h3 {
+    font-size: 15px !important;
+    font-weight: bold !important;
+    color: #3e3e3e !important;
+    text-align: left !important;
+    margin: 16px 0 16px 0 !important;
+    padding: 0 0 0 1.2em !important;
+}
+h4 {
+    font-size: 15px !important;
+    color: rgb(0, 122, 170) !important;
+    margin: 12px 0 8px 0 !important;
+    padding: 0 !important;
+}
+ul,
+ol {
+    padding-left: 2em !important;
+    margin: 1em 0 !important;
+    font-size: 15px !important;
+}
+li {
+    margin: 0.5em 0 !important;
+    line-height: 1.8em !important;
+    font-size: 15px !important;
+    color: #3e3e3e !important;
+}
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+    margin: 0 !important;
+    padding-left: 1.2em !important;
+}
+blockquote {
+    border-left: 4px solid #888 !important;
+    padding: 8px 16px !important;
+    margin: 1em 0 !important;
+    color: #666 !important;
+    background: #f9f9f9 !important;
+}
+blockquote > p {
+    margin: 0.5em 0 !important;
+    padding: 0 !important;
+}
+blockquote::before,
+blockquote::after {
+    content: none !important;
+}
+pre {
+    font-size: 14px !important;
+    line-height: 1.4em !important;
+    color: #3e3e3e !important;
+    background: #f8f8f8 !important;
+    padding: 12px 16px !important;
+    border-radius: 4px !important;
+    overflow: auto !important;
+    margin: 1em 0 !important;
+}
+.footnotes {
+    font-size: 11px !important;
+    color: #666 !important;
+    line-height: 1.2 !important;
+    margin: 8px 0 0 0 !important;
+    padding: 4px 0 0 0 !important;
+    border-top: 1px solid #eee !important;
+}
+.footnotes p {
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #666 !important;
+}
+sup {
+    font-size: 0.75em !important;
+    vertical-align: super !important;
+    color: #e51f42 !important;
+    margin: 0 2px !important;
+}
+</style>
+</head>
+<body>
+<p><a href="https://github.com/microsoft/web-dev-for-beginners">https://github.com/microsoft/web-dev-for-beginners</a></p>
+<h2>一句话总结</h2>
+<p>微软 Cloud Advocacy 出品的 12 周、24 节、项目驱动 Web 开发入门课——不是代码框架,而是「教学产品工程」的样板:Codespaces 零配置 + 5 个完整实战项目 + 48 套三题制测验 + 50+ 语言工业化翻译 + LMS 三轨导出。</p>
+<h2>值得关注的理由</h2>
+<ul>
+<li><strong>大厂做免费教学课的真问题</strong>:为什么微软要亲自下场做 Web 入门课?它和 freeCodeCamp、Odin Project 究竟差在哪?</li>
+<li><strong>课程结构本身就是工程</strong>:「5 段式单课骨架 + 漏斗式项目阶梯」是可被任何教学仓库复用的模板,代码价值反而是次要的。</li>
+<li><strong>多语言工业化</strong>:Co-op Translator 把翻译做成 GitHub Action 流水线,50+ 语言机械同步——这是 GitHub 上少见的教学内容工业化样板。</li>
+</ul>
+<h2>项目展示</h2>
+<p>![Background hero](https://raw.githubusercontent.com/microsoft/web-dev-for-beginners/main/images/background.png) — 课程封面,定位「12 周 Web 开发入门」</p>
+<p>![Character illustration](https://raw.githubusercontent.com/microsoft/web-dev-for-beginners/main/images/character.png) — 卡通角色贯穿全课程,降低入门严肃感</p>
+<p>![Codespace setup](https://raw.githubusercontent.com/microsoft/web-dev-for-beginners/main/images/createcodespace.png) — Codespaces 零配置启动,浏览器即开发环境</p>
+<h2>项目画像</h2>
+<table>
+<thead>
+<tr><th>维度</th><th>数据</th></tr>
+</thead>
+<tbody>
+<tr><td>GitHub</td><td><a href="https://github.com/microsoft/web-dev-for-beginners">https://github.com/microsoft/web-dev-for-beginners</a></td></tr>
+<tr><td>Star / Fork</td><td>95,866 / 15,581</td></tr>
+<tr><td>Watcher / Open Issue</td><td>2,661 / 约 150+</td></tr>
+<tr><td>主语言占比</td><td>JavaScript 54.9% / HTML 22.1% / CSS 13.5% / Vue 6.0% / Python 3.4%</td></tr>
+<tr><td>代码量</td><td>64,979 行代码 + ~5,700 个 markdown 教学文档(实质内容资产)</td></tr>
+<tr><td>项目年龄</td><td>67 个月(2020-11 首次提交)</td></tr>
+<tr><td>开发阶段</td><td>密集开发(双峰:2020-Q4 创课期 + 2025-08 翻译规模化期)</td></tr>
+<tr><td>贡献模式</td><td>微软 Cloud Advocacy 主导 + 270 位社区贡献者(Top 3 占 16.2%)</td></tr>
+<tr><td>热度定位</td><td>大众热门(95.9K★,饱和型)</td></tr>
+<tr><td>License</td><td>MIT</td></tr>
+<tr><td>质量评级</td><td>内容 [优秀] · 文档 [优秀] · 翻译工业化 [优秀] · CI/CD [良好]</td></tr>
+</tbody>
+</table>
+<h2>作者视角:为什么存在这个项目</h2>
+<h3>创始人/作者背景</h3>
+<p>本仓库的「作者」是微软组织账号 microsoft,实质由 <strong>Cloud Advocacy / Developer Relations</strong> 团队运营,核心维护者是 <strong>Jen Looper</strong> (jlooper,338 commits)、<strong>skytin1004</strong> (311)、<strong>Lee Stott</strong> (leestott,266)、Yuuki Ebihara 等。Cloud Advocacy 是微软连接开发者的「前哨部队」,职责是降低开发者对微软工具链(VS Code、Azure、GitHub、Copilot)的使用门槛。Jen Looper 在加入微软前是前端工程师,长期从事开发者教育——这决定了课程的「前端视角 + 教学法」基调。</p>
+<h3>问题判断</h3>
+<p>微软看到了三个别人没同时解决的痛点:</p>
+<ol>
+<li><strong>入门环境焦虑</strong>:装 Node、配置编辑器对完全新手是劝退点(比 freeCodeCamp、Odin Project 都做得好)</li>
+<li><strong>项目 vs 理论的取舍</strong>:freeCodeCamp 偏认证刷题、MDN 偏文档、Odin 偏全栈深度——几乎没有「项目驱动 + 视觉化包装」的入门课</li>
+<li><strong>多语言工业化空白</strong>:GitHub 上几乎所有教学课都是英文一枝独秀,其他语言靠零星志愿者;微软有 Azure AI Translator 能力,顺势把「教学多语言化」做成 Action 流水线</li>
+</ol>
+<p><strong>时机</strong>:2020 年 GitHub Codespaces 公测、Microsoft Learn 重构、Azure AI Translator 商业化——三个能力同时成熟,催生了「教学工业化」的可行窗口。</p>
+<h3>解法哲学</h3>
+<ul>
+<li><strong>不要把学生当开发者,要当学习者</strong>:环境焦虑是入门第一杀手,Codespaces 干掉它</li>
+<li><strong>不要堆砌概念,要项目闭环</strong>:5 个可见产物(Terrarium 玻璃花房、Typing Game、Browser Extension、Space Game、Banking App)让成就感替代挫败感</li>
+<li><strong>不要纯理论,要检索练习</strong>:48 套三题制 pre/post-quiz 是「费曼学习法 + 检索练习」的教学心理学落地</li>
+<li><strong>不要闭门造车,要工业化翻译</strong>:50+ 语言 + sparse-checkout 让全球学生无障碍</li>
+<li><strong>不要绑死平台,要可拆卸</strong>:LMS(Moodle/Canvas)+ GitHub Classroom + 裸仓库三轨,教师挑着用</li>
+<li><strong>不要单课程,要矩阵化</strong>:Web Dev 是「For Beginners」系列入门入口,学完后可流向上百门兄弟课程(ML/AI/IoT/LangChain/Copilot/Edge/MCP/Agents)</li>
+</ul>
+<p>明确<strong>不做的</strong>:</p>
+<ul>
+<li>不教 React/Vue/Angular 等框架(刻意保持 vanilla JS,让学生「先懂原理再学框架」)</li>
+<li>不做深度的后端课程(交给 Data-Science-For-Beginners / ML-For-Beginners)</li>
+<li>不做大型认证体系(freeCodeCamp 路线,本课程只做入门体验)</li>
+</ul>
+<h3>战略意图</h3>
+<p>这是微软 DevRel 漏斗的<strong>入门入口</strong>:用户从零成本体验微软工具链(Codespaces + VS Code + GitHub + Azure),形成黏性后流向 Copilot / Azure / Microsoft Learn 付费层。<strong>开源策略是 genuinely open</strong>(MIT),不是 open-core,目的是「品牌覆盖」而非「SaaS 转化」。</p>
+<h2>核心价值提炼</h2>
+<h3>创新之处</h3>
+<ol>
+<li>
+<p><strong>「5 段式」单课骨架</strong>(pre-quiz + 正文 + Check-in + challenge + post-quiz + supplemental)</p>
+<p>新颖度 3/5 | 实用性 5/5 | 可迁移性 5/5</p>
+<p>本质是费曼学习法 + 检索练习 + 间隔重复的教学心理学落地,任何教学仓库都可复用</p>
+</li>
+<li>
+<p><strong>「漏斗 + 项目闭环」双驱动</strong></p>
+<p>新颖度 3/5 | 实用性 5/5 | 可迁移性 5/5</p>
+<p>Stage 1 理论 → Stage 2 语法 → Stage 3 5 个项目难度阶梯,刻意避开框架</p>
+</li>
+<li>
+<p><strong>Co-op Translator 工业化翻译流水线</strong></p>
+<p>新颖度 4/5 | 实用性 5/5 | 可迁移性 5/5</p>
+<p>GitHub 上罕见的「教学内容工业化翻译」标准模板——标记块锚定 + sparse-checkout 优化 + 50+ 语言机械同步</p>
+</li>
+<li>
+<p><strong>「类比锚定」叙事法</strong></p>
+<p>新颖度 2/5 | 实用性 4/5 | 可迁移性 4/5</p>
+<p>HTML 文档 = 信封结构、Terrarium 拖拽 = 整理书架、银行 SPA 路由 = 阿波罗制导——具象类比比抽象定义有效 3-5 倍</p>
+</li>
+<li>
+<p><strong>LMS 三轨导出</strong>(Moodle .mbz + IMS Common Cartridge .imscc + GitHub Classroom)</p>
+<p>新颖度 5/5 | 实用性 5/5 | 可迁移性 5/5</p>
+<p>行业稀缺,真正做到「教师挑着用」</p>
+</li>
+<li>
+<p><strong>跨课程矩阵 README 导航</strong>(Web Dev 是入门入口,流向上百门兄弟课)</p>
+<p>新颖度 3/5 | 实用性 4/5 | 可迁移性 4/5</p>
+</li>
+</ol>
+<h3>可复用的模式与技巧</h3>
+<table>
+<thead>
+<tr><th>模式</th><th>描述</th><th>适用场景</th></tr>
+</thead>
+<tbody>
+<tr><td>5 段式单课骨架</td><td>pre-quiz + lesson + challenge + post-quiz + supplemental</td><td>任何教学型仓库</td></tr>
+<tr><td>项目难度阶梯</td><td>DOM → 事件 → 平台 API → OOP/Canvas → SPA</td><td>任何带项目的入门课</td></tr>
+<tr><td>Co-op Translator 流水线</td><td>标记块 + GitHub Action + sparse-checkout</td><td>多语言教学/文档仓库</td></tr>
+<tr><td>LMS 双格式导出</td><td>.mbz(Moodle)+ .imscc(IMS Common Cartridge)</td><td>教师落地的开源课程</td></tr>
+<tr><td>Codespaces 零配置起步</td><td>README 直接推荐 Use this template + Open with Codespaces</td><td>任何入门课</td></tr>
+<tr><td>教师/学生/平台三方角色分离</td><td>for-teachers.md 单独写课堂落地路径</td><td>教学仓库的通用最佳实践</td></tr>
+<tr><td>类比锚定 + Sketchnote</td><td>Mermaid 导图 + Tomomi Imura 等手绘笔记</td><td>零基础学习者课程</td></tr>
+<tr><td>标记块锚定翻译区</td><td>&lt;!-- CO-OP TRANSLATOR LANGUAGES TABLE START/END --&gt;</td><td>多语言同步仓库</td></tr>
+</tbody>
+</table>
+<h3>关键设计决策</h3>
+<h4>决策 1:刻意避开框架,vanilla JS 贯穿 24 节课</h4>
+<ul>
+<li><strong>问题</strong>:React/Vue/Angular 选哪个?哪个先过时?</li>
+<li><strong>方案</strong>:全部用原生 HTML/CSS/JS,只教 DOM API、SPA 路由手写、状态管理原理</li>
+<li><strong>Trade-off</strong>:牺牲「现代感」(学了不能直接做 React 项目),换来「知其所以然」的底层能力 + 不被框架迭代绑架</li>
+<li><strong>可迁移性</strong>:高</li>
+</ul>
+<h4>决策 2:Quiz App 独立子项目(Vue 3 + Vite 6)</h4>
+<ul>
+<li><strong>问题</strong>:课程需要轻量测验,但不想污染主课程仓</li>
+<li><strong>方案</strong>:独立 Vue 3 应用,托管 Netlify(ff-quizzes.netlify.app/web/),翻译 JSON 单独管理</li>
+<li><strong>Trade-off</strong>:版本节奏与主课分离(Quiz 同步靠人工),换来模块解耦 + 翻译独立</li>
+<li><strong>可迁移性</strong>:高</li>
+</ul>
+<h4>决策 3:Codespaces 而非本地环境</h4>
+<ul>
+<li><strong>问题</strong>:装 Node、VS Code、Git 对完全新手是劝退点</li>
+<li><strong>方案</strong>:README 默认推荐 Open with Codespaces,浏览器即开发</li>
+<li><strong>Trade-off</strong>:依赖 GitHub 账号 + 网络 + 免费额度,牺牲「本地命令行训练」,换「零门槛启动」</li>
+<li><strong>可迁移性</strong>:高</li>
+</ul>
+<h4>决策 4:Co-op Translator 自动化翻译 + 人工双轨</h4>
+<ul>
+<li><strong>问题</strong>:50+ 语言同步不可能靠纯人肉</li>
+<li><strong>方案</strong>:Azure AI Translator 做初翻(<!-- 锚定标记块 --> 内),Issue #171 召集志愿者周期性审计</li>
+<li><strong>Trade-off</strong>:翻译质量参差、自动化校验薄弱(占 Issue #171 揭示的核心痛点),换覆盖广度</li>
+<li><strong>可迁移性</strong>:极高</li>
+</ul>
+<h2>竞品格局与定位</h2>
+<h3>竞品对比矩阵</h3>
+<table>
+<thead>
+<tr><th>维度</th><th>microsoft/web-dev-for-beginners</th><th>freeCodeCamp</th><th>The Odin Project</th><th>MDN 学习区</th><th>Full Stack Open</th></tr>
+</thead>
+<tbody>
+<tr><td>Star</td><td>~95.9k</td><td>~410k</td><td>~13k</td><td>~10k</td><td>~30k</td></tr>
+<tr><td>课程深度</td><td>12 周 / 24 节</td><td>3000+ 小时 / 6 认证</td><td>全栈路径(Rails/Node)</td><td>文档型,无项目</td><td>13 学分大学课程</td></tr>
+<tr><td>项目实战</td><td>5 个完整项目(可视化最佳)</td><td>5 个大项目(更工程化)</td><td>多 Ruby/JS 项目</td><td>无</td><td>多 SPA + GraphQL</td></tr>
+<tr><td>多语言</td><td><strong>50+(工业化流水线)</strong></td><td>7 种</td><td>极少</td><td>数十种</td><td>英/中/芬少量</td></tr>
+<tr><td>入门友好度</td><td><strong>极高</strong>(Codespaces+类比+手绘笔记)</td><td>高(分块刷题)</td><td>中(需选 Rails/Node)</td><td>中(文档偏枯燥)</td><td>低(假设已会 JS)</td></tr>
+<tr><td>厂商生态</td><td><strong>VS Code + Azure + Copilot 全家桶</strong></td><td>零(社区驱动)</td><td>零(纯 OSS)</td><td>Mozilla</td><td>Helsinki 大学</td></tr>
+<tr><td>评估机制</td><td>pre/post-quiz + GitHub Issue</td><td>自动化测试 + 5 项目认证</td><td>自我项目 + 社区评审</td><td>无</td><td>自动化测试 + 考试</td></tr>
+<tr><td>教师友好</td><td><strong>Classroom + Moodle + Canvas</strong></td><td>无</td><td>无</td><td>无</td><td>无</td></tr>
+</tbody>
+</table>
+<h3>差异化护城河</h3>
+<ol>
+<li><strong>50+ 语言工业化翻译</strong> —— 竞品都没有</li>
+<li><strong>Codespaces 零配置</strong> —— freeCodeCamp/Odin 都需要本地环境</li>
+<li><strong>LMS + GitHub Classroom 双轨</strong> —— 所有竞品都没有</li>
+<li><strong>厂商生态一体化</strong> —— VS Code + Azure + Copilot,其他都是纯 OSS</li>
+<li><strong>Sketchnote + 类比叙事</strong> —— 教学表达最易读,比 MDN 文档生动太多</li>
+</ol>
+<h3>竞争风险</h3>
+<ol>
+<li><strong>深度不足</strong>:相比 freeCodeCamp 3000+ 小时认证、Odin 全栈路径,本课程仅 12 周入门</li>
+<li><strong>框架缺失</strong>:项目全部 vanilla JS,想学 React/Vue 的学生需转投其他课程</li>
+<li><strong>微软生态依赖</strong>:Quiz 托管 Netlify、扩展发布 Chrome Web Store 与微软生态弱关联,「全家桶」叙事反而稀释</li>
+<li><strong>翻译质量参差</strong>:Issue #171 显示多语言版本质量参差,自动化校验薄弱</li>
+</ol>
+<h3>生态定位</h3>
+<p><strong>初学者最友好的「微软生态门户」</strong>,不是「最深的 Web 开发课程」。它精准吃下「想试水 Web 开发 → 被引导进入微软工具链」这一段漏斗,与 freeCodeCamp(深度认证)、Odin(纯 OSS 全栈)、MDN(权威参考)形成<strong>互补而非正面竞争</strong>。</p>
+<h2>套利机会分析</h2>
+<ul>
+<li><strong>信息差</strong>:本课程不是被低估项目(95.9K★,饱和型),价值在被消费(已被全球教育者嵌入课堂与 LMS)而非被 fork。<strong>真正被低估的是它的「教学内容工程化模式」</strong>——绝大多数中文教学仓库仍在用「单语种 + 人工维护」模式,完全可以借鉴 Co-op Translator + sparse-checkout 工业化翻译流水线。</li>
+<li><strong>技术借鉴</strong>:
+<ul>
+<li>任何教学型仓库都该默认「5 段式单课骨架」(pre-quiz + 讲解 + challenge + post-quiz + supplemental)</li>
+<li>任何入门仓库都该默认「Codespaces 零配置起步」,干掉装环境劝退</li>
+<li>任何多语言文档仓库都该参考「标记块锚定 + GitHub Action 翻译」流水线</li>
+<li>任何教师落地的课程都该补 LMS 双格式导出(.mbz + .imscc)</li>
+</ul>
+</li>
+<li><strong>生态位</strong>:填补了「厂商背书 + 多语言工业化 + 教学闭环 + 入门友好」四合一的空白——freeCodeCamp 没有厂商背书、Odin 没有入门友好度、MDN 没有项目驱动、Full Stack Open 没有多语言。</li>
+<li><strong>趋势判断</strong>:2025-08 起的第二轮活跃期显示项目正在进入「AI 时代 Web 课程升级 + 翻译规模化」新阶段。AI 元素(生成式 AI、LangChain4j、Edge AI、MCP、AI Agents)在 2025-2026 持续纳入,<strong>短期不会衰退</strong>。后发优势在于:(1)Azure AI Translator 工业化翻译模式被开源圈验证后,其他厂商(如 Google、AWS)可能复制;(2)Copilot 系列课程正在「AI 配对编程」横向贯穿所有基础课。</li>
+</ul>
+<h2>风险与不足</h2>
+<ul>
+<li><strong>Quiz App 与主课版本同步风险</strong>:两者分仓,主课新增章节时 Quiz 同步靠人工</li>
+<li><strong>翻译完整性</strong>:Issue #171 显示翻译质量参差,自动化校验薄弱(占社区反复提起的核心痛点)</li>
+<li><strong>框架空白</strong>:vanilla JS 之后无明确「下一步学什么」的内部引导,只能依赖 README 末尾的「Other Courses」被动发现</li>
+<li><strong>Codespace 依赖</strong>:完全屏蔽了「命令行 / 终端」教学,学生到 Odin / Full Stack 时可能不适应</li>
+<li><strong>commit_type_distribution 91% 归为「Other」</strong>:传统 conventional commit 覆盖率极低——这对内容仓库是合理的(commit message 习惯是「什么课/什么翻译」,无法用 feature/fix 二分),但降低了 changelog 自动化能力</li>
+</ul>
+<h2>行动建议</h2>
+<h3>如果你要用它</h3>
+<ul>
+<li><strong>完全零基础</strong>:直接按 README 走 12 周,优先投入 1-getting-started + 2-js-basics + 3-terrarium + 7-bank-project 这 4 个最高频打磨模块</li>
+<li><strong>教师课堂使用</strong>:用 for-teachers.md 推荐的 GitHub Classroom 或 LMS 导出(.mbz / .imscc)</li>
+<li><strong>想学 React/Vue</strong>:别在这门课耗,学完后跳到 Full Stack Open / Scrimba React 课程</li>
+</ul>
+<h3>如果你要学它(教学内容工程)</h3>
+<p>重点关注这些文件/模块:</p>
+<ul>
+<li>README.md — 课程总入口 + 跨课程矩阵导航</li>
+<li>for-teachers.md — 教师落地的完整方案(LMS 双格式导出 + Classroom 集成)</li>
+<li>1-getting-started-lessons/2-github-basics/README.md — GitHub 协作教学</li>
+<li>3-terrarium/1-intro-to-html/README.md — 单课模板样例(5 段式骨架的标杆)</li>
+<li>7-bank-project/1-template-route/README.md — SPA 架构入门(无框架手写)</li>
+<li>.github/workflows/co-op-translator.yml — 多语言工业化翻译流水线</li>
+<li>teaching-files/webdev-moodle.mbz + webdev-common-cartridge.imscc — LMS 导出范本</li>
+<li>quiz-app/ — Vue 3 + Vite 6 轻量测验应用</li>
+</ul>
+<h3>如果你要 fork 它(做自己的教学课)</h3>
+<p>可改进的方向:</p>
+<ul>
+<li>引入自动化翻译校验(过时的链接检测 + 缺失段落检测)</li>
+<li>Quiz App 拆回主仓并加单测,避免版本漂移</li>
+<li>在 vanilla JS 课程之后补充「下一步学 React/Vue」的过渡章节</li>
+<li>加 Codespaces devcontainer 配置示例,降低二次定制门槛</li>
+<li>把 Sketchnote 笔记开放为 Figma/Sketch 源文件,方便本地化改编</li>
+</ul>
+<h3>知识入口</h3>
+<table>
+<thead>
+<tr><th>资源</th><th>链接</th></tr>
+</thead>
+<tbody>
+<tr><td>DeepWiki</td><td>未收录(教学类仓库通常不被收录)</td></tr>
+<tr><td>Zread.ai</td><td>未收录(同上)</td></tr>
+<tr><td>关联论文</td><td>无(教学仓库,无学术产出)</td></tr>
+<tr><td>在线 Demo</td><td>无单独 playground;Codespaces 一键启动即最强 Demo</td></tr>
+<tr><td>课程官网</td><td><a href="https://microsoft.github.io/Web-Dev-For-Beginners/">https://microsoft.github.io/Web-Dev-For-Beginners/</a></td></tr>
+<tr><td>Quiz App</td><td><a href="https://ff-quizzes.netlify.app/web/">https://ff-quizzes.netlify.app/web/</a></td></tr>
+<tr><td>教师指南</td><td>for-teachers.md(仓库内)</td></tr>
+</tbody>
+</table>
+</body>
+</html>
