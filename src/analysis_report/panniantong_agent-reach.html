@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+/* ====== 微信公众号排版 CSS ====== */
+
+body {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #3e3e3e;
+    background: #fff;
+}
+
+/* 正文段落 */
+p {
+    font-size: 15px !important;
+    line-height: 2 !important;
+    margin: 0 !important;
+    padding-top: 0.5em !important;
+    padding-bottom: 0.5em !important;
+    padding-right: 1.2em !important;
+    padding-left: 1.2em !important;
+    text-align: justify !important;
+}
+p + p {
+    margin-top: 0 !important;
+}
+
+/* 标题 */
+h1 {
+    font-size: 20px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 16px 0 !important;
+    padding: 0 !important;
+}
+h2 {
+    font-size: 18px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 24px 0 !important;
+    padding: 0 !important;
+}
+h3 {
+    font-size: 15px !important;
+    font-weight: bold !important;
+    color: #3e3e3e !important;
+    text-align: left !important;
+    margin: 16px 0 16px 0 !important;
+    padding: 0 0 0 1.2em !important;
+}
+h4 {
+    font-size: 15px !important;
+    color: rgb(0, 122, 170) !important;
+    margin: 12px 0 8px 0 !important;
+    padding: 0 !important;
+}
+
+/* 列表 */
+ul,
+ol {
+    padding-left: 2em !important;
+    margin: 1em 0 !important;
+    font-size: 15px !important;
+}
+li {
+    margin: 0.5em 0 !important;
+    line-height: 1.8em !important;
+    font-size: 15px !important;
+    color: #3e3e3e !important;
+}
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+    margin: 0 !important;
+    padding-left: 1.2em !important;
+}
+
+/* 引用 */
+blockquote {
+    border-left: 4px solid #888 !important;
+    padding: 8px 16px !important;
+    margin: 1em 0 !important;
+    color: #666 !important;
+    background: #f9f9f9 !important;
+}
+blockquote > p {
+    margin: 0.5em 0 !important;
+    padding: 0 !important;
+}
+blockquote::before,
+blockquote::after {
+    content: none !important;
+}
+
+/* 代码块 */
+pre {
+    font-size: 14px !important;
+    line-height: 1.4em !important;
+    color: #3e3e3e !important;
+    background: #f8f8f8 !important;
+    padding: 12px 16px !important;
+    border-radius: 4px !important;
+    overflow: auto !important;
+    margin: 1em 0 !important;
+}
+
+/* 脚注 */
+.footnotes {
+    font-size: 11px !important;
+    color: #666 !important;
+    line-height: 1.2 !important;
+    margin: 8px 0 0 0 !important;
+    padding: 4px 0 0 0 !important;
+    border-top: 1px solid #eee !important;
+}
+.footnotes p {
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #666 !important;
+}
+
+/* 上标 */
+sup {
+    font-size: 0.75em !important;
+    vertical-align: super !important;
+    color: #e51f42 !important;
+    margin: 0 2px !important;
+}
+
+</style>
+</head>
+<body>
+<blockquote><p>GitHub: <a href="https://github.com/panniantong/agent-reach">https://github.com/panniantong/agent-reach</a></p></blockquote>
+<h2>一句话总结</h2>
+<p>Agent-Reach 是一个 <strong>Scaffolding（脚手架）而非 framework</strong>：把 13 个免费上游 CLI 拼装到 Claude Code / Cursor / OpenClaw，让 AI agent <strong>零 API 费用</strong>读写 Twitter、Reddit、YouTube、B 站、小红书等中文 + 海外平台——pip install 一句话就能让 Agent 自己装自己。</p>
+<h2>值得关注的理由</h2>
+<ul><li><strong>现象级爆款 + 极简代码</strong>：3.5 个月 26,028 stars，仅 5,225 行 Python，86.9% commit 来自一人——验证了"运营 + 选型"的杠杆</li><li><strong>真正的护城河是 SKILL.md</strong>：37 次修改的路由文件告诉 Agent <strong>何时调哪个 channel</strong>，把零碎上游 CLI 沉淀为可分发的 Skill</li><li><strong>可复用模式宝库</strong>：原子凭据写、tier 渐进启用、Cookie 三级 fallback、可粘贴命令错误——都是能直接抄到其他 CLI 的工程范式</li></ul>
+<h2>项目展示</h2>
+<p><img src="https://api.star-history.com/svg?repos=Panniantong/Agent-Reach&type=Date&v=20260309" alt="Agent Reach Star History — 3 月起飞到 25K+"/></p>
+<p>*Star History 增长曲线：3 月单月 +129 commits + 6 次 release，6 月又起第二波*</p>
+<h2>项目画像</h2>
+<table><thead><tr><th>维度</th><th>数据</th></tr></thead><tbody><tr><td>GitHub</td><td><a href="https://github.com/panniantong/agent-reach">https://github.com/panniantong/agent-reach</a></td></tr><tr><td>Star / Fork / Watcher</td><td>26,028 / 2,150 / 75</td></tr><tr><td>代码行数</td><td>5,225（Python 90.5% / Shell 6.3%，注释占比 45.2%）</td></tr><tr><td>项目年龄</td><td>3.5 个月（2026-02-24 首次提交）</td></tr><tr><td>开发阶段</td><td>密集开发（90 天 88 commit，月均 29）</td></tr><tr><td>贡献模式</td><td>单人主导（86.9% commits 来自 panniantong 双账号）</td></tr><tr><td>热度定位</td><td>大众热门（爆发型：127 stars 集中在 6-10 同一天）</td></tr><tr><td>质量评级</td><td>代码 A / 文档 A / 测试 A-（test 提交 0% 是红灯）</td></tr></tbody></table>
+<h2>作者视角：为什么存在这个项目</h2>
+<h3>创始人/作者背景</h3>
+<p><strong>panniantong</strong>（双账号 Panniantong + Pnant，5.6 年账号，338 followers，36 个公开仓库其中 35 个 fork）——典型的"工具人型独立开发者"：bio/company/location 全空，36 仓但 35 是 fork，工作日 91.9% + 夜间 17.4% 的提交节奏指向"有本职工作、Agent-Reach 是持续维护的私活开源品牌"。</p>
+<p>从他的 fork 列表可推断背景链：fork 自中文圈公众号 reader 鼻祖 runesleo/x-reader（首次 commit 即致谢 @runes_leo）、fork 自 DirmStevens/xfetch（GitHub trending 网页抓取）、fork 自 last30days-skill（社区 Claude skill）——说明他是<strong>熟悉中文互联网抓取生态 + Claude Code skill 体系</strong>的资深玩家。</p>
+<h3>问题判断</h3>
+<p>Pnant 在 x-reader 时代就踩遍"中文圈 + 推特"全部渠道。当 Agent Skill 体系（Claude Code / OpenClaw）开始普及时，他意识到"原来每个用户都要重复一遍 x-reader 的安装脚本"——<strong>这不是 x-reader 的问题，是"渠道接入知识"未沉淀为可分发 Skill 包的空白</strong>。</p>
+<p>时机的精准：<strong>2026 年初恰好是 Claude Code / OpenClaw / Cursor / Windsurf / Codex 等 Agent runtime 集体上线的窗口</strong>——SKILL.md 体系刚被定义，agent 用户急需"开箱即用工具箱"，Agent-Reach 第一个吃到了这个红利。</p>
+<h3>解法哲学</h3>
+<p>README 自述「Scaffolding, not framework」——这是整套设计的灵魂：</p>
+<ul><li><strong>不做的（明确放弃）</strong>：不调任何平台 API，不做"代理调用层"——避免和 LLM SDK 重复</li><li><strong>只做的（明确选择）</strong>：上游 CLI 健康检查 + 凭据注入 + 路由器（SKILL.md）</li><li><strong>信任设计</strong>：--safe / --dry-run / uninstall 彻底清理——把"用户敢不敢装"的信任成本降到最低</li><li><strong>错误哲学</strong>：出问题先 <strong>dump 修复命令</strong>（运行 pipx install twitter-cli），不堆栈——doctor 把 failure mode 翻译成可粘贴命令</li></ul>
+<h3>战略意图</h3>
+<ul><li><strong>病毒式分发钩子</strong>：<a href="https://raw.githubusercontent.com/.../docs/install.md">https://raw.githubusercontent.com/.../docs/install.md</a> 一行让 agent 自己装（49 次 commit 的 docs/install.md 是<strong>核心运营资产</strong>）</li><li><strong>与 OpenClaw 深度绑定</strong>：最近 PR #352 把 friend-links 收窄到"Tencent Cloud OpenClaw only"，与国产 agent runtime <strong>谈合作</strong></li><li><strong>路线图野心</strong>：Issue #206 暗示下一步"Agent-Reach（读）+ Agent-Todo（写/记忆）= 完整 internet + memory 组合"</li><li><strong>商业化</strong>：未明示，但"职业项目"的提交节奏 + 友链合作 = 至少在积累个人品牌资产</li></ul>
+<h2>核心价值提炼</h2>
+<h3>创新之处</h3>
+<p>1. <strong>"raw.githubusercontent 一句话安装"病毒式钩子</strong>（新颖度 4/5 / 实用性 5/5）：不靠 pip install CLI 传播，靠 docs/install.md URL——Agent 读到后自主 fetch + 执行<br/>2. <strong>Scaffolding 哲学：零运行时抽象</strong>（4/5 / 5/5）：与 LangChain / LlamaIndex 路径完全相反——只做 install/doctor/路由，类比 Homebrew vs 源码编译<br/>3. <strong>SKILL.md 作为"路由器"</strong>（3/5 / 5/5）：agent_reach/skill/SKILL.md:3-13 的 frontmatter 以 "MUST USE when user asks to search..." 开头，把 13 个平台按 user intent 分桶，让 Agent 自学何时调哪个 CLI<br/>4. <strong>tier 字段驱动的"渐进式启用"</strong>（3/5 / 5/5）：channels/base.py:25 的 tier: int = 0 配合 doctor.py:43-77 分组渲染，把 13 个渠道按"上手成本"排序<br/>5. <strong>三级 cookie 加载 + Rust 优先（rookiepy）</strong>（3/5 / 5/5）：xueqiu.py:102-125 的 fallback 链把"凭据可不可用"做成确定性函数</p>
+<h3>可复用的模式与技巧</h3>
+<p>1. <strong>"Base + Registry + Test 守护" 插件架构</strong>：base.py 极简（36 行）+ __init__.py 显式 ALL_CHANNELS + 反射式契约断言 —— 适用 5-50 个同类适配器项目<br/>2. <strong>"可粘贴命令错误信息"</strong>：check() 返回 ("warn", "运行 pipx install twitter-cli") 而非 exception —— 适用所有面向终端用户的 CLI（ripgrep / fd / bat 同款）<br/>3. <strong>"O_CREAT|O_TRUNC + 0o600" 一次性安全写</strong>（config.py:53-67）：用 os.open 在创建时直接定 mode，杜绝 TOCTOU —— 适用所有保存凭据的工具<br/>4. <strong>"显式 ALL_CHANNELS + 无 auto-discovery"</strong>（channels/__init__.py:25-39）：删除/改名必然产生 diff —— 适用小型插件系统<br/>5. <strong>"MUST USE 描述 + 双语 triggers" SKILL.md</strong>：严格遵循 Claude Code skill schema —— 适用所有 Claude Code / OpenClaw skill 发布<br/>6. <strong>"Browser cookie 抽取 + 平台白名单"</strong>（cookie_extract.py:16-41）：PLATFORM_SPECS 数据驱动 + rookiepy/browser_cookie3 双 fallback —— 适用所有免登录体验工具</p>
+<h3>关键设计决策</h3>
+<p>1. <strong>决策</strong>: Scaffolding 而非 framework<br/>   - <strong>问题</strong>: 如果 Agent Reach 自己调 API，就成了"再加一个 RAG/工具层"<br/>   - <strong>方案</strong>: 本仓库只做 check() 健康检查 + 凭据注入 + 路由器（cli.py:159-179 明文写 "Not a wrapper"）<br/>   - <strong>Trade-off</strong>: 失去"统一抽象带来的可组合性"，换取"上游更新零延迟 + 用户可换实现"<br/>   - <strong>可迁移性</strong>: 高</p>
+<p>2. <strong>决策</strong>: Cookie 文件原子创建走 os.open(O_CREAT|O_TRUNC, 0o600)<br/>   - <strong>问题</strong>: Cookie/token 文件权限 race window（从 open 到 chmod 之间可能被其他用户读到）<br/>   - <strong>方案</strong>: os.open 在创建时直接定 mode<br/>   - <strong>Trade-off</strong>: Windows 平台走 fallback<br/>   - <strong>可迁移性</strong>: 高——所有"保存密钥/凭据"的项目都该抄</p>
+<p>3. <strong>决策</strong>: xiaohongshu.py:9-115 的 format_xhs_result 在 wrapper 边界做 token-aware 清洗<br/>   - <strong>问题</strong>: xhs-cli 返回的 JSON 含大量 token 浪费字段，给 LLM 直接吃会爆 token<br/>   - <strong>方案</strong>: _clean_note 只保留 13 个关键字段，列表/单条/嵌套三种结构都识别<br/>   - <strong>Trade-off</strong>: 上游改 schema 这里会断——但上游是本仓库作者之一会同步改<br/>   - <strong>可迁移性</strong>: 中</p>
+<h2>竞品格局与定位</h2>
+<h3>竞品对比矩阵</h3>
+<table><thead><tr><th>维度</th><th>Agent-Reach</th><th>Autosearch（28⭐）</th><th>airweave（6.4K⭐）</th><th>x-reader（祖先）</th></tr></thead><tbody><tr><td>定位</td><td>渠道拼装 CLI + SKILL.md</td><td>40 渠道深度研究</td><td>RAG 上下文层</td><td>中文圈公众号 reader</td></tr><tr><td>范围</td><td>13 平台（中外兼顾）</td><td>40+ 渠道（广覆盖）</td><td>多源数据灌向量库</td><td>仅中文媒体+公众号</td></tr><tr><td>平台耦合</td><td>agent-agnostic</td><td>半耦合</td><td>需部署服务</td><td>单一</td></tr><tr><td>API 成本</td><td>0（默认 Exa MCP 免费）</td><td>0</td><td>0</td><td>0</td></tr><tr><td>传播</td><td>raw URL 一句话安装</td><td>pip install</td><td>SaaS</td><td>pip install</td></tr><tr><td>SKILL 化</td><td>✅（OpenClaw 友好）</td><td>❌</td><td>❌</td><td>❌</td></tr><tr><td>Star 量级</td><td>26K</td><td>28</td><td>6.4K</td><td>—</td></tr></tbody></table>
+<h3>差异化护城河</h3>
+<ul><li><strong>运营节奏</strong>：Pnant 个人 91.9% 工作日提交，修复速度是组织化项目赶不上的</li><li><strong>网络效应</strong>：把 13 个上游 CLI 的"如何用"沉淀成 SKILL.md，新用户零学习成本</li><li><strong>OpenClaw 绑定</strong>：友链 + 友商合作（PR #352）形成渠道护城河</li><li><strong>双产品并行</strong>：agent_eyes/ 第二个产品线（读+搜索）共用数据源但分两条 CLI</li></ul>
+<h3>竞争风险</h3>
+<ul><li><strong>上游 CLI 大量</strong> → 聚合器脆弱性 = 最弱上游：Twitter / 小红书 cookie 反复翻车（#33/#108/#191）</li><li><strong>单点作者风险</strong>：86.9% commits 来自一个账号（双账号同人），作者停更极易失活</li><li><strong>公众号结构性受限</strong>：#339（open）揭示即使有 Exa MCP 也抓不到公众号</li><li><strong>爆发期热度高峰已过</strong>：4 月骤降到 9 commit / 5 月停滞 / 6 月又起 = v1.4 系列是"运营续命"，下一波需要新钩子</li></ul>
+<h3>生态定位</h3>
+<p>在「中文 + Agent 原生 + 免费 + 一键安装」四象限同时占位的<strong>细分市场</strong>。在整个技术生态中扮演<strong>渠道拼装者</strong>角色——既不是 novel framework，也不直接对抗已有 RAG/MCP 玩家，而是在多个零碎上游 CLI 之上一层薄薄的 SKILL.md + 安装脚手架，把「Claude Code 能不能帮我读小红书」这道鸿沟用最小代价填上。</p>
+<h2>套利机会分析</h2>
+<ul><li><strong>信息差</strong>：极低关注 vs 26K stars 极不对称——作者低调（无 bio）、6 月才被中文 AI 圈注意，仍处于<strong>刚炸完第一波 + 等待第二波传播</strong>黄金窗口</li><li><strong>技术借鉴</strong>：上述 6 个可复用模式（base+registry+test / 可粘贴命令 / 0o600 原子写 / 显式 ALL_CHANNELS / MUST USE SKILL / cookie 平台白名单）任何 CLI 项目都能直接抄</li><li><strong>生态位</strong>：填补"中文 Agent Skill 体系基础设施"的空白——如果 OpenClaw 起飞，Agent-Reach 是必装 skill</li><li><strong>趋势判断</strong>：Agent runtime 集体上线（Claude Code / OpenClaw / Cursor）+ SKILL.md 体系成为事实标准 = Agent-Reach 站在风口，符合技术趋势</li></ul>
+<h2>风险与不足</h2>
+<ul><li><strong>测试纪律缺失</strong>：test 提交 <strong>0%</strong>，tests/ 目录 32 次变更但 commit 类型分布里 test=0%——技术债隐患</li><li><strong>CI/CD 缺失</strong>：仓库 .github/ 存在但未跑 pytest</li><li><strong>Type 严格性</strong>：mypy 配了但 exclude = ["^tests/"]，缺严格模式</li><li><strong>性能未优化</strong>：未做并发，大文件 xueqiu.py:314 单请求串行</li><li><strong>依赖 73 个偏多</strong>：对 5K 行工具来说不区分 dev/runtime 依赖显得没纪律</li><li><strong>深度不深</strong>：每个渠道都是薄壳（1170 行 / 13 渠道），反爬一升级就要修</li></ul>
+<h2>行动建议</h2>
+<ul><li><strong>如果你要用它</strong>：作为 Claude Code / OpenClaw 用户的"中文 + 海外平台一站式工具箱"，配合 SKILL.md 一键启用——比 airweave 更轻、比手撸 MCP 更省事</li><li><strong>如果你要学它</strong>：优先看 agent_reach/skill/SKILL.md（路由器写法）、channels/base.py + channels/__init__.py（插件架构）、config.py:53-67（安全写）、doctor.py:43-89（分级渲染）</li><li><strong>如果你要 fork 它</strong>：</li></ul>
+<p>  - 加并发（xueqiu.py 串行 → 异步批量）<br/>  - 补 CI（GitHub Actions 跑 pytest）<br/>  - 接 MCP 协议（integrations/mcp_server.py 已开个头）<br/>  - 把 Agent-Todo 路线（#206）落地成第二个产品</p>
+<h3>知识入口</h3>
+<table><thead><tr><th>资源</th><th>链接</th></tr></thead><tbody><tr><td>DeepWiki</td><td>未收录</td></tr><tr><td>Zread.ai</td><td>未收录</td></tr><tr><td>关联论文</td><td>无</td></tr><tr><td>在线 Demo</td><td>无（仅本地 CLI）</td></tr></tbody></table>
+</body>
+</html>
