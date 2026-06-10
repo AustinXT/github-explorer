@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #3e3e3e;
+    background: #fff;
+}
+
+/* 正文段落 */
+p {
+    font-size: 15px !important;
+    line-height: 2 !important;
+    margin: 0 !important;
+    padding-top: 0.5em !important;
+    padding-bottom: 0.5em !important;
+    padding-right: 1.2em !important;
+    padding-left: 1.2em !important;
+    text-align: justify !important;
+}
+p + p {
+    margin-top: 0 !important;
+}
+
+/* 标题 */
+h1 {
+    font-size: 20px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 16px 0 !important;
+    padding: 0 !important;
+}
+h2 {
+    font-size: 18px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 24px 0 !important;
+    padding: 0 !important;
+}
+h3 {
+    font-size: 15px !important;
+    font-weight: bold !important;
+    color: #3e3e3e !important;
+    text-align: left !important;
+    margin: 16px 0 16px 0 !important;
+    padding: 0 0 0 1.2em !important;
+}
+h4 {
+    font-size: 15px !important;
+    color: rgb(0, 122, 170) !important;
+    margin: 12px 0 8px 0 !important;
+    padding: 0 !important;
+}
+
+/* 列表 */
+ul,
+ol {
+    padding-left: 2em !important;
+    margin: 1em 0 !important;
+    font-size: 15px !important;
+}
+li {
+    margin: 0.5em 0 !important;
+    line-height: 1.8em !important;
+    font-size: 15px !important;
+    color: #3e3e3e !important;
+}
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+    margin: 0 !important;
+    padding-left: 1.2em !important;
+}
+
+/* 引用 */
+blockquote {
+    border-left: 4px solid #888 !important;
+    padding: 8px 16px !important;
+    margin: 1em 0 !important;
+    color: #666 !important;
+    background: #f9f9f9 !important;
+}
+blockquote > p {
+    margin: 0.5em 0 !important;
+    padding: 0 !important;
+}
+blockquote::before,
+blockquote::after {
+    content: none !important;
+}
+
+/* 代码块 */
+pre {
+    font-size: 14px !important;
+    line-height: 1.4em !important;
+    color: #3e3e3e !important;
+    background: #f8f8f8 !important;
+    padding: 12px 16px !important;
+    border-radius: 4px !important;
+    overflow: auto !important;
+    margin: 1em 0 !important;
+}
+
+/* 脚注 */
+.footnotes {
+    font-size: 11px !important;
+    color: #666 !important;
+    line-height: 1.2 !important;
+    margin: 8px 0 0 0 !important;
+    padding: 4px 0 0 0 !important;
+    border-top: 1px solid #eee !important;
+}
+.footnotes p {
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #666 !important;
+}
+
+/* 上标 */
+sup {
+    font-size: 0.75em !important;
+    vertical-align: super !important;
+    color: #e51f42 !important;
+    margin: 0 2px !important;
+}
+</style>
+</head>
+<body>
+<blockquote><p>GitHub: <a href="https://github.com/imbad0202/academic-research-skills">https://github.com/imbad0202/academic-research-skills</a></p></blockquote>
+
+<h2>一句话总结</h2>
+
+<p>academic-research-skills 是一套为 Claude Code 量身打造的「严肃学术写作 + 同行评审」Agent Skills 集合 —— <strong>价值不在「让 AI 替你写论文」</strong>,而在把"诚实"做成结构性属性:Material Passport 跨阶段追踪每条引用的可信态,Stage 2.5/4.5 完整性闸门强制人类把关,7-mode AI Research Failure Mode Checklist 把幻觉/越权/造假做成可被 lint 校验的工程问题。</p>
+
+<h2>值得关注的理由</h2>
+
+<ol>
+<li><strong>赛道事实标准已经形成</strong>:3 个月从 0 到 29.6K stars / 2.45K forks / 31 个 minor release,第二名是作者自家 Codex 兄弟版(3.5K stars,差距 8.5×),Claude Code 官方 /plugin marketplace 一键安装入口 —— 在「Claude Code + 反幻觉优先 + 非商业 + human-in-the-loop 学术写作」这个象限已占据参考实现位置。</li>
+<li><strong>「护栏工程化」是 2026 年 LLM 应用的真正难题</strong>:作者没有陷入「更强 prompt / 更大模型」的军备竞赛,而是把 Material Passport、Sprint Contract、Active Conductor 等护栏机制用 PreToolUse 钩子 + manifest-driven 写范围守卫 + CI spec-consistency lint 固化为结构性属性 —— <strong>这种"用宿主平台能力做护栏"的可复用资产在 Agent Skills 生态里极为稀缺</strong>。</li>
+<li><strong>拒绝机制 + 边界契约公开化是稀缺信号</strong>:POSITIONING.md 显式把 Kong 2026 提出的 5 类自主机制(端到端 / idea-gen / Paper2X / 自主实验 / 湿实验 API)逐条写进 "Rejected mechanisms",Issue #3 显式拒绝 humanizer —— <strong>这种"立场可被同行评审"的工程化方式,是其他 AI 论文生成器项目做不到的</strong>。</li>
+</ol>
+
+<h2>项目画像</h2>
+
+<table>
+<thead>
+<tr><th>维度</th><th>数据</th></tr>
+</thead>
+<tbody>
+<tr><td>GitHub</td><td><a href="https://github.com/imbad0202/academic-research-skills">https://github.com/imbad0202/academic-research-skills</a></td></tr>
+<tr><td>Star / Fork</td><td>29,632 / 2,452</td></tr>
+<tr><td>代码行数</td><td>75,810 行(Markdown-as-Python 78.4% / JSON 14.3% / YAML 4.0% / HTML 1.9% / Shell 1.0%)</td></tr>
+<tr><td>项目年龄</td><td>3.4 个月(首次提交 2026-02-26)</td></tr>
+<tr><td>开发阶段</td><td>密集开发(近 90 天 486 次 commit,月均 150+)</td></tr>
+<tr><td>贡献模式</td><td>独立开发(Top 贡献者 62.8%,实质单人 GitHub + Codex 双线协作)</td></tr>
+<tr><td>热度定位</td><td>大众热门(赛道事实标准)</td></tr>
+<tr><td>质量评级</td><td>代码 A · 文档 A · 测试 A · CI/CD A</td></tr>
+<tr><td>License</td><td>CC BY-NC 4.0(<strong>非 OSI 开源,禁止商用</strong>)</td></tr>
+<tr><td>最新版本</td><td>v3.12.0(共 31 个 tag / 29 个 release,平均不到 2 周一个 minor)</td></tr>
+</tbody>
+</table>
+
+<h2>作者视角:为什么存在这个项目</h2>
+
+<h3>创始人/作者背景</h3>
+
+<p>Edward Cheng-I Wu(吳政宜)/ Imbad0202,账号年龄 3.1 年,13 个公开仓库,474 粉丝。中文学术背景的独立开发者,README 显式引用 AIS Senior Scholars' Basket of 11、PRISMA、ICMJE、Nature/IEEE/AAAI 等学术规范。自述「While using ARS to write a reflection article about AI in higher education」—— 本人是高校研究者,对 AI 在高教/学术写作中的角色有切身反思,这从根本上塑造了项目「Assistive, not deceptive」的立场。</p>
+
+<h3>问题判断</h3>
+
+<p>作者把问题定位在学术写作链路里"研究 → 写稿 → 同行评审 → 修订"四阶段被人为拆成多个工具(Zotero 读文献、Semantic Scholar 查引用、LLM 起草、Word/LaTeX 排版、邮件处理 R&R),每一步都可能引入<strong>幻觉、引用漂移、格式错位、范式越权</strong>(agent 越界主张、跑实验、做决策)。而市面上的"AI 论文生成器"又以<strong>全自动</strong>为卖点,把责任完全推给模型 —— 现有方案是"全自动骗审稿人"和"分散工具栈无统一闸门"两个极端。</p>
+
+<h3>解法哲学</h3>
+
+<p>POSITIONING.md 四条哲学逐条对应到具体机制:</p>
+
+<ul>
+<li><strong>「Assistive, not deceptive」</strong> → Style Calibration + Writing Quality Check + Disclosure Mode</li>
+<li><strong>「Human-in-the-loop, always」</strong> → FULL/SLIM/MANDATORY 三态 Checkpoint(不可跳过的 2.5/4.5 完整性闸)</li>
+<li><strong>「Failure modes are made visible, not hidden」</strong> → 7-mode AI Research Failure Mode Checklist + v3.7.3/v3.8 L3 claim-faithfulness gate</li>
+<li><strong>「Boundaries are recorded, not improvised」</strong> → Co-Scientist L1–L4 + Kong L1–L2 六个 design-lesson 文档显式归档</li>
+</ul>
+
+<h3>战略意图</h3>
+
+<p>把"独立 vs 平台绑定"做成可治理的扩展点(CONTRIBUTING.md § Platform ports 显式支持 Claude Code / Codex / Cowork / claude.ai 跨平台 sibling distribution),License 用 CC BY-NC 4.0 <strong>主动排除 SaaS / 商业 API 包装 / 付费部署</strong>,避免被转售;这与"被 SaaS 包装"路线是反向选择。</p>
+
+<h2>核心价值提炼</h2>
+
+<h3>创新之处</h3>
+
+<table>
+<thead>
+<tr><th>创新点</th><th>新颖度</th><th>实用性</th><th>可迁移性</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Material Passport + 单向 promotion + reset boundary ledger</strong>:跨阶段状态做 append-only ledger + JSON Canonical Form hash,可被 resume_from_passport=&lt;hash&gt; 跨 session 接管</td><td>4/5</td><td>4/5</td><td>5/5</td></tr>
+<tr><td><strong>Sprint Contract + paper-blind Phase 1 协议</strong>:让评审 agent 先承诺评分计划再看 paper,从机制上避免 reward hacking</td><td>4/5</td><td>4/5</td><td>4/5</td></tr>
+<tr><td><strong>Cite-Time Provenance Finalizer 5-cell matrix</strong>:把"引用是否可信"分解为 source_acquired × source_verified_against_original × human_read_source × anchor_present × k-of-N indexes-unmatched 五个独立维度</td><td>5/5</td><td>4/5</td><td>3/5</td></tr>
+<tr><td><strong>Active Conductor + PreToolUse 写范围守卫(#134)</strong>:用 Claude Code 原生 PreToolUse 钩子 + manifest-driven 路径白名单,把"子 agent 越权写文件"从哲学问题转成结构性问题</td><td>4/5</td><td>5/5</td><td>5/5</td></tr>
+<tr><td><strong>7-mode AI Research Failure Mode Checklist + Stage 2.5/4.5 完整性闸</strong>:7 个失败模式按 canonical order 在两个完整性闸上独立复检</td><td>3/5</td><td>5/5</td><td>4/5</td></tr>
+<tr><td><strong>corpus-first literature search + 4 Iron Rules</strong>:用户可在 stage 1 之前用本地 Zotero/Obsidian 文件夹作为 corpus 输入,4 Iron Rules 保证 corpus 不可被 agent 改写</td><td>3/5</td><td>5/5</td><td>4/5</td></tr>
+</tbody>
+</table>
+
+<h3>可复用的模式与技巧</h3>
+
+<ol>
+<li><strong>POSITIONING.md + Rejected mechanisms 显式立场文档</strong>:把"我们不做什么"和"为什么不做"写成 first-party 文档,并绑定到具体 issue/spec —— 任何有伦理边界的 OSS 都应借鉴</li>
+<li><strong>3-layer 心智模型 + data_access_level frontmatter 注解 + CI lint</strong>:用 SKILL.md frontmatter 显式声明数据层级,靠 CI 强制而非运行时拦截 —— 任何 LLM-as-judge 场景都应借鉴</li>
+<li><strong>design-lesson 三段结构(why reject / review test / known contrary evidence)</strong>:把竞品吸收决策做成可被同行评审的设计资产</li>
+<li><strong>Manifest-driven PreToolUse 写范围守卫</strong>:用宿主平台的钩子做"agent 越权拦截",比 prompt-level "do not write to X" 更可靠</li>
+<li><strong>Adaptive Checkpoint(FULL / SLIM / MANDATORY)+ observer at non-mandatory only</strong>:把"用户疲劳"和"完整性不可降级"做成可治理的张力</li>
+<li><strong>CI spec-consistency lint(check_spec_consistency.py)</strong>:在 30+ 个 minor release 里用脚本把"文档/CHANGELOG/SKILL.md/插件清单"锁步</li>
+</ol>
+
+<h3>关键设计决策</h3>
+
+<ol>
+<li><strong>Material Passport 作为跨阶段唯一可信状态载体</strong><br/>问题:多 agent 流水线中"哪个 agent 看过什么、引用谁、版本几"会随上下文窗口漂移<br/>方案:把 origin_skill / origin_mode / verification_status / version_label / slr_lineage / terminal_policies / reset_boundary[] / literature_corpus[] / claim_audit_results[] 等所有跨阶段信号<strong>集中</strong>到 passport.yaml,强制"promotion only"(Layer 1 → 2 → 3 单向)<br/>Trade-off:schema 演化复杂度高(已迭代到 Schema 13.1 + 19 个子 schema)<br/>可迁移性:高</li>
+<li><strong>Active Conductor + Deterministic Write-Scope Guard(#134)</strong><br/>问题:多 agent 流水线中"子 agent 帮下游阶段写文件"会让 phase 边界崩溃<br/>方案:scripts/ars_write_scope_guard.py 在 Write|Edit|MultiEdit|Bash 上挂 PreToolUse 钩子,按 scripts/ars_phase_scope_manifest.json 校验 23 个 Bucket A single-phase subagent 的写路径是否落在自己声明的 scope 内 —— <strong>Bash 对 Bucket A 全拒</strong><br/>Trade-off:牺牲了"agent 用 Bash 做 read-only 操作"的灵活性<br/>可迁移性:高</li>
+<li><strong>L1–L4 / L1–L2 design-lesson 文档化竞品吸收决策</strong><br/>问题:全自动 AI 研究系统(Co-Scientist、Kong Auto-Research)提出的 capability 从机制上看似可借鉴,吸收时若不显式记录边界,未来 contributor 会无意越界<br/>方案:把竞品能力逐条做成"为什么拒收 + 审核测试 + 已知相反证据"三段结构<br/>可迁移性:高</li>
+</ol>
+
+<h2>竞品格局与定位</h2>
+
+<h3>竞品对比矩阵</h3>
+
+<table>
+<thead>
+<tr><th>维度</th><th>academic-research-skills</th><th>aipoch/medical-research-skills (1.09K)</th><th>lishix520/academic-paper-skills (856)</th><th>QJHWC/PaperForge (568)</th></tr>
+</thead>
+<tbody>
+<tr><td>定位</td><td>全流水线(research → write → review → revise → finalize)</td><td>医学垂直(protocol/数据/证据/写作)</td><td>单技能论文写作</td><td>端到端 AI 写论文(思路→实验→LaTeX)</td></tr>
+<tr><td>哲学立场</td><td>「AI is your copilot, not the pilot」显式拒全自动</td><td>通用助手定位</td><td>通用助手定位</td><td><strong>「全自动最少干预」</strong> 与 ARS 立场正相反</td></tr>
+<tr><td>反幻觉机制</td><td>Material Passport + 5-cell matrix + cross-index triangulation + claim-audit gate</td><td>学科内规则</td><td>提示工程级</td><td>SSH 训练 / 反 AI 检测</td></tr>
+<tr><td>完整性闸</td><td>Stage 2.5/4.5 MANDATORY 不可跳过</td><td>无显式</td><td>写作关卡</td><td>无</td></tr>
+<tr><td>平台依赖</td><td>Claude Code 原生 plugin manifest</td><td>Claude Code</td><td>Claude Code</td><td>通用</td></tr>
+<tr><td>License</td><td>CC BY-NC 4.0(禁商用)</td><td>未明确</td><td>未明确</td><td>未明确</td></tr>
+</tbody>
+</table>
+
+<h3>差异化护城河</h3>
+
+<ul>
+<li><strong>哲学立场的显式化</strong>:POSITIONING.md rejected mechanisms 把"立场"升级为可被同行评审的设计资产</li>
+<li><strong>完整性闸作为不可降级 first-class 机制</strong>:Stage 2.5/4.5 MANDATORY 跳过 observer 避免稀释</li>
+<li><strong>CI spec-consistency 自检</strong>:51 个 lint + 94 个 pytest 在 30+ minor release 里锁步</li>
+<li><strong>outcome-gradable eval</strong>:evals/gold/citation_extraction/manifest.yaml 带 thresholds 0.90/0.85,ranking-lift &lt; -0.05 必须 [ranking-regression-acknowledged] ack</li>
+<li><strong>plugin manifest 兼容性</strong>:.claude-plugin/ 原生 Claude Code 生态</li>
+</ul>
+
+<h3>竞争风险</h3>
+
+<ul>
+<li>(1) OpenAI Codex 生态"codex 版"被人视作"哥哥版" —— Claude Code 版需持续证明"参考实现价值大于生态价值"</li>
+<li>(2) 30+ minor release 速度快但<strong>任何一次 spec 漂移</strong>都会污染所有下游 lint 链</li>
+<li>(3) 完整流水线跑完单次成本 $4–6 + 2–4 小时(README 自承),与"全自动 AI 论文生成器"在用户获取成本上有数量级差距</li>
+<li>(4) <strong>单作者主导</strong>(62.8% 集中度 + 兄弟账号 97%)的 bus factor 风险 —— 核心 spec 决策的连续性高度依赖作者本人</li>
+</ul>
+
+<h3>生态定位</h3>
+
+<p>"严肃学术写作 + Anthropic Claude Code 生态"垂直深耕。不追求"全自动最少干预"市场(让给 PaperForge / AI Scientist),不追求"协议级"市场(让给 research-claw / MCP 类项目),不追求"垂直学科"市场(让给 aipoch / medical-research-skills)。<strong>目标是"如果你要在 Claude Code 上写一篇像样的学术论文,ARS 是默认选择"</strong>。</p>
+
+<h2>套利机会分析</h2>
+
+<ul>
+<li><strong>信息差</strong>:已被充分定价 —— 29.6K stars + 2.45K forks + 持续 4 月内 30+ 次发版 + Claude Code 官方 /plugin marketplace 收录入口,估值已反映其枢纽地位</li>
+<li><strong>技术借鉴</strong>:
+<ul>
+<li>scripts/ars_write_scope_guard.py 的 PreToolUse 钩子模式 —— 任何 Claude Code plugin 都可直接复制</li>
+<li>Sprint Contract + paper-blind Phase 1 —— 可推广到代码评审、招聘筛选、新闻 fact-check</li>
+<li>Material Passport 跨阶段 ledger —— 可推广到 CI 多 step 编排、AI 教学辅导</li>
+<li>5-cell resolution matrix + 三角测量 + policy_hash stamp —— 可推广到法律 brief、医学循证</li>
+</ul>
+</li>
+<li><strong>生态位</strong>:在"Claude Code 平台 + 反幻觉优先 + 非商业 + human-in-the-loop 学术写作"象限占据参考实现位置</li>
+<li><strong>趋势判断</strong>:赛道仍在增长但已收敛 —— 第二名与第一名差距 8.5×,护城河已经从"功能齐全"转移到"哲学立场 + 工艺沉淀";新进入者除非有更强哲学立场或更密集评测,否则很难撼动 ARS</li>
+</ul>
+
+<h2>风险与不足</h2>
+
+<ol>
+<li><strong>单作者主导风险</strong>:Top 贡献者占 62.8%,加兄弟账号实质 97% 单人;核心 spec 决策连续性高度依赖作者</li>
+<li><strong>Spec 漂移风险</strong>:v3.7.3 codex round-7 仍有 F2/F16 closure(lint 不能一次性发现所有漂移,必须靠多轮 review 抓)</li>
+<li><strong>License 风险</strong>:CC BY-NC 4.0 排除商业用途 —— 对想要 SaaS 包装 / 商业 API 集成的团队来说是硬门槛</li>
+<li><strong>完整流程成本</strong>:单次论文跑完 $4–6 + 2–4 小时(README 自承),对"只想拿一篇草稿"的用户有数量级摩擦</li>
+<li><strong>生态绑定</strong>:强依赖 Claude Code 平台(PreToolUse 钩子、plugin manifest、slash command),跨平台时只能降级到"普通 Skills 集合"</li>
+</ol>
+
+<h2>行动建议</h2>
+
+<h3>如果你要用它</h3>
+
+<p>适合<strong>非商业学术研究者</strong>,特别是有完整研究问题但苦于"找文献 / 核引用 / 查数据一致性 / 查逻辑一致性"的研究者。对比 PaperForge:<strong>如果你能接受「半自动 + 强制完整性闸 + 强制人类把关」,ARS 是更好的选择</strong>;如果你只想"一键拿草稿",请直接用 PaperForge。对比 aipoch/medical-research-skills:ARS 跨领域通用,aipoch 医学深 —— <strong>做医学研究优先 aipoch,做跨学科 / 高教 / 政策研究优先 ARS</strong>。</p>
+
+<h3>如果你要学它</h3>
+
+<p>重点关注以下文件/模块:</p>
+
+<table>
+<thead>
+<tr><th>学习目标</th><th>关键文件</th></tr>
+</thead>
+<tbody>
+<tr><td>护栏工程化</td><td>scripts/ars_write_scope_guard.py + scripts/ars_phase_scope_manifest.json</td></tr>
+<tr><td>跨阶段状态</td><td>shared/contracts/passport/*.yaml + scripts/_passport_yaml.py</td></tr>
+<tr><td>反幻觉机制</td><td>shared/ground_truth_isolation_pattern.md + evals/gold/citation_extraction/</td></tr>
+<tr><td>评审防 reward hacking</td><td>shared/contracts/reviewer/{full,methodology_focus}.json</td></tr>
+<tr><td>哲学立场文档化</td><td>POSITIONING.md + docs/design/&lt;date&gt;-&lt;version&gt;-&lt;feature&gt;-*.md</td></tr>
+<tr><td>CI 锁步</td><td>scripts/check_spec_consistency.py + scripts/check_version_consistency.py</td></tr>
+<tr><td>Eval 门</td><td>scripts/run_evals.py + scripts/check_ranking_lift.py + evals/gold/*/manifest.yaml</td></tr>
+</tbody>
+</table>
+
+<h3>如果你要 fork 它</h3>
+
+<p>可以改进的方向:</p>
+
+<ul>
+<li><strong>跨平台解耦</strong>:把 PreToolUse 钩子抽象成"platform adapter",让 Codex / Cowork / 自托管平台都能复用护栏</li>
+<li><strong>垂直学科模块化</strong>:参考 aipoch 的"先做深一个领域"路线,做一个高教品保 / 政策研究 / 法学研究的 vertical module</li>
+<li><strong>白皮书 harness</strong>(Issue #142):用户显式请求,目前通过 @copilot / @claude 拼装 —— 可以做成 first-class skill</li>
+<li><strong>多人协作版本</strong>:当前模型假设单人使用,可以扩展到 lab / research group 场景</li>
+<li><strong>跨语言输出增强</strong>:4 个语言 README 已经做到对齐,但学术论文的 LaTeX / Word 模板目前较弱</li>
+</ul>
+
+<h3>知识入口</h3>
+
+<table>
+<thead>
+<tr><th>资源</th><th>链接</th></tr>
+</thead>
+<tbody>
+<tr><td>DeepWiki</td><td><a href="https://deepwiki.com/Imbad0202/academic-research-skills">链接</a> — 已收录</td></tr>
+<tr><td>Zread.ai</td><td>未收录(403 Cloudflare 拦截)</td></tr>
+<tr><td>关联论文</td><td><a href="https://www.nature.com/articles/s41586-2026-0914-0">Lu et al. 2026 Nature 651:914-919 — The AI Scientist</a> · <a href="https://arxiv.org/abs/2605.07723">Zhao et al. 2026-05 arXiv:2605.07723 — 1.11 亿引用审计 / 14.7 万条幻觉引用</a> · <a href="https://arxiv.org/abs/2604.05018">Song et al. 2026 arXiv:2604.05018 — PaperOrchestra</a> · <a href="https://arxiv.org/abs/2605.18661">Kong et al. 2026 arXiv:2605.18661 — AI for Auto-Research: Roadmap & User Guide</a></td></tr>
+<tr><td>外部深度视角</td><td><a href="https://open.substack.com/pub/edwardwu223235/p/academic-writing-shouldnt-be-a-solo?r=4dczl&utm_medium=ios">Academic Writing Shouldn't Be a Solo Act (Substack EN)</a> · <a href="https://open.substack.com/pub/edwardwu223235/p/ai?r=4dczl&utm_medium=ios">學術寫作不該是一個人的事 (Substack 繁中)</a></td></tr>
+<tr><td>在线 Demo</td><td>无独立 web demo;examples/showcase/ 提供 8 份真实管线产物 PDF(含 EN/zh 两版 final paper、3 份 review report、3 份 integrity report、post-publication audit)</td></tr>
+</tbody>
+</table>
+</body>
+</html>
