@@ -3,21 +3,21 @@
     "name": "obra/superpowers",
     "url": "https://github.com/obra/superpowers",
     "language": "Shell",
-    "stars": 223223,
-    "forks": 19848,
+    "stars": 224501,
+    "forks": 19942,
     "description": "An agentic skills framework & software development methodology that works.",
-    "last_seen": "2026-06-10",
-    "trending_days": 59
+    "last_seen": "2026-06-11",
+    "trending_days": 60
   },
   {
     "name": "TapXWorld/ChinaTextbook",
     "url": "https://github.com/tapxworld/chinatextbook",
     "language": "Roff",
-    "stars": 73370,
-    "forks": 16430,
+    "stars": 73877,
+    "forks": 16533,
     "description": "所有小初高、大学PDF教材。",
-    "last_seen": "2026-06-09",
-    "trending_days": 37
+    "last_seen": "2026-06-11",
+    "trending_days": 38
   },
   {
     "name": "nvm-sh/nvm",
@@ -250,6 +250,16 @@
     "trending_days": 18
   },
   {
+    "name": "msitarzewski/agency-agents",
+    "url": "https://github.com/msitarzewski/agency-agents",
+    "language": "Shell",
+    "stars": 111171,
+    "forks": 18213,
+    "description": "A complete AI agency at your fingertips - From frontend wizards to Reddit community ninjas, from whimsy injectors to reality checkers. Each agent is a specialized expert with personality, processes, and proven deliverables.",
+    "last_seen": "2026-06-11",
+    "trending_days": 16
+  },
+  {
     "name": "abhigyanpatwari/GitNexus",
     "url": "https://github.com/abhigyanpatwari/gitnexus",
     "language": "TypeScript",
@@ -277,16 +287,6 @@
     "forks": 2620,
     "description": "Chrome DevTools for coding agents",
     "last_seen": "2026-05-23",
-    "trending_days": 15
-  },
-  {
-    "name": "msitarzewski/agency-agents",
-    "url": "https://github.com/msitarzewski/agency-agents",
-    "language": "Shell",
-    "stars": 103387,
-    "forks": 17012,
-    "description": "A complete AI agency at your fingertips - From frontend wizards to Reddit community ninjas, from whimsy injectors to reality checkers. Each agent is a specialized expert with personality, processes, and proven deliverables.",
-    "last_seen": "2026-05-21",
     "trending_days": 15
   },
   {
@@ -710,6 +710,16 @@
     "trending_days": 10
   },
   {
+    "name": "x1xhlol/system-prompts-and-models-of-ai-tools",
+    "url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
+    "language": "Unknown",
+    "stars": 139761,
+    "forks": 34609,
+    "description": "FULL Augment Code, Claude Code, Cluely, CodeBuddy, Comet, Cursor, Devin AI, Junie, Kiro, Leap.new, Lovable, Manus, NotionAI, Orchids.app, Perplexity, Poke, Qoder, Replit, Same.dev, Trae, Traycer AI, VSCode Agent, Warp.dev, Windsurf, Xcode, Z.ai Code, Dia & v0. (And other Open Sourced) System Prompts, Internal Tools & AI Models",
+    "last_seen": "2026-06-11",
+    "trending_days": 10
+  },
+  {
     "name": "anthropics/claude-cookbooks",
     "url": "https://github.com/anthropics/claude-cookbooks",
     "language": "JupyterNotebook",
@@ -850,14 +860,14 @@
     "trending_days": 9
   },
   {
-    "name": "x1xhlol/system-prompts-and-models-of-ai-tools",
-    "url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
-    "language": "Unknown",
-    "stars": 139412,
-    "forks": 34580,
-    "description": "FULL Augment Code, Claude Code, Cluely, CodeBuddy, Comet, Cursor, Devin AI, Junie, Kiro, Leap.new, Lovable, Manus, NotionAI, Orchids.app, Perplexity, Poke, Qoder, Replit, Same.dev, Trae, Traycer AI, VSCode Agent, Warp.dev, Windsurf, Xcode, Z.ai Code, Dia & v0. (And other Open Sourced) System Prompts, Internal Tools & AI Models",
-    "last_seen": "2026-06-10",
-    "trending_days": 9
+    "name": "addyosmani/agent-skills",
+    "url": "https://github.com/addyosmani/agent-skills",
+    "language": "Shell",
+    "stars": 53855,
+    "forks": 5869,
+    "description": "Production-grade engineering skills for AI coding agents.",
+    "last_seen": "2026-06-11",
+    "trending_days": 8
   },
   {
     "name": "Alishahryar1/free-claude-code",
@@ -1000,6 +1010,16 @@
     "trending_days": 8
   },
   {
+    "name": "soxoj/maigret",
+    "url": "https://github.com/soxoj/maigret",
+    "language": "Python",
+    "stars": 32427,
+    "forks": 2381,
+    "description": "🕵️‍♂️ Collect a dossier on a person by username from 3000+ sites",
+    "last_seen": "2026-06-11",
+    "trending_days": 8
+  },
+  {
     "name": "yichuan-w/LEANN",
     "url": "https://github.com/yichuan-w/leann",
     "language": "Python",
@@ -1008,16 +1028,6 @@
     "description": "RAG on Everything with LEANN. Enjoy 97% storage savings while running a fast, accurate, and 100% private RAG application on your personal device.",
     "last_seen": "2026-01-19",
     "trending_days": 8
-  },
-  {
-    "name": "addyosmani/agent-skills",
-    "url": "https://github.com/addyosmani/agent-skills",
-    "language": "Shell",
-    "stars": 50643,
-    "forks": 5622,
-    "description": "Production-grade engineering skills for AI coding agents.",
-    "last_seen": "2026-06-10",
-    "trending_days": 7
   },
   {
     "name": "basecamp/omarchy",
@@ -1167,16 +1177,6 @@
     "forks": 139,
     "description": "Text editor for your terminal: easy, powerful and fast",
     "last_seen": "2025-12-30",
-    "trending_days": 7
-  },
-  {
-    "name": "soxoj/maigret",
-    "url": "https://github.com/soxoj/maigret",
-    "language": "Python",
-    "stars": 31771,
-    "forks": 2318,
-    "description": "🕵️‍♂️ Collect a dossier on a person by username from 3000+ sites",
-    "last_seen": "2026-06-10",
     "trending_days": 7
   },
   {
@@ -1980,6 +1980,16 @@
     "trending_days": 5
   },
   {
+    "name": "refactoringhq/tolaria",
+    "url": "https://github.com/refactoringhq/tolaria",
+    "language": "TypeScript",
+    "stars": 15267,
+    "forks": 1052,
+    "description": "Desktop app to manage markdown knowledge bases",
+    "last_seen": "2026-06-11",
+    "trending_days": 5
+  },
+  {
     "name": "remotion-dev/remotion",
     "url": "https://github.com/remotion-dev/remotion",
     "language": "TypeScript",
@@ -2640,6 +2650,16 @@
     "trending_days": 4
   },
   {
+    "name": "masterking32/MasterDnsVPN",
+    "url": "https://github.com/masterking32/masterdnsvpn",
+    "language": "Go",
+    "stars": 5538,
+    "forks": 513,
+    "description": "Advanced DNS tunneling VPN for censorship bypass, optimized beyond DNSTT and SlipStream with low-overhead ARQ, resolver load balancing, high packet-loss stability and speed.",
+    "last_seen": "2026-06-11",
+    "trending_days": 4
+  },
+  {
     "name": "meshery/meshery",
     "url": "https://github.com/meshery/meshery",
     "language": "JavaScript",
@@ -2780,6 +2800,16 @@
     "trending_days": 4
   },
   {
+    "name": "phuryn/pm-skills",
+    "url": "https://github.com/phuryn/pm-skills",
+    "language": "Unknown",
+    "stars": 15984,
+    "forks": 1676,
+    "description": "PM Skills Marketplace: 100+ agentic skills, commands, and plugins — from discovery to strategy, execution, launch, and growth.",
+    "last_seen": "2026-06-11",
+    "trending_days": 4
+  },
+  {
     "name": "PostHog/posthog",
     "url": "https://github.com/posthog/posthog",
     "language": "Python",
@@ -2807,16 +2837,6 @@
     "forks": 2349,
     "description": "Prometheus Alertmanager",
     "last_seen": "2025-11-10",
-    "trending_days": 4
-  },
-  {
-    "name": "refactoringhq/tolaria",
-    "url": "https://github.com/refactoringhq/tolaria",
-    "language": "TypeScript",
-    "stars": 14704,
-    "forks": 1017,
-    "description": "Desktop app to manage markdown knowledge bases",
-    "last_seen": "2026-06-10",
     "trending_days": 4
   },
   {
@@ -3620,13 +3640,13 @@
     "trending_days": 3
   },
   {
-    "name": "masterking32/MasterDnsVPN",
-    "url": "https://github.com/masterking32/masterdnsvpn",
-    "language": "Go",
-    "stars": 5011,
-    "forks": 489,
-    "description": "Advanced DNS tunneling VPN for censorship bypass, optimized beyond DNSTT and SlipStream with low-overhead ARQ, resolver load balancing, high packet-loss stability and speed.",
-    "last_seen": "2026-06-10",
+    "name": "maziyarpanahi/openmed",
+    "url": "https://github.com/maziyarpanahi/openmed",
+    "language": "Python",
+    "stars": 2587,
+    "forks": 256,
+    "description": "open-source healthcare ai",
+    "last_seen": "2026-06-11",
     "trending_days": 3
   },
   {
@@ -3807,16 +3827,6 @@
     "forks": 2006,
     "description": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
     "last_seen": "2026-06-08",
-    "trending_days": 3
-  },
-  {
-    "name": "phuryn/pm-skills",
-    "url": "https://github.com/phuryn/pm-skills",
-    "language": "Unknown",
-    "stars": 14170,
-    "forks": 1586,
-    "description": "PM Skills Marketplace: 100+ agentic skills, commands, and plugins — from discovery to strategy, execution, launch, and growth.",
-    "last_seen": "2026-06-10",
     "trending_days": 3
   },
   {
@@ -4377,6 +4387,16 @@
     "forks": 2118,
     "description": "Hysteria is a powerful, lightning fast and censorship resistant proxy.",
     "last_seen": "2026-05-13",
+    "trending_days": 2
+  },
+  {
+    "name": "apple/container",
+    "url": "https://github.com/apple/container",
+    "language": "Swift",
+    "stars": 31272,
+    "forks": 875,
+    "description": "A tool for creating and running Linux containers using lightweight virtual machines on a Mac. It is written in Swift, and optimized for Apple silicon.",
+    "last_seen": "2026-06-11",
     "trending_days": 2
   },
   {
@@ -5450,16 +5470,6 @@
     "trending_days": 2
   },
   {
-    "name": "maziyarpanahi/openmed",
-    "url": "https://github.com/maziyarpanahi/openmed",
-    "language": "Python",
-    "stars": 2147,
-    "forks": 236,
-    "description": "open-source healthcare ai",
-    "last_seen": "2026-06-10",
-    "trending_days": 2
-  },
-  {
     "name": "Mebus/cupp",
     "url": "https://github.com/mebus/cupp",
     "language": "Python",
@@ -6480,6 +6490,16 @@
     "trending_days": 1
   },
   {
+    "name": "alchaincyf/zhangxuefeng-skill",
+    "url": "https://github.com/alchaincyf/zhangxuefeng-skill",
+    "language": "Unknown",
+    "stars": 7889,
+    "forks": 2411,
+    "description": "张雪峰.skill — 张雪峰的认知操作系统。高考志愿/考研/职业规划的实战思维框架。由女娲.skill生成。",
+    "last_seen": "2026-06-11",
+    "trending_days": 1
+  },
+  {
     "name": "alexpate/awesome-design-systems",
     "url": "https://github.com/alexpate/awesome-design-systems",
     "language": "Unknown",
@@ -6570,16 +6590,6 @@
     "trending_days": 1
   },
   {
-    "name": "apple/container",
-    "url": "https://github.com/apple/container",
-    "language": "Swift",
-    "stars": 28784,
-    "forks": 808,
-    "description": "A tool for creating and running Linux containers using lightweight virtual machines on a Mac. It is written in Swift, and optimized for Apple silicon.",
-    "last_seen": "2026-06-10",
-    "trending_days": 1
-  },
-  {
     "name": "Arindam200/awesome-ai-apps",
     "url": "https://github.com/arindam200/awesome-ai-apps",
     "language": "Python",
@@ -6667,6 +6677,16 @@
     "forks": 2976,
     "description": "✨ Innovative and open-source visualization application that transforms various data formats, such as JSON, YAML, XML, CSV and more, into interactive graphs.",
     "last_seen": "2025-10-04",
+    "trending_days": 1
+  },
+  {
+    "name": "bannedbook/fanqiang",
+    "url": "https://github.com/bannedbook/fanqiang",
+    "language": "Kotlin",
+    "stars": 46617,
+    "forks": 7997,
+    "description": "翻墙-科学上网",
+    "last_seen": "2026-06-11",
     "trending_days": 1
   },
   {
@@ -6797,6 +6817,16 @@
     "forks": 1106,
     "description": "Database diagrams editor that allows you to visualize and design your DB with a single query.",
     "last_seen": "2025-10-26",
+    "trending_days": 1
+  },
+  {
+    "name": "chatwoot/chatwoot",
+    "url": "https://github.com/chatwoot/chatwoot",
+    "language": "Ruby",
+    "stars": 30205,
+    "forks": 7495,
+    "description": "Open-source live-chat, email support, omni-channel desk. An alternative to Intercom, Zendesk, Salesforce Service Cloud etc. 🔥💬",
+    "last_seen": "2026-06-11",
     "trending_days": 1
   },
   {
@@ -7660,6 +7690,16 @@
     "trending_days": 1
   },
   {
+    "name": "hexo-ai/sia",
+    "url": "https://github.com/hexo-ai/sia",
+    "language": "Python",
+    "stars": 1097,
+    "forks": 148,
+    "description": "SIA is a Self Improving AI framework to autonomously improve the performance of any AI system (Model / Agent) on a benchmark task.",
+    "last_seen": "2026-06-11",
+    "trending_days": 1
+  },
+  {
     "name": "hiddify/hiddify-app",
     "url": "https://github.com/hiddify/hiddify-app",
     "language": "Dart",
@@ -7920,6 +7960,16 @@
     "trending_days": 1
   },
   {
+    "name": "kenn-io/agentsview",
+    "url": "https://github.com/kenn-io/agentsview",
+    "language": "Go",
+    "stars": 1485,
+    "forks": 168,
+    "description": "Local-first session intelligence and analytics for coding agents, supporting Claude Code, Codex, and more than 20 other agents. Also: 100x faster replacement for ccusage!",
+    "last_seen": "2026-06-11",
+    "trending_days": 1
+  },
+  {
     "name": "keycloak/keycloak",
     "url": "https://github.com/keycloak/keycloak",
     "language": "Java",
@@ -8117,6 +8167,16 @@
     "forks": 669,
     "description": "A collaborative list of public APIs for developers",
     "last_seen": "2026-01-07",
+    "trending_days": 1
+  },
+  {
+    "name": "mattermost/mattermost",
+    "url": "https://github.com/mattermost/mattermost",
+    "language": "TypeScript",
+    "stars": 37174,
+    "forks": 8690,
+    "description": "Mattermost is an open source platform for secure collaboration across the entire software development lifecycle..",
+    "last_seen": "2026-06-11",
     "trending_days": 1
   },
   {
@@ -8550,6 +8610,16 @@
     "trending_days": 1
   },
   {
+    "name": "NVIDIA/SkillSpector",
+    "url": "https://github.com/nvidia/skillspector",
+    "language": "Python",
+    "stars": 2384,
+    "forks": 199,
+    "description": "Security scanner for AI agent skills. Detect vulnerabilities, malicious patterns, and security risks.",
+    "last_seen": "2026-06-11",
+    "trending_days": 1
+  },
+  {
     "name": "NVlabs/alpasim",
     "url": "https://github.com/nvlabs/alpasim",
     "language": "Python",
@@ -8897,6 +8967,16 @@
     "forks": 465,
     "description": "Vibe Workflow Platform for Non-technical Creators.",
     "last_seen": "2025-12-12",
+    "trending_days": 1
+  },
+  {
+    "name": "restic/restic",
+    "url": "https://github.com/restic/restic",
+    "language": "Go",
+    "stars": 34055,
+    "forks": 1781,
+    "description": "Fast, secure, efficient backup program",
+    "last_seen": "2026-06-11",
     "trending_days": 1
   },
   {

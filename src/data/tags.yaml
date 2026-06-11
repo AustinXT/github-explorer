@@ -218,6 +218,8 @@ entries:
   - media-generation
   axios_axios:
   - security
+  axorax_awesome-free-apps:
+  - workflow-automation
   badlogic_pi-mono:
   - ai-agent
   - ai-coding
@@ -304,6 +306,9 @@ entries:
   - security
   charmbracelet_glow:
   - devtools
+  cheahjs_free-llm-api-resources:
+  - devtools
+  - workflow-automation
   chenglou_pretext:
   - ai-coding
   - workflow-automation
@@ -430,6 +435,10 @@ entries:
   - uncategorized
   datalab-to_marker:
   - devtools
+  datawhalechina_easy-vibe:
+  - ai-agent
+  - ai-coding
+  - education
   datawhalechina_hello-agents:
   - ai-agent
   - education
@@ -586,6 +595,10 @@ entries:
   - llm-inference
   - education
   - protocol-spec
+  fareedkhan-dev_train-llm-from-scratch:
+  - llm-training
+  - devtools
+  - education
   farion1231_cc-switch:
   - ai-agent
   - ai-coding
@@ -1321,6 +1334,9 @@ entries:
   openai_openai-agents-python:
   - ai-agent
   - protocol-spec
+  openai_openai-cookbook:
+  - ai-agent
+  - education
   openai_openai-realtime-solar-system:
   - uncategorized
   openai_plugins:
@@ -1384,6 +1400,10 @@ entries:
   - llm-inference
   - iot-hardware
   - protocol-spec
+  panniantong_agent-reach:
+  - ai-agent
+  - ai-coding
+  - devtools
   paperclipai_paperclip:
   - ai-agent
   - devtools
@@ -1414,6 +1434,11 @@ entries:
   - security
   peterc_engblogs:
   - database
+  phuryn_pm-skills:
+  - ai-agent
+  - ai-coding
+  - devtools
+  - protocol-spec
   pixelguys_cubyz:
   - protocol-spec
   pkuflyingpig_cs-self-learning:
@@ -1443,6 +1468,8 @@ entries:
   - llm-training
   - education
   - data-pipeline
+  projectdiscovery_nuclei-templates:
+  - security
   prometheus_alertmanager:
   - uncategorized
   promptfoo_promptfoo:
@@ -1491,6 +1518,13 @@ entries:
   - uncategorized
   redwoodjs_graphql:
   - database
+  refactoringhq_tolaria:
+  - ai-agent
+  - ai-coding
+  - devtools
+  - editor-kms
+  - database
+  - protocol-spec
   reflex-dev_reflex:
   - education
   - web-framework
@@ -1513,6 +1547,10 @@ entries:
   - media-generation
   resque_resque:
   - uncategorized
+  revfactory_harness:
+  - ai-agent
+  - ai-coding
+  - devtools
   ridgerchu_matmulfreellm:
   - llm-inference
   - trading-finance
@@ -1581,6 +1619,12 @@ entries:
   - iot-hardware
   ruvnet_wifi-densepose:
   - uncategorized
+  ryancodrai_turbovec:
+  - llm-framework
+  - llm-inference
+  - model-foundation
+  - rag-search
+  - trading-finance
   sansan0_trendradar:
   - uncategorized
   screenpipe_screenpipe:
@@ -1656,6 +1700,10 @@ entries:
   - llm-framework
   - llm-training
   - rag-search
+  stefan-jansen_machine-learning-for-trading:
+  - llm-inference
+  - education
+  - trading-finance
   steipete_gogcli:
   - ai-agent
   - devtools
