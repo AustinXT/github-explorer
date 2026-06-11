@@ -162,3 +162,4 @@
 {"recorded_at": "2026-06-10T21:05:53.669135+00:00", "slug": "openai_openai-cookbook", "title": null, "state": "published", "published_at": "2026-06-10", "reason": "自动生成", "ci_run_id": "27305468978"}
 {"recorded_at": "2026-06-10T22:00:40.923160+00:00", "slug": "refactoringhq_tolaria", "title": null, "state": "published", "published_at": "2026-06-10", "reason": "自动生成", "ci_run_id": "27308102008"}
 {"recorded_at": "2026-06-10T22:50:44.152073+00:00", "slug": "panniantong_agent-reach", "title": null, "state": "published", "published_at": "2026-06-10", "reason": "自动生成", "ci_run_id": "27310745402"}
+{"recorded_at": "2026-06-11T00:55:13.124764+00:00", "slug": "cheahjs_free-llm-api-resources", "title": null, "state": "published", "published_at": "2026-06-11", "reason": "自动生成", "ci_run_id": "27315670952"}
