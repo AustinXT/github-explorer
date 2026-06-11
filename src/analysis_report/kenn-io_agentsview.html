@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+/* ====== 微信公众号排版 CSS ====== */
+
+body {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #3e3e3e;
+    background: #fff;
+}
+
+/* 正文段落 */
+p {
+    font-size: 15px !important;
+    line-height: 2 !important;
+    margin: 0 !important;
+    padding-top: 0.5em !important;
+    padding-bottom: 0.5em !important;
+    padding-right: 1.2em !important;
+    padding-left: 1.2em !important;
+    text-align: justify !important;
+}
+p + p {
+    margin-top: 0 !important;
+}
+
+/* 标题 */
+h1 {
+    font-size: 20px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 16px 0 !important;
+    padding: 0 !important;
+}
+h2 {
+    font-size: 18px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 24px 0 !important;
+    padding: 0 !important;
+}
+h3 {
+    font-size: 15px !important;
+    font-weight: bold !important;
+    color: #3e3e3e !important;
+    text-align: left !important;
+    margin: 16px 0 16px 0 !important;
+    padding: 0 0 0 1.2em !important;
+}
+h4 {
+    font-size: 15px !important;
+    color: rgb(0, 122, 170) !important;
+    margin: 12px 0 8px 0 !important;
+    padding: 0 !important;
+}
+
+/* 列表 */
+ul,
+ol {
+    padding-left: 2em !important;
+    margin: 1em 0 !important;
+    font-size: 15px !important;
+}
+li {
+    margin: 0.5em 0 !important;
+    line-height: 1.8em !important;
+    font-size: 15px !important;
+    color: #3e3e3e !important;
+}
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+    margin: 0 !important;
+    padding-left: 1.2em !important;
+}
+
+/* 引用 */
+blockquote {
+    border-left: 4px solid #888 !important;
+    padding: 8px 16px !important;
+    margin: 1em 0 !important;
+    color: #666 !important;
+    background: #f9f9f9 !important;
+}
+blockquote > p {
+    margin: 0.5em 0 !important;
+    padding: 0 !important;
+}
+blockquote::before,
+blockquote::after {
+    content: none !important;
+}
+
+/* 代码块 */
+pre {
+    font-size: 14px !important;
+    line-height: 1.4em !important;
+    color: #3e3e3e !important;
+    background: #f8f8f8 !important;
+    padding: 12px 16px !important;
+    border-radius: 4px !important;
+    overflow: auto !important;
+    margin: 1em 0 !important;
+}
+
+/* 脚注 */
+.footnotes {
+    font-size: 11px !important;
+    color: #666 !important;
+    line-height: 1.2 !important;
+    margin: 8px 0 0 0 !important;
+    padding: 4px 0 0 0 !important;
+    border-top: 1px solid #eee !important;
+}
+.footnotes p {
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #666 !important;
+}
+
+/* 上标 */
+sup {
+    font-size: 0.75em !important;
+    vertical-align: super !important;
+    color: #e51f42 !important;
+    margin: 0 2px !important;
+}
+
+/* 表格 */
+table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    margin: 1em 0 !important;
+    font-size: 14px !important;
+}
+th, td {
+    border: 1px solid #ddd !important;
+    padding: 8px 12px !important;
+    text-align: left !important;
+    line-height: 1.6 !important;
+}
+th {
+    background: #f5f5f5 !important;
+    font-weight: bold !important;
+    color: #3e3e3e !important;
+}
+tr:nth-child(even) {
+    background: #fafafa !important;
+}
+
+/* 图片 */
+img {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    margin: 1em auto !important;
+    border-radius: 4px !important;
+}
+
+</style>
+</head>
+<body>
+<blockquote><p>GitHub: <a href="https://github.com/kenn-io/agentsview">https://github.com/kenn-io/agentsview</a></p></blockquote>
+<h2>一句话总结</h2>
+<p>Wes McKinney（pandas / Apache Arrow / Ibis 创始人）下场做的「跨 20+ coding agents 的本地优先统一观测层」：一个 Go 二进制覆盖 Claude Code / Codex / Cursor / Gemini CLI 等所有主流 agent 的会话、成本、子代理结构，号称比 ccusage 快 100 倍。</p>
+<h2>值得关注的理由</h2>
+<ol>
+<li><strong>大牛背书 + 真实工程量</strong> — Wes McKinney 把做 Arrow / Ibis 多后端抽象的范式搬到了 agent 观测层（<code>db.Store</code> 硬接口 + 编译期契约 + 三栈 DB mirror），4 个月 22 万行 Go、52 个 release，明显是「主业在做」而非周末练手。</li>
+<li><strong>填补真蓝海</strong> — 20+ agent 把 session 散落到 <code>~/.claude/</code>、<code>~/.codex/</code>、<code>~/.gemini/</code> 等不同目录，ccusage / claude-code-transcripts 只解决单一 agent，Langfuse / Helicone 是云端 SaaS，<strong>没人同时给「本地优先 + 跨 agent + 索引速度」</strong> 这条组合。</li>
+<li><strong>可学的东西比用它的价值更大</strong> — DAG-aware fork 切分、fsnotify 资源预算退避、skip cache 持久化迁移位、调用本机 agent CLI 当推理后端——这 7 个模式可以直接搬到自己的项目里。</li>
+</ol>
+<h2>项目展示</h2>
+<p><img src="https://agentsview.io/screenshots/dashboard.png" alt="Dashboard 跨 agent 成本与活动仪表盘"/></p>
+<p><em>核心仪表盘：跨 agent 成本、活动热力图、健康度 A–F 评分</em></p>
+<p><img src="https://agentsview.io/screenshots/message-viewer.png" alt="Session viewer 单 session 消息查看器"/></p>
+<p><em>类似聊天应用的 session 浏览器：DAG-aware fork/subagent 切分后还原主线程</em></p>
+<p><img src="https://agentsview.io/screenshots/search-results.png" alt="Search FTS5 全文搜索"/></p>
+<p><em>SQLite FTS5 全文索引：跨所有 agent 的统一搜索</em></p>
+<p><img src="https://agentsview.io/screenshots/heatmap.png" alt="Heatmap 活动热力图"/></p>
+<p><em>多维活动分析：项目 / agent / 时段交叉</em></p>
+<h2>项目画像</h2>
+<table>
+<tr><th>维度</th><th>数据</th></tr>
+<tr><td>GitHub</td><td><a href="https://github.com/kenn-io/agentsview">https://github.com/kenn-io/agentsview</a></td></tr>
+<tr><td>Star / Fork</td><td>1,586 / 172（4 个月龄，爆发式增长）</td></tr>
+<tr><td>代码行数</td><td>219,740（Go 77% / TypeScript 15.4% / Svelte 3.4% / Rust 0.8%）</td></tr>
+<tr><td>项目年龄</td><td>3.7 个月（2026-02-19 首发）</td></tr>
+<tr><td>开发阶段</td><td>密集开发（v0.32.1，52 个 release，约 2.1 天一个 tag）</td></tr>
+<tr><td>贡献模式</td><td>明星双核 + 社区（Wes McKinney 79.7% / Marius van Niekerk 9% / 社区 62 人）</td></tr>
+<tr><td>热度定位</td><td>中等热度快速上升（最近 186 个 star 集中在采样日当天）</td></tr>
+<tr><td>质量评级</td><td>代码[优秀] 文档[优秀] 测试[充分] CI/CD[完善]</td></tr>
+</table>
+
+<h2>作者视角：为什么存在这个项目</h2>
+<h3>创始人/作者背景</h3>
+<p><strong>Wes McKinney</strong> 是数据科学领域基础设施级人物：pandas（2008 立项，Python 数据处理事实标准）、Apache Arrow（跨语言列存内存格式）、Ibis（统一 SQL 编译到多后端执行）三个项目的原作者，Apache Parquet PMC 成员，GitHub 16k+ 粉丝。2023 年从 Posit 离职创立 <strong>Kenn Software</strong>（kenn.io），把公司定位成 "Development and knowledge systems for the agentic era"。在 Arrow 圈的老搭档 <strong>Marius van Niekerk</strong> 担任次核心贡献者（9% commit）。Wes 决定做 agentsview 不是临时起意——是他在多 agent 工具栈里 dogfooding 多年后，看到「跨 agent 观测层」这个<strong>没人填的格子</strong>。</p>
+<h3>问题判断</h3>
+<p>当 Anthropic 推出 Claude Code、OpenAI 推出 Codex CLI、Cursor / Gemini CLI / Antigravity 纷纷入场之后，agent 生态从 2 年前的「单一 Claude Code」裂变成 20+ 实现，每个都把 session 散落到私有目录、命名不一致、SQLite / 加密 <code>.pb</code> / JSONL 各异。<strong>这时「跨 agent 观测」才成为真问题</strong>——再晚 1-2 年窗口可能直接被 IDE 或云 observability 厂商吃掉。</p>
+<h3>解法哲学</h3>
+<ul>
+<li><strong>本地优先 + 可选共享</strong>：默认 SQLite、loopback bind、可选 PG/DuckDB mirror。Wes 一贯立场（pandas/Arrow 都是把数据留在用户手里）。</li>
+<li><strong>一个 binary 多形态</strong>：CLI / HTTP server / PG push / PG serve / DuckDB mirror / Quack endpoint / Tauri desktop 全在同一个二进制。</li>
+<li><strong>明确不做什么</strong>：不代理 agent 调用、不修改 agent 行为（PG/DuckDB 是 read-only）、不做 prompt 优化或 eval（让给 Langfuse）。</li>
+<li><strong>硬契约保证多后端能力一致</strong>：<code>db.Store</code> interface + <code>backendcontract</code> 集中式编译期断言，任何后端遗漏实现都让 <code>go build</code> 失败。</li>
+</ul>
+<h3>战略意图</h3>
+<p>MIT 真心开源做获客入口，商业化走 <strong>managed / hosted 同步 / 团队控制台</strong>——<code>pg push</code> 子命令已给出 SaaS-ready 数据通路，Issue #108 明确讨论向分布式聚合演化。Tauri 桌面端瞄准愿意付费的 pro 用户。</p>
+<h2>核心价值提炼</h2>
+<h3>创新之处</h3>
+<ol>
+<li><strong>DAG-aware Claude 解析 + 阈值切分（新颖 4/5）</strong>：把 <code>uuid / parentUuid</code> 当真 DAG 处理，按 fork 阈值（3 个 turn）切分成独立 session，再把 queued command 按 timestamp splice 回去。公开资料里几乎没看到这么做。</li>
+<li><strong>三形态单一二进制 + 编译期后端契约（实用 5/5）</strong>：所有形态共享 <code>db.Store</code> interface 并由集中式 <code>backendcontract</code> 包强制能力一致——比 dynamic dispatch 更安全。</li>
+<li><strong>fsnotify 资源预算退避（实用 5/5，可迁移 5/5）</strong>：<code>WatchRecursiveBudgeted</code> 携带 budget，遍历遇 <code>ResourceExhausted</code> 立即降级到 polling，根除「inotify 满导致看似工作实则失效」的隐形 bug。</li>
+<li><strong>调用本机 agent CLI 当推理后端（可迁移 5/5）</strong>：Insight 模块直接 <code>exec.LookPath</code> 调 Claude/Codex/Gemini CLI，prompt 走 stdin。<strong>这是 Claude Agent SDK 之外的极简 AI 集成范式</strong>——任何"想加 AI 能力但不想接 LLM API"的工具都能抄。</li>
+<li><strong>20+ agent 归一化抽象（taxonomy 层 + 共享信号）</strong>：所有工具名归一到 9 个 category（Read/Edit/Write/Bash/Grep/Glob/Task/Tool/Other），跨 agent 的 <code>health_score</code> / <code>compaction count</code> / <code>context pressure</code> 统一计算。</li>
+</ol>
+<h3>可复用的模式与技巧</h3>
+<table>
+<tr><th>模式</th><th>适用场景</th></tr>
+<tr><td><code>db.Store</code> 硬接口 + <code>backendcontract</code> 集中式断言</td><td>多语言/多运行时后端 + 统一查询语义</td></tr>
+<tr><td>Primary ingest + 多只读 mirror（SQLite → PG/DuckDB）</td><td>个人 + 团队双形态产品，分析型 + 事务型混合负载</td></tr>
+<tr><td>DAG 切分 + timestamp splice</td><td>所有"agent 内部 sub-agent"的可观测工具</td></tr>
+<tr><td>fsnotify 资源预算 + exclude 子树</td><td>Linux 上文件同步 / IDE 索引 / watch 工具</td></tr>
+<tr><td>Skip cache + 持久化迁移位</td><td>启动时跑一次性迁移且不能容忍半途失败</td></tr>
+<tr><td>调本机 agent CLI 当推理后端</td><td>想加 AI 能力但不想接 LLM API 的开发者工具</td></tr>
+<tr><td>统一 <code>TerminationStatus</code> 4 态状态机</td><td>给"无协议约定的工具流"加状态机</td></tr>
+</table>
+
+<h3>关键设计决策</h3>
+<table>
+<tr><th>决策</th><th>路径</th><th>Trade-off</th></tr>
+<tr><td><code>db.Store</code> 硬接口 + 编译期契约</td><td><code>internal/db/store.go</code> + <code>internal/backendcontract/contract.go</code></td><td>牺牲灵活性换"任何后端不静默缺失能力"</td></tr>
+<tr><td>SQLite primary + PG/DuckDB 只读 mirror</td><td><code>ReadOnly() bool { return true }</code></td><td>换"每个角色用最合适的工具"——但写入不能跨设备合并（Issue #108 在演化）</td></tr>
+<tr><td>Claude DAG-aware fork 切分</td><td><code>internal/parser/claude.go</code>（500+ 行 DAG 处理）</td><td>实现复杂度换"session 边界对得起用户认知"</td></tr>
+<tr><td>skip cache 原子迁移</td><td><code>engine.go</code> 的 <code>migrateLegacyCodexExecSkips</code></td><td>多一次 DB 写换"迁移要么做完要么没做"</td></tr>
+<tr><td>Insight 调本机 agent CLI</td><td><code>internal/insight/generate.go</code></td><td>依赖用户装了 CLI（但目标用户确定会装）</td></tr>
+</table>
+
+<h2>竞品格局与定位</h2>
+<h3>竞品对比矩阵</h3>
+<table>
+<tr><th>维度</th><th>agentsview</th><th>ccusage</th><th>Langfuse / Helicone</th><th>claude-code-transcripts</th></tr>
+<tr><td>覆盖 agent 数</td><td>20+</td><td>仅 Claude Code</td><td>OpenAI/Anthropic SDK</td><td>仅 Claude Code</td></tr>
+<tr><td>部署形态</td><td>本地优先 + 可选 PG/DuckDB mirror</td><td>纯 CLI</td><td>云端 SaaS</td><td>单文件转换</td></tr>
+<tr><td>速度</td><td>100× ccusage（预索引 SQLite FTS5）</td><td>每次重头解析 JSONL</td><td>—</td><td>—</td></tr>
+<tr><td>全文搜索</td><td>✅ FTS5</td><td>❌</td><td>✅</td><td>❌</td></tr>
+<tr><td>跨项目持久化</td><td>✅</td><td>❌</td><td>✅</td><td>❌</td></tr>
+<tr><td>团队 dashboard</td><td><code>pg push</code></td><td>❌</td><td>✅（收费）</td><td>❌</td></tr>
+<tr><td>Fork / subagent 处理</td><td>✅ DAG-aware</td><td>❌</td><td>部分</td><td>❌</td></tr>
+<tr><td>数据是否外传</td><td>否（默认 loopback）</td><td>否</td><td>是</td><td>否</td></tr>
+</table>
+
+<h3>差异化护城河</h3>
+<ul>
+<li><strong>生态护城河</strong>：20+ agent 行业领先；新增 agent 只需 <code>parser/&lt;agent&gt;.go</code> + <code>taxonomy.go</code> 几条，扩展成本低。</li>
+<li><strong>信任护城河</strong>：Wes McKinney 品牌信用（pandas/Arrow 几十年可信赖度）。</li>
+<li><strong>技术护城河</strong>：DAG 解析、PG/DuckDB 镜像、Tauri 桌面端等工程深度难快速复制。</li>
+</ul>
+<h3>竞争风险</h3>
+<ol>
+<li><strong>被通用 observability 平台侵蚀</strong>（最大风险）：Langfuse / Helicone 增加 agent 适配器会切走"团队付费"那块市场。</li>
+<li><strong>被 IDE 厂商整合基础功能</strong>：Cursor / Anthropic 自己的 <code>/usage</code> 做到 80% 体验，开发者可能不再需要额外工具——但<strong>跨 agent 不会被 IDE 厂商解决</strong>。</li>
+<li><strong>被 LLM 厂商官方工具替代</strong>：Anthropic / OpenAI / Google 自己做跨 agent 统计——可能性低，因为这些厂商互相竞争。</li>
+<li><strong>自研方向</strong>：Issue #108 讨论分布式演化，1-2 年后可能需要 multi-host aggregator。</li>
+</ol>
+<h3>生态定位</h3>
+<p><strong>全 agent 生态的"中央会话日志聚合层 + 本地优先观测台"</strong>。不抢 LLM observability 全栈（Langfuse / Helicone 的战场）、不抢 IDE 体验（Cursor / Zed 的战场）、不抢 LLM 应用市场；专做"开发者自己使用的可见性"——缝隙但很深。</p>
+<h2>套利机会分析</h2>
+<ul>
+<li><strong>信息差</strong>：项目由 pandas/Arrow 创始人主导，4 个月到 1,586 stars 仍处于快速上升期，相对 Langfuse 等头部 observability 知名度仍小，存在<strong>早期跟进窗口</strong>。</li>
+<li><strong>技术借鉴</strong>（最直接的价值）：上面 7 个可复用模式（硬接口多后端、Primary + mirror、DAG 切分、fsnotify 预算、skip cache 迁移、调本机 agent CLI、TerminationStatus 状态机）都可以直接搬到自己的项目。</li>
+<li><strong>生态位</strong>：填补了"20+ coding agent 的本地统一观测"这个空格子——Langfuse 不覆盖 agent session、ccusage 不跨 agent、IDE 不跨项目。</li>
+<li><strong>趋势判断</strong>：agent 数量只会增加不会收敛（Anthropic / OpenAI / Google 三家互不兼容），跨 agent 观测需求会随生态碎片化持续放大；本地优先 + 数据不出本机的定位在合规/隐私敏感场景有结构性优势。</li>
+</ul>
+<h2>风险与不足</h2>
+<ul>
+<li><strong>bus factor = 1</strong>：Wes 占 79.7% commit，单核心维护者风险——但 Wes 圈（pandas/Arrow 用户）的接受度高。</li>
+<li><strong>0.x 版本未稳定</strong>：v0.32.1 仍在快速迭代（52 个 release / 3.7 个月），schema 和 CLI 都可能 break change；<strong>生产环境依赖要锁版本</strong>。</li>
+<li><strong>PG 后端工程债</strong>：Issue #439 显示 PG 镜像层是社区高频踩坑区，schema 演进与 SQLite 主库一致性是当前最受关注的工程债。</li>
+<li><strong>Onboarding UX 摩擦</strong>：Issue #562 显示默认安全策略（loopback + Host 校验 + 自动 auth）和"开箱即用"之间仍有摩擦。</li>
+<li><strong>Insight 副作用隔离</strong>：Issue #175 显示 AI Insights 需小心控制不在非 agent 工作目录执行——设计复杂但已闭环。</li>
+</ul>
+<h2>行动建议</h2>
+<h3>如果你要用它</h3>
+<ul>
+<li><strong>如果你只用 Claude Code 一种 agent 且需要轻量成本统计</strong>：ccusage 更合适，零依赖心智更轻。</li>
+<li><strong>如果你跨 2+ agent / 关心隐私 / 需要本地持久化</strong>：直接选 agentsview，从 ccusage 迁过来零成本。</li>
+<li><strong>团队场景</strong>：用 <code>pg push</code> 把多个成员的 SQLite 聚到团队 PG，跑只读 dashboard。</li>
+<li><strong>生产依赖</strong>：锁定具体 tag，0.x 阶段 schema 会变。</li>
+</ul>
+<h3>如果你要学它</h3>
+<p>按这个顺序读源码，效率最高：</p>
+<ol>
+<li><code>internal/db/store.go</code> + <code>internal/backendcontract/contract.go</code> — <strong>多后端抽象</strong>的硬接口模式（最值得学的设计）</li>
+<li><code>internal/parser/claude.go</code> — <strong>DAG-aware 切分</strong>（500+ 行，读完一遍 agent 内部消息流怎么处理就懂了）</li>
+<li><code>internal/sync/watcher.go</code> — <strong>fsnotify 资源预算退避</strong>（解决隐形 bug 的标准答案）</li>
+<li><code>internal/sync/engine.go</code> + <code>pg_sync_state</code> 相关代码 — <strong>skip cache 持久化迁移位</strong>（理解"半中途失败 = 重试"范式）</li>
+<li><code>internal/insight/generate.go</code> — <strong>调本机 agent CLI 当推理后端</strong>（极简 AI 集成的范式）</li>
+<li><code>internal/db/schema.sql</code> — 宽表反范式 + 触发器维护 stats</li>
+</ol>
+<h3>如果你要 fork 它</h3>
+<ul>
+<li>加更多 agent 解析器（<code>parser/&lt;agent&gt;.go</code> + <code>taxonomy.go</code> 几条即可）</li>
+<li>接 Langfuse 做 eval（agentsview 是观测层、Langfuse 是 eval 层，互补）</li>
+<li>做 multi-host aggregator（Issue #108 已有人提）</li>
+<li>商业化：本地优先 + managed 同步 + 团队控制台</li>
+</ul>
+<h3>知识入口</h3>
+<table>
+<tr><th>资源</th><th>链接</th></tr>
+<tr><td>DeepWiki</td><td><a href="https://deepwiki.com/kenn-io/agentsview">https://deepwiki.com/kenn-io/agentsview</a>（HTTP 403 但 URL 已被收录，浏览器可访问）</td></tr>
+<tr><td>Zread.ai</td><td><a href="https://zread.ai/kenn-io/agentsview">https://zread.ai/kenn-io/agentsview</a>（已收录，40+ 子页面）</td></tr>
+<tr><td>官方文档</td><td><a href="https://agentsview.io">https://agentsview.io</a> + <code>docs/</code> 目录（quickstart / usage / commands / configuration / architecture）</td></tr>
+<tr><td>关联论文</td><td>无（项目本身不是学术产出）</td></tr>
+<tr><td>在线 Demo</td><td>无（本地优先产品，提供 Desktop binary + Docker image 自行跑）</td></tr>
+</table>
+
+</body>
+</html>
