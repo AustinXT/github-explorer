@@ -1,6 +1,6 @@
 {
   "meta": {
-    "last_run": "2026-06-10",
+    "last_run": "2026-06-11",
     "window_days": 30
   },
   "entries": [
@@ -279,6 +279,24 @@
       "canonical_url": "https://github.com/FareedKhan-dev/train-llm-from-scratch",
       "event_date": "2026-06-10",
       "date_seen": "2026-06-10"
+    },
+    {
+      "key": "github.com/nvidia/skillspector",
+      "canonical_url": "https://github.com/NVIDIA/SkillSpector",
+      "event_date": "2026-06-11",
+      "date_seen": "2026-06-11"
+    },
+    {
+      "key": "github.com/kenn-io/agentsview",
+      "canonical_url": "https://github.com/kenn-io/agentsview",
+      "event_date": "2026-06-11",
+      "date_seen": "2026-06-11"
+    },
+    {
+      "key": "github.com/hexo-ai/sia",
+      "canonical_url": "https://github.com/hexo-ai/sia",
+      "event_date": "2026-06-11",
+      "date_seen": "2026-06-11"
     }
   ]
 }
