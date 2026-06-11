@@ -1,0 +1,6 @@
+{
+  "title": "13K 模板 × 1,300 贡献者：漏洞扫描的「npm registry」怎么炼成",
+  "digest": "nuclei-templates 是漏洞扫描的 detection-as-data 众包平台，13K YAML 模板 + 4 套机器人 + 现金悬赏，把新 CVE 全球可检测的窗口期从数天压到数小时。",
+  "author": "NVoyager",
+  "theme": "stars,universe,dark"
+}

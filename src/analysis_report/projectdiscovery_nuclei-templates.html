@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+/* ====== 微信公众号排版 CSS ====== */
+
+body {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #3e3e3e;
+    background: #fff;
+}
+
+/* 正文段落 */
+p {
+    font-size: 15px !important;
+    line-height: 2 !important;
+    margin: 0 !important;
+    padding-top: 0.5em !important;
+    padding-bottom: 0.5em !important;
+    padding-right: 1.2em !important;
+    padding-left: 1.2em !important;
+    text-align: justify !important;
+}
+p + p {
+    margin-top: 0 !important;
+}
+
+/* 标题 */
+h1 {
+    font-size: 20px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 16px 0 !important;
+    padding: 0 !important;
+}
+h2 {
+    font-size: 18px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 24px 0 !important;
+    padding: 0 !important;
+}
+h3 {
+    font-size: 15px !important;
+    font-weight: bold !important;
+    color: #3e3e3e !important;
+    text-align: left !important;
+    margin: 16px 0 16px 0 !important;
+    padding: 0 0 0 1.2em !important;
+}
+h4 {
+    font-size: 15px !important;
+    color: rgb(0, 122, 170) !important;
+    margin: 12px 0 8px 0 !important;
+    padding: 0 !important;
+}
+
+/* 列表 */
+ul,
+ol {
+    padding-left: 2em !important;
+    margin: 1em 0 !important;
+    font-size: 15px !important;
+}
+li {
+    margin: 0.5em 0 !important;
+    line-height: 1.8em !important;
+    font-size: 15px !important;
+    color: #3e3e3e !important;
+}
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+    margin: 0 !important;
+    padding-left: 1.2em !important;
+}
+
+/* 引用 */
+blockquote {
+    border-left: 4px solid #888 !important;
+    padding: 8px 16px !important;
+    margin: 1em 0 !important;
+    color: #666 !important;
+    background: #f9f9f9 !important;
+}
+blockquote > p {
+    margin: 0.5em 0 !important;
+    padding: 0 !important;
+}
+blockquote::before,
+blockquote::after {
+    content: none !important;
+}
+
+/* 代码块 */
+pre {
+    font-size: 14px !important;
+    line-height: 1.4em !important;
+    color: #3e3e3e !important;
+    background: #f8f8f8 !important;
+    padding: 12px 16px !important;
+    border-radius: 4px !important;
+    overflow: auto !important;
+    margin: 1em 0 !important;
+}
+
+/* 脚注 */
+.footnotes {
+    font-size: 11px !important;
+    color: #666 !important;
+    line-height: 1.2 !important;
+    margin: 8px 0 0 0 !important;
+    padding: 4px 0 0 0 !important;
+    border-top: 1px solid #eee !important;
+}
+.footnotes p {
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #666 !important;
+}
+
+/* 上标 */
+sup {
+    font-size: 0.75em !important;
+    vertical-align: super !important;
+    color: #e51f42 !important;
+    margin: 0 2px !important;
+}
+
+</style>
+</head>
+<body>
+<blockquote><p>GitHub: <a href="https://github.com/projectdiscovery/nuclei-templates">https://github.com/projectdiscovery/nuclei-templates</a></p></blockquote>
+<h2>一句话总结</h2>
+<p>nuclei-templates 是漏洞扫描领域最大的「<strong>detection-as-data 众包平台</strong>」——用 YAML DSL 把「漏洞定义」做成可机械同步的数据文件，配合四套机器人 + 现金悬赏 + 三段式质量门，把新 CVE 从披露到全球可检测的窗口期从数天压缩到数小时。</p>
+<h2>值得关注的理由</h2>
+<ul>
+<li><strong>范式领导地位</strong>：13,324 个 YAML 模板、12.5k stars、3,521 forks，在「<strong>应用层主动扫描</strong>」这一格是事实标准——和 Sigma/YARA/Snort 一样是 detection-as-data 范式的标杆，但<strong>独占了 Web 漏洞扫描格</strong>。</li>
+<li><strong>元数据纪律罕见</strong>：仓库元数据（cves.json 2MB、TEMPLATES-STATS.md 1.5MB、templates-checksum.txt 1.1MB）的<strong>总规模超过 README</strong>——把「Git 即数据库」做到极致的工程化样本。</li>
+<li><strong>机器贡献率 36.4%</strong>：四套机器人（ghost / actions-user / MostInterestingBotInTheWorld / PDBot）协同——这是 AI 写规则的「早期部署样本」，领先业内两年。</li>
+<li><strong>Bounty-driven 众包</strong>：明确文档化的 $50–$250 现金悬赏 + 💎 Bounty 标签 + 强制 vulnerable docker 验证——把「模板生产」变成全球可竞争市场。</li>
+<li><strong>健康 OSS-CS 路径</strong>：商业化（PDCP 云平台）不污染开源体验，模板永远完整公开——是值得所有开源安全工具参考的<strong>商业化范本</strong>。</li>
+</ul>
+<h2>项目展示</h2>
+<p>README 媒体极简（仅 repobeats 提交活跃度 + contrib.rocks 贡献者墙），项目展示素材以<strong>实操样例</strong>和<strong>运行截图</strong>为主，散布在 docs.projectdiscovery.io。</p>
+<ul>
+<li>模板签名流程: 见 .github/workflows/template-sign.yml（密码学签名 PR）</li>
+<li>实际模板范本: /http/cves/2021/CVE-2021-44228.yaml（Log4Shell）、/http/cves/2024/CVE-2024-0012.yaml（PAN-OS auth bypass）</li>
+</ul>
+<blockquote><p>README 和官网均无展示性 hero 图，建议读者直接看 http/cves/2024/ 下最新模板来直观感受 YAML DSL 的精炼。</p></blockquote>
+<h2>项目画像</h2>
+<table>
+<thead><tr>
+<th>维度</th>
+<th>数据</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Star / Fork</td>
+<td>12,491 / 3,521</td>
+</tr>
+<tr>
+<td>Watcher / Open Issue / Open PR</td>
+<td>203 / 59 / 63</td>
+</tr>
+<tr>
+<td>代码行数</td>
+<td>968,067 行（YAML 99.4% / JSON 0.6%）</td>
+</tr>
+<tr>
+<td>文件数量</td>
+<td>13,324</td>
+</tr>
+<tr>
+<td>项目年龄</td>
+<td>6 年（首提交 2020-04-04）</td>
+</tr>
+<tr>
+<td>总 commit</td>
+<td>70,874（最近 30 天 1,004，最近 90 天 3,413）</td>
+</tr>
+<tr>
+<td>开发阶段</td>
+<td>密集开发（dev_stage）</td>
+</tr>
+<tr>
+<td>贡献模式</td>
+<td>核心 5 人 + 1,290 社区 + 4 机器账户（机器贡献 36.4%）</td>
+</tr>
+<tr>
+<td>热度定位</td>
+<td>大众热门（heat_level）</td>
+</tr>
+<tr>
+<td>质量评级</td>
+<td>代码 5/5（schema 严格） 文档 5/5（4 语言 README + 3 个指南） CI/CD 5/5（13 个 workflow）</td>
+</tr>
+<tr>
+<td>License</td>
+<td>MIT（与 nuclei 引擎同许可）</td>
+</tr>
+<tr>
+<td>Tag / Release</td>
+<td>327 / 100（语义化版本，与 nuclei 引擎同步）</td>
+</tr>
+<tr>
+<td>月均 commit</td>
+<td>1,453（2025-12 峰值 3,178）</td>
+</tr>
+</tbody>
+</table>
+<h2>作者视角：为什么存在这个项目</h2>
+<h3>创始人/作者背景</h3>
+<p>归属 <strong>ProjectDiscovery</strong> 组织（2019-05 成立，11,393 粉丝），使命「Democratize Security」。创始人 Sandeep（ehsandeep）从 fuzzing/bug bounty 行业起家，把 fuzzing 行业的核心 insight——<strong>把语料当数据，不要把 fuzzer 写成代码</strong>——迁移到漏洞检测领域：nuclei-templates 是同一个思路在 detection 领域的应用。</p>
+<p>公司产品矩阵：nuclei（29.1k stars，Go 引擎）+ nuclei-templates（12.5k）+ subfinder（13.8k）+ httpx（10k）+ katana/naabu/cvemap 等。<strong>nuclei-templates 是开源漏扫 SaaS 的内容护城河</strong>。</p>
+<h3>问题判断</h3>
+<p>传统漏洞扫描器（Nexpose/Nessus/OpenVAS）把 detection 写成闭源二进制插件或 NASL 脚本，bug bounty hunter 无法快速写出「今天爆出的 CVE 模板」，导致<strong>新 CVE 出现到检测能力上线</strong>的窗口期可能数天到数周。三个外部条件在 2020 年同时成熟：① YAML 在 DevOps 圈已普及（K8s/Ansible/Terraform）② bug bounty 平台（HackerOne/Bugcrowd）成熟带来大量 CVE POC ③ 远程办公爆发让 ASM 需求暴涨。</p>
+<h3>解法哲学</h3>
+<p>把 detection <strong>抽象为数据</strong>（YAML）而非<strong>代码</strong>（Python/Go 插件），让安全研究员不必是 Go 程序员也能贡献。<strong>明确选择不做的</strong>：① 任意控制流（无法像 Burp 插件做循环/重试/条件分支）② 复杂协议（仅 HTTP/TCP/DNS/FILE/SSL/CODE/JAVASCRIPT/HEADLESS/CLOUD/DAST 10 类）③ 商业闭源。</p>
+<p>这种取舍换来的是：<strong>5 分钟写一个模板 + 即刻全球共享</strong>的扩展性。<strong>detection-as-code</strong> 不是新词，但<strong>detection-as-data</strong> 是 nuclei-templates 真正的范式创新。</p>
+<h3>战略意图</h3>
+<p>README 顶部直接链 cloud.projectdiscovery.io/templates——<strong>开源模板库是流量入口，云平台是商业转化</strong>。免费版每月有扫描额度天花板，超额订阅 PDCP。这与 Elastic（ES → Elastic Cloud）、GitLab（CE → EE）的开源-商业化路径一脉相承，但<strong>商业化不污染开源体验</strong>（没有 SaaS 锁定、没有功能阉割、模板永远完整公开）。</p>
+<h2>核心价值提炼</h2>
+<h3>创新之处（按新颖度 × 实用性排序）</h3>
+<table>
+<thead><tr>
+<th>创新点</th>
+<th>新颖度</th>
+<th>实用性</th>
+<th>可迁移性</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>Git 即数据库</strong>（cves.json/TEMPLATES-STATS.md 机器 commit）</td>
+<td>4/5</td>
+<td>5/5</td>
+<td>5/5</td>
+</tr>
+<tr>
+<td><strong>三段式质量门</strong>（lint→validate→runtime）+ weak-matcher 自动拒绝</td>
+<td>5/5</td>
+<td>5/5</td>
+<td>4/5</td>
+</tr>
+<tr>
+<td><strong>Bounty-driven crowdsourced detection-as-code</strong></td>
+<td>4/5</td>
+<td>5/5</td>
+<td>4/5</td>
+</tr>
+<tr>
+<td><strong>多源威胁情报自动 sync</strong>（NVD+EPSS+CISA KEV+VulnCheck KEV）</td>
+<td>4/5</td>
+<td>5/5</td>
+<td>5/5</td>
+</tr>
+<tr>
+<td><strong>.review-bot LLM 预审</strong>（仓库内嵌 prompt）</td>
+<td>4/5</td>
+<td>4/5</td>
+<td>3/5</td>
+</tr>
+<tr>
+<td><strong>OAST 外带检测</strong>（interactsh-url + DNS 回带）</td>
+<td>5/5</td>
+<td>5/5</td>
+<td>4/5</td>
+</tr>
+<tr>
+<td><strong>Honeypot 反向校验</strong>（CI 主动跑模板打 honey.scanme.sh）</td>
+<td>5/5</td>
+<td>4/5</td>
+<td>4/5</td>
+</tr>
+</tbody>
+</table>
+<h3>可复用的模式与技巧</h3>
+<ol>
+<li><strong>「外部标识符驱动命名」</strong>：用 CVE/CWE/CPE/ATT&amp;CK/Bugzilla 这类权威 ID 当文件名/ID，让跨工具链的翻译成本降到 0。<strong>任何对接外部本体的数据集都该这么干</strong>。</li>
+<li><strong>「Git 即数据库」</strong>：用 Git + Actions 把「派生数据」（索引/统计/校验和/增量列表）作为 commit artifact 推到仓库——零基础设施 + PR 可审计 + 用户 curl raw.githubusercontent.com 即同步。<strong>任何用 SQLite/JSON 做对外数据源的小项目都可借鉴</strong>。</li>
+<li><strong>「三段式可执行规范」</strong>：把 review 标准编码成 lint→validate→runtime 三段式 CI 门，把「防误报」从口头建议变成 CI 必过门。<strong>任何需要众包生产的项目（规则集/翻译/标注）都可参考此分层</strong>。</li>
+<li><strong>「AI 写规则 + 人类 review」</strong>：MostInterestingBotInTheWorld AI 账号 + .review-bot LLM 预审 + 人类核心维护者三段式——这是<strong>LLM 时代难得的「先有规范再上 AI」路径</strong>。</li>
+<li><strong>「Bounty 加速众包」</strong>：把「写模板」明码标价作为商品，让全球社区用机会成本最低的方式填空白。<strong>关键约束</strong>：「MUST share vulnerable setup information」——把可复现性从软性建议变成支付前提。</li>
+<li><strong>「机器人账号即身份层」</strong>：四个 bot 账号（ghost/actions-user/MIBTW/PDBot）承担不同职责，让 commit history 视觉上立刻区分「机器写的」和「人写的」，<strong>透明度可审计</strong>。</li>
+<li><strong>「多语言运营走 IaC」</strong>：4 份 README 模板化（README_CN.tmpl）由 readme-update.yml 自动重写——把多语言运营也做成 CI 流水线。</li>
+</ol>
+<h3>关键设计决策（trade-off 分析）</h3>
+<h4>决策 1：YAML DSL + 四段式 schema</h4>
+<ul>
+<li><strong>问题</strong>：怎么让「写检测」和「运行检测」解耦，让非 Go 程序员也能贡献</li>
+<li><strong>方案</strong>：info 块自描述元数据（CVE/CVSS/CWE/EPSS/CPE/tags）+ requests 块描述探测行为 + matchers 块定义命中条件 + extractors 块提取结构化字段</li>
+<li><strong>Trade-off</strong>：牺牲「任意控制流」，换 PR 友好（diff 即审查）+ 引擎可预编译 + 模板签名/校验变简单</li>
+<li><strong>可迁移性</strong>：高。任何「探测型」任务（云配置扫描、合规检查、DNS 健康度）都可套用</li>
+</ul>
+<h4>决策 2：二维目录分类法（协议 × 用途）</h4>
+<ul>
+<li><strong>问题</strong>：9000+ 模板怎么组织才能让用户快速定位 + 引擎按场景批量加载</li>
+<li><strong>方案</strong>：一级按协议（http/network/dns/file/ssl/cloud/code/javascript/headless/dast），HTTP 内部再按用途分（cves/exposed-panels/technologies/vulnerabilities/...）</li>
+<li><strong>Trade-off</strong>：牺牲「跨协议检测同一漏洞」的表达力，换用户能用 glob 精细控制扫描范围（-t http/cves/）</li>
+<li><strong>可迁移性</strong>：高。是 Unix 工具链「小工具组合」思想的现代版</li>
+</ul>
+<h4>决策 3：CVE 编号即文件名</h4>
+<ul>
+<li><strong>问题</strong>：如何让 cves.json、git log、搜索引擎、外部 POC 平台都能机械同步这些模板</li>
+<li><strong>方案</strong>：用 CVE 编号作为稳定标识符，模板 ID 字段也等于文件名</li>
+<li><strong>Trade-off</strong>：牺牲「按产品名聚合浏览」的便利，换 ① 跨工具链 0 翻译成本 ② git log 可按 CVE 搜 ③ 第三方（VulnCheck/NVD）可反向索引</li>
+<li><strong>可迁移性</strong>：高</li>
+</ul>
+<h4>决策 4：Git 即数据库</h4>
+<ul>
+<li><strong>问题</strong>：13K+ 模板的全集索引、统计、增量变更怎么对外暴露</li>
+<li><strong>方案</strong>：cves.json / cves.json-checksum.txt / templates-checksum.txt / TEMPLATES-STATS.md / TEMPLATES-STATS.json / .new-additions 都是机器人自动生成并 commit</li>
+<li><strong>Trade-off</strong>：牺牲「实时查询」和「高写入吞吐」（commit 一次要等 CI），换 ① 零基础设施 ② PR 可审计 ③ 用户直接 curl raw.githubusercontent.com 就能拿</li>
+<li><strong>可迁移性</strong>：高</li>
+</ul>
+<h4>决策 5：Bounty-driven crowdsourced detection-as-code</h4>
+<ul>
+<li><strong>问题</strong>：关键 CVE（KEV 列表里的）需要 24h 内出检测，但维护者产能有限</li>
+<li><strong>方案</strong>：高价值 CVE 用 💎 Bounty 标签 + $50–$250 现金悬赏 + 强制要求 PR 附带 vulnerable docker + 由 /attempt /claim 机器人评论协议认领</li>
+<li><strong>Trade-off</strong>：牺牲「完全控制」（任何人都能提 PR，需严格 review），换 ① 产能按需扩展 ② 把「模板生产」变成全球可竞争市场</li>
+<li><strong>可迁移性</strong>：高</li>
+</ul>
+<h2>竞品格局与定位</h2>
+<h3>竞品对比矩阵</h3>
+<table>
+<thead><tr>
+<th>维度</th>
+<th>nuclei-templates</th>
+<th>Sigma rules</th>
+<th>YARA rules</th>
+<th>Nmap NSE</th>
+<th>OWASP ZAP addons</th>
+<th>Nessus plugins</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>引擎解耦</td>
+<td>完全解耦</td>
+<td>完全解耦</td>
+<td>完全解耦</td>
+<td>半耦合</td>
+<td>半耦合</td>
+<td>完全闭源</td>
+</tr>
+<tr>
+<td>规则规模</td>
+<td>13K</td>
+<td>3K+</td>
+<td>20K+</td>
+<td>600+</td>
+<td>1K+</td>
+<td>100K+</td>
+</tr>
+<tr>
+<td>社区贡献</td>
+<td>1,300+</td>
+<td>300+</td>
+<td>500+</td>
+<td>100+</td>
+<td>200+</td>
+<td>内部分析师</td>
+</tr>
+<tr>
+<td>检测时机</td>
+<td>主动</td>
+<td>被动（SIEM）</td>
+<td>被动（文件）</td>
+<td>主动</td>
+<td>主动（代理）</td>
+<td>主动</td>
+</tr>
+<tr>
+<td>主要场景</td>
+<td>Web 漏洞/暴露面</td>
+<td>日志关联</td>
+<td>恶意样本</td>
+<td>端口/服务发现</td>
+<td>拦截代理</td>
+<td>漏洞管理</td>
+</tr>
+<tr>
+<td>弱 matcher 风险</td>
+<td><strong>有</strong>（CI 自动拦）</td>
+<td>中</td>
+<td>中</td>
+<td>低</td>
+<td>低</td>
+<td>不公开</td>
+</tr>
+<tr>
+<td>学习曲线</td>
+<td>极低（YAML）</td>
+<td>低</td>
+<td>中</td>
+<td>高（Lua）</td>
+<td>高</td>
+<td>不可学</td>
+</tr>
+<tr>
+<td>商业化路径</td>
+<td>OSS → PDCP</td>
+<td>OSS（无）</td>
+<td>OSS（无）</td>
+<td>OSS（无）</td>
+<td>OSS（无）</td>
+<td>纯商业</td>
+</tr>
+<tr>
+<td>元数据自动 sync</td>
+<td><strong>NVD/EPSS/KEV 四源</strong></td>
+<td>无</td>
+<td>无</td>
+<td>无</td>
+<td>无</td>
+<td>内置</td>
+</tr>
+<tr>
+<td>Bounty 激励</td>
+<td><strong>$50–$250 + 标签</strong></td>
+<td>无</td>
+<td>无</td>
+<td>无</td>
+<td>无</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<h3>差异化护城河</h3>
+<ol>
+<li><strong>「最易贡献的格式 + 最强激励 + 最快元数据保鲜」三者叠加</strong>：</li>
+</ol>
+<ul>
+<li>YAML 4 段式让「写模板」门槛低到 5 分钟上手</li>
+<li>Bounty 悬赏让「写模板」有现金回报</li>
+<li>每日 NVD/EPSS/KEV 自动 sync 让「模板保鲜」无人化</li>
+</ul>
+<ol>
+<li><strong>Honeypot 反向校验</strong>（CI 主动跑模板打 honey.scanme.sh）——把「防误报」从口头建议变成 CI 必过门，<strong>这是其他规则库都没做的工程化实践</strong>。</li>
+<li><strong>三段式质量门 + .review-bot LLM 预审</strong>——把「review 标准」编码成可执行规则，1300 贡献者的产能才能稳定输出。</li>
+<li><strong>Git 即数据库</strong>——5 个派生数据文件（cves.json / templates-checksum.txt / .new-additions / TEMPLATES-STATS.md / TOP-10.md）全部机器生成并 commit，第三方工具 curl raw.githubusercontent.com 即可同步。</li>
+</ol>
+<h3>竞争风险</h3>
+<ul>
+<li><strong>最可能替代</strong>：</li>
+<li>商业版（Tenable Nessus）——如果企业用户更看重覆盖广度而非响应速度</li>
+<li>新一代 AI 驱动扫描器（<strong>如果</strong>它们把 detection 抽象做得更易用，可能从下层颠覆）</li>
+<li><strong>来自 Sigma/YARA 的侧翼</strong>——如果未来 detection 范式融合（一个 YAML 同时被 SIEM 关联 + 主动扫描使用），nuclei-templates 需要扩展协议维度</li>
+</ul>
+<h3>生态定位</h3>
+<p><strong>「应用层主动扫描」这一格的事实标准</strong>。在更大的 detection-as-data 生态里：</p>
+<ul>
+<li><strong>Sigma</strong> = 日志关联层（被动、事后）</li>
+<li><strong>YARA</strong> = 文件检测层（被动、静态）</li>
+<li><strong>Snort/Suricata</strong> = 网络 IDS 层（被动、流量）</li>
+<li><strong>nuclei-templates</strong> = <strong>应用层主动扫描层</strong>（主动、Web）</li>
+<li><strong>Nessus/Qualys</strong> = 商业综合扫描层</li>
+</ul>
+<p>四者<strong>正交而不竞争</strong>，共同构成 detection-as-data 范式的完整生态。nuclei-templates 在它占据的格子里<strong>没有同量级对手</strong>。</p>
+<h2>套利机会分析</h2>
+<ul>
+<li><strong>信息差</strong>：<strong>不存在信息差</strong>——12.5k stars + 3,521 forks 是大众热门级，且 bug bounty/security 是热门领域。但<strong>detection-as-data 范式可迁移到其他领域</strong>这一点，很多项目还没意识到——这是读者的认知差。</li>
+<li><strong>技术借鉴</strong>：</li>
+<li><strong>「外部标识符驱动命名」</strong> → 任何对接外部本体的数据集（CWE/CPE/ATT&amp;CK/Bugzilla）都该这么干</li>
+<li><strong>「Git 即数据库」</strong> → 任何「对外数据源」的小项目都该把派生数据 commit 到仓库</li>
+<li><strong>「三段式质量门」</strong> → 任何需要众包生产的项目（规则集/翻译/标注）都该套用</li>
+<li><strong>「Bounty 加速众包」</strong> → 任何「开放式内容生产」项目都可用 bounty 加速</li>
+<li><strong>「机器人账号即身份层」</strong> → 任何混 AI + 人类协作的项目都该做身份分层</li>
+<li><strong>生态位</strong>：填补了「<strong>应用层主动扫描</strong>」格子的开源空白，对标商业版（Nessus）的开源 + 社区 + AI 三位一体替代。</li>
+<li><strong>趋势判断</strong>：</li>
+<li><strong>增长中</strong>：2025-12 单月 3,178 commit（历史峰值），对应 AI 写规则机器人的成熟</li>
+<li><strong>符合技术趋势</strong>：AI 写代码、detection-as-data、开源商业化、bug bounty 全都在风口</li>
+<li><strong>比竞品后发优势</strong>：商业版（Nessus）已经 30+ 年，但<strong>响应新 CVE 的速度</strong>上 nuclei-templates 已经反超（KEV 列表 1496 个全部有模板）——这是<strong>「开源速度 &gt; 商业广度」</strong>的胜利</li>
+</ul>
+<h2>风险与不足</h2>
+<ol>
+<li><strong>过度依赖机器账户</strong>：4 个机器账户贡献率 36.4%，若任一账户签名/权限失效，可能引发 commit 历史混乱或元数据漂移。</li>
+<li><strong>fix 占比统计失真</strong>：commit_type_distribution 中 other 77% 反映 conventional commit 未普及，<strong>对「误报修复」类改动缺乏语义标记</strong>，不利于工程化运营。</li>
+<li><strong>CVE 单一类目集中</strong>：http/cves 占 hot_dirs 修改 88%——若攻击面从 Web 转向移动/IoT/供应链，模板库需要重新组织目录结构（issue #15275 已经在讨论把 http/vulnerabilities 转 CVE 化）。</li>
+<li><strong>.review-bot 依赖 LLM</strong>：评论质量不可严格保证——LLM 不如专家，需要 prompt 持续维护。</li>
+<li><strong>部分老模板（pre-2019）缺 EPSS/KEV/CPE 字段</strong>，与新模板观感不一致——技术债。</li>
+<li><strong>学习曲线虽低但弱 matcher 难写</strong>：新人最容易踩坑的地方，bounty 拒稿率高。</li>
+<li><strong>模板运行需要 vulnerable docker 验证</strong>，新人本地调试成本高。</li>
+</ol>
+<h2>行动建议</h2>
+<h3>如果你要用它</h3>
+<ul>
+<li><strong>Bug bounty 工作流</strong>：直接用 nuclei -l urls.txt -t http/cves/，KEV 优先</li>
+<li><strong>企业 ASM</strong>：用 -severity high,critical + -t http/exposed-panels/,http/technologies/，低噪声高价值</li>
+<li><strong>CI/CD 集成</strong>：用 nuclei -sign 验签模板（NUCLEI_USER_CERTIFICATE），防止供应链攻击</li>
+<li><strong>vs 商业版（Nessus）</strong>：选 nuclei-templates 如果你需要<strong>响应新 CVE 极快 + 开源可定制</strong>；选 Nessus 如果你需要<strong>覆盖广度 + 厂商支持 + 合规报告</strong></li>
+<li><strong>vs Sigma/YARA</strong>：三者<strong>正交不冲突</strong>——nuclei-templates 主动扫 Web、Sigma 关联日志、YARA 检样本，可同时部署</li>
+</ul>
+<h3>如果你要学它</h3>
+<p>重点关注的文件/模块：</p>
+<ul>
+<li><strong>范式层</strong>：README.md + TEMPLATE-CREATION-GUIDE.md（513 行 SOP）+ TEMPLATE-REVIEW-GUIDE.md（432 行）</li>
+<li><strong>设计层</strong>：http/cves/2021/CVE-2021-44228.yaml（Log4Shell 范本）+ http/cves/2024/CVE-2024-0012.yaml（PAN-OS auth bypass 范本）</li>
+<li><strong>质量门</strong>：tests.yml（lint→validate→weak-matcher 三段式）+ .review-bot（LLM 预审 prompt）</li>
+<li><strong>自动化</strong>：cves.json + templates-checksum.txt + .new-additions + TEMPLATES-STATS.md 4 个机器生成元数据</li>
+<li><strong>Bounty 机制</strong>：Templates-Bounty-FAQ.md + PULL_REQUEST_TEMPLATE.md</li>
+<li><strong>工程纪律</strong>：.yamllint + .pre-commit-config.yml + .github/workflows/autoassign.yml（公平派单算法）</li>
+</ul>
+<h3>如果你要 fork 它</h3>
+<p>可改进的方向：</p>
+<ol>
+<li><strong>修复弱 matcher 自动检测</strong>：当前 weak-matcher-checks.sh 是基于 honeypot 的被动校验，可以扩展为主动 fuzzing 模板输入，发现更多边界误报</li>
+<li><strong>LLM 评审 prompt 升级</strong>：当前 .review-bot 是规则化 prompt，可接入更结构化的「先 lint 输出错误、再 diff 比对 best practice、最后给评分」流水线</li>
+<li><strong>元数据多源化</strong>：当前 EPSS/KEV 都是定时 sync，可以接入实时威胁情报（vulnCheck NVD++、GreyNoise）做按需增量</li>
+<li><strong>跨范式融合</strong>：探索一个 YAML 同时被 SIEM 关联 + 主动扫描使用的可能性（与 Sigma 合作）</li>
+<li><strong>本地 RAG 知识库</strong>：把 TEMPLATES-STATS.md 灌成向量库，让企业用户能用自然语言「找所有 log4j 模板」</li>
+</ol>
+<h3>知识入口</h3>
+<table>
+<thead><tr>
+<th>资源</th>
+<th>链接</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Zread.ai</td>
+<td><a href="https://zread.ai/projectdiscovery/nuclei-templates">https://zread.ai/projectdiscovery/nuclei-templates</a></td>
+</tr>
+<tr>
+<td>关联论文</td>
+<td>无（detection-as-data 范式尚无系统学术综述）</td>
+</tr>
+<tr>
+<td>在线 Demo</td>
+<td><a href="https://cloud.projectdiscovery.io/templates（PDCP">https://cloud.projectdiscovery.io/templates（PDCP</a> 云平台）</td>
+</tr>
+<tr>
+<td>官方文档</td>
+<td><a href="https://docs.projectdiscovery.io/templates/introduction">https://docs.projectdiscovery.io/templates/introduction</a></td>
+</tr>
+<tr>
+<td>核心元数据</td>
+<td><a href="https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/cves.json">https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/cves.json</a></td>
+</tr>
+<tr>
+<td>Top 10 速查</td>
+<td><a href="https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/TOP-10.md">https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/TOP-10.md</a></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
