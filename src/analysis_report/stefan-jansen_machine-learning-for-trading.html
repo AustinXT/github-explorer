@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+/* ======微信公众号排版 CSS ====== */
+
+body {
+ max-width:680px;
+ margin:0 auto;
+ padding:20px;
+ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+ color: #3e3e3e;
+ background: #fff;
+}
+
+/* 正文段落 */
+p {
+ font-size:15px !important;
+ line-height:2 !important;
+ margin:0 !important;
+ padding-top:0.5em !important;
+ padding-bottom:0.5em !important;
+ padding-right:1.2em !important;
+ padding-left:1.2em !important;
+ text-align: justify !important;
+}
+p + p {
+ margin-top:0 !important;
+}
+
+/*标题 */
+h1 {
+ font-size:20px !important;
+ color: #e51f42 !important;
+ text-align: center !important;
+ margin:24px016px0 !important;
+ padding:0 !important;
+}
+h2 {
+ font-size:18px !important;
+ color: #e51f42 !important;
+ text-align: center !important;
+ margin:24px024px0 !important;
+ padding:0 !important;
+}
+h3 {
+ font-size:15px !important;
+ font-weight: bold !important;
+ color: #3e3e3e !important;
+ text-align: left !important;
+ margin:16px016px0 !important;
+ padding:0001.2em !important;
+}
+h4 {
+ font-size:15px !important;
+ color: rgb(0,122,170) !important;
+ margin:12px08px0 !important;
+ padding:0 !important;
+}
+
+/*列表 */
+ul,
+ol {
+ padding-left:2em !important;
+ margin:1em0 !important;
+ font-size:15px !important;
+}
+li {
+ margin:0.5em0 !important;
+ line-height:1.8em !important;
+ font-size:15px !important;
+ color: #3e3e3e !important;
+}
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+ margin:0 !important;
+ padding-left:1.2em !important;
+}
+
+/*引用 */
+blockquote {
+ border-left:4px solid #888 !important;
+ padding:8px16px !important;
+ margin:1em0 !important;
+ color: #666 !important;
+ background: #f9f9f9 !important;
+}
+blockquote > p {
+ margin:0.5em0 !important;
+ padding:0 !important;
+}
+blockquote::before,
+blockquote::after {
+ content: none !important;
+}
+
+/* 代码块 */
+pre {
+ font-size:14px !important;
+ line-height:1.4em !important;
+ color: #3e3e3e !important;
+ background: #f8f8f8 !important;
+ padding:12px16px !important;
+ border-radius:4px !important;
+ overflow: auto !important;
+ margin:1em0 !important;
+}
+
+/*脚注 */
+.footnotes {
+ font-size:11px !important;
+ color: #666 !important;
+ line-height:1.2 !important;
+ margin:8px000 !important;
+ padding:4px000 !important;
+ border-top:1px solid #eee !important;
+}
+.footnotes p {
+ font-size:11px !important;
+ line-height:1.2 !important;
+ margin:0 !important;
+ padding:0 !important;
+ color: #666 !important;
+}
+
+/* 上标 */
+sup {
+ font-size:0.75em !important;
+ vertical-align: super !important;
+ color: #e51f42 !important;
+ margin:02px !important;
+}
+</style>
+</head>
+<body>
+<blockquote><p>GitHub: <a href="https://github.com/stefan-jansen/machine-learning-for-trading">https://github.com/stefan-jansen/machine-learning-for-trading</a></p></blockquote>
+<h2>一句话总结</h2>
+<p>这是 Stefan Jansen2020 年出版《Machine Learning for Trading》第2版的配套代码库：23 章 +150+ 个 Jupyter Notebooks，把「数据 →特征 → 模型 → 回测 → 实盘」端到端流水线，用 Quantopian时代遗产的 reloaded工具链串成一本800 页带可运行代码的「ML ×量化交易」教科书。</p>
+<h2>值得关注的理由</h2>
+<ul>
+<li><strong>该垂直领域事实上的标准教学资源</strong>——ML for trading教学/参考实现这一细分里没有同体量对手，最近邻是 López de Prado 的《Advances in Financial Machine Learning》，但 AFML 无 Notebooks、不覆盖 NLP/深度学习/另类数据，定位互补而非同质。</li>
+<li><strong>「reloaded」工具链矩阵是别人很难复制的生态护城河</strong>——Quantopian2020 年关停后，作者一个人 fork并维护了 zipline-reloaded / pyfolio-reloaded / alphalens-reloaded / empyrical-reloaded四个核心库，配套 conda-forge 与文档站，让这本书的全部 notebook 在2026 年依然能跑通。</li>
+<li><strong>教科书 +配套代码 +持续更新的内容生态形成闭环</strong>——Notebook仓库主分支虽已停维（2023-03 后无新 commit），但作者把后续迭代迁到 ml4trading.io官网（6 个专用库 + Agent Lab +56 个 agent skill），并通过 Substack简报与 exchange社区保持活性；2nd edition19k stars、3rd edition 已挂封面宣传。</li>
+</ul>
+<h2>项目展示</h2>
+<h3>书籍封面 +目录（作者 S3自托管）</h3>
+<p><img src="https://ml4t.s3.amazonaws.com/assets/cover_toc_gh.png" alt="书籍封面+目录"></p>
+<p>— 类型: hero（README首图，书籍封面与目录合页，是理解项目定位的最佳起点）</p>
+<h3>3rd Edition封面</h3>
+<p><img src="https://ml4trading.io/static/img/cover-3e.3830239d9688.jpg" alt="3rd Edition封面"></p>
+<p>— 类型: hero（官网展示即将推出的第3 版封面，主题扩展到多资产、加密、RL/RAG/Agent）</p>
+<h3>ml4t.io官网 logo</h3>
+<p><img src="https://ml4trading.io/static/img/logo-full-dark.ccd510635f35.svg" alt="ml4t.io官网 logo"></p>
+<p>— 类型: logo</p>
+<blockquote><p>仓库无在线可交互 Demo；ml4trading.io 上线了 Agent Lab（AI研报环境）与 exchange.ml4trading.io讨论社区。</p></blockquote>
+<h2>项目画像</h2>
+<p>|维度 | 数据 |<br/>|------|------|<br/>| GitHub | <a href="https://github.com/stefan-jansen/machine-learning-for-trading">https://github.com/stefan-jansen/machine-learning-for-trading</a> |<br/>| Star / Fork |19,095 /5,295（Watcher449） |<br/>| 代码行数 |2,862 行 `.py` + ~200 个 `.ipynb`（tokei 不解析 notebook；真实代码量远大于此）+29,914 行注释/markdown教学文案 |<br/>| 语言分布 | Jupyter Notebook（GitHub主语言识别）、Python36.8%、YAML57.4%（环境配置）、SVG5.7%（图表） |<br/>| 项目年龄 |88.1 个月（2018-05 创建 →2019-02 首提交 →2024-08 最后推送） |<br/>|仓库体积 |683 MB（含数据 + 模型权重 + notebook 输出缓存） |<br/>| 开发阶段 |稳定维护（主分支实质停维于2023-03；3rd edition改在 ml4trading.io持续运营） |<br/>|贡献模式 | 单人主导（Stefan Jansen93.4%，14 名贡献者中其余13 人累计 <7%） |<br/>|热度定位 | 大众热门（最近194 个 star集中在7 天内，2026-06 单月即 ~194 star，日均 ~28 star） |<br/>| License | 未声明（无 LICENSE文件；trading_env.py 等多处声明 MIT） |<br/>| Release | v2.0（1 个 tag，对应2nd edition） |<br/>|质量评级 |文档 ★★★★★ ｜代码 ★★★ ｜测试 ★★ |</p>
+<h2>作者视角：为什么存在这个项目</h2>
+<h3>创始人/作者背景</h3>
+<p>Stefan Jansen，applied-ai.com（自2015 年运营的 AI咨询公司）Principal，13 年 GitHub账户，2,652粉丝。客户覆盖再保险、医疗、金融服务、资产管理四个领域。这种「咨询业 +金融」双重身份塑造了项目定位：把客户项目中反复出现的 ML4T 工程化问题沉淀为可复用的教学内容。同时，Stefan 是 Quantopian 关停后整个生态（zipline / pyfolio / alphalens / empyrical）的「reloaded」接班人——这层身份让他能把这本书的150+ notebook真正在2026 年跑通。</p>
+<h3>问题判断</h3>
+<p>作者看到了什么别人没看到或没重视的问题？</p>
+<ol>
+<li><strong>教材内容「纸面好看、代码难复现」</strong>——市面上讲 ML ×交易的教材要么给方法论不给代码（AFML），要么给代码不给系统化叙事（QuantConnect docs），要么依赖早已停维的库（多数2018-2020 年的博客教程）。</li>
+<li><strong>Quantopian2020 年关停后整个生态断流</strong>——zipline / pyfolio / alphalens / empyrical这套「教学界事实标准」瞬间失去维护，Python3.7+ 用户无路可走。</li>
+<li><strong>金融专属陷阱三件套</strong>（lookahead / 多重检验 /生存者偏差）在通用 ML教材中极少提及——任何一个 ML工程师拿 sklearn 直接套到金融数据上，几乎必然做出回测漂亮实盘亏钱的策略。</li>
+</ol>
+<h3>解法哲学</h3>
+<p>作者明确选择了什么，以及明确不做什么？</p>
+<ul>
+<li><strong>做</strong>:教材 +配套 Notebooks +自维护的 reloaded工具链 +持续更新的内容生态（Substack简报 + Agent Lab + exchange社区）形成闭环</li>
+<li><strong>不做</strong>:<br/> -不做事件驱动的实盘网关（那是 quantconnect/lean 的地盘）<br/> -不做纯回测框架（那是 backtrader 的地盘）<br/> -不追求方法论严谨度对标 AFML，用「广度 + 工程化 +维护性」换取读者的可入门性</li>
+</ul>
+<h3>战略意图</h3>
+<p>这是作者的旗舰项目（最近活跃仓库中排第10，但19k stars远超其作者其他65 个项目），处于「genuinely open +知识服务商业化」组合中：</p>
+<ul>
+<li>顶端漏斗: 开源仓库，免费、完整、有维护，吸引学生与从业者</li>
+<li>中端: ml4trading.io官网 + Substack简报，沉淀读者与品牌</li>
+<li>商业化:2nd edition出版（Amazon等渠道）+3rd edition已宣传 + AI咨询业务的可信度背书</li>
+</ul>
+<blockquote><p>官方未提供独立的架构深度博客——官网本身是产品页，技术细节 defer 到 chapter / case study / library docs / primer / skill，专门讨论架构取舍的内容托管到 Substack简报。</p></blockquote>
+<h2>核心价值提炼</h2>
+<h3>创新之处（按新颖度×实用性排序）</h3>
+<ol>
+<li><strong>ML4T Workflow 六阶段模型 + 防三件套的内建基线</strong>（新颖度3/5，实用性5/5，可迁移性4/5）<br/> -第8 章显式把「Foundation → Feature Engineering → ML Models → Strategy Implementation → Advanced AI → Production」六阶段作为全书的统一工作流，每个阶段标注对应的陷阱防御<br/> -任何要把「模型预测」真正闭环到「交易执行」的团队都应该照搬</li>
+<li><strong>Deflated Sharpe Ratio工具化封装</strong>（新颖度2/5，实用性5/5，可迁移性5/5）<br/> -`08_ml4t_workflow/01_multiple_testing/deflated_sharpe_ratio.py` 是 López de Prado2014 年原始代码的直接移植，顶部明确署名原作者<br/> -提供「蒙特卡洛 +解析」两种 expected_max_sr计算，是多策略上线前「是否真的有 alpha 还是只是过拟合」的统计校验</li>
+<li><strong>`MultipleTimeSeriesCV` 防 lookahead purge工具</strong>（新颖度2/5，实用性5/5，可迁移性5/5）<br/> -`utils.py`顶层一个60 行实现，强制假设输入 MultiIndex 含 `symbol` + `date` 两个 level，通过 `lookahead` 参数在 train/test 之间插入 purge 期<br/> -sklearn 的 `TimeSeriesSplit` 在金融场景会引发 lookahead泄漏，这个工具是横截面 +时序混合金融 ML训练的硬需求</li>
+<li><strong>Zipline custom bundle +自定义交易历（`AlgoSeekCalendar`）</strong>（新颖度3/5，实用性4/5，可迁移性3/5）<br/> -第8 章演示如何在 Zipline 注册一个「非美东9:30-16:00常规时段」的数据 bundle：自写 calendar（4AM-19:59 ET，960 分钟/天）+ ticker generator + data generator<br/> -适合任何想把分钟/自定义时段数据接入 Zipline 的项目</li>
+<li><strong>TradingEnvironment OpenAI Gym封装</strong>（新颖度2/5，实用性4/5，可迁移性4/5）<br/> -第22 章 `trading_env.py` 用 ~200 行实现「单标的、3动作（short/hold/long）、252 天一回合、含交易成本与时间成本」的 Gym环境<br/> -顶上明确标注 Tito Ingargiola2016 原版 + Stefan2019改编，继承 MIT License<br/> -教学场景下演示「为何真实交易成本会让 naive RL agent全面失效」</li>
+</ol>
+<h3>可复用的模式与技巧</h3>
+<ol>
+<li><strong>教材双载体目录模式</strong> —目录编号严格对齐书章节（`08_ml4t_workflow/04_ml4t_workflow_with_zipline/`），README 用二级标题对照书小节，编号 notebook 对应书中代码块。读者「翻书 +开 GitHub」零摩擦切换。适用:任何「书 +代码」配对出版的项目。</li>
+<li><strong>多环境文件矩阵模式</strong> —一份 `ml4t-base.yml`（无 OS特定依赖）+三份 OS特定（windows / macosx / linux）完整版，用户从「我不想装一堆用不到的包」一路升到「我要全功能」。适用:任何「依赖很多、跨平台、章节独立」的大型教学仓库。</li>
+<li><strong>数据工厂 notebook模式</strong> —单独的 `data/create_*.ipynb` 系列（create_stooq_data / create_datasets / create_yelp_review_data）把外部数据「下载 →清洗 →落 H5/CSV」的步骤显式化，不让数据准备成为黑盒。适用:任何用真实（而非 sklearn 内置 toy）数据集的教学项目。</li>
+<li><strong>继承原作 +顶部署名 +同 License模式</strong> —凡是移植/借鉴他人代码，都在文件顶部用注释块注明原作者（`trading_env.py`顶部明确 `Copyright (c)2016 Tito Ingargiola / Copyright (c)2019 Stefan Jansen` + MIT全文）。适用:教学/咨询型代码仓库。</li>
+<li><strong>Quantopian遗产的 reloaded分叉矩阵模式</strong> —一个上游 →4 个 reloaded分叉 →共享文档站（xxx.ml4trading.io）→共享 conda-forge分发。形成「个人开发者把碎片化开源遗产整合成可维护产品」的标准动作。适用:任何「依赖某个已停维的开源项目，又无力自己全部重写」的场景。</li>
+</ol>
+<h3>关键设计决策</h3>
+<ol>
+<li><strong>决策</strong>:严格按书章节分目录，notebook编号 `00-99` 与书内小节锚定<br/> -问题:教材读者需要「翻到第 X章，就能本地打开对应 notebook跟着敲」<br/> -方案:目录名带章节序数，README 用 `##` 与书小节标题完全一致<br/> -Trade-off:牺牲了「代码模块按功能聚合」的工程性，换来了零认知摩擦的「人书对照」体验<br/> -可迁移性: <strong>高</strong></li>
+<li><strong>决策</strong>: 用环境文件（conda yml +pip txt）矩阵替代单一 `requirements.txt`<br/> -问题: 数据科学 +金融 +深度学习三大类依赖叠加，跨平台（Win/Mac/Linux）+M1/WSL差异巨大<br/> -方案:三个 OS各自的 `installation/{windows,macosx,linux}/ml4t.{yml,txt}`加上 OS-agnostic 的 `ml4t-base.{yml,txt}`<br/> -Trade-off:维护6份配置文件，但每份只 ~100 行；换来「不装一堆用不到的包，大幅降低冲突概率」<br/> -可迁移性: <strong>高</strong></li>
+<li><strong>决策</strong>:主动维护并贡献 Zipline/Pyfolio/Alphalens/Empyrical 的 reloaded分支<br/> -问题:2020 年 Quantopian关停后这些库失去维护，互相之间版本锁死<br/> -方案: 不是「fork 了事」，而是分别建立独立 GitHub仓库、上 conda-forge、写专门文档站，把 Quantopian时代的遗产现代化<br/> -Trade-off: 作者本人承担长期维护负担（主作者93.4%占比的部分原因）；换来了「唯一能跑通2nd edition全部 notebook 的依赖链」<br/> -可迁移性: <strong>中</strong>（需要作者具备「Python C扩展编译、conda-forge打包、文档站运维」等综合能力）</li>
+<li><strong>决策</strong>: 把回测环境（`backtest` env）与 ML训练环境（`ml4t` env）拆开，不强行合在一个 env<br/> -问题: Zipline1.4.1当时（2021）只支持 Python3.6，主流 ML框架（TF2 /PyTorch）早已要求3.8+<br/> -方案:维护两套 conda env，通过 `nb_conda_kernels` 在 Jupyter运行时切换<br/> -Trade-off: 多装一套 env，多一份维护；换来 Zipline用户不被迫放弃，ML用户不被旧 Python拖累<br/> -可迁移性: <strong>中</strong></li>
+<li><strong>决策</strong>: 大数据集不放进 Git（Alpaca data zip、earnings_calls zip 等少数小数据集除外），提供 algoseek外部下载 +数据准备 notebook<br/> -方案:仓库683 MB，但 .git实际很轻；配 `data/README.md` 与专门的 `create_stooq_data.ipynb` / `create_yelp_review_data.ipynb` 等「数据工厂」notebook<br/> -Trade-off: 用户首次 clone 后还要走一段「下载 +准备」流程<br/> -可迁移性: <strong>高</strong></li>
+</ol>
+<h2>竞品格局与定位</h2>
+<h3>竞品对比矩阵</h3>
+<p>|维度 | stefan-jansen/ml4t | quantconnect/lean | mementum/backtrader | AI4Finance/FinGPT | AFML（López de Prado教材）|<br/>|------|----|----|----|----|----|<br/>| Stars |19k | ~11k+ |18.4k | ~16k+ | 无对应 repo |<br/>|定位 | ML×交易教学/参考实现 |商业级事件驱动算法交易引擎 |纯 Python回测/实盘框架 |金融 LLM微调与下游任务 |量化金融 ML方法论教材 |<br/>| 实盘支持 | ❌（需用户自己接 broker） | ✅（多券商、多资产、多时间框架） | ✅（IB/Visual Chart/Oanda） | ❌ | ❌ |<br/>| ML范式覆盖 |监督/无监督/时序/贝叶斯/深度/RL全栈 | 部分（更偏策略执行） | 无（纯回测） | LLM微调单一 |统计/ML方法论 |<br/>| Notebooks |150+完整可运行 |弱（更偏平台 docs） | 无 | 部分 | 无（书 +论文） |<br/>|另类数据 | SEC filings/卫星图像/期权/加密 |替代数据需订阅 | 无 |研报/情感/新闻 | 无 |<br/>|金融陷阱防御 | 内建（lookahead/purge/多重检验） | 有 |弱 |弱 | <strong>严谨</strong>（purge/embargo/CPCV） |<br/>| 上手成本 | 高（需读800 页 +装6 个 env） | 中（注册云服务） | 低（pip install） | 中 | 高（数学 +Python） |<br/>|维护者 |1 人（兼咨询业 Principal） | 公司 |1 人 |学术社区 |1 人（已出版为书） |</p>
+<h3>差异化护城河</h3>
+<ul>
+<li><strong>信任护城河</strong>: 作者独立维护4 个 reloaded库 +整套配套生态，用户信任「有问题能找到人」——这是 lean/backtrader 等单工具项目很难复制的</li>
+<li><strong>生态护城河</strong>: Quantopian遗产链（zipline / pyfolio / alphalens / empyrical →reloaded →共享文档站 →共享 conda-forge）是别人很难复制的整合</li>
+<li><strong>内容护城河</strong>:2nd edition800 页 +Substack简报 +exchange社区 +56 个 agent skill，内容护城河在 AGI/LLM时代反而有了新机会</li>
+</ul>
+<h3>竞争风险</h3>
+<p>最可能被「专门做某一块的现代工具」分散用户：</p>
+<ul>
+<li><strong>FinGPT抢 LLM/情感部分</strong>——本 repo 的 LLM部分更偏传统 NLP pipeline，FinGPT紧跟 Llama/Qwen/DeepSeek</li>
+<li><strong>backtrader抢回测部分</strong>——18.4k stars +零依赖 +broker集成广</li>
+<li><strong>quantconnect抢实盘部分</strong>——出厂即可接 IB/Coinbase/Tradier</li>
+</ul>
+<p>本 repo 的「一站式教学」价值在2026 年越来越难维持，但「内容漏斗顶端」的入口地位依然稳固。</p>
+<h3>生态定位</h3>
+<p>在整个技术生态中扮演「ML交易领域的 O'Reilly教科书」角色——不是工具，是「带示例代码的体系化课程」。在 AGI/LLM时代反而有了新机会：Agent Lab +Skills 是顺势延伸，让这本书从「静态教材」变成「动态学习社区」。</p>
+<h2>套利机会分析</h2>
+<ul>
+<li><strong>信息差</strong>: 此项目不是「低关注高价值」的发现型机会——它已经是该垂直领域事实教材；新读者因第3 版预告 /第2 版迁移 /AI ×quant主题升温而持续涌入（最近7 天194 个 star，日均28）。<strong>不要按「被低估」思路评估</strong>，应按「已被验证的高质量基础设施」思路使用。</li>
+<li><strong>技术借鉴</strong>:教材双载体目录模式 /多环境文件矩阵 /数据工厂 notebook /继承原作顶部署名 /reloaded分叉矩阵五个模式可迁移到任何「书 +代码」或「碎片化开源遗产整合」项目。</li>
+<li><strong>生态位</strong>:填补了「ML ×交易」领域系统化教学 +可运行代码 +持续生态的三合一空白；Quantopian关停后这个生态位几乎只此一家。</li>
+<li><strong>趋势判断</strong>:稳定增长（最近7 天194 star +3rd edition宣传）；符合技术趋势（AI ×quant主题升温）；比 AFML等纯方法论教材有后发优势（带代码 +维护）。</li>
+</ul>
+<h2>风险与不足</h2>
+<ul>
+<li><strong>作者单点风险</strong>: 主作者占93.4%，reloaded工具链矩阵也由他一人维护——若作者长期投入转移，整个生态瞬间回到「2020 年 Quantopian关停」那种断流状态。</li>
+<li><strong>主分支停维</strong>: Notebook仓库主分支2023-03 后无新 commit，2024-08-18 最后推送是文档类更新；后续内容迁到 ml4trading.io官网 +Agent Lab，但「GitHub 是入口」这个惯例可能被打破。</li>
+<li><strong>回测严谨度不及 AFML</strong>: Amazon/Goodreads读者共识——「应用广、覆盖全，但回测严谨度不及 López de Prado」。需要严谨回测方法论的团队应同时读 AFML。</li>
+<li><strong>代码质量工业级不足</strong>: 无 tests目录、无 CI/CD、无 linter配置、错误处理靠 `assert` + `warnings.filterwarnings('ignore')`；适合教学，不适合直接做生产。</li>
+<li><strong>License 不明确</strong>:仓库顶层无 LICENSE文件，trading_env.py 等多处声明 MIT——用户商用前需自行核实。</li>
+<li><strong>依赖版本分裂</strong>:维护两套 conda env（`backtest` +`ml4t`）反映 Zipline旧 Python兼容问题，新用户首次配置耗时显著。</li>
+</ul>
+<h2>行动建议</h2>
+<ul>
+<li><strong>如果你要用它</strong>:<br/> -想系统学 ML ×量化交易 →<strong>首选</strong>，特别是有 Python基础但缺金融陷阱防御意识的 ML工程师<br/> -想做严谨回测方法论 →改读 López de Prado 的 AFML，本书作辅<br/> -想接实盘 →不要指望本 repo给你 broker对接代码，请同时评估 quantconnect/lean 或 backtrader<br/> -想用最新 LLM做金融任务 →改走 FinGPT路线</li>
+<li><strong>如果你要学它</strong>:<br/> -重点读 `08_ml4t_workflow/`（全书的精华，6阶段工作流 +Zipline集成 +MultipleTimeSeriesCV）<br/> -`utils.py`顶层那个 `MultipleTimeSeriesCV` 是金融 ML必带的60 行工具<br/> -`02_market_and_fundamental_data/01_NASDAQ_TotalView-ITCH_Order_Book/`演示了 NASDAQ二进制行情解析，是数据层最复杂的部分<br/> -`14_topic_modeling/`（财报电话会议 LDA/主题建模）是 NLP部分的代表作</li>
+<li><strong>如果你要 fork 它</strong>:<br/> -用3rd edition的「6 个专用库 +Agent Lab +Skills」路线做扩展，比在原 repo 上叠 PR 更可持续<br/> -想做「非 Quantopian系」——例如 RL交易环境 /多智能体 /跨交易所套利——可从 `trading_env.py`入手改造<br/> -想要 LICENSE明确化、CI/CD自动化、test覆盖——这是低风险高价值的 PR方向</li>
+</ul>
+<h3>知识入口</h3>
+<p>|资源 |链接 |<br/>|------|------|<br/>| DeepWiki | <a href="https://deepwiki.com/stefan-jansen/machine-learning-for-trading">https://deepwiki.com/stefan-jansen/machine-learning-for-trading</a>（已收录，2025-04-18索引） |<br/>| Zread.ai | 未收录 |<br/>|配套教材 | Stefan Jansen《Machine Learning for Trading》2nd Edition, Packt2020；3rd Edition宣传中 |<br/>|官方门户 | <a href="https://ml4trading.io">https://ml4trading.io</a>（含6 个专用库 +Agent Lab +56 agent skill +Substack简报） |<br/>|社区 | <a href="https://exchange.ml4trading.io">https://exchange.ml4trading.io</a> |<br/>|关联论文 |仓库内复用了多篇顶刊论文的代码路径：Sezer & Ozbahoglu2018 CNN for financial time series；Gu, Kelly & Xiu2019 autoencoder asset pricing；Yoon et al.2019 Time-series GAN；López de Prado2014 Deflated Sharpe Ratio |<br/>| 在线 Demo | 无在线可交互 Demo（Agent Lab 是3rd edition营销点，待上线） |</p>
+</body>
+</html>
