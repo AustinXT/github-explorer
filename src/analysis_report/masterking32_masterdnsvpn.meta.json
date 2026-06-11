@@ -1,0 +1,6 @@
+{
+  "title": "4 个月 5.6K stars：Go 单兵写爆的 DNS 隧道 VPN 怎么把 DNSTT 摁在地上",
+  "digest": "4.7 个月 5,657 stars 的 Go DNS 隧道 VPN，靠 2,867 行自研 ARQ 把协议头压到 5-9B（DNSTT 的 1/5），8 种 resolver 负载均衡扛过伊朗 88 天断网",
+  "author": "NVoyager",
+  "theme": "stars,universe,dark"
+}

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+/* ====== 微信公众号排版 CSS ====== */
+body {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #3e3e3e;
+    background: #fff;
+}
+p {
+    font-size: 15px !important;
+    line-height: 2 !important;
+    margin: 0 !important;
+    padding-top: 0.5em !important;
+    padding-bottom: 0.5em !important;
+    padding-right: 1.2em !important;
+    padding-left: 1.2em !important;
+    text-align: justify !important;
+}
+p + p {
+    margin-top: 0 !important;
+}
+h1 {
+    font-size: 20px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 16px 0 !important;
+    padding: 0 !important;
+}
+h2 {
+    font-size: 18px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 24px 0 !important;
+    padding: 0 !important;
+}
+h3 {
+    font-size: 15px !important;
+    font-weight: bold !important;
+    color: #3e3e3e !important;
+    text-align: left !important;
+    margin: 16px 0 16px 0 !important;
+    padding: 0 0 0 1.2em !important;
+}
+h4 {
+    font-size: 15px !important;
+    color: rgb(0, 122, 170) !important;
+    margin: 12px 0 8px 0 !important;
+    padding: 0 !important;
+}
+ul,
+ol {
+    padding-left: 2em !important;
+    margin: 1em 0 !important;
+    font-size: 15px !important;
+}
+li {
+    margin: 0.5em 0 !important;
+    line-height: 1.8em !important;
+    font-size: 15px !important;
+    color: #3e3e3e !important;
+}
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+    margin: 0 !important;
+    padding-left: 1.2em !important;
+}
+blockquote {
+    border-left: 4px solid #888 !important;
+    padding: 8px 16px !important;
+    margin: 1em 0 !important;
+    color: #666 !important;
+    background: #f9f9f9 !important;
+}
+blockquote > p {
+    margin: 0.5em 0 !important;
+    padding: 0 !important;
+}
+blockquote::before,
+blockquote::after {
+    content: none !important;
+}
+pre {
+    font-size: 14px !important;
+    line-height: 1.4em !important;
+    color: #3e3e3e !important;
+    background: #f8f8f8 !important;
+    padding: 12px 16px !important;
+    border-radius: 4px !important;
+    overflow: auto !important;
+    margin: 1em 0 !important;
+}
+.footnotes {
+    font-size: 11px !important;
+    color: #666 !important;
+    line-height: 1.2 !important;
+    margin: 8px 0 0 0 !important;
+    padding: 4px 0 0 0 !important;
+    border-top: 1px solid #eee !important;
+}
+.footnotes p {
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #666 !important;
+}
+sup {
+    font-size: 0.75em !important;
+    vertical-align: super !important;
+    color: #e51f42 !important;
+    margin: 0 2px !important;
+}
+</style>
+</head>
+<body>
+<blockquote>
+<p>GitHub: <a href="https://github.com/masterking32/masterdnsvpn">https://github.com/masterking32/masterdnsvpn</a></p>
+</blockquote>
+<h2>一句话总结</h2>
+<p>一个荷兰独立开发者用 Go 写就的 DNS 隧道 VPN 工具，靠自研 ARQ 协议把单包头压到 5-9 字节（DNSTT 的 1/5、SlipStream 的 1/3），配合 8 种 DNS resolver 负载均衡策略，4.7 个月冲上 5,657 stars 并在伊朗 88 天断网期间保持可用，是 2026 年 GitHub 上 DNS 反审查领域最显眼的项目。</p>
+<h2>值得关注的理由</h2>
+<ol>
+<li><strong>技术深度的确高</strong>：2,867 行自研 ARQ 协议 + 自研 base36 编码 + 零 DNS 库依赖（go.mod 仅 5 个三方包），工程成熟度不输 DNSTT、SlipStream 这些成名更早的项目。</li>
+<li><strong>极简协议头带来实打实收益</strong>：本地 10MB 文件下载 0.27s（DNSTT 2.49s / SlipStream 0.98s），单包头 5-9B 在 DNS label ≤63 字符的硬约束下把「能塞多少有效负载」做到了接近极限。</li>
+<li><strong>真实的反审查战例</strong>：README 显式提到「在伊朗 88 天断网期间，MasterDnsVPN 是少数仍能用的翻墙工具」——这是同期 DNSTT/SlipStream 都没能公开验证的能力，背靠 5,657 stars 的真实用户基础。</li>
+</ol>
+<h2>项目展示</h2>
+<p><img src="https://raw.githubusercontent.com/masterking32/MasterDnsVPN/main/assets/masterdnsvpn.png" alt="MasterDnsVPN Logo"></p>
+<blockquote>
+<p>仓库内仅 Logo（163 KB PNG）和 Windows 图标（136 KB ICO），README 没有架构图、抓包图或协议栈示意图——展示素材偏少。下方对照表格全部来自 README 自述，作者未公开第三方独立 benchmark。</p>
+</blockquote>
+<h2>项目画像</h2>
+<table>
+<thead>
+<tr><th>维度</th><th>数据</th></tr>
+</thead>
+<tbody>
+<tr><td>GitHub</td><td><a href="https://github.com/masterking32/masterdnsvpn">https://github.com/masterking32/masterdnsvpn</a></td></tr>
+<tr><td>Star / Fork</td><td>5,657 / 518</td></tr>
+<tr><td>Watchers / Open Issues / Open PRs</td><td>39 / 12 / 6</td></tr>
+<tr><td>代码行数</td><td>35,505 行（Go 34,475 / Shell 876 / Dockerfile 63）</td></tr>
+<tr><td>运行时依赖</td><td>5 个（klauspost/compress + pierrec/lz4/v4 + golang.org/x/crypto + golang.org/x/sys + BurntSushi/toml）</td></tr>
+<tr><td>项目年龄</td><td>4.7 个月（2026-01-18 ~ 2026-06-09）</td></tr>
+<tr><td>开发阶段</td><td>收敛期（5-6 月仅 5 commits，功能集基本稳定）</td></tr>
+<tr><td>贡献模式</td><td>单人主导（top1 Amin.MasterkinG 占 95% 提交，bus factor 1.0）</td></tr>
+<tr><td>热度定位</td><td>大众热门（GitHub 自动判定）</td></tr>
+<tr><td>Release 节奏</td><td>46 个 tag / 37 个 release，约每 2 天一版（3-5 月密集期）</td></tr>
+<tr><td>质量评级</td><td>代码 A（厚 internal + 完整 _test.go + 631 行 bench） / 文档 B（三语 README + DeepWiki 自动文档，但无架构图） / 测试 A（arq/client/dnsparser/vpnproto 均有完整测试）</td></tr>
+</tbody>
+</table>
+<h2>作者视角：为什么存在这个项目</h2>
+<h3>创始人/作者背景</h3>
+<p>Amin Mahmoudi（GitHub: <code>masterking32</code>），坐标阿姆斯特丹，Self-Employment，2011 年注册的老兵账号（14.7 年），1,741 followers 仅关注 6 人，是典型的「作品说话型」独立开发者。Bio 只写 "Full-Stack developer"，但作品矩阵暴露了真实主业：</p>
+<ul>
+<li><strong>MasterDnsVPN</strong>（Go, 5.6K ⭐, 本仓）— DNS 隧道 VPN</li>
+<li><strong>MasterHttpRelayVPN</strong>（Python, 3.8K ⭐）— HTTP 中继 VPN，姊妹项目</li>
+<li><strong>WoW 私服生态</strong>：TrinityCore 魔改（C++）、WoWSimpleRegistration（PHP）、WoW-Server-Relay（JS）</li>
+<li><strong>DNS 工具</strong>：dns_finder（Python）、masterstream_uptime（监控）</li>
+<li><strong>杂项</strong>：BMI 银行流水查看器（JS）、PHP DBC 编辑器等</li>
+</ul>
+<p>近 1-2 年明显从「WoW 私服生态」转向「反审查通信基础设施」（HttpRelayVPN → DnsVPN → uptime 监控），转型方向明确。</p>
+<h3>问题判断</h3>
+<p>作者在 README 直白点明：DNSTT 和 SlipStream 这类「前辈」在严苛网络条件（高丢包、过滤 DNS、跨 ISP）下稳定性不足——伊朗 88 天断网期间它们陆续失效，<strong>作者认为问题是「协议头太大」+「resolver 模式太单一」</strong>，所以从头重写了一个「在所有能想到的最差情况下仍能交付数据」的版本。这不是营销话术——2,867 行自研 ARQ 和 2,158 行 8 模式负载均衡是实打实的工程回应。</p>
+<h3>解法哲学</h3>
+<ul>
+<li><strong>零 DNS 库依赖</strong>：连 DNS 报文解析都手写，理由是「敏感网络工具应最小化供应链攻击面」——这是个明确的安全哲学选择，不是工程偷懒。</li>
+<li><strong>极简协议头</strong>：把 5 个 flag 位压缩到 1B（<code>vpnproto/parser.go:25-34</code>），头校验用 1 字节非密码学异或和（parser.go:185-192），任何字节都是为传输效率服务的。</li>
+<li><strong>不做什么</strong>：没有 domain fronting、没有 obfs4 流量混淆、没有 forward secrecy 握手、没有 0-RTT。<strong>复杂度被严格限制在「协议头 + ARQ + 负载均衡」三条主轴</strong>，其他维度一概不堆。</li>
+</ul>
+<h3>战略意图</h3>
+<p>FUNDING.yml 只挂了 GitHub Sponsors + 三链加密货币收款（TON/EVM/TRC20），README 顶部波斯语版本自称「商业项目可联系」——但<strong>无价格、无套餐、无 SaaS</strong>。Telegram 频道 <code>t.me/masterdnsvpn</code> 是分发主阵地。结合 1,741 followers / 关注 6 人 / 95% 单人提交的画像，作者战略就是：<strong>做能跑、能扩散、能打赏的「作品」型反审查工具</strong>——不靠订阅、不靠企业客户，靠技术影响力和社区反哺。</p>
+<h2>核心价值提炼</h2>
+<h3>创新之处</h3>
+<p>按新颖度 × 实用性排序：</p>
+<ol>
+<li><strong>协议头 5-9B 的极致压缩</strong>（<code>vpnproto/parser.go:25-34</code>）：5 个 flag 位用 bitmask 表达、最小头 4B（控制包）/ 9B（数据流包），比 DNSTT 的 ~40B（KCP 24B + Noise 16B）低 78-88%，比 SlipStream 的 ~20B 低 55-71%。这是 DNS label ≤63 字符硬约束下的硬实力。</li>
+<li><strong>2,867 行自研 ARQ + NACK + 自适应 RTO</strong>（<code>internal/arq/arq.go</code>）：Jacobson/Karels 7/8+3/4 加权（arq.go:533-548）、数据重传退避 1.35x（控制包 1.25x、握手包 1.15x）、NACK gap recovery（arq.go:1919-2109）——这是 KCP 都缺的能力。</li>
+<li><strong>8 种 DNS resolver 负载均衡 + 多路径复制</strong>（<code>internal/client/balancer.go:23-33</code>）：从纯轮询到丢包+延迟混合评分，从单路径到 <code>requiredCount &gt; 1</code> 时同包复制到 N 个 resolver——伊朗断网 88 天还能用的核心机制。</li>
+<li><strong>13 种 DNS RR 类型做隧道载体</strong>（<code>dnsparser/policy.go:12-36</code>）：A/AAAA/CNAME/MX/NS/PTR/SRV/<strong>SVCB</strong>/CAA/NAPTR/SOA/<strong>HTTPS</strong>/TLSA——支持 SVCB/HTTPS RR type 是高阶拟态（Mix of Imitation），让流量混入 EDNS 增强查询。</li>
+<li><strong>客户端 DNS 缓存 + FNV 32-shard</strong>（<code>internal/dnscache/store.go:32-33</code>）：服务端缓存 + 客户端缓存双层防护，patchResponseForQuery 在复用时替换 query ID 但保留 TTL。</li>
+</ol>
+<h3>可复用的模式与技巧</h3>
+<p>可直接迁移到其他项目的设计/代码：</p>
+<ol>
+<li><strong>Adaptive RTO 算法</strong>（arq.go:533-548）— 任何需要 RTT 估计的可靠协议（IoT CoAP、自研 MQTT）都可直接套用。</li>
+<li><strong>TCP-like FIN/RST 三段握手</strong>（arq.go:1357-1400, 2576）— 9 个 StreamState 完整映射 TCP 半关闭语义，比 QUIC 的 connection ID 简单 100 倍但足够用。</li>
+<li><strong>多 shard map + FNV hash 跟踪 in-flight 请求</strong>（balancer.go:99 的 16-shard + dnscache/store.go:32 的 32-shard）— 高频读写表的标配。</li>
+<li><strong>自研 base36 编码</strong>（<code>lowerbase36.go</code>）— 7-byte block → 11-char base36，零外部依赖 + 自定义大小写解码映射，<strong>DNS/URL 短链/二维码/邮件附件名</strong>通用。</li>
+<li><strong>DNS label 长度二分搜索</strong>（<code>transport.go:422-441</code> <code>CalculateMaxEncodedQNameChars</code>）— 把 domain 长度 + label 切片关系变成可查表常数。</li>
+<li><strong>AES-GCM + sync.Pool cipher 复用</strong>（<code>security/codec.go:37-57</code>）— Go 加解密性能优化标准模式，作者用 buffer pool 减少 50%+ GC 压力。</li>
+<li><strong>packet flag bitmask + 256-lookup table</strong>（<code>vpnproto/parser.go:256</code> <code>buildPacketFlags()</code>）— O(1) 类型查询，新增 packet type 只需改一处表。</li>
+<li><strong>薄入口 + 厚 internal</strong> — cmd/{server,client}/main.go 仅 200-264 行，纯 flag 解析 + config 加载。所有业务逻辑在 internal/，连 <code>init()</code> 函数都没有。</li>
+</ol>
+<h3>关键设计决策</h3>
+<table>
+<thead>
+<tr><th>决策</th><th>选择</th><th>不选</th><th>为什么</th></tr>
+</thead>
+<tbody>
+<tr><td>可靠传输层</td><td>自研 ARQ（2,867 行）</td><td>KCP</td><td>KCP 的 frg 字段与包体绑定不适合外层 fragment；缺 NACK gap recovery；缺 stream-level multiplexing</td></tr>
+<tr><td>拥塞控制层</td><td>ARQ 自带 backpressure + 软上限 0.8*windowSize</td><td>QUIC Cubic/BBR</td><td>QUIC 头 ~20B 是本项目的 3 倍；QUIC 的多路复用是单 connection 上多 stream，本项目是单 DNS UDP 上多 ARQ stream 更轻</td></tr>
+<tr><td>DNS 报文</td><td>手写解析</td><td><code>github.com/miekg/dns</code></td><td>零依赖原则——敏感网络工具应最小化供应链攻击面</td></tr>
+<tr><td>加密档位</td><td>NONE/XOR/ChaCha20/AES-GCM</td><td>Noise IK</td><td>复杂度低 + 头开销小；代价是无 forward secrecy（issue #166 iOS 缺位的痛点之下，安全性也存疑）</td></tr>
+<tr><td>Resolver 模式</td><td>8 种 + 多路径复制</td><td>单 resolver 静态</td><td>伊朗 ISP DNS 间歇性瘫痪是刚需，单路径必然挂</td></tr>
+<tr><td>DNS 缓存位置</td><td>服务端 + 客户端双层</td><td>仅服务端</td><td>高频 tunnel query 域名复用，避免重复穿越</td></tr>
+<tr><td>抗 DPI</td><td>多 RR 类型 + 加密</td><td>obfs4 / domain fronting</td><td>复杂度边界控制，不堆无收益特性</td></tr>
+</tbody>
+</table>
+<h2>竞品格局与定位</h2>
+<h3>竞品对比矩阵</h3>
+<table>
+<thead>
+<tr><th>维度</th><th><strong>MasterDnsVPN</strong></th><th>DNSTT</th><th>SlipStream</th><th>iodine</th></tr>
+</thead>
+<tbody>
+<tr><td>语言</td><td>Go</td><td>Go</td><td>Rust</td><td>C</td></tr>
+<tr><td>协议</td><td>自研 ARQ</td><td>KCP+Noise IK</td><td>QUIC</td><td>自研 IP-over-DNS</td></tr>
+<tr><td>头开销（典型包）</td><td><strong>5-9B</strong></td><td>~40B (KCP 24B + Noise 16B)</td><td>~20B (QUIC 短包头 13B + frame 5B)</td><td>~28B</td></tr>
+<tr><td>加密档位</td><td>3 档 + NONE</td><td>Noise IK（<strong>PFS 完备</strong>）</td><td>QUIC 默认 TLS 1.3（<strong>PFS 完备</strong>）</td><td>可选 aes-cbc</td></tr>
+<tr><td>Forward Secrecy</td><td><strong>无</strong></td><td>有</td><td>有</td><td>无</td></tr>
+<tr><td>Resolver 模式</td><td><strong>8 种 + 多路径复制</strong></td><td>单</td><td>单</td><td>单</td></tr>
+<tr><td>MTU 发现</td><td><strong>自动双向探测</strong></td><td>手动</td><td>手动</td><td>固定 1KB</td></tr>
+<tr><td>DNS RR 类型</td><td><strong>13 种</strong>（含 SVCB/HTTPS）</td><td>TXT 为主</td><td>TXT/A</td><td>NULL/TXT/CNAME</td></tr>
+<tr><td>客户端平台</td><td>Win/Mac/Linux/Android（<strong>iOS 缺</strong>）</td><td>5+</td><td>5+</td><td>5+</td></tr>
+<tr><td>抗 DPI 强度</td><td>中（多 RR + 加密，<strong>无 obfs</strong>）</td><td>中</td><td>弱（QUIC 指纹明显）</td><td>弱</td></tr>
+<tr><td>多路复用</td><td>单 DNS 内多 ARQ stream</td><td>单 tunnel 单流</td><td>QUIC 多 stream</td><td>单 tunnel 单流</td></tr>
+<tr><td>压缩</td><td>ZSTD/LZ4/ZLIB 可选</td><td>无</td><td>无</td><td>无</td></tr>
+<tr><td>项目年龄</td><td><strong>4.7 个月</strong></td><td>4+ 年</td><td>2 年</td><td>10+ 年（2010 立项）</td></tr>
+<tr><td>Stars</td><td>5,657</td><td>~2.1K</td><td>~3.1K</td><td>~6.5K</td></tr>
+<tr><td>抗审查战例</td><td><strong>伊朗 88 天断网</strong>（README 自述）</td><td>无公开战例</td><td>无公开战例</td><td>无公开战例</td></tr>
+</tbody>
+</table>
+<h3>差异化护城河</h3>
+<ul>
+<li><strong>协议头 + Resolver 模式的双重优势</strong>——DNSTT 想抄协议头就得重写 ARQ（推翻 KCP 选择），SlipStream 想抄 resolver 多模式就得放弃 QUIC（推翻拥塞控制假设）。两个护城河互相加强。</li>
+<li><strong>实战打磨的反向验证</strong>——同期项目里只有 MasterDnsVPN 有「伊朗 88 天断网仍可用」的自述战例，5,657 stars 的真实用户分布本身就是质量背书。</li>
+<li><strong>工程化成熟度</strong>——CI 矩阵 20+ 平台、二进制 + Docker + 一键脚本三种分发、厚测试 + 631 行 bench、46 tag/37 release，单兵能做出这种工程度本身就是壁垒。</li>
+</ul>
+<h3>竞争风险</h3>
+<ul>
+<li><strong>DNSTT 加 NACK + 多 resolver</strong> 是最大潜在威胁——如果作者 SagerNet 在 KCP 之上补这两个能力，MasterDnsVPN 的差异化优势会大幅缩水。</li>
+<li><strong>SlipStream 走 QUIC 路线</strong> 在「GFW 升级到能稳定识别 QUIC 指纹」之前都不是问题，但一旦发生 QUIC 集体失灵，MasterDnsVPN 未必能全身而退。</li>
+<li><strong>iOS 客户端缺失（issue #166）</strong> 是产品端最大风险——竞争对手都是 5+ 平台覆盖，单点缺位会被用户用脚投票。</li>
+</ul>
+<h3>生态定位</h3>
+<p>在整个 DNS 反审查工具生态中，MasterDnsVPN 填补的是 <strong>「工程化极简 + 多路径自适应 + 真实战例验证」</strong> 的空白——DNSTT 偏「极客工具」、SlipStream 偏「QUIC 实验场」、iodine 偏「经典教学」，MasterDnsVPN 是第一个把自己定位为「伊朗/俄罗斯用户能直接装的反审查 VPN」的工具。</p>
+<h2>套利机会分析</h2>
+<ul>
+<li><strong>信息差</strong>：5,657 stars 但 4.7 个月龄，在中文技术社区几乎无人讨论——公众号读者大概率是第一次见到这个项目。<strong>信息差套利窗口</strong>很大。</li>
+<li><strong>技术借鉴</strong>：自研 ARQ + NACK + adaptive RTO 是国内 IoT / 弱网通信项目直接能复用的工程模板。Go 项目「薄入口+厚 internal + 零依赖」的组织方式也值得借鉴。</li>
+<li><strong>生态位</strong>：填补了「DNSTT 太老、SlipStream 太 QUIC、iodine 不会有人用」中间地带的中端反审查工具空白。同作者 MasterHttpRelayVPN (3.8K⭐) 形成「HTTP 隧道 + DNS 隧道」姊妹组合。</li>
+<li><strong>趋势判断</strong>：star 增长曲线是 4.7 月内「近 100 星集中一周内」的爆发型——热度仍在上升期，符合「近期爆款」标签。<strong>比 DNSTT 后发 4 年但已 star 反超，比 SlipStream 同期多 80%</strong>。</li>
+</ul>
+<h2>风险与不足</h2>
+<ol>
+<li><strong>bus factor 1.0</strong> — 95% 提交来自 Amin.MasterkinG 一人，作者若停更（已观察到 5-6 月仅 5 commits），项目立刻进入「只修不增」模式。</li>
+<li><strong>抗审查宣传略大于实测</strong> — README 称「Resilience: Very strong」（核心目标），但实际<strong>无 obfs 混淆层、无 forward secrecy、无 domain fronting</strong>。加密档 0/1 (NONE/XOR) 实质是明文/混淆；ChaCha20 无 MAC 可被比特翻转攻击；AES-GCM 共享 key 无 PFS——<strong>安全等级明显低于 DNSTT 的 Noise IK</strong>。UDP/53 端口发往自有域名的 DNS query 仍是已知指纹特征，GFW 升级到能统计识别加密熵高的 label 长度后可能失灵。</li>
+<li><strong>9x 性能数据可信度存疑</strong> — 本地 10MB benchmark 是单方面数据，作者控制竞品版本/参数；<strong>没给高丢包（30%+）+ 高 RTT（200ms+）场景数据</strong>。SlipStream 上传比例（3.25/0.98=3.3x）反比 MasterDnsVPN（1.7/0.27=6.5x）更优，说明 SlipStream 在上传并发优化上可能更激进——「9x 快」不是均匀优势。</li>
+<li><strong>iOS 客户端缺失</strong> — issue #166 是头号用户痛点，5+ 平台里只缺 iOS 这块移动端核心，<strong>商业化路径走不通</strong>。</li>
+<li><strong>协议头 5-9B 优势在高丢包下会缩水</strong> — 自研 ARQ 在 50%+ 丢包下需要 NACK 多轮往返；伊朗 8 个 resolver 在极端环境下能用的可能仅 1-2 个，多路径复制会放大单包延迟。<strong>88 天战例的鲁棒性边界未公开</strong>。</li>
+</ol>
+<h2>行动建议</h2>
+<ul>
+<li><strong>如果你要用它</strong>：<strong>优先于 DNSTT 和 SlipStream</strong>——5-9B 头开销在「能搞到自有域名 + 53/UDP 开放」的场景下确实领先；选择 <code>BalancingHybridScore</code> 或 <code>BalancingLossThenLatency</code> 模式，<strong>不要用 NONE/XOR 加密档</strong>（默认 AES-GCM），客户端用 Linux 桌面/服务器（iOS 等官方客户端）。<strong>域名前置要求 + 自有 NS 委托</strong>是必须的前置成本。</li>
+<li><strong>如果你要学它</strong>：必读三个文件，按价值排序：<ol>
+<li><code>internal/arq/arq.go</code>（2,867 行）— 自研可靠传输层，Jacobson/Karels RTO + NACK + 流状态机的完整实现</li>
+<li><code>internal/client/balancer.go</code>（2,158 行）— 8 种负载均衡策略 + 多 shard map + 粘性路由状态机</li>
+<li><code>internal/vpnproto/parser.go</code>（321 行）— 协议头压缩 + bitmask flag + 1B 头校验的设计哲学</li>
+</ol>
+</li>
+<li><strong>如果你要 fork 它</strong>：三个方向最值得发力：<ol>
+<li><strong>补 iOS 客户端</strong>（issue #166 头号缺口）— 用 NetworkExtension 框架 + Go 交叉编译，潜在回报最大</li>
+<li><strong>加 forward secrecy</strong> — 把当前固定 key 换成 Noise IK 握手，复杂度可控但安全等级追上 DNSTT</li>
+<li><strong>加 obfs 混淆层</strong> — 在 ARQ 之上叠一层 packet length normalization，对抗 DPI 统计识别</li>
+</ol>
+</li>
+<li><strong>如果你是 GFW 对面的用户</strong>：这可能是 2026 年最好的 DNS 隧道 VPN 候选，但<strong>准备好自有域名</strong>（NS 委托 + A 记录）和<strong>53/UDP 出口开放</strong>的服务器。</li>
+</ul>
+<h3>知识入口</h3>
+<table>
+<thead>
+<tr><th>资源</th><th>链接</th></tr>
+</thead>
+<tbody>
+<tr><td>DeepWiki</td><td><a href="https://deepwiki.com/masterking32/MasterDnsVPN">https://deepwiki.com/masterking32/MasterDnsVPN</a></td></tr>
+<tr><td>Zread.ai</td><td><a href="https://zread.ai/masterking32/masterdnsvpn">https://zread.ai/masterking32/masterdnsvpn</a></td></tr>
+<tr><td>关联论文</td><td>"Ignoring the Great Firewall of China" (Clayton 2006) / "Analysis of the DNS Tunnel" (Nussbaum 2009) / "Real-World CSI: An Unlikely Trojan Horse" (USENIX 2008)</td></tr>
+<tr><td>在线 Demo</td><td>无公开测试服务器（需自建 server 端）</td></tr>
+<tr><td>作者博客</td><td><a href="https://masterking32.com">https://masterking32.com</a></td></tr>
+<tr><td>Telegram 频道</td><td><a href="https://t.me/masterdnsvpn">https://t.me/masterdnsvpn</a></td></tr>
+<tr><td>Trendshift 趋势</td><td><a href="https://trendshift.io/repositories/23688">https://trendshift.io/repositories/23688</a></td></tr>
+</tbody>
+</table>
+</body>
+</html>
