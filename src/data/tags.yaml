@@ -975,6 +975,10 @@ entries:
   - llm-inference
   - rag-search
   - trading-finance
+  kenn-io_agentsview:
+  - ai-agent
+  - ai-coding
+  - devtools
   kestra-io_kestra:
   - devtools
   - workflow-automation
@@ -1087,9 +1091,15 @@ entries:
   - ai-coding
   - education
   - protocol-spec
+  masterking32_masterdnsvpn:
+  - protocol-spec
   mattpocock_skills:
   - ai-coding
   - devtools
+  maziyarpanahi_openmed:
+  - llm-inference
+  - web-framework
+  - protocol-spec
   mempalace_mempalace:
   - database
   - protocol-spec
@@ -1825,6 +1835,13 @@ entries:
   - database
   tqdm_tqdm:
   - uncategorized
+  tractorjuice_arc-kit:
+  - ai-agent
+  - ai-coding
+  - devtools
+  - education
+  - trading-finance
+  - security
   traefik_traefik:
   - ai-agent
   - workflow-automation
