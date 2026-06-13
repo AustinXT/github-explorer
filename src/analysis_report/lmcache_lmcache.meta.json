@@ -1,0 +1,6 @@
+{
+  "title": "8.8K stars、把 KV cache 抽成 KV 操作系统层：LMCache 怎么把 LLM 推理加速 8 倍",
+  "digest": "LMCache 自称首个开源 KDN,vendor-neutral 跨 vLLM/SGLang/TRT-LLM,多级 offload 把 TTFT 最高压到 1/8,已加入 PyTorch Foundation。",
+  "author": "NVoyager",
+  "theme": "stars,universe,dark"
+}
