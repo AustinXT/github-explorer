@@ -3,11 +3,11 @@
     "name": "obra/superpowers",
     "url": "https://github.com/obra/superpowers",
     "language": "Shell",
-    "stars": 225672,
-    "forks": 20052,
+    "stars": 226512,
+    "forks": 20128,
     "description": "An agentic skills framework & software development methodology that works.",
-    "last_seen": "2026-06-12",
-    "trending_days": 61
+    "last_seen": "2026-06-13",
+    "trending_days": 62
   },
   {
     "name": "TapXWorld/ChinaTextbook",
@@ -33,11 +33,11 @@
     "name": "iptv-org/iptv",
     "url": "https://github.com/iptv-org/iptv",
     "language": "TypeScript",
-    "stars": 117807,
-    "forks": 6288,
+    "stars": 118356,
+    "forks": 6324,
     "description": "Collection of publicly available IPTV channels from all over the world",
-    "last_seen": "2026-06-12",
-    "trending_days": 28
+    "last_seen": "2026-06-13",
+    "trending_days": 29
   },
   {
     "name": "sansan0/TrendRadar",
@@ -600,6 +600,26 @@
     "trending_days": 11
   },
   {
+    "name": "x1xhlol/system-prompts-and-models-of-ai-tools",
+    "url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
+    "language": "Unknown",
+    "stars": 140180,
+    "forks": 34650,
+    "description": "FULL Augment Code, Claude Code, Cluely, CodeBuddy, Comet, Cursor, Devin AI, Junie, Kiro, Leap.new, Lovable, Manus, NotionAI, Orchids.app, Perplexity, Poke, Qoder, Replit, Same.dev, Trae, Traycer AI, VSCode Agent, Warp.dev, Windsurf, Xcode, Z.ai Code, Dia & v0. (And other Open Sourced) System Prompts, Internal Tools & AI Models",
+    "last_seen": "2026-06-13",
+    "trending_days": 11
+  },
+  {
+    "name": "addyosmani/agent-skills",
+    "url": "https://github.com/addyosmani/agent-skills",
+    "language": "Shell",
+    "stars": 57662,
+    "forks": 6231,
+    "description": "Production-grade engineering skills for AI coding agents.",
+    "last_seen": "2026-06-13",
+    "trending_days": 10
+  },
+  {
     "name": "dyad-sh/dyad",
     "url": "https://github.com/dyad-sh/dyad",
     "language": "TypeScript",
@@ -708,26 +728,6 @@
     "description": "📑 PageIndex: Document Index for Vectorless, Reasoning-based RAG",
     "last_seen": "2026-05-07",
     "trending_days": 10
-  },
-  {
-    "name": "x1xhlol/system-prompts-and-models-of-ai-tools",
-    "url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
-    "language": "Unknown",
-    "stars": 139761,
-    "forks": 34609,
-    "description": "FULL Augment Code, Claude Code, Cluely, CodeBuddy, Comet, Cursor, Devin AI, Junie, Kiro, Leap.new, Lovable, Manus, NotionAI, Orchids.app, Perplexity, Poke, Qoder, Replit, Same.dev, Trae, Traycer AI, VSCode Agent, Warp.dev, Windsurf, Xcode, Z.ai Code, Dia & v0. (And other Open Sourced) System Prompts, Internal Tools & AI Models",
-    "last_seen": "2026-06-11",
-    "trending_days": 10
-  },
-  {
-    "name": "addyosmani/agent-skills",
-    "url": "https://github.com/addyosmani/agent-skills",
-    "language": "Shell",
-    "stars": 56316,
-    "forks": 6075,
-    "description": "Production-grade engineering skills for AI coding agents.",
-    "last_seen": "2026-06-12",
-    "trending_days": 9
   },
   {
     "name": "anthropics/claude-cookbooks",
@@ -980,6 +980,16 @@
     "trending_days": 8
   },
   {
+    "name": "microsoft/PowerToys",
+    "url": "https://github.com/microsoft/powertoys",
+    "language": "C",
+    "stars": 134507,
+    "forks": 8070,
+    "description": "Microsoft PowerToys is a collection of utilities that supercharge productivity and customization on Windows",
+    "last_seen": "2026-06-13",
+    "trending_days": 8
+  },
+  {
     "name": "protocolbuffers/protobuf",
     "url": "https://github.com/protocolbuffers/protobuf",
     "language": "C++",
@@ -1087,16 +1097,6 @@
     "forks": 2605,
     "description": "Taste-Skill - gives your AI good taste. stops the AI from generating boring, generic slop",
     "last_seen": "2026-06-07",
-    "trending_days": 7
-  },
-  {
-    "name": "microsoft/PowerToys",
-    "url": "https://github.com/microsoft/powertoys",
-    "language": "C",
-    "stars": 134158,
-    "forks": 8057,
-    "description": "Microsoft PowerToys is a collection of utilities that supercharge productivity and customization on Windows",
-    "last_seen": "2026-06-12",
     "trending_days": 7
   },
   {
@@ -2230,6 +2230,16 @@
     "trending_days": 4
   },
   {
+    "name": "apple/container",
+    "url": "https://github.com/apple/container",
+    "language": "Swift",
+    "stars": 35792,
+    "forks": 1010,
+    "description": "A tool for creating and running Linux containers using lightweight virtual machines on a Mac. It is written in Swift, and optimized for Apple silicon.",
+    "last_seen": "2026-06-13",
+    "trending_days": 4
+  },
+  {
     "name": "AUTOMATIC1111/stable-diffusion-webui",
     "url": "https://github.com/automatic1111/stable-diffusion-webui",
     "language": "Python",
@@ -3100,16 +3110,6 @@
     "trending_days": 3
   },
   {
-    "name": "apple/container",
-    "url": "https://github.com/apple/container",
-    "language": "Swift",
-    "stars": 34510,
-    "forks": 954,
-    "description": "A tool for creating and running Linux containers using lightweight virtual machines on a Mac. It is written in Swift, and optimized for Apple silicon.",
-    "last_seen": "2026-06-12",
-    "trending_days": 3
-  },
-  {
     "name": "audacity/audacity",
     "url": "https://github.com/audacity/audacity",
     "language": "C++",
@@ -3627,6 +3627,16 @@
     "forks": 1494,
     "description": "Self-hosted game stream host for Moonlight.",
     "last_seen": "2025-11-12",
+    "trending_days": 3
+  },
+  {
+    "name": "LMCache/LMCache",
+    "url": "https://github.com/lmcache/lmcache",
+    "language": "Python",
+    "stars": 8759,
+    "forks": 1299,
+    "description": "LMCache: Supercharge Your LLM with the Fastest KV Cache Layer",
+    "last_seen": "2026-06-13",
     "trending_days": 3
   },
   {
@@ -4500,6 +4510,16 @@
     "trending_days": 2
   },
   {
+    "name": "bannedbook/fanqiang",
+    "url": "https://github.com/bannedbook/fanqiang",
+    "language": "Kotlin",
+    "stars": 47361,
+    "forks": 8067,
+    "description": "翻墙-科学上网",
+    "last_seen": "2026-06-13",
+    "trending_days": 2
+  },
+  {
     "name": "bevyengine/bevy",
     "url": "https://github.com/bevyengine/bevy",
     "language": "Rust",
@@ -4577,6 +4597,16 @@
     "forks": 853,
     "description": "Open source Loom alternative. Beautiful, shareable screen recordings.",
     "last_seen": "2025-10-11",
+    "trending_days": 2
+  },
+  {
+    "name": "chatwoot/chatwoot",
+    "url": "https://github.com/chatwoot/chatwoot",
+    "language": "Ruby",
+    "stars": 30662,
+    "forks": 7540,
+    "description": "Open-source live-chat, email support, omni-channel desk. An alternative to Intercom, Zendesk, Salesforce Service Cloud etc. 🔥💬",
+    "last_seen": "2026-06-13",
     "trending_days": 2
   },
   {
@@ -5280,6 +5310,16 @@
     "trending_days": 2
   },
   {
+    "name": "kenn-io/agentsview",
+    "url": "https://github.com/kenn-io/agentsview",
+    "language": "Go",
+    "stars": 2160,
+    "forks": 201,
+    "description": "Local-first session intelligence and analytics for coding agents, supporting Claude Code, Codex, and more than 20 other agents. Also: 100x faster replacement for ccusage!",
+    "last_seen": "2026-06-13",
+    "trending_days": 2
+  },
+  {
     "name": "kepano/obsidian-skills",
     "url": "https://github.com/kepano/obsidian-skills",
     "language": "Unknown",
@@ -5417,16 +5457,6 @@
     "forks": 7490,
     "description": "Focus on prompting and generating",
     "last_seen": "2025-09-23",
-    "trending_days": 2
-  },
-  {
-    "name": "LMCache/LMCache",
-    "url": "https://github.com/lmcache/lmcache",
-    "language": "Python",
-    "stars": 8530,
-    "forks": 1284,
-    "description": "LMCache: Supercharge Your LLM with the Fastest KV Cache Layer",
-    "last_seen": "2026-06-12",
     "trending_days": 2
   },
   {
@@ -5640,6 +5670,16 @@
     "trending_days": 2
   },
   {
+    "name": "music-assistant/server",
+    "url": "https://github.com/music-assistant/server",
+    "language": "Python",
+    "stars": 1906,
+    "forks": 426,
+    "description": "Music Assistant is a free, opensource Media library manager that connects to your streaming services and a wide range of connected speakers. The server is the beating heart, the core of Music Assistant and must run on an always-on device like a Raspberry Pi, a NAS or an Intel NUC or alike.",
+    "last_seen": "2026-06-13",
+    "trending_days": 2
+  },
+  {
     "name": "NanmiCoder/MediaCrawler",
     "url": "https://github.com/nanmicoder/mediacrawler",
     "language": "Python",
@@ -5687,6 +5727,16 @@
     "forks": 49,
     "description": "cuTile is a programming model for writing parallel kernels for NVIDIA GPUs",
     "last_seen": "2025-12-09",
+    "trending_days": 2
+  },
+  {
+    "name": "NVIDIA/SkillSpector",
+    "url": "https://github.com/nvidia/skillspector",
+    "language": "Python",
+    "stars": 3941,
+    "forks": 297,
+    "description": "Security scanner for AI agent skills. Detect vulnerabilities, malicious patterns, and security risks.",
+    "last_seen": "2026-06-13",
     "trending_days": 2
   },
   {
@@ -6580,6 +6630,16 @@
     "trending_days": 1
   },
   {
+    "name": "andrewyng/aisuite",
+    "url": "https://github.com/andrewyng/aisuite",
+    "language": "Python",
+    "stars": 13988,
+    "forks": 1482,
+    "description": "Simple, unified interface to multiple Generative AI providers",
+    "last_seen": "2026-06-13",
+    "trending_days": 1
+  },
+  {
     "name": "Anduin2017/HowToCook",
     "url": "https://github.com/anduin2017/howtocook",
     "language": "Dockerfile",
@@ -6697,16 +6757,6 @@
     "forks": 2976,
     "description": "✨ Innovative and open-source visualization application that transforms various data formats, such as JSON, YAML, XML, CSV and more, into interactive graphs.",
     "last_seen": "2025-10-04",
-    "trending_days": 1
-  },
-  {
-    "name": "bannedbook/fanqiang",
-    "url": "https://github.com/bannedbook/fanqiang",
-    "language": "Kotlin",
-    "stars": 46617,
-    "forks": 7997,
-    "description": "翻墙-科学上网",
-    "last_seen": "2026-06-11",
     "trending_days": 1
   },
   {
@@ -6837,16 +6887,6 @@
     "forks": 1106,
     "description": "Database diagrams editor that allows you to visualize and design your DB with a single query.",
     "last_seen": "2025-10-26",
-    "trending_days": 1
-  },
-  {
-    "name": "chatwoot/chatwoot",
-    "url": "https://github.com/chatwoot/chatwoot",
-    "language": "Ruby",
-    "stars": 30205,
-    "forks": 7495,
-    "description": "Open-source live-chat, email support, omni-channel desk. An alternative to Intercom, Zendesk, Salesforce Service Cloud etc. 🔥💬",
-    "last_seen": "2026-06-11",
     "trending_days": 1
   },
   {
@@ -7980,16 +8020,6 @@
     "trending_days": 1
   },
   {
-    "name": "kenn-io/agentsview",
-    "url": "https://github.com/kenn-io/agentsview",
-    "language": "Go",
-    "stars": 1485,
-    "forks": 168,
-    "description": "Local-first session intelligence and analytics for coding agents, supporting Claude Code, Codex, and more than 20 other agents. Also: 100x faster replacement for ccusage!",
-    "last_seen": "2026-06-11",
-    "trending_days": 1
-  },
-  {
     "name": "keycloak/keycloak",
     "url": "https://github.com/keycloak/keycloak",
     "language": "Java",
@@ -8450,16 +8480,6 @@
     "trending_days": 1
   },
   {
-    "name": "music-assistant/server",
-    "url": "https://github.com/music-assistant/server",
-    "language": "Python",
-    "stars": 1649,
-    "forks": 422,
-    "description": "Music Assistant is a free, opensource Media library manager that connects to your streaming services and a wide range of connected speakers. The server is the beating heart, the core of Music Assistant and must run on an always-on device like a Raspberry Pi, a NAS or an Intel NUC or alike.",
-    "last_seen": "2026-06-12",
-    "trending_days": 1
-  },
-  {
     "name": "myshell-ai/OpenVoice",
     "url": "https://github.com/myshell-ai/openvoice",
     "language": "Python",
@@ -8617,16 +8637,6 @@
     "forks": 3624,
     "description": "Ongoing research training transformer models at scale",
     "last_seen": "2026-02-25",
-    "trending_days": 1
-  },
-  {
-    "name": "NVIDIA/SkillSpector",
-    "url": "https://github.com/nvidia/skillspector",
-    "language": "Python",
-    "stars": 2384,
-    "forks": 199,
-    "description": "Security scanner for AI agent skills. Detect vulnerabilities, malicious patterns, and security risks.",
-    "last_seen": "2026-06-11",
     "trending_days": 1
   },
   {
@@ -9287,6 +9297,16 @@
     "forks": 6105,
     "description": "#1 PDF Application on GitHub that lets you edit PDFs on any device anywhere",
     "last_seen": "2025-12-29",
+    "trending_days": 1
+  },
+  {
+    "name": "swc-project/swc",
+    "url": "https://github.com/swc-project/swc",
+    "language": "Rust",
+    "stars": 33557,
+    "forks": 1397,
+    "description": "Rust-based platform for the Web",
+    "last_seen": "2026-06-13",
     "trending_days": 1
   },
   {
