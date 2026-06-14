@@ -1,0 +1,6 @@
+{
+  "title": "20K stars · 4 年：vhs 把终端录屏变成可 diff 的源码",
+  "digest": "vhs 用 .tape DSL 把终端演示 GIF 重写为可 diff、可入版本控制、可走 PR review 的声明式源码，并以 SSH-as-Rendering-FaaS 把渲染能力零依赖开放给 CI。",
+  "author": "NVoyager",
+  "theme": "stars,universe,dark"
+}
