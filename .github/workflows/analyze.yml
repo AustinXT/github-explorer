@@ -20,7 +20,9 @@ concurrency:
 
 jobs:
   analyze:
-    if: contains(github.event.issue.labels.*.name, 'analyze-request')
+    if: >-
+      contains(github.event.issue.labels.*.name, 'analyze-request')
+      || startsWith(github.event.issue.title, '[Analyze]')
     runs-on: ubuntu-latest
     timeout-minutes: 60
     env:
