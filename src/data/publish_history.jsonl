@@ -182,3 +182,4 @@
 {"recorded_at": "2026-06-14T23:34:07.533924+00:00", "slug": "gorvgoyl_clone-wars", "title": null, "state": "published", "published_at": "2026-06-14", "reason": "自动生成", "ci_run_id": "27515428011"}
 {"recorded_at": "2026-06-15T00:52:58.653772+00:00", "slug": "chatwoot_chatwoot", "title": null, "state": "published", "published_at": "2026-06-15", "reason": "自动生成", "ci_run_id": "27517180457"}
 {"recorded_at": "2026-06-15T02:10:01.018435+00:00", "slug": "nvidia_skillspector", "title": null, "state": "published", "published_at": "2026-06-15", "reason": "自动生成", "ci_run_id": "27519250921"}
+{"recorded_at": "2026-06-15T03:31:39.645751+00:00", "slug": "music-assistant_server", "title": null, "state": "published", "published_at": "2026-06-15", "reason": "自动生成", "ci_run_id": "27521481125"}
