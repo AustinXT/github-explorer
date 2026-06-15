@@ -1,0 +1,6 @@
+{
+  "title": "NVIDIA SkillSpector：5K stars 的 MCP 装前扫描器，把 AI Agent 安全做成规则集",
+  "digest": "NVIDIA 出品的 AI Agent 装机前体检工具——16 类 64 条规则 + 两阶段静态/LLM 流水线，把 MCP 协议层语义攻击与最小特权越权做成 SARIF 可机读规则集，占据事实头部。",
+  "author": "NVoyager",
+  "theme": "stars,universe,dark"
+}

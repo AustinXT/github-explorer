@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+/* ====== 微信公众号排版 CSS ====== */
+
+body {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #3e3e3e;
+    background: #fff;
+}
+
+/* 正文段落 */
+p {
+    font-size: 15px !important;
+    line-height: 2 !important;
+    margin: 0 !important;
+    padding-top: 0.5em !important;
+    padding-bottom: 0.5em !important;
+    padding-right: 1.2em !important;
+    padding-left: 1.2em !important;
+    text-align: justify !important;
+}
+p + p {
+    margin-top: 0 !important;
+}
+
+/* 标题 */
+h1 {
+    font-size: 20px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 16px 0 !important;
+    padding: 0 !important;
+}
+h2 {
+    font-size: 18px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 24px 0 !important;
+    padding: 0 !important;
+}
+h3 {
+    font-size: 15px !important;
+    font-weight: bold !important;
+    color: #3e3e3e !important;
+    text-align: left !important;
+    margin: 16px 0 16px 0 !important;
+    padding: 0 0 0 1.2em !important;
+}
+h4 {
+    font-size: 15px !important;
+    color: rgb(0, 122, 170) !important;
+    margin: 12px 0 8px 0 !important;
+    padding: 0 !important;
+}
+
+/* 列表 */
+ul,
+ol {
+    padding-left: 2em !important;
+    margin: 1em 0 !important;
+    font-size: 15px !important;
+}
+li {
+    margin: 0.5em 0 !important;
+    line-height: 1.8em !important;
+    font-size: 15px !important;
+    color: #3e3e3e !important;
+}
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+    margin: 0 !important;
+    padding-left: 1.2em !important;
+}
+
+/* 引用 */
+blockquote {
+    border-left: 4px solid #888 !important;
+    padding: 8px 16px !important;
+    margin: 1em 0 !important;
+    color: #666 !important;
+    background: #f9f9f9 !important;
+}
+blockquote > p {
+    margin: 0.5em 0 !important;
+    padding: 0 !important;
+}
+blockquote::before,
+blockquote::after {
+    content: none !important;
+}
+
+/* 代码块 */
+pre {
+    font-size: 14px !important;
+    line-height: 1.4em !important;
+    color: #3e3e3e !important;
+    background: #f8f8f8 !important;
+    padding: 12px 16px !important;
+    border-radius: 4px !important;
+    overflow: auto !important;
+    margin: 1em 0 !important;
+}
+
+/* 脚注 */
+.footnotes {
+    font-size: 11px !important;
+    color: #666 !important;
+    line-height: 1.2 !important;
+    margin: 8px 0 0 0 !important;
+    padding: 4px 0 0 0 !important;
+    border-top: 1px solid #eee !important;
+}
+.footnotes p {
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #666 !important;
+}
+
+/* 上标 */
+sup {
+    font-size: 0.75em !important;
+    vertical-align: super !important;
+    color: #e51f42 !important;
+    margin: 0 2px !important;
+}
+
+/* 表格 */
+table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+    margin: 1em 0 !important;
+    font-size: 14px !important;
+}
+th, td {
+    border: 1px solid #ddd !important;
+    padding: 8px 10px !important;
+    text-align: left !important;
+    vertical-align: top !important;
+    line-height: 1.6 !important;
+}
+th {
+    background: #f5f5f5 !important;
+    font-weight: bold !important;
+    color: #3e3e3e !important;
+}
+</style>
+</head>
+<body>
+
+<p><a href="https://github.com/nvidia/skillspector">https://github.com/nvidia/skillspector</a></p>
+
+<h2>一句话总结</h2>
+
+<p>NVIDIA 在 AI Agent 安全赛道押注的「装前体检」工具——用 <strong>16 类 64 条规则</strong> + <strong>两阶段静态/LLM 流水线</strong>，把 Claude Code / Codex CLI / Gemini CLI 等的 SKILL.md 插件当作「待扫描的二进制」，在装机前发现提示词注入、工具投毒、MCP 最小特权越权等风险。</p>
+
+<h2>值得关注的理由</h2>
+
+<p>1. <strong>MCP 协议层安全的事实标准</strong>：业内第一套把「工具描述里藏指令」（TP1-4）和「声明 vs 实际 capability 不一致」（LP1-4）做成可机检规则的实现，5.3K stars + LangGraph 编排 + Pydantic 结构化输出，工程化范例完整。</p>
+<p>2. <strong>NVIDIA Agent 战略的安全护城河</strong>：与 nvidia/skills（1.26k stars）、NemoClaw（21k stars）形成「平台 / skill 市场 / 安全审计」三角，下一家要做 MCP 市场的玩家很难绕过它的规则集。</p>
+<p>3. <strong>CI 友好的可机读输出</strong>：SARIF 2.1.0 + JSON + Markdown + Terminal 四种格式，risk_score &gt; 50 → exit code 1 直接断在 PR pipeline；多 LLM provider（OpenAI / Anthropic / NVIDIA build.nvidia.com / Ollama）一行 env 切换。</p>
+
+<h2>项目展示</h2>
+
+<p>README 与 docs 中<strong>没有嵌入任何图片、视频或架构图</strong>（连 badge 也只是 shields.io 的 Python/License 标识，不算展示素材）。homepage_url 为空、官网无素材、DeepWiki/Zread.ai 也未实质收录——这个项目<strong>完全靠代码 + docs/ + README 「How It Works」 文本</strong>传达信息。</p>
+
+<blockquote>
+<p>若需公众号首图，建议走 Unsplash 兜底（关键词建议：「cyber security」, 「AI code scan」, 「lock + neural network」），不寄希望于仓库自带图。</p>
+</blockquote>
+
+<h2>项目画像</h2>
+
+<table>
+<thead>
+<tr><th style="vertical-align:top;">维度</th><th style="vertical-align:top;">数据</th></tr>
+</thead>
+<tbody>
+<tr><td style="vertical-align:top;">GitHub</td><td style="vertical-align:top;"><a href="https://github.com/nvidia/skillspector">https://github.com/nvidia/skillspector</a></td></tr>
+<tr><td style="vertical-align:top;">Star / Fork</td><td style="vertical-align:top;">5,345 / 408</td></tr>
+<tr><td style="vertical-align:top;">Watcher</td><td style="vertical-align:top;">28</td></tr>
+<tr><td style="vertical-align:top;">Open Issues / PRs</td><td style="vertical-align:top;">26 / 24</td></tr>
+<tr><td style="vertical-align:top;">代码行数</td><td style="vertical-align:top;">14,979（Python 98.5%, 141 文件, 注释比 28.9%）</td></tr>
+<tr><td style="vertical-align:top;">依赖</td><td style="vertical-align:top;">89（runtime, 来自 pyproject.toml）</td></tr>
+<tr><td style="vertical-align:top;">项目年龄</td><td style="vertical-align:top;">2.8 个月（首次提交 2026-03-21）</td></tr>
+<tr><td style="vertical-align:top;">开发阶段</td><td style="vertical-align:top;">稳定维护（OSS 发布冲刺后期，近 30 天 19 commits，占总量 83%）</td></tr>
+<tr><td style="vertical-align:top;">贡献模式</td><td style="vertical-align:top;">小团队核心主导 + 社区点缀（Top1 占 29.0%，前 4 人占 78%；8 位贡献者）</td></tr>
+<tr><td style="vertical-align:top;">热度定位</td><td style="vertical-align:top;">大众热门 + 爆发期（近 24h 内 +145 stars）</td></tr>
+<tr><td style="vertical-align:top;">License</td><td style="vertical-align:top;">Apache License 2.0</td></tr>
+<tr><td style="vertical-align:top;">Release</td><td style="vertical-align:top;"><strong>0 tag / 0 release</strong>（首次 release 预计在 oss-release 冲刺后落地）</td></tr>
+<tr><td style="vertical-align:top;">质量评级</td><td style="vertical-align:top;">代码 优秀 \| 文档 优秀 \| 测试 充分</td></tr>
+</tbody>
+</table>
+
+<h2>作者视角：为什么存在这个项目</h2>
+
+<h3>创始人/作者背景</h3>
+<p>NVIDIA Corporation（Organization 账号），Santa Clara, CA，14.1 年账号，26,725 粉丝，749 公开仓库。核心贡献者是 NVIDIA 内部 3-4 人小团队：nraghavan（9 commits）、Nir Paz（6）、keshavp（6）、keshprad（4），外加一个 nv-automation 机器人。少量外部 PR 来自 jcchavezs / Lucas Recknagel / Werner Kasselman。NVIDIA 正在推自家 Agent 生态（nvidia/skills 1.26k stars、NemoClaw 21k stars），SkillSpector 与它们<strong>同源</strong>——本质是 NVIDIA 推 Agent 平台时<strong>配套的「上岗前体检」工具</strong>。</p>
+
+<h3>问题判断</h3>
+<p>AI Agent 生态里「装上 SKILL.md 就能跑 shell」这种隐式信任是个未爆弹。2026 年 Liu 等人基于 42,447 个 skill 的实证研究发现 <strong>26.1% 含漏洞、5.2% 含明显恶意意图</strong>——这是一个<strong>问题已被量化、但工业级扫描器缺位</strong>的窗口。传统 Semgrep/Snyk 不识 prompt injection / system-prompt 泄漏 / 工具投毒 / memory poisoning 这一整套 Agent-原生威胁模型；通用 LLM 红队工具只给「红队评估」，不输出可在 CI 拦截的 SARIF 报告；OSV/NVD 没有直接对接「skill 声明的依赖文件」的现成路径；更没有项目把「MCP 最小特权」做成可机检规则。SkillSpector 同时填补了所有这四个空白。</p>
+
+<h3>解法哲学</h3>
+<p><strong>「pre-install gate, 不是 post-hoc audit」</strong>——README 反复强调「DO NOT INSTALL」作为输出动作。技术栈选择贯彻这一思路：</p>
+<ul>
+<li><strong>静态扫描优先</strong>：11 个 analyzer 在零 LLM 零网络下就能跑出 64 模式，保证「零依赖就能拦下大头」；</li>
+<li><strong>LLM 只做语义层补刀</strong>：3 个 semantic_* + meta_analyzer filter 把精度从 ~70% 提到 ~87%，但<strong>不是必备路径</strong>；</li>
+<li><strong>可机读输出优先于人话</strong>：SARIF → CI 拦截、JSON → 自动审计、Markdown/terminal → 人读，把「返回结构化报告」当作一等公民。</li>
+</ul>
+
+<h3>战略意图</h3>
+<p><strong>NVIDIA Agent 战略的基础设施件</strong>，不是给 NVIDIA 创收的产品，而是给自家 Agent 生态做的「安全护城河」，让其他 Agent 平台在合规压力下也难以绕过。<strong>Apache 2.0 真正开源</strong>（不是 open-core），无 SaaS 版、无 enterprise 版、无 SaaS 控制点。与 nvidia/skills、NemoClaw 形成「<strong>平台 / skill 市场 / 安全审计</strong>」三角。如果它能跟着 NVIDIA 自家 agent 平台成为默认 install gate，就从「工具」升级为「标准」。</p>
+
+<blockquote>
+<p>官方文档：仓库无独立官方文档站（homepage_url null），NVIDIA 开发者博客也未提及该项目。但 README 写得很充分（约 20k tokens），docs/ 下还有 5 篇深度设计文档（B.3.1 mcp-least-privilege / B.3.2 mcp-tool-poisoning / SC4-osv-live-vulnerability-lookups / LLM_ANALYZER_BASE_GUIDE / EVAL_DATASETS）+ DEVELOPMENT.md；外部深度分析文章<strong>未找到</strong>（DeepWiki 未实质收录，Zread.ai 403）。</p>
+</blockquote>
+
+<h2>核心价值提炼</h2>
+
+<h3>创新之处</h3>
+<p>按新颖度 × 实用性 × 可迁移性 排序：</p>
+
+<p>1. <strong>MCP 协议层语义攻击的可机检规则集（LP1-4 + TP1-4）</strong>——新颖度 5/5 | 实用性 5/5 | 可迁移性 4/5<br/>
+把「工具描述里藏指令」这种语义攻击拆成 4 条可机检规则（HTML/Markdown 注释、zero-width 字符、base64 解码成功、data URI），把「声明 vs 实际 capability」做成 RBAC 风格对账（LP1-4 含 wildcard / missing / underdeclared / overdeclared 4 种不对称）。<strong>MCP 最小特权是全行业首套</strong>。</p>
+
+<p>2. <strong>自写 AST 数据流分析（TT1-5）+ 类型推断</strong>——新颖度 4/5 | 实用性 4/5 | 可迁移性 3/5<br/>
+用 build_type_map 先把 p = Path(x) 这种局部 var 映射到 pathlib.Path，再让 p.read_text() 解析成 pathlib.Path.read_text，解决「为什么 from pathlib import Path 后所有 p.read_text() 不被误识为 file_read sink」的痛点。零外部依赖、可解释、可控。</p>
+
+<p>3. <strong>「声明/实际」对账框架（declared vs actual capabilities）</strong>——新颖度 4/5 | 实用性 5/5 | 可迁移性 5/5<br/>
+把 skill manifest 的 permissions[] 视作「声明」、代码视作「实际」，用「差集的方向 + 大小」分四类问题。和 K8s RBAC drift / IaC compliance 完全同构，<strong>通用适用</strong>。</p>
+
+<p>4. <strong>LangGraph + Pydantic structured output + operator.add reducer 做「多 analyzer 聚合」</strong>——新颖度 3/5 | 实用性 5/5 | 可迁移性 5/5<br/>
+把「扫描工具的多 analyzer 多源输出」建模成图节点 + reducer，LLM 输出直接吃 Pydantic schema 校验；适合 SIEM、multi-linter、eval harness 等多源情报聚合场景。</p>
+
+<p>5. <strong>SC4 live CVE lookup 的「OSV.dev batch + in-memory cache + 静态 fallback」三段式</strong>——新颖度 3/5 | 实用性 5/5 | 可迁移性 5/5<br/>
+API 不可达时不「硬失败」也不「沉默降级」，而是降级到一份手写 fallback；cache 用 monotonic time 不污染业务时间。<strong>任何「实时数据 + 离线兜底」服务对接都该这么设计</strong>。</p>
+
+<p>6. <strong>YARA rules 用户可注入 + 编译降级</strong>——新颖度 2/5 | 实用性 5/5 | 可迁移性 4/5<br/>
+--yara-rules-dir 让企业把自家 IOC 灌进扫描流水线；编译失败时不挂掉而是 logger.warning + 累加 skipped。代价是<strong>用户的恶意 yara 也会被加载并执行</strong>（YARA 本身有安全 CVE 史）——这是个值得注意的攻击面。</p>
+
+<h3>可复用的模式与技巧</h3>
+
+<p>1. <strong>「Provider + Protocol + 每包 YAML」模式</strong>：每个 LLM provider 自带一份 model_registry.yaml 描述 token 预算；SKILLSPECTOR_MODEL_REGISTRY 可整体覆盖。「能力即数据」模型胜过用 ABC 强绑定。</p>
+<p>2. <strong>LLMAnalyzerBase.get_batches() 自动 chunk</strong>：按 token 预算切文件 + 50 行 overlap；arun_batches() 用 asyncio.gather + Semaphore 并发。任何「LLM 处理长文件」场景通用。</p>
+<p>3. <strong>风险评分公式</strong>：CRITICAL=50, HIGH=25, MEDIUM=10, LOW=5；has_executable_scripts 1.3× 乘数。简单可解释，适合任何「严重度 → 分 → 门槛」的扫描工具。</p>
+<p>4. <strong>SARIF 通过 Pydantic populate_by_name + alias 做 camelCase 兼容</strong>：标准协议契约的标准做法；下次 SARIF spec 改只需跟改一处。</p>
+<p>5. <strong>Granular → Coarse 三层 fallback key</strong>：meta_analyzer.apply_filter 用 exact (file, rule_id, start_line, end_line) → start_line-only → coarse (file, rule_id) 的降级链，行级回填精度可控。</p>
+<p>6. <strong>is_available() 探活 + 失败 fallback</strong>：OSV.dev 客户端对每个新依赖库都该有；不假设网络随时可达。</p>
+
+<h3>关键设计决策</h3>
+
+<p>1. <strong>用 LangGraph 而非裸 asyncio.gather 编排 20 个 analyzer</strong></p>
+<ul>
+<li><strong>问题</strong>：analyzer 数量多，依赖共享 state（findings 要 reducer 聚合），要支持 Studio 可视化调试。</li>
+<li><strong>方案</strong>：每个 analyzer 都是一个图节点，findings: Annotated[list[Finding], operator.add] 让 LangGraph 的 reducer 自动合并多源输出。</li>
+<li><strong>Trade-off</strong>：换来声明式编排 + Studio 可调试 + REST 复用（graph.py 顶部 TODO 明确写了 Implement skillspector serve (FastAPI): POST /scan），代价是 LangGraph 学习曲线和一层抽象。</li>
+<li><strong>可迁移性</strong>：高。</li>
+</ul>
+
+<p>2. <strong>MCP 最小特权（LP1-4）用「regex 反查代码能力 vs 声明权限」实现，非语义比对</strong></p>
+<ul>
+<li><strong>方案</strong>：6 类 capability（shell/network/file_read/file_write/env/mcp）各有 ~7 条 regex；扫 file_cache 全文聚合 actual_caps；把 permissions 列表按 word-boundary 映射到 cap 名聚合 declared_caps；四个差集（实际未声明、声明但 wildcard、声明但无代码、未声明但有代码）→ LP1-4。</li>
+<li><strong>Trade-off</strong>：纯静态、毫秒级、可解释；代价是 subprocess 这种 regex 会同时命中 shell+env，且<strong>测试文件不豁免</strong>（_is_test_file 写了但没在 node() 里调用，正是 #14 「False Report」 的根因）。</li>
+<li><strong>可迁移性</strong>：高。任何「声明/实际」对账场景（IaC drift、IAM policy audit、package manifest vs import）都能套用。</li>
+</ul>
+
+<p>3. <strong>报告 schema 用 Pydantic 全手写（SARIF、Finding、MetaAnalyzerResult）</strong></p>
+<ul>
+<li><strong>方案</strong>：sarif_models.py 完整建模 SarifLog / Run / Tool / Driver / Result / Location / Region / ArtifactLocation（带 populate_by_name 做 camelCase 兼容）；MetaAnalyzerResult 用 Pydantic Field + field_validator 兜「LLM 把 nested 对象 stringify」边界 case。</li>
+<li><strong>Trade-off</strong>：换来 LLM 输出自动 schema 校验（with_structured_output 直接吃 model），代价是 SARIF 全套模型手工维护。</li>
+<li><strong>可迁移性</strong>：高。</li>
+</ul>
+
+<h2>竞品格局与定位</h2>
+
+<h3>竞品对比矩阵</h3>
+
+<table>
+<thead>
+<tr>
+<th style="vertical-align:top;">维度</th>
+<th style="vertical-align:top;">SkillSpector</th>
+<th style="vertical-align:top;">AI-Infra-Guard</th>
+<th style="vertical-align:top;">Semia</th>
+<th style="vertical-align:top;">skill-sentinel</th>
+<th style="vertical-align:top;">SkillScan</th>
+</tr>
+</thead>
+<tbody>
+<tr><td style="vertical-align:top;">Stars</td><td style="vertical-align:top;">5.3k</td><td style="vertical-align:top;">3.9k</td><td style="vertical-align:top;">512</td><td style="vertical-align:top;">13</td><td style="vertical-align:top;">3</td></tr>
+<tr><td style="vertical-align:top;">规则集</td><td style="vertical-align:top;">16 类 64 模式</td><td style="vertical-align:top;">~12 类 ~30 模式</td><td style="vertical-align:top;">较少</td><td style="vertical-align:top;">&lt;10 条</td><td style="vertical-align:top;">较少</td></tr>
+<tr><td style="vertical-align:top;">MCP 协议层</td><td style="vertical-align:top;">LP1-4 + TP1-4 (独家)</td><td style="vertical-align:top;">无</td><td style="vertical-align:top;">无</td><td style="vertical-align:top;">无</td><td style="vertical-align:top;">无</td></tr>
+<tr><td style="vertical-align:top;">LLM 阶段</td><td style="vertical-align:top;">Stage 2 可关 (~87% 精度)</td><td style="vertical-align:top;">有</td><td style="vertical-align:top;">无</td><td style="vertical-align:top;">无</td><td style="vertical-align:top;">有</td></tr>
+<tr><td style="vertical-align:top;">多 LLM provider</td><td style="vertical-align:top;">OpenAI / Anthropic / NVIDIA / Ollama</td><td style="vertical-align:top;">单一</td><td style="vertical-align:top;">单一</td><td style="vertical-align:top;">无</td><td style="vertical-align:top;">单一</td></tr>
+<tr><td style="vertical-align:top;">输出格式</td><td style="vertical-align:top;">JSON / MD / SARIF / Terminal</td><td style="vertical-align:top;">HTML dashboard</td><td style="vertical-align:top;">JSON</td><td style="vertical-align:top;">JSON</td><td style="vertical-align:top;">JSON</td></tr>
+<tr><td style="vertical-align:top;">编排</td><td style="vertical-align:top;">LangGraph + Studio</td><td style="vertical-align:top;">Flask web</td><td style="vertical-align:top;">裸 Python</td><td style="vertical-align:top;">裸 Python</td><td style="vertical-align:top;">裸 Python</td></tr>
+<tr><td style="vertical-align:top;">动态执行</td><td style="vertical-align:top;">❌（明确无）</td><td style="vertical-align:top;">❌</td><td style="vertical-align:top;">❌</td><td style="vertical-align:top;">❌</td><td style="vertical-align:top;">✅ Docker 沙箱</td></tr>
+<tr><td style="vertical-align:top;">定位</td><td style="vertical-align:top;">CI 友好 pre-install gate</td><td style="vertical-align:top;">红队评估控制台</td><td style="vertical-align:top;">pre-install 轻量替代</td><td style="vertical-align:top;">极简对照</td><td style="vertical-align:top;">动态行为预测</td></tr>
+</tbody>
+</table>
+
+<h3>差异化护城河</h3>
+<ul>
+<li><strong>技术护城河</strong>：MCP 协议层规则集（LP/TP 全行业首套），LangGraph + Pydantic structured output 的「工程化范例」，SARIF 2.1.0 完整建模。</li>
+<li><strong>生态护城河</strong>：NVIDIA 品牌 + 与自家 nvidia/skills / NemoClaw 的协同（其他竞品无类似「自家平台背书」）。</li>
+<li><strong>信任护城河</strong>：Apache 2.0 + 内部 NVIDIA 团队 + 5K+ stars / 早期快速积累 + 8 位贡献者 + 28 watchers。</li>
+</ul>
+
+<h3>竞争风险</h3>
+<ul>
+<li><strong>最大风险</strong>：Tencent/AI-Infra-Guard 哪天把 MCP 规则集补齐 + 加 LangGraph 编排 → 直接吃差异化（其 3.9k stars 社区底盘很稳）。</li>
+<li><strong>次大风险</strong>：Semgrep 推出 semgrep agent-skills 规则集（Semgrep 是行业默认 SAST，背书效应强）。</li>
+<li><strong>细分风险</strong>：半年内冒出 19 个同名/类名仓库（topic skill-scanner 下），仅 1 个腾讯先发者，其余都是个位-百位 star 尾随者——<strong>长尾可能内卷</strong>。</li>
+</ul>
+
+<h3>生态定位</h3>
+<p>「<strong>CI 友好的 skill pre-install gate</strong>」——与「红队评估平台」（AI-Infra-Guard）、「动态沙箱」（SkillScan）形成<strong>三层互补</strong>。在 AI Agent 安全这个 2026 年才成型的细分赛道里，SkillSpector 以 NVIDIA 出品 + 5.3K stars + 64 模式规则 + MCP 协议层专属规则占据事实头部；接下来 6-12 个月的看点是它能不能跟着 NVIDIA 自家 agent 平台成为默认 install gate——若成功，会从「工具」升级为「标准」。</p>
+
+<h2>套利机会分析</h2>
+
+<ul>
+<li><strong>信息差</strong>：<strong>不再小众</strong>。5K+ stars + 近 24h +145 stars = 已被发现 + 还在爆发，没有早期红利可套。价值在于「跟住它」看 NVIDIA 接下来把它接到 nvidia/skills 哪个 agent 框架上。</li>
+<li><strong>技术借鉴</strong>：可复用的设计模式密度极高——LangGraph + reducer 聚合、Provider + Protocol + YAML、SC4 三段式 fallback、Pydantic structured output 校验、Granular → Coarse 三层 key 降级链。<strong>任何一个做多 analyzer / 多 provider / 实时情报对接的项目都能直接借鉴</strong>。</li>
+<li><strong>生态位</strong>：MCP 协议层安全目前是它独家占据的；一旦 MCP 市场成形（NVIDIA、Anthropic、OpenAI 三家都在推），这会是默认 install gate 标准的有力候选。</li>
+<li><strong>趋势判断</strong>：AI Agent 装机量持续暴涨（Claude Code / Codex / Gemini CLI 装机基数都在百万级）+ Liu et al. 2026 数据证明 <strong>26.1% skill 含漏洞</strong> = 装机前扫描是结构性需求。<strong>SkillSpector 处于「标准成型前夜」</strong>，比 Tencent/AI-Infra-Guard 早一步在 MCP 协议层 + CI 友好定位上卡位。</li>
+</ul>
+
+<h2>风险与不足</h2>
+
+<p>1. <strong>0 release / 0 tag / 0 refactor 三连缺位</strong>：仓库还在 v0 公开窗口，<strong>不建议生产环境直接锁版本</strong>——等首次 release tag 出来再切。</p>
+<p>2. <strong>测试驱动是真文化，但 fix 阶段仍有反例</strong>：Issue #9 揭示 meta_analyzer 异常吞掉 + exit 0 是真问题，<strong>对跑大批量 skill 的 CI 场景是个埋雷</strong>。Issue #10 揭示 LLM 调用无 retry/backoff 且默认并发 10 硬编码。</p>
+<p>3. <strong>规则-语境割裂导致 FP</strong>：Issue #14 揭示它报的是 capability 不是 blast radius，隔离沙箱里跑也会被报「高严重度」，对内部 agent / CI 跑 skill 的用户会产生大量「不可操作」的告警。</p>
+<p>4. <strong>规则集「出向偏置」盲点</strong>：Issue #61 揭示 64 条规则盯着「把数据发出去」和「exec/subprocess」两类 sink，对 SSRF（169.254.169.254 等内网/元数据目标）直到 #61 才补。</p>
+<p>5. <strong>正在从 CLI 演化成 agent 内部组件，但接口契约没跟上</strong>：Issue #33 揭示用户已经在用 graph.invoke({...}) 把扫描器当库嵌进自家 skill，但 --no-llm 与 LLM 模式输出差异、静态 FP 都没文档化。</p>
+<p>6. <strong>YARA 用户注入是双刃剑</strong>：--yara-rules-dir 让企业内化自家 IOC，但<strong>用户的恶意 yara 也会被加载并执行</strong>（YARA 本身有 CVE 史），需要文档警示。</p>
+<p>7. <strong>小众早期项目的「开源疲劳」风险</strong>：核心团队 3-4 人 + 1 个 bot 主导，社区贡献（jcchavezs / Lucas Recknagel / Werner Kasselman）只 1 commit，<strong>外部生态尚未成型</strong>——若 NVIDIA 战略转向，OSS 维护可能放缓。</p>
+
+<h2>行动建议</h2>
+
+<ul>
+<li><strong>如果你要用它</strong>：
+<ul>
+<li><strong>CI gate</strong>（推荐）：用 --no-llm 跑 Stage 1 静态、--format sarif 输出 + --risk-threshold 50 拦 CRITICAL，零 API key 成本；Stage 2 LLM 留给「评审」环节人读。</li>
+<li><strong>Agent 平台市场方</strong>：把 from skillspector import graph 嵌入上架审核流水线，PR 时跑一遍、CI 不通过不让合并。</li>
+<li><strong>个人开发者</strong>：在装 Claude Code / Codex / Gemini CLI 第三方 skill 之前<strong>先扫一遍</strong>，把「DO NOT INSTALL」 当硬门槛。</li>
+<li><strong>观望 vs 立刻上</strong>：生产环境<strong>等首次 release tag 出来再锁版本</strong>；个人/实验项目<strong>可以现在就用</strong>。</li>
+</ul>
+</li>
+<li><strong>如果你要学它</strong>：
+<ul>
+<li><strong>LangGraph 编排 + Pydantic structured output</strong>：src/skillspector/graph.py（44 行）、llm_analyzer_base.py、sarif_models.py 是教科书级别的范例。</li>
+<li><strong>MCP 协议层规则集</strong>：nodes/analyzers/mcp_tool_poisoning.py + nodes/analyzers/mcp_least_privilege.py 是行业首套实现。</li>
+<li><strong>OSV.dev 三段式 fallback</strong>：nodes/analyzers/osv_client.py 的 batch + cache + static fallback 是所有「实时情报对接」场景的样板。</li>
+<li><strong>Provider 抽象</strong>：providers/{base.py,registry.py,openai/,anthropic/,nv_build/} 的 Protocol + 子包 + 每包 YAML 模式胜过 ABC 强绑定。</li>
+</ul>
+</li>
+<li><strong>如果你要 fork 它</strong>：
+<ul>
+<li><strong>加动态执行层</strong>：和 NMitchem/SkillScan 互补——SkillSpector 静态过、CRITICAL 标红直接拒；标黄/标绿再走动态验证。这是 NVIDIA 完全能做的双层。</li>
+<li><strong>补 LangGraph conditional_edge</strong>：把现在的「每节点自己查 use_llm」改成图条件路由，让 fallback 路径可被观测（issue #9 / #10 揭示的反例）。</li>
+<li><strong>加 SSRF 入向规则</strong>：扩展 OSV.dev + taint 跟踪到内网/元数据目标（issue #61 已开了口子）。</li>
+<li><strong>加 CHANGELOG / examples 目录</strong>：当前 0 release 的状态不利于外部采纳，CHANGELOG + 一个 5 行 examples/scan_one_skill.py 就能把门槛从「读完 README」降到「复制粘贴」。</li>
+</ul>
+</li>
+</ul>
+
+<h3>知识入口</h3>
+
+<table>
+<thead>
+<tr><th style="vertical-align:top;">资源</th><th style="vertical-align:top;">链接</th></tr>
+</thead>
+<tbody>
+<tr><td style="vertical-align:top;">DeepWiki</td><td style="vertical-align:top;">未实质收录（页面处于加载态）</td></tr>
+<tr><td style="vertical-align:top;">Zread.ai</td><td style="vertical-align:top;">未收录（HTTP 403）</td></tr>
+<tr><td style="vertical-align:top;">关联论文</td><td style="vertical-align:top;">「Agent Skills in the Wild: An Empirical Study of Security Vulnerabilities at Scale」（Liu et al., 2026）——README 引用为 26.1% 含漏洞 / 5.2% 可能恶意 / 42,447 skills 数据集，arXiv 链接未直接核验</td></tr>
+<tr><td style="vertical-align:top;">在线 Demo</td><td style="vertical-align:top;">无（仓库未提供 hosted playground；Docker 镜像可本地一键起）</td></tr>
+<tr><td style="vertical-align:top;">关键 Issue</td><td style="vertical-align:top;"><a href="https://github.com/NVIDIA/SkillSpector/issues/9">#9 两阶段流水线静默退化</a> / <a href="https://github.com/NVIDIA/SkillSpector/issues/14">#14 False Report</a> / <a href="https://github.com/NVIDIA/SkillSpector/issues/61">#61 SSRF 检测</a></td></tr>
+<tr><td style="vertical-align:top;">设计文档</td><td style="vertical-align:top;"><a href="https://github.com/NVIDIA/SkillSpector/blob/main/docs/B.3.1-mcp-least-privilege.md">B.3.1 mcp-least-privilege</a> / <a href="https://github.com/NVIDIA/SkillSpector/blob/main/docs/B.3.2-mcp-tool-poisoning.md">B.3.2 mcp-tool-poisoning</a> / <a href="https://github.com/NVIDIA/SkillSpector/blob/main/docs/SC4-osv-live-vulnerability-lookups.md">SC4 OSV live lookup</a></td></tr>
+</tbody>
+</table>
+
+</body>
+</html>
