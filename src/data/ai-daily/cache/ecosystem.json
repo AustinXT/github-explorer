@@ -1,6 +1,6 @@
 {
   "meta": {
-    "last_run": "2026-06-15",
+    "last_run": "2026-06-16",
     "window_days": 30
   },
   "entries": [
@@ -417,6 +417,24 @@
       "canonical_url": "https://github.com/tursodatabase/turso",
       "event_date": "2026-06-15",
       "date_seen": "2026-06-15"
+    },
+    {
+      "key": "github.com/alibaba/zvec",
+      "canonical_url": "https://github.com/alibaba/zvec",
+      "event_date": "2026-06-16",
+      "date_seen": "2026-06-16"
+    },
+    {
+      "key": "github.com/openbmb/voxcpm",
+      "canonical_url": "https://github.com/OpenBMB/VoxCPM",
+      "event_date": "2026-06-16",
+      "date_seen": "2026-06-16"
+    },
+    {
+      "key": "github.com/reflex-dev/fast-walk",
+      "canonical_url": "https://github.com/reflex-dev/fast-walk",
+      "event_date": "2026-06-16",
+      "date_seen": "2026-06-16"
     }
   ]
 }
