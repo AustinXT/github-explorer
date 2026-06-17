@@ -1,0 +1,6 @@
+{
+  "title": "GitHub 推荐：5 个月 4.9K stars：MIT 博士用 REPL 替代上下文窗口，RLM 凭什么重新定义 LM 推理",
+  "digest": "MIT 博士 Alex Zhang 把 prompt 从「上下文窗口」改写成 REPL 变量：LM 写 Python 读自己的输入，递归子调用 + 受训的 RLM-Qwen3-8B 把有效上下文推到接近无限，唯一论文+训好的模型三件套。",
+  "author": "NVoyager",
+  "theme": "stars,universe,dark"
+}
