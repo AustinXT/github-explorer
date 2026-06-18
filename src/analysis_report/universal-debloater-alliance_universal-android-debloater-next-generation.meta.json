@@ -1,0 +1,6 @@
+{
+  "title": "5 年 7914 stars：一个 JSON 单文件如何撑起 Android 去臃肿事实标准",
+  "digest": "UAD-ng 用 43k 行 uad_lists.json 单文件把 Android 包元数据做成社区共治数据 SoR，Rust 跨平台 GUI + CLI + OEM 错误翻译三位一体，被 Canta/AppManager 反向消费。",
+  "author": "NVoyager",
+  "theme": "stars,universe,dark"
+}

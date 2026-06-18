@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #3e3e3e;
+    background: #fff;
+}
+p {
+    font-size: 15px !important;
+    line-height: 2 !important;
+    margin: 0 !important;
+    padding-top: 0.5em !important;
+    padding-bottom: 0.5em !important;
+    padding-right: 1.2em !important;
+    padding-left: 1.2em !important;
+    text-align: justify !important;
+}
+p + p { margin-top: 0 !important; }
+h1 { font-size: 20px !important; color: #e51f42 !important; text-align: center !important; margin: 24px 0 16px 0 !important; padding: 0 !important; }
+h2 { font-size: 18px !important; color: #e51f42 !important; text-align: center !important; margin: 24px 0 24px 0 !important; padding: 0 !important; }
+h3 { font-size: 15px !important; font-weight: bold !important; color: #3e3e3e !important; text-align: left !important; margin: 16px 0 16px 0 !important; padding: 0 0 0 1.2em !important; }
+h4 { font-size: 15px !important; color: rgb(0, 122, 170) !important; margin: 12px 0 8px 0 !important; padding: 0 !important; }
+ul, ol {
+    padding-left: 2em !important;
+    margin: 1em 0 !important;
+    font-size: 15px !important;
+}
+li {
+    margin: 0.5em 0 !important;
+    line-height: 1.8em !important;
+    font-size: 15px !important;
+    color: #3e3e3e !important;
+}
+ul ul, ul ol, ol ul, ol ol {
+    margin: 0 !important;
+    padding-left: 1.2em !important;
+}
+blockquote {
+    border-left: 4px solid #888 !important;
+    padding: 8px 16px !important;
+    margin: 1em 0 !important;
+    color: #666 !important;
+    background: #f9f9f9 !important;
+}
+blockquote > p { margin: 0.5em 0 !important; padding: 0 !important; }
+blockquote::before, blockquote::after { content: none !important; }
+pre {
+    font-size: 14px !important;
+    line-height: 1.4em !important;
+    color: #3e3e3e !important;
+    background: #f8f8f8 !important;
+    padding: 12px 16px !important;
+    border-radius: 4px !important;
+    overflow: auto !important;
+    margin: 1em 0 !important;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1em 0;
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+    text-align: left;
+    color: #3e3e3e !important;
+}
+th { background: #f5f5f5; font-weight: bold; }
+img { max-width: 100% !important; height: auto !important; display: block; margin: 1em auto; }
+sup { font-size: 0.75em !important; vertical-align: super !important; color: #e51f42 !important; margin: 0 2px !important; }
+
+</style>
+</head>
+<body>
+<blockquote><p>GitHub: <a href="https://github.com/universal-debloater-alliance/universal-android-debloater-next-generation">https://github.com/universal-debloater-alliance/universal-android-debloater-next-generation</a></p></blockquote>
+<h2>一句话总结</h2>
+<p>无 root + 跨平台桌面 GUI + 社区共治包名单的「三位一体」 Android 去臃肿工具，把一个 43135 行的 JSON 包元数据库变成整个 Android 隐私/续航赛道的共享数据 SoR（System of Record），被 Canta / AppManager 等下游消费。</p>
+<h2>值得关注的理由</h2>
+<ul><li><strong>数据资产化范本</strong>：43k 行 uad_lists.json 单文件作为 PR 友好的社区共治数据集，通过 include_str! 编译期嵌入 + 启动 diff 升级，让协作、维护、发版、降级四件难事变简单。</li><li><strong>Rust 工程实践教科书</strong>：3 crate workspace 共享 uad-core 内核 + GUI/CLI 平起平坐 + 自建类型化 ADB builder + OEM 错误翻译层，是少有的「完整工业级」 Rust 桌面工具样本。</li><li><strong>隐私工具的战略性放弃</strong>：不要 root（产品定位）、不做遥测（自毁长城）、放弃 Wayland 装饰修复（精力守恒）——三个清晰的「不做什么」决定了项目能活 5 年。</li></ul>
+<h2>项目展示</h2>
+<h3>README 媒体</h3>
+<ol><li><img src="https://raw.githubusercontent.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation/main/resources/screenshots/v1.0.2.png" alt="UAD-ng v1.0.2 截图" /> — 类型: screenshot（apps 视图主界面）</li></ol>
+<h3>筛选说明</h3>
+<ul><li>README 含 1 张主截图、若干社区徽标，筛选后保留 1 张核心 UI 截图。</li><li>项目为桌面 GUI 工具，无官方主页与 Demo 视频。</li></ul>
+<h2>项目画像</h2>
+<table>
+<thead><tr>
+<th>维度</th>
+<th>数据</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>GitHub</td>
+<td><a href="https://github.com/universal-debloater-alliance/universal-android-debloater-next-generation">https://github.com/universal-debloater-alliance/universal-android-debloater-next-generation</a></td>
+</tr>
+<tr>
+<td>Star / Fork</td>
+<td>7914 / 339</td>
+</tr>
+<tr>
+<td>Watcher / Open Issue / PR</td>
+<td>41 / 237 / 9</td>
+</tr>
+<tr>
+<td>代码行数</td>
+<td>61,125（Rust ~7k + JSON ~54k），代码/注释比 122:1</td>
+</tr>
+<tr>
+<td>语言分布</td>
+<td>JSON 88.0%、Rust 11.6%、TOML/Nix/Shell 其余</td>
+</tr>
+<tr>
+<td>文件数量</td>
+<td>44 个源文件</td>
+</tr>
+<tr>
+<td>项目年龄</td>
+<td>58.1 个月（首次提交 2021-08-18；GitHub 仓库迁入 2023-10-26）</td>
+</tr>
+<tr>
+<td>最近推送</td>
+<td>2026-06-17 / 2026-06-18</td>
+</tr>
+<tr>
+<td>开发阶段</td>
+<td>密集维护期（近 30 天 13 commits / 近 90 天 82 commits）</td>
+</tr>
+<tr>
+<td>开发模式</td>
+<td>半职业化维护（周末 31.8% + 深夜 22.1%，全年无休）</td>
+</tr>
+<tr>
+<td>贡献模式</td>
+<td>核心少数 + 社区协作（Top1 AnonymousWP 占 35.6%，Top3 累计 35.3%，累计 171 位贡献者）</td>
+</tr>
+<tr>
+<td>热度定位</td>
+<td>大众热门（Android 隐私/去臃肿赛道头部）</td>
+</tr>
+<tr>
+<td>质量评级</td>
+<td>代码 A- / 文档 B+ / 测试 C+ / CI/CD A / 错误处理 B+</td>
+</tr>
+<tr>
+<td>最新版本</td>
+<td>v1.2.0（共 12 个 tag，语义化版本，1.x 收敛期）</td>
+</tr>
+</tbody></table>
+<h2>作者视角：为什么存在这个项目</h2>
+<h3>创始人/作者背景</h3>
+<p>项目前身是 0x192 的 universal-android-debloater（单作者 Python+Qt，19.5k stars），因 PR 拥堵 + 评审机制缺失而 fork 治理失败。Universal-Debloater-Alliance 是 AnonymousWP 等核心贡献者从 contributor 升级为 co-maintainer 后，把项目从「个人作品」重塑为「公地」的组织化托管实体——CONTRIBUTING.md 强制声明 Trunk-Based Development、issue 模板驱动分类、mass-edit 来源透明度、对 LLM 贡献也明确要求，正是把 GitHub Issues 当作治理入口的设计。</p>
+<h3>问题判断</h3>
+<p>Android 出厂预装应用吃掉电量、扩大攻击面、隐私不可控；多数用户不愿意 root（破坏 warranty、Knox 银行 App 检测），也不愿用命令行记包名。<strong>真正的供给缺口不在「工具」——AppManager 已经有了；在于「包元数据」——推荐等级/描述/依赖/分类没有任何项目把它做成社区共治的独立 SoR</strong>。UAD-ng 押注的是：谁握住「该删什么」的数据，谁就是 Android 隐私赛道的事实标准。</p>
+<h3>解法哲学</h3>
+<ul><li><strong>数据是资产，代码是容器</strong>：uad_lists.json 单文件 3 年被改 712 次，是项目灵魂，代码只是容器。</li><li><strong>显式优于隐式</strong>：adb.rs 头注释明确「1:1 mapping / no magic / no chaining」，自建 ACommand → ShellCommand → PmCommand 类型化 builder 把 Rust 的 type-state 模式从 GUI 渗透到 ADB 绑定层。</li><li><strong>战略性放弃</strong>：不要 root（产品定位）、不做遥测（隐私工具自毁点）、放弃 Wayland 装饰修复（#31 wontfix，把精力留给 NixOS 兼容）——三个清晰的「不做什么」。</li></ul>
+<h3>战略意图</h3>
+<p><strong>明确定位为「PC 端 debloat 旗舰 + debloat 数据 SoR 提供方」</strong>——README Friends 一节点名 Canta/AppManager/外部 debloat-list 作为数据下游消费者。无商业化路径，靠组织化治理维持长期主义。</p>
+<blockquote><p>官方文档：无 homepage_url，仅 GitHub Wiki。设计哲学主要从源码注释（adb.rs 第 5-37 行哲学宣言）+ README/CONTRIBUTING 推断。</p></blockquote>
+<h2>核心价值提炼</h2>
+<h3>创新之处</h3>
+<p>按新颖度 × 实用性排序：</p>
+<ol><li><strong>uad_lists.json 作为 PR-driven 社区数据集 + include_str! 编译期嵌入</strong>（新颖 3/实 5/迁 5）：43k 行 JSON + #[allow(clippy::large_include_file, reason=「...」)] 豁免 + 启动 diff 升级。包数据可单独 review、单独发版，不阻塞应用代码。已被 Canta/AppManager 反向消费。</li><li><strong>OEM-aware 错误翻译层 make_friendly_error_message</strong>（新颖 4/实 5/迁 4）：把 5 类 OEM 错误码（Knox DELETE_FAILED_USER_RESTRICTED、MDM 策略、跨用户 NOT_INSTALLED_FOR_USER）翻译为「普通用户能读懂的话 + 行动建议」，把内核级错误转成用户级 UX，是产品力差异点。</li><li><strong>「显式 ADB builder + 1:1 CLI 映射 + 禁魔法」哲学</strong>（新颖 4/实 4/迁 4）：源码头部 #![deny(clippy::unwrap_used)] 写明 「compile-time prevention of malformed cmds」，把「wrap 一个不稳定的外部协议」做到「用类型挡住错误用法」。</li><li><strong>三态有限状态机 + 验证后回退</strong>（新颖 3/实 5/迁 4）：uninstall 失败 → 自动 fallback 改成 disable；disable 失败 → 改成 uninstall；每步 verify_package_state 重读状态，把「动作-验证-回退」做成硬约束。</li><li><strong>3 crate workspace + CLI 一等公民</strong>（新颖 2/实 5/迁 5）：uad-core 零 GUI 依赖，CLI 带 clap derive + rustyline REPL + 7 种 shell completion + --dry-run + exit-on-broken-pipe 宏，反驳「CLI 退化为 GUI 参数化入口」的常见模式。</li></ol>
+<h3>可复用的模式与技巧</h3>
+<ol><li><strong>「Data-first 仓库」模式</strong>：单 JSON + include_str! + 运行时远端 diff——任何「协作维护的结构化数据 + 围绕它的工具」项目直接适用（awesome list、规则引擎、配置生成器）。</li><li><strong>CLI 一等公民 + 共享 core crate</strong>：业务 crate 无 GUI 依赖，CLI/REPL 是独立产品。</li><li><strong>「Wrap-CLI-as-typed-builder」 + 显式 1:1 映射 + 注释里写哲学</strong>：把「wrap 不稳定的外部协议」做到「用类型挡住错误用法」，适用 kubectl/gh/terraform 类 SDK。</li><li><strong>OEM/厂商特定错误码 → 用户友好翻译层</strong>：单一函数集中所有「魔法映射」，新增 OEM 错误码时一处加。</li><li><strong>Verification-after-action + 自动 fallback</strong>：状态机里把「操作后立刻重读状态」作为硬约束。</li><li><strong>Trunk-based + 标签驱动的 release notes</strong>：CONTRIBUTING.md 里的 issue 模板 → 标签 → release.yml 自动归类。</li></ol>
+<h3>关键设计决策</h3>
+<ul><li><strong>决策</strong>：把「包元数据」作为独立 SoR 文件 + include_str! 编译期嵌入<ul><li><strong>问题</strong>：包数据协作最热但远程 fetch 不靠谱；包数据又大（~1.3MB）不能走 TOML</li><li><strong>方案</strong>：单 JSON 文件 + clippy large_include_file 豁免 + 启动时与远端 diff 升级</li><li><strong>Trade-off</strong>：二进制变大但换来零网络启动 + 严格类型 + PR review 极简（一个 JSON diff）</li><li><strong>可迁移性</strong>：<strong>高</strong>——任何「以数据集为灵魂 + 围绕它做工具」的项目都适用</li></ul></li><li><strong>决策</strong>：ADB 子进程通信走 std::process::Command + 自建类型化 builder 而非 adb_client crate<ul><li><strong>问题</strong>：Rust 生态已有 adb_client（issue #700 跟踪迁移），当前显式 1:1 映射 ADB CLI 反而更稳</li><li><strong>方案</strong>：ACommand → shell(serial) → pm()/getprop()/reboot()/raw()，每层只暴露与 ADB 1:1 对应方法</li><li><strong>Trade-off</strong>：失去「用 Rust 抽象做单元测试」的部分可能性，换来「ADB 协议升级时行为可预测」</li><li><strong>可迁移性</strong>：<strong>中</strong>——需要「显式优于隐式」的工程文化支撑</li></ul></li><li><strong>决策</strong>：多用户 / 多设备状态机收敛在 Phone + User + PackageState 三元组<ul><li><strong>问题</strong>：Android 多用户（personal/work profile）+ 多设备（USB/WiFi/模拟器）+ 跨厂商 re-install 行为 → 状态空间爆炸</li><li><strong>方案</strong>：detect_cross_user_behavior（sync.rs 第 290-391 行）专门处理 OEM 跨用户恢复这种「操作成功了但不符合预期」的情况</li><li><strong>Trade-off</strong>：enum 嵌套多 + clone 成本有</li><li><strong>可迁移性</strong>：<strong>中</strong>——任何「动作-验证-回退」模式的工具（CI 修复、infra remediation）都能参考</li></ul></li><li><strong>决策</strong>：自更新走「下载新二进制 + 自身 rename 替换 + spawn 新进程」（update.rs 第 78-164 行）<ul><li><strong>方案</strong>：把当前 exe rename 到 tmp2，新二进制 rename 到当前路径，新进程带 --self-update-temp 启动 + 删除旧 exe</li><li><strong>Trade-off</strong>：Windows 杀自身进程失败时会卡，但比 rustup proxy-binary 模式简单一个量级</li><li><strong>可迁移性</strong>：<strong>中</strong>——Tauri/Egui 等 Rust GUI 通用模式</li></ul></li></ul>
+<h2>竞品格局与定位</h2>
+<h3>竞品对比矩阵</h3>
+<table>
+<thead><tr>
+<th>维度</th>
+<th><strong>UAD-ng（本项目）</strong></th>
+<th>0x192 上游</th>
+<th>AppManager</th>
+<th>Canta</th>
+<th>akon/android-debloat-list</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Stars</td>
+<td>7914</td>
+<td>19516</td>
+<td>~25k+</td>
+<td>~2k+</td>
+<td>~2k+</td>
+</tr>
+<tr>
+<td>平台</td>
+<td>PC GUI（Linux/macOS/Windows）</td>
+<td>PC GUI</td>
+<td>手机 App</td>
+<td>手机 App</td>
+<td>仅数据</td>
+</tr>
+<tr>
+<td>需要 root/Shizuku</td>
+<td>否</td>
+<td>否</td>
+<td>否</td>
+<td><strong>要 Shizuku</strong></td>
+<td>否</td>
+</tr>
+<tr>
+<td>数据 SoR</td>
+<td><strong>是</strong>（43k JSON + 编译嵌入）</td>
+<td>是（单人维护）</td>
+<td>部分</td>
+<td><strong>消费 UAD-ng 数据</strong></td>
+<td>是（独立分叉）</td>
+</tr>
+<tr>
+<td>CLI / 脚本化</td>
+<td><strong>一等公民</strong>（REPL + completion + dry-run）</td>
+<td>无</td>
+<td>无</td>
+<td>无</td>
+<td>无</td>
+</tr>
+<tr>
+<td>OEM 错误处理</td>
+<td><strong>专门的翻译层 + fallback</strong></td>
+<td>基础</td>
+<td>中</td>
+<td>基础</td>
+<td>无</td>
+</tr>
+<tr>
+<td>维护模式</td>
+<td><strong>组织化 + 171 贡献者</strong></td>
+<td>单人（停滞）</td>
+<td>个人活跃</td>
+<td>个人活跃</td>
+<td>社区</td>
+</tr>
+</tbody></table>
+<h3>差异化护城河</h3>
+<ol><li><strong>数据 SoR + Rust 跨平台 GUI + CLI 复用</strong>的「三位一体」组合，目前没有同等体量的项目同时具备；</li><li><strong>社区治理透明度</strong>（CONTRIBUTING.md 强制声明 mass-edit 来源、对 LLM 也要求）——这是 0x192 单人项目永远做不到的；</li><li><strong>OEM 行为理解的深度</strong>（Knox / MDM / 跨用户恢复检测）——要靠长尾 issue 沉淀。</li></ol>
+<h3>竞争风险</h3>
+<ol><li><strong>「数据」层竞争</strong>：akon/android-debloat-list 已在分叉数据，若形成独立生态会动摇 UAD-ng 的「普世数据源」地位；</li><li><strong>手机端挤压</strong>：Canta 这类 Shizuku 方案随 Android 14+ 默认开放无线调试门槛持续降低，「为何还要用 PC 工具」会被反复质疑；</li><li><strong>AppManager 体量</strong>：25k stars 的全能型 App 持续吸纳 debloat 用户。</li></ol>
+<h3>生态定位</h3>
+<p><strong>PC 端 debloat 旗舰 + debloat 数据 SoR 提供方</strong>——这是 UAD-ng 在 2026 年最稳的定位。继续坐稳要靠 CLI/REPL 与「被外部工具消费数据」的友好度。</p>
+<h2>套利机会分析</h2>
+<ul><li><strong>信息差</strong>：已被充分关注（7914 stars + 114 stars/月增长），不适合「低关注度套利」，适合做「Android 隐私/去广告」赛道导流内容；</li><li><strong>技术借鉴</strong>：uad_lists.json 范式（PR-driven 社区数据集 + 编译嵌入）+ OEM 错误翻译层 + 显式 wrap 外部协议哲学，这三套直接可移植到任何「社区维护结构化数据 + 工具」项目；</li><li><strong>生态位</strong>：填补了「Android debloat 数据 SoR」这一真空，下游 Canta/AppManager/外部 list 都已反向消费；</li><li><strong>趋势判断</strong>：PC 端 debloat 需求稳定（不会增长），但 Rust GUI 工具型项目的工程范式处于上升期；比上游（已停滞）有后发组织化优势，比 AppManager 更专注，比 Canta 更不易被手机端替代（PC 端是更稳定场景）。</li></ul>
+<h2>风险与不足</h2>
+<ul><li><strong>测试覆盖是最大短板</strong>：11 个 #[test] 集中在单点，sync.rs 647 行核心状态机、attempt_fallback 3 case、detect_cross_user_behavior 三场景全部 0 测试；CI 跑了 grcov 但未设门槛；</li><li><strong>GUI/CLI 0 单测</strong>：stateful UI 状态靠社区 Issue 兜底（237 open issues 印证了这一点）；</li><li><strong>unwrap()/expect() 在非 adb 模块未受 #![deny(clippy::unwrap_used)] 保护</strong>（52 处），典型如 setup_uad_dir panic；</li><li><strong>Iced 锁版本</strong>：iced = 「=0.14.0」 锁版本，绑定到 Iced 0.14 内部 widget trait——升级到大版本时代价大；</li><li><strong>list.rs 1597 行单文件</strong>，clippy 已在多处加 #[allow(clippy::too_many_lines, reason=...)]，UI 主视图已膨胀；</li><li><strong>uad_lists.json 单点风险</strong>：包数据全部集中在一个 JSON 文件，若该文件损坏/被恶意 PR 影响面极大（虽然有 PR review 兜底）；</li><li><strong>战略性放弃的反噬</strong>：放弃 Wayland 装饰修复意味着 Linux Wayland 用户体验残缺；</li><li><strong>数据层被分叉的风险</strong>：akon/android-debloat-list 已在分叉数据，若该 list 演化出独立生态会动摇 UAD-ng 的「普世数据源」地位。</li></ul>
+<h2>行动建议</h2>
+<ul><li><strong>如果你要用它</strong>：<ul><li>适合不愿 root 的 Android 隐私/续航敏感用户、ROM 玩家、批量二手设备清理；</li><li>比 AppManager 更专注、比 Canta 不需 Shizuku、比上游仍在维护；</li><li>建议优先用 CLI 脚本化（REPL + shell completion 友好），GUI 适合交互式选包。</li></ul></li><li><strong>如果你要学它</strong>：<ul><li>重点看 resources/assets/uad_lists.json（数据资产化范本）；</li><li>src/core/adb.rs（wrap 外部协议的类型化 builder + 哲学注释）；</li><li>src/core/sync.rs（OEM 错误翻译层 + 三态 fallback）；</li><li>crates/uad-core vs uad-gui vs uad-cli（3 crate 共享内核范式）；</li><li>.github/（标签驱动的 release notes + 矩阵 CI）。</li></ul></li><li><strong>如果你要 fork 它</strong>：<ul><li>可以加「按 OEM 自动选 Safe/Recommended/Munsafe 过滤」的预设（呼应 issue #583 Safe 列表诉求）；</li><li>可以补 GUI 状态机的 snapshot test（最大短板）；</li><li>可以加 NixOS/SteamOS GUI 集成测试（呼应 flake.nix 投资）；</li><li>不要碰 ADB builder 哲学——它的「显式优于隐式」是核心资产。</li></ul></li></ul>
+<h3>知识入口</h3>
+<table>
+<thead><tr>
+<th>资源</th>
+<th>链接</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>DeepWiki</td>
+<td>未收录</td>
+</tr>
+<tr>
+<td>Zread.ai</td>
+<td>未收录</td>
+</tr>
+<tr>
+<td>关联论文</td>
+<td>无（工程工具，无学术对照）</td>
+</tr>
+<tr>
+<td>在线 Demo</td>
+<td>无（PC GUI 工具，需 adb 连接真机/模拟器，无 Web Demo）</td>
+</tr>
+<tr>
+<td>设计哲学参考</td>
+<td>Lembas 项目（LotRO 插件管理器）—— Rust GUI 框架 Iced 用法参考（README 第 52 行）</td>
+</tr>
+</tbody></table>
+<h2>附录：三阶段分析的关键判断</h2>
+<h3>网络分析（Phase 1）要点</h3>
+<ul><li>大众热门 + 爆发型增长（最近 114 stars 集中在 1 天内采样）；</li><li>生态定位：PC 端 debloat 旗舰 + debloat 数据 SoR 提供方；</li><li>关键 Issue：#1400 国行 ROM bootloop（推荐 vs 误杀张力）、#583 Safe 列表（维护成本倍增）、#432 等 unwrap on None（跨 Linux 桌面鲁棒性）、#31 Wayland wontfix（战略性放弃）、#43 NixOS 兼容（已用 flake.nix 修复）。</li></ul>
+<h3>元分析（Phase 2）要点</h3>
+<ul><li><strong>双轨结构</strong>：核心代码（Rust 7k）vs 数据资产（JSON 54k）量级悬殊；</li><li><strong>去中心化贡献</strong>：171 位贡献者但 Top1 仅 23.8%（实际 Top1 AnonymousWP 占 35.6%），典型的核心维护者 + 广泛社区贡献者模式；</li><li><strong>化石痕迹</strong>：ressources/ 与 resources/ 双目录并存、crates/uad-* 与顶层 src/ 并存——monorepo 迁移中的中间态；</li><li><strong>职业化判断</strong>：5 年长寿 + 全年无休 + 周末深夜过半 = 半职业化维护；</li><li><strong>1.x 段收敛</strong>：v1.0.0 → v1.2.0 只发了 8 个 patch/minor，稳定 API 已收敛。</li></ul>
+<h3>内容分析（Phase 3）要点</h3>
+<ul><li><strong>数据资产化是真正的护城河</strong>——uad_lists.json 单文件 43135 行、3 年协作、12+ 字段的结构化数据，是整个项目的灵魂；</li><li><strong>「显式优于隐式」哲学贯穿到底</strong>——adb.rs 头注释明确写出「1:1 mapping / no magic / no chaining」的 wrap 外部协议哲学；</li><li><strong>OEM-aware 错误翻译</strong>是产品力差异点——把「内核级错误转成用户级 UX」 的样板；</li><li><strong>3 crate 工作区 + 共享 core + CLI 一等公民</strong>——反驳「GUI 派生 CLI」的常见模式；</li><li><strong>战略性放弃的边界非常清晰</strong>：不要 root、不做遥测、放弃 Wayland——「工程精力守恒」的教科书。</li></ul>
+</body>
+</html>
