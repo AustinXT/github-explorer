@@ -1,0 +1,6 @@
+{
+  "title": "GitHub推荐：1.0 GA 两天破 9.9K star：用公钥拨号的 Rust P2P QUIC 栈 iroh",
+  "digest": "iroh 把「公钥即地址 + QUIC + relay 兜底」封装成 5 行可用的 Rust P2P SDK，1.0 GA 三天破 9.9K star，填补 libp2p 太重、Tailscale 太中心、WireGuard 太低层的断带。",
+  "author": "NVoyager",
+  "theme": "stars,universe,dark"
+}
