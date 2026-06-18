@@ -91,6 +91,9 @@ entries:
   - database
   - trading-finance
   - protocol-spec
+  alexzhang13_rlm:
+  - ai-agent
+  - model-foundation
   alibaba_opensandbox:
   - ai-agent
   - security
@@ -1463,6 +1466,8 @@ entries:
   pedramamini_maestro:
   - ai-agent
   - security
+  penpot_penpot:
+  - design-ui
   peterc_engblogs:
   - database
   phuryn_pm-skills:

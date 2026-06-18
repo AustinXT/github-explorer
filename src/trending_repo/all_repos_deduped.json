@@ -3,11 +3,11 @@
     "name": "obra/superpowers",
     "url": "https://github.com/obra/superpowers",
     "language": "Shell",
-    "stars": 230644,
-    "forks": 20509,
+    "stars": 232022,
+    "forks": 20613,
     "description": "An agentic skills framework & software development methodology that works.",
-    "last_seen": "2026-06-17",
-    "trending_days": 63
+    "last_seen": "2026-06-18",
+    "trending_days": 64
   },
   {
     "name": "TapXWorld/ChinaTextbook",
@@ -1060,6 +1060,16 @@
     "trending_days": 8
   },
   {
+    "name": "alibaba/zvec",
+    "url": "https://github.com/alibaba/zvec",
+    "language": "C++",
+    "stars": 11069,
+    "forks": 642,
+    "description": "A lightweight, lightning-fast, in-process vector database",
+    "last_seen": "2026-06-18",
+    "trending_days": 7
+  },
+  {
     "name": "basecamp/omarchy",
     "url": "https://github.com/basecamp/omarchy",
     "language": "Shell",
@@ -1077,6 +1087,16 @@
     "forks": 3266,
     "description": "FinceptTerminal is a modern finance application offering advanced market analytics, investment research, and economic data tools, designed for interactive exploration and data-driven decision-making in a user-friendly environment.",
     "last_seen": "2026-05-25",
+    "trending_days": 7
+  },
+  {
+    "name": "freeCodeCamp/freeCodeCamp",
+    "url": "https://github.com/freecodecamp/freecodecamp",
+    "language": "TypeScript",
+    "stars": 449385,
+    "forks": 45104,
+    "description": "freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming, and computer science for free.",
+    "last_seen": "2026-06-18",
     "trending_days": 7
   },
   {
@@ -1270,16 +1290,6 @@
     "trending_days": 6
   },
   {
-    "name": "alibaba/zvec",
-    "url": "https://github.com/alibaba/zvec",
-    "language": "C++",
-    "stars": 10339,
-    "forks": 604,
-    "description": "A lightweight, lightning-fast, in-process vector database",
-    "last_seen": "2026-06-16",
-    "trending_days": 6
-  },
-  {
     "name": "anthropics/prompt-eng-interactive-tutorial",
     "url": "https://github.com/anthropics/prompt-eng-interactive-tutorial",
     "language": "JupyterNotebook",
@@ -1410,13 +1420,13 @@
     "trending_days": 6
   },
   {
-    "name": "freeCodeCamp/freeCodeCamp",
-    "url": "https://github.com/freecodecamp/freecodecamp",
-    "language": "TypeScript",
-    "stars": 448990,
-    "forks": 45076,
-    "description": "freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming, and computer science for free.",
-    "last_seen": "2026-06-17",
+    "name": "google-research/timesfm",
+    "url": "https://github.com/google-research/timesfm",
+    "language": "Python",
+    "stars": 22528,
+    "forks": 2176,
+    "description": "TimesFM (Time Series Foundation Model) is a pretrained time-series foundation model developed by Google Research for time-series forecasting.",
+    "last_seen": "2026-06-18",
     "trending_days": 6
   },
   {
@@ -1547,6 +1557,16 @@
     "forks": 4402,
     "description": "A visual, example-driven guide to Claude Code — from basic concepts to advanced agents, with copy-paste templates that bring immediate value.",
     "last_seen": "2026-06-10",
+    "trending_days": 6
+  },
+  {
+    "name": "makeplane/plane",
+    "url": "https://github.com/makeplane/plane",
+    "language": "TypeScript",
+    "stars": 51642,
+    "forks": 4591,
+    "description": "🔥🔥🔥 Open-source Jira, Linear, Monday, and ClickUp alternative. Plane is a modern project management platform to manage tasks, sprints, docs, and triage.",
+    "last_seen": "2026-06-18",
     "trending_days": 6
   },
   {
@@ -1840,16 +1860,6 @@
     "trending_days": 5
   },
   {
-    "name": "google-research/timesfm",
-    "url": "https://github.com/google-research/timesfm",
-    "language": "Python",
-    "stars": 21583,
-    "forks": 2110,
-    "description": "TimesFM (Time Series Foundation Model) is a pretrained time-series foundation model developed by Google Research for time-series forecasting.",
-    "last_seen": "2026-06-17",
-    "trending_days": 5
-  },
-  {
     "name": "hashicorp/vault",
     "url": "https://github.com/hashicorp/vault",
     "language": "Go",
@@ -1957,16 +1967,6 @@
     "forks": 15101,
     "description": "The ultimate space for work and life — to find, build, and collaborate with agent teammates that grow with you. We are taking agent harness to the next level — enabling multi-agent collaboration, effortless agent team design, and introducing agents as the unit of work interaction.",
     "last_seen": "2026-05-08",
-    "trending_days": 5
-  },
-  {
-    "name": "makeplane/plane",
-    "url": "https://github.com/makeplane/plane",
-    "language": "TypeScript",
-    "stars": 51064,
-    "forks": 4547,
-    "description": "🔥🔥🔥 Open-source Jira, Linear, Monday, and ClickUp alternative. Plane is a modern project management platform to manage tasks, sprints, docs, and triage.",
-    "last_seen": "2026-06-17",
     "trending_days": 5
   },
   {
@@ -3820,6 +3820,16 @@
     "trending_days": 3
   },
   {
+    "name": "n0-computer/iroh",
+    "url": "https://github.com/n0-computer/iroh",
+    "language": "Rust",
+    "stars": 9870,
+    "forks": 458,
+    "description": "IP addresses break, dial keys instead. Modular networking stack in Rust.",
+    "last_seen": "2026-06-18",
+    "trending_days": 3
+  },
+  {
     "name": "nitrojs/nitro",
     "url": "https://github.com/nitrojs/nitro",
     "language": "TypeScript",
@@ -4227,6 +4237,16 @@
     "forks": 5842,
     "description": "Umami is a modern, privacy-focused analytics platform. A better, open-source alternative to Google Analytics, Mixpanel and Amplitude.",
     "last_seen": "2025-11-11",
+    "trending_days": 3
+  },
+  {
+    "name": "Universal-Debloater-Alliance/universal-android-debloater-next-generation",
+    "url": "https://github.com/universal-debloater-alliance/universal-android-debloater-next-generation",
+    "language": "Rust",
+    "stars": 7799,
+    "forks": 335,
+    "description": "Cross-platform GUI written in Rust using ADB to debloat non-rooted Android devices. Improve your privacy, the security and battery life of your device.",
+    "last_seen": "2026-06-18",
     "trending_days": 3
   },
   {
@@ -4870,6 +4890,16 @@
     "trending_days": 2
   },
   {
+    "name": "DeusData/codebase-memory-mcp",
+    "url": "https://github.com/deusdata/codebase-memory-mcp",
+    "language": "C",
+    "stars": 6611,
+    "forks": 539,
+    "description": "High-performance code intelligence MCP server. Indexes codebases into a persistent knowledge graph — average repo in milliseconds. 158 languages, sub-ms queries, 99% fewer tokens. Single static binary, zero dependencies.",
+    "last_seen": "2026-06-18",
+    "trending_days": 2
+  },
+  {
     "name": "directus/directus",
     "url": "https://github.com/directus/directus",
     "language": "TypeScript",
@@ -4887,6 +4917,16 @@
     "forks": 147,
     "description": "The fastest and the most accurate file search toolkit for AI agents, Neovim, Rust, C, and NodeJS",
     "last_seen": "2026-04-05",
+    "trending_days": 2
+  },
+  {
+    "name": "dotnet/aspnetcore",
+    "url": "https://github.com/dotnet/aspnetcore",
+    "language": "C#",
+    "stars": 38068,
+    "forks": 10708,
+    "description": "ASP.NET Core is a cross-platform .NET framework for building modern cloud-based web applications on Windows, Mac, or Linux.",
+    "last_seen": "2026-06-18",
     "trending_days": 2
   },
   {
@@ -5760,16 +5800,6 @@
     "trending_days": 2
   },
   {
-    "name": "n0-computer/iroh",
-    "url": "https://github.com/n0-computer/iroh",
-    "language": "Rust",
-    "stars": 9512,
-    "forks": 443,
-    "description": "IP addresses break, dial keys instead. Modular networking stack in Rust.",
-    "last_seen": "2026-06-17",
-    "trending_days": 2
-  },
-  {
     "name": "NanmiCoder/MediaCrawler",
     "url": "https://github.com/nanmicoder/mediacrawler",
     "language": "Python",
@@ -6340,16 +6370,6 @@
     "trending_days": 2
   },
   {
-    "name": "Universal-Debloater-Alliance/universal-android-debloater-next-generation",
-    "url": "https://github.com/universal-debloater-alliance/universal-android-debloater-next-generation",
-    "language": "Rust",
-    "stars": 7549,
-    "forks": 324,
-    "description": "Cross-platform GUI written in Rust using ADB to debloat non-rooted Android devices. Improve your privacy, the security and battery life of your device.",
-    "last_seen": "2026-06-17",
-    "trending_days": 2
-  },
-  {
     "name": "Vaibhavs10/insanely-fast-whisper",
     "url": "https://github.com/vaibhavs10/insanely-fast-whisper",
     "language": "JupyterNotebook",
@@ -6427,6 +6447,16 @@
     "forks": 1282,
     "description": "A powerful GUI app and Toolkit for Claude Code - Create custom agents, manage interactive Claude Code sessions, run secure background agents, and more.",
     "last_seen": "2025-09-23",
+    "trending_days": 2
+  },
+  {
+    "name": "withastro/flue",
+    "url": "https://github.com/withastro/flue",
+    "language": "TypeScript",
+    "stars": 5361,
+    "forks": 289,
+    "description": "The sandbox agent framework.",
+    "last_seen": "2026-06-18",
     "trending_days": 2
   },
   {
@@ -7230,16 +7260,6 @@
     "trending_days": 1
   },
   {
-    "name": "DeusData/codebase-memory-mcp",
-    "url": "https://github.com/deusdata/codebase-memory-mcp",
-    "language": "C",
-    "stars": 4449,
-    "forks": 435,
-    "description": "High-performance code intelligence MCP server. Indexes codebases into a persistent knowledge graph — average repo in milliseconds. 158 languages, sub-ms queries, 99% fewer tokens. Single static binary, zero dependencies.",
-    "last_seen": "2026-06-17",
-    "trending_days": 1
-  },
-  {
     "name": "dimensionalOS/dimos",
     "url": "https://github.com/dimensionalos/dimos",
     "language": "Python",
@@ -7327,16 +7347,6 @@
     "forks": 664,
     "description": "Dolt – Git for Data",
     "last_seen": "2026-03-13",
-    "trending_days": 1
-  },
-  {
-    "name": "dotnet/aspnetcore",
-    "url": "https://github.com/dotnet/aspnetcore",
-    "language": "C#",
-    "stars": 37129,
-    "forks": 10448,
-    "description": "ASP.NET Core is a cross-platform .NET framework for building modern cloud-based web applications on Windows, Mac, or Linux.",
-    "last_seen": "2025-09-27",
     "trending_days": 1
   },
   {
@@ -8160,6 +8170,16 @@
     "trending_days": 1
   },
   {
+    "name": "Kilo-Org/kilocode",
+    "url": "https://github.com/kilo-org/kilocode",
+    "language": "TypeScript",
+    "stars": 21596,
+    "forks": 2687,
+    "description": "Kilo is the all-in-one agentic engineering platform. Build, ship, and iterate faster with the most popular open source coding agent.",
+    "last_seen": "2026-06-18",
+    "trending_days": 1
+  },
+  {
     "name": "Kludex/uvicorn",
     "url": "https://github.com/kludex/uvicorn",
     "language": "Python",
@@ -8187,6 +8207,16 @@
     "forks": 1879,
     "description": "Zigbee 🐝 to MQTT bridge 🌉, get rid of your proprietary Zigbee bridges 🔨",
     "last_seen": "2026-01-02",
+    "trending_days": 1
+  },
+  {
+    "name": "Kong/insomnia",
+    "url": "https://github.com/kong/insomnia",
+    "language": "TypeScript",
+    "stars": 38548,
+    "forks": 2285,
+    "description": "The open-source, cross-platform API client for GraphQL, REST, WebSockets, SSE and gRPC. With Cloud, Local and Git storage.",
+    "last_seen": "2026-06-18",
     "trending_days": 1
   },
   {
@@ -8230,6 +8260,16 @@
     "trending_days": 1
   },
   {
+    "name": "LibreTranslate/LibreTranslate",
+    "url": "https://github.com/libretranslate/libretranslate",
+    "language": "Python",
+    "stars": 14837,
+    "forks": 1526,
+    "description": "Free and Open Source Machine Translation API. Self-hosted, offline capable and easy to setup.",
+    "last_seen": "2026-06-18",
+    "trending_days": 1
+  },
+  {
     "name": "Light-Heart-Labs/DreamServer",
     "url": "https://github.com/light-heart-labs/dreamserver",
     "language": "Python",
@@ -8237,6 +8277,16 @@
     "forks": 192,
     "description": "Local AI anywhere, for everyone — LLM inference, chat UI, voice, agents, workflows, RAG, and image generation. No cloud, no subscriptions.",
     "last_seen": "2026-05-17",
+    "trending_days": 1
+  },
+  {
+    "name": "Lightricks/LTX-2",
+    "url": "https://github.com/lightricks/ltx-2",
+    "language": "Python",
+    "stars": 7403,
+    "forks": 1197,
+    "description": "Official Python inference and LoRA trainer package for the LTX-2 audio–video generative model.",
+    "last_seen": "2026-06-18",
     "trending_days": 1
   },
   {
@@ -8937,6 +8987,16 @@
     "forks": 24525,
     "description": "🎓 Path to a free self-taught education in Computer Science!",
     "last_seen": "2025-11-01",
+    "trending_days": 1
+  },
+  {
+    "name": "owainlewis/awesome-artificial-intelligence",
+    "url": "https://github.com/owainlewis/awesome-artificial-intelligence",
+    "language": "Unknown",
+    "stars": 14189,
+    "forks": 2328,
+    "description": "A curated list of Artificial Intelligence (AI) courses, books, video lectures and papers.",
+    "last_seen": "2026-06-18",
     "trending_days": 1
   },
   {
@@ -9780,16 +9840,6 @@
     "trending_days": 1
   },
   {
-    "name": "withastro/flue",
-    "url": "https://github.com/withastro/flue",
-    "language": "TypeScript",
-    "stars": 4664,
-    "forks": 247,
-    "description": "The sandbox agent framework.",
-    "last_seen": "2026-06-06",
-    "trending_days": 1
-  },
-  {
     "name": "wmjordan/PDFPatcher",
     "url": "https://github.com/wmjordan/pdfpatcher",
     "language": "C#",
@@ -9847,6 +9897,16 @@
     "forks": 7310,
     "description": "🔥 官方推荐 🔥 RuoYi-Vue 全新 Pro 版本，优化重构所有功能。基于 Spring Boot + MyBatis Plus + Vue & Element 实现的后台管理系统 + 微信小程序，支持 RBAC 动态权限、数据权限、SaaS 多租户、Flowable 工作流、三方登录、支付、短信、商城、CRM、ERP、AI 大模型等功能。你的 ⭐️ Star ⭐️，是作者生发的动力！",
     "last_seen": "2025-11-01",
+    "trending_days": 1
+  },
+  {
+    "name": "zai-org/GLM-5",
+    "url": "https://github.com/zai-org/glm-5",
+    "language": "Unknown",
+    "stars": 3929,
+    "forks": 423,
+    "description": "GLM-5: From Vibe Coding to Agentic Engineering",
+    "last_seen": "2026-06-18",
     "trending_days": 1
   },
   {
