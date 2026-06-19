@@ -14,15 +14,23 @@ permissions:
   issues: write
   pull-requests: write
 
+# 按 issue 编号分组：同一 issue 的重复触发（opened+labeled 双发、或手动重打标签）合并成一次，
+# 取消旧 run 只留最新；不同 issue 各跑各的（各自 analyze/<slug> 分支，互不干扰）。
 concurrency:
-  group: analyze-submission
-  cancel-in-progress: false
+  group: analyze-issue-${{ github.event.issue.number }}
+  cancel-in-progress: true
 
 jobs:
   analyze:
+    # 按事件类型精确 gate，避免 opened 与 labeled 对同一 issue 双触发：
+    # - opened：带 analyze-request 标签，或标题以 [Analyze] 开头（无标签兜底）
+    # - labeled：只认新加的那枚标签恰为 analyze-request（加别的标签不打扰运行中的分析）
     if: >-
-      contains(github.event.issue.labels.*.name, 'analyze-request')
-      || startsWith(github.event.issue.title, '[Analyze]')
+      (github.event.action == 'opened'
+        && (contains(github.event.issue.labels.*.name, 'analyze-request')
+            || startsWith(github.event.issue.title, '[Analyze]')))
+      || (github.event.action == 'labeled'
+        && github.event.label.name == 'analyze-request')
     runs-on: ubuntu-latest
     timeout-minutes: 60
     env:
