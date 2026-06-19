@@ -1726,6 +1726,9 @@ entries:
   - ai-coding
   smartcontractkit_chainlink:
   - security
+  sonofmagic_weapp-tailwindcss:
+  - ai-agent
+  - design-ui
   soxoj_maigret:
   - database
   spipm_depixelization_poc:
