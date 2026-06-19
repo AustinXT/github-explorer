@@ -3,11 +3,11 @@
     "name": "obra/superpowers",
     "url": "https://github.com/obra/superpowers",
     "language": "Shell",
-    "stars": 232022,
-    "forks": 20613,
+    "stars": 233003,
+    "forks": 20694,
     "description": "An agentic skills framework & software development methodology that works.",
-    "last_seen": "2026-06-18",
-    "trending_days": 64
+    "last_seen": "2026-06-19",
+    "trending_days": 65
   },
   {
     "name": "TapXWorld/ChinaTextbook",
@@ -1100,6 +1100,16 @@
     "trending_days": 7
   },
   {
+    "name": "google-research/timesfm",
+    "url": "https://github.com/google-research/timesfm",
+    "language": "Python",
+    "stars": 23903,
+    "forks": 2254,
+    "description": "TimesFM (Time Series Foundation Model) is a pretrained time-series foundation model developed by Google Research for time-series forecasting.",
+    "last_seen": "2026-06-19",
+    "trending_days": 7
+  },
+  {
     "name": "HandsOnLLM/Hands-On-Large-Language-Models",
     "url": "https://github.com/handsonllm/hands-on-large-language-models",
     "language": "JupyterNotebook",
@@ -1330,6 +1340,16 @@
     "trending_days": 6
   },
   {
+    "name": "chopratejas/headroom",
+    "url": "https://github.com/chopratejas/headroom",
+    "language": "Python",
+    "stars": 37057,
+    "forks": 2522,
+    "description": "Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 60-95% fewer tokens, same answers. Library, proxy, MCP server.",
+    "last_seen": "2026-06-19",
+    "trending_days": 6
+  },
+  {
     "name": "clockworklabs/SpacetimeDB",
     "url": "https://github.com/clockworklabs/spacetimedb",
     "language": "Rust",
@@ -1417,16 +1437,6 @@
     "forks": 2554,
     "description": "M3U Playlist for free TV channels",
     "last_seen": "2026-06-15",
-    "trending_days": 6
-  },
-  {
-    "name": "google-research/timesfm",
-    "url": "https://github.com/google-research/timesfm",
-    "language": "Python",
-    "stars": 22528,
-    "forks": 2176,
-    "description": "TimesFM (Time Series Foundation Model) is a pretrained time-series foundation model developed by Google Research for time-series forecasting.",
-    "last_seen": "2026-06-18",
     "trending_days": 6
   },
   {
@@ -1797,16 +1807,6 @@
     "forks": 7692,
     "description": "Open-source live-chat, email support, omni-channel desk. An alternative to Intercom, Zendesk, Salesforce Service Cloud etc. 🔥💬",
     "last_seen": "2026-06-17",
-    "trending_days": 5
-  },
-  {
-    "name": "chopratejas/headroom",
-    "url": "https://github.com/chopratejas/headroom",
-    "language": "Python",
-    "stars": 15182,
-    "forks": 967,
-    "description": "Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 60-95% fewer tokens, same answers. Library, proxy, MCP server.",
-    "last_seen": "2026-06-06",
     "trending_days": 5
   },
   {
@@ -2810,6 +2810,16 @@
     "trending_days": 4
   },
   {
+    "name": "n0-computer/iroh",
+    "url": "https://github.com/n0-computer/iroh",
+    "language": "Rust",
+    "stars": 10165,
+    "forks": 466,
+    "description": "IP addresses break, dial keys instead. Modular networking stack in Rust.",
+    "last_seen": "2026-06-19",
+    "trending_days": 4
+  },
+  {
     "name": "nesquena/hermes-webui",
     "url": "https://github.com/nesquena/hermes-webui",
     "language": "Python",
@@ -2887,6 +2897,16 @@
     "forks": 162,
     "description": "Agent Orchestration Command Center",
     "last_seen": "2026-02-04",
+    "trending_days": 4
+  },
+  {
+    "name": "penpot/penpot",
+    "url": "https://github.com/penpot/penpot",
+    "language": "Clojure",
+    "stars": 50421,
+    "forks": 3259,
+    "description": "Penpot: The open-source design tool for design and code collaboration",
+    "last_seen": "2026-06-19",
     "trending_days": 4
   },
   {
@@ -3320,6 +3340,16 @@
     "trending_days": 3
   },
   {
+    "name": "DeusData/codebase-memory-mcp",
+    "url": "https://github.com/deusdata/codebase-memory-mcp",
+    "language": "C",
+    "stars": 7676,
+    "forks": 596,
+    "description": "High-performance code intelligence MCP server. Indexes codebases into a persistent knowledge graph — average repo in milliseconds. 158 languages, sub-ms queries, 99% fewer tokens. Single static binary, zero dependencies.",
+    "last_seen": "2026-06-19",
+    "trending_days": 3
+  },
+  {
     "name": "DevCaress/guia-entrevistas-de-programacion",
     "url": "https://github.com/devcaress/guia-entrevistas-de-programacion",
     "language": "Unknown",
@@ -3640,6 +3670,16 @@
     "trending_days": 3
   },
   {
+    "name": "koala73/worldmonitor",
+    "url": "https://github.com/koala73/worldmonitor",
+    "language": "TypeScript",
+    "stars": 56924,
+    "forks": 9119,
+    "description": "Real-time global intelligence dashboard. AI-powered news aggregation, geopolitical monitoring, and infrastructure tracking in a unified situational awareness interface",
+    "last_seen": "2026-06-19",
+    "trending_days": 3
+  },
+  {
     "name": "langchain-ai/open-swe",
     "url": "https://github.com/langchain-ai/open-swe",
     "language": "Python",
@@ -3820,16 +3860,6 @@
     "trending_days": 3
   },
   {
-    "name": "n0-computer/iroh",
-    "url": "https://github.com/n0-computer/iroh",
-    "language": "Rust",
-    "stars": 9870,
-    "forks": 458,
-    "description": "IP addresses break, dial keys instead. Modular networking stack in Rust.",
-    "last_seen": "2026-06-18",
-    "trending_days": 3
-  },
-  {
     "name": "nitrojs/nitro",
     "url": "https://github.com/nitrojs/nitro",
     "language": "TypeScript",
@@ -3907,16 +3937,6 @@
     "forks": 187,
     "description": "Windows companion suite for OpenClaw - System Tray app, Shared library, Node, and PowerToys Command Palette extension",
     "last_seen": "2026-06-06",
-    "trending_days": 3
-  },
-  {
-    "name": "penpot/penpot",
-    "url": "https://github.com/penpot/penpot",
-    "language": "Clojure",
-    "stars": 49934,
-    "forks": 3227,
-    "description": "Penpot: The open-source design tool for design and code collaboration",
-    "last_seen": "2026-06-17",
     "trending_days": 3
   },
   {
@@ -4310,6 +4330,16 @@
     "trending_days": 3
   },
   {
+    "name": "withastro/flue",
+    "url": "https://github.com/withastro/flue",
+    "language": "TypeScript",
+    "stars": 5684,
+    "forks": 314,
+    "description": "The sandbox agent framework.",
+    "last_seen": "2026-06-19",
+    "trending_days": 3
+  },
+  {
     "name": "xerrors/Yuxi-Know",
     "url": "https://github.com/xerrors/yuxi-know",
     "language": "Python",
@@ -4700,6 +4730,16 @@
     "trending_days": 2
   },
   {
+    "name": "calesthio/OpenMontage",
+    "url": "https://github.com/calesthio/openmontage",
+    "language": "Python",
+    "stars": 5966,
+    "forks": 1062,
+    "description": "World's first open-source, agentic video production system. 12 pipelines, 52 tools, 500+ agent skills. Turn your AI coding assistant into a full video production studio.",
+    "last_seen": "2026-06-19",
+    "trending_days": 2
+  },
+  {
     "name": "CapSoftware/Cap",
     "url": "https://github.com/capsoftware/cap",
     "language": "TypeScript",
@@ -4887,16 +4927,6 @@
     "forks": 956,
     "description": "FlashMLA: Efficient Multi-head Latent Attention Kernels",
     "last_seen": "2026-01-23",
-    "trending_days": 2
-  },
-  {
-    "name": "DeusData/codebase-memory-mcp",
-    "url": "https://github.com/deusdata/codebase-memory-mcp",
-    "language": "C",
-    "stars": 6611,
-    "forks": 539,
-    "description": "High-performance code intelligence MCP server. Indexes codebases into a persistent knowledge graph — average repo in milliseconds. 158 languages, sub-ms queries, 99% fewer tokens. Single static binary, zero dependencies.",
-    "last_seen": "2026-06-18",
     "trending_days": 2
   },
   {
@@ -5450,13 +5480,13 @@
     "trending_days": 2
   },
   {
-    "name": "koala73/worldmonitor",
-    "url": "https://github.com/koala73/worldmonitor",
+    "name": "Kong/insomnia",
+    "url": "https://github.com/kong/insomnia",
     "language": "TypeScript",
-    "stars": 51066,
-    "forks": 8254,
-    "description": "Real-time global intelligence dashboard. AI-powered news aggregation, geopolitical monitoring, and infrastructure tracking in a unified situational awareness interface",
-    "last_seen": "2026-04-22",
+    "stars": 38829,
+    "forks": 2295,
+    "description": "The open-source, cross-platform API client for GraphQL, REST, WebSockets, SSE and gRPC. With Cloud, Local and Git storage.",
+    "last_seen": "2026-06-19",
     "trending_days": 2
   },
   {
@@ -5527,6 +5557,16 @@
     "forks": 270,
     "description": "LTX-Video Support for ComfyUI",
     "last_seen": "2026-01-09",
+    "trending_days": 2
+  },
+  {
+    "name": "Lightricks/LTX-2",
+    "url": "https://github.com/lightricks/ltx-2",
+    "language": "Python",
+    "stars": 7598,
+    "forks": 1216,
+    "description": "Official Python inference and LoRA trainer package for the LTX-2 audio–video generative model.",
+    "last_seen": "2026-06-19",
     "trending_days": 2
   },
   {
@@ -6450,16 +6490,6 @@
     "trending_days": 2
   },
   {
-    "name": "withastro/flue",
-    "url": "https://github.com/withastro/flue",
-    "language": "TypeScript",
-    "stars": 5361,
-    "forks": 289,
-    "description": "The sandbox agent framework.",
-    "last_seen": "2026-06-18",
-    "trending_days": 2
-  },
-  {
     "name": "X-PLUG/MobileAgent",
     "url": "https://github.com/x-plug/mobileagent",
     "language": "Python",
@@ -6527,6 +6557,16 @@
     "forks": 10489,
     "description": "Command-line program to download videos from YouTube.com and other video sites",
     "last_seen": "2025-09-23",
+    "trending_days": 2
+  },
+  {
+    "name": "zai-org/GLM-5",
+    "url": "https://github.com/zai-org/glm-5",
+    "language": "Unknown",
+    "stars": 4385,
+    "forks": 448,
+    "description": "GLM-5: From Vibe Coding to Agentic Engineering",
+    "last_seen": "2026-06-19",
     "trending_days": 2
   },
   {
@@ -6677,6 +6717,16 @@
     "forks": 261,
     "description": "Select context for coding agents directly from your website",
     "last_seen": "2026-03-06",
+    "trending_days": 1
+  },
+  {
+    "name": "aishwaryanr/awesome-generative-ai-guide",
+    "url": "https://github.com/aishwaryanr/awesome-generative-ai-guide",
+    "language": "HTML",
+    "stars": 27473,
+    "forks": 5735,
+    "description": "A one stop repository for generative AI research updates, interview resources, notebooks and much more!",
+    "last_seen": "2026-06-19",
     "trending_days": 1
   },
   {
@@ -6950,6 +7000,16 @@
     "trending_days": 1
   },
   {
+    "name": "BuilderIO/agent-native",
+    "url": "https://github.com/builderio/agent-native",
+    "language": "TypeScript",
+    "stars": 858,
+    "forks": 105,
+    "description": "A framework for building agent-native applications.",
+    "last_seen": "2026-06-19",
+    "trending_days": 1
+  },
+  {
     "name": "BurntSushi/ripgrep",
     "url": "https://github.com/burntsushi/ripgrep",
     "language": "Rust",
@@ -6997,16 +7057,6 @@
     "forks": 13351,
     "description": "Scheduling infrastructure for absolutely everyone.",
     "last_seen": "2026-05-17",
-    "trending_days": 1
-  },
-  {
-    "name": "calesthio/OpenMontage",
-    "url": "https://github.com/calesthio/openmontage",
-    "language": "Python",
-    "stars": 5013,
-    "forks": 989,
-    "description": "World's first open-source, agentic video production system. 12 pipelines, 52 tools, 500+ agent skills. Turn your AI coding assistant into a full video production studio.",
-    "last_seen": "2026-06-17",
     "trending_days": 1
   },
   {
@@ -8210,16 +8260,6 @@
     "trending_days": 1
   },
   {
-    "name": "Kong/insomnia",
-    "url": "https://github.com/kong/insomnia",
-    "language": "TypeScript",
-    "stars": 38548,
-    "forks": 2285,
-    "description": "The open-source, cross-platform API client for GraphQL, REST, WebSockets, SSE and gRPC. With Cloud, Local and Git storage.",
-    "last_seen": "2026-06-18",
-    "trending_days": 1
-  },
-  {
     "name": "langchain-ai/langchainjs",
     "url": "https://github.com/langchain-ai/langchainjs",
     "language": "TypeScript",
@@ -8277,16 +8317,6 @@
     "forks": 192,
     "description": "Local AI anywhere, for everyone — LLM inference, chat UI, voice, agents, workflows, RAG, and image generation. No cloud, no subscriptions.",
     "last_seen": "2026-05-17",
-    "trending_days": 1
-  },
-  {
-    "name": "Lightricks/LTX-2",
-    "url": "https://github.com/lightricks/ltx-2",
-    "language": "Python",
-    "stars": 7403,
-    "forks": 1197,
-    "description": "Official Python inference and LoRA trainer package for the LTX-2 audio–video generative model.",
-    "last_seen": "2026-06-18",
     "trending_days": 1
   },
   {
@@ -9027,6 +9057,16 @@
     "forks": 5954,
     "description": "PArallel Distributed Deep LEarning: Machine Learning Framework from Industrial Practice （『飞桨』核心框架，深度学习&机器学习高性能单机、分布式训练和跨平台部署）",
     "last_seen": "2026-02-28",
+    "trending_days": 1
+  },
+  {
+    "name": "palmier-io/palmier-pro",
+    "url": "https://github.com/palmier-io/palmier-pro",
+    "language": "Swift",
+    "stars": 1496,
+    "forks": 167,
+    "description": "macOS video editor built for AI",
+    "last_seen": "2026-06-19",
     "trending_days": 1
   },
   {
@@ -9897,16 +9937,6 @@
     "forks": 7310,
     "description": "🔥 官方推荐 🔥 RuoYi-Vue 全新 Pro 版本，优化重构所有功能。基于 Spring Boot + MyBatis Plus + Vue & Element 实现的后台管理系统 + 微信小程序，支持 RBAC 动态权限、数据权限、SaaS 多租户、Flowable 工作流、三方登录、支付、短信、商城、CRM、ERP、AI 大模型等功能。你的 ⭐️ Star ⭐️，是作者生发的动力！",
     "last_seen": "2025-11-01",
-    "trending_days": 1
-  },
-  {
-    "name": "zai-org/GLM-5",
-    "url": "https://github.com/zai-org/glm-5",
-    "language": "Unknown",
-    "stars": 3929,
-    "forks": 423,
-    "description": "GLM-5: From Vibe Coding to Agentic Engineering",
-    "last_seen": "2026-06-18",
     "trending_days": 1
   },
   {
