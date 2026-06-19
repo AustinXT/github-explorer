@@ -133,7 +133,9 @@ jobs:
         if: success()
         uses: peter-evans/create-pull-request@v6
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          # org 策略禁用了 GITHUB_TOKEN 建 PR，这里改用 PAT（fine-grained：Contents+Pull requests=write）
+          # 缺失时回退到 GITHUB_TOKEN（仍会被 org 策略挡住，但不至于让表达式报错）
+          token: ${{ secrets.PAT_PR || secrets.GITHUB_TOKEN }}
           branch: analyze/${{ steps.validate.outputs.slug }}
           delete-branch: true
           base: main
