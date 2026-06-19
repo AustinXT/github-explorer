@@ -159,7 +159,10 @@ def main() -> int:
     m = URL_RE.match(url)
     if not m:
         fail(f"URL 解析失败：{url}", f"❌ **校验失败**：URL `{url}` 格式不正确。")
-    owner, name = m.group(1), m.group(2).rstrip(".git")
+    # URL_RE 的 (?:\.git)? 已剥过 .git，这里用 removesuffix 兜底（语义=去后缀）。
+    # 切勿用 rstrip(".git")：它把 ".git" 当字符集合，会误删名字末尾的 ./g/i/t，
+    # 例如 mini-swe-agent → mini-swe-agen，导致 gh api 404。
+    owner, name = m.group(1), m.group(2).removesuffix(".git")
     url = f"https://github.com/{owner}/{name}"
 
     existing = already_analyzed(owner, name)
