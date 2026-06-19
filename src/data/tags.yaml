@@ -2011,6 +2011,10 @@ entries:
   - llm-inference
   - model-foundation
   - devtools
+  weapp-vite_weapp-vite:
+  - ai-agent
+  - devtools
+  - protocol-spec
   weceng_ticket-purchase:
   - uncategorized
   wei-shaw_claude-relay-service:
