@@ -1285,6 +1285,8 @@ entries:
   mvanhorn_last30days-skill:
   - ai-agent
   - rag-search
+  n0-computer_iroh:
+  - protocol-spec
   nautechsystems_nautilus_trader:
   - llm-inference
   - trading-finance
@@ -1911,6 +1913,10 @@ entries:
   - uncategorized
   unionlabs_union:
   - protocol-spec
+  universal-debloater-alliance_universal-android-debloater-next-generation:
+  - devtools
+  - database
+  - data-pipeline
   unslothai_unsloth:
   - llm-training
   usememos_memos:
@@ -2002,6 +2008,10 @@ entries:
   - llm-inference
   - model-foundation
   - devtools
+  weapp-vite_weapp-vite:
+  - ai-agent
+  - devtools
+  - protocol-spec
   weceng_ticket-purchase:
   - uncategorized
   wei-shaw_claude-relay-service:
