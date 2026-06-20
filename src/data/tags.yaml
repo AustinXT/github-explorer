@@ -477,6 +477,10 @@ entries:
   - model-foundation
   - database
   - data-pipeline
+  deusdata_codebase-memory-mcp:
+  - ai-agent
+  - iot-hardware
+  - protocol-spec
   devcaress_guia-entrevistas-de-programacion:
   - uncategorized
   devlikeapro_waha:
@@ -1006,6 +1010,10 @@ entries:
   - devtools
   - editor-kms
   - education
+  - protocol-spec
+  koala73_worldmonitor:
+  - ai-agent
+  - devtools
   - protocol-spec
   kovidgoyal_calibre:
   - education

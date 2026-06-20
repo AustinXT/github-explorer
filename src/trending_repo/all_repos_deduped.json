@@ -370,6 +370,16 @@
     "trending_days": 13
   },
   {
+    "name": "mattpocock/skills",
+    "url": "https://github.com/mattpocock/skills",
+    "language": "Shell",
+    "stars": 137547,
+    "forks": 11931,
+    "description": "Skills for Real Engineers. Straight from my .claude directory.",
+    "last_seen": "2026-06-20",
+    "trending_days": 13
+  },
+  {
     "name": "microsoft/agent-lightning",
     "url": "https://github.com/microsoft/agent-lightning",
     "language": "Python",
@@ -387,16 +397,6 @@
     "forks": 8648,
     "description": "An open-source long-horizon SuperAgent harness that researches, codes, and creates. With the help of sandboxes, memories, tools, skill, subagents and message gateway, it handles different levels of tasks that could take minutes to hours.",
     "last_seen": "2026-05-06",
-    "trending_days": 12
-  },
-  {
-    "name": "mattpocock/skills",
-    "url": "https://github.com/mattpocock/skills",
-    "language": "Shell",
-    "stars": 132915,
-    "forks": 11553,
-    "description": "Skills for Real Engineers. Straight from my .claude directory.",
-    "last_seen": "2026-06-17",
     "trending_days": 12
   },
   {
@@ -427,6 +427,16 @@
     "forks": 3546,
     "description": "Build, deploy, and orchestrate AI agents. Sim is the central intelligence layer for your AI workforce.",
     "last_seen": "2026-05-01",
+    "trending_days": 12
+  },
+  {
+    "name": "twentyhq/twenty",
+    "url": "https://github.com/twentyhq/twenty",
+    "language": "TypeScript",
+    "stars": 50683,
+    "forks": 7392,
+    "description": "The open alternative to Salesforce, designed for AI.",
+    "last_seen": "2026-06-20",
     "trending_days": 12
   },
   {
@@ -587,16 +597,6 @@
     "forks": 15873,
     "description": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
     "last_seen": "2026-06-01",
-    "trending_days": 11
-  },
-  {
-    "name": "twentyhq/twenty",
-    "url": "https://github.com/twentyhq/twenty",
-    "language": "TypeScript",
-    "stars": 48613,
-    "forks": 6892,
-    "description": "The open alternative to Salesforce, designed for AI.",
-    "last_seen": "2026-05-30",
     "trending_days": 11
   },
   {
@@ -960,6 +960,16 @@
     "trending_days": 8
   },
   {
+    "name": "google-research/timesfm",
+    "url": "https://github.com/google-research/timesfm",
+    "language": "Python",
+    "stars": 24279,
+    "forks": 2296,
+    "description": "TimesFM (Time Series Foundation Model) is a pretrained time-series foundation model developed by Google Research for time-series forecasting.",
+    "last_seen": "2026-06-20",
+    "trending_days": 8
+  },
+  {
     "name": "LadybirdBrowser/ladybird",
     "url": "https://github.com/ladybirdbrowser/ladybird",
     "language": "C++",
@@ -1060,6 +1070,16 @@
     "trending_days": 8
   },
   {
+    "name": "1jehuang/jcode",
+    "url": "https://github.com/1jehuang/jcode",
+    "language": "Rust",
+    "stars": 7294,
+    "forks": 822,
+    "description": "Coding Agent Harness",
+    "last_seen": "2026-06-20",
+    "trending_days": 7
+  },
+  {
     "name": "alibaba/zvec",
     "url": "https://github.com/alibaba/zvec",
     "language": "C++",
@@ -1080,6 +1100,16 @@
     "trending_days": 7
   },
   {
+    "name": "chopratejas/headroom",
+    "url": "https://github.com/chopratejas/headroom",
+    "language": "Python",
+    "stars": 40458,
+    "forks": 2757,
+    "description": "Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 60-95% fewer tokens, same answers. Library, proxy, MCP server.",
+    "last_seen": "2026-06-20",
+    "trending_days": 7
+  },
+  {
     "name": "Fincept-Corporation/FinceptTerminal",
     "url": "https://github.com/fincept-corporation/finceptterminal",
     "language": "Python",
@@ -1097,16 +1127,6 @@
     "forks": 45104,
     "description": "freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming, and computer science for free.",
     "last_seen": "2026-06-18",
-    "trending_days": 7
-  },
-  {
-    "name": "google-research/timesfm",
-    "url": "https://github.com/google-research/timesfm",
-    "language": "Python",
-    "stars": 23903,
-    "forks": 2254,
-    "description": "TimesFM (Time Series Foundation Model) is a pretrained time-series foundation model developed by Google Research for time-series forecasting.",
-    "last_seen": "2026-06-19",
     "trending_days": 7
   },
   {
@@ -1270,16 +1290,6 @@
     "trending_days": 7
   },
   {
-    "name": "1jehuang/jcode",
-    "url": "https://github.com/1jehuang/jcode",
-    "language": "Rust",
-    "stars": 3688,
-    "forks": 346,
-    "description": "Coding Agent Harness",
-    "last_seen": "2026-05-04",
-    "trending_days": 6
-  },
-  {
     "name": "alibaba/OpenSandbox",
     "url": "https://github.com/alibaba/opensandbox",
     "language": "Python",
@@ -1337,16 +1347,6 @@
     "forks": 146,
     "description": "Claude Agent SDK with a web browsing tool",
     "last_seen": "2026-05-05",
-    "trending_days": 6
-  },
-  {
-    "name": "chopratejas/headroom",
-    "url": "https://github.com/chopratejas/headroom",
-    "language": "Python",
-    "stars": 37057,
-    "forks": 2522,
-    "description": "Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 60-95% fewer tokens, same answers. Library, proxy, MCP server.",
-    "last_seen": "2026-06-19",
     "trending_days": 6
   },
   {
@@ -1497,6 +1497,16 @@
     "forks": 719,
     "description": "InsForge is a Postgres-based backend with auth, storage, compute, hosting, and AI gateway. Built for coding agents.",
     "last_seen": "2026-05-07",
+    "trending_days": 6
+  },
+  {
+    "name": "jamiepine/voicebox",
+    "url": "https://github.com/jamiepine/voicebox",
+    "language": "TypeScript",
+    "stars": 30771,
+    "forks": 3813,
+    "description": "The open-source AI voice studio. Clone, dictate, create.",
+    "last_seen": "2026-06-20",
     "trending_days": 6
   },
   {
@@ -1920,16 +1930,6 @@
     "trending_days": 5
   },
   {
-    "name": "jamiepine/voicebox",
-    "url": "https://github.com/jamiepine/voicebox",
-    "language": "TypeScript",
-    "stars": 19505,
-    "forks": 2246,
-    "description": "The open-source voice synthesis studio",
-    "last_seen": "2026-04-17",
-    "trending_days": 5
-  },
-  {
     "name": "karpathy/nanochat",
     "url": "https://github.com/karpathy/nanochat",
     "language": "Python",
@@ -2057,6 +2057,16 @@
     "forks": 2075,
     "description": "Create and share 3D architectural projects.",
     "last_seen": "2026-05-19",
+    "trending_days": 5
+  },
+  {
+    "name": "penpot/penpot",
+    "url": "https://github.com/penpot/penpot",
+    "language": "Clojure",
+    "stars": 50841,
+    "forks": 3281,
+    "description": "Penpot: The open-source design tool for design and code collaboration",
+    "last_seen": "2026-06-20",
     "trending_days": 5
   },
   {
@@ -2437,6 +2447,16 @@
     "forks": 1658,
     "description": "A next.js web application that integrates AI capabilities with draw.io diagrams. This app allows you to create, modify, and enhance diagrams through natural language commands and AI-assisted visualization.",
     "last_seen": "2026-01-01",
+    "trending_days": 4
+  },
+  {
+    "name": "DeusData/codebase-memory-mcp",
+    "url": "https://github.com/deusdata/codebase-memory-mcp",
+    "language": "C",
+    "stars": 8835,
+    "forks": 676,
+    "description": "High-performance code intelligence MCP server. Indexes codebases into a persistent knowledge graph — average repo in milliseconds. 158 languages, sub-ms queries, 99% fewer tokens. Single static binary, zero dependencies.",
+    "last_seen": "2026-06-20",
     "trending_days": 4
   },
   {
@@ -2900,16 +2920,6 @@
     "trending_days": 4
   },
   {
-    "name": "penpot/penpot",
-    "url": "https://github.com/penpot/penpot",
-    "language": "Clojure",
-    "stars": 50421,
-    "forks": 3259,
-    "description": "Penpot: The open-source design tool for design and code collaboration",
-    "last_seen": "2026-06-19",
-    "trending_days": 4
-  },
-  {
     "name": "PostHog/posthog",
     "url": "https://github.com/posthog/posthog",
     "language": "Python",
@@ -3060,6 +3070,16 @@
     "trending_days": 4
   },
   {
+    "name": "tursodatabase/turso",
+    "url": "https://github.com/tursodatabase/turso",
+    "language": "Rust",
+    "stars": 20041,
+    "forks": 1034,
+    "description": "Turso is an in-process SQL database, compatible with SQLite.",
+    "last_seen": "2026-06-20",
+    "trending_days": 4
+  },
+  {
     "name": "vllm-project/vllm-omni",
     "url": "https://github.com/vllm-project/vllm-omni",
     "language": "Python",
@@ -3077,6 +3097,16 @@
     "forks": 1380,
     "description": "CRS-自建Claude Code镜像，一站式开源中转服务，让 Claude、OpenAI、Gemini、Droid 订阅统一接入，支持拼车共享，更高效分摊成本，原生工具无缝使用。",
     "last_seen": "2026-02-28",
+    "trending_days": 4
+  },
+  {
+    "name": "withastro/flue",
+    "url": "https://github.com/withastro/flue",
+    "language": "TypeScript",
+    "stars": 5967,
+    "forks": 334,
+    "description": "The sandbox agent framework.",
+    "last_seen": "2026-06-20",
     "trending_days": 4
   },
   {
@@ -3240,6 +3270,16 @@
     "trending_days": 3
   },
   {
+    "name": "calesthio/OpenMontage",
+    "url": "https://github.com/calesthio/openmontage",
+    "language": "Python",
+    "stars": 6604,
+    "forks": 1111,
+    "description": "World's first open-source, agentic video production system. 12 pipelines, 52 tools, 500+ agent skills. Turn your AI coding assistant into a full video production studio.",
+    "last_seen": "2026-06-20",
+    "trending_days": 3
+  },
+  {
     "name": "charmbracelet/glow",
     "url": "https://github.com/charmbracelet/glow",
     "language": "Go",
@@ -3337,16 +3377,6 @@
     "forks": 118,
     "description": "A context-aware AI assistant for your desktop. Ready to respond intelligently, seamlessly integrating multiple LLMs and MCP tools.",
     "last_seen": "2025-11-04",
-    "trending_days": 3
-  },
-  {
-    "name": "DeusData/codebase-memory-mcp",
-    "url": "https://github.com/deusdata/codebase-memory-mcp",
-    "language": "C",
-    "stars": 7676,
-    "forks": 596,
-    "description": "High-performance code intelligence MCP server. Indexes codebases into a persistent knowledge graph — average repo in milliseconds. 158 languages, sub-ms queries, 99% fewer tokens. Single static binary, zero dependencies.",
-    "last_seen": "2026-06-19",
     "trending_days": 3
   },
   {
@@ -3677,6 +3707,16 @@
     "forks": 9119,
     "description": "Real-time global intelligence dashboard. AI-powered news aggregation, geopolitical monitoring, and infrastructure tracking in a unified situational awareness interface",
     "last_seen": "2026-06-19",
+    "trending_days": 3
+  },
+  {
+    "name": "Kong/insomnia",
+    "url": "https://github.com/kong/insomnia",
+    "language": "TypeScript",
+    "stars": 39139,
+    "forks": 2317,
+    "description": "The open-source, cross-platform API client for GraphQL, REST, WebSockets, SSE and gRPC. With Cloud, Local and Git storage.",
+    "last_seen": "2026-06-20",
     "trending_days": 3
   },
   {
@@ -4220,16 +4260,6 @@
     "trending_days": 3
   },
   {
-    "name": "tursodatabase/turso",
-    "url": "https://github.com/tursodatabase/turso",
-    "language": "Rust",
-    "stars": 15416,
-    "forks": 630,
-    "description": "Turso is an in-process SQL database, compatible with SQLite.",
-    "last_seen": "2025-12-14",
-    "trending_days": 3
-  },
-  {
     "name": "typst/typst",
     "url": "https://github.com/typst/typst",
     "language": "Rust",
@@ -4327,16 +4357,6 @@
     "forks": 605,
     "description": "大麦自动抢票，支持人员、城市、日期场次、价格选择",
     "last_seen": "2025-10-12",
-    "trending_days": 3
-  },
-  {
-    "name": "withastro/flue",
-    "url": "https://github.com/withastro/flue",
-    "language": "TypeScript",
-    "stars": 5684,
-    "forks": 314,
-    "description": "The sandbox agent framework.",
-    "last_seen": "2026-06-19",
     "trending_days": 3
   },
   {
@@ -4727,16 +4747,6 @@
     "forks": 2487,
     "description": "PDF scientific paper translation with preserved formats - 基于 AI 完整保留排版的 PDF 文档全文双语翻译，支持 Google/DeepL/Ollama/OpenAI 等服务，提供 CLI/GUI/MCP/Docker/Zotero",
     "last_seen": "2025-10-01",
-    "trending_days": 2
-  },
-  {
-    "name": "calesthio/OpenMontage",
-    "url": "https://github.com/calesthio/openmontage",
-    "language": "Python",
-    "stars": 5966,
-    "forks": 1062,
-    "description": "World's first open-source, agentic video production system. 12 pipelines, 52 tools, 500+ agent skills. Turn your AI coding assistant into a full video production studio.",
-    "last_seen": "2026-06-19",
     "trending_days": 2
   },
   {
@@ -5480,13 +5490,13 @@
     "trending_days": 2
   },
   {
-    "name": "Kong/insomnia",
-    "url": "https://github.com/kong/insomnia",
+    "name": "Kilo-Org/kilocode",
+    "url": "https://github.com/kilo-org/kilocode",
     "language": "TypeScript",
-    "stars": 38829,
-    "forks": 2295,
-    "description": "The open-source, cross-platform API client for GraphQL, REST, WebSockets, SSE and gRPC. With Cloud, Local and Git storage.",
-    "last_seen": "2026-06-19",
+    "stars": 23109,
+    "forks": 2729,
+    "description": "Kilo is the all-in-one agentic engineering platform. Build, ship, and iterate faster with the most popular open source coding agent.",
+    "last_seen": "2026-06-20",
     "trending_days": 2
   },
   {
@@ -6027,6 +6037,26 @@
     "forks": 1268,
     "description": "🍃 Organic Maps is a free Android & iOS offline maps app for travelers, tourists, hikers, and cyclists. It uses crowd-sourced OpenStreetMap data and is developed with love by the community. No ads, no tracking, no data collection, no crapware. Please donate to support the development!",
     "last_seen": "2026-01-01",
+    "trending_days": 2
+  },
+  {
+    "name": "owainlewis/awesome-artificial-intelligence",
+    "url": "https://github.com/owainlewis/awesome-artificial-intelligence",
+    "language": "Unknown",
+    "stars": 14637,
+    "forks": 2346,
+    "description": "A curated list of Artificial Intelligence (AI) courses, books, video lectures and papers.",
+    "last_seen": "2026-06-20",
+    "trending_days": 2
+  },
+  {
+    "name": "palmier-io/palmier-pro",
+    "url": "https://github.com/palmier-io/palmier-pro",
+    "language": "Swift",
+    "stars": 2390,
+    "forks": 221,
+    "description": "macOS video editor built for AI",
+    "last_seen": "2026-06-20",
     "trending_days": 2
   },
   {
@@ -8220,16 +8250,6 @@
     "trending_days": 1
   },
   {
-    "name": "Kilo-Org/kilocode",
-    "url": "https://github.com/kilo-org/kilocode",
-    "language": "TypeScript",
-    "stars": 21596,
-    "forks": 2687,
-    "description": "Kilo is the all-in-one agentic engineering platform. Build, ship, and iterate faster with the most popular open source coding agent.",
-    "last_seen": "2026-06-18",
-    "trending_days": 1
-  },
-  {
     "name": "Kludex/uvicorn",
     "url": "https://github.com/kludex/uvicorn",
     "language": "Python",
@@ -9020,16 +9040,6 @@
     "trending_days": 1
   },
   {
-    "name": "owainlewis/awesome-artificial-intelligence",
-    "url": "https://github.com/owainlewis/awesome-artificial-intelligence",
-    "language": "Unknown",
-    "stars": 14189,
-    "forks": 2328,
-    "description": "A curated list of Artificial Intelligence (AI) courses, books, video lectures and papers.",
-    "last_seen": "2026-06-18",
-    "trending_days": 1
-  },
-  {
     "name": "p2r3/convert",
     "url": "https://github.com/p2r3/convert",
     "language": "TypeScript",
@@ -9057,16 +9067,6 @@
     "forks": 5954,
     "description": "PArallel Distributed Deep LEarning: Machine Learning Framework from Industrial Practice （『飞桨』核心框架，深度学习&机器学习高性能单机、分布式训练和跨平台部署）",
     "last_seen": "2026-02-28",
-    "trending_days": 1
-  },
-  {
-    "name": "palmier-io/palmier-pro",
-    "url": "https://github.com/palmier-io/palmier-pro",
-    "language": "Swift",
-    "stars": 1496,
-    "forks": 167,
-    "description": "macOS video editor built for AI",
-    "last_seen": "2026-06-19",
     "trending_days": 1
   },
   {
@@ -9107,6 +9107,16 @@
     "forks": 351,
     "description": "Trade autonomously on Polymarket using AI Agents",
     "last_seen": "2026-01-01",
+    "trending_days": 1
+  },
+  {
+    "name": "pppscn/SmsForwarder",
+    "url": "https://github.com/pppscn/smsforwarder",
+    "language": "Kotlin",
+    "stars": 26407,
+    "forks": 3270,
+    "description": "短信转发器——监控Android手机短信、来电、APP通知，并根据指定规则转发到其他手机：钉钉群自定义机器人、钉钉企业内机器人、企业微信群机器人、飞书机器人、企业微信应用消息、邮箱、bark、webhook、Telegram机器人、Server酱、PushPlus、手机短信等。包括主动控制服务端与客户端，让你轻松远程发短信、查短信、查通话、查话簿、查电量等。（V3.0 新增）PS.这个APK主要是学习与自用，如有BUG请提ISSUE，同时欢迎大家提PR指正",
+    "last_seen": "2026-06-20",
     "trending_days": 1
   },
   {
@@ -9747,6 +9757,16 @@
     "forks": 706,
     "description": "Go library for the WhatsApp web multidevice API",
     "last_seen": "2025-10-15",
+    "trending_days": 1
+  },
+  {
+    "name": "tw93/Pake",
+    "url": "https://github.com/tw93/pake",
+    "language": "Rust",
+    "stars": 53280,
+    "forks": 10685,
+    "description": "🤱🏻 Turn any webpage into a desktop app with one command.",
+    "last_seen": "2026-06-20",
     "trending_days": 1
   },
   {
