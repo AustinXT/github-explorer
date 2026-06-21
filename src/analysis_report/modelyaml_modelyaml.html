@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+/* ====== 微信公众号排版 CSS ====== */
+
+body {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #3e3e3e;
+    background: #fff;
+}
+
+/* 正文段落 */
+p {
+    font-size: 15px !important;
+    line-height: 2 !important;
+    margin: 0 !important;
+    padding-top: 0.5em !important;
+    padding-bottom: 0.5em !important;
+    padding-right: 1.2em !important;
+    padding-left: 1.2em !important;
+    text-align: justify !important;
+}
+p + p {
+    margin-top: 0 !important;
+}
+
+/* 标题 */
+h1 {
+    font-size: 20px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 16px 0 !important;
+    padding: 0 !important;
+}
+h2 {
+    font-size: 18px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 24px 0 !important;
+    padding: 0 !important;
+}
+h3 {
+    font-size: 15px !important;
+    font-weight: bold !important;
+    color: #3e3e3e !important;
+    text-align: left !important;
+    margin: 16px 0 16px 0 !important;
+    padding: 0 0 0 1.2em !important;
+}
+h4 {
+    font-size: 15px !important;
+    color: rgb(0, 122, 170) !important;
+    margin: 12px 0 8px 0 !important;
+    padding: 0 !important;
+}
+
+/* 列表 */
+ul,
+ol {
+    padding-left: 2em !important;
+    margin: 1em 0 !important;
+    font-size: 15px !important;
+}
+li {
+    margin: 0.5em 0 !important;
+    line-height: 1.8em !important;
+    font-size: 15px !important;
+    color: #3e3e3e !important;
+}
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+    margin: 0 !important;
+    padding-left: 1.2em !important;
+}
+
+/* 引用 */
+blockquote {
+    border-left: 4px solid #888 !important;
+    padding: 8px 16px !important;
+    margin: 1em 0 !important;
+    color: #666 !important;
+    background: #f9f9f9 !important;
+}
+blockquote > p {
+    margin: 0.5em 0 !important;
+    padding: 0 !important;
+}
+blockquote::before,
+blockquote::after {
+    content: none !important;
+}
+
+/* 代码块 */
+pre {
+    font-size: 14px !important;
+    line-height: 1.4em !important;
+    color: #3e3e3e !important;
+    background: #f8f8f8 !important;
+    padding: 12px 16px !important;
+    border-radius: 4px !important;
+    overflow: auto !important;
+    margin: 1em 0 !important;
+}
+
+/* 脚注 */
+.footnotes {
+    font-size: 11px !important;
+    color: #666 !important;
+    line-height: 1.2 !important;
+    margin: 8px 0 0 0 !important;
+    padding: 4px 0 0 0 !important;
+    border-top: 1px solid #eee !important;
+}
+.footnotes p {
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #666 !important;
+}
+
+/* 上标 */
+sup {
+    font-size: 0.75em !important;
+    vertical-align: super !important;
+    color: #e51f42 !important;
+    margin: 0 2px !important;
+}
+
+</style>
+</head>
+<body>
+<blockquote><p>GitHub: https://github.com/modelyaml/modelyaml</p></blockquote>
+<h2>一句话总结</h2>
+<p>LM Studio 用 model.yaml 把 LLM 从「下载一个 GGUF」升级为「一份带开关与推荐参数的声明式产品卡」，draft 1.0 已为 AI 模型的元描述层提供<strong>可借鉴范式</strong>。</p>
+<h2>值得关注的理由</h2>
+<ol>
+<li><strong>抽象层补位</strong>：当 ONNX（容器标准）、HuggingFace config.json（容器内清单）、Ollama Modelfile（运行时指令）三分天下时，LM Studio 提出「容器之上的元描述层」——填补了「AI 模型缺一份产品说明书」的空白。</li>
+<li><strong>真实落地而非 PPT</strong>：规范的 TS 类型定义直接落在 LM Studio 的 lmstudio-ai/lmstudio-js 仓库的 VirtualModelDefinition.ts 里，LM Studio 桌面客户端已经在生产环境消费它——不是又一个「提案文档」。</li>
+<li><strong>声明式范式可借鉴</strong>：model / base / metadataOverrides / config / customFields / suggestions 六字段分层 + customFields.effects 把「用户意图」与「实现机制」解耦，是任何「AI 资产/软件资产元描述」项目都能直接套用的模板。</li>
+</ol>
+<h2>项目展示</h2>
+<p><a href="https://raw.githubusercontent.com/modelyaml/modelyaml/main/banner.jpg">banner.jpg — 项目品牌横幅图</a><br/>类型: 项目横幅（modelyaml/modelyaml 仓库根目录，43.7 KB，2025-09-08 加入）</p>
+<p><a href="https://modelyaml.org">modelyaml.org — 规范官网首页截图</a><br/>类型: 官方网站主页（介绍「open standard for cross-platform composable AI models」）</p>
+<p><a href="https://modelyaml.org/#example">modelyaml.org/#example — 完整示例截图，6 个一级字段同时演示</a><br/>类型: 完整示例（model / base / metadataOverrides / config / customFields / suggestions 全展示）</p>
+<p><a href="https://github.com/lmstudio-ai/lmstudio-js/blob/main/packages/lms-shared-types/src/VirtualModelDefinition.ts">VirtualModelDefinition.ts — TS schema 核心定义</a><br/>类型: 代码规范源（Zod schema + TS types）</p>
+<p><a href="https://modelyaml.org/#customization">modelyaml.org/#customFields — customFields + effects 段落截图</a><br/>类型: 创新点示意（boolean/string/select/number 4 种 type 与 3 种 effects）</p>
+<h2>项目画像</h2>
+<table style="width:100%;border-collapse:collapse;font-size:14px;line-height:1.6;margin:1em 0;">
+<thead><tr>
+<th style="border:1px solid #ddd;padding:8px;background:#f5f5f5;text-align:left;font-weight:bold;">维度</th>
+<th style="border:1px solid #ddd;padding:8px;background:#f5f5f5;text-align:left;font-weight:bold;">数据</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">GitHub</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">https://github.com/modelyaml/modelyaml</td>
+</tr>
+<tr>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">Star / Fork / Watcher</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">62 / 3 / 3</td>
+</tr>
+<tr>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">代码行数</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">684（CSS 58.2% · HTML 41.8%，3 文件，零运行时依赖）</td>
+</tr>
+<tr>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">项目年龄</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">13.7 个月（首 commit 2025-05-01，最后 push 2025-09-09）</td>
+</tr>
+<tr>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">开发阶段</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">已停止（commits_last_30=0，但仓库实质是「成品官网+草案」，不是「在演进的代码」）</td>
+</tr>
+<tr>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">贡献模式</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">LM Studio 双人小组（yagil 60% + ryan-the-crayon 40%）</td>
+</tr>
+<tr>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">热度定位</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">小众精品（62 stars，首月 34 后跌至月均 1–4）</td>
+</tr>
+<tr>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">质量评级</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">标准文本 <strong>75/100</strong>（schema 严谨、文档与实现脱节 7 处、缺 specVersion） · 静态站代码 <strong>85/100</strong>（极简但工整） · 测试覆盖 <strong>N/A</strong>（规范仓库，无单元测试）</td>
+</tr>
+</tbody>
+</table>
+<blockquote><p>注：本仓是「标准草案+官网落地页」，真正的 TS 类型实现在 lmstudio-ai/lmstudio-js 仓库的 VirtualModelDefinition.ts（Zod schema + TS interfaces），LM Studio 桌面客户端已在生产环境消费该规范。</p></blockquote>
+<h2>作者视角：为什么存在这个项目</h2>
+<h3>创始人/作者背景</h3>
+<p>modelyaml 是 LM Studio（lmstudio-ai）背书的开放规范项目，账号建于 2025-04-12，目前 8 followers、2 public repo。核心贡献者两人——<strong>Yagil Burowski</strong>（3 commits，60%）与 <strong>Ryan Huang</strong>（2 commits，40%），均为 LM Studio 工程师。官网首页与 README 均明文标注 「by LM Studio」，所以这是 <strong>LM Studio 团队以独立 org 身份发布的规范</strong>，不是个人项目。</p>
+<h3>问题判断</h3>
+<p>LM Studio 是桌面端 LLM 运行器，本地加载 GGUF/MLX/Safetensors 多种格式，需要在「模型发现 → 下载 → 加载 → 推理」四步中替用户屏蔽硬件/格式差异。早期 LM Studio 的模型描述散落在自家数据库 + HF README + GGUF 元数据里，每种容器格式只暴露自己关心的子集（GGUF 暴露 architecture/special tokens，Safetensors 暴露 config.json，MLX 暴露 .mlx-weights-info），导致同一模型在不同客户端表现的能力标签不一致。</p>
+<p>作者把矛盾归结为「模型分发格式多 + 客户端必须猜」。GGUF/MLX/Safetensors 是<strong>容器</strong>（container），里面装的是同一份权重 + tokenizer + 模板，但容器各自定义了不同的描述结构。当一家桌面客户端必须同时支持三种容器，它需要 N 套解析器、N 套能力推断、还要做 N 套缺字段兜底——这是上游的范式错误。LM Studio 想要的不是又一个容器（那是 HuggingFace/Ollama 在做的事），而是<strong>容器之上的元层</strong>：告诉客户端「这个模型的真相是什么 + 它在哪些容器里有副本 + 哪个副本最适合你」。<strong>谁掌握 metadata，谁掌握 catalog</strong>。</p>
+<h3>解法哲学</h3>
+<p>用一份<strong>声明式</strong> yaml 文件替代一整套「客户端猜 + 模型作者补 README」的协作流程。声明式意味着所有信息都以<strong>可校验、可继承、可组合</strong>的结构化方式存在，而不是埋在自然语言 README 里。这与 K8s Deployment.yaml 替代 「kubectl run + Helm Chart」 的逻辑同构——把「运行知识」从口头共识搬到可校验文件。</p>
+<h3>战略意图</h3>
+<ol>
+<li><strong>把 catalog 的话语权收回 LM Studio</strong>：HuggingFace 是当前 AI 模型的「事实根目录」，但 HF 没有为「跨格式分发」提供原生抽象。LM Studio 提出 model.yaml 是想成为「AI 模型元数据的事实标准」，<strong>谁掌握 metadata，谁掌握 catalog</strong>。</li>
+<li><strong>降低用户认知负担</strong>：把「我应该下哪个 GGUF/MLX」的决策权委托给客户端（「runtime determines the most suitable variant」），把人类只暴露在「组织/仓库名 + 一个简介」层级。</li>
+<li><strong>为 AI 模型的「产品化」打底</strong>：customFields + suggestions + config 让模型发布方可以像 SaaS 厂商发布产品参数一样发布 LLM——勾选框、推荐参数、强制默认。</li>
+<li><strong>防御性护城河</strong>：如果 model.yaml 成为事实标准，LM Studio 在桌面端的「自动挑最佳变体」能力就变成可移植的——任何兼容客户端（甚至未来的 IDE 插件）都能复用同一份 catalog。</li>
+</ol>
+<h3>时机为什么是现在</h3>
+<p>2025 年开源 LLM 客户端已分裂为 LM Studio / Ollama / Jan / GPT4All / vLLM 等多个事实标准，每个都自带私有 Modelfile/Model card 格式。<strong>碎片化窗口期</strong>：标准要么在 12 个月内被联盟化，要么永远成为「另一个 Modelfile」。LM Studio 选择此时单方面 draft 1.0，本质是抢「元描述层」的标准定义权——窗口期一过，机会归零。</p>
+<h2>核心价值提炼</h2>
+<h3>创新之处</h3>
+<ol>
+<li><strong>把「客户端挑源模型」从隐式约定变成显式 schema</strong>（实用性最高）：base.sources 让作者声明「q4/q5/q8 GGUF + 多种 MLX」，客户端按硬件/指令集/显存自动挑。把 GitHub README + 截图指引的人肉决策变成机器可读的策略数组。</li>
+<li><strong>customFields 把「运行时配置」前置到模型卡</strong>：enableThinking=true 不再是 chat_template 里的硬编码，而是用户在 UI 上的勾选开关，开关状态通过 effect 链注入到 Jinja 模板/system prompt/runtime config。是把 LLM 的「参数旋钮」产品化为 UI 控件的第一次严肃尝试。</li>
+<li><strong>suggestions 实现「上下文感知推荐配置」</strong>：enableThinking=true → temperature=0.6 这种「if-then-else for LLM params」被首次提到 yaml 层，让模型作者<strong>不用改代码</strong>就能发布「建议参数」。Ollama Modelfile / HF config.json / ONNX 都没原生支持这个维度。</li>
+<li><strong>metadataOverrides 把「模型身份」与「模型来源」解耦</strong>：同一份 GGUF 权重可以对外宣称 architectures=llama、paramsStrings=8B、vision=false，与「对内来源」（HF user/repo）独立变化。</li>
+<li><strong>base 用 string | array 二选一支持链式组合</strong>：base: "org/name" 可指向另一个 model.yaml 形成 chain；base: ConcreteModelBase[] 可直接列多个 concrete 源。递归继承是 modelyaml 创造「组合性」的核心机制。</li>
+</ol>
+<h3>可复用的模式与技巧</h3>
+<ul>
+<li><strong>customFields + effects 双层模型</strong>：把「用户动作」（boolean 勾选）与「副作用」（写 Jinja 变量）解耦——同一个字段可同时作用于 llama.cpp / MLX / HF chat_template 而不需硬编码下游实现。</li>
+<li><strong>BooleanOrMixed 三态能力描述</strong>：true | false | "mixed" 承认「部分支持」的中间态，避免「一半模型支持、一半不支持」被压成 false——比 boolean 表达能力强 1 个量级。</li>
+<li><strong>Zod discriminatedUnion 表达类型族</strong>：customFields.type 4 种与 effects.type 3 种都是真正的「类型族」，用 union + switch 自动收窄，编译器帮你穷举所有 case——是 TS 写「开放-封闭」规范的样板代码。</li>
+<li><strong>base 的 string | array 二选一</strong>：做 alias/redirect 系统时（如 model alias、API 版本路由），让「指向另一个声明」和「指向具体实现」二选一。</li>
+<li><strong>声明式规范必须靠强 schema 校验才能稳</strong>：YAML 本身的宽松语法不致命，致命的是没有 Zod 这种解析时校验——model.yaml 之所以能产出 draft 1.0 而不崩，靠的是 Zod 兜底。</li>
+</ul>
+<h3>关键设计决策</h3>
+<table style="width:100%;border-collapse:collapse;font-size:14px;line-height:1.6;margin:1em 0;">
+<thead><tr>
+<th style="border:1px solid #ddd;padding:8px;background:#f5f5f5;text-align:left;font-weight:bold;">决策</th>
+<th style="border:1px solid #ddd;padding:8px;background:#f5f5f5;text-align:left;font-weight:bold;">选择</th>
+<th style="border:1px solid #ddd;padding:8px;background:#f5f5f5;text-align:left;font-weight:bold;">trade-off</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">配置语法</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">YAML（而非 JSON/TOML/Protobuf）</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">人类可写 + 注释友好 vs 解析边界条件多（靠 Zod 校验兜底）</td>
+</tr>
+<tr>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">effects 表达</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">discriminatedUnion（封闭类型族）</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">类型安全 + 编译器穷举 vs 加新 effect 必须升 spec</td>
+</tr>
+<tr>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">源模型挑选</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">外置给客户端（spec 不规定策略）</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">保持声明式纯度 vs 客户端策略不一致，同一 model.yaml 被解读成不同行为</td>
+</tr>
+<tr>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">自定义字段语义</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">effect 链（不直写参数）</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">意图与机制分层、跨 runtime 移植 vs 依赖下游模板的命名约定</td>
+</tr>
+<tr>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">条件表达式</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">JSONPath-like $.key（锚定 customFields.key）</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">用户视角统一 vs 当前只支持 equals，复杂条件靠平铺多条</td>
+</tr>
+<tr>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">覆盖语义</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">metadataOverrides 而非 metadata</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">强制「继承 base + 仅 override 差异字段」语义 vs 客户端必须实现合并链</td>
+</tr>
+</tbody>
+</table>
+<h2>竞品格局与定位</h2>
+<h3>竞品对比矩阵</h3>
+<table style="width:100%;border-collapse:collapse;font-size:14px;line-height:1.6;margin:1em 0;">
+<thead><tr>
+<th style="border:1px solid #ddd;padding:8px;background:#f5f5f5;text-align:left;font-weight:bold;">维度</th>
+<th style="border:1px solid #ddd;padding:8px;background:#f5f5f5;text-align:left;font-weight:bold;">model.yaml</th>
+<th style="border:1px solid #ddd;padding:8px;background:#f5f5f5;text-align:left;font-weight:bold;">Ollama Modelfile</th>
+<th style="border:1px solid #ddd;padding:8px;background:#f5f5f5;text-align:left;font-weight:bold;">ONNX</th>
+<th style="border:1px solid #ddd;padding:8px;background:#f5f5f5;text-align:left;font-weight:bold;">HuggingFace config.json</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">抽象层级</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">元描述（容器之上）</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">运行时指令（构建 GGUF）</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">容器（权重+计算图）</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">容器内清单（架构超参）</td>
+</tr>
+<tr>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">是否携带权重</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">❌（只携带来源指针）</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">✅（FROM 加载 GGUF）</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">✅（.onnx 文件）</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">❌（与权重并存）</td>
+</tr>
+<tr>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">多源并发</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">✅（base.sources 数组）</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">❌（FROM 单源）</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">❌（单文件）</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">❌（单 config.json）</td>
+</tr>
+<tr>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">用户可配置 UI 字段</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">✅（customFields）</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">❌</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">❌</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">❌</td>
+</tr>
+<tr>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">条件触发推荐</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">✅（suggestions）</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">❌</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">❌</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">❌</td>
+</tr>
+<tr>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">三态能力描述</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">✅（BooleanOrMixed）</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">❌</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">❌</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">❌</td>
+</tr>
+<tr>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">跨引擎可移植</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">✅（runtime-agnostic）</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">❌（绑 ollama CLI）</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">✅（PyTorch/TF/ORT）</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">❌（绑 transformers）</td>
+</tr>
+<tr>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">治理方</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">modelyaml org（LM Studio）</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">Ollama Inc.</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">ONNX Working Group（MS + Meta）</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">HuggingFace Inc.</td>
+</tr>
+<tr>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">当前生态成熟度</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">Draft 1.0 · LM Studio 内部</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">大（社区模型仓库庞大）</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">中（更新慢）</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">极大（百万级模型仓库）</td>
+</tr>
+</tbody>
+</table>
+<h3>差异化护城河</h3>
+<ul>
+<li><strong>声明式 + 强 schema + 真实落地</strong>：三者同时具备——既不是空想 spec 也不是私有格式，且 Zod 校验保证输入即校验。</li>
+<li><strong>customFields + suggestions 三角</strong>：把 LLM 的「参数旋钮」产品化为 UI 控件的能力，是其他四家都没原生支持的维度——这个差异<strong>短期内极难被复制</strong>，因为它需要 spec 层从零设计。</li>
+<li><strong>LM Studio 已经在生产环境消费</strong>：规范不是 PPT，是 LM Studio 桌面客户端的内置 catalog 格式——任何想「跨 LM Studio 同步模型元数据」的项目必须读 model.yaml。</li>
+</ul>
+<h3>竞争风险</h3>
+<ul>
+<li><strong>被 Ollama Modelfile 边缘化</strong>：如果 Ollama 推出 Modelfile 2.0 加入 customFields 类似机制（Ollama 社区模型仓库数远大于 LM Studio），model.yaml 会沦为「Lake Side 格式」。</li>
+<li><strong>被 HuggingFace model card YAML frontmatter 替代</strong>：HF 若把 model card YAML 升级为带 schema 校验的硬规范，会瞬间吃掉 model.yaml 的生态位——HF 用户基数 + 软实力都是 LM Studio 100 倍。</li>
+<li><strong>LM Studio 战略转向</strong>：5 commits / commits_last_30=0 / 单一组织控制——如果 LM Studio 不做桌面端、改做云端，model.yaml 会被遗弃。</li>
+<li><strong>碎片化是 12 个月内最可能结局</strong>：ONNX / Ollama Modelfile / HF config.json / model.yaml 四份事实规范并存，且没人愿意让出控制权。</li>
+</ul>
+<h3>生态定位</h3>
+<p>在整个 AI 工程化生态中，<strong>model.yaml 瞄准「用户友好 + 跨引擎 + 真正开放」三角交集</strong>——填补了 ONNX（容器层 + 不友好）/ Ollama Modelfile（运行时层 + 不开放）/ HF config.json（容器内 + 不跨客户端）三者都没覆盖的<strong>空白生态位</strong>。它<strong>不是另一个容器</strong>，而是「容器的目录卡」，与容器层完全正交。</p>
+<h2>套利机会分析</h2>
+<ul>
+<li><strong>信息差</strong>：modelyaml 当前 62 stars、3 forks、5 commits、2 贡献者、年龄 13.7 月但 commits_last_30=0——一个<strong>被 LM Studio 官方钦定但尚未被社区发现</strong>的项目。在它进入 HN/PH/RSS 主流媒体之前，能比 95% LLM 开发者更早理解「AI 模型元描述层」这个新抽象。建议：(a) 写 newsletter 标注「LM Studio 亲儿子级规范」蹭品牌；(b) 把它与 K8s Deployment.yaml、npm package.json、OpenAPI openapi.yaml 类比让非 AI 圈读者秒懂；(c) 强调 draft 1.0 与「待联盟化」窗口期。</li>
+<li><strong>技术借鉴</strong>：6 字段分层（必填身份 / 必填来源 / 选填元覆盖 / 选填预置配置 / 选填用户交互 / 选填条件推荐）是<strong>通用范式</strong>——任何「AI 资产 / 软件资产 / 配置资产」的元描述都能直接套这套层级。具体清单：(1) customFields + effects 模式用于 AI agent 工具描述；(2) suggestions + conditions 用于 IDE 插件；(3) base 的 string|array 用于 alias/redirect 系统；(4) BooleanOrMixed 三态用于能力声明。</li>
+<li><strong>生态位</strong>：当前空白生态位：(a) <strong>私有 catalog 工具</strong>——「model.yaml indexer for self-hosted model registries」；(b) <strong>跨客户端 runtime selector</strong>——「按 model.yaml 自动挑 LM Studio vs Ollama vs vLLM」；(c) <strong>CI 校验工具</strong>——「在模型发布前用 zod 校验 model.yaml 完整性 + 自动生成 catalog 截图」。</li>
+<li><strong>趋势判断</strong>：(1) <strong>AI 模型产品化</strong>不可逆——customFields + suggestions 是这个趋势的最早显式编码；(2) <strong>碎片化 vs 联盟化</strong>：开源侧形成四份事实规范，<strong>碎片化是 12 个月内最可能结局</strong>，除非 LM Studio 主动让出控制权邀请联盟；(3) <strong>「AI 模型即软件」的元描述革命</strong>：未来 2–3 年「AI 模型」将被作为新型软件资产被供应链管理（SBOM 类比 AI-BOM），model.yaml 是这个范式里「AI 模型 SBOM」的最早草案。</li>
+</ul>
+<h2>风险与不足</h2>
+<ol>
+<li><strong>文档与实现严重脱节</strong>（已发现 7 处缺失）：modelyaml.org README 没文档化 tags、metadataOverrides.reasoning / fim / preferredMaxImageDimensionPixels、config.load、customFields.type: "select"/"number" 与子字段、effects 的 prependSystemPrompt / appendSystemPrompt。这是<strong>当前最严重的可执行性风险</strong>——按文档写 model.yaml 的作者在 LM Studio 实际客户端会遇到「字段不生效」或「格式错误」。</li>
+<li><strong>缺 specVersion 字段、无版本演进路径</strong>：当前 spec 没携带任何版本号。客户端无法判断「我读的是哪个 draft」；作者无法声明「我的 model.yaml 兼容 1.0 而非 1.5」；演进只能硬切换。OpenAPI 有 openapi: 3.1.0、Kubernetes CRD 有 apiVersion——model.yaml 缺这套机制，等首次大改就会撕裂整个生态。</li>
+<li><strong>base 缺 chain 解析规范 + 缺 fallback 行为</strong>：base: string 引用另一个 model.yaml 形成链，但 spec 没规定 (a) chain 深度上限、(b) 循环引用检测、(c) base 指向的模型不存在/不可达时的 fallback。这意味着每个客户端会实现自己的 fallback 行为。</li>
+<li><strong>客户端策略不透明，selection semantics 缺失</strong>：base.sources 让作者提供多个候选，但客户端<strong>怎么挑</strong>没说（按显存？硬件？格式优先级？）。同一 model.yaml 在 LM Studio 桌面、LM Studio CLI、未来第三方客户端会被解读成不同行为。</li>
+<li><strong>customFields.effects 类型封闭 + 跨 runtime 命名约定缺失</strong>：只支持 3 种 effect 且 hard-coded（setJinjaVariable / prependSystemPrompt / appendSystemPrompt）；Jinja 变量命名约定（enable_thinking vs thinking_mode）依赖下游模板，没有 spec 强制；<strong>没有 prompt sanitization</strong>——恶意模型作者可以塞任意 system prompt。</li>
+<li><strong>项目活跃度低 + 单一组织控制</strong>：5 commits、2 贡献者、commits_last_30=0、age 13.7 月但实质只有 2 月活跃；仅 modelyaml org 控制、仅 LM Studio 背书；没有 steering committee、没有 contributor covenant、没有 RFC 流程——社区想推动演进没有正规路径。</li>
+</ol>
+<h2>行动建议</h2>
+<h3>如果你要用它</h3>
+<p>(1) 当前最稳的用法是<strong>作为 LM Studio catalog 内的模型描述消费者</strong>——你在 LM Studio 看到的每一个模型卡片都是 model.yaml 化的，你是消费方而非生产方。(2) 如果你是模型作者想发布到 LM Studio 社区，按 README 写 model.yaml 时<strong>严格用 README 列出的字段与示例</strong>，避开 TS 已实现但 README 未文档化的 7 处差异（tags、reasoning、fim、preferredMaxImageDimensionPixels、config.load、customFields.type: "select"/"number"、prependSystemPrompt/appendSystemPrompt）——这些字段在 LM Studio 当前版本可能未启用或行为未定义。(3) CI 校验时用 LM Studio 官方 lmstudio-js 包的 virtualModelDefinitionSchema（Zod schema）做 parse + validate。(4) 别把它当 Ollama Modelfile 替代品——它是元描述，不是构建指令。</p>
+<h3>如果你要学它</h3>
+<ol>
+<li><strong>学「声明式规范」的写作范式</strong>：6 字段分层（必填身份 / 必填来源 / 选填元覆盖 / 选填预置配置 / 选填用户交互 / 选填条件推荐）是<strong>可复用的模板</strong>。</li>
+<li><strong>学 Zod discriminatedUnion 的用法</strong>：customFields 4 种 type 与 effects 3 种 type 都用 zod discriminatedUnion + switch 收窄，是 TS 写「开放-封闭」规范的样板代码。</li>
+<li><strong>学「客户端挑源」的解耦思想</strong>：base.sources 让模型作者声明多个变体而不强迫客户端接受某个特定变体——这是「开放生态」与「封闭生态」的分水岭。</li>
+<li><strong>学「effect 链」代替「参数直写」</strong>：customFields 不写「开 thinking 时 temperature=0.6」，而是「开 thinking → setJinjaVariable(enable_thinking=true)」，把意图与机制分层。</li>
+<li><strong>学「声明式规范要靠强 schema 校验才能稳」</strong>：YAML 宽松语法不致命，致命的是没有 Zod 校验——model.yaml 之所以能产出 draft 1.0 而不崩，靠的是 Zod 兜底。</li>
+</ol>
+<h3>如果你要 fork 它</h3>
+<ul>
+<li><strong>第一优先 PR</strong>：把 README 与 VirtualModelDefinition.ts 完全对齐——补齐 tags、reasoning、fim、preferredMaxImageDimensionPixels、config.load、customFields.type: "select"/"number"、prependSystemPrompt/appendSystemPrompt 这 7 处缺失。这是门槛最低、价值最高的贡献。</li>
+<li><strong>第二优先 PR</strong>：加 specVersion: "1.0.0" 字段到 root，写 changelog 文档，给出 deprecation policy。</li>
+<li><strong>第三优先 PR</strong>：写「model.yaml Runtime Compatibility Profile」附录——规定客户端从 base.sources 挑选 concrete model 的规则、chain 深度上限与循环检测、客户端必须支持的最低字段子集。</li>
+<li><strong>第四优先 PR</strong>：写一个 GitHub Action / pre-commit hook，对 model.yaml 文件跑 lmstudio-js 的 zod schema 校验，输出 catalog 截图。</li>
+<li><strong>战略级建议</strong>：推动 modelyaml 组织建立 steering committee（哪怕 3 人，含 LM Studio 1 名 + Ollama/vLLM/Jan/GPT4All 至少 1 名 + 社区 1 名），建立 RFC 目录，把 model.yaml 从「LM Studio 单方面 draft」变成「社区共治规范」——这是规范能否在 24 个月内进入联盟化的决定性变量。</li>
+</ul>
+<h3>知识入口</h3>
+<table style="width:100%;border-collapse:collapse;font-size:14px;line-height:1.6;margin:1em 0;">
+<thead><tr>
+<th style="border:1px solid #ddd;padding:8px;background:#f5f5f5;text-align:left;font-weight:bold;">资源</th>
+<th style="border:1px solid #ddd;padding:8px;background:#f5f5f5;text-align:left;font-weight:bold;">链接</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">官方规范站点</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">https://modelyaml.org</td>
+</tr>
+<tr>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">TS 类型实现（规范的「权威定义」）</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;"><a href="https://github.com/lmstudio-ai/lmstudio-js/blob/main/packages/lms-shared-types/src/VirtualModelDefinition.ts">VirtualModelDefinition.ts</a></td>
+</tr>
+<tr>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">仓库 README</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">https://github.com/modelyaml/modelyaml</td>
+</tr>
+<tr>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">LM Studio 桌面客户端（消费方）</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">https://lmstudio.ai</td>
+</tr>
+<tr>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">DeepWiki</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">未收录</td>
+</tr>
+<tr>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">Zread.ai</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">未收录</td>
+</tr>
+<tr>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">关联论文</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">无（标准/规范类项目，非研究项目）</td>
+</tr>
+<tr>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">在线 Demo</td>
+<td style="border:1px solid #ddd;padding:8px;vertical-align:top;">无交互 demo；<a href="https://modelyaml.org">modelyaml.org</a> 本身即规范的「营销/教学 demo」</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

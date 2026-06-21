@@ -1,0 +1,6 @@
+{
+  "title": "GitHub推荐：LM Studio 推出 model.yaml：用一份声明式 yaml 给 LLM 装上「产品参数」",
+  "digest": "LM Studio 推 model.yaml draft 1.0，用 customFields+effects 把 LLM 参数产品化为 UI 控件，填补 Ollama/HF/ONNX 都没覆盖的元描述层空白。",
+  "author": "NVoyager",
+  "theme": "stars,universe,dark"
+}
