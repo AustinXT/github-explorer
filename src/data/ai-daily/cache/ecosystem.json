@@ -1,6 +1,6 @@
 {
   "meta": {
-    "last_run": "2026-06-21",
+    "last_run": "2026-06-22",
     "window_days": 30
   },
   "entries": [
@@ -615,6 +615,60 @@
       "canonical_url": "https://github.com/axios/axios",
       "event_date": "2026-06-21",
       "date_seen": "2026-06-21"
+    },
+    {
+      "key": "github.com/garrytan/gstack",
+      "canonical_url": "https://github.com/garrytan/gstack",
+      "event_date": "2026-06-22",
+      "date_seen": "2026-06-22"
+    },
+    {
+      "key": "github.com/heygen-com/hyperframes",
+      "canonical_url": "https://github.com/heygen-com/hyperframes",
+      "event_date": "2026-06-22",
+      "date_seen": "2026-06-22"
+    },
+    {
+      "key": "github.com/lyogavin/airllm",
+      "canonical_url": "https://github.com/lyogavin/airllm",
+      "event_date": "2026-06-22",
+      "date_seen": "2026-06-22"
+    },
+    {
+      "key": "github.com/jcodesmore/ai-website-cloner-template",
+      "canonical_url": "https://github.com/JCodesMore/ai-website-cloner-template",
+      "event_date": "2026-06-22",
+      "date_seen": "2026-06-22"
+    },
+    {
+      "key": "github.com/alibaba-nlp/deepresearch",
+      "canonical_url": "https://github.com/Alibaba-NLP/DeepResearch",
+      "event_date": "2026-06-22",
+      "date_seen": "2026-06-22"
+    },
+    {
+      "key": "github.com/esengine/deepseek-reasonix",
+      "canonical_url": "https://github.com/esengine/DeepSeek-Reasonix",
+      "event_date": "2026-06-22",
+      "date_seen": "2026-06-22"
+    },
+    {
+      "key": "github.com/magenta/magenta-realtime",
+      "canonical_url": "https://github.com/magenta/magenta-realtime",
+      "event_date": "2026-06-22",
+      "date_seen": "2026-06-22"
+    },
+    {
+      "key": "github.com/liuzh-19/songgen",
+      "canonical_url": "https://github.com/LiuZH-19/SongGen",
+      "event_date": "2026-06-22",
+      "date_seen": "2026-06-22"
+    },
+    {
+      "key": "github.com/pykeio/ort",
+      "canonical_url": "https://github.com/pykeio/ort",
+      "event_date": "2026-06-22",
+      "date_seen": "2026-06-22"
     }
   ]
 }
