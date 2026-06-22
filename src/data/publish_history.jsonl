@@ -195,3 +195,4 @@
 {"recorded_at": "2026-06-21T23:28:07.188594+00:00", "slug": "modelyaml_modelyaml", "title": null, "state": "pending", "published_at": "2026-06-21", "reason": "待重发", "ci_run_id": "27920226269"}
 {"recorded_at": "2026-06-22T03:04:43.305189+00:00", "slug": "zhulinsen_daily_stock_analysis", "title": null, "state": "pending", "published_at": "2026-06-22", "reason": "待重发", "ci_run_id": "27926319185"}
 {"recorded_at": "2026-06-22T09:11:07.278918+00:00", "slug": "palmier-io_palmier-pro", "title": null, "state": "pending", "published_at": "2026-06-22", "reason": "待重发", "ci_run_id": "27940765440"}
+{"recorded_at": "2026-06-22T23:30:47.174245+00:00", "slug": "alibaba-nlp_deepresearch", "title": null, "state": "published", "published_at": "2026-06-22", "reason": "自动生成", "ci_run_id": "27990348524"}
