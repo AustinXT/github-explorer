@@ -120,6 +120,16 @@
     "trending_days": 23
   },
   {
+    "name": "NousResearch/hermes-agent",
+    "url": "https://github.com/nousresearch/hermes-agent",
+    "language": "Python",
+    "stars": 200518,
+    "forks": 35741,
+    "description": "The agent that grows with you",
+    "last_seen": "2026-06-23",
+    "trending_days": 23
+  },
+  {
     "name": "thedotmack/claude-mem",
     "url": "https://github.com/thedotmack/claude-mem",
     "language": "TypeScript",
@@ -157,16 +167,6 @@
     "forks": 2065,
     "description": "Run Windows Subsystem For Android on your Windows 10 and Windows 11 PC using prebuilt binaries with Google Play Store (MindTheGapps) and/or Magisk or KernelSU (root solutions) built in.",
     "last_seen": "2025-12-04",
-    "trending_days": 22
-  },
-  {
-    "name": "NousResearch/hermes-agent",
-    "url": "https://github.com/nousresearch/hermes-agent",
-    "language": "Python",
-    "stars": 185323,
-    "forks": 31850,
-    "description": "The agent that grows with you",
-    "last_seen": "2026-06-07",
     "trending_days": 22
   },
   {
@@ -280,6 +280,16 @@
     "trending_days": 15
   },
   {
+    "name": "bytedance/deer-flow",
+    "url": "https://github.com/bytedance/deer-flow",
+    "language": "Python",
+    "stars": 73721,
+    "forks": 9956,
+    "description": "An open-source long-horizon SuperAgent harness that researches, codes, and creates. With the help of sandboxes, memories, tools, skill, subagents and message gateway, it handles different levels of tasks that could take minutes to hours.",
+    "last_seen": "2026-06-23",
+    "trending_days": 15
+  },
+  {
     "name": "ChromeDevTools/chrome-devtools-mcp",
     "url": "https://github.com/chromedevtools/chrome-devtools-mcp",
     "language": "TypeScript",
@@ -317,16 +327,6 @@
     "forks": 7008,
     "description": "微舆：人人可用的多Agent舆情分析助手，打破信息茧房，还原舆情原貌，预测未来走向，辅助决策！从0实现，不依赖任何框架。",
     "last_seen": "2026-03-09",
-    "trending_days": 14
-  },
-  {
-    "name": "bytedance/deer-flow",
-    "url": "https://github.com/bytedance/deer-flow",
-    "language": "Python",
-    "stars": 73055,
-    "forks": 9879,
-    "description": "An open-source long-horizon SuperAgent harness that researches, codes, and creates. With the help of sandboxes, memories, tools, skill, subagents and message gateway, it handles different levels of tasks that could take minutes to hours.",
-    "last_seen": "2026-06-22",
     "trending_days": 14
   },
   {
@@ -400,6 +400,26 @@
     "trending_days": 13
   },
   {
+    "name": "affaan-m/ECC",
+    "url": "https://github.com/affaan-m/ecc",
+    "language": "JavaScript",
+    "stars": 220225,
+    "forks": 33744,
+    "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+    "last_seen": "2026-06-23",
+    "trending_days": 12
+  },
+  {
+    "name": "anthropics/claude-plugins-official",
+    "url": "https://github.com/anthropics/claude-plugins-official",
+    "language": "Python",
+    "stars": 30706,
+    "forks": 3356,
+    "description": "Official, Anthropic-managed directory of high quality Claude Code Plugins.",
+    "last_seen": "2026-06-23",
+    "trending_days": 12
+  },
+  {
     "name": "mvanhorn/last30days-skill",
     "url": "https://github.com/mvanhorn/last30days-skill",
     "language": "Python",
@@ -457,26 +477,6 @@
     "forks": 10097,
     "description": "A Simple and Universal Swarm Intelligence Engine, Predicting Anything. 简洁通用的群体智能引擎，预测万物",
     "last_seen": "2026-06-06",
-    "trending_days": 11
-  },
-  {
-    "name": "affaan-m/ECC",
-    "url": "https://github.com/affaan-m/ecc",
-    "language": "JavaScript",
-    "stars": 208746,
-    "forks": 32018,
-    "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
-    "last_seen": "2026-06-06",
-    "trending_days": 11
-  },
-  {
-    "name": "anthropics/claude-plugins-official",
-    "url": "https://github.com/anthropics/claude-plugins-official",
-    "language": "Python",
-    "stars": 27005,
-    "forks": 2887,
-    "description": "Official, Anthropic-managed directory of high quality Claude Code Plugins.",
-    "last_seen": "2026-05-24",
     "trending_days": 11
   },
   {
@@ -710,6 +710,16 @@
     "trending_days": 10
   },
   {
+    "name": "shanraisshan/claude-code-best-practice",
+    "url": "https://github.com/shanraisshan/claude-code-best-practice",
+    "language": "HTML",
+    "stars": 59108,
+    "forks": 5963,
+    "description": "from vibe coding to agentic engineering - practice makes claude perfect",
+    "last_seen": "2026-06-23",
+    "trending_days": 10
+  },
+  {
     "name": "Stremio/stremio-web",
     "url": "https://github.com/stremio/stremio-web",
     "language": "JavaScript",
@@ -860,16 +870,6 @@
     "trending_days": 9
   },
   {
-    "name": "shanraisshan/claude-code-best-practice",
-    "url": "https://github.com/shanraisshan/claude-code-best-practice",
-    "language": "HTML",
-    "stars": 42923,
-    "forks": 4109,
-    "description": "from vibe coding to agentic engineering - practice makes claude perfect",
-    "last_seen": "2026-04-14",
-    "trending_days": 9
-  },
-  {
     "name": "sst/opencode",
     "url": "https://github.com/sst/opencode",
     "language": "TypeScript",
@@ -980,6 +980,16 @@
     "trending_days": 8
   },
   {
+    "name": "jamiepine/voicebox",
+    "url": "https://github.com/jamiepine/voicebox",
+    "language": "TypeScript",
+    "stars": 32891,
+    "forks": 3973,
+    "description": "The open-source AI voice studio. Clone, dictate, create.",
+    "last_seen": "2026-06-23",
+    "trending_days": 8
+  },
+  {
     "name": "LadybirdBrowser/ladybird",
     "url": "https://github.com/ladybirdbrowser/ladybird",
     "language": "C++",
@@ -1017,6 +1027,16 @@
     "forks": 8070,
     "description": "Microsoft PowerToys is a collection of utilities that supercharge productivity and customization on Windows",
     "last_seen": "2026-06-13",
+    "trending_days": 8
+  },
+  {
+    "name": "mukul975/Anthropic-Cybersecurity-Skills",
+    "url": "https://github.com/mukul975/anthropic-cybersecurity-skills",
+    "language": "Python",
+    "stars": 19283,
+    "forks": 2250,
+    "description": "817 structured cybersecurity skills for AI agents · Mapped to 6 frameworks: MITRE ATT&CK, NIST CSF 2.0, MITRE ATLAS, D3FEND, NIST AI RMF & MITRE F3 (Fight Fraud) · agentskills.io standard · Works with Claude Code, GitHub Copilot, Codex CLI, Cursor, Gemini CLI & 20+ platforms · 29 security domains · Apache 2.0",
+    "last_seen": "2026-06-23",
     "trending_days": 8
   },
   {
@@ -1120,6 +1140,16 @@
     "trending_days": 7
   },
   {
+    "name": "DeusData/codebase-memory-mcp",
+    "url": "https://github.com/deusdata/codebase-memory-mcp",
+    "language": "C",
+    "stars": 12395,
+    "forks": 906,
+    "description": "High-performance code intelligence MCP server. Indexes codebases into a persistent knowledge graph — average repo in milliseconds. 158 languages, sub-ms queries, 99% fewer tokens. Single static binary, zero dependencies.",
+    "last_seen": "2026-06-23",
+    "trending_days": 7
+  },
+  {
     "name": "Fincept-Corporation/FinceptTerminal",
     "url": "https://github.com/fincept-corporation/finceptterminal",
     "language": "Python",
@@ -1160,16 +1190,6 @@
     "trending_days": 7
   },
   {
-    "name": "jamiepine/voicebox",
-    "url": "https://github.com/jamiepine/voicebox",
-    "language": "TypeScript",
-    "stars": 31960,
-    "forks": 3919,
-    "description": "The open-source AI voice studio. Clone, dictate, create.",
-    "last_seen": "2026-06-22",
-    "trending_days": 7
-  },
-  {
     "name": "jellyfin/jellyfin",
     "url": "https://github.com/jellyfin/jellyfin",
     "language": "C#",
@@ -1197,16 +1217,6 @@
     "forks": 3420,
     "description": "🤖 The free, Open Source alternative to OpenAI, Claude and others. Self-hosted and local-first. Drop-in replacement for OpenAI, running on consumer-grade hardware. No GPU required. Runs gguf, transformers, diffusers and many more. Features: Generate Text, MCP, Audio, Video, Images, Voice Cloning, Distributed, P2P and decentralized inference",
     "last_seen": "2026-01-15",
-    "trending_days": 7
-  },
-  {
-    "name": "mukul975/Anthropic-Cybersecurity-Skills",
-    "url": "https://github.com/mukul975/anthropic-cybersecurity-skills",
-    "language": "Python",
-    "stars": 18352,
-    "forks": 2185,
-    "description": "754 structured cybersecurity skills for AI agents · Mapped to 5 frameworks: MITRE ATT&CK, NIST CSF 2.0, MITRE ATLAS, D3FEND & NIST AI RMF · agentskills.io standard · Works with Claude Code, GitHub Copilot, Codex CLI, Cursor, Gemini CLI & 20+ platforms · 26 security domains · Apache 2.0",
-    "last_seen": "2026-06-22",
     "trending_days": 7
   },
   {
@@ -1380,6 +1390,26 @@
     "trending_days": 6
   },
   {
+    "name": "byoungd/English-level-up-tips",
+    "url": "https://github.com/byoungd/english-level-up-tips",
+    "language": "Unknown",
+    "stars": 54416,
+    "forks": 5582,
+    "description": "An advanced guide to learn English which might benefit you a lot 🎉 . 人生进阶指南 离谱的人生 离谱的英语学习指南/英语学习教程/英语学习/学英语",
+    "last_seen": "2026-06-23",
+    "trending_days": 6
+  },
+  {
+    "name": "calesthio/OpenMontage",
+    "url": "https://github.com/calesthio/openmontage",
+    "language": "Python",
+    "stars": 14309,
+    "forks": 1738,
+    "description": "World's first open-source, agentic video production system. 12 pipelines, 52 tools, 500+ agent skills. Turn your AI coding assistant into a full video production studio.",
+    "last_seen": "2026-06-23",
+    "trending_days": 6
+  },
+  {
     "name": "clockworklabs/SpacetimeDB",
     "url": "https://github.com/clockworklabs/spacetimedb",
     "language": "Rust",
@@ -1427,16 +1457,6 @@
     "forks": 3390,
     "description": "A MCP for Claude Desktop / Claude Code / Windsurf / Cursor to build n8n workflows for you",
     "last_seen": "2026-05-15",
-    "trending_days": 6
-  },
-  {
-    "name": "DeusData/codebase-memory-mcp",
-    "url": "https://github.com/deusdata/codebase-memory-mcp",
-    "language": "C",
-    "stars": 11143,
-    "forks": 830,
-    "description": "High-performance code intelligence MCP server. Indexes codebases into a persistent knowledge graph — average repo in milliseconds. 158 languages, sub-ms queries, 99% fewer tokens. Single static binary, zero dependencies.",
-    "last_seen": "2026-06-22",
     "trending_days": 6
   },
   {
@@ -1840,16 +1860,6 @@
     "trending_days": 5
   },
   {
-    "name": "byoungd/English-level-up-tips",
-    "url": "https://github.com/byoungd/english-level-up-tips",
-    "language": "Unknown",
-    "stars": 53894,
-    "forks": 5550,
-    "description": "An advanced guide to learn English which might benefit you a lot 🎉 . 离谱的英语学习指南/英语学习教程/英语学习/学英语",
-    "last_seen": "2026-06-21",
-    "trending_days": 5
-  },
-  {
     "name": "C4illin/ConvertX",
     "url": "https://github.com/c4illin/convertx",
     "language": "TypeScript",
@@ -1857,16 +1867,6 @@
     "forks": 766,
     "description": "💾 Self-hosted online file converter. Supports 1000+ formats ⚙️",
     "last_seen": "2026-01-11",
-    "trending_days": 5
-  },
-  {
-    "name": "calesthio/OpenMontage",
-    "url": "https://github.com/calesthio/openmontage",
-    "language": "Python",
-    "stars": 11059,
-    "forks": 1478,
-    "description": "World's first open-source, agentic video production system. 12 pipelines, 52 tools, 500+ agent skills. Turn your AI coding assistant into a full video production studio.",
-    "last_seen": "2026-06-22",
     "trending_days": 5
   },
   {
@@ -2010,6 +2010,16 @@
     "trending_days": 5
   },
   {
+    "name": "koala73/worldmonitor",
+    "url": "https://github.com/koala73/worldmonitor",
+    "language": "TypeScript",
+    "stars": 58809,
+    "forks": 9265,
+    "description": "Real-time global intelligence dashboard. AI-powered news aggregation, geopolitical monitoring, and infrastructure tracking in a unified situational awareness interface",
+    "last_seen": "2026-06-23",
+    "trending_days": 5
+  },
+  {
     "name": "langgenius/dify",
     "url": "https://github.com/langgenius/dify",
     "language": "TypeScript",
@@ -2087,6 +2097,16 @@
     "forks": 4855,
     "description": "Elegant reading of real-time and hottest news",
     "last_seen": "2026-01-06",
+    "trending_days": 5
+  },
+  {
+    "name": "palmier-io/palmier-pro",
+    "url": "https://github.com/palmier-io/palmier-pro",
+    "language": "Swift",
+    "stars": 8213,
+    "forks": 538,
+    "description": "macOS video editor built for AI",
+    "last_seen": "2026-06-23",
     "trending_days": 5
   },
   {
@@ -2297,6 +2317,16 @@
     "forks": 3007,
     "description": "Let's use AI to Earn!",
     "last_seen": "2026-06-09",
+    "trending_days": 5
+  },
+  {
+    "name": "ZhuLinsen/daily_stock_analysis",
+    "url": "https://github.com/zhulinsen/daily_stock_analysis",
+    "language": "Python",
+    "stars": 46612,
+    "forks": 42247,
+    "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
+    "last_seen": "2026-06-23",
     "trending_days": 5
   },
   {
@@ -2580,6 +2610,16 @@
     "trending_days": 4
   },
   {
+    "name": "garrytan/gstack",
+    "url": "https://github.com/garrytan/gstack",
+    "language": "TypeScript",
+    "stars": 113742,
+    "forks": 16852,
+    "description": "Use Garry Tan's exact Claude Code setup: 23 opinionated tools that serve as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA",
+    "last_seen": "2026-06-23",
+    "trending_days": 4
+  },
+  {
     "name": "gin-gonic/gin",
     "url": "https://github.com/gin-gonic/gin",
     "language": "Go",
@@ -2727,16 +2767,6 @@
     "forks": 8537,
     "description": "The simplest, fastest repository for training/finetuning medium-sized GPTs.",
     "last_seen": "2025-12-13",
-    "trending_days": 4
-  },
-  {
-    "name": "koala73/worldmonitor",
-    "url": "https://github.com/koala73/worldmonitor",
-    "language": "TypeScript",
-    "stars": 57767,
-    "forks": 9183,
-    "description": "Real-time global intelligence dashboard. AI-powered news aggregation, geopolitical monitoring, and infrastructure tracking in a unified situational awareness interface",
-    "last_seen": "2026-06-21",
     "trending_days": 4
   },
   {
@@ -2940,16 +2970,6 @@
     "trending_days": 4
   },
   {
-    "name": "palmier-io/palmier-pro",
-    "url": "https://github.com/palmier-io/palmier-pro",
-    "language": "Swift",
-    "stars": 6855,
-    "forks": 480,
-    "description": "macOS video editor built for AI",
-    "last_seen": "2026-06-22",
-    "trending_days": 4
-  },
-  {
     "name": "pbakaus/impeccable",
     "url": "https://github.com/pbakaus/impeccable",
     "language": "JavaScript",
@@ -2997,6 +3017,16 @@
     "forks": 2349,
     "description": "Prometheus Alertmanager",
     "last_seen": "2025-11-10",
+    "trending_days": 4
+  },
+  {
+    "name": "revfactory/harness",
+    "url": "https://github.com/revfactory/harness",
+    "language": "HTML",
+    "stars": 7320,
+    "forks": 1036,
+    "description": "A meta-skill that designs domain-specific agent teams, defines specialized agents, and generates the skills they use.",
+    "last_seen": "2026-06-23",
     "trending_days": 4
   },
   {
@@ -3147,16 +3177,6 @@
     "forks": 258,
     "description": "DFlash: Block Diffusion for Flash Speculative Decoding",
     "last_seen": "2026-05-08",
-    "trending_days": 4
-  },
-  {
-    "name": "ZhuLinsen/daily_stock_analysis",
-    "url": "https://github.com/zhulinsen/daily_stock_analysis",
-    "language": "Python",
-    "stars": 45611,
-    "forks": 41862,
-    "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
-    "last_seen": "2026-06-22",
     "trending_days": 4
   },
   {
@@ -3527,16 +3547,6 @@
     "forks": 1748,
     "description": "🥢像老乡鸡🐔那样做饭。主要部分于2024年完工，非老乡鸡官方仓库。文字来自《老乡鸡菜品溯源报告》，并做归纳、编辑与整理。CookLikeHOC.",
     "last_seen": "2025-09-24",
-    "trending_days": 3
-  },
-  {
-    "name": "garrytan/gstack",
-    "url": "https://github.com/garrytan/gstack",
-    "language": "TypeScript",
-    "stars": 112841,
-    "forks": 16759,
-    "description": "Use Garry Tan's exact Claude Code setup: 23 opinionated tools that serve as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA",
-    "last_seen": "2026-06-22",
     "trending_days": 3
   },
   {
@@ -4117,16 +4127,6 @@
     "forks": 10763,
     "description": "Declarative routing for React",
     "last_seen": "2025-11-08",
-    "trending_days": 3
-  },
-  {
-    "name": "revfactory/harness",
-    "url": "https://github.com/revfactory/harness",
-    "language": "HTML",
-    "stars": 5037,
-    "forks": 683,
-    "description": "A meta-skill that designs domain-specific agent teams, defines specialized agents, and generates the skills they use.",
-    "last_seen": "2026-06-01",
     "trending_days": 3
   },
   {
@@ -5437,6 +5437,16 @@
     "forks": 2344,
     "description": "Jan is an open source alternative to ChatGPT that runs 100% offline on your computer.",
     "last_seen": "2025-11-01",
+    "trending_days": 2
+  },
+  {
+    "name": "JCodesMore/ai-website-cloner-template",
+    "url": "https://github.com/jcodesmore/ai-website-cloner-template",
+    "language": "TypeScript",
+    "stars": 18281,
+    "forks": 2784,
+    "description": "Clone any website with one command using AI coding agents",
+    "last_seen": "2026-06-23",
     "trending_days": 2
   },
   {
@@ -8157,16 +8167,6 @@
     "forks": 173,
     "description": "magic-trace collects and displays high-resolution traces of what a process is doing",
     "last_seen": "2026-05-23",
-    "trending_days": 1
-  },
-  {
-    "name": "JCodesMore/ai-website-cloner-template",
-    "url": "https://github.com/jcodesmore/ai-website-cloner-template",
-    "language": "TypeScript",
-    "stars": 17525,
-    "forks": 2728,
-    "description": "Clone any website with one command using AI coding agents",
-    "last_seen": "2026-06-22",
     "trending_days": 1
   },
   {

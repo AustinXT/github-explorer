@@ -94,6 +94,10 @@ entries:
   alexzhang13_rlm:
   - ai-agent
   - model-foundation
+  alibaba-nlp_deepresearch:
+  - ai-agent
+  - llm-training
+  - model-foundation
   alibaba_opensandbox:
   - ai-agent
   - security
@@ -663,6 +667,10 @@ entries:
   - media-generation
   gar-b-age_cooklikehoc:
   - rag-search
+  garrytan_gstack:
+  - ai-agent
+  - ai-coding
+  - devtools
   geeeekexplorer_nano-vllm:
   - llm-inference
   - model-foundation
