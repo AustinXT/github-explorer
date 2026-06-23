@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+/* ====== 微信公众号排版 CSS ====== */
+
+body {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #3e3e3e;
+    background: #fff;
+}
+
+/* 正文段落 */
+p {
+    font-size: 15px !important;
+    line-height: 2 !important;
+    margin: 0 !important;
+    padding-top: 0.5em !important;
+    padding-bottom: 0.5em !important;
+    padding-right: 1.2em !important;
+    padding-left: 1.2em !important;
+    text-align: justify !important;
+}
+p + p {
+    margin-top: 0 !important;
+}
+
+/* 标题 */
+h1 {
+    font-size: 20px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 16px 0 !important;
+    padding: 0 !important;
+}
+h2 {
+    font-size: 18px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 24px 0 !important;
+    padding: 0 !important;
+}
+h3 {
+    font-size: 15px !important;
+    font-weight: bold !important;
+    color: #3e3e3e !important;
+    text-align: left !important;
+    margin: 16px 0 16px 0 !important;
+    padding: 0 0 0 1.2em !important;
+}
+h4 {
+    font-size: 15px !important;
+    color: rgb(0, 122, 170) !important;
+    margin: 12px 0 8px 0 !important;
+    padding: 0 !important;
+}
+
+/* 列表 */
+ul,
+ol {
+    padding-left: 2em !important;
+    margin: 1em 0 !important;
+    font-size: 15px !important;
+}
+li {
+    margin: 0.5em 0 !important;
+    line-height: 1.8em !important;
+    font-size: 15px !important;
+    color: #3e3e3e !important;
+}
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+    margin: 0 !important;
+    padding-left: 1.2em !important;
+}
+
+/* 引用 */
+blockquote {
+    border-left: 4px solid #888 !important;
+    padding: 8px 16px !important;
+    margin: 1em 0 !important;
+    color: #666 !important;
+    background: #f9f9f9 !important;
+}
+blockquote > p {
+    margin: 0.5em 0 !important;
+    padding: 0 !important;
+}
+blockquote::before,
+blockquote::after {
+    content: none !important;
+}
+
+/* 代码块 */
+pre {
+    font-size: 14px !important;
+    line-height: 1.4em !important;
+    color: #3e3e3e !important;
+    background: #f8f8f8 !important;
+    padding: 12px 16px !important;
+    border-radius: 4px !important;
+    overflow: auto !important;
+    margin: 1em 0 !important;
+}
+
+/* 表格 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+    font-size: 14px;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background: #f5f5f5;
+    font-weight: bold;
+}
+
+/* 链接 */
+a {
+    color: #576b95;
+    text-decoration: none;
+}
+
+/* 图片 */
+img {
+    max-width: 100%;
+    display: block;
+    margin: 1em auto;
+}
+
+/* 脚注 */
+.footnotes {
+    font-size: 11px !important;
+    color: #666 !important;
+    line-height: 1.2 !important;
+    margin: 8px 0 0 0 !important;
+    padding: 4px 0 0 0 !important;
+    border-top: 1px solid #eee !important;
+}
+.footnotes p {
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #666 !important;
+}
+
+/* 上标 */
+sup {
+    font-size: 0.75em !important;
+    vertical-align: super !important;
+    color: #e51f42 !important;
+    margin: 0 2px !important;
+}
+</style>
+</head>
+<body>
+<blockquote><p>GitHub: <a href="https://github.com/garrytan/gstack">https://github.com/garrytan/gstack</a></p></blockquote>
+<h2>一句话总结</h2>
+<p><code>gstack</code> 是 Garry Tan（Y Combinator 现任 CEO）把 YC 早期 founder 多角色 review 文化编码为 31+ Claude Code slash command skills 的「开源软件工厂」，本质是一套用「认知分工」(Cognitive Mode Skills) 把 CEO/Eng/QA/Review 各角色显式拆分的 Agent 工作流方法论。</p>
+<h2>值得关注的理由</h2>
+<ol>
+<li><strong>方法论价值远超代码本身</strong> — 70+ 子目录里绝大多数是 SKILL.md（prompt 工作流），把「vibe coding」模糊地带变成可复制可分发的工程产物。比起单纯读代码，更值得学的是「怎么把模糊的工程实践编码成 AI 能执行的指令」。</li>
+<li><strong>YC 实战背书 + 现象级增长</strong> — 单人项目 3.4 个月破 11.3 万 stars、CHANGELOG 904KB，平均 2.6 天一版。这是少有的「CEO 把内部方法论开源」案例，源头是 YC 早期 batch 真实使用的工作流，不是 Demo。</li>
+<li><strong>解决了 5 大 Agent 工程痛点</strong> — 字面主义回应、上下文碎片化、延迟、状态丢失、脆弱选择器，对应具体方案：多角色 persona 拆分、持久 headless Chromium + ARIA-tree ref 系统、<code>.gstack/browse.json</code> 跨进程状态、Bun 二进制一键分发。</li>
+</ol>
+<h2>项目展示</h2>
+<p><img src="https://raw.githubusercontent.com/garrytan/gstack/main/docs/images/github-2026.png" alt="GitHub 2026 contributions"></p>
+<p><em>作者 2026 年 GitHub 贡献图：呈现「vibe coding 全情投入」的视觉叙事</em></p>
+<p><img src="https://raw.githubusercontent.com/garrytan/gstack/main/docs/images/github-2013.png" alt="GitHub 2013 contributions"></p>
+<p><em>13 年前 YC 内部贡献图：与 2026 形成对照，强化「founder 视角回归」故事</em></p>
+<h2>项目画像</h2>
+<table>
+<thead>
+<tr><th>维度</th><th>数据</th></tr>
+</thead>
+<tbody>
+<tr><td>GitHub</td><td><a href="https://github.com/garrytan/gstack">https://github.com/garrytan/gstack</a></td></tr>
+<tr><td>Star / Fork</td><td>113,209 / 16,799（Watchers 687）</td></tr>
+<tr><td>代码行数</td><td>161,742（TypeScript 79.3%，YAML/MD 11.2%，Shell 5.7%，JS 2.7%）</td></tr>
+<tr><td>文件数</td><td>1,037</td></tr>
+<tr><td>项目年龄</td><td>3.4 个月（首 commit 2026-03-11，最近 commit 2026-06-21）</td></tr>
+<tr><td>开发阶段</td><td>密集开发</td></tr>
+<tr><td>开发模式</td><td>业余 Side Project（周末提交 36.1%，夜间提交 32.7%）</td></tr>
+<tr><td>贡献模式</td><td>单人主导（Top 1 贡献者占比 96.1%）</td></tr>
+<tr><td>热度定位</td><td>大众热门（爆发型增长，单月 195 stars 全部落在 2026-03-23 单日）</td></tr>
+<tr><td>质量评级</td><td>代码[良好] 文档[优秀] 测试[基本]</td></tr>
+</tbody>
+</table>
+<h2>作者视角：为什么存在这个项目</h2>
+<h3>创始人/作者背景</h3>
+<p>Garry Tan 是 Y Combinator 现任 CEO、17.9 年 GitHub 老兵，2008 年注册账号，早年参与过 Bookface（YC 内部工具）和 Zurb Foundation，bio 只写「Writes software, dreams.」。除了 gstack（113k stars），同期他还推 <code>gbrain</code>（23.8k stars）—— 两个 AI 项目同时位列个人 stars 榜前二，证明这不是一时兴起，而是把「Y Combinator 早期 batch 工作方法」系统性产品化的产物。</p>
+<h3>问题判断</h3>
+<p>Garry Tan 看到的是：当前 Agent 编码工具（Claude Code、Cursor、Codex）默认把 LLM 当成「全能助手」调用，结果暴露五大痛点 —— 字面主义回应（agent 字面执行指令却不真懂意图）、上下文碎片化（每次对话独立，跨 session 记忆丢失）、延迟（CLI 启动 + 反复 prompt）、状态丢失（多步骤流程中间态不持久）、脆弱选择器（CSS 选择器在动态页面上极易失效）。而这些痛点恰好是 YC 早期 founder 日常会遭遇的：他们需要在 CEO/CTO/Eng/QA/Review 之间反复切换，每个角色需要不同的判断模式 —— 而现有 Agent 工具缺乏「角色分工」概念。</p>
+<h3>解法哲学</h3>
+<p>作者明确选择了「<strong>显式拆分 persona</strong>」而非「统一全能 prompt」。一个 <code>/ship</code> 命令触发「Release Engineer」角色，一个 <code>/plan-ceo-review</code> 触发「YC Partner」角色，每个 SKILL.md 都是一份独立 persona 工作流。同时明确不做什么：不绑定单一 AI host（通过 <code>--host</code> 参数支持 Claude/Codex/Cursor/Gemini/OpenClaw/Hermes/Copilot CLI）、不做 IDE 集成（纯 CLI + 文件协议）、不做 SaaS 化（MIT 协议完全开源）。这套哲学实质是把 Unix 工具链思想（小工具组合）应用到 Agent 工作流。</p>
+<h3>战略意图</h3>
+<p>在 Y Combinator 整体图景里，gstack 承担「早期 founder 工具箱」角色 —— 把 YC 多年沉淀的 review 文化、ship 标准、QA 流程系统化，批量武装给 RFS（Request for Startups）阶段的创始人，避免他们在产品方法论上从零摸索。商业化路径不明显，但战略价值高：YC 在 AI Coding 时代的「思想领导力」载体。开源策略是 genuinely open（非 open-core），所有 SKILL.md 都在仓库里，无任何付费墙。</p>
+<h2>核心价值提炼</h2>
+<h3>创新之处</h3>
+<ol>
+<li><strong>Cognitive Mode Skills（认知分工角色化）</strong> — 新颖度 5/5，实用性 4/5，可迁移性 5/5<br>把 review/ship/browse/QA/office-hours 显式拆成独立 persona skill，让同一个 Claude 在不同时刻扮演不同角色。直接复用了「Actor-critic」类多角色 LLM 编排思想，但落地为文件协议。<strong>所有用 Claude Code / Cursor Agent / Codex CLI 做严肃工程项目的团队都能直接套用</strong>。</li>
+<li><strong>ARIA-tree ref 系统（@e1 selector）对抗脆弱选择器</strong> — 新颖度 4/5，实用性 5/5，可迁移性 4/5<br>不依赖 CSS selector 抓元素，而是用 ARIA tree 的稳定 ref（<code>@e1</code>, <code>@e2</code>）标记节点 —— 这解决了动态页面上「按钮位置变了脚本就崩」的经典痛点。<strong>任何做 Web 自动化 / E2E 测试 / 爬虫的项目都可迁移</strong>，比 Playwright 的 selector 策略更稳定。</li>
+<li><strong>跨进程状态共享文件（<code>.gstack/browse.json</code>）</strong> — 新颖度 4/5，实用性 4/5，可迁移性 3/5<br>browse 守护进程 + 多个 client 之间用 JSON 文件做状态协调，避免引入 Redis/DB 等额外依赖。<strong>适合无状态 CLI 工具间需要共享小规模上下文</strong>的场景，简单可移植。</li>
+<li><strong><code>bun build --compile</code> 一键二进制分发</strong> — 新颖度 3/5，实用性 5/5，可迁移性 5/5<br>整套 16 万行的 Claude Code 工作流打包成单文件二进制，用户一行 <code>curl | bash</code> 即可安装。<strong>所有想降低分发门槛的 Node/Bun 项目都该考虑</strong> —— Bun 的 native compile 比 npx / npm install 体验好太多。</li>
+<li><strong>三层测试金字塔（bun test / test:e2e / test:evals）</strong> — 新颖度 3/5，实用性 4/5，可迁移性 4/5<br>第三层 <code>test:evals</code>（LLM-as-judge）专门评估 prompt 工作流的输出质量 —— 这是 Agent 工作流特有的测试需求。<strong>任何把 prompt 视为「代码」严肃对待的团队都该引入这一层</strong>。</li>
+</ol>
+<h3>可复用的模式与技巧</h3>
+<ol>
+<li><strong>Slash command 即 persona 协议</strong>：每个 <code>*/SKILL.md</code> 是一份完整 persona 定义，包含 persona 描述、可用工具、输入输出契约、参考链接。<code>ship/SKILL.md</code>（115 次变更）和 <code>plan-ceo-review/SKILL.md</code>（101 次变更）是最经典的样板。</li>
+<li><strong>多 host 抽象层（scripts/resolvers，231 次变更）</strong>：把 host-specific 配置（Claude/Codex/Cursor 的 CLI 路径、SKILL frontmatter 限制、安装脚本）抽到独立解析层，业务 SKILL 与 host 解耦 —— 这套 host-adapter pattern 是「平台碎片化时代的解药」，值得所有想跨平台分发的工具学。</li>
+<li><strong>VERSION + CHANGELOG 替代 git tag</strong>：单人项目刻意不用 GitHub Releases，而是维护单一 VERSION 文件 + 详细 CHANGELOG.md，commit message 里直接写 <code>v1.58.4.0</code> —— 适合个人项目但不一定适合团队（CHANGELOG 904KB 已经需要拆分归档）。</li>
+<li><strong>持久守护进程 + 客户端模式</strong>：<code>browse</code> 启动后常驻内存，多个 CLI 调用复用同一浏览器实例，把「启动浏览器延迟」从 5s 降到 &lt;100ms —— 类似 ChromeDriver 但针对 Claude 场景定制。</li>
+<li><strong>fixture-driven prompt 评估</strong>：用 <code>test/fixtures/</code>（175 次变更）准备标准化输入样本，让 LLM 输出可重复评估，避免 prompt 改动引入回归。</li>
+</ol>
+<h3>关键设计决策</h3>
+<ol>
+<li><strong>决策</strong>: 用 Bun runtime + <code>bun build --compile</code> 一键打包<br>   - 问题: Node.js 项目分发门槛高（用户要装 Node + npm + 处理依赖冲突）<br>   - 方案: 整套 16 万行 TS 编译成单文件二进制，<code>curl | bash</code> 即可<br>   - Trade-off: 牺牲了跨平台灵活性（需为每个 OS/arch 单独构建）+ 锁定 Bun 生态<br>   - 可迁移性: 高 —— 任何 Bun/Node CLI 项目都该考虑</li>
+<li><strong>决策</strong>: SKILL.md 拆分到 70+ 子目录而非单一大文件<br>   - 问题: 单一长 prompt 维护性差、容易冲突、难以复用单个工作流<br>   - 方案: 每个 slash command 一个独立目录 + SKILL.md，可单独修改、引用、版本化<br>   - Trade-off: 牺牲了「一站式 prompt 商店」的集中感，换来 monorepo 工程化纪律<br>   - 可迁移性: 高 —— 是 monorepo 思维在 prompt 工程上的自然延伸</li>
+<li><strong>决策</strong>: 多 host 抽象层 + host-adapter 模式<br>   - 问题: Claude Code / Cursor / Codex / Gemini CLI 各有 SKILL frontmatter 限制（如 Codex 1024 字符上限）、CLI 路径、调用协议差异<br>   - 方案: <code>scripts/resolvers/</code> 抽象 host-specific 差异，业务 SKILL 写一次即可分发到所有 host<br>   - Trade-off: 牺牲了「为单一平台深度优化」的空间，换来「中性平台供应商」地位<br>   - 可迁移性: 高 —— 所有跨平台工具都该有这层抽象</li>
+<li><strong>决策</strong>: 持久 headless Chromium + ARIA ref 系统<br>   - 问题: Playwright/Puppeteer 启动慢（5s+）、CSS selector 在动态页脆弱、跨 session 状态丢失<br>   - 方案: 守护进程常驻 + ARIA tree ref（如 <code>@e1</code>）替代 CSS selector + <code>.gstack/browse.json</code> 持久化跨进程状态<br>   - Trade-off: 牺牲了「按需启动浏览器」的简单性（必须先启动守护进程），换得响应速度和稳定性<br>   - 可迁移性: 中 —— 仅适合需要长会话、复杂交互的自动化场景</li>
+<li><strong>决策</strong>: 单人主导 + 极低 refactor/test 比例<br>   - 问题: 早期成长项目很难兼顾迭代速度与代码质量<br>   - 方案: 优先 feature（47.5%）+ fix（44.5%），refactor/test 比例仅 1-2%，只在 <code>browse/src</code> 子项目维持工程化纪律<br>   - Trade-off: 牺牲了长期可维护性，换得平均 2.6 天一版的发版速度<br>   - 可迁移性: 低 —— 仅适合创始人明确、节奏清晰的项目</li>
+</ol>
+<h2>竞品格局与定位</h2>
+<h3>竞品对比矩阵</h3>
+<table>
+<thead>
+<tr><th>维度</th><th>gstack</th><th>anthropics/skills</th><th>PatrickJS/awesome-cursorrules</th><th>awesome-claude-code</th></tr>
+</thead>
+<tbody>
+<tr><td>形态</td><td>Monorepo + 31+ 完整工作流</td><td>官方示例 skills 散落</td><td>Cursor 单 IDE 规则集</td><td>社区导航索引</td></tr>
+<tr><td>Persona 设计</td><td>显式拆分 CEO/Eng/QA/Review</td><td>不区分角色</td><td>单 IDE rule</td><td>无</td></tr>
+<tr><td>多 host 支持</td><td>Claude/Codex/Cursor/Gemini 等 6+</td><td>仅 Claude</td><td>仅 Cursor</td><td>索引多样</td></tr>
+<tr><td>浏览器自动化</td><td>持久 Chromium + ARIA ref</td><td>无</td><td>无</td><td>无</td></tr>
+<tr><td>测试金字塔</td><td>静态 + E2E + LLM-as-judge</td><td>无</td><td>无</td><td>无</td></tr>
+<tr><td>分发模式</td><td>单文件二进制 <code>curl | bash</code></td><td>npx / git clone</td><td>文件复制</td><td>链接导航</td></tr>
+<tr><td>文档化程度</td><td>CLAUDE.md 60KB + ARCHITECTURE 32KB</td><td>简单 README</td><td>各自 README</td><td>索引 README</td></tr>
+<tr><td>Star 数</td><td>113k</td><td>较少（官方但低调）</td><td>~10k</td><td>~5k</td></tr>
+<tr><td>维护节奏</td><td>平均 2.6 天一版</td><td>跟随 Claude Code 版本</td><td>不定期</td><td>社区驱动</td></tr>
+</tbody>
+</table>
+<h3>差异化护城河</h3>
+<ul>
+<li><strong>方法论护城河</strong>：YC 早期 batch 真实使用的工作流产品化，沉淀的是 Garry Tan 17 年 + YC 多年实战经验，新进入者很难复制这种实战背书。</li>
+<li><strong>工程化护城河</strong>：三层测试金字塔、host-adapter 抽象、Bun 二进制分发 —— 这些都不是 prompt 层面竞争，是工具链层面的工程深度。</li>
+<li><strong>品牌护城河</strong>：YC CEO 个人 IP + 同时有第二爆款 gbrain 的双重背书，让 gstack 不仅是工具，更是「YC 系创始人文化」的代名词。</li>
+</ul>
+<h3>竞争风险</h3>
+<ul>
+<li><strong>最可能被替代</strong>：Anthropic 官方 <code>anthropics/skills</code> —— 如果 Anthropic 决定把官方 skills 仓库做得更完整（加入 persona 设计、浏览器自动化、多 host 支持），gstack 的差异化会迅速消失。</li>
+<li><strong>时间窗风险</strong>：当前是 2026 年 Claude Code 爆发期，「工作流方法论」是新兴赛道，但 6-12 个月内可能涌入大量同类项目（如 Cursor 系、Codex 系独立工作流）。gstack 需保持 2.6 天一版的迭代速度巩固先发优势。</li>
+<li><strong>单人风险</strong>：96.1% 单人主导意味着 bus factor = 1，如果 Garry Tan 因 YC 公务减少投入，项目会迅速进入维护模式。</li>
+</ul>
+<h3>生态定位</h3>
+<p>在整个 AI Coding 工具生态中，gstack 处于「方法论层」（介于 LLM 工具与业务应用之间）：</p>
+<ul>
+<li>下方依赖：Anthropic Claude Code CLI / Codex CLI / Cursor 等 host 平台</li>
+<li>上方服务：YC 系早期 founder、个人 indie hacker、小型技术团队</li>
+<li>横向对标：continue.dev（IDE 集成层）、aider（CLI 层）、anthropics/skills（官方示例层）</li>
+</ul>
+<p>它填补的空白是「<strong>把 founder 多角色工作方法论编码为可分发工具</strong>」 —— 这在 IDE 厂商和官方示例仓库之间是个明确的真空地带。</p>
+<h2>套利机会分析</h2>
+<ul>
+<li><strong>信息差</strong>: 不存在传统意义上的「被低估」 —— 113k stars 已属大众热门。但<strong>中文社区对 gstack 系统性解读仍是空白</strong>：DeepWiki 是最详细的英文架构文档，中文圈缺乏对应的「YC 创始人工作流深度拆解」。适合做「已知名项目的本地化深度解读」。</li>
+<li><strong>技术借鉴</strong>:
+<ol>
+<li>Cognitive Mode Skills 模式 —— 可以直接套用到任何团队内部 Claude Code / Cursor Agent 工作流</li>
+<li>ARIA-tree ref 系统 —— 可以替代现有 Playwright 测试套件里的 CSS selector，提升稳定性</li>
+<li>多 host 抽象层 —— 适合任何想跨 Claude/Codex/Cursor 分发的工具</li>
+<li><code>bun build --compile</code> —— 任何 Bun/Node CLI 项目都该考虑</li>
+<li>三层测试金字塔 —— Agent 项目必加 LLM-as-judge 层</li>
+</ol>
+</li>
+<li><strong>生态位</strong>: 填补了「founder 多角色工作方法论产品化」的空白 —— 在 IDE 厂商（Cursor、Copilot）和官方示例（anthropics/skills）之间</li>
+<li><strong>趋势判断</strong>: 增长曲线仍陡峭，但增速会随基数放大放缓。2026 年是 Claude Code 元年，类似项目会快速涌现，gstack 的窗口期在 6-12 个月内</li>
+</ul>
+<h2>风险与不足</h2>
+<ol>
+<li><strong>过度依赖单一作者</strong>：96.1% 单人主导是最大风险。Garry Tan 作为 YC CEO，公务繁忙，长期可持续性存疑。</li>
+<li><strong>文档过度膨胀</strong>：CLAUDE.md 60KB / CHANGELOG 904KB / README 45KB —— 对新用户造成认知负担，需要先「读懂 60KB 才能用」。这与项目「快速上手」的初衷矛盾。</li>
+<li><strong>跨 host 硬约束冲突</strong>：Codex 1024 字符限制意味着长 SKILL.md 需要拆分，对完整工作流表达力有损失（issue #263/#230）。</li>
+<li><strong>silent failure 陷阱</strong>：<code>/retro</code> skill 在日期锚点错误时静默产生错误输出（issue #1624），下游决策基于错误上下文，提示 skill 编排缺少完善的错误传播机制。</li>
+<li><strong>refactor/test 比例极低</strong>：1.5% refactor + 1% test，技术债尚未到期但必然累积。<code>browse/src</code> 348 次变更 + 273 次测试变更，是唯一维持工程化纪律的子模块。</li>
+<li><strong>视觉资产薄弱</strong>：README 仅 2 张图（作者个人贡献图），没有架构图、demo GIF、CLI 截图 —— 对一份文档 45KB 的项目而言，视觉资产与文字体量严重失衡。</li>
+<li><strong>fork/watch 比偏低</strong>：113k stars 但仅 687 watchers，说明大量围观者尚未深度使用 —— 这既是机会（大量潜在用户）也是风险（留存未知）。</li>
+</ol>
+<h2>行动建议</h2>
+<h3>如果你要用它</h3>
+<ul>
+<li><strong>明确你是谁</strong>：technical founder / staff engineer / 小型技术团队，<strong>且</strong>已经在用 Claude Code 或类似 Agent CLI</li>
+<li><strong>建议使用路径</strong>：先用 <code>setup --host claude</code>（默认 host）跑通基础流程，再扩展到 <code>plan-eng-review</code> / <code>ship</code> / <code>qa</code> 这几个最高频的工作流；<code>browse</code> 子系统按需启用</li>
+<li><strong>对比竞品选它的理由</strong>：如果你需要「完整的多角色工作流方法论 + 浏览器自动化」二合一，且不在乎单文件 16 万行的体量，选 gstack；如果只需要简单 skills 选 anthropics/skills；如果只做 Cursor 选 awesome-cursorrules</li>
+</ul>
+<h3>如果你要学它</h3>
+<ul>
+<li><strong>重点关注的文件</strong>：
+<ol>
+<li><code>ARCHITECTURE.md</code>（32KB）—— 完整架构图解</li>
+<li><code>ship/SKILL.md</code>（115 次变更）—— 最经典的 persona 工作流样板</li>
+<li><code>plan-ceo-review/SKILL.md</code>（101 次变更）—— 「YC Partner」视角的 review 模式</li>
+<li><code>browse/src/</code> —— 浏览器自动化的实现细节（ARIA ref 系统、守护进程）</li>
+<li><code>scripts/resolvers/</code> —— 多 host 适配层的抽象模式</li>
+<li><code>DESIGN.md</code> / <code>ETHOS.md</code> —— 设计哲学与价值观文档</li>
+</ol>
+</li>
+<li><strong>重点学习的模式</strong>：Cognitive Mode Skills 拆分 / ARIA ref 系统 / host-adapter 抽象 / 三层测试金字塔</li>
+<li><strong>必读文章</strong>：DeepWiki 索引（<a href="https://deepwiki.com/garrytan/gstack">https://deepwiki.com/garrytan/gstack</a>）—— 八大节最完整的架构拆解</li>
+</ul>
+<h3>如果你要 fork 它</h3>
+<ul>
+<li><strong>可以改进的方向</strong>：
+<ol>
+<li>把 CHANGELOG 904KB 拆分成按月归档，提升可维护性</li>
+<li>引入 OpenTelemetry 风格的 observability 层，让 skill 编排失败不再 silent</li>
+<li>增加 community-driven persona（开放 PR 让社区贡献 SKILL.md）</li>
+<li>把 <code>browse/src</code> 拆成独立 npm package，允许不依赖 gstack 单独使用</li>
+<li>引入 schema validation（zod）校验 SKILL.md frontmatter，避免 #263 类字符超限问题</li>
+<li>补齐视觉资产：架构图、demo GIF、CLI 截图</li>
+</ol>
+</li>
+</ul>
+<h3>知识入口</h3>
+<table>
+<thead>
+<tr><th>资源</th><th>链接</th></tr>
+</thead>
+<tbody>
+<tr><td>DeepWiki</td><td><a href="https://deepwiki.com/garrytan/gstack">https://deepwiki.com/garrytan/gstack</a></td></tr>
+<tr><td>Zread.ai</td><td>未验证（WebFetch 403）</td></tr>
+<tr><td>关联论文</td><td>无（gstack 是工程方法论/工具集，非学术项目）</td></tr>
+<tr><td>在线 Demo</td><td>无独立 demo 站（依赖本地 Claude Code 环境；DeepWiki 可视为最详细的「架构 demo」）</td></tr>
+<tr><td>作者博客</td><td><a href="https://blog.garrytan.com">https://blog.garrytan.com</a>（暂无 gstack 专题文章）</td></tr>
+</tbody>
+</table>
+</body>
+</html>
