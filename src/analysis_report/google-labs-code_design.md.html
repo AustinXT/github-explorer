@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+/* ====== 微信公众号排版 CSS ====== */
+
+body {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #3e3e3e;
+    background: #fff;
+}
+
+/* 正文段落 */
+p {
+    font-size: 15px !important;
+    line-height: 2 !important;
+    margin: 0 !important;
+    padding-top: 0.5em !important;
+    padding-bottom: 0.5em !important;
+    padding-right: 1.2em !important;
+    padding-left: 1.2em !important;
+    text-align: justify !important;
+}
+p + p {
+    margin-top: 0 !important;
+}
+
+/* 标题 */
+h1 {
+    font-size: 20px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 16px 0 !important;
+    padding: 0 !important;
+}
+h2 {
+    font-size: 18px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 24px 0 !important;
+    padding: 0 !important;
+}
+h3 {
+    font-size: 15px !important;
+    font-weight: bold !important;
+    color: #3e3e3e !important;
+    text-align: left !important;
+    margin: 16px 0 16px 0 !important;
+    padding: 0 0 0 1.2em !important;
+}
+h4 {
+    font-size: 15px !important;
+    color: rgb(0, 122, 170) !important;
+    margin: 12px 0 8px 0 !important;
+    padding: 0 !important;
+}
+
+/* 列表 */
+ul,
+ol {
+    padding-left: 2em !important;
+    margin: 1em 0 !important;
+    font-size: 15px !important;
+}
+li {
+    margin: 0.5em 0 !important;
+    line-height: 1.8em !important;
+    font-size: 15px !important;
+    color: #3e3e3e !important;
+}
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+    margin: 0 !important;
+    padding-left: 1.2em !important;
+}
+
+/* 引用 */
+blockquote {
+    border-left: 4px solid #888 !important;
+    padding: 8px 16px !important;
+    margin: 1em 0 !important;
+    color: #666 !important;
+    background: #f9f9f9 !important;
+}
+blockquote > p {
+    margin: 0.5em 0 !important;
+    padding: 0 !important;
+}
+blockquote::before,
+blockquote::after {
+    content: none !important;
+}
+
+/* 代码块 */
+pre {
+    font-size: 14px !important;
+    line-height: 1.4em !important;
+    color: #3e3e3e !important;
+    background: #f8f8f8 !important;
+    padding: 12px 16px !important;
+    border-radius: 4px !important;
+    overflow: auto !important;
+    margin: 1em 0 !important;
+}
+
+/* 脚注 */
+.footnotes {
+    font-size: 11px !important;
+    color: #666 !important;
+    line-height: 1.2 !important;
+    margin: 8px 0 0 0 !important;
+    padding: 4px 0 0 0 !important;
+    border-top: 1px solid #eee !important;
+}
+.footnotes p {
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #666 !important;
+}
+
+/* 上标 */
+sup {
+    font-size: 0.75em !important;
+    vertical-align: super !important;
+    color: #e51f42 !important;
+    margin: 0 2px !important;
+}
+
+</style>
+</head>
+<body>
+<blockquote><p>GitHub: <a href="https://github.com/google-labs-code/design.md">https://github.com/google-labs-code/design.md</a></p></blockquote>
+<h2>一句话总结</h2>
+<p>DESIGN.md 是 Google Labs 给 AI 编码 agent 写的「设计说明书」格式——用 YAML token + 自然语言 prose 的双层结构，让 agent 像读 README 一样读懂你的设计系统，是 design token 标准化 7 年来第一次「范式跳跃」。</p>
+<h2>值得关注的理由</h2>
+<p>1. <strong>范式跳跃</strong>：「Prose, not Tokens」是 spec 的第一公民——把 design spec 从「token 表」翻成「设计叙事」，在 W3C DTCG / Style Dictionary 内卷的赛道里撕出新维度。<br/>2. <strong>Google 黄金三角</strong>：David East（Firebase 圈 DevRel 传奇）+ Matt Van Horn + Dion Almaer 三人组——把十年 DevRel 经验（讲清楚复杂技术）直接应用在 spec 设计上，<strong>这是 Google 官方下场做 agent 时代规范的卡位战</strong>。<br/>3. <strong>工程化达到 v1.0 水平</strong>：0.3.0 alpha 阶段就有 Result pattern / 严格 TS / spec-config 单源真相 / CI 跑 Windows npm 冒烟、5 步流水线——比 90% 的 1.0 项目都严谨。<br/>4. <strong>完整生态闭环</strong>：CLI + linter + 9 条 lint 规则 + Tailwind v3/v4 / DTCG 导出 + 3 个示例项目 + .agents/ 自嵌 4 个 skill = 「不是 demo 是产品」。</p>
+<h2>项目展示</h2>
+<blockquote><p>项目早期阶段不依赖视觉素材，纯靠 CLI JSON 输出 + 设计叙事文件展示价值。下方三组「代码即素材」是 design.md 最能传达自身定位的形式。</p></blockquote>
+<pre># 示例 1：完整的 DESIGN.md（来自 README，Heritage 主题）
+---
+name: Heritage
+colors:
+  primary: &quot;#1A1C1E&quot;      # Deep ink for headlines
+  secondary: &quot;#6C7278&quot;    # Sophisticated slate
+  tertiary: &quot;#B8422E&quot;     # &quot;Boston Clay&quot; — sole driver for interaction
+  neutral: &quot;#F7F5F2&quot;      # Warm limestone foundation
+typography:
+  h1:        { fontFamily: Public Sans, fontSize: 3rem }
+  body-md:   { fontFamily: Public Sans, fontSize: 1rem }
+  label-caps: { fontFamily: Space Grotesk, fontSize: 0.75rem }
+rounded: { sm: 4px, md: 8px }
+spacing: { sm: 8px, md: 16px }
+---
+
+## Overview
+Architectural Minimalism meets Journalistic Gravitas. The UI evokes a
+premium matte finish — a high-end broadsheet or contemporary gallery.</pre>
+<pre>// 示例 2：lint 命令输出（agent DX-first，JSON 是默认）
+$ npx @google/design.md lint DESIGN.md
+{
+  &quot;findings&quot;: [
+    {
+      &quot;severity&quot;: &quot;warning&quot;,
+      &quot;path&quot;: &quot;components.button-primary&quot;,
+      &quot;message&quot;: &quot;textColor (#ffffff) on backgroundColor (#1A1C1E) has contrast ratio 15.42:1 — passes WCAG AA.&quot;
+    }
+  ],
+  &quot;summary&quot;: { &quot;errors&quot;: 0, &quot;warnings&quot;: 1, &quot;info&quot;: 1 }
+}</pre>
+<pre>// 示例 3：PHILOSOPHY.md 的核心反例对比（这是项目最深的叙事素材）
+
+❌ 形容词清单（携带信息量低）：
+&quot;The design should feel modern, clean, trustworthy, and premium.&quot;
+
+✅ 具体参考（携带信息量大）：
+&quot;A 1970s graduate lecture handout in the tradition of an old
+ and established university.&quot;
+
+// 一句&quot;1970s lecture handout&quot;就同时传递了：不要渐变、不要 italic、
+// 不要圆角、要衬线字体、要留白——10 个 Don&#x27;t 清单 1 句话搞定。</pre>
+<h2>项目画像</h2>
+<table><thead><tr><th>维度</th><th>数据</th></tr></thead><tbody><tr><td>GitHub</td><td><a href="https://github.com/google-labs-code/design.md">https://github.com/google-labs-code/design.md</a></td></tr><tr><td>Star / Fork</td><td>17,225 / 1,563（fork 转化率 9.1%，高于一般设计 token 库 5%）</td></tr><tr><td>代码行数</td><td>9,415（TypeScript 64.2% / JSON 30.3% / JS 4.2% / YAML 1.3%），113 文件</td></tr><tr><td>项目年龄</td><td>2.5 个月（2026-04-10 首发）</td></tr><tr><td>开发阶段</td><td>稳定维护（40 commits，近 30 天 13 commits）</td></tr><tr><td>贡献模式</td><td>核心少数 + 社区（18 人，主作者 David East 占 42.5%）</td></tr><tr><td>热度定位</td><td>大众热门（2.5 个月破万星，设计系统赛道近 5 年最热）</td></tr><tr><td>质量评级</td><td>代码[优秀] 文档[优秀] 测试[充分] CI/CD[完善]</td></tr><tr><td>License</td><td>Apache 2.0</td></tr><tr><td>当前版本</td><td>v0.3.0（4 个 tag，平均 19 天一个 release，预期未来有 v1.0 毕业）</td></tr><tr><td>Runtime 依赖</td><td><strong>0</strong>（自实现 oklch/lab/hwb/color-mix 解析）</td></tr></tbody></table>
+<h2>作者视角：为什么存在这个项目</h2>
+<h3>创始人/作者背景</h3>
+<p>项目挂在 google-labs-code Organization 名下，账号 2.3 年、2,546 粉丝、8 个公开仓库，组织内核心项目按 stars：design.md 17,225 / stitch-skills 6,149 / jules-awesome-list 3,089 / stitch-sdk 1,723。</p>
+<p><strong>核心贡献者三人组</strong>——这是 Google 内部一支前 Firebase / Web 平台明星 DevRel 团队的二次创业产物：</p>
+<ul><li><strong>David East（17 commits，42.5%）</strong>：项目灵魂人物。Firebase 圈 DevRel 传奇，曾任 Firebase 团队 Lead / DevRel、polymer / firebase-js-sdk 早期贡献者、YouTube 「Firecasts」 系列讲师。近期主导 Stitch / design.md 对外布道。</li><li><strong>Matt Van Horn（3 commits）</strong>：前 Google Developers / Web.Fundamentals 团队成员，知名 PWA / Polymer 推广 DevRel。</li><li><strong>Dion Almaer（1 commit）</strong>：Google 工程总监、PWA / Web 平台老兵，与 Matt Van Horn 长期合作布道 Web Platform。</li></ul>
+<p>其他贡献者多为 Google 内部员工（tejas100、tototofu123、vikks、chelseayerong 等）。</p>
+<p><strong>关键判断</strong>：这不是「工程师主导」的项目，而是「开发者关系+产品经理」主导——核心技能是把复杂技术讲清楚的人。</p>
+<h3>问题判断</h3>
+<p>设计 token 标准化（W3C DTCG）已经走过 7 年，Style Dictionary 等工具链成熟，但 Google 内部 Stitch 团队在 2024–2025 年发现的事实是：把 DTCG JSON 直接喂给编码 agent，<strong>生成质量并不比裸 prompt 好多少</strong>——因为 agent 仍然没有「这套设计的精神」信息。</p>
+<p>更深的痛点是：旧 token 工作流是<strong>单向「设计→代码」</strong>，而 agent 时代是<strong>多向「prompt↔设计」循环</strong>，需要 spec 本身能被人/agent 双向读写。</p>
+<p><strong>时机为什么是现在</strong>？2025 年中到 2026 年，AI Coding Agent 真正进入主流——Jules、Claude Code、Cursor 把「agent 持续读上下文」做成产品形态。AGENTS.md 模式被验证可行，但行业里没有任何<strong>垂直领域版本</strong>。design.md 是 Google Labs 给「design 这一类垂直知识」做的示范。</p>
+<h3>解法哲学</h3>
+<blockquote><p>「Prose, not Tokens, is the focus of the specification」——design.md 哲学宣言第一句</p></blockquote>
+<p><strong>5 条设计哲学</strong>（来自仓库内 PHILOSOPHY.md）：</p>
+<p>1. <strong>Prose is the spec</strong>：token 是给 prose 服务的上下文，不是渲染指令<br/>2. <strong>具体参考 &gt; 形容词清单</strong>：「A 1970s graduate lecture handout」胜过「modern, clean, trustworthy, premium」<br/>3. <strong>Negative constraints come free</strong>：说清楚「是什么」，「不是什么」自动被识别；显式列 Don't 清单是补充<br/>4. <strong>Consumer-tolerant</strong>：未知 section / 未知 color name 直接保留，不让 agent 在新内容上失败（forward-compatible）<br/>5. <strong>Tokens ≠ rendering</strong>：token 值是「context」，不是「instructions」——避免与 W3C DTCG 正面竞争</p>
+<p><strong>「不做什么」清单</strong>（核心防御）：</p>
+<ul><li>不做 design-as-code（避开 shadcn 路线）</li><li>不做 design-to-code Figma 同步</li><li>不正面替换 DTCG（做上游，不做竞品）</li><li>不做 prose 生成器（不替用户写设计参考）</li></ul>
+<h3>战略意图</h3>
+<p><strong>Stitch 入口格式</strong>：design.md 是 Google Labs 的 AI UI 设计工具 Stitch 向外公开的「设计描述标准」——Stitch 内部生成设计用的就是 prose+token 混合格式，现在把它开放成 spec，等于把 Stitch 的输入接口变成行业标准。</p>
+<p><strong>Google Labs agent 矩阵</strong>的一员：与 Jules（AI coding agent）、jules-awesome-list、stitch-sdk 一起构成 Google Labs 在 agent 时代的工具链矩阵。design.md 是矩阵里的「design layer」——agent 写代码时需要的「设计上下文」，与 AGENTS.md（通用上下文）互补。</p>
+<p><strong>生态卡位策略</strong>：</p>
+<ul><li><strong>不与 DTCG 竞争，做上游</strong>：design.md export --format dtcg 一行转换</li><li><strong>不与 Style Dictionary 竞争，做上游</strong>：通过 export 把 design.md 翻译为 Tailwind v3/v4 theme 配置</li><li><strong>不与 Figma 竞争，做平行的纯文本格式</strong>：design.md 是「在仓库里」的设计真相，Git diffable、可 PR review</li></ul>
+<p><strong>开源策略</strong>：genuinely open（CLA 必签但代码 Apache 2.0），无 open-core，无 SaaS 版本——Google Labs 争夺「agent 上下文标准」话语权的工具，战略价值高于商业化价值。</p>
+<h2>核心价值提炼</h2>
+<h3>创新之处</h3>
+<p>1. <strong>Prose-first 规范范式</strong>（新颖度 5/5 | 实用性 4/5 | 可迁移性 3/5）：把 design spec 的第一公民从结构化数据翻成自然语言叙述，token 退为 prose 引用的「具名常量」。这是 W3C DTCG 7 年范式的根本性切割。</p>
+<p>2. <strong>preEvaluate() 把 finding 按 severity 分级为「fixes / improvements / suggestions」</strong>（4/5 | 5/5 | 5/5）：同一规则两种 grouping，扁平 findings 给人/agent 看，分级 edit menu 直接喂给「AI 自动修复」 workflow。</p>
+<p>3. <strong>.agents/ 自嵌入 4 个 skill（dogfooding）</strong>（5/5 | 5/5 | 3/5）：仓库根目录的 .agents/skills/ 放了 tdd / ink / agent-dx-cli-scale / typed-service-contracts 四个 skill——<strong>design.md 用自己发布的 agent skill 指导自己的开发</strong>。</p>
+<p>4. <strong>spec-config.yaml 单源真相驱动全栈</strong>（3/5 | 5/5 | 5/5）：YAML 一份 → linter / docs / 多个 export 器共享。CI 强制 bun run spec:gen --check 验证生成结果与 docs 匹配——spec 永远不会与实现脱节。</p>
+<p>5. <strong>自实现 CSS 颜色解析（oklch/lab/hwb/color-mix）</strong>（3/5 | 5/5 | 5/5）：纯 TS 自实现 CSS Color Module Level 4 全套颜色空间 + WCAG relative luminance 计算，<strong>0 runtime 依赖</strong>——任何需要 WCAG 对比度或色域转换的前端工具都受益。</p>
+<p>6. <strong>Agent DX-first CLI 标准</strong>（3/5 | 5/5 | 5/5）：默认 JSON + stdin 接受（- 输入）+ exit code 语义（errors&gt;0 返 1）+ 自评 agent-dx-cli-scale skill。2025+ 所有面向 agent 工作流的 CLI 的事实标准。</p>
+<p>7. <strong>token-like-ignored rule 的启发式</strong>：用纯 TS 启发式（hex 正则 + dimension 正则 + 5 个 typography key）判断「未知 key 值是不是设计 token map」——是的话提示用户「export 会丢这个 key」。</p>
+<h3>可复用的模式与技巧</h3>
+<p>1. <strong>「Spec &amp; Handler」 Vertical Slice 模式</strong>：每个子系统有 spec.ts（Zod schema + Result type + Interface）+ handler.ts（实现 class，不抛异常）+ *.test.ts 同行测试。<strong>所有严格契约、强测试覆盖的 TypeScript 服务都适用</strong>。</p>
+<p>2. <strong>Pipeline 编排（Parser → Model → Validator → Emitter）</strong>：长处理路径分 4 个独立 handler，每个可 mock 可测。<strong>所有「配置解析 + lint + codegen」工具的通用骨架</strong>。</p>
+<p>3. <strong>Pure functional rule runner + RuleDescriptor 双形态</strong>：LintRule = (state) =&gt; Finding[] 纯函数 + RuleDescriptor = { name, severity, description, run } 元数据壳子。runLinter 同时接受两种输入（isDescriptorArray 适配）。<strong>所有可插拔 lint/validation 工具</strong>。</p>
+<p>4. <strong>CI 包含 npm-registry-smoke-windows</strong>：在 windows-latest 上真实从公网 npm install @google/design.md@latest 跑一遍。<strong>所有公开 npm 包的发布后冒烟测试</strong>。</p>
+<p>5. <strong>跨平台 bin 命名 hack</strong>：bin: { 「design.md」: ..., 「designmd」: ... } 双名注册同一份 ./dist/index.js，因为 Windows 上 .md 后缀与 PowerShell 关联冲突。<strong>所有跨平台 CLI</strong>。</p>
+<p>6. <strong>MDX 代码生成 spec 文档</strong>：手写 spec.mdx 模板 + renderer 从 SPEC_CONFIG 注入示例，CI --check 模式强制对齐。<strong>所有 spec-driven 工具（编译器、linter、formatter）的「代码即文档」</strong>。</p>
+<h3>关键设计决策</h3>
+<p>1. <strong>决策：单源真相 spec-config.yaml 驱动全栈</strong></p>
+<ul><li><strong>问题</strong>：spec 同时驱动 linter 规则、Tailwind 导出、DTCG 导出、docs/spec.md 文档，任何一个常量被改三遍，spec 就会漂移</li><li><strong>方案</strong>：YAML → Zod 校验 → 缓存 lazy singleton → 同时被 linter / spec-gen / rules 引用</li><li><strong>Trade-off</strong>：引入一层代码生成 + CI check；好处是 spec 永远不会与实现脱节</li><li><strong>可迁移性：高</strong></li></ul>
+<p>2. <strong>决策：Consumer-tolerant 哲学在 model 层落地为「保留未知键」</strong></p>
+<ul><li><strong>问题</strong>：design system 在演进（motion / icons / audio），spec 不能每加一个就等下一版</li><li><strong>方案</strong>：parser 保留 rawValues，model 保留 unknownKeys + unknownKeyValues，linter 用 Levenshtein ≤ 2 提示拼写错误、&gt; 2 静默 + token-like-ignored 提示 export 会丢</li><li><strong>Trade-off</strong>：用户写错 key 时 spec 不强制拒绝——把「spec 严格性」换成「agent 提示性」</li><li><strong>可迁移性：高</strong>（所有「渐进式 schema 演进」项目）</li></ul>
+<p>3. <strong>决策：Symbol Table + 链式引用解析 + 循环检测</strong></p>
+<ul><li><strong>问题</strong>：YAML 里 {colors.primary} 跨段引用，需要两遍解析 + 防环</li><li><strong>方案</strong>：ModelHandler.execute 分 3 phase：phase 1 解析 primitive + 把 reference 暂存 symbolTable；phase 2 走所有 reference 做链式 resolve（resolveReference(symbolTable, path, visited, depth) 用 visited Set 防环 + MAX_REFERENCE_DEPTH=10 防深链）；phase 3 构建 component map</li><li><strong>Trade-off</strong>：两遍扫描的复杂度换「任意方向的引用」</li><li><strong>可迁移性：高</strong>（style dictionary、kustomize 等「配置语言支持跨段引用」工具）</li></ul>
+<h2>竞品格局与定位</h2>
+<h3>竞品对比矩阵</h3>
+<table><thead><tr><th>维度</th><th>DESIGN.md</th><th>W3C DTCG</th><th>Style Dictionary</th><th>Figma MCP</th><th>Tokens Studio</th><th>AGENTS.md</th></tr></thead><tbody><tr><td><strong>核心定位</strong></td><td>设计叙事 spec</td><td>Token schema</td><td>Token 编译工具</td><td>画板 → agent 桥</td><td>Figma 内 token UI</td><td>通用 agent 上下文</td></tr><tr><td><strong>prose 上下文</strong></td><td>✅ 核心</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>✅ 全部 prose</td></tr><tr><td><strong>结构化 token</strong></td><td>✅ YAML</td><td>✅ JSON</td><td>✅ JSON</td><td>✅ 节点树</td><td>✅ JSON</td><td>❌</td></tr><tr><td><strong>行业标准地位</strong></td><td>alpha</td><td>W3C 工作组</td><td>事实标准</td><td>Figma 官方</td><td>Figma 生态成熟</td><td>多 agent 内置</td></tr><tr><td><strong>CI 可校验</strong></td><td>✅ 9 条 rule</td><td>❌ 需自建</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td></tr><tr><td><strong>导出到 Tailwind</strong></td><td>✅ v3/v4</td><td>需 SD 转换</td><td>✅ 直接</td><td>❌</td><td>✅</td><td>❌</td></tr><tr><td><strong>多主题/模式</strong></td><td>❌（Issue #13）</td><td>✅</td><td>✅ 透传</td><td>✅ Figma 本身</td><td>✅ 3+ 年领先</td><td>N/A</td></tr><tr><td><strong>Git diff 友好</strong></td><td>✅ prose</td><td>⚠️ JSON 噪声</td><td>⚠️</td><td>❌ 版本号</td><td>⚠️ 早期不存</td><td>✅</td></tr><tr><td><strong>agent 友好</strong></td><td>✅ JSON 默认 + stdin</td><td>⚠️</td><td>⚠️ Node 库</td><td>✅</td><td>⚠️</td><td>✅ 通用</td></tr></tbody></table>
+<h3>差异化护城河</h3>
+<p>1. <strong>范式护城河</strong>：「Prose &gt; Tokens」是 design.md 的根本命题，竞争对手都还在「tokens 标准化」维度上内卷<br/>2. <strong>agent 时代卡位</strong>：Google Labs 把 design.md 与 Jules/Stitch 工具链捆绑，是目前唯一一个「既出 agent、又出 spec」的组织<br/>3. <strong>生态互补</strong>：与 DTCG（下游）/ Style Dictionary（下游）/ Figma（平行）全部是上游或平行关系，不替代<br/>4. <strong>工程化护城河</strong>：alpha 阶段就达到 v1.0 水平（严格 TS + Result pattern + Windows CI 冒烟），追赶难度高</p>
+<h3>竞争风险</h3>
+<p>1. <strong>Issue #13「多主题/模式」</strong>——这是 design.md 最大的不确定性，<strong>2 个月无官方回复</strong>。Tokens Studio 在该维度领先 3+ 年。如果 Stitch 团队年内不解决，会被用户抛下<br/>2. <strong>Figma 内部推进</strong>——Figma 官方如果加一个「design description」 prose layer，design.md 失去差异点<br/>3. <strong>AGENTS.md 演化</strong>——如果扩展出「AGENTS.design.md」子规范，可能直接吃掉 design.md 的 agent 上下文卡位<br/>4. <strong>W3C DTCG 截胡</strong>——DTCG 同期也在做「AI-friendly token format」，标准组织有可能碾压 Google Labs 单方规范<br/>5. <strong>Jules/Stitch 商业化</strong>——如果 Stitch 收费，design.md 可能被绑到 Stitch SaaS 内失去 open 性质</p>
+<h3>生态定位</h3>
+<ul><li><strong>垂直层</strong>：「设计」领域的 spec 描述格式</li><li><strong>生态位</strong>：与 AGENTS.md（通用）平行；与 DTCG（schema）/ Style Dictionary（编译）/ Figma（GUI）形成互补矩阵</li><li><strong>角色</strong>：「prose layer」——位于「设计意图」和「代码生成」之间，是 LLM 时代的中间语言</li></ul>
+<h2>套利机会分析</h2>
+<ul><li><strong>信息差</strong>：<strong>高</strong>——2.5 个月 17K stars，但国内技术社区对 design.md 的认知度仍低，知道「Prose over Tokens」哲学的人更少。这是公众号会爆款的方向。</li><li><strong>技术借鉴</strong>：</li><li><strong>Spec &amp; Handler 模式</strong> + <strong>Result pattern 零 throw</strong> → 任何 TypeScript 服务可照搬</li><li><strong>spec-config.yaml 单源真相</strong> + <strong>MDX 代码生成文档</strong> + <strong>CI --check 强制</strong> → 任何 spec-driven 工具的「代码即文档」最佳实践</li><li><strong>Pure functional rule runner + RuleDescriptor</strong> + <strong>preEvaluate() 分级</strong> → 任何可插拔 lint 工具的标杆架构</li><li><strong>自实现 oklch/lab/hwb/color-mix 解析</strong> → 任何需要 WCAG 对比度或色域转换的前端工具</li><li><strong>Agent DX-first CLI 标准</strong> → 2025+ 所有面向 agent 工作流的 CLI 的事实标准</li><li><strong>生态位</strong>：填补「AI 时代设计 spec」这个空白——DTCG / Style Dictionary 在「token 怎么流转」上做了 7 年，但「设计意图怎么表达给 agent」没人做</li><li><strong>趋势判断</strong>：<strong>强增长</strong>——2.5 个月 17K stars，爆发型增长；fork 转化率 9.1%（高于一般设计 token 库），说明开发者动手改造意图强；与 AI Coding Agent 主线趋势完全对齐</li></ul>
+<h2>风险与不足</h2>
+<p>1. <strong>关键 Issue 长期 open</strong>：#13「多主题/模式」2 个月无官方回复是最大不确定性。Tokens Studio 在该维度领先 3+ 年。<br/>2. <strong>alpha 阶段 + Owner 是 Organization</strong>：未来若 Google 战略调整，组织仓库可能停摆（类似 Polymer 的命运）。<br/>3. <strong>viral star ≠ production 落地</strong>：需要观察是否有大厂 / 框架实际采用（截至目前没有 shadcn / Tailwind / Vercel 等生态接纳信号）。<br/>4. <strong>生态窗口期</strong>：W3C DTCG 同期也在做「AI-friendly token format」，存在被标准组织截胡的可能。<br/>5. <strong>CHANGELOG 缺失</strong>：仓库无 CHANGELOG.md / HISTORY.md，仅靠 git history + 0.3.0 版本号。<br/>6. <strong>Test commit type 占比 0%</strong>：测试文件高频维护（handler.test.ts 改了 9 次），但 commit message 不打 test: 标签——对 release-note 工具是挑战。<br/>7. <strong>规范哲学与工程现实的张力</strong>：Issue #63「单仓多文件策略」未定，monorepo 团队会立刻遇到。</p>
+<h2>行动建议</h2>
+<ul><li><strong>如果你要用它</strong>：直接用——0 runtime 依赖 + Apache 2.0 + 跨平台 + agent DX-first。<strong>先等 v1.0 解决多主题再生产采用</strong>（#13 是 blocker），alpha 阶段适合个人/小团队探索。</li><li><strong>如果你要学它</strong>：重点关注这些文件</li><li>PHILOSOPHY.md（5 条设计哲学必读）</li><li>packages/cli/src/linter/model/handler.ts（linter 核心）</li><li>packages/cli/src/linter/model/spec.ts（schema 定义）</li><li>packages/cli/src/linter/linter/rules/index.ts（规则集）</li><li>packages/cli/src/linter/spec-config.yaml（单源真相）</li><li>examples/atmospheric-glass/DESIGN.md（最佳实践示范）</li><li><strong>如果你要 fork 它</strong>：可以改进的方向</li><li>实现 Issue #13 多主题/模式（最大缺口）</li><li>加 OKLCH 之外的支持（display-p3 等更广色域）</li><li>实现 Storybook addon（让 design.md 变 living styleguide）</li><li>加 Motion / Iconography / Accessibility token 支持</li><li>VS Code 插件（实时 lint 高亮）</li></ul>
+<h3>知识入口</h3>
+<table><thead><tr><th>资源</th><th>链接</th></tr></thead><tbody><tr><td>GitHub README</td><td><a href="https://github.com/google-labs-code/design.md">https://github.com/google-labs-code/design.md</a></td></tr><tr><td>PHILOSOPHY.md（仓库内）</td><td><a href="https://github.com/google-labs-code/design.md/blob/main/PHILOSOPHY.md">https://github.com/google-labs-code/design.md/blob/main/PHILOSOPHY.md</a></td></tr><tr><td>完整规范</td><td><a href="https://github.com/google-labs-code/design.md/blob/main/docs/spec.md">https://github.com/google-labs-code/design.md/blob/main/docs/spec.md</a></td></tr><tr><td>DeepWiki</td><td>未收录（403 拒绝）</td></tr><tr><td>Zread.ai</td><td><a href="https://zread.ai/google-labs-code/design.md">https://zread.ai/google-labs-code/design.md</a></td></tr><tr><td>官方 spec 站</td><td><a href="https://stitch.withgoogle.com/docs/design-md/specification">https://stitch.withgoogle.com/docs/design-md/specification</a></td></tr><tr><td>关联论文</td><td>无（工程实践，无学术论文）</td></tr><tr><td>在线 Demo</td><td>npx @google/design.md lint &lt;DESIGN.md&gt;（CLI 即 demo）</td></tr></tbody></table>
+</body>
+</html>
