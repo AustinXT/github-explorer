@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #3e3e3e;
+    background: #fff;
+}
+p {
+    font-size: 15px !important;
+    line-height: 2 !important;
+    margin: 0 !important;
+    padding-top: 0.5em !important;
+    padding-bottom: 0.5em !important;
+    padding-right: 1.2em !important;
+    padding-left: 1.2em !important;
+    text-align: justify !important;
+}
+p + p {
+    margin-top: 0 !important;
+}
+h1 {
+    font-size: 20px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 16px 0 !important;
+    padding: 0 !important;
+}
+h2 {
+    font-size: 18px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 24px 0 !important;
+    padding: 0 !important;
+}
+h3 {
+    font-size: 15px !important;
+    font-weight: bold !important;
+    color: #3e3e3e !important;
+    text-align: left !important;
+    margin: 16px 0 16px 0 !important;
+    padding: 0 0 0 1.2em !important;
+}
+h4 {
+    font-size: 15px !important;
+    color: rgb(0, 122, 170) !important;
+    margin: 12px 0 8px 0 !important;
+    padding: 0 !important;
+}
+ul,
+ol {
+    padding-left: 2em !important;
+    margin: 1em 0 !important;
+    font-size: 15px !important;
+}
+li {
+    margin: 0.5em 0 !important;
+    line-height: 1.8em !important;
+    font-size: 15px !important;
+    color: #3e3e3e !important;
+}
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+    margin: 0 !important;
+    padding-left: 1.2em !important;
+}
+blockquote {
+    border-left: 4px solid #888 !important;
+    padding: 8px 16px !important;
+    margin: 1em 0 !important;
+    color: #666 !important;
+    background: #f9f9f9 !important;
+}
+blockquote > p {
+    margin: 0.5em 0 !important;
+    padding: 0 !important;
+}
+blockquote::before,
+blockquote::after {
+    content: none !important;
+}
+pre {
+    font-size: 14px !important;
+    line-height: 1.4em !important;
+    color: #3e3e3e !important;
+    background: #f8f8f8 !important;
+    padding: 12px 16px !important;
+    border-radius: 4px !important;
+    overflow: auto !important;
+    margin: 1em 0 !important;
+}
+.footnotes {
+    font-size: 11px !important;
+    color: #666 !important;
+    line-height: 1.2 !important;
+    margin: 8px 0 0 0 !important;
+    padding: 4px 0 0 0 !important;
+    border-top: 1px solid #eee !important;
+}
+.footnotes p {
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #666 !important;
+}
+sup {
+    font-size: 0.75em !important;
+    vertical-align: super !important;
+    color: #e51f42 !important;
+    margin: 0 2px !important;
+}
+</style>
+</head>
+<body>
+<blockquote><p>GitHub: <a href="https://github.com/jcodesmore/ai-website-cloner-template">https://github.com/jcodesmore/ai-website-cloner-template</a></p></blockquote>
+<h2>一句话总结</h2>
+<p>一个把「任意生产级网站逆向成可直接迭代的 Next.js 代码库」打包成 13 个 AI 编码 Agent 统一 Skill 入口的开源模板，作者把建筑业 foreman 流水线映射到 Agent 编排，占住了「AI 编码 Agent × 网站逆向」这条垂直赛道目前最广的入口。</p>
+<h2>值得关注的理由</h2>
+<ol>
+<li><strong>方法论资产远大于代码资产</strong>——10K 行里 95.6% 是 JSON/YAML 配置，真实可执行代码不到 200 行；真正值钱的是那套 5 阶段流水线（Reconnaissance → Foundation → Specs → Parallel Build → QA）+ Spec File as Contract 的 Agent 编排方法论，可以整套搬到其他「LLM 驱动长流程」的场景。</li>
+<li><strong>覆盖最广的入口卡位</strong>——同时适配 Claude Code / Codex / Cursor / Gemini CLI / Copilot / Windsurf / Cline / Roo Code / Continue / Amazon Q / Augment / Aider / OpenCode 共 13 个 AI 编码平台，双单源真相（AGENTS.md + SKILL.md）+ 双同步脚本保证「一处编辑，13 处生效」。</li>
+<li><strong>模板型项目的稀有范例</strong>——3.4 月龄、19K stars、2.8K forks（15% fork/clone 转化率），开源 MIT + Discord 社群（dsc.gg/jcodesmore）构成的 indie developer 增长飞轮，是少见的「模板 → 社群 → 付费内容」清晰闭环。</li>
+</ol>
+<h2>项目展示</h2>
+<p><img src="https://raw.githubusercontent.com/jcodesmore/ai-website-cloner-template/master/docs/design-references/comparison.png" alt="Demo 对比图（点击看 YouTube）"><br/><em>原站 vs 克隆后的视觉对比——这是 README 唯一的核心展示素材</em></p>
+<p><img src="https://api.star-history.com/svg?repos=JCodesMore/ai-website-cloner-template&amp;type=Date" alt="Star History"><br/><em>3.4 个月内从 0 到 19K stars 的增长曲线——典型的「X/Twitter 引爆 + AI Agent 圈子口口相传」曲线</em></p>
+<p><a href="https://youtu.be/O669pVZ_qr0">完整 Demo 视频（YouTube）</a> — <em>作者亲自录的 5 阶段流水线 walkthrough</em></p>
+<h2>项目画像</h2>
+<table>
+<thead>
+<tr><th>维度</th><th>数据</th></tr>
+</thead>
+<tbody>
+<tr><td>GitHub</td><td><a href="https://github.com/jcodesmore/ai-website-cloner-template">https://github.com/jcodesmore/ai-website-cloner-template</a></td></tr>
+<tr><td>Star / Fork</td><td>19,275 / 2,879</td></tr>
+<tr><td>Watcher</td><td>94</td></tr>
+<tr><td>代码行数</td><td>10,361（JSON 95.6% / CSS 1.2% / TSX 0.9% / JS 0.9%，可执行代码 ~194 行）</td></tr>
+<tr><td>文件数量</td><td>22（不含 docs/）</td></tr>
+<tr><td>项目年龄</td><td>3.4 个月（2026-03-13 创建）</td></tr>
+<tr><td>最近提交</td><td>2026-05-31（停更近 1 个月）</td></tr>
+<tr><td>开发阶段</td><td>稳定维护（近 30 天仅 2 commits；92.5% commits 集中在 2026-03 一周内爆发）</td></tr>
+<tr><td>开发模式</td><td>业余 Side Project（周末 55%，深夜 35%）</td></tr>
+<tr><td>贡献模式</td><td>单人主导（JCodesMore 占 86.5%，其余 5 人各 1 commit）</td></tr>
+<tr><td>热度定位</td><td>大众热门（近 2 万 stars + 15% fork/clone 转化率）</td></tr>
+<tr><td>License</td><td>MIT</td></tr>
+<tr><td>Release</td><td>v0.3.1（共 5 个 tag：v0.1.0 → v0.3.1，语义化版本）</td></tr>
+<tr><td>质量评级</td><td>代码良好 / 文档优秀 / 测试无（模板型项目合理缺失）</td></tr>
+</tbody>
+</table>
+<h2>作者视角：为什么存在这个项目</h2>
+<h3>创始人/作者背景</h3>
+<p>JCodesMore（账号 1.7 年龄，378 followers，公开仓库 15 个）是 AI Agent 工具链领域的独立开发者。从仓库命名规律（*for-ai-agents、jcodesmore-plugins）可见他在做「Agent 周边生态」，本仓库是他 stars 占比 99%+ 的旗舰项目。Bio/公司/位置全空，但同时运营 Discord 社群（README 直接挂 <code>dsc.gg/jcodesmore</code> 邀请链接），形成「开源模板引流社群」的典型 indie 打法。</p>
+<h3>问题判断</h3>
+<p>作者敏锐看到 2026 年 Agent 编码生态的<strong>接入碎片化问题</strong>：同一个「克隆网站」任务，在 Claude Code / Codex / Cursor / Gemini CLI 等 13 家平台上要写 13 套不同的入口；而 Agent 真正缺的<strong>不是更强的模型，是更精确的中间产物</strong>（设计令牌、组件规格、状态差分）。时机刚好踩在 Claude Code / Codex 等 Agent CLI 大爆发、AI 编码工具同质化竞争的窗口上。</p>
+<h3>解法哲学</h3>
+<p>「<strong>Agent Skill > CLI</strong>」——不做独立命令行工具，而把整套逆向工程流程打包成 <code>/clone-website</code> Skill，复用 Agent 现有的浏览器 MCP、文件读写、子 Agent 调度能力。哲学上借鉴<strong>建筑工地 foreman 模式</strong>：foreman 在工地走动、边看边写施工单（spec），立即派发给专业工种（builder agent），边设计边施工。明确选择「不做」的事：不做独立 SaaS（避免锁住用户）、不做 GUI（避免增加开发摩擦）、不限制支持的 Agent 平台（覆盖越多越好）。</p>
+<h3>战略意图</h3>
+<p>「模板引流社群，社群卖付费内容/服务」——README 的 Discord 链接 <code>dsc.gg/jcodesmore</code> 是商业化抓手；本体完全开源 MIT，无闭源插件、无 SaaS 锁。路线图从 Issue 信号清晰可见两条横向扩张：① <strong>克隆动态应用</strong>（#18 Playwright MCP，突破 Issue #30/#39 的反爬虫/动态 SPA 天花板）；② <strong>克隆设计稿</strong>（#3 Figma/Stitch MCP，从 URL 扩展到 Figma）。商业化在 repo 之外，在 Discord 社群之内——这是当前 indie developer 最可持续的玩法之一。</p>
+<h2>核心价值提炼</h2>
+<h3>创新之处</h3>
+<p>按新颖度 × 实用性排序：</p>
+<ol>
+<li><strong>13 平台「双单源真相」自动同步架构</strong>（新颖 5/5、实用 4/5、可迁移 4/5）——AGENTS.md + SKILL.md 两个源文件 + 两个 sync 脚本（bash + node），按目标平台格式（MD/TOML/YAML/JSON）分别生成，头部加 <code>&lt;!-- AUTO-GENERATED --&gt;</code> 防误编辑；同时识别「哪些 Agent 原生读 AGENTS.md」「哪些必须生成副本」——这是当前生态最缺乏的统一治理范式。</li>
+<li><strong>5 阶段「工地流水线」Agent 编排</strong>（新颖 4/5、实用 5/5、可迁移 5/5）——把 Reconnaissance → Foundation → Component Specs → Parallel Build → Assembly & QA 映射成标准流水线，每阶段产出明确 artifact（screenshots / tokens / specs / merged components / visual diff）。Pre-Flight Checklist 9 项必须勾选才能进下一阶段，强制约束 Agent 不跳步。</li>
+<li><strong>「Spec File as Contract」+ 150 行复杂度预算</strong>（新颖 4/5、实用 5/5、可迁移 5/5）——把「组件规格书」作为 Agent 执行契约，<strong>不允许 builder 自己读 spec</strong>（避免二次理解损耗），强制 ~150 行 spec 长度作为复杂度预算——超长 = 必须拆分任务。这是防御 LLM 上下文坍塌 + 猜测失败的核心模式。</li>
+<li><strong>Mandatory Interaction Sweep + Behavior Bible</strong>（新颖 3/5、实用 5/5、可迁移 3/5）——写任何 spec 前强制四遍扫描（滚动/点击/悬停/响应式）产出 BEHAVIORS.md，先用滚动观察确认「是滚动驱动还是点击驱动」（作者显式标注为「#1 most expensive mistake」），「Interaction Model」作为 spec 必填字段。</li>
+<li><strong><code>getComputedStyle</code> 精确值 + 状态 A/B 差分</strong>（新颖 3/5、实用 5/5、可迁移 4/5）——不依赖手工估算，所有 CSS 值从 <code>getComputedStyle()</code> 读取；对多状态组件（滚动/悬停/激活 tab）分别捕获 State A 和 State B 的值，差分即行为规范。</li>
+</ol>
+<h3>可复用的模式与技巧</h3>
+<ol>
+<li><strong>双单源真相同步模式</strong>：用 AGENTS.md + <code>&lt;skill&gt;/SKILL.md</code> 两份主源，通过 bash（规则同步）+ node.js（Skill 同步）两个脚本分发到多平台——任何「AI 工具跨多平台分发」场景通用。</li>
+<li><strong>Spec File as Contract</strong>：把「任务规格」作为 Agent 输入，要求内容<strong>内联到 prompt</strong>（不引用文件路径），用长度预算强制任务拆分——所有 LLM 生成代码/文本场景通用。</li>
+<li><strong>Phase-gated Pipeline with Mandatory Pre-flight</strong>：每阶段前设 Pre-Flight Checklist 必须勾选才能进下一阶段——所有长流程 LLM 工作流通用。</li>
+<li><strong>git worktree Per-Agent 隔离</strong>：多 Agent 并行施工时每人独立 worktree，主控合并+冲突解决——所有多 Agent 写代码场景通用。</li>
+<li><strong>State A/B Diff as Behavior Spec</strong>：对多状态组件分别捕获 State A 和 State B 的精确值，差分即行为规范——所有动画/过渡/响应式还原场景通用。</li>
+</ol>
+<h3>关键设计决策</h3>
+<ol>
+<li><strong>决策：Agent Skill 化（而非独立 CLI）</strong><br/>问题：用户已在用 Claude Code/Codex 等 Agent，再学一个 <code>clone-website-cli</code> 增加摩擦<br/>方案：把整套逆向流程做成 <code>/clone-website</code> Skill 入口，复用 Agent 自带的浏览器 MCP、子 Agent 调度、git worktree 能力<br/>Trade-off：失去「独立分发」能力（必须依赖用户装好 Agent），换来「零安装成本 + 用户熟悉的调用方式」——典型的减法胜过加法<br/>可迁移性：<strong>高</strong>——任何「AI 驱动的批量操作类工具」（自动测试生成、批量 PR review、批量文档同步）都可套</li>
+<li><strong>决策：AGENTS.md + SKILL.md 双单源真相 + 同步脚本</strong><br/>问题：13 个平台规则格式不同，手写易漂移<br/>方案：① AGENTS.md 用 <code>@&lt;file&gt;</code> 引用机制，sync-agent-rules.sh 解析内联；② SKILL.md 通过 frontmatter 分发，sync-skills.mjs 按平台格式生成；③ 加 <code>AUTO-GENERATED</code> 头防误编辑<br/>Trade-off：增加「必须跑 sync 脚本」的认知负担（在 AGENTS.md 顶部「最重要」段强调），换来「一份编辑，13 处生效」<br/>可迁移性：<strong>高</strong>——任何「Agent 工具同时维护多平台」场景都能套，可抽成通用 npm 包</li>
+<li><strong>决策：Phase 1 强制 Mandatory Interaction Sweep</strong><br/>问题：大多数克隆失败源于只看了静态截图，丢失滚动驱动/点击切换/悬停过渡等动态行为（Issue #39 验证）<br/>方案：在写任何 spec 前<strong>强制</strong>用浏览器 MCP 做四遍扫描，产出 BEHAVIORS.md 作为「行为圣经」<br/>Trade-off：提取耗时翻倍，但避免「#1 most expensive mistake」——把滚动驱动 UI 误建为点击驱动 UI<br/>可迁移性：<strong>中</strong>——任何 UI 逆向/迁移场景适用，纯静态场景过度工程</li>
+<li><strong>决策：git worktree 并行施工 + 主控合并</strong><br/>问题：多 builder agent 在同一分支并发写文件会互相覆盖<br/>方案：AGENTS.md 顶部明确「ALWAYS have each teammate work in their own worktree branch」，主控负责合并与冲突解决<br/>Trade-off：需要 Agent 支持 worktree（Claude Code/Codex 支持），换来真正的并行施工<br/>可迁移性：<strong>中</strong>——依赖 Agent 工具能力，但模式可推广</li>
+</ol>
+<h2>竞品格局与定位</h2>
+<h3>竞品对比矩阵</h3>
+<table>
+<thead>
+<tr><th>维度</th><th>本项目</th><th>Firecrawl</th><th>Gemini CLI</th><th>Vercel v0</th><th>Builder.io</th></tr>
+</thead>
+<tbody>
+<tr><td>Stars</td><td>19K</td><td>138.7K</td><td>105.5K</td><td>闭源</td><td>闭源</td></tr>
+<tr><td>形态</td><td>Agent Skill 模板</td><td>SaaS API</td><td>CLI</td><td>Web 组件生成器</td><td>SaaS GUI</td></tr>
+<tr><td>产出</td><td>完整 Next.js 代码库</td><td>Markdown/结构化数据</td><td>通用编码</td><td>单个组件</td><td>视觉设计稿</td></tr>
+<tr><td>输入</td><td>任意 URL + 自然语言</td><td>URL</td><td>自然语言</td><td>提示词</td><td>Figma</td></tr>
+<tr><td>价格</td><td>免费开源</td><td>付费 API</td><td>免费</td><td>免费/付费</td><td>付费 SaaS</td></tr>
+<tr><td>Agent 平台覆盖</td><td>13 个</td><td>需自配</td><td>仅 Gemini</td><td>仅 v0</td><td>不适用</td></tr>
+<tr><td>反爬虫能力</td><td>受限（Issue #30）</td><td>强</td><td>强</td><td>不适用</td><td>不适用</td></tr>
+<tr><td>动态 SPA 支持</td><td>受限（Issue #39）</td><td>强</td><td>强</td><td>强</td><td>强</td></tr>
+</tbody>
+</table>
+<h3>差异化护城河</h3>
+<ol>
+<li><strong>覆盖 Agent 平台最广</strong>——13 个，比任何单一竞品都多；这是「入口卡位」型护城河</li>
+<li><strong>Spec-as-Contract + 5 阶段流水线</strong>——是可复用的方法论资产，不仅代码值钱，方法论也值钱</li>
+<li><strong>开源 + Discord 社群</strong>——构成开发者口碑飞轮，模板型项目里少见的清晰商业化路径</li>
+<li><strong><code>getComputedStyle + 状态差分</code></strong>——技术细节壁垒，小团队抄不动</li>
+</ol>
+<h3>竞争风险</h3>
+<ol>
+<li><strong>反爬虫/动态 SPA 是天花板</strong>——Issue #30/#39 暴露了 AI 视觉重建的固有限制，Wix/SPA 类站点效果差；需要 Playwright MCP（Issue #18 路线图）突破，但仍未落地</li>
+<li><strong>高度依赖 Discord 社群转化</strong>——商业化路径相对单一，若 Firecrawl/Anthropic 官方推出官方 Skill，模板型项目护城河会被压缩</li>
+<li><strong>个人开发者维护</strong>——单作者 86.5% 贡献，长期可持续性存疑；近 1 个月停更是早期信号</li>
+</ol>
+<h3>生态定位</h3>
+<p><strong>「AI Agent 编码工具链中的垂直场景包」</strong>——寄生于主流 Agent 之上，提供「克隆网站」这条具体场景的完整方案；社区驱动 + 开源模板的典型 indie developer 打法。在「AI 编码 Agent × 网站逆向」这个交集中几乎独占，与 Firecrawl 等基础设施形成上下游而非直接竞争。</p>
+<h2>套利机会分析</h2>
+<ul>
+<li><strong>信息差</strong>：不算被低估（19K stars 已说明热度）；但作为模板型项目，「真实价值在 fork 后的下游应用」，仓库本身的 star 含金量需结合 2,879 fork 数来理解——这是一个「被大量复用」而非「被大量围观」的项目</li>
+<li><strong>技术借鉴</strong>：5 阶段流水线编排 + Spec-as-Contract + 150 行复杂度预算 + 双单源真相同步这四套模式，可整套搬到自己的「LLM 驱动批量任务」项目（批量代码迁移、批量 UI 重构、批量文档生成、批量测试生成），是最值的部分</li>
+<li><strong>生态位</strong>：填补了「AI 编码 Agent × 网站逆向」的垂直空白；横向可扩到 Figma/Stitch（Issue #3 路线图），纵向可突破反爬虫（Playwright MCP，Issue #18 路线图）</li>
+<li><strong>趋势判断</strong>：符合「AI Agent 工具同质化竞争 → 垂直 Skill 模板崛起」的拐点；Agent CLI 平台越多、覆盖越广的价值越大——比单一 Agent 平台有后发优势（寄生而非竞争）</li>
+</ul>
+<h2>风险与不足</h2>
+<ol>
+<li><strong>零测试</strong>——模板型项目合理缺失，但意味着 spec 写错了 builder 不会发现；CI 跑 lint/typecheck/build 而非 test，质量完全依赖 Agent 自身推理</li>
+<li><strong>文档仅英文</strong>——Issue #39 是中文用户发的，说明国际化需求存在但作者未跟进</li>
+<li><strong>错误处理薄弱</strong>——sync 脚本有 try/catch，但模板本身不含运行时代码，用户跑 <code>/clone-website</code> 失败时只能看 SKILL.md 自查，没有 failure 报告</li>
+<li><strong>长期可持续性</strong>——单作者 86.5% 贡献，近 1 个月停更，若作者失去兴趣整个生态会迅速萎缩</li>
+<li><strong>技术天花板</strong>——反爬虫（Issue #30）/ 高度动态 SPA（Issue #39）是 AI 视觉重建的根本限制，需要 Playwright MCP 等基础设施突破才能解</li>
+<li><strong>「克隆」伦理风险</strong>——README 明确禁用钓鱼/冒充、抄设计不加修改、违反目标站点 ToS，但工具本身无法技术性阻止滥用</li>
+</ol>
+<h2>行动建议</h2>
+<h3>如果你要用它</h3>
+<p>适合「把 WordPress/Webflow/Squarespace 老站迁到 Next.js」「失去源码的站点 owner 想恢复代码」「想学生产级站点实现细节」三类场景。<strong>对比选它的判断</strong>：① 要批量克隆多个 URL 选它；② 要 GUI 拖拽选 Builder.io；③ 只要抓取数据不重建代码选 Firecrawl；④ 只想生成单个组件选 v0。<strong>最佳实践</strong>：① 先在 Discord 问作者看你的目标站是否可处理；② 跑前确认目标站 ToS；③ 用 <code>/clone-website</code> 单 URL 起步，跑通后再批量。</p>
+<h3>如果你要学它</h3>
+<p>重点关注这些文件（按学习价值排序）：</p>
+<ol>
+<li><strong><code>.claude/skills/clone-website/SKILL.md</code></strong>（473 行）——5 阶段流水线的教科书，是整个项目的方法论核心</li>
+<li><strong><code>AGENTS.md</code></strong>——双单源真相的源文件 + 多平台规则定义</li>
+<li><strong><code>scripts/sync-skills.mjs</code></strong>——13 平台同步脚本，可抽成通用 npm 包</li>
+<li><strong><code>scripts/sync-agent-rules.sh</code></strong>——Agent 规则同步脚本</li>
+<li><strong><code>docs/research/</code> 目录结构</strong>——5 阶段产物的目录组织范式</li>
+<li><strong><code>src/app/page.tsx</code></strong>——Next.js 16 + shadcn/ui + Tailwind v4 的标准脚手架（很短，但能学到怎么写「空壳等待填充」页）</li>
+</ol>
+<h3>如果你要 fork 它</h3>
+<p>可改进的方向（按 ROI 排序）：</p>
+<ol>
+<li><strong>加 Playwright MCP 集成</strong>（Issue #18 路线图）——突破反爬虫 + 动态 SPA 两大天花板，最高 ROI</li>
+<li><strong>加 Figma/Stitch MCP 集成</strong>（Issue #3 路线图）——横向扩到设计稿克隆，第二高 ROI</li>
+<li><strong>加国际化文档</strong>——Issue #39 暴露的中文用户需求，社区增长抓手</li>
+<li><strong>抽 sync 脚本为通用 npm 包</strong>——<code>sync-skills-core</code>，卖给其他多平台 Agent 工具作者</li>
+<li><strong>加 failure report 机制</strong>——Spec 写错时给用户清晰的失败报告，降低使用门槛</li>
+<li><strong>加 CI 跑 spec lint</strong>——防止 spec 写错后 builder 跟着错</li>
+</ol>
+<h3>知识入口</h3>
+<table>
+<thead>
+<tr><th>资源</th><th>链接</th></tr>
+</thead>
+<tbody>
+<tr><td>DeepWiki</td><td>未收录（项目热度高但太新，3.4 月龄，DeepWiki 收录通常滞后）</td></tr>
+<tr><td>Zread.ai</td><td>未收录（同上）</td></tr>
+<tr><td>关联论文</td><td>无（工程型模板项目，不涉及学术研究）</td></tr>
+<tr><td>在线 Demo</td><td><a href="https://youtu.be/O669pVZ_qr0">YouTube 演示视频</a></td></tr>
+<tr><td>作者社群</td><td><a href="https://dsc.gg/jcodesmore">Discord dsc.gg/jcodesmore</a></td></tr>
+</tbody>
+</table>
+</body>
+</html>
