@@ -580,6 +580,16 @@
     "trending_days": 11
   },
   {
+    "name": "shanraisshan/claude-code-best-practice",
+    "url": "https://github.com/shanraisshan/claude-code-best-practice",
+    "language": "HTML",
+    "stars": 60193,
+    "forks": 6042,
+    "description": "from vibe coding to agentic engineering - practice makes claude perfect",
+    "last_seen": "2026-06-25",
+    "trending_days": 11
+  },
+  {
     "name": "supermemoryai/supermemory",
     "url": "https://github.com/supermemoryai/supermemory",
     "language": "TypeScript",
@@ -720,16 +730,6 @@
     "trending_days": 10
   },
   {
-    "name": "shanraisshan/claude-code-best-practice",
-    "url": "https://github.com/shanraisshan/claude-code-best-practice",
-    "language": "HTML",
-    "stars": 59108,
-    "forks": 5963,
-    "description": "from vibe coding to agentic engineering - practice makes claude perfect",
-    "last_seen": "2026-06-23",
-    "trending_days": 10
-  },
-  {
     "name": "Stremio/stremio-web",
     "url": "https://github.com/stremio/stremio-web",
     "language": "JavaScript",
@@ -850,6 +850,16 @@
     "trending_days": 9
   },
   {
+    "name": "mukul975/Anthropic-Cybersecurity-Skills",
+    "url": "https://github.com/mukul975/anthropic-cybersecurity-skills",
+    "language": "Python",
+    "stars": 20877,
+    "forks": 2415,
+    "description": "817 structured cybersecurity skills for AI agents · Mapped to 6 frameworks: MITRE ATT&CK, NIST CSF 2.0, MITRE ATLAS, D3FEND, NIST AI RMF & MITRE F3 (Fight Fraud) · agentskills.io standard · Works with Claude Code, GitHub Copilot, Codex CLI, Cursor, Gemini CLI & 20+ platforms · 29 security domains · Apache 2.0",
+    "last_seen": "2026-06-25",
+    "trending_days": 9
+  },
+  {
     "name": "OpenBB-finance/OpenBB",
     "url": "https://github.com/openbb-finance/openbb",
     "language": "Python",
@@ -907,6 +917,16 @@
     "forks": 3455,
     "description": "AI agent toolkit: coding agent CLI, unified LLM API, TUI & web UI libraries, Slack bot, vLLM pods",
     "last_seen": "2026-04-05",
+    "trending_days": 8
+  },
+  {
+    "name": "calesthio/OpenMontage",
+    "url": "https://github.com/calesthio/openmontage",
+    "language": "Python",
+    "stars": 21375,
+    "forks": 2387,
+    "description": "World's first open-source, agentic video production system. 12 pipelines, 52 tools, 500+ agent skills. Turn your AI coding assistant into a full video production studio.",
+    "last_seen": "2026-06-25",
     "trending_days": 8
   },
   {
@@ -1030,16 +1050,6 @@
     "trending_days": 8
   },
   {
-    "name": "mukul975/Anthropic-Cybersecurity-Skills",
-    "url": "https://github.com/mukul975/anthropic-cybersecurity-skills",
-    "language": "Python",
-    "stars": 19283,
-    "forks": 2250,
-    "description": "817 structured cybersecurity skills for AI agents · Mapped to 6 frameworks: MITRE ATT&CK, NIST CSF 2.0, MITRE ATLAS, D3FEND, NIST AI RMF & MITRE F3 (Fight Fraud) · agentskills.io standard · Works with Claude Code, GitHub Copilot, Codex CLI, Cursor, Gemini CLI & 20+ platforms · 29 security domains · Apache 2.0",
-    "last_seen": "2026-06-23",
-    "trending_days": 8
-  },
-  {
     "name": "protocolbuffers/protobuf",
     "url": "https://github.com/protocolbuffers/protobuf",
     "language": "C++",
@@ -1110,6 +1120,16 @@
     "trending_days": 7
   },
   {
+    "name": "alibaba/page-agent",
+    "url": "https://github.com/alibaba/page-agent",
+    "language": "TypeScript",
+    "stars": 19616,
+    "forks": 1695,
+    "description": "JavaScript in-page GUI agent. Control web interfaces with natural language.",
+    "last_seen": "2026-06-25",
+    "trending_days": 7
+  },
+  {
     "name": "alibaba/zvec",
     "url": "https://github.com/alibaba/zvec",
     "language": "C++",
@@ -1140,16 +1160,6 @@
     "trending_days": 7
   },
   {
-    "name": "calesthio/OpenMontage",
-    "url": "https://github.com/calesthio/openmontage",
-    "language": "Python",
-    "stars": 17949,
-    "forks": 2061,
-    "description": "World's first open-source, agentic video production system. 12 pipelines, 52 tools, 500+ agent skills. Turn your AI coding assistant into a full video production studio.",
-    "last_seen": "2026-06-24",
-    "trending_days": 7
-  },
-  {
     "name": "DeusData/codebase-memory-mcp",
     "url": "https://github.com/deusdata/codebase-memory-mcp",
     "language": "C",
@@ -1167,6 +1177,16 @@
     "forks": 3266,
     "description": "FinceptTerminal is a modern finance application offering advanced market analytics, investment research, and economic data tools, designed for interactive exploration and data-driven decision-making in a user-friendly environment.",
     "last_seen": "2026-05-25",
+    "trending_days": 7
+  },
+  {
+    "name": "Free-TV/IPTV",
+    "url": "https://github.com/free-tv/iptv",
+    "language": "Python",
+    "stars": 18083,
+    "forks": 2666,
+    "description": "M3U Playlist for free TV channels",
+    "last_seen": "2026-06-25",
     "trending_days": 7
   },
   {
@@ -1360,16 +1380,6 @@
     "trending_days": 6
   },
   {
-    "name": "alibaba/page-agent",
-    "url": "https://github.com/alibaba/page-agent",
-    "language": "TypeScript",
-    "stars": 6893,
-    "forks": 534,
-    "description": "JavaScript in-page GUI agent. Control web interfaces with natural language.",
-    "last_seen": "2026-03-13",
-    "trending_days": 6
-  },
-  {
     "name": "anthropics/prompt-eng-interactive-tutorial",
     "url": "https://github.com/anthropics/prompt-eng-interactive-tutorial",
     "language": "JupyterNotebook",
@@ -1377,6 +1387,16 @@
     "forks": 3167,
     "description": "Anthropic's Interactive Prompt Engineering Tutorial",
     "last_seen": "2026-03-02",
+    "trending_days": 6
+  },
+  {
+    "name": "apple/container",
+    "url": "https://github.com/apple/container",
+    "language": "Swift",
+    "stars": 42868,
+    "forks": 1259,
+    "description": "A tool for creating and running Linux containers using lightweight virtual machines on a Mac. It is written in Swift, and optimized for Apple silicon.",
+    "last_seen": "2026-06-25",
     "trending_days": 6
   },
   {
@@ -1487,16 +1507,6 @@
     "forks": 2259,
     "description": "SOTA Open Source TTS",
     "last_seen": "2026-03-14",
-    "trending_days": 6
-  },
-  {
-    "name": "Free-TV/IPTV",
-    "url": "https://github.com/free-tv/iptv",
-    "language": "Python",
-    "stars": 17186,
-    "forks": 2554,
-    "description": "M3U Playlist for free TV channels",
-    "last_seen": "2026-06-15",
     "trending_days": 6
   },
   {
@@ -1860,16 +1870,6 @@
     "trending_days": 5
   },
   {
-    "name": "apple/container",
-    "url": "https://github.com/apple/container",
-    "language": "Swift",
-    "stars": 41527,
-    "forks": 1211,
-    "description": "A tool for creating and running Linux containers using lightweight virtual machines on a Mac. It is written in Swift, and optimized for Apple silicon.",
-    "last_seen": "2026-06-24",
-    "trending_days": 5
-  },
-  {
     "name": "BloopAI/vibe-kanban",
     "url": "https://github.com/bloopai/vibe-kanban",
     "language": "Rust",
@@ -1927,6 +1927,16 @@
     "forks": 55801,
     "description": "Learn how to design large-scale systems. Prep for the system design interview. Includes Anki flashcards.",
     "last_seen": "2026-04-28",
+    "trending_days": 5
+  },
+  {
+    "name": "garrytan/gstack",
+    "url": "https://github.com/garrytan/gstack",
+    "language": "TypeScript",
+    "stars": 115391,
+    "forks": 17104,
+    "description": "Use Garry Tan's exact Claude Code setup: 23 opinionated tools that serve as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA",
+    "last_seen": "2026-06-25",
     "trending_days": 5
   },
   {
@@ -2620,16 +2630,6 @@
     "trending_days": 4
   },
   {
-    "name": "garrytan/gstack",
-    "url": "https://github.com/garrytan/gstack",
-    "language": "TypeScript",
-    "stars": 113742,
-    "forks": 16852,
-    "description": "Use Garry Tan's exact Claude Code setup: 23 opinionated tools that serve as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA",
-    "last_seen": "2026-06-23",
-    "trending_days": 4
-  },
-  {
     "name": "gin-gonic/gin",
     "url": "https://github.com/gin-gonic/gin",
     "language": "Go",
@@ -2757,6 +2757,16 @@
     "forks": 18719,
     "description": "Grab your own sweet-looking '.is-a.dev' subdomain.",
     "last_seen": "2026-03-08",
+    "trending_days": 4
+  },
+  {
+    "name": "JCodesMore/ai-website-cloner-template",
+    "url": "https://github.com/jcodesmore/ai-website-cloner-template",
+    "language": "TypeScript",
+    "stars": 19976,
+    "forks": 2951,
+    "description": "Clone any website with one command using AI coding agents",
+    "last_seen": "2026-06-25",
     "trending_days": 4
   },
   {
@@ -3720,16 +3730,6 @@
     "trending_days": 3
   },
   {
-    "name": "JCodesMore/ai-website-cloner-template",
-    "url": "https://github.com/jcodesmore/ai-website-cloner-template",
-    "language": "TypeScript",
-    "stars": 18975,
-    "forks": 2842,
-    "description": "Clone any website with one command using AI coding agents",
-    "last_seen": "2026-06-24",
-    "trending_days": 3
-  },
-  {
     "name": "jellyfin/jellyfin-desktop",
     "url": "https://github.com/jellyfin/jellyfin-desktop",
     "language": "C++",
@@ -3950,6 +3950,16 @@
     "trending_days": 3
   },
   {
+    "name": "NanmiCoder/MediaCrawler",
+    "url": "https://github.com/nanmicoder/mediacrawler",
+    "language": "Python",
+    "stars": 52597,
+    "forks": 10898,
+    "description": "小红书笔记 | 评论爬虫、抖音视频 | 评论爬虫、快手视频 | 评论爬虫、B 站视频 ｜ 评论爬虫、微博帖子 ｜ 评论爬虫、百度贴吧帖子 ｜ 百度贴吧评论回复爬虫 | 知乎问答文章｜评论爬虫",
+    "last_seen": "2026-06-25",
+    "trending_days": 3
+  },
+  {
     "name": "nitrojs/nitro",
     "url": "https://github.com/nitrojs/nitro",
     "language": "TypeScript",
@@ -4027,6 +4037,16 @@
     "forks": 187,
     "description": "Windows companion suite for OpenClaw - System Tray app, Shared library, Node, and PowerToys Command Palette extension",
     "last_seen": "2026-06-06",
+    "trending_days": 3
+  },
+  {
+    "name": "opendatalab/MinerU",
+    "url": "https://github.com/opendatalab/mineru",
+    "language": "Python",
+    "stars": 69163,
+    "forks": 5844,
+    "description": "Transforms complex documents like PDFs and Office docs into LLM-ready markdown/JSON for your Agentic workflows.",
+    "last_seen": "2026-06-25",
     "trending_days": 3
   },
   {
@@ -5230,6 +5250,16 @@
     "trending_days": 2
   },
   {
+    "name": "google-labs-code/design.md",
+    "url": "https://github.com/google-labs-code/design.md",
+    "language": "TypeScript",
+    "stars": 18219,
+    "forks": 1605,
+    "description": "A format specification for describing a visual identity to coding agents. DESIGN.md gives agents a persistent, structured understanding of a design system.",
+    "last_seen": "2026-06-25",
+    "trending_days": 2
+  },
+  {
     "name": "google/A2UI",
     "url": "https://github.com/google/a2ui",
     "language": "TypeScript",
@@ -5880,16 +5910,6 @@
     "trending_days": 2
   },
   {
-    "name": "NanmiCoder/MediaCrawler",
-    "url": "https://github.com/nanmicoder/mediacrawler",
-    "language": "Python",
-    "stars": 41983,
-    "forks": 9332,
-    "description": "小红书笔记 | 评论爬虫、抖音视频 | 评论爬虫、快手视频 | 评论爬虫、B 站视频 ｜ 评论爬虫、微博帖子 ｜ 评论爬虫、百度贴吧帖子 ｜ 百度贴吧评论回复爬虫 | 知乎问答文章｜评论爬虫",
-    "last_seen": "2026-01-12",
-    "trending_days": 2
-  },
-  {
     "name": "nothings/stb",
     "url": "https://github.com/nothings/stb",
     "language": "C",
@@ -6027,16 +6047,6 @@
     "forks": 56616,
     "description": "Open Source Computer Vision Library",
     "last_seen": "2026-06-09",
-    "trending_days": 2
-  },
-  {
-    "name": "opendatalab/MinerU",
-    "url": "https://github.com/opendatalab/mineru",
-    "language": "Python",
-    "stars": 46194,
-    "forks": 3832,
-    "description": "Transforms complex documents like PDFs into LLM-ready markdown/JSON for your Agentic workflows.",
-    "last_seen": "2025-10-14",
     "trending_days": 2
   },
   {
@@ -6960,6 +6970,16 @@
     "trending_days": 1
   },
   {
+    "name": "aws/agent-toolkit-for-aws",
+    "url": "https://github.com/aws/agent-toolkit-for-aws",
+    "language": "Python",
+    "stars": 1024,
+    "forks": 110,
+    "description": "Official, AWS-supported MCP servers, skills, and plugins to help AI agents build on AWS",
+    "last_seen": "2026-06-25",
+    "trending_days": 1
+  },
+  {
     "name": "awslabs/aidlc-workflows",
     "url": "https://github.com/awslabs/aidlc-workflows",
     "language": "Python",
@@ -7860,16 +7880,6 @@
     "trending_days": 1
   },
   {
-    "name": "google-labs-code/design.md",
-    "url": "https://github.com/google-labs-code/design.md",
-    "language": "TypeScript",
-    "stars": 16792,
-    "forks": 1550,
-    "description": "A format specification for describing a visual identity to coding agents. DESIGN.md gives agents a persistent, structured understanding of a design system.",
-    "last_seen": "2026-06-24",
-    "trending_days": 1
-  },
-  {
     "name": "google/adk-docs",
     "url": "https://github.com/google/adk-docs",
     "language": "HTML",
@@ -8117,6 +8127,16 @@
     "forks": 491,
     "description": "HyDE, your Development Environment 🖥️💻",
     "last_seen": "2025-11-10",
+    "trending_days": 1
+  },
+  {
+    "name": "IceWhaleTech/CasaOS",
+    "url": "https://github.com/icewhaletech/casaos",
+    "language": "Go",
+    "stars": 34514,
+    "forks": 1979,
+    "description": "CasaOS - A simple, easy-to-use, elegant open-source Personal Cloud system.",
+    "last_seen": "2026-06-25",
     "trending_days": 1
   },
   {
@@ -8537,6 +8557,16 @@
     "forks": 669,
     "description": "A collaborative list of public APIs for developers",
     "last_seen": "2026-01-07",
+    "trending_days": 1
+  },
+  {
+    "name": "mauriceboe/TREK",
+    "url": "https://github.com/mauriceboe/trek",
+    "language": "TypeScript",
+    "stars": 6222,
+    "forks": 591,
+    "description": "A self-hosted travel/trip planner with real-time collaboration, interactive maps, PWA support, SSO, budgets, packing lists, and more.",
+    "last_seen": "2026-06-25",
     "trending_days": 1
   },
   {
@@ -10027,6 +10057,16 @@
     "forks": 1398,
     "description": "PDF补丁丁——PDF工具箱，可以编辑书签、剪裁旋转页面、解除限制、提取或合并文档，探查文档结构，提取图片、转成图片等等",
     "last_seen": "2025-10-16",
+    "trending_days": 1
+  },
+  {
+    "name": "xbtlin/ai-berkshire",
+    "url": "https://github.com/xbtlin/ai-berkshire",
+    "language": "Python",
+    "stars": 1575,
+    "forks": 268,
+    "description": "AI 时代的伯克希尔：基于 Claude Code 的价值投资研究框架。巴菲特·芒格·段永平·李录四大师方法论 + 多Agent并行研究。| AI-era Berkshire: a value investing research framework built on Claude Code. 4 masters' methodologies + multi-agent adversarial analysis.",
+    "last_seen": "2026-06-25",
     "trending_days": 1
   },
   {

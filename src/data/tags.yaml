@@ -737,6 +737,9 @@ entries:
   - ai-agent
   - ai-coding
   - devtools
+  google-labs-code_design.md:
+  - ai-agent
+  - design-ui
   google-research_timesfm:
   - uncategorized
   google_adk-go:
@@ -946,6 +949,9 @@ entries:
   jaywcjlove_awesome-mac:
   - ai-agent
   - data-pipeline
+  jcodesmore_ai-website-cloner-template:
+  - ai-agent
+  - web-framework
   jekyll_jekyll:
   - database
   jellyfin_jellyfin:
