@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #3e3e3e;
+    background: #fff;
+}
+p {
+    font-size: 15px !important;
+    line-height: 2 !important;
+    margin: 0 !important;
+    padding-top: 0.5em !important;
+    padding-bottom: 0.5em !important;
+    padding-right: 1.2em !important;
+    padding-left: 1.2em !important;
+    text-align: justify !important;
+}
+p + p {
+    margin-top: 0 !important;
+}
+h1 {
+    font-size: 20px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 16px 0 !important;
+    padding: 0 !important;
+}
+h2 {
+    font-size: 18px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 24px 0 !important;
+    padding: 0 !important;
+}
+h3 {
+    font-size: 15px !important;
+    font-weight: bold !important;
+    color: #3e3e3e !important;
+    text-align: left !important;
+    margin: 16px 0 16px 0 !important;
+    padding: 0 0 0 1.2em !important;
+}
+h4 {
+    font-size: 15px !important;
+    color: rgb(0, 122, 170) !important;
+    margin: 12px 0 8px 0 !important;
+    padding: 0 !important;
+}
+ul,
+ol {
+    padding-left: 2em !important;
+    margin: 1em 0 !important;
+    font-size: 15px !important;
+}
+li {
+    margin: 0.5em 0 !important;
+    line-height: 1.8em !important;
+    font-size: 15px !important;
+    color: #3e3e3e !important;
+}
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+    margin: 0 !important;
+    padding-left: 1.2em !important;
+}
+blockquote {
+    border-left: 4px solid #888 !important;
+    padding: 8px 16px !important;
+    margin: 1em 0 !important;
+    color: #666 !important;
+    background: #f9f9f9 !important;
+}
+blockquote > p {
+    margin: 0.5em 0 !important;
+    padding: 0 !important;
+}
+blockquote::before,
+blockquote::after {
+    content: none !important;
+}
+pre {
+    font-size: 14px !important;
+    line-height: 1.4em !important;
+    color: #3e3e3e !important;
+    background: #f8f8f8 !important;
+    padding: 12px 16px !important;
+    border-radius: 4px !important;
+    overflow: auto !important;
+    margin: 1em 0 !important;
+}
+.footnotes {
+    font-size: 11px !important;
+    color: #666 !important;
+    line-height: 1.2 !important;
+    margin: 8px 0 0 0 !important;
+    padding: 4px 0 0 0 !important;
+    border-top: 1px solid #eee !important;
+}
+.footnotes p {
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #666 !important;
+}
+sup {
+    font-size: 0.75em !important;
+    vertical-align: super !important;
+    color: #e51f42 !important;
+    margin: 0 2px !important;
+}
+</style>
+</head>
+<body>
+<blockquote><p>GitHub: <a href="https://github.com/nanmicoder/mediacrawler">https://github.com/nanmicoder/mediacrawler</a></p></blockquote>
+<h2>一句话总结</h2>
+<p>中文社媒爬虫的事实标准——7 平台（小红书/抖音/B 站/快手/微博/知乎/贴吧）一站采集，靠「CDP 连用户真实 Chrome + monkey-patch 修补第三方签名库」绕过风控，靠「无 tag + 微信赞赏 + 付费课 Pro」跑通商业化。</p>
+<h2>值得关注的理由</h2>
+<ul>
+<li><strong>生态占位</strong>：5.2 万 star，1.09 万 fork，是中文社媒爬虫圈无争议的 reference implementation；新爬虫工程师从这里入门。</li>
+<li><strong>反检测实战范式</strong>：默认走 <code>playwright.connect_over_cdp</code> 连用户真实 Chrome（而非启动新 Chromium），把「navigator.webdriver=true」这个老问题用架构层方式绕开。</li>
+<li><strong>单飞副业做到职业级别</strong>：作者程序员阿江-Relakkes 一人占 78% commit（3 个 git alias 合并），靠 B 站+公众号+赞赏+付费课四渠道变现，36 个月稳定维护。</li>
+</ul>
+<h2>项目展示</h2>
+<p><a href="https://api.star-history.com/svg?repos=NanmiCoder/MediaCrawler&type=Date">Star History Chart</a> — 热度曲线，3 年从 0 涨到 52K stars</p>
+<p><a href="https://raw.githubusercontent.com/nanmicoder/mediacrawler/main/docs/static/images/img_8.png">WebUI 界面预览</a> — 配套 FastAPI WebUI（端口 8080），扫码登录 + 任务控制</p>
+<p><a href="https://raw.githubusercontent.com/nanmicoder/mediacrawler/main/docs/static/images/tikhub_banner_zh.png">项目横幅</a> — README 顶部 banner，对接 TikHub 签名 API 平台</p>
+<h2>项目画像</h2>
+<pre>| 维度 | 数据 |
+|------|------|
+| GitHub | https://github.com/nanmicoder/mediacrawler |
+| Star / Fork | 52,728 / 10,918 |
+| 代码行数 | 25,777（Python 74.2% / JSON 15.4% / HTML 6.3% / JavaScript 2.4% / GraphQL 1.5%） |
+| 文件数量 | 206（Python 160） |
+| 项目年龄 | 36.6 个月（2023-06 → 2026-06） |
+| 开发阶段 | 稳定维护（近 90 天 26 commit，月均 ~7，仍持续 fix 平台接口） |
+| 贡献模式 | 单人主导（主作者 78.3%，第二名 28 commit） |
+| 热度定位 | 大众热门（5 万 star 中文社媒爬虫圈天花板） |
+| 质量评级 | 代码良好 / 文档优秀 / 测试基本（17 文件但 0 平台核心单测） |
+| Release | <strong>0 个 git tag，0 次 GitHub Release</strong>（commit 节奏代替版本号） |</pre>
+<h2>作者视角：为什么存在这个项目</h2>
+<h3>创始人/作者背景</h3>
+<p>「程序员阿江-Relakkes」（GitHub: NanmiCoder），深圳，账号 7.4 年，公开仓库 39 个。垂直聚焦「反爬对抗 + 浏览器自动化」，账号字段直接写「MediaCrawler」—— 项目即人设。</p>
+<h3>问题判断</h3>
+<p>2023 年小红书 461 状态码、Verifytype 字段、抖音 webmsdk 升级把「裸 httpx 爬虫」挤到了死角；同期 CDP 协议 + Playwright <code>connect_over_cdp</code> 成熟，「接用户真实 Chrome」成为绕开 <code>navigator.webdriver</code> 的最优解。作者抓准这个时间窗口，把「扫码登录 + CDP 复用登录态」做成默认开箱体验。</p>
+<h3>解法哲学</h3>
+<ul>
+<li><strong>配置驱动 + 教学友好 &gt; 性能极致</strong>：所有开关在 <code>config/base_config.py</code> 中文注释暴露，README 显式声明「仅供学习请勿商用」作合规护城河。</li>
+<li><strong>明确不做什么</strong>：不做账号池、不做商业级分布式（<code>MAX_CONCURRENCY_NUM=1</code> 默认）、不做 UI——主动让位给 Pro 版。</li>
+<li><strong>跨域迁移</strong>：从 web 后端的 Mixin、Singleton、Factory 模式（<code>ProxyRefreshMixin</code> / <code>ExcelStoreBase</code> / <code>XxxStoreFactory</code>）整体移植到爬虫，把「被风控追着跑」的项目做出服务端工程的体感。</li>
+</ul>
+<h3>战略图景</h3>
+<p><strong>Genuinely open，但 open-core 商业化</strong>：</p>
+<ul>
+<li>核心代码免费 NCAL 1.1</li>
+<li>Pro 版（断点续爬 / 多账号 / 企业架构）订阅</li>
+<li>4 渠道变现：微信/支付宝/Buy Me a Coffee 打赏 + TikHub 签名 API 联运 + Atlas Cloud 云赞助 + B 站+公众号 私域引流</li>
+<li>0 个 tag 是商业选择——发 tag 锁版本就断了「持续更新促打赏」的飞轮</li>
+</ul>
+<h2>核心价值提炼</h2>
+<h3>创新之处</h3>
+<pre>| 创新 | 新颖度 | 实用性 | 可迁移性 |
+|------|------|------|------|
+| <strong>CDP 连用户真实 Chrome</strong>（<code>playwright.connect_over_cdp("ws://localhost:9222")</code> 复用用户 Cookie/扩展/历史） | 4/5 | 5/5 | 5/5 |
+| <strong>monkey-patch 修补第三方签名库</strong>（<code>xhshow</code> 的 GET a3 hash bug 启动时热修补，POST 走原生） | 4/5 | 4/5 | 3/5 |
+| <strong>ExcelStoreBase 单例流式追加</strong>（类级 <code>_instances: Dict + _lock</code> 保证多 store 同一 workbook） | 3/5 | 5/5 | 5/5 |
+| <strong>comment 默认开、sub-comment 默认关</strong>（分级降速 + 降低法律风险） | 3/5 | 4/5 | 4/5 |
+| <strong>CrawlerFactory 字典派发 + ABC 最小抽象</strong>（7 平台扩展只需加 dict entry） | 2/5 | 4/5 | 4/5 |</pre>
+<h3>可复用的模式与技巧</h3>
+<ol>
+<li><strong>CDP 优先于 Playwright</strong> —— 反检测不要在 Chromium flag 上死磕，直接连用户的真实 Chrome。</li>
+<li><strong>签名 = 上游库 + monkey-patch + 显式串构造</strong> —— 不 fork 上游库，运行时修补 + 显式 quote/safe 规则对齐浏览器编码。</li>
+<li><strong>8 后端存储 = ABC + Factory + 单例 Excel writer</strong> —— ETL 数据落地直接抄。</li>
+<li><strong>Mixin + Semaphore 长跑爬虫模板</strong> —— <code>ProxyRefreshMixin._refresh_proxy_if_expired()</code> + <code>asyncio.Semaphore(MAX_CONCURRENCY_NUM)</code>。</li>
+<li><strong>README 当 wiki 用</strong> —— 50K+ star 必然导致「文档即客服」，从一开始就按 wiki 节奏维护（README 改了 204 次 / 776 commit = 26.3%）。</li>
+</ol>
+<h3>关键设计决策</h3>
+<ol>
+<li><strong>决策</strong>：CrawlerFactory 字典派发 + 每个平台 <code>core.py</code> 手写
+<ul>
+<li><strong>问题</strong>：7 平台 init/launch/search/store 流程要可插拔</li>
+<li><strong>方案</strong>：<code>CRAWLERS: dict</code> + <code>AbstractCrawler</code> 三个 ABC 最小契约</li>
+<li><strong>Trade-off</strong>：加平台简单（加 dict entry + 加文件），但平台间重复代码约 30%</li>
+<li><strong>可迁移性</strong>：高 —— 多云 SDK / 多数据库驱动 / 多 IM 协议通杀</li>
+</ul>
+</li>
+<li><strong>决策</strong>：<code>ENABLE_CDP_MODE=True</code> 默认开启作反检测主防线
+<ul>
+<li><strong>方案</strong>：<code>tools/cdp_browser.py</code> 535 行 + <code>browser_launcher.py</code> 291 行两层封装；CDP_CONNECT_EXISTING 复用用户浏览器，自动启动则注入 17 个反检测 flag</li>
+<li><strong>Trade-off</strong>：体验最像真人但需用户手动开远程调试；自动启动 flag 越多越可能被指纹库识别</li>
+<li><strong>可迁移性</strong>：高 —— 任何「既要登录态又要真人指纹」的爬虫/自动化项目</li>
+</ul>
+</li>
+<li><strong>决策</strong>：0 个 git tag，0 次 Release
+<ul>
+<li><strong>方案</strong>：让用户永远拉 main，每次升级拿最新反爬</li>
+<li><strong>Trade-off</strong>：放弃「语义化版本」的可预期性，换取「打赏驱动的持续更新飞轮」</li>
+<li><strong>可迁移性</strong>：低 —— 仅适合反爬/对抗类工具</li>
+</ul>
+</li>
+</ol>
+<h2>竞品格局与定位</h2>
+<h3>竞品对比矩阵</h3>
+<pre>| 维度 | MediaCrawler | TikTokDownload | weiboSpider | Douyin_TikTok_Download_API | RedNoteTools 小 fork |
+|------|-------------|---------------|------------|---------------------------|--------------------|
+| 平台覆盖 | <strong>7 平台</strong> | 2（抖音/快手） | 1（微博） | 1（抖音/TikTok） | 1（小红书） |
+| 核心数据 | 内容+评论+创作者 | 视频文件下载 | 微博+关系图 | REST API | WebUI 包装 |
+| 反检测 | CDP 复用真实 Chrome | 单 flag | 老牌低强度 | 弱 | 不定 |
+| 存储后端 | 8（CSV/JSON/SQL/MySQL/PG/Mongo/Excel） | 文件 | CSV | API 输出 | 不定 |
+| 教学 | VitePress 17 篇 + B 站视频 | 单 README | 学术文档 | 简单 | 简单 |
+| 维护 | 月均 21 commit | 中 | 慢 | 中 | 难 |
+| 商业化 | 赞赏+Pro 订阅+联运赞助 | 单赞助 | 无 | SaaS | SaaS |
+| Stars | <strong>52K</strong> | 6K | 4K | 6K | 几百到几千 |</pre>
+<h3>差异化护城河</h3>
+<ul>
+<li><strong>生态护城河（最强）</strong>：52.7K★ + B 站 434377496 + 公众号 + Pro 订阅 + 多个衍生 fork，构成中文社媒爬虫事实标准</li>
+<li><strong>教学护城河</strong>：中文注释 config + 完整 VitePress 文档站 + Pro 版「看架构」营销</li>
+<li><strong>技术护城河（中）</strong>：CDP 模式 + 多签名后端修补 + 8 存储后端</li>
+</ul>
+<h3>竞争风险</h3>
+<ul>
+<li><strong>SaaS 化</strong>（TikHub、Atlas Cloud）API 路线会侵蚀单平台小工具市场</li>
+<li><strong>签名持续升级</strong>（xhs 461、抖音 webmsdk）让 monkey-patch 维护成本指数增长</li>
+<li><strong>Pro 版被 fork 魔改免费化</strong>（issue #199/#191 的 OSS 治理难题）</li>
+</ul>
+<h3>生态定位</h3>
+<p>中文社媒爬虫的「教学型 reference implementation」——新爬虫工程师从这里入门，进阶后转向 TikHub/SaaS 或 fork 出自己的 Pro 版。<strong>不是被低估的潜力股，而是已被广泛认可的实战教学项目</strong>。</p>
+<h2>套利机会分析</h2>
+<ul>
+<li><strong>信息差</strong>：5 万 star 已是垂直天花板，<strong>没有低估空间</strong>。但作为学习样本（反爬实战、CDP 多平台适配）价值仍高。</li>
+<li><strong>技术借鉴</strong>：
+<ul>
+<li><strong>CDP 连用户真实 Chrome</strong> 模式可迁移到任何「既要登录态又要真人指纹」的自动化项目</li>
+<li><strong>monkey-patch 修补 + 显式串构造</strong>签名打法是反爬工程师通用工具</li>
+<li><strong>ExcelStoreBase 单例流式追加</strong>可直接抄到任何 ETL 流水线</li>
+</ul>
+</li>
+<li><strong>生态位</strong>：填补「一站式多平台采集 + 开源 + 教学驱动」三角空白</li>
+<li><strong>趋势判断</strong>：未在增长（最近 200 star 集中在 3 天内进入，KOL 驱动型而非自然增长），但稳态后仍长期占据头部。比 SaaS 路线有「可审计 + 可修改」优势，比学术爬虫有「覆盖广度」优势。</li>
+</ul>
+<h2>风险与不足</h2>
+<ul>
+<li><strong>单点作者风险</strong>：78% commit 来自一人；账号年龄 7.4 年但作者若倦怠/转岗，项目可能进入半维护态</li>
+<li><strong>零自动化测试</strong>：物理 17 个测试文件（2299 行）但 commit message 里 <code>test:</code> 几乎为 0（1/776 = 0.13%），且 <strong>没有 CI 跑测试</strong>，重构无保护</li>
+<li><strong>平台反爬升级</strong>：xhs 461/Verifytype、抖音 webmsdk、B 站 wbi 持续升级，monkey-patch 维护成本指数增长</li>
+<li><strong>tieba 与 zhihu 平台热度低</strong>（目录修改次数 74 / 54，约为 xhs 的 1/3），风控升级时响应会慢</li>
+<li><strong>NCAL 1.1 协议</strong>（项目自定义，非 OSI 标准）+ 显式「仅供学习请勿商用」声明 = 商业使用有合规灰区</li>
+<li><strong>Linter/Formatter 缺失</strong>：无 <code>.flake8</code> / <code>.ruff.toml</code> / <code>pyproject.toml [tool.ruff]</code>，pre-commit 声明了但没配</li>
+</ul>
+<h2>行动建议</h2>
+<ul>
+<li><strong>如果你要用它</strong>：
+<ul>
+<li>适合：自媒体内容分析、研究者、做教学示例、需要「扫码登录 + 开箱即用」的非工程用户</li>
+<li>不适合：需要 SLA 的商业级数据采集、需要支持海外平台（Twitter/Reddit/YouTube）、需要真正分布式集群</li>
+<li><strong>首选 SQLite 后端起步</strong>，再迁 MySQL/PG</li>
+</ul>
+</li>
+<li><strong>如果你要学它</strong>（重点关注文件）：
+<ol>
+<li><code>tools/cdp_browser.py</code>（535 行）—— CDP 反检测范式核心</li>
+<li><code>media_platform/xhs/playwright_sign.py</code>（monkey-patch 实战）</li>
+<li><code>proxy/proxy_mixin.py</code>（Mixin + 代理自动刷新）</li>
+<li><code>store/excel_store_base.py</code>（单例流式 Excel 写入器）</li>
+<li><code>base/base_crawler.py</code>（三个 ABC 最小契约）</li>
+</ol>
+</li>
+<li><strong>如果你要 fork 它</strong>：
+<ul>
+<li>加平台：照 <code>media_platform/&lt;platform&gt;/{core,client,login,field,help}</code> 模板复制 + 在 <code>main.py:51-67</code> 的 <code>CRAWLERS</code> dict 注册</li>
+<li>减维护负担：把 <code>launch_browser_with_cdp</code> 从「每平台重写」抽到 base（30% 重复代码可消解）</li>
+<li>接 CI 测试：把 <code>tests/</code> 接到 GitHub Actions（目前 0 CI）</li>
+<li>加 LLM 后处理：评论爬取后接 Claude 做情感分析/话题聚类（契合作者的 skills-agent-proto 路线）</li>
+</ul>
+</li>
+</ul>
+<h3>知识入口</h3>
+<pre>| 资源 | 链接 |
+|------|------|
+| DeepWiki | 未收录 |
+| Zread.ai | 未收录 |
+| 关联论文 | 无（非学术项目） |
+| 在线 Demo | 无（爬虫类项目无 playground；作者提供 MediaCrawlerPro 付费 WebUI 作为商业化 Demo） |
+| 官方文档站 | https://nanmicoder.github.io/MediaCrawler/ |
+| 作者 B 站 | https://space.bilibili.com/434377496 |
+| 架构文档 | <code>docs/项目架构文档.md</code>（含 Mermaid 流程图） |
+| CDP 教程 | <code>docs/CDP模式使用指南.md</code> |</pre>
+</body>
+</html>
