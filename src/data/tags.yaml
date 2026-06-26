@@ -1320,6 +1320,8 @@ entries:
   - rag-search
   n0-computer_iroh:
   - protocol-spec
+  nanmicoder_mediacrawler:
+  - uncategorized
   nautechsystems_nautilus_trader:
   - llm-inference
   - trading-finance
