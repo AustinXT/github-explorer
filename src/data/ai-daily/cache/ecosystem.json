@@ -1,6 +1,6 @@
 {
   "meta": {
-    "last_run": "2026-06-27",
+    "last_run": "2026-06-28",
     "window_days": 30
   },
   "entries": [
@@ -837,6 +837,42 @@
       "canonical_url": "https://github.com/bobeff/open-source-games",
       "event_date": "2026-06-27",
       "date_seen": "2026-06-27"
+    },
+    {
+      "key": "github.com/robbyant/lingbot-map",
+      "canonical_url": "https://github.com/Robbyant/lingbot-map",
+      "event_date": "2026-06-28",
+      "date_seen": "2026-06-28"
+    },
+    {
+      "key": "github.com/hkuds/vibe-trading",
+      "canonical_url": "https://github.com/HKUDS/Vibe-Trading",
+      "event_date": "2026-06-28",
+      "date_seen": "2026-06-28"
+    },
+    {
+      "key": "github.com/browser-use/video-use",
+      "canonical_url": "https://github.com/browser-use/video-use",
+      "event_date": "2026-06-28",
+      "date_seen": "2026-06-28"
+    },
+    {
+      "key": "github.com/z-lab/dflash",
+      "canonical_url": "https://github.com/z-lab/dflash",
+      "event_date": "2026-06-28",
+      "date_seen": "2026-06-28"
+    },
+    {
+      "key": "github.com/deepseek-ai/deepspec",
+      "canonical_url": "https://github.com/deepseek-ai/deepspec",
+      "event_date": "2026-06-28",
+      "date_seen": "2026-06-28"
+    },
+    {
+      "key": "github.com/sgl-project/specforge",
+      "canonical_url": "https://github.com/sgl-project/specforge",
+      "event_date": "2026-06-28",
+      "date_seen": "2026-06-28"
     }
   ]
 }
