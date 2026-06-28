@@ -980,6 +980,16 @@
     "trending_days": 8
   },
   {
+    "name": "DeusData/codebase-memory-mcp",
+    "url": "https://github.com/deusdata/codebase-memory-mcp",
+    "language": "C",
+    "stars": 18574,
+    "forks": 1351,
+    "description": "High-performance code intelligence MCP server. Indexes codebases into a persistent knowledge graph — average repo in milliseconds. 158 languages, sub-ms queries, 99% fewer tokens. Single static binary, zero dependencies.",
+    "last_seen": "2026-06-28",
+    "trending_days": 8
+  },
+  {
     "name": "EveryInc/compound-engineering-plugin",
     "url": "https://github.com/everyinc/compound-engineering-plugin",
     "language": "TypeScript",
@@ -1160,13 +1170,13 @@
     "trending_days": 7
   },
   {
-    "name": "DeusData/codebase-memory-mcp",
-    "url": "https://github.com/deusdata/codebase-memory-mcp",
-    "language": "C",
-    "stars": 12395,
-    "forks": 906,
-    "description": "High-performance code intelligence MCP server. Indexes codebases into a persistent knowledge graph — average repo in milliseconds. 158 languages, sub-ms queries, 99% fewer tokens. Single static binary, zero dependencies.",
-    "last_seen": "2026-06-23",
+    "name": "commaai/openpilot",
+    "url": "https://github.com/commaai/openpilot",
+    "language": "Python",
+    "stars": 62198,
+    "forks": 11078,
+    "description": "openpilot is an operating system for robotics. Currently, it upgrades the driver assistance system on 300+ supported cars.",
+    "last_seen": "2026-06-28",
     "trending_days": 7
   },
   {
@@ -1370,6 +1380,16 @@
     "trending_days": 7
   },
   {
+    "name": "usestrix/strix",
+    "url": "https://github.com/usestrix/strix",
+    "language": "Python",
+    "stars": 26370,
+    "forks": 2968,
+    "description": "Open-source AI hackers to find and fix your app’s vulnerabilities.",
+    "last_seen": "2026-06-28",
+    "trending_days": 7
+  },
+  {
     "name": "wavetermdev/waveterm",
     "url": "https://github.com/wavetermdev/waveterm",
     "language": "Go",
@@ -1477,16 +1497,6 @@
     "forks": 2744,
     "description": "The first open-source harness builder for AI coding. Make AI coding deterministic and repeatable.",
     "last_seen": "2026-04-13",
-    "trending_days": 6
-  },
-  {
-    "name": "commaai/openpilot",
-    "url": "https://github.com/commaai/openpilot",
-    "language": "Python",
-    "stars": 61937,
-    "forks": 11055,
-    "description": "openpilot is an operating system for robotics. Currently, it upgrades the driver assistance system on 300+ supported cars.",
-    "last_seen": "2026-06-27",
     "trending_days": 6
   },
   {
@@ -1850,16 +1860,6 @@
     "trending_days": 6
   },
   {
-    "name": "usestrix/strix",
-    "url": "https://github.com/usestrix/strix",
-    "language": "Python",
-    "stars": 21413,
-    "forks": 2283,
-    "description": "Open-source AI hackers to find and fix your app’s vulnerabilities.",
-    "last_seen": "2026-03-25",
-    "trending_days": 6
-  },
-  {
     "name": "Z4nzu/hackingtool",
     "url": "https://github.com/z4nzu/hackingtool",
     "language": "Python",
@@ -2177,6 +2177,16 @@
     "forks": 3984,
     "description": "ChatDev 2.0: Dev All through LLM-powered Multi-Agent Collaboration",
     "last_seen": "2026-03-31",
+    "trending_days": 5
+  },
+  {
+    "name": "opendatalab/MinerU",
+    "url": "https://github.com/opendatalab/mineru",
+    "language": "Python",
+    "stars": 71218,
+    "forks": 5989,
+    "description": "Transforms complex documents like PDFs and Office docs into LLM-ready markdown/JSON for your Agentic workflows.",
+    "last_seen": "2026-06-28",
     "trending_days": 5
   },
   {
@@ -3000,16 +3010,6 @@
     "trending_days": 4
   },
   {
-    "name": "opendatalab/MinerU",
-    "url": "https://github.com/opendatalab/mineru",
-    "language": "Python",
-    "stars": 70094,
-    "forks": 5923,
-    "description": "Transforms complex documents like PDFs and Office docs into LLM-ready markdown/JSON for your Agentic workflows.",
-    "last_seen": "2026-06-26",
-    "trending_days": 4
-  },
-  {
     "name": "openemr/openemr",
     "url": "https://github.com/openemr/openemr",
     "language": "PHP",
@@ -3067,6 +3067,16 @@
     "forks": 2349,
     "description": "Prometheus Alertmanager",
     "last_seen": "2025-11-10",
+    "trending_days": 4
+  },
+  {
+    "name": "ripienaar/free-for-dev",
+    "url": "https://github.com/ripienaar/free-for-dev",
+    "language": "HTML",
+    "stars": 124437,
+    "forks": 13105,
+    "description": "A list of SaaS, PaaS and IaaS offerings that have free tiers of interest to devops and infradev",
+    "last_seen": "2026-06-28",
     "trending_days": 4
   },
   {
@@ -3207,6 +3217,16 @@
     "forks": 334,
     "description": "The sandbox agent framework.",
     "last_seen": "2026-06-20",
+    "trending_days": 4
+  },
+  {
+    "name": "xbtlin/ai-berkshire",
+    "url": "https://github.com/xbtlin/ai-berkshire",
+    "language": "Python",
+    "stars": 4929,
+    "forks": 677,
+    "description": "AI 时代的伯克希尔：基于 Claude Code / Codex 的价值投资研究框架。巴菲特·芒格·段永平·李录四大师方法论 + 多Agent并行研究。| AI-era Berkshire: a value investing research framework built for Claude Code / Codex. 4 masters' methodologies + multi-agent adversarial analysis.",
+    "last_seen": "2026-06-28",
     "trending_days": 4
   },
   {
@@ -4190,16 +4210,6 @@
     "trending_days": 3
   },
   {
-    "name": "ripienaar/free-for-dev",
-    "url": "https://github.com/ripienaar/free-for-dev",
-    "language": "HTML",
-    "stars": 123952,
-    "forks": 13061,
-    "description": "A list of SaaS, PaaS and IaaS offerings that have free tiers of interest to devops and infradev",
-    "last_seen": "2026-06-27",
-    "trending_days": 3
-  },
-  {
     "name": "rmyndharis/OpenWA",
     "url": "https://github.com/rmyndharis/openwa",
     "language": "TypeScript",
@@ -4257,6 +4267,16 @@
     "forks": 143,
     "description": "None",
     "last_seen": "2025-12-21",
+    "trending_days": 3
+  },
+  {
+    "name": "simplex-chat/simplex-chat",
+    "url": "https://github.com/simplex-chat/simplex-chat",
+    "language": "Haskell",
+    "stars": 14375,
+    "forks": 825,
+    "description": "SimpleX - the first messaging network operating without user identifiers of any kind - 100% private by design! iOS, Android and desktop apps 📱!",
+    "last_seen": "2026-06-28",
     "trending_days": 3
   },
   {
@@ -4457,16 +4477,6 @@
     "forks": 605,
     "description": "大麦自动抢票，支持人员、城市、日期场次、价格选择",
     "last_seen": "2025-10-12",
-    "trending_days": 3
-  },
-  {
-    "name": "xbtlin/ai-berkshire",
-    "url": "https://github.com/xbtlin/ai-berkshire",
-    "language": "Python",
-    "stars": 3488,
-    "forks": 515,
-    "description": "AI 时代的伯克希尔：基于 Claude Code 的价值投资研究框架。巴菲特·芒格·段永平·李录四大师方法论 + 多Agent并行研究。| AI-era Berkshire: a value investing research framework built on Claude Code. 4 masters' methodologies + multi-agent adversarial analysis.",
-    "last_seen": "2026-06-27",
     "trending_days": 3
   },
   {
@@ -5410,6 +5420,16 @@
     "trending_days": 2
   },
   {
+    "name": "HKUDS/Vibe-Trading",
+    "url": "https://github.com/hkuds/vibe-trading",
+    "language": "Python",
+    "stars": 13968,
+    "forks": 2603,
+    "description": "\"Vibe-Trading: Your Personal Trading Agent\"",
+    "last_seen": "2026-06-28",
+    "trending_days": 2
+  },
+  {
     "name": "HKUDS/VideoRAG",
     "url": "https://github.com/hkuds/videorag",
     "language": "Python",
@@ -6340,16 +6360,6 @@
     "trending_days": 2
   },
   {
-    "name": "simplex-chat/simplex-chat",
-    "url": "https://github.com/simplex-chat/simplex-chat",
-    "language": "Haskell",
-    "stars": 13213,
-    "forks": 760,
-    "description": "SimpleX - the first messaging network operating without user identifiers of any kind - 100% private by design! iOS, Android and desktop apps 📱!",
-    "last_seen": "2026-06-27",
-    "trending_days": 2
-  },
-  {
     "name": "siteboon/claudecodeui",
     "url": "https://github.com/siteboon/claudecodeui",
     "language": "JavaScript",
@@ -6950,6 +6960,16 @@
     "trending_days": 1
   },
   {
+    "name": "altic-dev/FluidVoice",
+    "url": "https://github.com/altic-dev/fluidvoice",
+    "language": "Swift",
+    "stars": 3260,
+    "forks": 215,
+    "description": "FluidVoice - Fastest macOS Offline Dictation app - Voice to Text fully Local. One ⭐ takes us a long way :))",
+    "last_seen": "2026-06-28",
+    "trending_days": 1
+  },
+  {
     "name": "amantus-ai/vibetunnel",
     "url": "https://github.com/amantus-ai/vibetunnel",
     "language": "TypeScript",
@@ -7160,6 +7180,16 @@
     "trending_days": 1
   },
   {
+    "name": "browser-use/video-use",
+    "url": "https://github.com/browser-use/video-use",
+    "language": "Python",
+    "stars": 10619,
+    "forks": 1504,
+    "description": "Edit videos with coding agents",
+    "last_seen": "2026-06-28",
+    "trending_days": 1
+  },
+  {
     "name": "BuilderIO/agent-native",
     "url": "https://github.com/builderio/agent-native",
     "language": "TypeScript",
@@ -7197,6 +7227,16 @@
     "forks": 6467,
     "description": "None",
     "last_seen": "2026-05-22",
+    "trending_days": 1
+  },
+  {
+    "name": "ByteByteGoHq/system-design-101",
+    "url": "https://github.com/bytebytegohq/system-design-101",
+    "language": "Unknown",
+    "stars": 84092,
+    "forks": 9324,
+    "description": "Explain complex systems using visuals and simple terms. Help you prepare for system design interviews.",
+    "last_seen": "2026-06-28",
     "trending_days": 1
   },
   {
@@ -7347,6 +7387,16 @@
     "forks": 3748,
     "description": "Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering.",
     "last_seen": "2026-04-23",
+    "trending_days": 1
+  },
+  {
+    "name": "cupy/cupy",
+    "url": "https://github.com/cupy/cupy",
+    "language": "Python",
+    "stars": 11342,
+    "forks": 1061,
+    "description": "NumPy & SciPy for GPU",
+    "last_seen": "2026-06-28",
     "trending_days": 1
   },
   {
@@ -8177,16 +8227,6 @@
     "forks": 341,
     "description": "[NeurIPS2025] \"AI-Researcher: Autonomous Scientific Innovation\" -- A production-ready version: https://novix.science/chat",
     "last_seen": "2025-09-24",
-    "trending_days": 1
-  },
-  {
-    "name": "HKUDS/Vibe-Trading",
-    "url": "https://github.com/hkuds/vibe-trading",
-    "language": "Python",
-    "stars": 13478,
-    "forks": 2570,
-    "description": "\"Vibe-Trading: Your Personal Trading Agent\"",
-    "last_seen": "2026-06-27",
     "trending_days": 1
   },
   {
@@ -9487,6 +9527,16 @@
     "forks": 160,
     "description": "A powerful Telegram bot that provides remote access to Claude Code, enabling developers to interact with their projects from anywhere with full AI assistance and session persistence.",
     "last_seen": "2026-02-21",
+    "trending_days": 1
+  },
+  {
+    "name": "Robbyant/lingbot-map",
+    "url": "https://github.com/robbyant/lingbot-map",
+    "language": "Python",
+    "stars": 7973,
+    "forks": 788,
+    "description": "A feed-forward 3D foundation model for reconstructing scenes from streaming data",
+    "last_seen": "2026-06-28",
     "trending_days": 1
   },
   {

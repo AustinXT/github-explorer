@@ -127,6 +127,12 @@ entries:
   - llm-inference
   - model-foundation
   - devtools
+  anil-matcha_open-generative-ai:
+  - ai-agent
+  - llm-inference
+  - devtools
+  - media-generation
+  - protocol-spec
   anomalyco_models.dev:
   - database
   anomalyco_opencode:
@@ -861,6 +867,9 @@ entries:
   iam-veeramalla_aws-devops-zero-to-hero:
   - education
   - video-audio
+  icewhaletech_casaos:
+  - iot-hardware
+  - protocol-spec
   illuin-tech_colpali:
   - llm-framework
   imbad0202_academic-research-skills:
@@ -1637,6 +1646,8 @@ entries:
   - ai-agent
   - protocol-spec
   - security
+  ripienaar_free-for-dev:
+  - ai-agent
   rmyndharis_openwa:
   - database
   - protocol-spec
@@ -2072,6 +2083,11 @@ entries:
   - ai-coding
   - llm-inference
   - trading-finance
+  xbtlin_ai-berkshire:
+  - ai-agent
+  - ai-coding
+  - devtools
+  - editor-kms
   xerrors_yuxi-know:
   - ai-agent
   - llm-framework
