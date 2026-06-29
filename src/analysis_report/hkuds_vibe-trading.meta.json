@@ -1,0 +1,6 @@
+{
+  "title": "89 天 15K stars：HKUDS 把 LLM Agent 套到量化交易",
+  "digest": "vibe-trading 把 18 数据源、450+ alpha、9 券商塞进 ReAct；纵深防御让 Agent 下单从信 prompt 变审代码，Shadow Account 还能把你的交易反推成可回测策略。",
+  "author": "NVoyager",
+  "theme": "stars,universe,dark"
+}
