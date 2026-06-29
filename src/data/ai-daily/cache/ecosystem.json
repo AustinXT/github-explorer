@@ -1,6 +1,6 @@
 {
   "meta": {
-    "last_run": "2026-06-28",
+    "last_run": "2026-06-29",
     "window_days": 30
   },
   "entries": [
@@ -873,6 +873,36 @@
       "canonical_url": "https://github.com/sgl-project/specforge",
       "event_date": "2026-06-28",
       "date_seen": "2026-06-28"
+    },
+    {
+      "key": "github.com/sandai-org/magi-1",
+      "canonical_url": "https://github.com/sandai-org/magi-1",
+      "event_date": "2026-06-29",
+      "date_seen": "2026-06-29"
+    },
+    {
+      "key": "github.com/sandai-org/magicompiler",
+      "canonical_url": "https://github.com/sandai-org/magicompiler",
+      "event_date": "2026-06-29",
+      "date_seen": "2026-06-29"
+    },
+    {
+      "key": "github.com/jeremytregunna/foldb",
+      "canonical_url": "https://github.com/jeremytregunna/foldb",
+      "event_date": "2026-06-29",
+      "date_seen": "2026-06-29"
+    },
+    {
+      "key": "github.com/unclecheng-li/vulnclaw",
+      "canonical_url": "https://github.com/Unclecheng-li/VulnClaw",
+      "event_date": "2026-06-29",
+      "date_seen": "2026-06-29"
+    },
+    {
+      "key": "github.com/0xnyk/council-of-high-intelligence",
+      "canonical_url": "https://github.com/0xNyk/council-of-high-intelligence",
+      "event_date": "2026-06-29",
+      "date_seen": "2026-06-29"
     }
   ]
 }
