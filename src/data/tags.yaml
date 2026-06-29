@@ -1764,6 +1764,8 @@ entries:
   - video-audio
   sillytavern_sillytavern:
   - uncategorized
+  simplex-chat_simplex-chat:
+  - protocol-spec
   simstudioai_sim:
   - ai-agent
   - protocol-spec

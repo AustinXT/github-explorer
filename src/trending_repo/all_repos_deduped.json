@@ -240,6 +240,16 @@
     "trending_days": 18
   },
   {
+    "name": "msitarzewski/agency-agents",
+    "url": "https://github.com/msitarzewski/agency-agents",
+    "language": "Shell",
+    "stars": 118467,
+    "forks": 19421,
+    "description": "A complete AI agency at your fingertips - From frontend wizards to Reddit community ninjas, from whimsy injectors to reality checkers. Each agent is a specialized expert with personality, processes, and proven deliverables.",
+    "last_seen": "2026-06-29",
+    "trending_days": 18
+  },
+  {
     "name": "virattt/ai-hedge-fund",
     "url": "https://github.com/virattt/ai-hedge-fund",
     "language": "Python",
@@ -248,16 +258,6 @@
     "description": "An AI Hedge Fund Team",
     "last_seen": "2026-04-15",
     "trending_days": 18
-  },
-  {
-    "name": "msitarzewski/agency-agents",
-    "url": "https://github.com/msitarzewski/agency-agents",
-    "language": "Shell",
-    "stars": 112061,
-    "forks": 18303,
-    "description": "A complete AI agency at your fingertips - From frontend wizards to Reddit community ninjas, from whimsy injectors to reality checkers. Each agent is a specialized expert with personality, processes, and proven deliverables.",
-    "last_seen": "2026-06-12",
-    "trending_days": 17
   },
   {
     "name": "abhigyanpatwari/GitNexus",
@@ -900,6 +900,16 @@
     "trending_days": 9
   },
   {
+    "name": "soxoj/maigret",
+    "url": "https://github.com/soxoj/maigret",
+    "language": "Python",
+    "stars": 34168,
+    "forks": 2590,
+    "description": "🕵️‍♂️ Collect a dossier on a person by username from 3000+ sites",
+    "last_seen": "2026-06-29",
+    "trending_days": 9
+  },
+  {
     "name": "sst/opencode",
     "url": "https://github.com/sst/opencode",
     "language": "TypeScript",
@@ -977,6 +987,16 @@
     "forks": 3213,
     "description": "A curated list of free courses with certifications. Also available at https://free-certifications.com/",
     "last_seen": "2025-12-23",
+    "trending_days": 8
+  },
+  {
+    "name": "commaai/openpilot",
+    "url": "https://github.com/commaai/openpilot",
+    "language": "Python",
+    "stars": 62675,
+    "forks": 11106,
+    "description": "openpilot is an operating system for robotics. Currently, it upgrades the driver assistance system on 300+ supported cars.",
+    "last_seen": "2026-06-29",
     "trending_days": 8
   },
   {
@@ -1100,16 +1120,6 @@
     "trending_days": 8
   },
   {
-    "name": "soxoj/maigret",
-    "url": "https://github.com/soxoj/maigret",
-    "language": "Python",
-    "stars": 32427,
-    "forks": 2381,
-    "description": "🕵️‍♂️ Collect a dossier on a person by username from 3000+ sites",
-    "last_seen": "2026-06-11",
-    "trending_days": 8
-  },
-  {
     "name": "yichuan-w/LEANN",
     "url": "https://github.com/yichuan-w/leann",
     "language": "Python",
@@ -1167,16 +1177,6 @@
     "forks": 2048,
     "description": "Beautiful, Modern & Opinionated Linux",
     "last_seen": "2026-03-01",
-    "trending_days": 7
-  },
-  {
-    "name": "commaai/openpilot",
-    "url": "https://github.com/commaai/openpilot",
-    "language": "Python",
-    "stars": 62198,
-    "forks": 11078,
-    "description": "openpilot is an operating system for robotics. Currently, it upgrades the driver assistance system on 300+ supported cars.",
-    "last_seen": "2026-06-28",
     "trending_days": 7
   },
   {
@@ -1347,6 +1347,16 @@
     "forks": 14454,
     "description": "Implement a ChatGPT-like LLM in PyTorch from scratch, step by step",
     "last_seen": "2026-05-13",
+    "trending_days": 7
+  },
+  {
+    "name": "refactoringhq/tolaria",
+    "url": "https://github.com/refactoringhq/tolaria",
+    "language": "TypeScript",
+    "stars": 17371,
+    "forks": 1200,
+    "description": "Desktop app to manage markdown knowledge bases",
+    "last_seen": "2026-06-29",
     "trending_days": 7
   },
   {
@@ -1767,16 +1777,6 @@
     "forks": 2732,
     "description": "A community-supported supercharged document management system: scan, index and archive all your documents",
     "last_seen": "2026-05-25",
-    "trending_days": 6
-  },
-  {
-    "name": "refactoringhq/tolaria",
-    "url": "https://github.com/refactoringhq/tolaria",
-    "language": "TypeScript",
-    "stars": 15607,
-    "forks": 1070,
-    "description": "Desktop app to manage markdown knowledge bases",
-    "last_seen": "2026-06-12",
     "trending_days": 6
   },
   {
@@ -2270,6 +2270,16 @@
     "trending_days": 5
   },
   {
+    "name": "ripienaar/free-for-dev",
+    "url": "https://github.com/ripienaar/free-for-dev",
+    "language": "HTML",
+    "stars": 126476,
+    "forks": 13245,
+    "description": "A list of SaaS, PaaS and IaaS offerings that have free tiers of interest to devops and infradev",
+    "last_seen": "2026-06-29",
+    "trending_days": 5
+  },
+  {
     "name": "roboflow/supervision",
     "url": "https://github.com/roboflow/supervision",
     "language": "Python",
@@ -2387,6 +2397,16 @@
     "forks": 1564,
     "description": "Fully autonomous AI Agents system capable of performing complex penetration testing tasks",
     "last_seen": "2026-03-23",
+    "trending_days": 5
+  },
+  {
+    "name": "xbtlin/ai-berkshire",
+    "url": "https://github.com/xbtlin/ai-berkshire",
+    "language": "Python",
+    "stars": 6410,
+    "forks": 843,
+    "description": "AI 时代的伯克希尔：基于 Claude Code / Codex 的价值投资研究框架。巴菲特·芒格·段永平·李录四大师方法论 + 多Agent并行研究。| AI-era Berkshire: a value investing research framework built for Claude Code / Codex. 4 masters' methodologies + multi-agent adversarial analysis.",
+    "last_seen": "2026-06-29",
     "trending_days": 5
   },
   {
@@ -3070,16 +3090,6 @@
     "trending_days": 4
   },
   {
-    "name": "ripienaar/free-for-dev",
-    "url": "https://github.com/ripienaar/free-for-dev",
-    "language": "HTML",
-    "stars": 124437,
-    "forks": 13105,
-    "description": "A list of SaaS, PaaS and IaaS offerings that have free tiers of interest to devops and infradev",
-    "last_seen": "2026-06-28",
-    "trending_days": 4
-  },
-  {
     "name": "rossant/awesome-math",
     "url": "https://github.com/rossant/awesome-math",
     "language": "Python",
@@ -3137,6 +3147,16 @@
     "forks": 1558,
     "description": "Create stunning demos for free. Open-source, no subscriptions, no watermarks, and free for commercial use. An alternative to Screen Studio.",
     "last_seen": "2026-04-06",
+    "trending_days": 4
+  },
+  {
+    "name": "simplex-chat/simplex-chat",
+    "url": "https://github.com/simplex-chat/simplex-chat",
+    "language": "Haskell",
+    "stars": 16128,
+    "forks": 930,
+    "description": "SimpleX - the first messaging network operating without user identifiers of any kind - 100% private by design! iOS, Android and desktop apps 📱!",
+    "last_seen": "2026-06-29",
     "trending_days": 4
   },
   {
@@ -3217,16 +3237,6 @@
     "forks": 334,
     "description": "The sandbox agent framework.",
     "last_seen": "2026-06-20",
-    "trending_days": 4
-  },
-  {
-    "name": "xbtlin/ai-berkshire",
-    "url": "https://github.com/xbtlin/ai-berkshire",
-    "language": "Python",
-    "stars": 4929,
-    "forks": 677,
-    "description": "AI 时代的伯克希尔：基于 Claude Code / Codex 的价值投资研究框架。巴菲特·芒格·段永平·李录四大师方法论 + 多Agent并行研究。| AI-era Berkshire: a value investing research framework built for Claude Code / Codex. 4 masters' methodologies + multi-agent adversarial analysis.",
-    "last_seen": "2026-06-28",
     "trending_days": 4
   },
   {
@@ -3707,6 +3717,16 @@
     "forks": 2594,
     "description": "\"AI-Trader: 100% Fully-Automated Agent-Native Trading\"",
     "last_seen": "2026-05-12",
+    "trending_days": 3
+  },
+  {
+    "name": "HKUDS/Vibe-Trading",
+    "url": "https://github.com/hkuds/vibe-trading",
+    "language": "Python",
+    "stars": 14882,
+    "forks": 2676,
+    "description": "\"Vibe-Trading: Your Personal Trading Agent\"",
+    "last_seen": "2026-06-29",
     "trending_days": 3
   },
   {
@@ -4270,16 +4290,6 @@
     "trending_days": 3
   },
   {
-    "name": "simplex-chat/simplex-chat",
-    "url": "https://github.com/simplex-chat/simplex-chat",
-    "language": "Haskell",
-    "stars": 14375,
-    "forks": 825,
-    "description": "SimpleX - the first messaging network operating without user identifiers of any kind - 100% private by design! iOS, Android and desktop apps 📱!",
-    "last_seen": "2026-06-28",
-    "trending_days": 3
-  },
-  {
     "name": "smartcontractkit/chainlink",
     "url": "https://github.com/smartcontractkit/chainlink",
     "language": "Go",
@@ -4620,6 +4630,16 @@
     "trending_days": 2
   },
   {
+    "name": "altic-dev/FluidVoice",
+    "url": "https://github.com/altic-dev/fluidvoice",
+    "language": "Swift",
+    "stars": 4173,
+    "forks": 261,
+    "description": "FluidVoice - Fastest macOS Offline Dictation app - Voice to Text fully Local. One ⭐ takes us a long way :))",
+    "last_seen": "2026-06-29",
+    "trending_days": 2
+  },
+  {
     "name": "amir1376/ab-download-manager",
     "url": "https://github.com/amir1376/ab-download-manager",
     "language": "Kotlin",
@@ -4860,6 +4880,16 @@
     "trending_days": 2
   },
   {
+    "name": "browser-use/video-use",
+    "url": "https://github.com/browser-use/video-use",
+    "language": "Python",
+    "stars": 11661,
+    "forks": 1548,
+    "description": "Edit videos with coding agents",
+    "last_seen": "2026-06-29",
+    "trending_days": 2
+  },
+  {
     "name": "bwya77/vscode-dark-islands",
     "url": "https://github.com/bwya77/vscode-dark-islands",
     "language": "PowerShell",
@@ -4987,6 +5017,16 @@
     "forks": 2446,
     "description": "An AI agent development platform with all-in-one visual tools, simplifying agent creation, debugging, and deployment like never before. Coze your way to AI Agent creation.",
     "last_seen": "2025-10-12",
+    "trending_days": 2
+  },
+  {
+    "name": "cupy/cupy",
+    "url": "https://github.com/cupy/cupy",
+    "language": "Python",
+    "stars": 11732,
+    "forks": 1077,
+    "description": "NumPy & SciPy for GPU",
+    "last_seen": "2026-06-29",
     "trending_days": 2
   },
   {
@@ -5417,16 +5457,6 @@
     "forks": 2186,
     "description": "A curated list of awesome skills, hooks, slash-commands, agent orchestrators, applications, and plugins for Claude Code by Anthropic",
     "last_seen": "2026-03-24",
-    "trending_days": 2
-  },
-  {
-    "name": "HKUDS/Vibe-Trading",
-    "url": "https://github.com/hkuds/vibe-trading",
-    "language": "Python",
-    "stars": 13968,
-    "forks": 2603,
-    "description": "\"Vibe-Trading: Your Personal Trading Agent\"",
-    "last_seen": "2026-06-28",
     "trending_days": 2
   },
   {
@@ -6770,6 +6800,16 @@
     "trending_days": 1
   },
   {
+    "name": "0xNyk/council-of-high-intelligence",
+    "url": "https://github.com/0xnyk/council-of-high-intelligence",
+    "language": "Shell",
+    "stars": 1638,
+    "forks": 182,
+    "description": "18 AI personas deliberate your hardest decisions across multiple LLM providers. Aristotle, Feynman, Kahneman, Torvalds & more — structured multi-round deliberation with genuine model diversity. One command: /council",
+    "last_seen": "2026-06-29",
+    "trending_days": 1
+  },
+  {
     "name": "2dust/v2rayN",
     "url": "https://github.com/2dust/v2rayn",
     "language": "C#",
@@ -6957,16 +6997,6 @@
     "forks": 1165,
     "description": "Toolkit for linearizing PDFs for LLM datasets/training",
     "last_seen": "2025-10-30",
-    "trending_days": 1
-  },
-  {
-    "name": "altic-dev/FluidVoice",
-    "url": "https://github.com/altic-dev/fluidvoice",
-    "language": "Swift",
-    "stars": 3260,
-    "forks": 215,
-    "description": "FluidVoice - Fastest macOS Offline Dictation app - Voice to Text fully Local. One ⭐ takes us a long way :))",
-    "last_seen": "2026-06-28",
     "trending_days": 1
   },
   {
@@ -7180,16 +7210,6 @@
     "trending_days": 1
   },
   {
-    "name": "browser-use/video-use",
-    "url": "https://github.com/browser-use/video-use",
-    "language": "Python",
-    "stars": 10619,
-    "forks": 1504,
-    "description": "Edit videos with coding agents",
-    "last_seen": "2026-06-28",
-    "trending_days": 1
-  },
-  {
     "name": "BuilderIO/agent-native",
     "url": "https://github.com/builderio/agent-native",
     "language": "TypeScript",
@@ -7387,16 +7407,6 @@
     "forks": 3748,
     "description": "Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering.",
     "last_seen": "2026-04-23",
-    "trending_days": 1
-  },
-  {
-    "name": "cupy/cupy",
-    "url": "https://github.com/cupy/cupy",
-    "language": "Python",
-    "stars": 11342,
-    "forks": 1061,
-    "description": "NumPy & SciPy for GPU",
-    "last_seen": "2026-06-28",
     "trending_days": 1
   },
   {
@@ -8627,6 +8637,16 @@
     "forks": 13803,
     "description": "🤯 Lobe Chat - an open-source, modern design AI chat framework. Supports multiple AI providers (OpenAI / Claude 4 / Gemini / DeepSeek / Ollama / Qwen), Knowledge Base (file upload / RAG ), one click install MCP Marketplace and Artifacts / Thinking. One-click FREE deployment of your private AI Agent application.",
     "last_seen": "2025-10-12",
+    "trending_days": 1
+  },
+  {
+    "name": "logto-io/logto",
+    "url": "https://github.com/logto-io/logto",
+    "language": "TypeScript",
+    "stars": 12423,
+    "forks": 850,
+    "description": "🧑‍🚀 Authentication and authorization infrastructure for SaaS and AI apps, built on OIDC and OAuth 2.1 with multi-tenancy, SSO, and RBAC.",
+    "last_seen": "2026-06-29",
     "trending_days": 1
   },
   {
@@ -10050,6 +10070,16 @@
     "trending_days": 1
   },
   {
+    "name": "Unclecheng-li/VulnClaw",
+    "url": "https://github.com/unclecheng-li/vulnclaw",
+    "language": "Python",
+    "stars": 1029,
+    "forks": 160,
+    "description": "基于 AI Agent + MCP 工具链 + 渗透 Skill 编排， 配合大语言模型， 自然语言输入 → 自动完成「信息收集 → 漏洞发现 → 漏洞利用 → 报告生成」全流程。",
+    "last_seen": "2026-06-29",
+    "trending_days": 1
+  },
+  {
     "name": "unclecode/crawl4ai",
     "url": "https://github.com/unclecode/crawl4ai",
     "language": "Python",
@@ -10087,6 +10117,16 @@
     "forks": 4537,
     "description": "A new bootable USB solution.",
     "last_seen": "2025-10-31",
+    "trending_days": 1
+  },
+  {
+    "name": "veracrypt/VeraCrypt",
+    "url": "https://github.com/veracrypt/veracrypt",
+    "language": "C",
+    "stars": 10369,
+    "forks": 1227,
+    "description": "Disk encryption with strong security based on TrueCrypt",
+    "last_seen": "2026-06-29",
     "trending_days": 1
   },
   {
