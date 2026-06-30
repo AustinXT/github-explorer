@@ -1,0 +1,6 @@
+{
+  "title": "Boundary BAML：自研 DSL + BexVM 做出跨 5 语言 SDK，8.4K stars",
+  "digest": "BAML 是结构化 LLM 输出赛道唯一跨语言选手：用自研 DSL + BexVM 统一 schema/prompt/runtime，生成 5 语言 typed client，jsonish 宽容解析让开源小模型也能跑。",
+  "author": "NVoyager",
+  "theme": "stars,universe,dark"
+}
