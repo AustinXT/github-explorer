@@ -818,6 +818,12 @@ entries:
   - llm-framework
   hkuds_rag-anything:
   - llm-framework
+  hkuds_vibe-trading:
+  - ai-agent
+  - llm-framework
+  - llm-inference
+  - devtools
+  - trading-finance
   hmbown_deepseek-tui:
   - ai-agent
   - ai-coding
