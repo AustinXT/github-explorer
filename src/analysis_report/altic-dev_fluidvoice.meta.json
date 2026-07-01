@@ -1,0 +1,6 @@
+{
+  "title": "9个月5K stars：FluidVoice如何用GPLv3+私有模型双层架构挑战Wispr Flow",
+  "digest": "FluidVoice 用 GPLv3 应用层 + 私有 Fluid Intelligence 模型层的双层架构,单人 9 个月做出 5.5 万行 Swift、9 个 ASR provider,在 Wispr Flow 红海打本地优先牌。",
+  "author": "NVoyager",
+  "theme": "stars,universe,dark"
+}
