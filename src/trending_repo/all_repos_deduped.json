@@ -223,11 +223,11 @@
     "name": "msitarzewski/agency-agents",
     "url": "https://github.com/msitarzewski/agency-agents",
     "language": "Shell",
-    "stars": 120077,
-    "forks": 19630,
+    "stars": 122215,
+    "forks": 19943,
     "description": "A complete AI agency at your fingertips - From frontend wizards to Reddit community ninjas, from whimsy injectors to reality checkers. Each agent is a specialized expert with personality, processes, and proven deliverables.",
-    "last_seen": "2026-06-30",
-    "trending_days": 19
+    "last_seen": "2026-07-01",
+    "trending_days": 20
   },
   {
     "name": "Shubhamsaboo/awesome-llm-apps",
@@ -930,6 +930,16 @@
     "trending_days": 9
   },
   {
+    "name": "usestrix/strix",
+    "url": "https://github.com/usestrix/strix",
+    "language": "Python",
+    "stars": 28866,
+    "forks": 3181,
+    "description": "Open-source AI penetration testing tool to find and fix your app’s vulnerabilities.",
+    "last_seen": "2026-07-01",
+    "trending_days": 9
+  },
+  {
     "name": "Alishahryar1/free-claude-code",
     "url": "https://github.com/alishahryar1/free-claude-code",
     "language": "Python",
@@ -1090,6 +1100,16 @@
     "trending_days": 8
   },
   {
+    "name": "refactoringhq/tolaria",
+    "url": "https://github.com/refactoringhq/tolaria",
+    "language": "TypeScript",
+    "stars": 17928,
+    "forks": 1222,
+    "description": "Desktop app to manage markdown knowledge bases",
+    "last_seen": "2026-07-01",
+    "trending_days": 8
+  },
+  {
     "name": "rohitg00/ai-engineering-from-scratch",
     "url": "https://github.com/rohitg00/ai-engineering-from-scratch",
     "language": "Python",
@@ -1117,16 +1137,6 @@
     "forks": 1449,
     "description": "Automate browser based workflows with AI",
     "last_seen": "2025-11-08",
-    "trending_days": 8
-  },
-  {
-    "name": "usestrix/strix",
-    "url": "https://github.com/usestrix/strix",
-    "language": "Python",
-    "stars": 27635,
-    "forks": 3094,
-    "description": "Open-source AI penetration testing tool to find and fix your app’s vulnerabilities.",
-    "last_seen": "2026-06-30",
     "trending_days": 8
   },
   {
@@ -1357,16 +1367,6 @@
     "forks": 14454,
     "description": "Implement a ChatGPT-like LLM in PyTorch from scratch, step by step",
     "last_seen": "2026-05-13",
-    "trending_days": 7
-  },
-  {
-    "name": "refactoringhq/tolaria",
-    "url": "https://github.com/refactoringhq/tolaria",
-    "language": "TypeScript",
-    "stars": 17371,
-    "forks": 1200,
-    "description": "Desktop app to manage markdown knowledge bases",
-    "last_seen": "2026-06-29",
     "trending_days": 7
   },
   {
@@ -1890,6 +1890,16 @@
     "trending_days": 6
   },
   {
+    "name": "yikart/AiToEarn",
+    "url": "https://github.com/yikart/aitoearn",
+    "language": "TypeScript",
+    "stars": 22369,
+    "forks": 3387,
+    "description": "Let's use AI to Earn!",
+    "last_seen": "2026-07-01",
+    "trending_days": 6
+  },
+  {
     "name": "Z4nzu/hackingtool",
     "url": "https://github.com/z4nzu/hackingtool",
     "language": "Python",
@@ -2067,6 +2077,16 @@
     "forks": 2081,
     "description": "\"RAG-Anything: All-in-One RAG Framework\"",
     "last_seen": "2026-04-23",
+    "trending_days": 5
+  },
+  {
+    "name": "HKUDS/Vibe-Trading",
+    "url": "https://github.com/hkuds/vibe-trading",
+    "language": "Python",
+    "stars": 16243,
+    "forks": 2773,
+    "description": "\"Vibe-Trading: Your Personal Trading Agent\"",
+    "last_seen": "2026-07-01",
     "trending_days": 5
   },
   {
@@ -2430,16 +2450,6 @@
     "trending_days": 5
   },
   {
-    "name": "yikart/AiToEarn",
-    "url": "https://github.com/yikart/aitoearn",
-    "language": "TypeScript",
-    "stars": 19702,
-    "forks": 3007,
-    "description": "Let's use AI to Earn!",
-    "last_seen": "2026-06-09",
-    "trending_days": 5
-  },
-  {
     "name": "aaif-goose/goose",
     "url": "https://github.com/aaif-goose/goose",
     "language": "Rust",
@@ -2467,6 +2477,16 @@
     "forks": 2099,
     "description": "Build and run agents you can see, understand and trust.",
     "last_seen": "2026-03-28",
+    "trending_days": 4
+  },
+  {
+    "name": "altic-dev/FluidVoice",
+    "url": "https://github.com/altic-dev/fluidvoice",
+    "language": "Swift",
+    "stars": 5282,
+    "forks": 318,
+    "description": "Fastest and only macOS Dictation app with on-device STT and custom trained AI enhancement model - Local Wispr Flow alternative. One ⭐ takes us a long way :)) Windows, iOS and Linux coming soon.",
+    "last_seen": "2026-07-01",
     "trending_days": 4
   },
   {
@@ -2537,6 +2557,16 @@
     "forks": 391,
     "description": "A text-to-speech (TTS), speech-to-text (STT) and speech-to-speech (STS) library built on Apple's MLX framework, providing efficient speech analysis on Apple Silicon.",
     "last_seen": "2026-01-27",
+    "trending_days": 4
+  },
+  {
+    "name": "browser-use/video-use",
+    "url": "https://github.com/browser-use/video-use",
+    "language": "Python",
+    "stars": 13025,
+    "forks": 1640,
+    "description": "Edit videos with coding agents",
+    "last_seen": "2026-07-01",
     "trending_days": 4
   },
   {
@@ -2790,16 +2820,6 @@
     "trending_days": 4
   },
   {
-    "name": "HKUDS/Vibe-Trading",
-    "url": "https://github.com/hkuds/vibe-trading",
-    "language": "Python",
-    "stars": 15542,
-    "forks": 2716,
-    "description": "\"Vibe-Trading: Your Personal Trading Agent\"",
-    "last_seen": "2026-06-30",
-    "trending_days": 4
-  },
-  {
     "name": "home-assistant/home-assistant.io",
     "url": "https://github.com/home-assistant/home-assistant.io",
     "language": "HTML",
@@ -2927,6 +2947,16 @@
     "forks": 294,
     "description": "open-source healthcare ai",
     "last_seen": "2026-06-12",
+    "trending_days": 4
+  },
+  {
+    "name": "Mebus/cupp",
+    "url": "https://github.com/mebus/cupp",
+    "language": "Python",
+    "stars": 6205,
+    "forks": 2057,
+    "description": "Common User Passwords Profiler (CUPP)",
+    "last_seen": "2026-07-01",
     "trending_days": 4
   },
   {
@@ -3340,16 +3370,6 @@
     "trending_days": 3
   },
   {
-    "name": "altic-dev/FluidVoice",
-    "url": "https://github.com/altic-dev/fluidvoice",
-    "language": "Swift",
-    "stars": 4712,
-    "forks": 290,
-    "description": "FluidVoice - Fastest macOS Offline Dictation app - Voice to Text fully Local. One ⭐ takes us a long way :))",
-    "last_seen": "2026-06-30",
-    "trending_days": 3
-  },
-  {
     "name": "Anil-matcha/Open-Generative-AI",
     "url": "https://github.com/anil-matcha/open-generative-ai",
     "language": "JavaScript",
@@ -3417,16 +3437,6 @@
     "forks": 9696,
     "description": "🌐 Make websites accessible for AI agents. Automate tasks online with ease.",
     "last_seen": "2026-03-23",
-    "trending_days": 3
-  },
-  {
-    "name": "browser-use/video-use",
-    "url": "https://github.com/browser-use/video-use",
-    "language": "Python",
-    "stars": 12331,
-    "forks": 1591,
-    "description": "Edit videos with coding agents",
-    "last_seen": "2026-06-30",
     "trending_days": 3
   },
   {
@@ -3967,16 +3977,6 @@
     "forks": 973,
     "description": "MapLibre GL JS - Interactive vector tile maps in the browser",
     "last_seen": "2026-01-06",
-    "trending_days": 3
-  },
-  {
-    "name": "Mebus/cupp",
-    "url": "https://github.com/mebus/cupp",
-    "language": "Python",
-    "stars": 6016,
-    "forks": 2039,
-    "description": "Common User Passwords Profiler (CUPP)",
-    "last_seen": "2026-06-30",
     "trending_days": 3
   },
   {
@@ -4580,6 +4580,16 @@
     "trending_days": 3
   },
   {
+    "name": "0xNyk/council-of-high-intelligence",
+    "url": "https://github.com/0xnyk/council-of-high-intelligence",
+    "language": "Shell",
+    "stars": 2433,
+    "forks": 235,
+    "description": "18 AI personas deliberate your hardest decisions across multiple LLM providers. Aristotle, Feynman, Kahneman, Torvalds & more — structured multi-round deliberation with genuine model diversity. One command: /council",
+    "last_seen": "2026-07-01",
+    "trending_days": 2
+  },
+  {
     "name": "3b1b/manim",
     "url": "https://github.com/3b1b/manim",
     "language": "Python",
@@ -4657,6 +4667,16 @@
     "forks": 1010,
     "description": "Tongyi Deep Research, the Leading Open-source Deep Research Agent",
     "last_seen": "2025-09-23",
+    "trending_days": 2
+  },
+  {
+    "name": "allenai/olmocr",
+    "url": "https://github.com/allenai/olmocr",
+    "language": "Python",
+    "stars": 18101,
+    "forks": 1492,
+    "description": "Toolkit for linearizing PDFs for LLM datasets/training",
+    "last_seen": "2026-07-01",
     "trending_days": 2
   },
   {
@@ -5130,6 +5150,16 @@
     "trending_days": 2
   },
   {
+    "name": "diegosouzapw/OmniRoute",
+    "url": "https://github.com/diegosouzapw/omniroute",
+    "language": "TypeScript",
+    "stars": 9159,
+    "forks": 1434,
+    "description": "Never stop coding. Free AI gateway: one endpoint, 231+ providers (50+ free), connect Claude Code, Codex, Cursor, Cline & Copilot to FREE Claude/GPT/Gemini. RTK+Caveman stacked compression saves 15-95% tokens, smart auto-fallback, MCP/A2A, multimodal APIs, Desktop/PWA.",
+    "last_seen": "2026-07-01",
+    "trending_days": 2
+  },
+  {
     "name": "directus/directus",
     "url": "https://github.com/directus/directus",
     "language": "TypeScript",
@@ -5197,6 +5227,16 @@
     "forks": 21856,
     "description": "Fast, unopinionated, minimalist web framework for node.",
     "last_seen": "2025-12-22",
+    "trending_days": 2
+  },
+  {
+    "name": "facebook/astryx",
+    "url": "https://github.com/facebook/astryx",
+    "language": "TypeScript",
+    "stars": 2172,
+    "forks": 111,
+    "description": "An open source design system that's fully customizable and agent ready",
+    "last_seen": "2026-07-01",
     "trending_days": 2
   },
   {
@@ -5840,6 +5880,16 @@
     "trending_days": 2
   },
   {
+    "name": "logto-io/logto",
+    "url": "https://github.com/logto-io/logto",
+    "language": "TypeScript",
+    "stars": 13095,
+    "forks": 895,
+    "description": "🧑‍🚀 Authentication and authorization infrastructure for SaaS and AI apps, built on OIDC and OAuth 2.1 with multi-tenancy, SSO, and RBAC.",
+    "last_seen": "2026-07-01",
+    "trending_days": 2
+  },
+  {
     "name": "longbridge/gpui-component",
     "url": "https://github.com/longbridge/gpui-component",
     "language": "Rust",
@@ -5917,6 +5967,16 @@
     "forks": 660,
     "description": "Open-Source Memory Engine for LLMs, AI Agents & Multi-Agent Systems",
     "last_seen": "2025-12-04",
+    "trending_days": 2
+  },
+  {
+    "name": "microsoft/AI-For-Beginners",
+    "url": "https://github.com/microsoft/ai-for-beginners",
+    "language": "JupyterNotebook",
+    "stars": 50026,
+    "forks": 10222,
+    "description": "12 Weeks, 24 Lessons, AI for All!",
+    "last_seen": "2026-07-01",
     "trending_days": 2
   },
   {
@@ -6117,6 +6177,16 @@
     "forks": 32520,
     "description": "Odoo. Open Source Apps To Grow Your Business.",
     "last_seen": "2026-05-23",
+    "trending_days": 2
+  },
+  {
+    "name": "ogulcancelik/herdr",
+    "url": "https://github.com/ogulcancelik/herdr",
+    "language": "Rust",
+    "stars": 9357,
+    "forks": 553,
+    "description": "agent multiplexer that lives in your terminal.",
+    "last_seen": "2026-07-01",
     "trending_days": 2
   },
   {
@@ -6630,6 +6700,16 @@
     "trending_days": 2
   },
   {
+    "name": "Unclecheng-li/VulnClaw",
+    "url": "https://github.com/unclecheng-li/vulnclaw",
+    "language": "Python",
+    "stars": 1508,
+    "forks": 210,
+    "description": "基于 AI Agent + MCP 工具链 + 渗透 Skill 编排， 配合大语言模型， 自然语言输入 → 自动完成「信息收集 → 漏洞发现 → 漏洞利用 → 报告生成」全流程。",
+    "last_seen": "2026-07-01",
+    "trending_days": 2
+  },
+  {
     "name": "Vaibhavs10/insanely-fast-whisper",
     "url": "https://github.com/vaibhavs10/insanely-fast-whisper",
     "language": "JupyterNotebook",
@@ -6810,16 +6890,6 @@
     "trending_days": 1
   },
   {
-    "name": "0xNyk/council-of-high-intelligence",
-    "url": "https://github.com/0xnyk/council-of-high-intelligence",
-    "language": "Shell",
-    "stars": 1638,
-    "forks": 182,
-    "description": "18 AI personas deliberate your hardest decisions across multiple LLM providers. Aristotle, Feynman, Kahneman, Torvalds & more — structured multi-round deliberation with genuine model diversity. One command: /council",
-    "last_seen": "2026-06-29",
-    "trending_days": 1
-  },
-  {
     "name": "2dust/v2rayN",
     "url": "https://github.com/2dust/v2rayn",
     "language": "C#",
@@ -6997,16 +7067,6 @@
     "forks": 379,
     "description": "169 production-ready skills & plugins for Claude Code, OpenAI Codex, and OpenClaw — engineering, marketing, product, compliance, C-level advisory, and more. Install via /plugin marketplace.",
     "last_seen": "2026-03-09",
-    "trending_days": 1
-  },
-  {
-    "name": "allenai/olmocr",
-    "url": "https://github.com/allenai/olmocr",
-    "language": "Python",
-    "stars": 15262,
-    "forks": 1165,
-    "description": "Toolkit for linearizing PDFs for LLM datasets/training",
-    "last_seen": "2025-10-30",
     "trending_days": 1
   },
   {
@@ -7400,6 +7460,16 @@
     "trending_days": 1
   },
   {
+    "name": "CoreBunch/Instatic",
+    "url": "https://github.com/corebunch/instatic",
+    "language": "TypeScript",
+    "stars": 1814,
+    "forks": 155,
+    "description": "Instatic is a modern self-hosted visual CMS - get it running in 1 minute",
+    "last_seen": "2026-07-01",
+    "trending_days": 1
+  },
+  {
     "name": "CorentinTh/it-tools",
     "url": "https://github.com/corentinth/it-tools",
     "language": "Vue",
@@ -7527,16 +7597,6 @@
     "forks": 16690,
     "description": "None",
     "last_seen": "2026-04-27",
-    "trending_days": 1
-  },
-  {
-    "name": "diegosouzapw/OmniRoute",
-    "url": "https://github.com/diegosouzapw/omniroute",
-    "language": "TypeScript",
-    "stars": 8135,
-    "forks": 1367,
-    "description": "Never stop coding. Free AI gateway: one endpoint, 160+ providers (50+ free), connect Claude Code, Codex, Cursor, Cline & Copilot to FREE Claude/GPT/Gemini. RTK+Caveman stacked compression saves 15-95% tokens, smart auto-fallback, MCP/A2A, multimodal APIs, Desktop/PWA.",
-    "last_seen": "2026-06-30",
     "trending_days": 1
   },
   {
@@ -7757,16 +7817,6 @@
     "forks": 4496,
     "description": "Evolution API is an open-source WhatsApp integration API",
     "last_seen": "2025-10-15",
-    "trending_days": 1
-  },
-  {
-    "name": "facebook/astryx",
-    "url": "https://github.com/facebook/astryx",
-    "language": "TypeScript",
-    "stars": 1449,
-    "forks": 84,
-    "description": "An open source design system that's fully customizable and agent ready",
-    "last_seen": "2026-06-30",
     "trending_days": 1
   },
   {
@@ -8217,6 +8267,16 @@
     "forks": 637,
     "description": "使用小爱音箱播放音乐，音乐使用 yt-dlp 下载。",
     "last_seen": "2025-11-01",
+    "trending_days": 1
+  },
+  {
+    "name": "hasaneyldrm/exercises-dataset",
+    "url": "https://github.com/hasaneyldrm/exercises-dataset",
+    "language": "HTML",
+    "stars": 8014,
+    "forks": 918,
+    "description": "A comprehensive dataset of 433 fitness exercises. Each entry includes name, category, target muscle group, equipment, instructions, thumbnail image, and animation video.",
+    "last_seen": "2026-07-01",
     "trending_days": 1
   },
   {
@@ -8680,16 +8740,6 @@
     "trending_days": 1
   },
   {
-    "name": "logto-io/logto",
-    "url": "https://github.com/logto-io/logto",
-    "language": "TypeScript",
-    "stars": 12423,
-    "forks": 850,
-    "description": "🧑‍🚀 Authentication and authorization infrastructure for SaaS and AI apps, built on OIDC and OAuth 2.1 with multi-tenancy, SSO, and RBAC.",
-    "last_seen": "2026-06-29",
-    "trending_days": 1
-  },
-  {
     "name": "lukas-blecher/LaTeX-OCR",
     "url": "https://github.com/lukas-blecher/latex-ocr",
     "language": "Python",
@@ -8837,16 +8887,6 @@
     "forks": 5144,
     "description": "Xray panel supporting multi-protocol multi-user expire day & traffic & IP limit (Vmess, Vless, Trojan, ShadowSocks, Wireguard, Tunnel, Mixed, HTTP)",
     "last_seen": "2025-10-26",
-    "trending_days": 1
-  },
-  {
-    "name": "microsoft/AI-For-Beginners",
-    "url": "https://github.com/microsoft/ai-for-beginners",
-    "language": "JupyterNotebook",
-    "stars": 48926,
-    "forks": 10133,
-    "description": "12 Weeks, 24 Lessons, AI for All!",
-    "last_seen": "2026-06-30",
     "trending_days": 1
   },
   {
@@ -9247,16 +9287,6 @@
     "forks": 1470,
     "description": "MiniOB is a compact database that assists developers in understanding the fundamental workings of a database.",
     "last_seen": "2025-10-21",
-    "trending_days": 1
-  },
-  {
-    "name": "ogulcancelik/herdr",
-    "url": "https://github.com/ogulcancelik/herdr",
-    "language": "Rust",
-    "stars": 8742,
-    "forks": 528,
-    "description": "agent multiplexer that lives in your terminal.",
-    "last_seen": "2026-06-30",
     "trending_days": 1
   },
   {
@@ -9950,6 +9980,16 @@
     "trending_days": 1
   },
   {
+    "name": "TencentCloud/CubeSandbox",
+    "url": "https://github.com/tencentcloud/cubesandbox",
+    "language": "Rust",
+    "stars": 6697,
+    "forks": 561,
+    "description": "Instant, Concurrent, Secure & Lightweight Sandbox for AI Agents.",
+    "last_seen": "2026-07-01",
+    "trending_days": 1
+  },
+  {
     "name": "tensorflow/tensorflow",
     "url": "https://github.com/tensorflow/tensorflow",
     "language": "C++",
@@ -10027,6 +10067,16 @@
     "forks": 451,
     "description": "perfect programming language",
     "last_seen": "2025-11-09",
+    "trending_days": 1
+  },
+  {
+    "name": "togatoga/karukan",
+    "url": "https://github.com/togatoga/karukan",
+    "language": "Rust",
+    "stars": 536,
+    "forks": 31,
+    "description": "Japanese Input Method System for Linux, macOS, Neural Kana-Kanji Conversion Engine",
+    "last_seen": "2026-07-01",
     "trending_days": 1
   },
   {
@@ -10117,16 +10167,6 @@
     "forks": 1904,
     "description": "Emoji for everyone. https://twemoji.twitter.com/",
     "last_seen": "2026-01-11",
-    "trending_days": 1
-  },
-  {
-    "name": "Unclecheng-li/VulnClaw",
-    "url": "https://github.com/unclecheng-li/vulnclaw",
-    "language": "Python",
-    "stars": 1029,
-    "forks": 160,
-    "description": "基于 AI Agent + MCP 工具链 + 渗透 Skill 编排， 配合大语言模型， 自然语言输入 → 自动完成「信息收集 → 漏洞发现 → 漏洞利用 → 报告生成」全流程。",
-    "last_seen": "2026-06-29",
     "trending_days": 1
   },
   {

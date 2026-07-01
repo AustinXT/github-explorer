@@ -119,6 +119,9 @@ entries:
   - llm-inference
   - model-foundation
   - protocol-spec
+  altic-dev_fluidvoice:
+  - video-audio
+  - protocol-spec
   amlalabs_amla-sandbox:
   - ai-agent
   - llm-framework
@@ -279,10 +282,19 @@ entries:
   - protocol-spec
   bobeff_open-source-games:
   - video-audio
+  boundaryml_baml:
+  - ai-agent
+  - llm-framework
+  - model-foundation
+  - devtools
   browser-use_browser-use:
   - ai-agent
   - llm-inference
   - workflow-automation
+  browser-use_video-use:
+  - ai-agent
+  - devtools
+  - video-audio
   browserbase_skills:
   - ai-agent
   - ai-coding
@@ -1158,6 +1170,10 @@ entries:
   - llm-inference
   - web-framework
   - protocol-spec
+  mebus_cupp:
+  - devtools
+  - education
+  - security
   mempalace_mempalace:
   - database
   - protocol-spec
@@ -1394,6 +1410,11 @@ entries:
   obra_superpowers:
   - ai-agent
   - devtools
+  ogulcancelik_herdr:
+  - ai-agent
+  - ai-coding
+  - devtools
+  - protocol-spec
   onlook-dev_onlook:
   - ai-coding
   - web-framework
