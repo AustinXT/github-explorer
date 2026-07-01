@@ -1,0 +1,6 @@
+{
+  "title": "GitHub推荐：3 个月 8.9K★ 的 herdr：单作者如何把 agent 多路复用做到终端里",
+  "digest": "herdr 是 Rust 写的 agent 多路复用器，3 个月 8.9K★，vendored libghostty-vt 让 17 个 agent 进 pane 仍像真终端，单作者 974 commits 撑住 1k+ 不崩。",
+  "author": "NVoyager",
+  "theme": "stars,universe,dark"
+}

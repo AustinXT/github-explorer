@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+/* ====== 微信公众号排版 CSS ====== */
+
+body {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #3e3e3e;
+    background: #fff;
+}
+
+/* 正文段落 */
+p {
+    font-size: 15px !important;
+    line-height: 2 !important;
+    margin: 0 !important;
+    padding-top: 0.5em !important;
+    padding-bottom: 0.5em !important;
+    padding-right: 1.2em !important;
+    padding-left: 1.2em !important;
+    text-align: justify !important;
+}
+p + p {
+    margin-top: 0 !important;
+}
+
+/* 标题 */
+h1 {
+    font-size: 20px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 16px 0 !important;
+    padding: 0 !important;
+}
+h2 {
+    font-size: 18px !important;
+    color: #e51f42 !important;
+    text-align: center !important;
+    margin: 24px 0 24px 0 !important;
+    padding: 0 !important;
+}
+h3 {
+    font-size: 15px !important;
+    font-weight: bold !important;
+    color: #3e3e3e !important;
+    text-align: left !important;
+    margin: 16px 0 16px 0 !important;
+    padding: 0 0 0 1.2em !important;
+}
+h4 {
+    font-size: 15px !important;
+    color: rgb(0, 122, 170) !important;
+    margin: 12px 0 8px 0 !important;
+    padding: 0 !important;
+}
+
+/* 列表 */
+ul,
+ol {
+    padding-left: 2em !important;
+    margin: 1em 0 !important;
+    font-size: 15px !important;
+}
+li {
+    margin: 0.5em 0 !important;
+    line-height: 1.8em !important;
+    font-size: 15px !important;
+    color: #3e3e3e !important;
+}
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+    margin: 0 !important;
+    padding-left: 1.2em !important;
+}
+
+/* 引用 */
+blockquote {
+    border-left: 4px solid #888 !important;
+    padding: 8px 16px !important;
+    margin: 1em 0 !important;
+    color: #666 !important;
+    background: #f9f9f9 !important;
+}
+blockquote > p {
+    margin: 0.5em 0 !important;
+    padding: 0 !important;
+}
+blockquote::before,
+blockquote::after {
+    content: none !important;
+}
+
+/* 代码块 */
+pre {
+    font-size: 14px !important;
+    line-height: 1.4em !important;
+    color: #3e3e3e !important;
+    background: #f8f8f8 !important;
+    padding: 12px 16px !important;
+    border-radius: 4px !important;
+    overflow: auto !important;
+    margin: 1em 0 !important;
+}
+
+/* 脚注 */
+.footnotes {
+    font-size: 11px !important;
+    color: #666 !important;
+    line-height: 1.2 !important;
+    margin: 8px 0 0 0 !important;
+    padding: 4px 0 0 0 !important;
+    border-top: 1px solid #eee !important;
+}
+.footnotes p {
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #666 !important;
+}
+
+/* 上标 */
+sup {
+    font-size: 0.75em !important;
+    vertical-align: super !important;
+    color: #e51f42 !important;
+    margin: 0 2px !important;
+}
+
+/* Table */
+table { border-collapse: collapse !important; width: 100% !important; margin: 1em 0 !important; font-size: 14px !important; }
+th, td { border: 1px solid #ddd !important; padding: 8px 12px !important; text-align: left !important; color: #3e3e3e !important; }
+th { background: #f5f5f5 !important; font-weight: bold !important; }
+/* Image */
+img { max-width: 100% !important; height: auto !important; display: block !important; margin: 1em auto !important; }
+/* HR */
+hr { border: none !important; border-top: 1px solid #eee !important; margin: 1.5em 0 !important; }
+/* Strong */
+strong { color: #e51f42 !important; font-weight: bold !important; }
+/* Link */
+a { color: #576b95 !important; text-decoration: none !important; word-break: break-all !important; }
+blockquote p { padding: 0 !important; }
+</style>
+</head>
+<body>
+<blockquote><p>GitHub: <a href="https://github.com/ogulcancelik/herdr">https://github.com/ogulcancelik/herdr</a></p></blockquote>
+<h2>一句话总结</h2>
+<p>herdr 是一个把 17+ AI 编码 agent 当 pane 多路复用的 Rust 终端应用，用 vendored libghostty-vt 保证 pane 里跑 lazygit / vim / Claude Code 自己的 TUI 时仍像「真终端」，并通过 JSON socket + 二进制 socket 双协议让 agent 能脚本化驱动彼此。</p>
+<h2>值得关注的理由</h2>
+<ol><li><strong>2026 年首个 agent-native terminal multiplexer</strong>：在 tmux 不认识 agent 语义态、Web 调度面板（vibe-kanban）脱离终端体验的真空里，herdr 切下了「TUI + 真终端 + agent-aware」这个精确交集。</li><li><strong>3 个月、974 commits、66 个 release、88% 单作者占比</strong>——一个 side-project 强度的全栈独立开发者，正在以每天 ~10 commit 的节奏把 libghostty-vt + 17 个 agent 适配层 + headless server + manifest 远程热更新一起打通。</li><li><strong>设计纪律罕见地严格</strong>：AppState 完全无 PTY/无 async 的纯数据架构 + section-isolated 热配置 + manifest-as-data + vendored deps with patch log——这是「为什么能撑住 1k+ commits 不崩」的根本，也是最值得抄的工程范例。</li></ol>
+<h2>项目展示</h2>
+<ol><li><img src="https://raw.githubusercontent.com/ogulcancelik/herdr/master/assets/logo.png" alt="herdr logo" /> — 品牌标识，hero 性质</li><li><img src="https://herdr.dev/assets/mobile-agent-session-v2.jpeg" alt="iPhone 上 SSH 进 herdr 跑 agent 会话" /> — 「从手机 attach 终端跑 agent」差异化亮点</li><li><img src="https://herdr.dev/assets/mobile-switch-menu-v2.jpeg" alt="iPhone 上的 agent switcher 菜单" /> — 移动端响应式 TUI 的真实场景</li><li><img src="https://api.star-history.com/svg?repos=ogulcancelik/herdr&type=Date" alt="README star-history 曲线" /> — 增长曲线（3 个月跃升 8.9k）</li></ol>
+<h2>项目画像</h2>
+<table>
+<thead><tr>
+<th>维度</th>
+<th>数据</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>GitHub</td>
+<td><a href="https://github.com/ogulcancelik/herdr">https://github.com/ogulcancelik/herdr</a></td>
+</tr>
+<tr>
+<td>Star / Fork</td>
+<td>8,987 / 537</td>
+</tr>
+<tr>
+<td>代码行数</td>
+<td>453,462（Zig 43.1%, Rust 36.1%, C++ 7.2%, C Header 4.4%, 其他 9.0%）</td>
+</tr>
+<tr>
+<td>项目年龄</td>
+<td>3.3 个月（首提交 2026-03-23）</td>
+</tr>
+<tr>
+<td>开发阶段</td>
+<td>密集开发</td>
+</tr>
+<tr>
+<td>开发模式</td>
+<td>业余 Side Project（深夜占比 45.4%, 周末占比 23.9%）</td>
+</tr>
+<tr>
+<td>贡献模式</td>
+<td>单人主导（Ogulcan Celik 占比 ~87.8%, 真人贡献者约 5–6 人）</td>
+</tr>
+<tr>
+<td>热度定位</td>
+<td>大众热门（574 stars/千日, fix:feature ≈ 3:1 仍在打磨期）</td>
+</tr>
+<tr>
+<td>质量评级</td>
+<td>代码 A, 文档 A, 测试 A-（13.5K 行 integration test）</td>
+</tr>
+<tr>
+<td>License</td>
+<td>Other（自定义 / 非 OSI 标准——需注意）</td>
+</tr>
+<tr>
+<td>最新版本</td>
+<td>v0.7.1（共 66 个 tag, ~1.5 天/版）</td>
+</tr>
+</tbody>
+</table>
+<h2>作者视角：为什么存在这个项目</h2>
+<h3>创始人/作者背景</h3>
+<p>Ogulcan Celik（GitHub ogulcancelik，博客 oddbit.ai），2014 年注册的 12 年老账号，公开 36 个仓库但 herdr 一枝独秀（8.9k★）。他在做 herdr <strong>之前</strong>就是 AI agent 生态的重度使用者——同账号下还维护 pi-extensions（159★）和 herdr 的两个 plugin 样板。商业公司背景不明显，是个 side-project 阶段的全栈独立开发者。</p>
+<h3>问题判断</h3>
+<p>当开发者从「本地 IDE 跑一个 Claude」进化到「远端服务器并行跑 5–10 个 coding agent」时，会同时撞到三堵墙：</p>
+<ul><li>tmux 持久化但<strong>不认识 agent 语义态</strong>——你只知道 shell 进程在跑，不知道它是「blocked / working / done」</li><li>Web 调度面板（vibe-kanban / Conductor）能识别状态但<strong>把终端包进了 GUI</strong>——破坏了「从手机 SSH 进服务器」「agent 自己开 lazygit/btop」的场景</li><li>现有 LLM 框架（rig / agentos）能解决 SDK 问题，但<strong>不解决「一眼看完 N 个 agent」</strong></li></ul>
+<p>herdr 的赌注是：<strong>agent 编排会成为 dev tool 的下一个分层，终端形态对资深工程师仍然最高效</strong>。</p>
+<h3>解法哲学</h3>
+<ul><li><strong>One binary, not an app</strong>：单一 ~10MB Rust 二进制，无 GUI、无 Electron、无账号、无 telemetry</li><li><strong>状态/运行时分离</strong>：AppState 完全无 PTY/无 async（AGENTS.md 第一条原则），headless server 与 TUI 共享同一份状态机</li><li><strong>manifest-as-data</strong>：agent 识别规则是版本化的 TOML，不动 Rust 引擎就能适配新 agent / 新版本</li><li><strong>真终端渲染</strong>：vendored libghostty-vt 让 pane 内部跑 Claude Code 自己的 TUI 时仍像真终端——这是 Web 面板永远做不到的</li></ul>
+<h3>战略意图</h3>
+<p>短期补 agent 兼容 + Windows beta；中期走「server-owned runtime protocol with the TUI as one client」（任何终端/Web/CLI 都能 attach，AGENTS.md 明确写）；长期押注「agent 编排」分层。开源策略是 genuinely open 但 license 是自定义「Other」——这是早期采用者而非企业客户导向的信号。</p>
+<h2>核心价值提炼</h2>
+<h3>创新之处</h3>
+<ol><li><strong>Manifest-based agent detection engine + 远程热更新</strong>（新颖 4/5, 实用 5/5, 可迁移 5/5）</li></ol>
+<p>agent UI 文案变 → 加个 TOML 规则 + 升 version = "2026.06.10.3"，CI 用 agent_detection_manifest_check.py 验证，后台 manifest_update 还可从 herdr.dev 拉更新。任何 scraping / policy / build 状态推断场景都适用。</p>
+<ol><li><strong>PTY live handoff with fd passing</strong>（新颖 5/5, 实用 4/5, 可迁移 3/5）</li></ol>
+<p>HandoffRuntimeState 序列化 PTY master fd + scrollback ANSI + keyboard protocol + agent input state，新进程 from_handoff_fd 接住——零中断迁移，是 #614/#712/#719/#765 反复打磨的核心能力。</p>
+<ol><li><strong>Validated section-level config reload</strong>（新颖 3/5, 实用 5/5, 可迁移 5/5）</li></ol>
+<p>apply_live_config 按 section 隔离：单个 section 解析失败时该 section 完全保留旧值；validated_sidebar_bounds 防 min &gt; max 让 u16::clamp panic。任何「配置 reload 不该让服务宕」的服务都该抄。</p>
+<ol><li><strong>CJK-IME prefix-mode 输入法切换</strong>（新颖 5/5, 实用 4/5, 可迁移 3/5）</li></ol>
+<p>macOS 中文 IME 下按 Ctrl+B 会被输入法截获——herdr 进 prefix mode 时主动 TISSelectInputSource 切到 ASCII layout，退出时恢复。vim/tmux/lazygit 的「中文用户快捷键不灵」老问题可借鉴。</p>
+<ol><li><strong>双 socket 协议架构</strong>（新颖 4/5, 实用 5/5, 可迁移 5/5）</li></ol>
+<p>herdr.sock（JSON + schemars 自动 schema）给 agent 编程控制用；herdr-client.sock（length-prefixed binary frame + dirty-patch 流）给远程 attach 用。任何「GUI/TUI + 脚本 + 远程」三件套产品都会撞到同样需求。</p>
+<h3>可复用的模式与技巧</h3>
+<ul><li><strong>State / Runtime 分离 + Test on Bytes, Not Terminals</strong>：AppState 是纯 Clone/Serialize 数据，所有 action 在纯状态上跑测试，13.5K 行 integration test 全跑在 mock PTY 字节流上</li><li><strong>Pending Confirmation State Machine</strong>：状态变更前 N 次确认 + 时间窗上限（pending_idle_confirmation: u8 = 3 + 700ms cap），防 latch</li><li><strong>Vendored Dep with Explicit Patch Log</strong>：vendor/libghostty-vt.patches.md 记录每个 patch 的 upstream PR + verification 步骤——「我知道我改了什么、什么时候能拿掉」的纪律</li><li><strong>Self-Describing Tool for Its Own AIs</strong>：SKILL.md（给消费 herdr 的 agent）+ AGENTS.md（给修改 herdr 的 agent）+ .codex/ .pi/ .zed/（各 agent 的工作目录配置）——任何「未来想被 AI 用户使用」的开源工具都该考虑这个双向飞轮</li></ul>
+<h3>关键设计决策</h3>
+<ol><li><strong>决策</strong>: vendored libghostty-vt（Zig + C++）嵌入 Rust 二进制</li></ol>
+<ul><li>问题：想在用户 terminal 里「画」出真终端，不重新发明轮子</li><li>方案：编译期 build.rs 把 libghostty-vt 编成静态库，bindgen 生成 ghostty/bindings.rs 供 Rust 调用</li><li>Trade-off：1,446 次 vendor 目录修改的「隐藏技术债」+ Zig toolchain 构建复杂度，换来「largest 终端兼容 + 真 vt 处理」</li><li>可迁移性：中——patch 治理纪律比技术本身更值得抄</li></ul>
+<ol><li><strong>决策</strong>: 双 socket 协议（JSON + Binary）</li></ol>
+<ul><li>问题：agent 想编程控制面板 vs 远程 attach 需要流式渲染</li><li>方案：herdr.sock（schemars schema 文档化）+ herdr-client.sock（length-prefixed frame + dirty-patch）</li><li>Trade-off：两套路径管理</li><li>可迁移性：高</li></ul>
+<ol><li><strong>决策</strong>: AppState 完全无 PTY/无 async，TerminalRuntime 通过 TerminalId 在 Registry 里单独存活</li></ol>
+<ul><li>问题：测试要求纯函数式状态变更 + headless server 跑同一份状态机</li><li>方案：严格执行 AGENTS.md 第一条「State is separated from runtime」</li><li>Trade-off：多一层 workspace.tab.pane → terminal_id → runtime 映射</li><li>可迁移性：高——这是「为什么 herdr 能撑住 1k+ commits 不崩」的关键</li></ul>
+<h2>竞品格局与定位</h2>
+<h3>竞品对比矩阵</h3>
+<table>
+<thead><tr>
+<th>维度</th>
+<th>herdr</th>
+<th>tmux / Zellij</th>
+<th>BloopAI/vibe-kanban</th>
+<th>0xPlaygrounds/rig</th>
+<th>rivet-dev/agentos</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>形态</td>
+<td>TUI 二进制</td>
+<td>TUI 二进制</td>
+<td>Web/Electron 面板</td>
+<td>Rust 库</td>
+<td>Linux VM runtime</td>
+</tr>
+<tr>
+<td>终端保真度</td>
+<td>高（vendored libghostty-vt）</td>
+<td>高</td>
+<td>低（GUI 重画）</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Agent 语义态</td>
+<td>✅ Idle/Working/Blocked/Done</td>
+<td>❌ 需写 hook</td>
+<td>✅ 卡片化展示</td>
+<td>N/A</td>
+<td>⚠️ runtime 层</td>
+</tr>
+<tr>
+<td>远端 attach</td>
+<td>✅ 原生 SSH + 手机响应式</td>
+<td>✅ SSH 转发</td>
+<td>❌ 需浏览器</td>
+<td>N/A</td>
+<td>⚠️ VM 访问</td>
+</tr>
+<tr>
+<td>单二进制</td>
+<td>✅ ~10MB</td>
+<td>✅</td>
+<td>❌ 200MB+ Electron</td>
+<td>✅（库）</td>
+<td>❌ VM</td>
+</tr>
+<tr>
+<td>账号/telemetry</td>
+<td>❌ 无</td>
+<td>❌ 无</td>
+<td>⚠️ 通常有</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Stars</td>
+<td>8.9K</td>
+<td>35K / 25K+</td>
+<td>27.2K</td>
+<td>7.8K</td>
+<td>3.4K</td>
+</tr>
+</tbody>
+</table>
+<h3>差异化护城河</h3>
+<p><strong>「在终端里 + 真终端 + agent-aware」三件事的交集</strong>——同时具备真 terminal（lazygit 能跑）+ 远端可访问（SSH 直连）+ agent 状态感知（侧栏红点）。同时无 GUI / 无账号 / 单二进制——这四点是 Web 调度面板永远追不上的护城河。</p>
+<h3>竞争风险</h3>
+<ul><li><strong>上游 libghostty-vt 变化</strong>：跟 Zig 项目的 ABI 对齐负担重（vendor 1,446 次修改）</li><li><strong>GUI manager 抄作业</strong>：cmux / Conductor 哪天支持「终端模式」或「SSH 远端 attach」，护城河会缩水</li><li><strong>agent 厂商内化</strong>：Claude Code 自己的 TUI 越做越复杂，自带 session 管理——herdr 的「agent 多路复用」价值会被侵蚀</li><li><strong>License 是自定义 Other</strong>：企业采用前需要 legal review</li></ul>
+<h3>生态定位</h3>
+<p><strong>「agent-first tmux」</strong>——在 dev tool 分层里占「agent 的终端/调度器」层；与 vibe-kanban 同层但坚持 terminal-only；与 IDE 内 AI 助手（Cursor/Copilot）互补，不竞争；与 rig / agentos 互补（一个上层一个底层）。</p>
+<h2>套利机会分析</h2>
+<ul><li><strong>信息差</strong>：8.9K★ 在 3 个月龄的项目中已经进入「大众热门」门槛（574 stars/千日），但 vendor 的 libghostty-vt 维护成本、fix:feature = 3:1 的早中期形态、自定义 License 都是「关注度高但工程成熟度落后于热度的典型」——属于「看着热闹、真要 fork 之前要再想一下」</li><li><strong>技术借鉴</strong>：AppState 纯函数式 + section-isolated 配置 + manifest-as-data + vendored-deps patch log 这四套组合，可以直接迁移到任何「长跑 TUI + 热配置 + 外部规则适配」的产品</li><li><strong>生态位</strong>：填补了「终端原生 + agent 感知 + 远端可附着」三个属性的精确交集，这个位置在 2026 年不会被 tmux/vibe-kanban 正面侵蚀</li><li><strong>趋势判断</strong>：处于增长期（commit 节奏仍在加速、月均 300+），但 v0.7.x 还没跨 1.0 门槛；Agent 状态识别协议（manifest version）一旦稳定化，护城河会显著加深；Windows GA 是下一波用户增长的关键节点</li></ul>
+<h2>风险与不足</h2>
+<ul><li><strong>85.8% 单作者占比</strong>：bus factor = 1，任何 burnout / 转向都会导致项目停滞</li><li><strong>License 是自定义 Other</strong>：非 OSI 标准，企业采用前需 legal review（理论上比 MIT/Apache 严苛，但合规团队可能拒绝）</li><li><strong>vendor libghostty-vt</strong>：跟 Zig 上游对齐是结构性负担，1,446 次 commit 的 patch base 是潜在合并地狱</li><li><strong>fix:feature = 3:1 + Test 仅 1.5%</strong>：典型早中期形态，自动化覆盖不够支撑快速迭代</li><li><strong>agent 状态检测本质是启发式</strong>：issue #198「status latches on working」揭示某些 case 会卡住，需要各家 agent CLI 维持「逐 agent 适配层」</li><li><strong>企业 logo 墙「used in the wild」</strong>：JetBrains / Google / NVIDIA / ByteDance 等 logo 在官网首页醒目列出，但缺乏第三方佐证，使用前需自行验证</li></ul>
+<h2>行动建议</h2>
+<ul><li><strong>如果你要用它</strong>：适合「在远端 Mac Mini / VPS / 沙箱 VM 上并行跑 ≥3 个 coding agent，且经常需要从手机 SSH 进去看一眼」的场景。如果你只需要本地单 agent 协作，herdr 的额外复杂度不划算。如果你想要 Web 拖拽 UX，vibe-kanban 更合适</li><li><strong>如果你要学它</strong>：</li><li>必读 src/app/mod.rs（4,568 行应用层主入口，看 state/actions/runtime 三层如何分层）</li><li>必读 src/terminal/runtime_registry.rs（state/runtime 分离最干净的范例）</li><li>必读 src/pane/agent_detection.rs（pending idle confirmation 状态机）</li><li>必读 src/detect/manifests/claude.toml（manifest-as-data 范例）</li><li>必读 AGENTS.md（项目自己写给 AI 协作者的规约）</li><li>必读 vendor/libghostty-vt.patches.md（vendored deps 治理纪律）</li><li>必读 justfile（test/lint/ci/windows-lint 任务编排）</li><li><strong>如果你要 fork 它</strong>：可以改进的方向——</li><li>把 license 换成 MIT 或 Apache-2.0 降低企业采用门槛</li><li>增加 refactor/test commit 比例（当前 4.5%，目标 ≥25%）以支撑 1.0 跨越</li><li>用 git subtree 或 cargo workspace 把 libghostty-vt 拆成独立 crate，方便社区分摊维护</li><li>增加 LSP / DAP 适配，让 pane 不仅是 terminal 也是 IDE 视图</li></ul>
+<h3>知识入口</h3>
+<table>
+<thead><tr>
+<th>资源</th>
+<th>链接</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>DeepWiki</td>
+<td><a href="https://deepwiki.com/ogulcancelik/herdr">https://deepwiki.com/ogulcancelik/herdr</a>（已收录，12 节结构化分析，最近索引 2026-06-30）</td>
+</tr>
+<tr>
+<td>Zread.ai</td>
+<td>未收录（HTTP 403，建议人工浏览器复验）</td>
+</tr>
+<tr>
+<td>关联论文</td>
+<td>无（工程实现而非研究项目）</td>
+</tr>
+<tr>
+<td>在线 Demo</td>
+<td>无（官网 <a href="https://herdr.dev">https://herdr.dev</a> 提供 iPhone SSH 真实截图 + ASCII TUI 截图）</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
